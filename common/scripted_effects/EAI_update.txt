@@ -1,0 +1,18 @@
+############################################################################################################
+#	Expert AI mod - update effects
+############################################################################################################
+
+MOD_daily_update = {
+
+	#################################################
+	### 	Country daily update
+	#################################################
+
+	if = { limit = { is_ai = yes } 
+		#Add names stuff to be updated every day here
+		#Declare them in seperate file under scriped_effects
+
+		MOD_SOV_offensives = yes
+
+	}
+}

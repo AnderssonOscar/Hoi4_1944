@@ -1,0 +1,249 @@
+
+
+##1944
+
+
+economy_decisions = {
+
+	old_weapon_caches = { #repeating weapon caches
+
+		visible = { 
+			num_of_factories > 100
+			has_war = yes
+			has_tech = gw_artillery
+			has_tech = infantry_weapons
+			has_tech = tech_support
+		}
+		
+		available = {
+			has_war = yes
+            has_idea = tot_economic_mobilisation
+			has_army_manpower = {size > 500000}
+        }
+
+		
+		days_remove = 90
+		cost = 100
+
+		remove_trigger = {
+        	OR = {
+            	has_war = no
+            	not = { has_idea = tot_economic_mobilisation }
+				
+            }
+        }
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability > 0.74
+			}
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 500
+			}
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 250
+			}
+		}
+	}
+
+
+
+	draft_children = {
+
+		icon = generic_political_discourse
+
+        allowed = {
+            always = yes
+        }
+
+        available = {
+            has_war = yes
+            has_idea = tot_economic_mobilisation
+
+             OR = {
+
+                AND = {
+                   has_idea = all_adults_serve
+                }
+
+                AND = {
+                   has_idea = scraping_the_barrel
+                }
+
+             }
+
+            OR = {
+
+                AND = {
+                    has_government = communism
+                    has_war_support > 0.7
+					surrender_progress > 0.20
+					has_manpower < 10000
+                }
+                AND = {
+                    has_government = fascism
+                    OR = {
+                        has_war_support > 0.7
+                        surrender_progress > 0.20
+						has_manpower < 10000
+                    }
+                }
+                AND = {
+                    has_government = neutrality
+                    has_war_support > 0.8
+                    has_stability > 0.5
+					surrender_progress > 0.3
+					has_manpower < 10000
+                }
+            }
+        }
+        visible = {
+            has_war = yes
+        }
+        cost = 50
+        days_remove = -1
+
+        remove_trigger = {
+        	OR = {
+            	has_war = no
+            	not = { has_idea = tot_economic_mobilisation }
+				not = { has_idea = all_adults_serve }
+                not = { has_idea = scraping_the_barrel }
+            }
+        }
+
+        modifier = {
+            conscription = 0.015
+            stability_factor = -0.025
+			war_support_factor = -0.05
+        }
+        ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				has_manpower < 1000
+			}
+		}
+		complete_effect = {
+
+        }
+   }			
+}
+
+
+
+
+operations = {
+
+	operation_overlord = {
+
+			icon = generic_operation
+		
+			allowed = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+			}
+			
+			available = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+
+				has_war_with = GER
+				date > 1944.5.20
+
+
+			any_other_country = {
+			is_in_faction_with = GER
+
+				AND = {
+					controls_state = 16
+					controls_state = 15
+					controls_state = 29
+					controls_state = 6
+				}
+			}
+
+			}
+
+			cost = 25
+			
+			fire_only_once = yes
+
+			ai_will_do = {
+				factor = 250
+			}
+			
+			visible = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				has_war_with = GER
+			}
+
+			modifier = {
+					naval_invasion_prep_speed = +5.00
+					naval_invasion_capacity = +10.00
+					naval_invasion_penalty = -0.25
+					supply_consumption_factor = -0.25
+					dig_in_speed_factor = +0.25
+					army_speed_factor = -0.25
+			}
+
+			days_remove = 30
+			
+			complete_effect = {
+
+			}
+		}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+war_measures = {
+
+
+}
+
+
