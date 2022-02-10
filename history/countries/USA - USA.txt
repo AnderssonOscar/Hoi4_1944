@@ -1006,6 +1006,7 @@ if = {
 
 1943.12.30 = {
 
+	set_convoys = 500
 	oob = "USA_1944_nsb"
 
 	#focuses

@@ -567,6 +567,9 @@ activate_mission = GER_mefo_bills_mission
 		}
 	}
 
+	MON = {	add_to_war = { targeted_alliance = SOV enemy = GER } }
+	TAN = {	add_to_war = { targeted_alliance = SOV enemy = GER } }
+
 
 recruit_character = GER_wilhelm_pieck
 recruit_character = GER_konrad_adenauer
@@ -1595,6 +1598,9 @@ create_equipment_variant = {
 
 		annex_country = { target = NOR transfer_troops = no }
 		annex_country = { target = DEN transfer_troops = no }
+
+		annex_country = { target = YUG transfer_troops = no }
+		annex_country = { target = GRE transfer_troops = no }
 
 
 } 

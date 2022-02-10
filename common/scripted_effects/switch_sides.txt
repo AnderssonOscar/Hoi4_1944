@@ -1,0 +1,33 @@
+
+MOD_FIN_SURRENDER = {
+	
+	if = {
+		limit = {
+			tag = FIN
+			has_war_with = SOV
+			surrender_progress > 0.15
+			date > 1944.2.1
+		}
+
+
+
+			every_country = {
+				limit = { has_war_with = FIN }
+				white_peace = FIN 
+			}
+		
+		remove_state_claim = 722
+
+		SOV = { transfer_state = 146 }
+		SOV = { transfer_state = 216 }
+		SOV = { transfer_state = 147 }
+
+		GER = { remove_from_faction = FIN }
+		#ENG = { add_to_faction = FIN }
+
+		FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
+		FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
+	}
+}
+
+

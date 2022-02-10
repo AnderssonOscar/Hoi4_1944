@@ -2425,110 +2425,62 @@ GER_push_back_our_coasts_until_overlord  = {
 	}
 }
 
-GER_pause_in_SOV = { #We got this far but our home is under siege
-	allowed = {
-		original_tag = GER
-	}
 
+
+
+GER_dont_stack_SPR_border = {
+	allowed = { original_tag = SOV }
 	enable = {
-		date > 1943.1.1
-		is_historical_focus_on = yes
-		SOV = { has_capitulated = no }
-		surrender_progress > 0.25
+		
+		has_war_with = GER
+		country_exists = SPR
+		NOT = { has_war_with = SPR }
+		date > 1944.1.1
 	}
 
 	abort_when_not_enabled = yes
-
 	ai_strategy = {
 		type = front_control
+		country_trigger = {
+			tag = SPR
+		}
 
-		tag = SOV
-
-		ratio = 0.75
-
-		priority = 100
 		ordertype = front
+		execute_order = yes
 		execution_type = careful
-		execute_order = no
 	}
-}
-
-
-
-
-SWI_is_neutral = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		tag = GER
-		date > 1943.12.30
-		country_exists = SWI
-		NOT = { has_war_with = SWI }
-	}
-
-	abort = {
-	 	GER = {
-			has_war_with = SWI
-		}
-	}
-
 	ai_strategy = {
 		type = front_unit_request
-		id = SWI
-		value = -500
-	}
-}
-
-SPAIN_is_neutral = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		tag = GER
-		date > 1943.12.30
-		country_exists = SPR
-		NOT = { has_war_with = SPR }
-	}
-
-	abort = {
-	 	GER = {
-			has_war_with = SPR
-		}
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		id = SPR
+		tag = SPR
 		value = -500
 	}
 }
 
 
-
-
-SWE_is_neutral = {
-	allowed = {
-		original_tag = GER
-	}
+GER_dont_stack_SWE_border = {
+	allowed = { original_tag = SOV }
 	enable = {
-		tag = GER
-		date > 1943.12.30
+		
+		has_war_with = GER
 		country_exists = SWE
 		NOT = { has_war_with = SWE }
+		date > 1944.1.1
 	}
 
-	abort = {
-	 	GER = {
-			has_war_with = SWE
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = SWE
 		}
-	}
 
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
 	ai_strategy = {
 		type = front_unit_request
-		id = SWE
+		tag = SWE
 		value = -500
 	}
 }
-
-

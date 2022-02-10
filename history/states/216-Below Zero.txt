@@ -17,10 +17,36 @@ state={
 		add_core_of = SOV
 		add_core_of = KAR
 
-						1943.12.1 = {
+		1943.12.1 = {
 			owner = FIN
 			controller = FIN
 		}
+
+
+
+		1943.12.1 = {
+			buildings = {
+				11153 = {
+					bunker = 2
+				}
+
+				6057 = {
+					bunker = 2
+				}
+
+				3084 = {
+					bunker = 2
+				}
+
+				6106 = {
+					bunker = 2
+				}
+			}
+		}
+
+
+
+
 	}
 
 	provinces={

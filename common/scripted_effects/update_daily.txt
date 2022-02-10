@@ -1,5 +1,5 @@
 ############################################################################################################
-#	Expert AI mod - update effects
+#update
 ############################################################################################################
 
 MOD_daily_update = {
@@ -13,6 +13,7 @@ MOD_daily_update = {
 		#Declare them in seperate file under scriped_effects
 
 		MOD_SOV_offensives = yes
+		MOD_FIN_SURRENDER = yes
 
 	}
 }

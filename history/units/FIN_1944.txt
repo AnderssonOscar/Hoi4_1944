@@ -2,7 +2,8 @@
 ##### Division Templates #####
 division_template = {
 	name = "Jalkaväkidivisioona"		# Infantry Division
-
+	division_names_group = FIN_INF_01
+	
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -12,6 +13,9 @@ division_template = {
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
 		infantry = { x = 1 y = 3 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
@@ -192,14 +196,14 @@ units = {
 	}
 	division = {
 		name = "12. Divisioona"
-		location = 9100
+		location = 3060
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.88
 	}
 	division = {
 		name = "5. Divisioona"
-		location = 9100
+		location = 3060
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.8
@@ -213,14 +217,14 @@ units = {
 	}
 	division = {
 		name = "18. Divisioona"
-		location = 9105
+		location = 9150
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.74
 	}
 	division = {
 		name = "10. Divisioona"
-		location = 9105
+		location = 9150
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.84
@@ -330,6 +334,75 @@ units = {
 		start_experience_factor = 0.8
 		start_equipment_factor = 0.97
 	}
+
+
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3060 
+		division_template = "Jalkaväkidivisioona"
+		start_experience_factor = 0.21
+		start_equipment_factor = 0.85
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3060 
+		division_template = "Jalkaväkidivisioona"
+		start_experience_factor = 0.21
+		start_equipment_factor = 0.85
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 11153 
+		division_template = "Jalkaväkidivisioona"
+		start_experience_factor = 0.21
+		start_equipment_factor = 0.85
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 11153 
+		division_template = "Jalkaväkidivisioona"
+		start_experience_factor = 0.21
+		start_equipment_factor = 0.85
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3084 
+		division_template = "Jalkaväkidivisioona"
+		start_experience_factor = 0.21
+		start_equipment_factor = 0.85
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6057 
+		division_template = "Jalkaväkidivisioona"
+		start_experience_factor = 0.21
+		start_equipment_factor = 0.85
+	}
+
 }
 
 

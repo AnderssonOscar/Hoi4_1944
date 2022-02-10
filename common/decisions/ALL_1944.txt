@@ -167,7 +167,7 @@ operations = {
 				}
 
 				has_war_with = GER
-				date > 1944.5.20
+				date > 1944.5.23
 
 
 			any_other_country = {
@@ -200,15 +200,15 @@ operations = {
 			}
 
 			modifier = {
-					naval_invasion_prep_speed = +5.00
-					naval_invasion_capacity = +10.00
-					naval_invasion_penalty = -0.25
-					supply_consumption_factor = -0.25
-					dig_in_speed_factor = +0.25
-					army_speed_factor = -0.25
+					naval_invasion_prep_speed = +100.00
+					#naval_invasion_capacity = +10.00
+					#naval_invasion_penalty = -0.25
+					#supply_consumption_factor = -0.25
+					#dig_in_speed_factor = +0.25
+					army_speed_factor = 0.5
 			}
 
-			days_remove = 30
+			days_remove = 10
 			
 			complete_effect = {
 
@@ -243,6 +243,81 @@ operations = {
 
 war_measures = {
 
+	defend_with_all_we_got = {
+
+		icon = generic_prepare_civil_war
+
+			allowed = {
+				OR = {
+					tag = GER
+					tag = ROM
+					tag = HUN
+					tag = ITA
+				}
+			}
+
+		available = {
+
+		AND = {
+
+				OR = {
+					tag = GER
+					tag = ROM
+					tag = HUN
+					tag = ITA
+				}
+
+			OR = {
+				has_war_with = SOV
+				has_war_with = ENG
+			}
+
+			OR = {
+				alliance_strength_ratio < 1.0 
+
+			}
+		}
+	}
+
+		visible = {
+
+				OR = {
+					tag = GER
+					tag = ROM
+					tag = HUN
+					tag = ITA
+				}
+
+		OR = {
+				has_war_with = SOV
+				has_war_with = ENG
+			}
+		}
+
+		fire_only_once = no
+
+		days_remove = 15
+		days_re_enable = 90
+
+		cost = 50
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				surrender_progress > 0.05
+				factor = 10
+			}
+		}
+
+		modifier = {
+			defence = 0.5
+			dig_in_speed_factor = 1
+		}
+
+		complete_effect = {
+
+				#war_support_factor = -0.025
+		}
+	}
 
 }
 

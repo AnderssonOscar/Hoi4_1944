@@ -52,8 +52,10 @@ state={
 			buildings = {
 				anti_air_building = 5
 				synthetic_refinery = 3
+				arms_factory = 8
 			}
 		}
+
 	}
 
 	provinces={

@@ -1,39 +1,84 @@
 
-USA_ENG_CAN_sync_invasion_overlord = {
+
+
+USA_stop_camping_america = {
+
 	allowed = {
-		OR = {
-			tag = USA
-		#	tag = ENG
-		#	tag = CAN
-		}
+		original_tag = USA
 	}
 
 	enable = {
-		date > 1944.5.1
-		
+		tag = USA
+		date > 1943.12.1
 	}
 
-	abort = {
-		date < 1944.6.20
+	ai_strategy = {
+		type = area_priority
+		id = north_america
+		value = -500
 	}
 
+		ai_strategy = {
+			type = garrison
+			value = -50
+	}
+}
+
+
+
+USA_garrison_ITALY = {
+	allowed = { original_tag = USA }
+	
+	enable = {
+
+		has_war_with = ITA
+		always = yes
+	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = front_control
+		type = put_unit_buffers
+		ratio = 0.20
+		states = { 
+			117
+			156
+			115
+			#114
+			#1
 
-		strategic_region = 208 	# Western France
-		#strategic_region = 19 	# Northern France
-		strategic_region = 5 	# Benelux Region
-		#area = mainland_europe
-
-		ordertype = invasion
-		execution_type = rush
-		execute_order = yes
-		priority = 250
-
+		}
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
 	}
 }
+
+
+
+USA_dont_forget_about_italy = {
+
+	allowed = {
+		original_tag = USA
+	}
+
+	enable = {
+		tag = USA
+		date > 1943.12.30
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = ITA
+		value = 75
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = 60
+	}
+
+}
+
 
 
 

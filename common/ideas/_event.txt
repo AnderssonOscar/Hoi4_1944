@@ -266,13 +266,22 @@ ideas = {
 				
 			}
 			
+
+
+			#targeted_modifier = {
+			#	tag = SOV
+			#	attack_bonus_against = 0.10
+			#	defense_bonus_against = 0.05
+			#}
+
 			modifier = {
-				army_attack_factor = +1
-				breakthrough_factor = +1
+				
+				army_attack_factor = +0.75
+				breakthrough_factor = +0.75
 				#out_of_supply_factor = +0.25
-				supply_consumption_factor = -0.75
+				supply_consumption_factor = -0.5
 				land_reinforce_rate = +0.5
-				army_org_factor = +1
+				army_org_factor = +0.5
 
 				terrain_penalty_reduction = +0.5
 
@@ -301,9 +310,11 @@ ideas = {
 			picture = tur_disorganised_armed_forces
 			
 			modifier = {
-				army_attack_factor = -1
-				breakthrough_factor = -1
-				land_reinforce_rate = -0.5
+				army_attack_factor = -1.25
+				breakthrough_factor = -1.25
+				land_reinforce_rate = -1
+
+				ground_attack_factor = -0.5
 			}
 		}
 

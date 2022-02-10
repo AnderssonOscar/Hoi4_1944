@@ -1,0 +1,38 @@
+
+
+
+
+scandy_is_not_for_you = {
+	allowed = {
+
+		OR = {
+			original_tag = ITA
+			original_tag = ROM
+			original_tag = HUN
+			original_tag = CRO
+			original_tag = SLO
+			original_tag = SER
+			original_tag = BUL
+		}
+
+	}
+	enable = {
+		date > 1944.1.1
+		is_in_faction_with = GER
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = area_priority
+		id = scandinavia
+		value = -100
+	}
+
+	ai_strategy = { 
+		type = front_unit_request
+		country_trigger = { always = yes }
+		area = scandinavia
+		value = -200
+	}
+}

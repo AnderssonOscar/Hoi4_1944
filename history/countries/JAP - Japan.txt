@@ -288,6 +288,14 @@ create_import = {
 					enemy = JAP
 				}
 			}
+
+		RAJ = {
+				add_to_war = {
+					targeted_alliance = USA
+					enemy = JAP
+				}
+			}
+
 		CAN = {
 				add_to_war = {
 					targeted_alliance = USA
@@ -345,6 +353,13 @@ create_import = {
 					enemy = JAP
 				}
 			}
+
+		BRA = {
+			add_to_war = {
+				targeted_alliance = USA
+				enemy = JAP
+			}
+		}
 
 	#declare_war_on = {
 	#	target = GXC

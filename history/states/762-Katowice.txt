@@ -22,9 +22,17 @@ state={
 		add_core_of = POL
 		add_core_of = SIL
 
-				1943.12.1 = {
+		1943.12.1 = {
 			owner = GER
 			controller = GER
+		}
+
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 5
+				anti_air_building = 2
+			}
 		}
 	}
 

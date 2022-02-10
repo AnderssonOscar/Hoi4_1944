@@ -211,16 +211,29 @@ FIN_defend_fronts  = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {	tag = SOV }
+			tag = SOV
+			value = 1000
+	}
+
+
+	ai_strategy = {
 		type = front_control
 
-		tag = FIN
+		tag = SOV
 
-		ratio = 0.5
+		ratio = 1
 
 		priority = 150
 		ordertype = front
 		execution_type = careful
 		execute_order = no
+	}
+
+		ai_strategy = {
+			type = garrison
+			value = -100
 	}
 
 }

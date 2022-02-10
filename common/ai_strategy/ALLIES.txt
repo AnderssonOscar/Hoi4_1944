@@ -1,0 +1,296 @@
+
+
+# 	country_trigger works only on 	 front_control 		front_unit_request 		 invasion_unit_request
+
+
+allies_enable_invasion_of_GER = {
+	allowed = {
+		OR = {
+			tag = USA
+			tag = ENG
+			tag = CAN
+		}
+	}
+
+	enable = {
+		
+		date > 1944.4.1
+
+		set_temp_variable = { days = global.num_days }
+		modulo_temp_variable = { days = 90 }
+		check_variable = { days < 60 }
+		
+		16 = {is_fully_controlled_by = GER}
+		15 = {is_fully_controlled_by = GER}
+		29 = {is_fully_controlled_by = GER}
+		6 =  {is_fully_controlled_by = GER}
+		14 = {is_fully_controlled_by = GER}
+		
+	}
+
+abort_when_not_enabled = yes
+
+
+	ai_strategy = {
+		type = front_control
+	
+
+		area = normandy_landing_zone
+
+		ordertype = invasion
+		execute_order = no
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "GER"
+		value = 100
+	}
+
+#	ai_strategy = {
+#		type = area_priority
+#		id = europe
+#		value = 75
+#	}
+
+	ai_strategy = {
+		type = area_priority
+		id = normandy_landing_zone
+		value = 100
+	}
+		
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GER }
+		value = 30
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = { tag = GER }
+		state = 15
+		value = 75
+	}
+
+
+
+
+
+
+
+	#ai_strategy = {
+ 	#type = front_control
+	#tag = GER				# target against a specific country
+	#strategic_region = 208 	# Western France
+	#strategic_region = 20 	# Southern France
+	##strategic_region = 19 	# Northern France
+	##strategic_region = 5 	# Benelux Region
+	#area = normandy_landing_zone			# target on a specific ai area
+
+	#country_trigger = { always = no } 	# a trigger to check agaisnt a specific country. scope is enemy country from scope is our country
+	#state_trigger = { always = no } 	# a trigger to check agaisnt a state. scope is state. from scope is enemy country from.from scope is our country
+
+	#ratio = 0.0 # the strategy is enabled only if ratio of the front covered by this strat's targets greater than this ratio
+
+	#priority = 800 #PREVIOUSLY 200 default 0, higher prio strats will override lower
+	#ordertype = front # front or invasion. if set this strategy will only apply to that specific order type
+	#execution_type = rush #careful # one of careful balanced rush rush_weak. if set will override the execution type of front (only for front orders)
+	#execute_order = yes # yes or no. if set will override execute or not decision of front
+	#manual_attack = yes # default yes. if no ai will not do manual pokes at enemy (only for front orders)
+	#}
+
+
+
+}
+
+
+
+
+
+allies_unit_buffer_defend_UK = {
+	allowed = {
+		OR = {
+			tag = ENG
+			tag = USA
+			tag = CAN
+		}
+	}
+
+	enable = {
+		date > 1944.1.1 
+
+			is_in_faction_with = ENG
+			has_war_with = GER
+		}
+
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		
+		order_id = 1
+		# south england
+		states = {
+			125
+			126
+			127
+			123
+			122
+		}
+		ratio = 0.1
+
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+
+}
+
+
+
+
+allies_landed_in_france = {
+
+	allowed = { 
+		OR = {
+			tag = USA
+			tag = ENG
+			tag = CAN
+			tag = FRA
+			tag = RAJ
+		}
+	}
+
+		enable = {
+			has_war_with = GER
+
+		NOT = {
+			AND = {
+				16 = {is_fully_controlled_by = GER}
+				15 = {is_fully_controlled_by = GER}
+				29 = {is_fully_controlled_by = GER}
+				6 =  {is_fully_controlled_by = GER}
+				14 = {is_fully_controlled_by = GER}
+				34 = {is_fully_controlled_by = GER}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "GER"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GER }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = 75
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = { tag = GER }
+		value = 75
+	}
+}
+
+
+
+allies_dont_invade_GER_before_dday = {
+	allowed = { 
+		OR = {
+				tag = USA
+				tag = ENG
+				tag = CAN
+				tag = FRA
+				tag = RAJ
+			}
+	}
+
+	enable = {
+		date < 1944.4.1
+		#has_war_with = GER
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GER"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GER }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = { tag = GER }
+		value = -500
+
+	}
+}
+
+
+
+
+
+
+allies_dont_invade_axis_allies = {
+	allowed = { 
+			OR = {
+				tag = USA
+				tag = ENG
+				tag = CAN
+				tag = FRA
+				tag = RAJ
+				tag = NZL
+				tag = AST
+				}
+	}
+
+	enable = {
+		date > 1943.12.30
+		has_war_with = GER
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "ITA"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "CRO"
+		value = -500
+	}
+	ai_strategy = {
+		type = invade
+		id = "BUL"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "ALB"
+		value = -500
+	}
+
+
+}
+
+
+
