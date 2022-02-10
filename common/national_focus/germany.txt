@@ -9087,7 +9087,7 @@ focus_tree = {
 		id = GER_gottedamerung
 		icon = GFX_focus_ger_oppose_hitler
 		x = 16
-		y = 6
+		y = 8
 		cost = 4
 		available_if_capitulated = yes
 		ai_will_do = {
@@ -9114,9 +9114,9 @@ focus_tree = {
 
 	focus = {
 		id = GER_hand_out_panzerfausts
-		icon = GFX_goal_generic_small_arms
-		x = 17
-		y = 7
+		icon = GFX_goal_demand_sudetenland
+		x = 14
+		y = 9
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = GER_gottedamerung }
@@ -9150,16 +9150,37 @@ focus_tree = {
 
 
 
+	focus = {
+		id = GER_form_volksgrenadier
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 14
+		y = 10
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_hand_out_panzerfausts }
+		
+		ai_will_do = {
+			factor = 200
+		}
+
+		available = {
+		OR = {
+
+			date > 1944.1.1
+			}
+		}
+	}
+
 
 	#Focus for Volksturm
 	focus = {
 		id = GER_volksturm
 		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
-		x = 15
-		y = 7
-		cost = 1
+		x = 14
+		y = 11
+		cost = 3
 		available_if_capitulated = yes
-		#prerequisite = { focus = GER_gottedamerung }
+		prerequisite = { focus = GER_form_volksgrenadier }
 		ai_will_do = {
 			factor = 80
 		}
@@ -9282,37 +9303,204 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Fanatical Defense
+
+
+
+
+
+
+
+
 	focus = {
-		id = GER_fanatical_defense
-		icon = GFX_focus_generic_military_mission
+		id = GER_simplify_production
+		icon = GFX_goal_generic_construct_mil_factory
 		x = 18
-		y = 8
-		cost = 3
+		y = 9
+		cost = 2
 		available_if_capitulated = yes
-		prerequisite = { focus = GER_hand_out_panzerfausts }
+		prerequisite = { focus = GER_gottedamerung }
+		
 		ai_will_do = {
-			factor = 120
+			factor = 200
 		}
-		completion_reward = {
+
+		available = {
+		OR = {
+
+			date > 1944.1.1
+			}
+		}
+
+	completion_reward = {
 		add_timed_idea ={
-			idea = GER_fanatical_defense
+			idea = GER_simplify_production
 			days = 360
 		} 
 		}
 	}
 
-	#Festung
+
+
 	focus = {
-		id = GER_festung_deutschland
-		icon = GFX_goal_generic_fortify_city
+		id = GER_protect_industry
+		icon = GFX_focus_generic_industry_3
+		x = 18
+		y = 10
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_simplify_production }
+		
+		ai_will_do = {
+			factor = 200
+		}
+
+		available = {
+		OR = {
+
+			date > 1944.1.1
+			}
+		}
+	completion_reward = {
+		add_timed_idea ={
+			idea = GER_protect_industry
+			days = 360
+		} 
+		}
+	}
+
+	focus = {
+		id = GER_everyting_for_war_effort
+		icon = GFX_focus_generic_tank_production
+		x = 18
+		y = 11
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_protect_industry }
+		
+		ai_will_do = {
+			factor = 200
+		}
+
+		available = {
+		OR = {
+
+				date > 1944.1.1
+			}
+		}
+		completion_reward = {
+
+
+				every_controlled_state = {
+					limit = {
+						industrial_complex > 1
+						is_fully_controlled_by = controller
+
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					} 
+
+				}
+
+				remove_building = { type = industrial_complex level = 1 }
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	#Gustav Line
+	focus = {
+		id = GER_gustav_line
+		icon = GFX_goal_generic_construct_military
 		x = 16
-		y = 8
+		y = 9
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { 
-			focus = GER_hand_out_panzerfausts 
-			focus = GER_volksturm 
+			focus = GER_gottedamerung 
+			#focus = GER_volksturm 
+		}
+		ai_will_do = {
+			factor = 120
+		}
+		completion_reward = {
+		2 = { 
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 923
+					instant_build = yes
+				}
+			}
+
+			157 = { 
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 963
+					instant_build = yes
+				}
+
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 6831
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	#Festung
+	focus = {
+		id = GER_festung_cities
+		icon = GFX_goal_generic_fortify_city
+		x = 16
+		y = 10
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GER_gustav_line 
+			#focus = GER_volksturm 
 		}
 		ai_will_do = {
 			factor = 120
@@ -9342,7 +9530,7 @@ focus_tree = {
 
 				add_building_construction = { # City
 					type = bunker
-					level = 7
+					level = 9
 					province = 6332
 					instant_build = yes
 				}
@@ -9368,7 +9556,7 @@ focus_tree = {
 			10 = { #warsaw
 				add_building_construction = {
 						type = bunker
-						level = 4
+						level = 6
 						province = 3544
 						instant_build = yes
 					}
@@ -9384,7 +9572,7 @@ focus_tree = {
 			66 = { #breslau
 				add_building_construction = {
 						type = bunker
-						level = 5
+						level = 7
 						province = 9570
 						instant_build = yes
 					}
@@ -9394,7 +9582,7 @@ focus_tree = {
 			64 = { #berlin
 				add_building_construction = {
 						type = bunker
-						level = 8
+						level = 10
 						province = 6521
 						instant_build = yes
 					}
@@ -9422,75 +9610,54 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Nero Decree
-	focus = {
-		id = GER_nero_decree
-		icon = GFX_focus_BUL_condemn_macedonian_organizations
-		x = 14
-		y = 8
-		cost = 2
-		available_if_capitulated = yes
-		prerequisite = { focus = GER_volksturm }
-		ai_will_do = {
-			factor = 80
-		}
-			completion_reward = {
-			64 = {
-              remove_building = {
-               type = industrial_complex 
-              level = 3}
-              remove_building = {
-               type = arms_factory
-              level = 3}
-               remove_building = {
-               type = infrastructure
-              level = 3}
-			}
-				68 = {
-              remove_building = {
-               type = industrial_complex 
-              level = 3}
-              remove_building = {
-               type = arms_factory
-              level = 3}
-               remove_building = {
-               type = infrastructure
-              level = 3}
-}
-				65 = {
-              remove_building = {
-               type = industrial_complex 
-              level = 3}
-              remove_building = {
-               type = arms_factory
-              level = 3}
-               remove_building = {
-               type = infrastructure
-              level = 3}
-}
-add_equipment_to_stockpile = {
-	type = infantry_equipment_1
-	amount = 2500
-	producer = GER
-	
 
-}
-}
+
+
+
+
+
+
+
+	#Focus for Fanatical Defense
+	focus = {
+		id = GER_fanatical_defense
+		icon = GFX_focus_BUL_condemn_macedonian_organizations
+		x = 16
+		y = 11
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_festung_cities }
+		ai_will_do = {
+			factor = 120
+		}
+		completion_reward = {
+		add_timed_idea ={
+			idea = GER_fanatical_defense
+			days = 360
+		} 
+		}
 	}
+
+
+
+
+
+
+
 
 	#Focus for Endsieg
 	focus = {
 		id = GER_endsieg
 		icon = GFX_focus_ger_reichskommisariats
 		x = 16
-		y = 10
+		y = 13
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
-			focus = GER_nero_decree 
+			focus = GER_everyting_for_war_effort 
 		}
 		prerequisite = { 
-			focus = GER_festung_deutschland 
+			focus = GER_volksturm
 		}
 		prerequisite = { 
 			focus = GER_fanatical_defense 
