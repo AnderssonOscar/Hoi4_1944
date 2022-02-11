@@ -8,11 +8,22 @@ ideas = {
 			}
 		}
 
-
-
 	GER_fanatical_defense = {
 		modifier = {
 			army_core_defence_factor = 0.2
+			}
+		}
+
+	GER_festung_supply = {
+		modifier = {
+			no_supply_grace = 360.0
+			}
+		}
+
+	GER_endsieg_attack = {
+		modifier = {
+			army_attack_factor = 0.5
+			breakthrough_factor = 0.5
 			}
 		}
 

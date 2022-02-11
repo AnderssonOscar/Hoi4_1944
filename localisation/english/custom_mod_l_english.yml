@@ -1,0 +1,57 @@
+﻿l_english:
+draft_children:0 "Child Soldiers"
+draft_children_desc:0 "We are not desperate, the kids simply need to get out and get some fresh air!"
+low_war_casualties:0 "Low War Casualties"
+low_war_casualties_desc:0 ""
+medium_war_casualties:0 "Medium War Casualties"
+medium_casualties_desc:0 ""
+overlord_prep:0 "D-Day"
+overlord_prep_desc:0 "D-Day preperations..."
+
+GER_gottedamerung:0 "Gottedamerung"
+GER_gottedamerung_desc:0 "Gottedamerung"
+GER_gottedamerung_tooltip:0 ""
+
+GER_hand_out_panzerfausts:0 "Mass produce the Panzerfaust"
+GER_hand_out_panzerfausts_desc:0 "Supply our troops with weapons to deal with the tanks."
+GER_hand_out_panzerfausts_tooltip:0 ""
+
+GER_form_volksgrenadier:0 "Form the volksgrenadier"
+GER_form_volksgrenadier_desc:0 "Form the volksgrenadier"
+GER_form_volksgrenadier_tooltip:0 "Receive 10 volksgrenadier divisions of varying quality."
+
+GER_form_volksturm:0 "Form the volksturm"
+GER_form_volksturm_desc:0 "Form the volksturm"
+GER_form_volksturm_tooltip:0 "Receive 16 Volksturm divisions of varying quality."
+
+GER_simplify_production:0 "Simplify arms production"
+GER_simplify_production_desc:0 "We can increase our production by lowering our standards."
+GER_simplify_production_tooltip:0 "Production increase:"
+
+GER_protect_industry:0 "Protect the industries"
+GER_protect_industry_desc:0 "Focus on protecting our precious industry from air raids"
+GER_protect_industry_tooltip:0 "Protection from air raids:"
+
+GER_everyting_for_war_effort:0 "Everyting for the war effort"
+GER_everyting_for_war_effort_desc:0 "Convert existing civilian factories into producing military goods"
+GER_everyting_for_war_effort_tooltip:0 "Converts existing civilian factories into producing military goods:"
+
+GER_gustav_line:0 "Gustav Line"
+GER_gustav_line_desc:0 "Build series of denfensive works to stop the allies in italy."
+GER_gustav_line_tooltip:0 "Lower Italy gets:"
+
+GER_festung_cities:0 "Declare festung cities"
+GER_festung_cities_desc:0 "Declare festung cities"
+GER_festung_cities_tooltip:0 "These places are delcared fortresses:"
+
+GER_fanatical_defense:0 "Fanatical defense of the reich"
+GER_fanatical_defense_desc:0 "Fanatical defense of the reich"
+GER_fanatical_defense_tooltip:0 ""
+
+GER_endsieg:0 "Endsieg"
+GER_endsieg_desc:0 "Endsieg"
+GER_endsieg_tooltip:0 ""
+
+
+GER_festung_supply:0 "Festung rationing"
+GER_endsieg_attack:0 "Endsieg is here"

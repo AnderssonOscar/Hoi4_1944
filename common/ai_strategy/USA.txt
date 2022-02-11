@@ -68,13 +68,13 @@ USA_dont_forget_about_italy = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = ITA
-		value = 75
+		value = 85
 	}
 
 	ai_strategy = {
 		type = area_priority
 		id = europe
-		value = 60
+		value = 70
 	}
 
 }
