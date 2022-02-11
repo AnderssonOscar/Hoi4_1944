@@ -65,8 +65,8 @@ division_template = {
 		rocket_artillery_brigade = { x = 3 y = 0 }
 		anti_air_brigade = { x = 3 y = 1 }
 		anti_air_brigade = { x = 3 y = 2 }
-		anti_tank  = { x = 3 y = 3 }
-		anti_tank  = { x = 3 y = 4 }
+		anti_tank_brigade = { x = 3 y = 3 }
+		anti_tank_brigade = { x = 3 y = 4 }
 
 		motorized_rocket_brigade  = { x = 4 y = 0 }
 		motorized_rocket_brigade  = { x = 4 y = 1 }	
@@ -112,17 +112,21 @@ division_template = {
 		mechanized = { x = 0 y = 0 }
 	   	mechanized = { x = 0 y = 1 }
 		mechanized = { x = 0 y = 2 }
+		mechanized = { x = 0 y = 3 }
 		mechanized = { x = 1 y = 0 }
 		mechanized = { x = 1 y = 1 }
 		mechanized = { x = 1 y = 2 }
+	    mechanized = { x = 1 y = 3 }
 		mechanized = { x = 2 y = 0 }
-	    mechanized = { x = 2 y = 1 }
+		mechanized = { x = 2 y = 1 }
 		mechanized = { x = 2 y = 2 }
-		mechanized = { x = 3 y = 0 }
-		mechanized = { x = 3 y = 1 }
-		mechanized = { x = 3 y = 2 }
-		motorized_rocket_brigade = { x = 4 y = 0 }
-		motorized_rocket_brigade = { x = 4 y = 1 }
+		mechanized = { x = 2 y = 3 }
+		motorized_rocket_brigade = { x = 3 y = 0 }
+		motorized_rocket_brigade = { x = 3 y = 1 }
+		motorized_rocket_brigade = { x = 3 y = 2 }
+		motorized_rocket_brigade = { x = 3 y = 3 }
+		medium_tank_destroyer_brigade = { x = 4 y = 0 }
+		medium_tank_brigade = { x = 4 y = 1 }
 	}
 	support = {
         recon = { x = 0 y = 0 }
@@ -982,7 +986,7 @@ units = {
 			
 	division= {	
 		division_name = { is_name_ordered = no	name_order = 0 }
-				location = 91212
+				location = 9212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -992,7 +996,7 @@ units = {
 
 	division= {	
 		division_name = { is_name_ordered = no	name_order = 0 }
-				location = 91212
+				location = 9212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -1995,6 +1999,72 @@ units = {
 
 
 
+	division= {	
+		division_name = { is_name_ordered = no	name_order = 0 }
+				location = 6122
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { heavy_tank_chassis_1 = { owner = SOV version_name = "KV-1" } }
+				force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1943" } }
+				force_equipment_variants = { light_tank_chassis_1 = { owner = "SOV" creator = "SOV" version_name = "BT-5" } }
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 1
+	}
+
+
+	
+	division= {	
+		division_name = { is_name_ordered = no	name_order = 0 }
+				location = 9197
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { heavy_tank_chassis_1 = { owner = SOV version_name = "KV-1" } }
+				force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1943" } }
+				force_equipment_variants = { light_tank_chassis_1 = { owner = "SOV" creator = "SOV" version_name = "BT-5" } }
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 1
+	}
+
+
+	
+	division= {	
+		division_name = { is_name_ordered = no	name_order = 0 }
+				location = 3151
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { heavy_tank_chassis_1 = { owner = SOV version_name = "KV-1" } }
+				force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1943" } }
+				force_equipment_variants = { light_tank_chassis_1 = { owner = "SOV" creator = "SOV" version_name = "BT-5" } }
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 1
+	}
+
+	
+	division= {	
+		division_name = { is_name_ordered = no	name_order = 0 }
+				location = 6035
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { heavy_tank_chassis_1 = { owner = SOV version_name = "KV-1" } }
+				force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1943" } }
+				force_equipment_variants = { light_tank_chassis_1 = { owner = "SOV" creator = "SOV" version_name = "BT-5" } }
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 1
+	}
+
+
 
 
 
@@ -2384,7 +2454,32 @@ units = {
 
 
 
+	division= {	
+		division_name = { is_name_ordered = no	name_order = 0 }
+				location = 12530
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
 
+	division= {	
+		division_name = { is_name_ordered = no	name_order = 0 }
+				location = 1684
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+		division_name = { is_name_ordered = no	name_order = 0 }
+				location = 7844
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
 
 
 
@@ -2546,7 +2641,7 @@ units = {
 			
 	division= {	
 		division_name = { is_name_ordered = no	name_order = 0 }
-				location = 91212
+				location = 9212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -2556,7 +2651,7 @@ units = {
 
 	division= {	
 		division_name = { is_name_ordered = no	name_order = 0 }
-				location = 91212
+				location = 9212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -3542,7 +3637,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = heavy_tank_chassis_2
+			type = heavy_tank_chassis_3
 			creator = "SOV"
 			version_name = "IS-2" 
 		}

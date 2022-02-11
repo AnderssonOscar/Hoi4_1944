@@ -1586,6 +1586,8 @@ create_equipment_variant = {
 
 1943.12.30 = {
 
+
+		add_named_threat = { threat = 100 name = 1939_bookmark_threat }
 		set_oob = "GER_1944_nsb"
 
 		set_convoys = 50
@@ -1593,7 +1595,7 @@ create_equipment_variant = {
 		set_war_support = 0.9
 
 		add_ideas = {
-			low_war_casualties
+			medium_war_casualties
 		}
 
 		annex_country = { target = NOR transfer_troops = no }

@@ -63,18 +63,31 @@ USA_dont_forget_about_italy = {
 	enable = {
 		tag = USA
 		date > 1943.12.30
+		has_war_with = ITA
 	}
 
 	ai_strategy = {
 		type = front_unit_request
+		country_trigger = {tag = ITA}
 		tag = ITA
-		value = 85
+		value = 110
 	}
 
 	ai_strategy = {
 		type = area_priority
 		id = europe
 		value = 70
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = ITA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
 	}
 
 }
@@ -170,7 +183,7 @@ USA_unit_buffer_for_europe = {
 			167
 		}
 
-		ratio = 0.1
+		ratio = 0.01  #1944 was 0.10
 		area = europe
 
 		subtract_invasions_from_need = no
@@ -253,7 +266,7 @@ USA_unit_buffer_for_africa = {
 			447
 		}
 
-		ratio = 0.2
+		ratio = 0.01 # 1944 was 0.2
 
 		area = africa
 

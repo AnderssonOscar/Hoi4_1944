@@ -5,6 +5,8 @@ state={
 	manpower = 4461400
 	resources={
 	#	oil=44 # was: 70
+		
+		oil=28 # 1944
 
 	}
 
@@ -31,11 +33,6 @@ state={
 		add_core_of = ROM
 
 
-		1943.12.1 = {
-				resources={
-					oil=28 # 1944
-				}
-		}
 	}
 
 	provinces={

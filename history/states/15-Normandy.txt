@@ -44,6 +44,21 @@ state={
 		1943.12.1 = {
 			owner = GER
 			controller = GER
+
+			buildings = {
+
+			6449 = {
+				naval_base = 6
+			}
+			9434 = {
+				naval_base = 7
+			}
+
+			485= {
+				naval_base = 4
+			}
+
+			}
 		}
 	}
 

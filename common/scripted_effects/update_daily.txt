@@ -12,8 +12,8 @@ MOD_daily_update = {
 		#Add names stuff to be updated every day here
 		#Declare them in seperate file under scriped_effects
 
-		MOD_SOV_offensives = yes
-		MOD_FIN_SURRENDER = yes
+		#MOD_SOV_offensives = yes
+		#MOD_FIN_SURRENDER = yes
 
 	}
 }

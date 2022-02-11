@@ -562,7 +562,7 @@ instant_effect = {
 		}
 		name = "HMS King George V"
 		requested_factories = 1
-		progress = 0.4
+		progress = 1
 		amount = 1
 	}
 	add_equipment_production = {
@@ -573,7 +573,7 @@ instant_effect = {
 		}
 		name = "HMS Prince of Wales"
 		requested_factories = 1
-		progress = 0.25
+		progress = 1
 		amount = 1
 	}
 	# CV: Illustrious-class (x2) ("HMS Illustrious" "HMS Formidable")
@@ -585,7 +585,7 @@ instant_effect = {
 		}
 		name = "HMS Illustrious"
 		requested_factories = 1
-		progress = 0.3
+		progress = 1
 		amount = 1
 	}
 	add_equipment_production = {
@@ -596,7 +596,7 @@ instant_effect = {
 		}
 		name = "HMS Formidable"
 		requested_factories = 1
-		progress = 0.15
+		progress = 1
 		amount = 1
 	}
 	# CL: Dido-class variant (x6) ("HMS Bonaventure" "HMS Dido" "HMS Euryalus" "HMS Hermoine" "HMS Naiad" "HMS Phoebe")
@@ -607,33 +607,44 @@ instant_effect = {
 			creator = "ENG"
 			version_name = "Dido Class"
 		}
-		name = "HMS Bonaventure"
-		requested_factories = 1
-		progress = 0.6
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_2
-			creator = "ENG"
-			version_name = "Dido Class"
-		}
-		name = "HMS Dido"
-		requested_factories = 1
-		progress = 0.20
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_2
-			creator = "ENG"
-			version_name = "Dido Class"
-		}
 		name = "HMS Euryalus"
 		requested_factories = 1
-		progress = 0.25
+		progress = 0.85
 		amount = 1
 	}
+
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+
 	add_equipment_production = {
 		equipment = {
 			type = ship_hull_cruiser_2
@@ -642,7 +653,7 @@ instant_effect = {
 		}
 		name = "HMS Hermoine"
 		requested_factories = 1
-		progress = 0.30
+		progress = 0.90
 		amount = 1
 	}
 	add_equipment_production = {
@@ -664,7 +675,7 @@ instant_effect = {
 		}
 		name = "HMS Phoebe"
 		requested_factories = 1
-		progress = 0.40
+		progress = 0.90
 		amount = 1
 	}
 	# CL: Crown Colony-class (x4) ("HMS Fiji" "HMS Kenya" "HMS Nigeria" "HMS Mauritius")
@@ -676,7 +687,7 @@ instant_effect = {
 		}
 		name = "HMS Fiji"
 		requested_factories = 1
-		progress = 0.40
+		progress = 0.90
 		amount = 1
 	}
 	add_equipment_production = {
@@ -687,7 +698,7 @@ instant_effect = {
 		}
 		name = "HMS Kenya"
 		requested_factories = 1
-		progress = 0.10
+		progress = 0.96
 		amount = 1
 	}
 	add_equipment_production = {
@@ -698,7 +709,7 @@ instant_effect = {
 		}
 		name = "HMS Nigeria"
 		requested_factories = 1
-		progress = 0.20
+		progress = 0.90
 		amount = 1
 	}
 	add_equipment_production = {
@@ -709,88 +720,10 @@ instant_effect = {
 		}
 		name = "HMS Mauritius"
 		requested_factories = 1
-		progress = 0.20
+		progress = 0.90
 		amount = 1
 	}
-	# DD: G/H/I class (x2) ("HMS Havant" "HMS Hesperus")
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_light_2
-			creator = "ENG"
-			version_name = "E/F/G/H Class"
-		}
-		name = "HMS Havant"
-		requested_factories = 1
-		progress = 0.65
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_light_2
-			creator = "ENG"
-			version_name = "E/F/G/H Class"
-		}
-		name = "HMS Hesperus"
-		requested_factories = 1
-		progress = 0.40
-		amount = 1
-	}
-	# SS: T-class (x5) ("HMS Thetis" "HMS Tribune" "HMS Taku" "HMS Tarpon" "HMS Tigris")
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_submarine_2
-			creator = "ENG"
-			version_name = "T Class"
-		}
-		name = "HMS Thetis"
-		requested_factories = 1
-		progress = 0.4
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_submarine_2
-			creator = "ENG"
-			version_name = "T Class"
-		}
-		name = "HMS Tribune"
-		requested_factories = 1
-		progress = 0.4
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_submarine_2
-			creator = "ENG"
-			version_name = "T Class"
-		}
-		name = "HMS Taku"
-		requested_factories = 1
-		progress = 0.3
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_submarine_2
-			creator = "ENG"
-			version_name = "T Class"
-		}
-		name = "HMS Tarpon"
-		requested_factories = 1
-		progress = 0.3
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_submarine_2
-			creator = "ENG"
-			version_name = "T Class"
-		}
-		name = "HMS Tigris"
-		requested_factories = 1
-		progress = 0.2
-		amount = 1
-	}
+
 	# DD: J/K/N class (x8) ("HMS Jaguar" "HMS Kandahar" "HMS Kashmir" "HMS Kelvin" "HMS Khartoum" "HMS Kimberley" "HMS Kingston" "HMS Kipling")
 	add_equipment_production = {
 		equipment = {
@@ -801,7 +734,7 @@ instant_effect = {
 		name = "HMS Jaguar"
 		requested_factories = 1
 		progress = 0.95
-		amount = 2
+		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
@@ -811,8 +744,8 @@ instant_effect = {
 		}
 		name = "HMS Kandahar"
 		requested_factories = 1
-		progress = 0.85
-		amount = 2
+		progress = 0.895
+		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
@@ -822,8 +755,8 @@ instant_effect = {
 		}
 		name = "HMS Kashmir"
 		requested_factories = 1
-		progress = 0.85
-		amount = 2
+		progress = 0.97
+		amount = 1
 	}
 	add_equipment_production = {
 		equipment = {
@@ -834,6 +767,6 @@ instant_effect = {
 		name = "HMS Kingston"
 		requested_factories = 1
 		progress = 0.95
-		amount = 2
+		amount = 1
 	}
 }

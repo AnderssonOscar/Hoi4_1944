@@ -190,7 +190,7 @@ units = {
 			is_name_ordered = no
 			name_order = 0
 		} #  "8a Divisione Motorizzata 'Po'" 
-		location = 9826 
+		location = 923 
 		division_template = "Divisione di Fanteria"	
 		start_experience_factor = 0.5 
 		start_equipment_factor = 0.6 
@@ -206,7 +206,7 @@ units = {
 			is_name_ordered = no
 			name_order = 0
 		} #  "8a Divisione Motorizzata 'Po'" 
-		location = 9826 
+		location = 923 
 		division_template = "Divisione di Fanteria"	
 		start_experience_factor = 0.1 
 		start_equipment_factor = 0.4 
@@ -218,7 +218,7 @@ units = {
 			is_name_ordered = no
 			name_order = 0
 		} #  "8a Divisione Motorizzata 'Po'" 
-		location = 9826 
+		location = 923 
 		division_template = "Divisione di Fanteria"	
 		start_experience_factor = 0.1 
 		start_equipment_factor = 0.6 

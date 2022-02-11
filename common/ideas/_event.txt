@@ -348,8 +348,8 @@ ideas = {
 			picture = tur_disorganised_armed_forces
 			
 			modifier = {
-				stability_factor = -0.05
-				conscription = -0.06
+				#stability_factor = -0.05
+				conscription = -0.05
 			}
 		}
 
@@ -363,7 +363,7 @@ ideas = {
 			picture = tur_disorganised_armed_forces
 			
 			modifier = {
-				stability_factor = -0.05
+				#stability_factor = -0.05
 				conscription = -0.11
 			}
 		}

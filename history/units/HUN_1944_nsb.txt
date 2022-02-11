@@ -156,11 +156,7 @@ air_wings = {
 	43 = {
 		fighter_equipment_2 =  {
 			owner = "HUN"
-			amount = 50
-		}
-		early_tac_bomber_equipment_1 = {
-			owner = "HUN"
-			amount = 50
+			amount = 125
 		}
 	}
 }
@@ -169,10 +165,10 @@ air_wings = {
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_1
+			type = infantry_equipment_2
 			creator = "HUN"
 		}
-		requested_factories = 5
+		requested_factories = 8
 		progress = 0.82
 		efficiency = 100
 	}
@@ -181,10 +177,21 @@ instant_effect = {
 			type = support_equipment_1
 			creator = "HUN"
 		}
-		requested_factories = 3
+		requested_factories = 4
 		progress = 0.75
 		efficiency = 100
 	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_2
+			creator = "HUN"
+		}
+		requested_factories = 8
+		progress = 0.82
+		efficiency = 100
+	}
+
 	add_equipment_production = {
 		equipment = {
 			type = motorized_equipment_1

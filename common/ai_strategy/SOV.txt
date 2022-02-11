@@ -73,7 +73,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 5
+		value = 15 #1944 was 5
 	}
 
 	ai_strategy = {
@@ -98,7 +98,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = unit_ratio
 		id = tactical_bomber
-		value = 5
+		value = -50 #1944 was 5 
 	}
 
 	ai_strategy = {
@@ -152,7 +152,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = tactical_bomber
-		value = -20
+		value = -100 #1944 was -20
 	}
 
 	ai_strategy = {
@@ -182,7 +182,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 5
+		value = 20 #1944 was 5
 	}
 }
 
@@ -1637,14 +1637,11 @@ SOV_unit_buffer_for_asian_threat = {
 	allowed = {
 		original_tag = SOV
 	}
-	enable = {
-		OR = { #Always have a small unit buffer along the railway, just in case asian fronts get dangerous
-			has_war = no
-			AND = {
-				has_war = yes
-				surrender_progress < 0.75
-			}
-		}
+	enable = { #1944 change
+		
+			has_war = yes
+			has_war_with = JAP
+		
 	}
 
 	abort_when_not_enabled = yes
@@ -2229,7 +2226,7 @@ SOV_dont_hurt_finland_yet = {
 			tag = FIN
 		}
 		tag = FIN
-		value = -50
+		value = -75
 	}
 
 
@@ -2274,50 +2271,40 @@ SOV_take_finland = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SOV_less_garrison_and_coast_units = {
-
+SOV_stop_stupid_garrison = {
 	allowed = {
 		tag = SOV
 	}
 
 	enable = {
-		tag = SOV
-		date > 1944.1.1
+		#is_historical_focus_on = yes
+		date > 1941.1.1
 		has_war_with = GER
-		NOT = {has_war_with = JAP}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = area_priority
-		id = europe
-		value = 100
 	}
 
 	ai_strategy = {
-  		type = garrison
-   		value = -100
-   	}
+		type = garrison
+		value = -100
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -18,11 +18,11 @@ GER_hand_out_panzerfausts_tooltip:0 ""
 
 GER_form_volksgrenadier:0 "Form the volksgrenadier"
 GER_form_volksgrenadier_desc:0 "Form the volksgrenadier"
-GER_form_volksgrenadier_tooltip:0 "Receive 10 volksgrenadier divisions of varying quality."
+GER_form_volksgrenadier_tooltip:0 "Receive 18 volksgrenadier divisions of varying quality."
 
 GER_form_volksturm:0 "Form the volksturm"
 GER_form_volksturm_desc:0 "Form the volksturm"
-GER_form_volksturm_tooltip:0 "Receive 16 Volksturm divisions of varying quality."
+GER_form_volksturm_tooltip:0 "Receive 32 Volksturm divisions of varying quality."
 
 GER_simplify_production:0 "Simplify arms production"
 GER_simplify_production_desc:0 "We can increase our production by lowering our standards."
@@ -55,3 +55,6 @@ GER_endsieg_tooltip:0 ""
 
 GER_festung_supply:0 "Festung rationing"
 GER_endsieg_attack:0 "Endsieg is here"
+
+
+SOV_launch_major_offensive_ger:0 "Launch Major Offensive"

@@ -72,7 +72,10 @@ abort_when_not_enabled = yes
 		value = 75
 	}
 
-
+	#ai_strategy = {
+	#	type = naval_invasion_focus
+	#	value = 10
+	#}
 
 
 
@@ -191,16 +194,58 @@ allies_landed_in_france = {
 	ai_strategy = {
 		type = area_priority
 		id = europe
-		value = 75
+		value = 100
 	}
 
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = GER }
-		value = 75
+		value = 155
 	}
 }
 
+
+
+Allies_garrison_invasion = {
+	allowed = { 
+		OR = {
+			original_tag = USA
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = CAN
+			}
+		 }
+	
+	enable = {
+		date > 1944.6.1
+		has_war_with = GER
+
+		NOT = {
+			AND = {
+				15 = {is_fully_controlled_by = GER}
+				14 = {is_fully_controlled_by = GER}
+				6 =  {is_fully_controlled_by = GER}
+				29 = {is_fully_controlled_by = GER}
+				7 = {is_fully_controlled_by = GER}
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.18
+		states = { 
+			15
+			14
+			29
+			6
+			7
+		}
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
 
 
 allies_dont_invade_GER_before_dday = {

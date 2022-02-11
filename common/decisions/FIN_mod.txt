@@ -1,0 +1,61 @@
+
+
+
+
+
+war_measures = {
+
+	FIN_surrender_soviet = {
+
+		icon = generic_prepare_civil_war
+
+			allowed = {
+			
+				tag = FIN	
+			}
+
+		available = {
+			has_war_with = SOV
+			surrender_progress > 0.15
+			date > 1944.8.1
+		}
+
+		visible = {
+			has_war_with = SOV
+			surrender_progress > 0.15
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				surrender_progress > 0.15
+				factor = 10
+			}
+		}
+
+		complete_effect = {
+
+			every_country = {
+				limit = { has_war_with = FIN }
+				white_peace = FIN 
+			}
+		
+			remove_state_claim = 722
+
+			SOV = { transfer_state = 146 }
+			SOV = { transfer_state = 216 }
+			SOV = { transfer_state = 147 }
+
+			GER = { remove_from_faction = FIN }
+			#ENG = { add_to_faction = FIN }
+
+			FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
+			FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
+		}
+	}
+}
+
+

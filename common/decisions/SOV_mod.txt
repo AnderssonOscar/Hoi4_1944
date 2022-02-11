@@ -1,0 +1,62 @@
+
+
+
+
+
+SOV_great_patriotic_war = {
+
+	SOV_launch_major_offensive_ger = {
+		icon = generic_prepare_civil_war
+
+			allowed = {
+				tag = SOV	
+			}
+
+		available = {
+			has_war_with = GER
+			surrender_progress < 0.2
+			date > 1944.3.1
+			date < 1945.6.1
+		}
+
+		visible = {
+			has_war_with = GER
+			surrender_progress < 0.2
+			date > 1944.3.1
+			date < 1945.6.1
+		}
+
+		 fire_only_once = no
+
+		 days_re_enable = 90
+		 days_remove = 18
+
+		#cost = 10
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_manpower > 250000
+				surrender_progress < 0.2
+				factor = 30
+			}
+		}
+
+		complete_effect = {
+
+			add_timed_idea = {
+				idea = major_offensive
+				days = 18
+			}
+		}
+
+			remove_effect = {
+				add_timed_idea = {
+				idea = offensive_exhaustion
+				days = 20
+			}
+		}
+	}
+}
+
+
