@@ -126,7 +126,7 @@ division_template = {
 		motorized_rocket_brigade = { x = 3 y = 2 }
 		motorized_rocket_brigade = { x = 3 y = 3 }
 		medium_tank_destroyer_brigade = { x = 4 y = 0 }
-		medium_tank_brigade = { x = 4 y = 1 }
+		medium_armor = { x = 4 y = 1 }
 	}
 	support = {
         recon = { x = 0 y = 0 }

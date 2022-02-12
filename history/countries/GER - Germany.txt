@@ -168,7 +168,8 @@ set_war_support = 0.3
 		GER_autarky_idea
 
 		#laws
-		tot_economic_mobilisation
+		#tot_economic_mobilisation
+		war_economy
 		service_by_requirement
 	}
 	
@@ -545,7 +546,8 @@ add_ideas = {
 		general_staff
 		limited_exports
 		service_by_requirement
-		tot_economic_mobilisation
+	#	tot_economic_mobilisation
+		war_economy
 }
 add_ideas = GER_mefo_bills_1
 

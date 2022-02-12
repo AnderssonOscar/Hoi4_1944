@@ -16,7 +16,7 @@ state={
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
-			air_base = 10
+			#air_base = 1 1944
 			dockyard = 1
 			10074 = {
 				naval_base = 2
@@ -33,7 +33,7 @@ state={
 		}
 		add_core_of = ITA
 
-				1943.12.1 = {
+		1943.12.1 = {
 			owner = USA
 			controller = USA
 		}

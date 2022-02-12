@@ -16,7 +16,7 @@ state=
 			infrastructure = 3
 			arms_factory = 0
 			industrial_complex = 1
-			air_base = 5
+			#air_base = 1 #1944
 			11773 = {
 				naval_base = 3
 			}

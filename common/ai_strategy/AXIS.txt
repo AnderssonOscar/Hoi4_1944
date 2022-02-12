@@ -36,3 +36,44 @@ scandy_is_not_for_you = {
 		value = -200
 	}
 }
+
+
+
+
+
+Axis_dont_forget_about_italy = {
+
+	allowed = {
+		OR = {
+			original_tag = ITA
+			original_tag = GER
+		}
+	}
+
+	enable = {
+		OR = {
+			original_tag = ITA
+			original_tag = GER
+		}
+
+		date > 1943.12.30
+		has_war_with = USA
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = USA}
+		tag = USA
+		value = 65
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = USA
+		}
+		ordertype = front
+		execute_order = no
+		execution_type = careful
+	}
+}
