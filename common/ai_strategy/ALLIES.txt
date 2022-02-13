@@ -15,6 +15,7 @@ allies_enable_invasion_of_GER = {
 	enable = {
 		
 		date > 1944.3.20
+		has_war_with = GER
 
 		#set_temp_variable = { days = global.num_days }
 		#modulo_temp_variable = { days = 90 }
@@ -124,6 +125,15 @@ allies_unit_buffer_defend_UK = {
 
 			is_in_faction_with = ENG
 			has_war_with = GER
+		
+			AND = {
+				16 = {is_fully_controlled_by = GER}
+				15 = {is_fully_controlled_by = GER}
+				29 = {is_fully_controlled_by = GER}
+				6 =  {is_fully_controlled_by = GER}
+				14 = {is_fully_controlled_by = GER}
+				34 = {is_fully_controlled_by = GER}
+			}
 		}
 
 
@@ -141,7 +151,7 @@ allies_unit_buffer_defend_UK = {
 			123
 			122
 		}
-		ratio = 0.08
+		ratio = 0.1
 
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = no
@@ -257,6 +267,11 @@ allies_dont_invade_GER_before_dday = {
 				tag = CAN
 				tag = FRA
 				tag = RAJ
+				tag = NZL
+				tag = AST
+				tag = BRA
+				tag = SAF
+				tag = MEX
 			}
 	}
 
@@ -302,6 +317,9 @@ allies_dont_invade_axis_allies = {
 				tag = RAJ
 				tag = NZL
 				tag = AST
+				tag = BRA
+				tag = SAF
+				tag = MEX
 				}
 	}
 

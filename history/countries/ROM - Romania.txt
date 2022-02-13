@@ -436,6 +436,11 @@ if = {
 	set_war_support = 0.9
 	add_manpower = 500
 
+	
+	remove_ideas = {
+		ROM_king_carol_ii_hedonist
+		#ROM_king_carol_ii_paid_with_pp
+	}
 
 	add_ideas = {
 		#laws
@@ -459,7 +464,19 @@ if = {
 		elections_allowed = no
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		unlock_national_focus = ROM_force_abdication
+		complete_national_focus = ROM_the_royal_foundation
+		complete_national_focus = ROM_fortify_the_borders
+		complete_national_focus = ROM_invest_in_the_iar
 
+		complete_national_focus = ROM_reserve_divisions
+		complete_national_focus = ROM_acquire_modern_tanks
+		complete_national_focus = ROM_mobile_tank_destroyers
+	}
 
 	set_technology = {
 

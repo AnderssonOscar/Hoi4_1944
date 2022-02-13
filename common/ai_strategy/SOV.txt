@@ -2260,7 +2260,7 @@ SOV_dont_hurt_finland_yet = {
 			tag = FIN
 		}
 		tag = FIN
-		value = 15
+		value = -25
 	}
 
 
@@ -2294,7 +2294,7 @@ SOV_take_finland = {
 
 		ordertype = front
 		execute_order = yes
-		execution_type = balanced
+		execution_type = rush
 	}
 	ai_strategy = {
 		type = front_unit_request
@@ -2432,18 +2432,6 @@ SOV_unit_production = {
 
 
 	#Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 70
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 15
-	}
-
 	ai_strategy = {
 		type = unit_ratio
 		id = tactical_bomber

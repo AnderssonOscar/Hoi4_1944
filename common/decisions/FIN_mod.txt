@@ -15,29 +15,48 @@ war_measures = {
 			}
 
 		available = {
+			is_faction_leader = no
+			has_capitulated = no
 			has_war_with = SOV
-			surrender_progress > 0.15
-			date > 1944.8.1
+			surrender_progress > 0.12
+			date > 1944.7.25
+
+			any_country = {
+				is_faction_leader = yes
+				has_war_with = FIN
+				OR = {
+					has_government = communism
+					original_tag = SOV
+				}
+			}
 		}
 
 		visible = {
 			has_war_with = SOV
-			surrender_progress > 0.15
+			surrender_progress > 0.12
 		}
 
 		fire_only_once = yes
 
 		cost = 0
+		days_remove = 6
+
 		ai_will_do = {
 			factor = 10
 			modifier = {
-				surrender_progress > 0.15
+				surrender_progress > 0.12
 				factor = 10
 			}
 		}
 
-		complete_effect = {
 
+
+		complete_effect = {
+				GER = { country_event = finland.switch.side.1 }
+		}
+
+
+		remove_effect = {
 			every_country = {
 				limit = { has_war_with = FIN }
 				white_peace = FIN 
@@ -52,6 +71,8 @@ war_measures = {
 			GER = { remove_from_faction = FIN }
 			ENG = { add_to_faction = FIN }
 
+			FIN = {give_military_access = SOV}
+
 			FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
 			FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
 
@@ -63,6 +84,68 @@ war_measures = {
 		}
 		}
 	}
+
+
+
+
+
+
+
+
+	FIN_hold_line = { #hold the line at start of the game
+
+		icon = generic_prepare_civil_war
+
+			allowed = {
+				tag = FIN	
+			}
+
+		available = {
+			has_war_with = SOV
+			date > 1943.12.30
+			date < 1944.1.10
+			is_ai = yes
+		}
+
+		visible = {
+			is_ai = yes
+			has_war_with = SOV
+		}
+
+		fire_only_once = yes
+		days_remove = 60
+		cost = 0
+
+		ai_will_do = {
+			factor = 1000
+			modifier = {
+				factor = 10
+			}
+		}
+
+
+		modifier = {
+			army_defence_factor = +10.0
+			dig_in_speed_factor = +5.0
+			army_speed_factor = +0.5
+		}
+			
+		complete_effect = {
+
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
 }
 
 

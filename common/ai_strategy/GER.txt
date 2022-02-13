@@ -2507,39 +2507,6 @@ GER_dont_stack_SWE_border = {
 
 
 
-SOV_dont_hurt_finland_yet = {
-	allowed = {
-			tag = SOV
-	}
-
-	enable = {
-		is_historical_focus_on = yes
-		date < 1944.6.15
-
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-	country_trigger = {
-			tag = FIN
-		}
-		tag = FIN
-		value = -75
-	}
-
-
-	ai_strategy = {
-		type = front_control
-		country_trigger = {
-			tag = FIN
-		}
-
-		ordertype = front
-		execute_order = yes
-		execution_type = careful
-	}
-}
-
 
 
 GER_dont_rush_sov = { # mainly here to stop germany from helping finland to much
@@ -2562,5 +2529,54 @@ GER_dont_rush_sov = { # mainly here to stop germany from helping finland to much
 		ordertype = front
 		execute_order = yes
 		execution_type = careful
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GER_unit_production = {
+
+	allowed = {	original_tag = GER }
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+
+	#Air unit factors
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = tac_bomber_equipment
+		value = -250
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = strat_bomber_equipment
+		value = -250
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_fighter_equipment
+		value = -250
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = scout_plane_equipment
+		value = -250
 	}
 }

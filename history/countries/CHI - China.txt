@@ -421,7 +421,7 @@ if = {
 		#1944
 		complete_national_focus = CHI_60_divisions_plan
 		complete_national_focus = CHI_invite_foreign_investors
-		complete_national_focus = CHI_finacial_policy
+		complete_national_focus = CHI_financial_policy
 		complete_national_focus = CHI_price_controls
 		complete_national_focus = CHI_expand_the_academica_sinica
 	}

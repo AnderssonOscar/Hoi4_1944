@@ -123,7 +123,7 @@ operations = {
 					#naval_invasion_penalty = -0.25
 					#supply_consumption_factor = -0.25
 					#dig_in_speed_factor = +0.25
-					army_speed_factor = 0.5
+					army_speed_factor = +0.5
 			}
 
 			days_remove = 10
@@ -224,7 +224,7 @@ war_measures = {
 			}
 		}
 		modifier = {
-			defence = 2
+			army_defence_factor = 1.5
 			dig_in_speed_factor = 2.5
 		}
 

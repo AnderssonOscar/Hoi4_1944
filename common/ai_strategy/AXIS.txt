@@ -94,6 +94,8 @@ axis_dont_invade_when_defensive = {
 		date > 1944.1.1
 		date < 1946.1.1
 		has_war_with = USA
+		has_war_with = SOV
+		has_war_with = ENG
 	}
 
 	abort_when_not_enabled = yes
@@ -119,6 +121,30 @@ axis_dont_invade_when_defensive = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = ENG }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "FRA"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = FRA }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "SOV"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = SOV }
 		value = -500
 	}
 }

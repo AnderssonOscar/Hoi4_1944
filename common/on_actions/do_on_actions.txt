@@ -29,6 +29,25 @@ on_actions = {
 	}
 
 
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+		every_state = {
+			limit = {
+				controller = {has_war = yes}
+				NOT = {is_core_of = controller}
+				is_fully_controlled_by = controller
+			}
+			set_resistance = 27
+		}
+}
+
+
+
+
+
+
 GER = {
 	add_ideas = {
 		tot_economic_mobilisation

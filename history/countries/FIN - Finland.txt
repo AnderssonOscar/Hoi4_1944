@@ -91,7 +91,7 @@ add_ideas = {
 	complete_national_focus = construction_effort
 	complete_national_focus = production_effort
 	
-	oob = "FIN_1944"
+	oob = "FIN_1939"
 	set_technology = {
 		early_fighter = 1
 		early_bomber = 1
@@ -221,29 +221,48 @@ if = {
 
 1943.12.30 = {
 
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1941.8.1"
+		election_frequency = 36
+		elections_allowed = yes
+	}
+
 	
+	set_popularities = {
+		neutrality = 40
+		fascism = 15
+		communism = 10
+		democratic = 35
+	}
+
+	retire_character = FIN_kyosti_kallio
+
+	FIN_risto_heikki_ryti = {
+		promote_character = yes
+		promote_character = democratic
+	}
+
+	promote_character = { character = FIN_carl_mannerheim ideology = neutrality }
+
 	oob = "FIN_1944"
 
 	add_political_power = 2589
 	add_command_power = 200
 
 	set_convoys = 10
-	set_stability = 0.9 
+	set_stability = 1 
 	set_war_support = 0.9
-	add_manpower = 500
-
-	set_popularities = {
-		neutrality = 50
-		fascism = 30
-		communism = 12
-		democratic = 8
-	}
+	add_manpower = 20000
 	
 	add_ideas = {
 		#laws
 		tot_economic_mobilisation
-		service_by_requirement
+		all_adults_serve
 		limited_exports
+
+
 
 	}
 
@@ -350,12 +369,12 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment
-        amount = 1250
+        amount = 50
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 250
+        amount = 50
     }
 
 	add_equipment_to_stockpile = {

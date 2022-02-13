@@ -200,7 +200,7 @@ FIN_continuation_war_attack = {
 
 FIN_defend_fronts  = {
 	allowed = {
-		original_tag = FIN
+		tag = FIN
 	}
 
 	enable = {
@@ -214,21 +214,19 @@ FIN_defend_fronts  = {
 		type = front_unit_request
 		country_trigger = {	tag = SOV }
 			tag = SOV
-			value = 1000
+			value = 100
 	}
 
 
 	ai_strategy = {
 		type = front_control
+		country_trigger = {
+			tag = SOV
+		}
 
-		tag = SOV
-
-		ratio = 1
-
-		priority = 150
 		ordertype = front
 		execution_type = careful
-		execute_order = no
+		execute_order = yes
 	}
 
 		ai_strategy = {
@@ -236,4 +234,47 @@ FIN_defend_fronts  = {
 			value = -100
 	}
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FIN_unit_buffer_leningrad = { #so soviet dont rush in
+	allowed = {
+		original_tag = FIN
+	}
+	enable = { 
+		
+			has_war = yes
+			has_war_with = SOV
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		ratio = 0.15
+
+		states = {
+			146
+		}
+
+		area = scandinavia
+
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
 }

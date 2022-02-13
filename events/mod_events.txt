@@ -1,0 +1,35 @@
+﻿###########################
+# 1944 Events
+###########################
+
+add_namespace = romania.switch.side
+add_namespace = finland.switch.side
+
+# Romania switch side
+country_event = {
+	id = romania.switch.side.1
+	title = romania.switch.side.1.t
+	desc = romania.switch.side.1.d
+	#picture = GFX_news_event_001
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+	}
+}
+
+
+# Finland switch side
+country_event = {
+	id = finland.switch.side.1
+	title = finland.switch.side.1.t
+	desc = finland.switch.side.1.d
+	#picture = GFX_news_event_001
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+	}
+}

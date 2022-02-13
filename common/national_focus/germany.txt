@@ -9842,37 +9842,57 @@ focus_tree = {
 		completion_reward = {
 		custom_effect_tooltip = GER_festung_cities_tooltip
 
-		if = {	limit = {	GER = { controls_province = 6332 }	}
+		if = {	limit = {
+				GER = {
+					 controls_province = 11265
+					 controls_province = 395
+					 controls_province = 6521
+					 controls_province = 6332
+					  }
+				}
+
+
 		763 = { #konsigberg
 				add_building_construction = {
 						type = bunker
-						level = 3
+						level = 5
 						province = 11265
 						instant_build = yes
 					}
 
 				add_building_construction = {
 					type = bunker
-					level = 3
+					level = 5
 					province = 395
 					instant_build = yes
 				}
 
 				add_building_construction = {
 					type = bunker
-					level = 3
+					level = 5
 					province = 6521
 					instant_build = yes
 				}
 
 				add_building_construction = { # City
 					type = bunker
-					level = 9
+					level = 10
 					province = 6332
 					instant_build = yes
 				}
 			}
 		}
+
+
+
+
+			if = {	limit = {
+				GER = {
+					 controls_province = 11245
+					 controls_province = 6402
+
+					  }
+				}
 
 			5 = { #konsigberg 2
 				add_building_construction = {
@@ -9889,38 +9909,48 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+		}
 
-				if = {	limit = {	GER = { controls_province = 3544 }	}
 
-							10 = { #warsaw
-								add_building_construction = {
-										type = bunker
-										level = 6
-										province = 3544
-										instant_build = yes
-									}
+				if = {	limit = {
+					GER = { 
+							controls_province = 3544
+							controls_province = 6511
+						 }
+					}
+
+						10 = { #warsaw
+							add_building_construction = {
+									type = bunker
+									level = 7
+									province = 3544
+									instant_build = yes
+								}
 							
 
-					add_building_construction = {
+							add_building_construction = {
+								type = bunker
+								level = 4
+								province = 6511
+								instant_build = yes
+							}
+				}
+			}
+			
+
+	if = {	limit = {	GER = { controls_province = 9570 }	}
+
+			66 = { #breslau
+				add_building_construction = {
 						type = bunker
-						level = 2
-						province = 6511
+						level = 8
+						province = 9570
 						instant_build = yes
 					}
 				}
 			}
 
-			66 = { #breslau
-				add_building_construction = {
-						type = bunker
-						level = 7
-						province = 9570
-						instant_build = yes
-					}
-
-				}
-
-			if = {	limit = {	GER = { controls_province = 64 }	}
+		if = {	limit = {	GER = { controls_province = 6521 }	}
 			64 = { #berlin
 				add_building_construction = {
 						type = bunker
@@ -9930,6 +9960,44 @@ focus_tree = {
 					}
 				}
 			}
+
+
+
+		if = {	limit = {	GER = { controls_province = 3473 }	}
+			68 = { #kustrin
+				add_building_construction = {
+						type = bunker
+						level = 7
+						province = 3473
+						instant_build = yes
+					}
+				}
+			}
+
+
+		if = {	limit = {	GER = { controls_province = 6658 }	}
+			86 = { #poznan
+				add_building_construction = {
+						type = bunker
+						level = 8
+						province = 6658
+						instant_build = yes
+					}
+				}
+			}
+
+		if = {	limit = {	GER = { controls_province = 485 }	}
+			15 = { #dieppe
+				add_building_construction = {
+						type = bunker
+						level = 7
+						province = 485
+						instant_build = yes
+					}
+				}
+			}
+
+
 
 
 				if = {

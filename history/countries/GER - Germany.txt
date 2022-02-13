@@ -253,7 +253,7 @@ set_war_support = 0.3
 		complete_national_focus = GER_u_boat_effort
 
 		unlock_national_focus = GER_army_innovation_2
-		unlock_national_focus = GER_reintegrate_luxemburg_and_alsace_lorraine
+		complete_national_focus = GER_reintegrate_luxemburg_and_alsace_lorraine
 		unlock_national_focus = GER_naval_effort2
 		unlock_national_focus = GER_trade_interdiction
 

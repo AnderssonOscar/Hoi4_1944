@@ -58,3 +58,20 @@ GER_endsieg_attack:0 "Endsieg is here"
 
 
 SOV_launch_major_offensive_ger:0 "Launch Major Offensive"
+
+
+
+
+
+
+
+
+romania.switch.side.1:0 "Romania is negotiating"
+romania.switch.side.1.t:0 "Romania is negotiating with the soviets."
+romania.switch.side.1.d:0 "We have received information that the romanians are preparing to betray us."
+
+
+
+finland.switch.side.1:0 "finland is negotiating"
+finland.switch.side.1.t:0 "finland is negotiating with the soviets."
+romafinlandnia.switch.side.1.d:0 "We have received information that the finland are preparing to betray us."

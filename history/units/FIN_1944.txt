@@ -432,7 +432,7 @@ units = {
 			is_name_ordered = no
 			name_order = 0
 		}
-		location = 30084
+		location = 3084
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.88
