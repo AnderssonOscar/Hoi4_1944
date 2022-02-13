@@ -6,7 +6,7 @@ state={
 	resources={
 	#	oil=44 # was: 70
 		
-		oil=21 # 1944
+		oil=18 # 1944
 
 	}
 
@@ -32,6 +32,12 @@ state={
 		}
 		add_core_of = ROM
 
+		1943.12.30 = {
+			buildings = {
+				radar_station = 2
+				anti_air_building = 5
+			}
+		}
 
 	}
 

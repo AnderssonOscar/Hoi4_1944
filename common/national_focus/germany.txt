@@ -9825,10 +9825,14 @@ focus_tree = {
 			factor = 15
 			NOT = {	
 				OR = {
-					has_full_control_of_state = 94
-					has_full_control_of_state = 89
-					has_full_control_of_state = 809
-					has_full_control_of_state = 51
+					GER = {
+						OR = {
+							has_full_control_of_state = 94
+							has_full_control_of_state = 89
+							has_full_control_of_state = 809
+							has_full_control_of_state = 51
+						}
+					}
 				}
 			}
 		}

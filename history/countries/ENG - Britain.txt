@@ -694,7 +694,7 @@ set_popularities = {
 	add_to_faction = BRA
 	add_to_faction = GRE
 	add_to_faction = YUG
-
+	add_to_faction = LIB
 
 
 # Order matters - here Chamberlain becomes starting leader

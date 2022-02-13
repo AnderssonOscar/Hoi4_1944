@@ -95,6 +95,13 @@ war_measures = {
 			}
 
 
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+					GER = { remove_resource_rights = 46 } 
+			}
+
 			GER = { remove_from_faction = ROM }
 			SOV = { add_to_faction = ROM }
 

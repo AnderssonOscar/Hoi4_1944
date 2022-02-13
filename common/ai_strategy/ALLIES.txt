@@ -21,11 +21,12 @@ allies_enable_invasion_of_GER = {
 		#modulo_temp_variable = { days = 90 }
 		#check_variable = { days < 60 }
 		
-		16 = {is_fully_controlled_by = GER}
+		14 = {is_fully_controlled_by = GER}
 		15 = {is_fully_controlled_by = GER} 
 		29 = {is_fully_controlled_by = GER}
 		6 =  {is_fully_controlled_by = GER}
 		14 = {is_fully_controlled_by = GER}
+		16 = {is_fully_controlled_by = GER}
 		
 	}
 
@@ -45,7 +46,7 @@ abort_when_not_enabled = yes
 	ai_strategy = {
 		type = invade
 		id = "GER"
-		value = 100
+		value = 500
 	}
 
 #	ai_strategy = {
@@ -166,11 +167,16 @@ allies_landed_in_france = {
 
 	allowed = { 
 		OR = {
-			tag = USA
-			tag = ENG
-			tag = CAN
-			tag = FRA
-			tag = RAJ
+				tag = USA
+				tag = ENG
+				tag = CAN
+				tag = FRA
+				tag = RAJ
+				tag = NZL
+				tag = AST
+				tag = BRA
+				tag = SAF
+				tag = MEX
 		}
 	}
 
@@ -178,14 +184,14 @@ allies_landed_in_france = {
 			has_war_with = GER
 
 		NOT = {
-			AND = {
+			
 				16 = {is_fully_controlled_by = GER}
 				15 = {is_fully_controlled_by = GER}
 				29 = {is_fully_controlled_by = GER}
 				6 =  {is_fully_controlled_by = GER}
 				14 = {is_fully_controlled_by = GER}
 				34 = {is_fully_controlled_by = GER}
-			}
+			
 		}
 	}
 
@@ -277,7 +283,7 @@ allies_dont_invade_GER_before_dday = {
 
 	enable = {
 		date < 1944.4.1
-		#has_war_with = GER
+		has_war_with = GER
 	}
 
 	abort_when_not_enabled = yes
@@ -299,6 +305,48 @@ allies_dont_invade_GER_before_dday = {
 		country_trigger = { tag = GER }
 		value = -500
 
+	}
+}
+
+
+
+
+
+
+
+
+
+minor_allies_dont_invade_GER = {
+	allowed = { 
+		OR = {
+				tag = CAN
+				tag = FRA
+				tag = RAJ
+				tag = NZL
+				tag = AST
+				tag = BRA
+				tag = SAF
+				tag = MEX
+			}
+	}
+
+	enable = {
+		date > 1943.12.30
+		has_war_with = GER
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GER"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GER }
+		value = -500
 	}
 }
 

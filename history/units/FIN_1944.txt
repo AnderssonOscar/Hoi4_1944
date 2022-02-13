@@ -105,14 +105,14 @@ units = {
 		location = 9228
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		start_equipment_factor = 1
 	}
 	division = {
 		name = "Osasto Aland"
 		location = 197
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.85
 	}
 
 	division = {
@@ -120,7 +120,7 @@ units = {
 		location = 11085
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.85
 	}
 	
 	division = {
@@ -128,7 +128,7 @@ units = {
 		location = 6183
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.96
 	}
 
 	division = {
@@ -136,7 +136,23 @@ units = {
 		location = 9140
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.88
+	}
+
+	division = {
+		name = "Osasto Aland"
+		location = 6183
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+
+	division = {
+		name = "Osasto Aland"
+		location = 9140
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.87
 	}
 	division = {
 		name = "Osasto Turku"
@@ -150,14 +166,14 @@ units = {
 		location = 9194
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.19
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.89
 	}
 	division = {
 		name = "Osasto Vaasa"
 		location = 3122
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.95
 	}
 	division = {
 		name = "Osasto Oulu"
@@ -171,28 +187,28 @@ units = {
 		location = 11105
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.6
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.89
 	}
 	division = {
 		name = "23. Divisioona"
 		location = 11105
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.6
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.87
 	}
 	division = {
 		name = "9. Divisioona"
 		location = 11105
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.4
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.84
 	}
 	division = {
 		name = "1. Ratsuväkiprikaati"
 		location = 11105
 		division_template = "Ratsuväkiprikaati"
 		start_experience_factor = 0.6
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.89
 	}
 	division = {
 		name = "12. Divisioona"
@@ -206,14 +222,14 @@ units = {
 		location = 3060
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.87
 	}
 	division = {
 		name = "2. Divisioona"
 		location = 9100
 		division_template = "Panssardivisoona"
-		start_experience_factor = 0.6
-		start_equipment_factor = 0.8
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
 	}
 	division = {
 		name = "18. Divisioona"
@@ -234,21 +250,21 @@ units = {
 		location = 11153
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.88
 	}
 	division = {
 		name = "4. Divisioona"
 		location = 6057
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.6
-		start_equipment_factor = 0.9
+		start_equipment_factor = 0.96
 	}
 	division = {
 		name = "19. Divisioona"
 		location = 3084
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.6
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.89
 	}
 	division = {
 		name = "13. Vuorikiipeily"
@@ -269,7 +285,7 @@ units = {
 		location = 6096
 		division_template = "Vuorikiipeily"
 		start_experience_factor = 0.6
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.89
 	}
 	division = {
 		name = "14. Divisioona"
@@ -283,7 +299,7 @@ units = {
 		location = 11096
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.6
-		start_equipment_factor = 0.8
+		start_equipment_factor = 1
 	}
 	division = {
 		name = "17. Divisioona"
@@ -297,7 +313,7 @@ units = {
 		location = 9158
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.31
-		start_equipment_factor = 0.85
+		start_equipment_factor = 1
 	}
 	division = {
 		name = "1. Divisioona"
@@ -318,14 +334,14 @@ units = {
 		location = 11175
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.4
-		start_equipment_factor = 0.73
+		start_equipment_factor = 0.96
 	}
 	division = {
 		name = "Petsamo Erillisosato"
 		location = 6012
 		division_template = "Panssardivisoona"
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.88
 	}
 	division = {
 		name = "Panssariosasto 'Lagus'"
@@ -449,14 +465,120 @@ units = {
 		start_equipment_factor = 1
 	}
 
+
+
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9105
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.11
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9105
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.21
+		start_equipment_factor = 1
+	}
+
+
+division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9105
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.31
+		start_equipment_factor = 1
+	}
+
+
+division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3060
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.21
+		start_equipment_factor = 1
+	}
+
+
+division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3060
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.27
+		start_equipment_factor = 1
+	}
+
+
+division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3060
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.21
+		start_equipment_factor = 1
+	}
+
+
+division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6057
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.21
+		start_equipment_factor = 1
+	}
+
+
+division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6057
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1
+	}
+
+
+
+
+
+
+
+
+	Erillinen Prikaati
+
 }
 
 
 air_wings = {
 	111 = { 														# Helsinki
 		CAS_equipment_1 = { owner = "FIN" amount = 35 }				# 1, 4 Bomber Groups -- Fokker C.Xs, Blenheim Is
-		fighter_equipment_0 = { owner = "FIN" amount = 45 }			# 2 Fighter Group -- Fokker D.XXIs, Bristol Bulldogs
-		fighter_equipment_1 = { owner = "FIN" creator = "GER" version_name = "Bf 109 E" amount = 125 }
+		fighter_equipment_0 = { owner = "FIN" amount = 65 }			# 2 Fighter Group -- Fokker D.XXIs, Bristol Bulldogs
+		fighter_equipment_1 = { owner = "FIN" creator = "GER" version_name = "Bf 109 E" amount = 175 }
 
 	}
 }
