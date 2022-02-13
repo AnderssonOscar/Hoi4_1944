@@ -27,6 +27,14 @@ state={
 				arms_factory = 10
 			}
 		}
+
+
+		1943.12.30 = {
+			buildings = {
+				radar_station = 4
+				synthetic_refinery = 3
+			}
+		}
 	}
 
 	provinces={

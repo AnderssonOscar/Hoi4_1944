@@ -70,7 +70,7 @@ USA_dont_forget_about_italy = {
 		type = front_unit_request
 		country_trigger = {tag = ITA}
 		tag = ITA
-		value = 110
+		value = 130
 	}
 
 	ai_strategy = {
@@ -1330,4 +1330,93 @@ USA_start_buffering_in_pacific = {
 		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = no
 	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USA_unit_production = {
+
+	allowed = {	original_tag = USA }
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+
+
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 70
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = -50
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 30
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 90
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 25
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -200
+	}
+
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
 }

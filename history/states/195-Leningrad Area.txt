@@ -32,7 +32,7 @@ state={
 		buildings = {
 			arms_factory = 2
 			3151 = {
-				bunker = 3
+				bunker = 7
 			}
 
 			149 = {

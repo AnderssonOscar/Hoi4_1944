@@ -15,8 +15,8 @@ if = {
 	set_oob = "GER_1936_nsb"
 }
 
-starting_train_buffer = 2
-set_fuel_ratio = 0.8
+starting_train_buffer = 1.6 #1944 was 2.0
+set_fuel_ratio = 0.1 # 1944 was 0.8
 
 # starting_truck_buffer = 0.8
 
@@ -252,6 +252,15 @@ set_war_support = 0.3
 		complete_national_focus = GER_form_the_reichskommissariats
 		complete_national_focus = GER_u_boat_effort
 
+		unlock_national_focus = GER_army_innovation_2
+		unlock_national_focus = GER_reintegrate_luxemburg_and_alsace_lorraine
+		unlock_national_focus = GER_naval_effort2
+		unlock_national_focus = GER_trade_interdiction
+
+		unlock_national_focus = GER_strategic_air_effort
+		unlock_national_focus = GER_air_innovation_2
+		unlock_national_focus = GER_rocketry_focus
+
 	#BUILDINGS
 	
 
@@ -272,6 +281,7 @@ set_war_support = 0.3
 			paratroopers = 1
 			improved_infantry_weapons_2 = 1
 			support_weapons3 = 1
+			support_weapons4 = 1
 			mechanised_infantry = 1
 			mechanised_infantry2 = 1
 			tech_mountaineers2 = 1
@@ -1609,16 +1619,45 @@ create_equipment_variant = {
 
 } 
 
+	## Added equipment here instead. so the units dont have 100% from start but can still resupply
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_1
+		amount = 21000
+	}
 
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 3000
+    }
 
-add_equipment_to_stockpile = {
-        type = infantry_equipment_1
-        amount = 7555
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_2
+        amount = 1800
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_air_equipment_1
+        amount = 850
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_tank_equipment_2
+        amount = 500
+    }
+
+	add_equipment_to_stockpile = {
+        type = mechanized_equipment_1
+        amount = 1960
+    }
+
+	add_equipment_to_stockpile = {
+        type = mechanized_equipment_1
+        amount = 1000
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 2400
+        amount = 5900
     }
 
 	if = {

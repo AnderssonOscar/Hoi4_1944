@@ -1555,7 +1555,7 @@ war_measures = {
         visible = {
             has_war = yes
         }
-        cost = 100
+        cost = 50
         days_remove = -1
         remove_trigger = {
         	OR = {
@@ -1571,7 +1571,7 @@ war_measures = {
 			factor = 100
 
 			modifier = {
-				factor = 5
+				factor = 50
 				has_manpower < 750000
 			}
 		}

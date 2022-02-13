@@ -26,6 +26,15 @@ state={
 			}
 		}
 
+
+		1943.12.30 = {
+			controller = JAP
+			owner = JAP
+			RAJ = {
+				#set_province_controller = 
+			}
+		}
+
 	}
 
 	provinces={

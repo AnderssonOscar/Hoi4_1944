@@ -403,6 +403,52 @@ units = {
 		start_equipment_factor = 0.85
 	}
 
+
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 11153
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6057
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.96
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 30084
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.88
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6106
+		division_template = "Erillinen Prikaati"
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+	}
+
 }
 
 

@@ -208,6 +208,37 @@ division_template = {
 		field_hospital = { x = 0 y = 4 }
 	}
 }
+
+
+division_template = {
+	name = "Medium Armour Division"
+
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+	   	medium_armor = { x = 0 y = 1 }
+		medium_armor = { x = 0 y = 2 }
+		medium_armor = { x = 1 y = 0 }
+		medium_armor = { x = 1 y = 1 }
+		medium_armor = { x = 1 y = 2 }
+		mechanized = { x = 2 y = 0 }
+	    mechanized = { x = 2 y = 1 }
+		mechanized = { x = 2 y = 2 }
+		mechanized = { x = 3 y = 0 }
+	    mechanized = { x = 3 y = 1 }
+		mechanized = { x = 3 y = 2 }
+		mechanized = { x = 3 y = 3 }
+		medium_tank_destroyer_brigade = { x = 4 y = 0 }
+		medium_tank_destroyer_brigade = { x = 4 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		armored_car_recon = { x = 0 y = 1 }
+	 	artillery = { x = 0 y = 2 }
+		anti_air = { x = 0 y = 3 }
+		field_hospital = { x = 0 y = 4 }
+	}
+}
+
 division_template = {
 	name = "Garrison Brigade"  		# used for island defense (older equipment, lower experience)
 
@@ -1124,6 +1155,652 @@ units = {
 
 
 
+	########### USA WEST coast
+
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6881
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6881
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 610
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 610
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 12211
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 12211
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 7315
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 7315
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 13091
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 13091
+		division_template = "Infantry Division"
+		start_experience_factor = 0.11
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1562
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1562
+		division_template = "Infantry Division"
+		start_experience_factor = 0.1
+		force_equipment_variants = { infantry_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
+		start_equipment_factor = 0.86
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1562
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 853
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9713
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9713
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9713
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3588
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3588
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3588
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 10387
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 10387
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 10387
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6881
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6881
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 610
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 610
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 12211
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 12211
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 7315
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 7315
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 13091
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 13091
+		division_template = "Infantry Division"
+		start_experience_factor = 0.11
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1562
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1562
+		division_template = "Infantry Division"
+		start_experience_factor = 0.1
+		force_equipment_variants = { infantry_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
+		start_equipment_factor = 0.86
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1562
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 853
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9713
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9713
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 9713
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3588
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3588
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 3588
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 10387
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 10387
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 10387
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
 
 
 
@@ -1132,9 +1809,7 @@ units = {
 
 
 
-
-
-
+########################
 
 		#Italy
 	division = {
@@ -1142,7 +1817,7 @@ units = {
 			is_name_ordered = no
 			name_order = 0
 		}
-		location = 819
+		location = 9826
 		division_template = "Infantry Division"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.95
@@ -1153,7 +1828,7 @@ units = {
 			is_name_ordered = no
 			name_order = 0
 		}
-		location = 819
+		location = 9826
 		division_template = "Infantry Division"
 		start_experience_factor = 0.4
 		start_equipment_factor = 1.0
@@ -1164,7 +1839,7 @@ units = {
 			is_name_ordered = no
 			name_order = 0
 		}
-		location = 819
+		location = 9826
 		division_template = "Infantry Division"
 		start_experience_factor = 0.4
 		start_equipment_factor = 1.0
@@ -1303,6 +1978,100 @@ units = {
 ##################AFRICA
 
 
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 7081
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 0.91
+	}
+
+
+division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 7081
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 0.91
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1145
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 0.91
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1145
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 0.91
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 7005
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 0.91
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 1149
+		division_template = "Infantry Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
+		start_equipment_factor = 0.91
+	}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1315,7 +2084,7 @@ units = {
 		division_template = "Infantry Division"
 		start_experience_factor = 0.2
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
 		start_equipment_factor = 1
 	}
 
@@ -1329,7 +2098,7 @@ units = {
 		division_template = "Infantry Division"
 		start_experience_factor = 0.2
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
 		start_equipment_factor = 1
 	}
 
@@ -1342,11 +2111,11 @@ units = {
 		division_template = "Infantry Division"
 		start_experience_factor = 0.2
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
 		start_equipment_factor = 1
 	}
 
-		division = {
+	division = {
 		division_name = { 
 			is_name_ordered = no
 			name_order = 0
@@ -1355,7 +2124,7 @@ units = {
 		division_template = "Infantry Division"
 		start_experience_factor = 0.2
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
 		start_equipment_factor = 1
 	}
 
@@ -1363,6 +2132,244 @@ units = {
 
 
 
+
+
+############## ENGLAND
+
+
+
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6526
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6526
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 322
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 322
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 351
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 351
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 351
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 377
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 377
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 377
+		division_template = "Infantry Division"
+		start_experience_factor = 0.25
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		start_equipment_factor = 1
+	}
+
+
+
+
+	##ARMOR ENGLAND
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6526
+		division_template = "Medium Armour Division"
+		start_experience_factor = 0.21
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6526
+		division_template = "Medium Armour Division"
+		start_experience_factor = 0.15
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
+		start_equipment_factor = 0.86
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 200
+		division_template = "Medium Armour Division"
+		start_experience_factor = 0.4
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 200
+		division_template = "Medium Armour Division"
+		start_experience_factor = 0.28
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
+		start_equipment_factor = 0.9
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 296
+		division_template = "Medium Armour Division"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { 
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 296
+		division_template = "Medium Armour Division"
+		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
+		start_equipment_factor = 1
+	}
 
 
 
@@ -1373,14 +2380,9 @@ units = {
 
 air_wings = {
 	2 = {
-		fighter_equipment_3 = {
-			owner = "USA"
-			amount = 200
-		}
-		tac_bomber_equipment_2 = {
-			owner = "USA"
-			amount = 200
-		}
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 500 }
 	}
 	156 = {
 		tac_bomber_equipment_2 = {
@@ -1389,88 +2391,87 @@ air_wings = {
 		}
 	}
 	127 = {
-		fighter_equipment_3 = {
-			owner = "USA"
-			amount = 100
-		}
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
 		tac_bomber_equipment_2 = {
 			owner = "USA"
-			amount = 200
+			amount = 750
 		}
 	}
 	129 = {
-		fighter_equipment_3 = {
-			owner = "USA"
-			amount = 400
-		}
-		tac_bomber_equipment_2 = {
-			owner = "USA"
-			amount = 400
-		}
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 500 }
+
 		nav_bomber_equipment_2 = {
 			owner = "USA"
-			amount = 100
+			amount = 500
 		}
 	}
 	357 = {
-		fighter_equipment_3 = {
-			owner = "USA"
-			amount = 400
-		}
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
 		tac_bomber_equipment_2 = {
 			owner = "USA"
 			amount = 1000
 		}
 	}
 	523 = {
-		fighter_equipment_3 = {
-			owner = "USA"
-			amount = 200
-		}
-		tac_bomber_equipment_2 = {
-			owner = "USA"
-			amount = 200
-		}
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 500 }
+
 	}
 	633 = {
-		fighter_equipment_3 = {
-			owner = "USA"
-			amount = 200
-		}
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
 		tac_bomber_equipment_2 = {
 			owner = "USA"
 			amount = 100
 		}
 	}
 	737 = {
-		fighter_equipment_3 = {
-			owner = "USA"
-			amount = 200
-		}
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
 		tac_bomber_equipment_2 = {
 			owner = "USA"
-			amount = 100
+			amount = 500
 		}
 	}
 	633 = {
-		fighter_equipment_3 = {
+		fighter_equipment_1 = {
 			owner = "USA"
-			amount = 100
+			amount = 1000
 		}
 		CAS_equipment_2 = {
 			owner = "USA"
-			amount = 200
+			amount = 500
 		}
 	}
 	629 = {
-		fighter_equipment_3 = {
-			owner = "USA"
-			amount = 100
-		}
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
 		CAS_equipment_2 = {
 			owner = "USA"
-			amount = 100
+			amount = 500
 		}
+	}
+
+	##ENGLAND
+		120 = {
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
+		CAS_equipment_2 = {
+			owner = "USA"
+			amount = 250
+		}
+	}
+
+	132 = {
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 500 }
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 500 }
 	}
 }
 

@@ -16,25 +16,25 @@ SOV_great_patriotic_war = {
 			has_war_with = GER
 			surrender_progress < 0.2
 			date > 1944.3.1
-			date < 1945.6.1
+			date < 1945.9.1
 		}
 
 		visible = {
 			has_war_with = GER
 			surrender_progress < 0.2
 			date > 1944.3.1
-			date < 1945.6.1
+			date < 1945.9.1
 		}
 
 		 fire_only_once = no
 
-		 days_re_enable = 90
-		 days_remove = 18
+		 days_re_enable = 86
+		 days_remove = 16
 
 		#cost = 10
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 			modifier = {
 				has_manpower > 250000
 				surrender_progress < 0.2
@@ -46,7 +46,7 @@ SOV_great_patriotic_war = {
 
 			add_timed_idea = {
 				idea = major_offensive
-				days = 18
+				days = 16
 			}
 		}
 

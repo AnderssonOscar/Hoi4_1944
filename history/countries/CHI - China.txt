@@ -346,3 +346,164 @@ if = {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1943.12.30 = {
+
+	oob = "CHI_1944"
+
+	add_political_power = 2589
+	add_command_power = 200
+
+	set_convoys = 75
+
+	add_ideas = {
+		#laws
+		#tot_economic_mobilisation
+		#service_by_requirement
+	}
+
+
+
+	if = {
+		limit = { has_dlc = "Waking the Tiger" }
+		complete_national_focus = CHI_unified_industrial_planning
+		complete_national_focus = CHI_mission_to_germany
+		complete_national_focus = CHI_rural_reconstruction_movement
+		complete_national_focus = CHI_british_cooperation
+		unlock_national_focus = CHI_fighter_purchases
+		complete_national_focus = CHI_mission_to_the_us
+		complete_national_focus = CHI_mission_to_the_soviet_union
+		complete_national_focus = CHI_hire_chennault
+		complete_national_focus = CHI_rapprochement_with_soviet_union
+		complete_national_focus = CHI_invite_soviet_advisers
+		complete_national_focus = CHI_military_affairs_commission
+		complete_national_focus = CHI_burma_road
+		unlock_national_focus = CHI_the_soviet_volunteer_group
+		complete_national_focus = CHI_bureau_of_investigation_and_statistics
+		complete_national_focus = CHI_camco
+		complete_national_focus = CHI_three_principles_of_the_people
+		complete_national_focus = CHI_army_reform
+		complete_national_focus = CHI_nationalism
+
+
+		#1944
+		complete_national_focus = CHI_60_divisions_plan
+		complete_national_focus = CHI_invite_foreign_investors
+		complete_national_focus = CHI_finacial_policy
+		complete_national_focus = CHI_price_controls
+		complete_national_focus = CHI_expand_the_academica_sinica
+	}
+
+
+
+
+
+
+	set_technology = {
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+
+		#doctrine
+
+		#industry
+		
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+
+		excavation1 = 1
+
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+
+		fuel_silos = 1
+
+		#weapons
+		support_weapons = 1
+		support_weapons2 = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+
+		interwar_antitank = 1
+		antitank1 = 1
+
+		gw_artillery = 1
+		artillery1 = 1
+		
+		antiair1 = 1
+		antiair2 = 1
+
+		motorised_infantry = 1
+
+		tech_support = 1
+
+		tech_engineers = 1
+		tech_engineers2 = 1
+		tech_engineers3 = 1
+
+
+		tech_recon = 1
+
+		tech_field_hospital = 1
+
+		tech_military_police = 1
+	}
+
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 20000
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 1500
+		producer = USA
+    }
+
+
+	add_equipment_to_stockpile = { 
+        type = train_equipment_1
+        amount = 15
+    }
+}

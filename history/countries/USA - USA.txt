@@ -1006,7 +1006,7 @@ if = {
 
 1943.12.30 = {
 
-	set_convoys = 500
+	set_convoys = 1500
 	oob = "USA_1944_nsb"
 
 	#focuses
@@ -1397,4 +1397,108 @@ if = {
 	}
 
 }
+
+		# AIRPLANES
+		create_equipment_variant = {
+			name = "B-17 Flying Fortress A"
+			type = strat_bomber_equipment_2
+			upgrades = {
+				plane_bomb_upgrade = 1
+				plane_range_upgrade = 0  
+				plane_engine_upgrade = 1
+				plane_reliability_upgrade = 3
+			}
+		}
+
+		create_equipment_variant = {
+			name = "B-29 Superfortress A"
+			type = strat_bomber_equipment_3
+			upgrades = {
+				plane_bomb_upgrade = 3
+				plane_range_upgrade = 0  
+				plane_engine_upgrade = 1
+				plane_reliability_upgrade = 3
+			}
+		}
+
+		create_equipment_variant = {
+			name = "P-39 Airacobra A"
+			type = fighter_equipment_2
+			upgrades = {
+				plane_gun_upgrade = 3
+				plane_range_upgrade = 0  
+				plane_engine_upgrade = 2
+				plane_reliability_upgrade = 4
+			}
+		}
+
+		create_equipment_variant = {
+			name = "P-51 Mustang A"
+			type = fighter_equipment_3
+			upgrades = {
+				plane_gun_upgrade = 2
+				plane_range_upgrade = 0  
+				plane_engine_upgrade = 2
+				plane_reliability_upgrade = 3
+			}
+		}
+
+
+		
+
+
+		# TANKS
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+
+	create_equipment_variant = {
+			name = "M18 Hellcat"
+			type = medium_tank_destroyer_chassis_3
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = sloped_armor
+				special_type_slot_3 = extra_ammo_storage
+				special_type_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 6
+				tank_nsb_armor_upgrade = 3
+			}
+			icon = "GFX_USA_basic_medium_tank_medium"
+		}
+
+	create_equipment_variant = {
+		name = "M4A2"
+		type = medium_tank_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_cannon
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_welded_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = tank_radio_3
+			special_type_slot_3 = sloped_armor
+			special_type_slot_4 = extra_ammo_storage
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 3
+			tank_nsb_engine_upgrade = 8
+		}
+		icon = "GFX_USA_basic_medium_tank_medium"
+	}
+}
+
+
+
+
 }

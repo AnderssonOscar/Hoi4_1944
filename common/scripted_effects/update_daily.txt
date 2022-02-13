@@ -14,6 +14,7 @@ MOD_daily_update = {
 
 		#MOD_SOV_offensives = yes
 		#MOD_FIN_SURRENDER = yes
+		#TUR_stop_selling_chromium = yes
 
 	}
 }

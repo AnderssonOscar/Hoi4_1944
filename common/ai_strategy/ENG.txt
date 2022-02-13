@@ -74,7 +74,7 @@ ENG_unit_production = {
 	ai_strategy = {
 		type = unit_ratio
 		id = fighter
-		value = 80
+		value = 90
 	}
 
 	ai_strategy = {
@@ -92,7 +92,7 @@ ENG_unit_production = {
 	ai_strategy = {
 		type = unit_ratio
 		id = strategic_bomber
-		value = 0
+		value = 20
 	}
 
 	ai_strategy = {
@@ -136,7 +136,7 @@ ENG_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
-		value = 90
+		value = 125
 	}
 
 	ai_strategy = {
@@ -154,7 +154,7 @@ ENG_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 10
+		value = 25
 	}
 
 	ai_strategy = {
@@ -166,14 +166,17 @@ ENG_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = tactical_bomber
-		value = -80
+		value = -200
 	}
 
 	ai_strategy = {
 		type = equipment_production_factor
 		id = naval_bomber
-		value = -30
+		value = -50
 	}
+
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
 
 }
 
@@ -1568,3 +1571,96 @@ ENG_stop_camping_africa_2 = {
 }
 
 
+ENG_more_fighers = {
+	allowed = { original_tag = ENG }
+	enable = {
+		has_war = yes
+		has_government = democratic
+		date > 1943.12.30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = 150
+	}
+}
+
+
+ENG_more_military_factories = {
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		date > 1944.1.1
+		has_war_with = GER
+		#num_of_military_factories < 150
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 85
+	}
+}
+
+
+
+
+ENG_dont_do_naval_inasion_on_jap = {
+	allowed = { 
+		tag = ENG
+	}
+
+	enable = {
+		date > 1944.1.1
+		has_war_with = JAP
+		NOT = {has_war_with = GER}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "JAP"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "MAN"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "SIA"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = JAP }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = MAN }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = SIA }
+		value = -500
+	}
+
+
+
+#	ai_strategy = {
+#		type = invasion_unit_request  
+#		country_trigger = { tag = JAP }
+#		value = -500
+#	}
+}

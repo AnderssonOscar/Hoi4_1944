@@ -2484,3 +2484,83 @@ GER_dont_stack_SWE_border = {
 		value = -500
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SOV_dont_hurt_finland_yet = {
+	allowed = {
+			tag = SOV
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		date < 1944.6.15
+
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+	country_trigger = {
+			tag = FIN
+		}
+		tag = FIN
+		value = -75
+	}
+
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = FIN
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
+
+
+
+GER_dont_rush_sov = { # mainly here to stop germany from helping finland to much
+	allowed = { original_tag = GER }
+	enable = {
+		tag = GER
+		country_exists = SOV
+		has_war_with = SOV
+		date > 1944.1.1
+		date < 1945.1.1
+	}
+
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = SOV
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}

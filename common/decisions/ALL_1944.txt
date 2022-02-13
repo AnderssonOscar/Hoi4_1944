@@ -18,12 +18,12 @@ economy_decisions = {
 		available = {
 			has_war = yes
             has_idea = tot_economic_mobilisation
-			has_army_manpower = {size > 500000}
+			has_army_manpower = {size > 1000000}
         }
 
 		
 		days_remove = 90
-		cost = 100
+		cost = 250
 
 		remove_trigger = {
         	OR = {
@@ -54,94 +54,11 @@ economy_decisions = {
 
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_1
-				amount = 250
+				amount = 500
 			}
 		}
 	}
-
-
-
-	draft_children = {
-
-		icon = generic_political_discourse
-
-        allowed = {
-            always = yes
-        }
-
-        available = {
-            has_war = yes
-            has_idea = tot_economic_mobilisation
-
-             OR = {
-
-                AND = {
-                   has_idea = all_adults_serve
-                }
-
-                AND = {
-                   has_idea = scraping_the_barrel
-                }
-
-             }
-
-            OR = {
-
-                AND = {
-                    has_government = communism
-                    has_war_support > 0.7
-					surrender_progress > 0.20
-					has_manpower < 10000
-                }
-                AND = {
-                    has_government = fascism
-                    OR = {
-                        has_war_support > 0.7
-                        surrender_progress > 0.20
-						has_manpower < 10000
-                    }
-                }
-                AND = {
-                    has_government = neutrality
-                    has_war_support > 0.8
-                    has_stability > 0.5
-					surrender_progress > 0.3
-					has_manpower < 10000
-                }
-            }
-        }
-        visible = {
-            has_war = yes
-        }
-        cost = 50
-        days_remove = -1
-
-        remove_trigger = {
-        	OR = {
-            	has_war = no
-            	not = { has_idea = tot_economic_mobilisation }
-				not = { has_idea = all_adults_serve }
-                not = { has_idea = scraping_the_barrel }
-            }
-        }
-
-        modifier = {
-            conscription = 0.015
-            stability_factor = -0.025
-			war_support_factor = -0.05
-        }
-        ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 3
-				has_manpower < 1000
-			}
-		}
-		complete_effect = {
-
-        }
-   }			
+			
 }
 
 
@@ -167,11 +84,11 @@ operations = {
 				}
 
 				has_war_with = GER
-				date > 1944.5.23
+				date > 1944.5.27
 
 
 			any_other_country = {
-			is_in_faction_with = GER
+				is_in_faction_with = GER
 
 				AND = {
 					controls_state = 16
@@ -183,9 +100,10 @@ operations = {
 
 			}
 
-			cost = 25
+			#cost = 25
 			
-			fire_only_once = yes
+		 	days_re_enable = 45
+			fire_only_once = no
 
 			ai_will_do = {
 				factor = 250
@@ -243,51 +161,48 @@ operations = {
 
 war_measures = {
 
-	defend_with_all_we_got = {
-
+	dig_in_and_hold = {
 		icon = generic_prepare_civil_war
-
 			allowed = {
 				OR = {
 					tag = GER
 					tag = ROM
 					tag = HUN
 					tag = ITA
+					tag = FIN
 				}
 			}
 
 		available = {
-
 		AND = {
-
 				OR = {
 					tag = GER
 					tag = ROM
 					tag = HUN
 					tag = ITA
+					tag = FIN
 				}
+
+			has_stability > 0.5
+			has_war_support > 0.6
+			alliance_strength_ratio < 0.75
 
 			OR = {
 				has_war_with = SOV
 				has_war_with = ENG
 			}
 
-			OR = {
-				alliance_strength_ratio < 1.0 
-
-			}
 		}
 	}
 
 		visible = {
-
 				OR = {
 					tag = GER
 					tag = ROM
 					tag = HUN
 					tag = ITA
+					tag = FIN
 				}
-
 		OR = {
 				has_war_with = SOV
 				has_war_with = ENG
@@ -295,29 +210,115 @@ war_measures = {
 		}
 
 		fire_only_once = no
-
-		days_remove = 15
+		days_remove = 10
 		days_re_enable = 90
 
-		cost = 50
+		cost = 100
 		ai_will_do = {
-			factor = 2
+			factor = 1
 			modifier = {
-				surrender_progress > 0.05
+				has_war_support > 0.70
+				has_stability > 0.70
+				surrender_progress > 0.01
 				factor = 10
 			}
 		}
-
 		modifier = {
-			defence = 0.5
-			dig_in_speed_factor = 1
+			defence = 2
+			dig_in_speed_factor = 2.5
 		}
 
 		complete_effect = {
-
-				#war_support_factor = -0.025
+			add_war_support = -0.01
+			add_stability = -0.01
 		}
 	}
+
+
+
+
+
+
+
+	draft_children = {
+
+		icon = generic_political_discourse
+
+        allowed = {
+            always = yes
+        }
+
+        available = {
+            has_war = yes
+            has_idea = tot_economic_mobilisation
+			has_manpower < 25000
+
+             OR = {
+
+                AND = {
+                   has_idea = all_adults_serve
+                }
+
+                AND = {
+                   has_idea = scraping_the_barrel
+                }
+
+             }
+
+            OR = {
+
+                AND = {
+                    has_government = communism
+                    has_war_support > 0.7
+					surrender_progress > 0.20
+                }
+                AND = {
+                    has_government = fascism
+                    OR = {
+                        has_war_support > 0.7
+                        surrender_progress > 0.20
+                    }
+                }
+                AND = {
+                    has_government = neutrality
+                    has_war_support > 0.8
+                    has_stability > 0.5
+					surrender_progress > 0.3
+                }
+            }
+        }
+        visible = {
+            has_war = yes
+        }
+        cost = 50
+        days_remove = -1
+
+        remove_trigger = {
+        	OR = {
+            	has_war = no
+            	not = { has_idea = tot_economic_mobilisation }
+				not = { has_idea = all_adults_serve }
+                not = { has_idea = scraping_the_barrel }
+            }
+        }
+
+        modifier = {
+            conscription = 0.01
+            stability_factor = -0.025
+			war_support_factor = -0.05
+        }
+        ai_will_do = {
+			factor = 0
+
+			modifier = {
+				factor = 3
+				has_manpower < 10000
+			}
+		}
+		complete_effect = {
+
+        }
+   }
 
 }
 

@@ -103,3 +103,12 @@ set_popularities = {
 		elections_allowed = yes
 	}
 }
+
+
+1944.1.1 = {
+	add_opinion_modifier = { target = ENG modifier = large_decrease	}	
+	add_opinion_modifier = { target = ENG modifier = large_decrease	}
+	add_opinion_modifier = { target = ENG modifier = large_decrease	}
+
+	create_faction = "Irish neutrality"
+}

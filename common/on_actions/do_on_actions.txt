@@ -32,7 +32,7 @@ on_actions = {
 GER = {
 	add_ideas = {
 		tot_economic_mobilisation
-		add_manpower = -1000000
+		#add_manpower = -3500000
 	}
 }
 

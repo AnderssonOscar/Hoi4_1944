@@ -22,6 +22,17 @@ state={
 			4425 1 
 		}
 
+		1943.12.30 = {
+			controller = JAP
+			owner = JAP
+			RAJ = {
+				set_province_controller = 4318
+				set_province_controller = 1197
+				set_province_controller = 4996
+				set_province_controller = 1934
+			}
+		}
+
 	}
 	
 	provinces={

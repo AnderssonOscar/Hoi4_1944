@@ -50,10 +50,17 @@ war_measures = {
 			SOV = { transfer_state = 147 }
 
 			GER = { remove_from_faction = FIN }
-			#ENG = { add_to_faction = FIN }
+			ENG = { add_to_faction = FIN }
 
 			FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
 			FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
+
+		FIN = {
+			add_to_war = {
+				targeted_alliance = ENG
+				enemy = GER
+			}
+		}
 		}
 	}
 }

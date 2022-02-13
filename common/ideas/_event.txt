@@ -279,7 +279,7 @@ ideas = {
 				army_attack_factor = +0.75
 				breakthrough_factor = +0.75
 				#out_of_supply_factor = +0.25
-				supply_consumption_factor = -0.5
+				supply_consumption_factor = -0.75
 				land_reinforce_rate = +0.5
 				army_org_factor = +0.5
 
@@ -310,9 +310,9 @@ ideas = {
 			picture = tur_disorganised_armed_forces
 			
 			modifier = {
-				army_attack_factor = -1.25
-				breakthrough_factor = -1.25
-				land_reinforce_rate = -1
+				army_attack_factor = -1.5
+				breakthrough_factor = -1.5
+				#land_reinforce_rate = -1
 
 				ground_attack_factor = -0.5
 			}
@@ -349,7 +349,7 @@ ideas = {
 			
 			modifier = {
 				#stability_factor = -0.05
-				conscription = -0.05
+				conscription = -0.06
 			}
 		}
 

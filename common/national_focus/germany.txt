@@ -2601,9 +2601,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_rocketry_focus
-		cost = 10
+		cost = 10 
 		ai_will_do = {
-			factor = 1
+			factor = -5 # 1944 was 1
 		}
 
 		available_if_capitulated = yes
@@ -9091,12 +9091,16 @@ focus_tree = {
 		cost = 3
 		available_if_capitulated = yes
 		ai_will_do = {
-			factor = 300
+			factor = 30
+			modifier = {
+				factor = 1000
+				date > 1943.12.30
+			}
 		}
 		available = {
 
 		#surrender_progress > 0.02
-		date > 1944.1.1
+		date > 1943.12.30
 		has_war = yes
 		
 		}
@@ -9121,7 +9125,12 @@ focus_tree = {
 		prerequisite = { focus = GER_gottedamerung }
 		
 		ai_will_do = {
-			factor = 250
+			factor = 5
+
+			modifier = {
+				factor = 100
+				surrender_progress > 0.01
+			}
 		}
 
 		available = {
@@ -9138,7 +9147,7 @@ focus_tree = {
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_3
-			amount = 5000
+			amount = 10000
 			producer = GER
 		}
 	}
@@ -9156,14 +9165,19 @@ focus_tree = {
 		prerequisite = { focus = GER_hand_out_panzerfausts }
 		
 		ai_will_do = {
-			factor = 250
+			factor = 8
+
+			modifier = {
+				factor = 100
+				surrender_progress > 0.1
+			}
 		}
 
 		available = {
 			has_war = yes
 		OR = {
 			surrender_progress > 0.2
-			date > 1944.6.1
+			date > 1944.7.1
 			}
 		}
 
@@ -9335,14 +9349,19 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = GER_form_volksgrenadier }
 		ai_will_do = {
-			factor = 250
+			factor = 8
+
+			modifier = {
+				factor = 100
+				surrender_progress > 0.01
+			}
 		} 
 
 	available = {
 			has_war = yes
 		OR = {
 			surrender_progress > 0.30
-			date > 1944.7.1
+			date > 1944.9.1
 			}
 		}
 		
@@ -9564,12 +9583,12 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 18
 		y = 9
-		cost = 5
+		cost = 9
 		available_if_capitulated = yes
 		prerequisite = { focus = GER_gottedamerung }
 		
 		ai_will_do = {
-			factor = 200
+			factor = 5
 		}
 
 		available = {
@@ -9598,7 +9617,7 @@ focus_tree = {
 		prerequisite = { focus = GER_simplify_production }
 		
 		ai_will_do = {
-			factor = 200
+			factor = 6
 		}
 
 		available = {
@@ -9624,7 +9643,7 @@ focus_tree = {
 		prerequisite = { focus = GER_protect_industry }
 		
 		ai_will_do = {
-			factor = 200
+			factor = 10
 		}
 
 		available = {
@@ -9694,7 +9713,13 @@ focus_tree = {
 
 		}
 		ai_will_do = {
-			factor = 250
+			factor = 12
+
+			modifier = {
+				factor = 1000
+				date > 1944.1.1
+				surrender_progress < 0.01
+			}
 		}
 
 		available = {
@@ -9794,8 +9819,20 @@ focus_tree = {
 			focus = GER_gustav_line 
 		}
 		ai_will_do = {
-			factor = 120
+			factor = 7
+
+		modifier = {
+			factor = 15
+			NOT = {	
+				OR = {
+					has_full_control_of_state = 94
+					has_full_control_of_state = 89
+					has_full_control_of_state = 809
+					has_full_control_of_state = 51
+				}
+			}
 		}
+	}
 
 
 		available = {
@@ -9939,7 +9976,12 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = GER_festung_cities }
 		ai_will_do = {
-			factor = 120
+			factor = 2
+
+			modifier = {
+				factor = 10
+				surrender_progress > 0.01
+			}
 		}
 
 		available = {
@@ -9981,7 +10023,7 @@ focus_tree = {
 			focus = GER_fanatical_defense 
 		}
 		ai_will_do = {
-			factor = 200
+			factor = 10
 		}
 
 		available = {
