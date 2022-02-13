@@ -476,6 +476,8 @@ if = {
 		complete_national_focus = ROM_reserve_divisions
 		complete_national_focus = ROM_acquire_modern_tanks
 		complete_national_focus = ROM_mobile_tank_destroyers
+
+		complete_national_focus = ROM_expand_ploiesti_oil_production
 	}
 
 	set_technology = {

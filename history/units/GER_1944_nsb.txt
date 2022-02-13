@@ -4456,6 +4456,7 @@ air_wings = {
 
 	57 = { 
 		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 500 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 1000 }	
 		CAS_equipment_2 = { owner = "GER" amount = 250 }		
 	}
 

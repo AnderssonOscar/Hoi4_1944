@@ -16,7 +16,7 @@ if = {
 }
 
 starting_train_buffer = 1.6 #1944 was 2.0
-set_fuel_ratio = 0.1 # 1944 was 0.8
+set_fuel_ratio = 0.35 # 1944 was 0.8
 
 # starting_truck_buffer = 0.8
 
@@ -1598,10 +1598,16 @@ create_equipment_variant = {
 
 1943.12.30 = {
 
+		SOV = {
+			SOV_andrey_vlasov = {
+				set_nationality = GER
+			}
+		}
 
 		add_named_threat = { threat = 100 name = 1939_bookmark_threat }
 		set_oob = "GER_1944_nsb"
 
+		set_fuel_ratio = 0.35 # 1944 was 0.8
 		set_convoys = 50
 		set_stability = 1 
 		set_war_support = 0.9

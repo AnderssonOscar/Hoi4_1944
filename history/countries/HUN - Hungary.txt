@@ -294,6 +294,22 @@ recruit_character = HUN_franz_friedrich
 
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+
+	unlock_national_focus = HUN_industrial_revitalization
+	unlock_national_focus = HUN_autarky
+	unlock_national_focus = HUN_proclaim_greater_hungary
+	complete_national_focus = HUN_support_domestic_industry
+	complete_national_focus = HUN_institute_for_industrial_techniques
+	complete_national_focus = HUN_expand_the_manfred_weiss_steel_works
+	complete_national_focus = HUN_assault_gun_focus
+
+	}
+
+
 	set_technology = {
 
 		#electronics

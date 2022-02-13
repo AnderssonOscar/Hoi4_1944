@@ -2260,7 +2260,7 @@ SOV_dont_hurt_finland_yet = {
 			tag = FIN
 		}
 		tag = FIN
-		value = -25
+		value = -40
 	}
 
 

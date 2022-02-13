@@ -23,7 +23,7 @@ economy_decisions = {
 
 		
 		days_remove = 90
-		cost = 250
+		cost = 100
 
 		remove_trigger = {
         	OR = {
@@ -102,7 +102,7 @@ operations = {
 
 			#cost = 25
 			
-		 	days_re_enable = 45
+		 	days_re_enable = 30
 			fire_only_once = no
 
 			ai_will_do = {
@@ -141,24 +141,6 @@ operations = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 war_measures = {
 
 	dig_in_and_hold = {
@@ -184,7 +166,7 @@ war_measures = {
 				}
 
 			has_stability > 0.5
-			has_war_support > 0.6
+			#has_war_support > 0.6
 			alliance_strength_ratio < 0.75
 
 			OR = {
@@ -217,8 +199,8 @@ war_measures = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				has_war_support > 0.70
-				has_stability > 0.70
+				#has_war_support > 0.70
+				#has_stability > 0.50
 				surrender_progress > 0.01
 				factor = 10
 			}
@@ -229,8 +211,8 @@ war_measures = {
 		}
 
 		complete_effect = {
-			add_war_support = -0.01
-			add_stability = -0.01
+			#add_war_support = -0.01
+			add_stability = -0.025
 		}
 	}
 

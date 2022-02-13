@@ -2428,6 +2428,7 @@ GER_push_back_our_coasts_until_overlord  = {
 
 
 
+
 GER_dont_stack_SPR_border = {
 	allowed = { original_tag = SOV }
 	enable = {
@@ -2487,28 +2488,6 @@ GER_dont_stack_SWE_border = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 GER_dont_rush_sov = { # mainly here to stop germany from helping finland to much
 	allowed = { original_tag = GER }
 	enable = {
@@ -2531,15 +2510,6 @@ GER_dont_rush_sov = { # mainly here to stop germany from helping finland to much
 		execution_type = careful
 	}
 }
-
-
-
-
-
-
-
-
-
 
 
 
