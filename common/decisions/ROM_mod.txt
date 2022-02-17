@@ -18,7 +18,7 @@ war_measures = {
 			is_faction_leader = no
 			has_capitulated = no
 			has_war_with = SOV
-			surrender_progress > 0.02
+			surrender_progress > 0.05
 			date > 1944.7.25
 
 			has_government = fascism
@@ -35,7 +35,7 @@ war_measures = {
 
 		visible = {
 			has_war_with = SOV
-			surrender_progress > 0.02
+			surrender_progress > 0.07
 		}
 
 		fire_only_once = yes
@@ -52,7 +52,7 @@ war_measures = {
 					766 = {is_fully_controlled_by = ROM}
 				}
 
-				surrender_progress > 0.05
+				surrender_progress > 0.07
 				factor = 100
 			}
 		}

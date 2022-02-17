@@ -416,14 +416,14 @@ USA_ENG_sync_invasions_on_europe = {
 
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = front_control
-
-		area = mainland_europe
-
-		ordertype = invasion
-		execute_order = no
-	}
+#	ai_strategy = { #1944 removed
+#		type = front_control
+#
+#		area = mainland_europe
+#
+#		ordertype = invasion
+#		execute_order = no
+#	}
 }
 
 USA_save_the_aussies = {
@@ -1368,6 +1368,7 @@ USA_unit_production = {
 	allowed = {	original_tag = USA }
 	enable = {
 		always = yes
+		date < 1945.10.1
 	}
 	abort = {
 		always = no

@@ -292,6 +292,7 @@ ability = {
 		}
 	}
 	
+
 	extra_suplies = {
 		name = ABILITY_EXTRA_SUPLIES
 		desc = ABILITY_EXTRA_SUPLIES_DESC
@@ -299,7 +300,10 @@ ability = {
 		type = army_leader
 		
 		allowed = {
-			has_ability = extra_suplies
+			
+				has_ability = extra_suplies
+				NOT = {FROM = {has_idea = GER_festung_supply}}
+			
 			is_border_war = no
 		}
 		
@@ -315,6 +319,33 @@ ability = {
 		duration = 168
 		cooldown = 504
 	}
+
+
+	festung_suplies = {
+		name = "Festung Supplies"
+		desc = "Supplies are rationed to last as long as possible"
+		
+		type = army_leader
+		
+		allowed = {
+			
+			FROM = {has_idea = GER_festung_supply}
+			is_border_war = no
+		}
+		
+		unit_modifiers = {
+			no_supply_grace = 720
+		}
+		
+		one_time_effect = {
+			supply_units = 720
+		}
+		
+		cost = 0.35
+		duration = 720
+		cooldown = 24
+	}
+	
 	
 	requisition_winter_gear = {
 		name = ABILITY_REQUISITION_WINTER_GEAR

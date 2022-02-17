@@ -1422,6 +1422,29 @@ if = {
 
 1943.12.30 = {
 
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+			
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_anti_partisan
+
+		upgrade_intelligence_agency = upgrade_invisible_ink
+		upgrade_intelligence_agency = upgrade_suicide_pills
+
+		upgrade_intelligence_agency = upgrade_training_centers
+		upgrade_intelligence_agency = upgrade_commando_training
+		upgrade_intelligence_agency = upgrade_interrogation_techniques
+
+		upgrade_intelligence_agency = upgrade_form_department
+		upgrade_intelligence_agency = upgrade_decryption_boost #radio
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+	}
+
 	set_technology = {
 		naval_bomber1 = 1
 		naval_bomber2 = 1

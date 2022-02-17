@@ -1,0 +1,122 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+JAP_unit_buffer_home = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = { 
+			has_war = yes
+
+			OR = {
+				has_war_with = SOV
+				has_war_with = USA
+			}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		# ratio of total armeis in country to be buffered
+		ratio = 0.25
+
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+		#order_id = 2
+
+		# states to put garrison orders (if no state is friendly, strat is invalid)
+		states = {
+			282
+			534
+			532
+			535
+			531
+			529
+			530
+			528
+			533
+			536
+		}
+
+		# ai areas that the orders will use these buffers in
+		area = asia
+
+		# by default if you have orders in target areas, the buffer will request less units.
+		# you can override this to disable the feature
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+}
+
+
+JAP_unit_production = {
+
+	allowed = {	original_tag = JAP }
+	enable = {
+		always = yes
+		date < 1945.9.1
+	}
+	abort = {
+		always = no
+	}
+
+
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 90
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -100
+	}
+
+
+	ai_strategy = { type = equipment_variant_production_factor id = heavy_fighter_equipment      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

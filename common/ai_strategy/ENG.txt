@@ -1463,52 +1463,6 @@ ENG_USA_d_day = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Stop_guarding_these_borders = {
-	allowed = {
-			tag = ENG
-	}
-
-	enable = {
-		#is_historical_focus_on = yes
-		date > 1944.1.1
-		NOT = { has_war_with = SOV}
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		tag = SAU
-		value = -100
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		tag = SOV
-		value = -100
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		tag = AFG
-		value = -100
-	}
-
-}
-
-
-
 ENG_stop_sending_everyting_to_asia = {
 	allowed = {
 		tag = ENG

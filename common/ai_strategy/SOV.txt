@@ -2458,6 +2458,7 @@ SOV_unit_production = {
 	allowed = {	original_tag = SOV }
 	enable = {
 		always = yes
+		date < 1945.6.1
 	}
 	abort = {
 		always = no

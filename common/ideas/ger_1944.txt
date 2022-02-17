@@ -17,8 +17,16 @@ ideas = {
 	GER_festung_supply = {
 		modifier = {
 			no_supply_grace = 360.0
+			#supply_units #one time effect
 			}
 		}
+
+	GER_panzerfaust = {
+	#	category_all_infantry = {
+	#		hard_attack = 0.25
+	#		ap_attack = 1
+	#	}
+	}		
 
 	GER_endsieg_attack = {
 		modifier = {

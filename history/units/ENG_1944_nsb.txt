@@ -14,19 +14,20 @@
         infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
-		infantry = { x = 2 y = 3 }
 		artillery_brigade = { x = 3 y = 0 }
 		artillery_brigade = { x = 3 y = 1 }
 		anti_air_brigade = { x = 3 y = 2 }
+		anti_tank_brigade = { x = 3 y = 3 }
 	}
 	support = {
        	engineer = { x = 0 y = 0 }
-       	recon = { x = 0 y = 1 }
+       	armored_car_recon = { x = 0 y = 1 }
        	logistics_company = { x = 0 y = 2 }
-		anti_tank = { x = 0 y = 3 } 
+		artillery = { x = 0 y = 3 } 
 		signal_company = { x = 0 y = 4 }
 	}
 }
+
 division_template = {
 	name = "Infantry Division (ME)"
 	division_names_group = ENG_INF_01
@@ -51,9 +52,11 @@ division_template = {
 		motorized = { x = 0 y = 0 }
 	    motorized = { x = 0 y = 1 }
 		motorized = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }
 		motorized = { x = 1 y = 0 }
 	    motorized = { x = 1 y = 1 }
 		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3 }
 	}
 	support = {
 	 	engineer = { x = 0 y = 0 }
@@ -123,6 +126,38 @@ division_template = {
 	priority = 0
 }
 
+division_template = {
+	name = "Marine Brigade" 
+	
+	division_names_group = ENG_MAR_01
+
+	regiments = {
+		marine = { x = 0 y = 0 }
+		marine = { x = 0 y = 1 }
+		marine = { x = 0 y = 2 }
+		marine = { x = 1 y = 0 }
+		marine = { x = 1 y = 1 }
+		marine = { x = 1 y = 2 }
+		marine = { x = 2 y = 0 }
+		marine = { x = 2 y = 1 }
+		marine = { x = 2 y = 2 }
+		marine = { x = 3 y = 0 }
+		marine = { x = 3 y = 1 }
+		amphibious_mechanized = { x = 4 y = 0 }
+		amphibious_mechanized = { x = 4 y = 1 }
+		amphibious_mechanized = { x = 4 y = 2 }
+		amphibious_mechanized = { x = 4 y = 3 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		anti_tank = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+		engineer = { x = 0 y = 3 }
+		field_hospital = { x = 0 y = 4 }
+	}
+	priority = 2
+}
+
 
 ####### OOB #######
 units = {
@@ -164,97 +199,8 @@ units = {
 
 	}
 
-		division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 9297
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
 
-	}
 
-	
-		division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 9297
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	
-		division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 9297
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	
-		division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 9297
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	
-		division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 9297
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	
-		division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 9297
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	
-		division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 9297
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	
 		division= {	# "5th Infantry Division"
 		division_name = {
 			is_name_ordered = no
@@ -294,1436 +240,9 @@ units = {
 	}
 
 
-
-
-
-
-
-
-
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-	
-	division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 3501
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#########################################################################################################################################################
+															#INDIA
+#########################################################################################################################################################
 
 	
 		division= {	# "5th Infantry Division"
@@ -1731,21 +250,7 @@ units = {
 			is_name_ordered = no
 			name_order = 
 		}
-		location = 9297
-		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
-		start_equipment_factor = 1
-
-	}
-
-
-	
-		division= {	# "5th Infantry Division"
-		division_name = {
-			is_name_ordered = no
-			name_order = 
-		}
-		location = 9297
+		location = 9975
 		division_template = "Infantry Division"	
 		start_experience_factor = 0.4
 		start_equipment_factor = 1
@@ -1758,9 +263,9 @@ units = {
 			is_name_ordered = no
 			name_order = 
 		}
-		location = 9297
+		location = 8087
 		division_template = "Infantry Division"	
-		start_experience_factor = 0.4
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 
 	}
@@ -1771,13 +276,245 @@ units = {
 			is_name_ordered = no
 			name_order = 
 		}
-		location = 9297
+		location = 10201
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.8
+
+	}
+
+	
+		division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 997
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+
+	
+		division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 1525
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
+
+	}
+
+	
+		division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 1197
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+
+	}
+
+	
+		division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 7634
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.22
+		start_equipment_factor = 1
+
+	}
+
+
+
+	division = {
+		division_name = {
+			is_name_ordered = no
+			name_order = 0
+		}
+			location = 3463
+			division_template = "Marine Brigade"
+			start_experience_factor = 0.4
+			start_equipment_factor = 1.0
+			force_equipment_variants = { infantry_equipment_3 = { owner = "ENG" } }
+			force_equipment_variants = { amphibious_mechanized_equipment_1 = { owner = "USA" } }
+		}
+
+		division = {
+		division_name = {
+			is_name_ordered = no
+			name_order = 0
+		}
+			location = 3463
+			division_template = "Marine Brigade"
+			start_experience_factor = 0.4
+			start_equipment_factor = 1.0
+			force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+			force_equipment_variants = { amphibious_mechanized_equipment_1 = { owner = "USA" } }
+		}
+
+	division = {
+		division_name = {
+			is_name_ordered = no
+			name_order = 0
+		}
+			location = 3463
+			division_template = "Marine Brigade"
+			start_experience_factor = 0.4
+			start_equipment_factor = 1.0
+			force_equipment_variants = { infantry_equipment_3 = { owner = "ENG" } }
+			force_equipment_variants = { amphibious_mechanized_equipment_1 = { owner = "USA" } }
+		}
+
+	division = {
+		division_name = {
+			is_name_ordered = no
+			name_order = 0
+		}
+			location = 3463
+			division_template = "Marine Brigade"
+			start_experience_factor = 0.4
+			start_equipment_factor = 1.0
+			force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
+			force_equipment_variants = { amphibious_mechanized_equipment_1 = { owner = "USA" } }
+		}
+
+	division = {
+		division_name = {
+			is_name_ordered = no
+			name_order = 0
+		}
+			location = 3463
+			division_template = "Marine Brigade"
+			start_experience_factor = 0.4
+			start_equipment_factor = 1.0
+			force_equipment_variants = { infantry_equipment_3 = { owner = "ENG" } }
+			force_equipment_variants = { amphibious_mechanized_equipment_1 = { owner = "USA" } }
+		}
+
+
+
+
+
+	
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
 		division_template = "Infantry Division"	
 		start_experience_factor = 0.4
 		start_equipment_factor = 1
 
 	}
 
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+
+	}
+
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+
+	}
+	
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+
+	}
+	
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+
+	}
+
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+
+	}
+	
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+
+	}
+
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+
+	}
+
+	division= {	# "5th Infantry Division"
+		division_name = {
+			is_name_ordered = no
+			name_order = 
+		}
+		location = 3501
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+
+	}
+	
 	
 		division= {	# "5th Infantry Division"
 		division_name = {
@@ -2569,8 +1306,8 @@ air_wings = {
 	129 = { 														# Middlesex
 		### No. 11 Fighter Command (CO: ) ###
 		fighter_equipment_1 = { owner = "ENG" amount = 250 }			# I/No. 11 Fighter Group -- Hurricane I's
-		heavy_fighter_equipment_1 = { owner = "ENG" amount = 125 }	# V/No. 11 Fighter Group -- Blenheim IF's
-		fighter_equipment_3 = { owner = "ENG" amount = 1000 }			# II/No. 12 Fighter Group -- Spitfire I's
+		heavy_fighter_equipment_2 = { owner = "ENG" amount = 125 }	# V/No. 11 Fighter Group -- Blenheim IF's
+		fighter_equipment_3 = { owner = "ENG" amount = 500 }			# II/No. 12 Fighter Group -- Spitfire I's
 	}
 	130 = { 														# York, Essex
 		### No. 11 Fighter Command ###
@@ -2578,14 +1315,14 @@ air_wings = {
 		fighter_equipment_2 = { owner = "ENG" amount = 250 }			# IV/No. 11 Fighter Group -- Spitfire I's
 		### No. 4 Bomber Command (CO: ) ###
 		strat_bomber_equipment_3 = { owner = "ENG" amount = 500 }	
-		strat_bomber_equipment_3 = { owner = "ENG" amount = 1500 }
+		strat_bomber_equipment_3 = { owner = "ENG" amount = 500 }
 		
 	}	
 	127 = { 														# Nottingham, Sussex
 		### No. 12 Fighter Command (CO: ) ###
 		fighter_equipment_1 = { owner = "ENG" amount = 500 }			# I/No. 12 Fighter Group -- Hurricane I's
 		fighter_equipment_2 = { owner = "ENG" amount = 1000 }
-		fighter_equipment_3 = { owner = "ENG" amount = 1000 }			# II/No. 12 Fighter Group -- Spitfire I's
+		fighter_equipment_3 = { owner = "ENG" amount = 500 }			# II/No. 12 Fighter Group -- Spitfire I's
 		heavy_fighter_equipment_3 = { owner = "ENG" amount = 1000 }	# III/No. 12 Fighter Group -- Blenheim IF's
 		### No. 16 Coastal Group (CO: ) ###
 		nav_bomber_equipment_1 = { owner = "ENG" amount = 250 }		# No. 16 Coastal Group -- Vildebeests
@@ -2593,8 +1330,8 @@ air_wings = {
 	131 = { 														# Newcastle
 		### No. 13 Fighter Command (CO: ) ###
 		fighter_equipment_2 = { owner = "ENG" amount = 1000 }			# I/No. 13 Fighter Group -- Spitfire I's
-		heavy_fighter_equipment_1 = { owner = "ENG" amount = 500 }	# II/No. 13 Fighter Group -- Blenheim IF's
-		strat_bomber_equipment_2 = { owner = "ENG" amount = 1500 }
+		heavy_fighter_equipment_3 = { owner = "ENG" amount = 500 }	# II/No. 13 Fighter Group -- Blenheim IF's
+		strat_bomber_equipment_2 = { owner = "ENG" amount = 1000 }
 	}
 	125 = { 														# East Anglia 
 		### Advanced Air Striking Force (CO: Barratt) -- en route to FRA ###		
@@ -2625,16 +1362,16 @@ air_wings = {
 	##### RAF Middle East (CO: Mitchell) #####
 	447 = { 														# Cairo
 		### Egypt Group (CO: ) ###
-		CAS_equipment_1 = { owner = "ENG" amount = 96 }				# I/Egypt Bomber Group -- Blenheim I's, Wellesleys
-		fighter_equipment_0 = { owner = "ENG" amount = 250 }			# No. 252 Fighter Wing -- Gladiators
+		CAS_equipment_2 = { owner = "ENG" amount = 500 }				# I/Egypt Bomber Group -- Blenheim I's, Wellesleys
+		fighter_equipment_1 = { owner = "ENG" amount = 250 }			# No. 252 Fighter Wing -- Gladiators
 	}
 	454 = { 
 		### RAF Palestine & Iraq (CO: ) ###
-		fighter_equipment_0 = { owner = "ENG" amount = 100 }			# RAF Palestine & RAF Iraq -- Gladiators, Blenheims
+		fighter_equipment_2 = { owner = "ENG" amount = 100 }			# RAF Palestine & RAF Iraq -- Gladiators, Blenheims
 	}
 	454 = { 
 		### Sudan Wing (CO: ) ###
-		CAS_equipment_1 = { owner = "ENG" amount = 250 }				# Sudan Wing -- Blenheim I's
+		CAS_equipment_2 = { owner = "ENG" amount = 500 }				# Sudan Wing -- Blenheim I's
 	}
 
 	##### RAF Far East (CO: Brooke-Popham) #####

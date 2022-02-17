@@ -386,7 +386,7 @@ if = {
 	add_political_power = 2589
 	add_command_power = 200
 
-	set_convoys = 75
+	set_convoys = 350
 
 	add_ideas = {
 		#laws
@@ -491,8 +491,13 @@ if = {
 
 
 	add_equipment_to_stockpile = {
-        type = infantry_equipment
-        amount = 20000
+        type = infantry_equipment_1
+        amount = 25000
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 1000
     }
 
 	add_equipment_to_stockpile = {

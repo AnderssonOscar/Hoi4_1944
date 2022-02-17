@@ -20,6 +20,7 @@ state={
 			buildings = {
 				radar_station = 3
 				synthetic_refinery = 3
+				industrial_complex = 5
 			}
 		}
 	}

@@ -1006,6 +1006,45 @@ if = {
 
 1943.12.30 = {
 
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+		upgrade_intelligence_agency = upgrade_army_department
+		upgrade_intelligence_agency = upgrade_airforce_department
+			
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+		#upgrade_intelligence_agency = upgrade_anti_partisan
+
+		upgrade_intelligence_agency = upgrade_invisible_ink
+		upgrade_intelligence_agency = upgrade_suicide_pills
+		upgrade_intelligence_agency = upgrade_plastic_explosives
+
+		upgrade_intelligence_agency = upgrade_training_centers
+		upgrade_intelligence_agency = upgrade_commando_training
+		upgrade_intelligence_agency = upgrade_interrogation_techniques
+
+		upgrade_intelligence_agency = upgrade_form_department
+		upgrade_intelligence_agency = upgrade_decryption_boost #radio
+		upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		#upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		#upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+		upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+
+	}
+
+	diplomatic_relation = {
+		country = PRU
+		relation = non_aggression_pact
+		active = yes
+	}
+
 	set_convoys = 1500
 	oob = "USA_1944_nsb"
 
@@ -1036,8 +1075,8 @@ if = {
 	complete_national_focus = USA_build_the_pentagon
 	complete_national_focus = USA_two_ocean_navy_act
 
-
-	set_war_support = 0.7
+	set_stability = 1.0
+	set_war_support = 1.0
 
 	add_political_power = 1597
 	add_command_power = 180
@@ -1046,7 +1085,7 @@ if = {
 	add_ideas = {
 
 		#laws
-		limited_conscription
+		extensive_conscription
 		export_focus
 		war_economy
 
@@ -1496,6 +1535,10 @@ if = {
 		}
 		icon = "GFX_USA_basic_medium_tank_medium"
 	}
+
+	
+			#type = 	medium_tank_amphibious_chassis_3
+			#special_type_slot_1 = amphibious_drive
 }
 
 

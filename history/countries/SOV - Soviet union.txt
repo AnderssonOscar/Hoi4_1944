@@ -1836,8 +1836,33 @@ if = {
 	set_stability = 0.9 
 	set_war_support = 0.9
 
+	
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+			
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+		#upgrade_intelligence_agency = upgrade_anti_partisan
 
+		upgrade_intelligence_agency = upgrade_invisible_ink
+		upgrade_intelligence_agency = upgrade_suicide_pills
 
+		upgrade_intelligence_agency = upgrade_training_centers
+		upgrade_intelligence_agency = upgrade_commando_training
+		upgrade_intelligence_agency = upgrade_interrogation_techniques
+
+		upgrade_intelligence_agency = upgrade_form_department
+		upgrade_intelligence_agency = upgrade_decryption_boost #radio
+		upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+		upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+	}
 	
 	remove_dynamic_modifier = { modifier = SOV_soviet_airforce_dynamic_modifier }
 
@@ -2320,10 +2345,10 @@ if = {
 					special_type_slot_1 = tank_radio_2
 					special_type_slot_2 = sloped_armor
 					special_type_slot_3 = empty
-					special_type_slot_4 = empty
+					special_type_slot_4 = extra_ammo_storage
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 9
+					tank_nsb_engine_upgrade = 6
 					tank_nsb_armor_upgrade = 0
 				}
 				icon = "GFX_SOV_improved_medium_tank_medium"
@@ -2341,14 +2366,14 @@ if = {
 					suspension_type_slot = tank_christie_suspension
 					armor_type_slot = tank_welded_armor
 					engine_type_slot = tank_diesel_engine
-					special_type_slot_1 = tank_radio_3
+					special_type_slot_1 = tank_radio_2
 					special_type_slot_2 = sloped_armor
 					special_type_slot_3 = additional_machine_guns
 					special_type_slot_4 = extra_ammo_storage
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 9
-					tank_nsb_armor_upgrade = 4
+					tank_nsb_engine_upgrade = 7
+					tank_nsb_armor_upgrade = 1
 				}
 				icon = "GFX_SOV_improved_medium_tank_medium"
 			}
@@ -2368,10 +2393,10 @@ if = {
 					special_type_slot_1 = tank_radio_3
 					special_type_slot_2 = sloped_armor
 					special_type_slot_3 = additional_machine_guns
-					special_type_slot_4 = smoke_launchers
+					special_type_slot_4 = extra_ammo_storage
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 7
+					tank_nsb_engine_upgrade = 9
 					tank_nsb_armor_upgrade = 4
 				}
 				icon = "GFX_SOV_advanced_heavy_tank_heavy"

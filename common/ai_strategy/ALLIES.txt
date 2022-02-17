@@ -19,7 +19,7 @@ allies_enable_invasion_of_GER = {
 
 		#set_temp_variable = { days = global.num_days }
 		#modulo_temp_variable = { days = 90 }
-		#check_variable = { days < 60 }
+		#check_variable = { days < 30 }
 		
 		14 = {is_fully_controlled_by = GER}
 		15 = {is_fully_controlled_by = GER} 
@@ -30,7 +30,7 @@ allies_enable_invasion_of_GER = {
 		
 	}
 
-	abort_when_not_enabled = yes
+	abort_when_not_enabled = no # i think it means we dont abort other invasions
 
 
 #	ai_strategy = {
@@ -47,7 +47,7 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = invade
 		id = "GER"
-		value = 100
+		value = 200
 	}
 
 #	ai_strategy = {
@@ -59,13 +59,13 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = area_priority
 		id = normandy_landing_zone
-		value = 100
+		value = 500
 	}
 		
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = 30
+		value = 50
 	}
 
 	ai_strategy = {
@@ -153,7 +153,7 @@ allies_unit_buffer_defend_UK = {
 			123
 			122
 		}
-		ratio = 0.1
+		ratio = 0.05
 
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = no
@@ -187,11 +187,11 @@ allies_landed_in_france = {
 		NOT = {
 			OR = {
 				16 = {is_fully_controlled_by = GER}
-				15 = {is_fully_controlled_by = GER}
-				29 = {is_fully_controlled_by = GER}
-				6 =  {is_fully_controlled_by = GER}
-				14 = {is_fully_controlled_by = GER}
-				34 = {is_fully_controlled_by = GER}
+				#15 = {is_fully_controlled_by = GER}
+				#29 = {is_fully_controlled_by = GER}
+				#6 =  {is_fully_controlled_by = GER}
+				#14 = {is_fully_controlled_by = GER}
+				#34 = {is_fully_controlled_by = GER}
 			}
 			
 		}
@@ -204,9 +204,20 @@ allies_landed_in_france = {
 	}
 
 	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = GER
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = rush
+	}
+
+	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = -500
+		value = 0
 	}
 
 	ai_strategy = {
@@ -218,7 +229,7 @@ allies_landed_in_france = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = GER }
-		value = 125
+		value = 60
 	}
 }
 
@@ -414,3 +425,63 @@ allies_dont_invade_axis_allies = {
 
 
 
+Stop_guarding_these_borders = {
+	allowed = {
+		OR = {
+			tag = USA
+			tag = ENG
+			tag = CAN
+			tag = FRA
+			tag = RAJ
+			tag = NZL
+			tag = AST
+			tag = BRA
+			tag = SAF
+			tag = MEX
+		}
+	}
+
+	enable = {
+		#is_historical_focus_on = yes
+		date > 1944.1.1
+		date < 1946.1.1
+		OR = {
+			NOT = { has_war_with = SAU}
+			NOT = { has_war_with = SOV}
+			NOT = { has_war_with = AFG}
+			NOT = { has_war_with = VEN}
+			NOT = { has_war_with = VEN}
+		}
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = SAU
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = SOV
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = AFG
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = VEN
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = PRU
+		value = -100
+	}
+
+}

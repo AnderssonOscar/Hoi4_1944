@@ -1,4 +1,4 @@
-﻿capital = 64
+capital = 64
 
 if = {
 	limit = {
@@ -208,8 +208,8 @@ set_war_support = 0.3
 
 	#Soviet treaty end
 	
-		complete_national_focus = GER_four_year_plan
-		complete_national_focus = GER_autarky
+		unlock_national_focus = GER_four_year_plan
+		unlock_national_focus = GER_autarky
 		unlock_national_focus = GER_rhineland
 		complete_national_focus = GER_synthetic_rubber
 
@@ -263,6 +263,35 @@ set_war_support = 0.3
 
 	#BUILDINGS
 	
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+			
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+
+		upgrade_intelligence_agency = upgrade_anti_partisan
+		upgrade_intelligence_agency = upgrade_anti_partisan
+
+		upgrade_intelligence_agency = upgrade_invisible_ink
+		upgrade_intelligence_agency = upgrade_suicide_pills
+
+		upgrade_intelligence_agency = upgrade_training_centers
+		upgrade_intelligence_agency = upgrade_commando_training
+		upgrade_intelligence_agency = upgrade_interrogation_techniques
+
+		upgrade_intelligence_agency = upgrade_form_department
+		upgrade_intelligence_agency = upgrade_decryption_boost #radio
+		upgrade_intelligence_agency = upgrade_decryption_boost #radio
+		#upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+		upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+	}
 
 	set_technology = {
 					naval_bomber2 = 1
@@ -1497,12 +1526,12 @@ create_equipment_variant = {
 					engine_type_slot = tank_gasoline_engine
 					special_type_slot_1 = tank_radio_3
 					special_type_slot_2 = smoke_launchers
-					special_type_slot_3 = empty
+					special_type_slot_3 = additional_machine_guns
 					special_type_slot_4 = additional_machine_guns
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 4
-					tank_nsb_armor_upgrade = 4
+					tank_nsb_engine_upgrade = 5
+					tank_nsb_armor_upgrade = 9
 				}
 				icon = "GFX_GER_heavy_CCB"
 			}
@@ -1610,7 +1639,7 @@ create_equipment_variant = {
 		set_fuel_ratio = 0.35 # 1944 was 0.8
 		set_convoys = 50
 		set_stability = 1 
-		set_war_support = 0.9
+		set_war_support = 1
 
 		add_ideas = {
 			medium_war_casualties
@@ -1628,17 +1657,17 @@ create_equipment_variant = {
 	## Added equipment here instead. so the units dont have 100% from start but can still resupply
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 21000
+		amount = 15000
 	}
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 3000
+        amount = 750
     }
 
 	add_equipment_to_stockpile = {
         type = artillery_equipment_2
-        amount = 1800
+        amount = 1100
     }
 
 	add_equipment_to_stockpile = {
@@ -1657,13 +1686,13 @@ create_equipment_variant = {
     }
 
 	add_equipment_to_stockpile = {
-        type = mechanized_equipment_1
+        type = mechanized_equipment_2
         amount = 1000
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 5900
+        amount = 3500
     }
 
 	if = {

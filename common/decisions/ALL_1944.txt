@@ -84,7 +84,7 @@ operations = {
 				}
 
 				has_war_with = GER
-				date > 1944.5.27
+				date > 1944.3.27
 
 
 			any_other_country = {
@@ -129,6 +129,30 @@ operations = {
 			days_remove = 10
 			
 			complete_effect = {
+
+					#15 = {set_state_province_controller = {controller = USA province = 11535} }
+
+				#15 = {
+				#	USA = {	set_province_controller = 11535 }
+				#}
+
+				#15 = {
+				#create_unit = {
+						#division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.42 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"USA\" } }" 
+						#owner = USA
+						#prioritize_location = 11535
+					#}
+				#}
+
+
+
+
+
+
+
+
+
+
 
 			}
 		}

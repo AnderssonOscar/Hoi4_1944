@@ -278,3 +278,57 @@ FIN_unit_buffer_leningrad = { #so soviet dont rush in
 		subtract_fronts_from_need = yes
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+FIN_unit_production = {
+
+	allowed = {	original_tag = FIN }
+	enable = {
+		always = yes
+		date < 1945.1.1
+	}
+	abort = {
+		always = no
+	}
+
+
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = -25
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -100
+	}
+
+
+	ai_strategy = { type = equipment_variant_production_factor id = heavy_fighter_equipment      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
+}
+

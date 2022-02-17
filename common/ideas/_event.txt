@@ -276,8 +276,8 @@ ideas = {
 
 			modifier = {
 				
-				army_attack_factor = +0.75
-				breakthrough_factor = +0.75
+				army_attack_factor = +1.0
+				breakthrough_factor = +1.0
 				#out_of_supply_factor = +0.25
 				supply_consumption_factor = -0.75
 				land_reinforce_rate = +0.5
@@ -290,7 +290,7 @@ ideas = {
 
 				ground_attack_factor = +0.5
 
-				command_power_gain_mult = +10
+				command_power_gain_mult = +10.0
 				#command_power_gain = +10 crash
 			}
 

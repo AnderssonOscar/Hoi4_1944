@@ -4024,7 +4024,7 @@ units = {
 				is_name_ordered = no
 				name_order = 0
 		}
-		location = 411
+		location = 11703
 		division_template = "Panzergrenadier"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }

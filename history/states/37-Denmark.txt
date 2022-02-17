@@ -32,7 +32,7 @@ state= {
 		}
 		add_core_of = DEN
 
-					1943.12.1 = {
+		1943.12.1 = {
 			owner = GER
 			controller = GER
 		}

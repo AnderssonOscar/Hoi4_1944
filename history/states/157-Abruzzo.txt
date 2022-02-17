@@ -28,6 +28,7 @@ state={
 				3966 = {
 					bunker = 2
 				}
+				anti_air_building = 5
 			}
 		}
 
