@@ -38,6 +38,13 @@ state={
 				dockyard = 3
 			}
 		}
+
+		1943.12.30 = {
+			buildings = {
+				anti_air_building = 5
+				radar_station = 2
+			}
+		}
 	}
 
 	provinces={

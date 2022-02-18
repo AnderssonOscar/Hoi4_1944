@@ -514,10 +514,22 @@ set_popularities = {
 	fascism = 100
 }
 
-create_faction = "Greater East-Asian Co-Prosperity Sphere"
+#create_faction = "Greater East-Asian Co-Prosperity Sphere"
 add_to_faction = SIA
 add_to_faction = MEN
 add_to_faction = MAN
+
+#SIA = {give_military_access = JAP}
+#JAP = {give_military_access = SIA}
+
+#	SIA = { diplomatic_relation = {
+#		country = JAP
+#		relation = docking_rights
+#		active = yes
+#	}
+#}
+
+
 
 recruit_character = JAP_tetsu_katayama
 recruit_character = JAP_kyuichi_tokuda
@@ -1422,6 +1434,8 @@ if = {
 
 1943.12.30 = {
 
+
+	add_to_faction = SIA
 
 	if = {
 		limit = {

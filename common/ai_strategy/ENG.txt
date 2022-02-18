@@ -1618,3 +1618,51 @@ ENG_dont_do_naval_inasion_on_jap = {
 #		value = -500
 #	}
 }
+
+
+
+
+
+
+
+
+ENG_lend_lease = {
+	allowed = { original_tag = ENG }
+	enable = {
+		has_war = yes
+		num_divisions > 70
+
+		NOT = { has_government = fascism }
+		NOT = { is_in_faction_with = GER }
+		NOT = { has_war_with = SOV }
+		GER = {
+			has_war_with = SOV
+			has_war_with = ENG
+			has_government = fascism
+		}
+		SOV = {
+			#surrender_progress > 0.05
+			has_capitulated = no
+		}
+	}
+
+	abort = {
+		OR = {
+			has_war_with = SOV
+
+			NOT = { GER = { has_war_with = SOV } }
+
+			is_in_faction_with = GER
+
+			has_government = fascism
+	
+			SOV = { has_war = no }
+		}
+	}
+
+	ai_strategy = {
+		type = support
+		id = "SOV"
+		value = 50
+	}
+}

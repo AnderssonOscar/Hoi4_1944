@@ -563,14 +563,6 @@ division = {
 	}
 
 
-
-
-
-
-
-
-	Erillinen Prikaati
-
 }
 
 

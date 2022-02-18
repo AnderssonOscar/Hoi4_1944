@@ -110,5 +110,5 @@ set_popularities = {
 	add_opinion_modifier = { target = ENG modifier = large_decrease	}
 	add_opinion_modifier = { target = ENG modifier = large_decrease	}
 
-	create_faction = "Irish neutrality"
+	#create_faction = "Irish neutrality"
 }

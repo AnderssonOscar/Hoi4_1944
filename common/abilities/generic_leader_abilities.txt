@@ -341,7 +341,7 @@ ability = {
 			supply_units = 720
 		}
 		
-		cost = 0.35
+		cost = 0.45
 		duration = 720
 		cooldown = 24
 	}

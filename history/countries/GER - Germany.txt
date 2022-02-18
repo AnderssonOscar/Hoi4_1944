@@ -16,7 +16,7 @@ if = {
 }
 
 starting_train_buffer = 1.6 #1944 was 2.0
-set_fuel_ratio = 0.35 # 1944 was 0.8
+set_fuel_ratio = 0.80 # 1944 was 0.8
 
 # starting_truck_buffer = 0.8
 
@@ -1444,7 +1444,7 @@ create_equipment_variant = {
 					tank_nsb_engine_upgrade = 6
 					tank_nsb_armor_upgrade = 3
 				}
-				icon = "GFX_GER_improved_medium_tank_medium"
+				#icon = "GFX_GER_improved_medium_tank_medium"
 			}
 
 			create_equipment_variant = {
@@ -1466,7 +1466,7 @@ create_equipment_variant = {
 					tank_nsb_engine_upgrade = 1
 					tank_nsb_armor_upgrade = 2
 				}
-				icon = "GFX_GER_light_BAC"
+				#icon = "GFX_GER_light_BAC"
 			}
 
 
@@ -1489,7 +1489,7 @@ create_equipment_variant = {
 					tank_nsb_engine_upgrade = 3
 					tank_nsb_armor_upgrade = 0
 				}
-				icon = "GFX_GER_light_CBB"
+			#	icon = "GFX_GER_light_CBB"
 			}
 
 			create_equipment_variant = {
@@ -1533,7 +1533,7 @@ create_equipment_variant = {
 					tank_nsb_engine_upgrade = 5
 					tank_nsb_armor_upgrade = 9
 				}
-				icon = "GFX_GER_heavy_CCB"
+				#icon = "GFX_GER_heavy_CCB"
 			}
 
 			create_equipment_variant = {
@@ -1555,7 +1555,7 @@ create_equipment_variant = {
 					tank_nsb_engine_upgrade = 5
 					tank_nsb_armor_upgrade = 0
 				}
-				icon = "GFX_GER_medium_BAA"
+				#icon = "GFX_GER_medium_BAA"
 			}
 
 
@@ -1636,7 +1636,7 @@ create_equipment_variant = {
 		add_named_threat = { threat = 100 name = 1939_bookmark_threat }
 		set_oob = "GER_1944_nsb"
 
-		set_fuel_ratio = 0.35 # 1944 was 0.8
+		#set_fuel_ratio = 0.35 # 1944 was 0.8
 		set_convoys = 50
 		set_stability = 1 
 		set_war_support = 1

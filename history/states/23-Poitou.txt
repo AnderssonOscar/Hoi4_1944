@@ -28,6 +28,20 @@ state={
 			owner = GER
 			controller = GER
 		}
+
+
+		1943.12.30 = {
+			buildings = {
+				anti_air_building = 5
+				infrastructure = 4
+				radar_station = 3
+				dockyard = 2
+
+			6657 = {
+				naval_base = 7
+			}
+			}
+		}
 	}
 
 	provinces={

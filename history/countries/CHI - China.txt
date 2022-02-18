@@ -386,11 +386,11 @@ if = {
 	add_political_power = 2589
 	add_command_power = 200
 
-	set_convoys = 350
+	set_convoys = 475
 
 	add_ideas = {
 		#laws
-		#tot_economic_mobilisation
+		war_economy
 		#service_by_requirement
 	}
 

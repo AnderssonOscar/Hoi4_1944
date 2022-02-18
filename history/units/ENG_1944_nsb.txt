@@ -1314,7 +1314,7 @@ air_wings = {
 		fighter_equipment_1 = { owner = "ENG" amount = 250 }			# III/No. 11 Fighter Group -- Hurricane I's
 		fighter_equipment_2 = { owner = "ENG" amount = 250 }			# IV/No. 11 Fighter Group -- Spitfire I's
 		### No. 4 Bomber Command (CO: ) ###
-		strat_bomber_equipment_3 = { owner = "ENG" amount = 500 }	
+		strat_bomber_equipment_3 = { owner = "ENG" amount = 250 }	
 		strat_bomber_equipment_3 = { owner = "ENG" amount = 500 }
 		
 	}	
@@ -1323,26 +1323,26 @@ air_wings = {
 		fighter_equipment_1 = { owner = "ENG" amount = 500 }			# I/No. 12 Fighter Group -- Hurricane I's
 		fighter_equipment_2 = { owner = "ENG" amount = 1000 }
 		fighter_equipment_3 = { owner = "ENG" amount = 500 }			# II/No. 12 Fighter Group -- Spitfire I's
-		heavy_fighter_equipment_3 = { owner = "ENG" amount = 1000 }	# III/No. 12 Fighter Group -- Blenheim IF's
+		heavy_fighter_equipment_3 = { owner = "ENG" amount = 500 }	# III/No. 12 Fighter Group -- Blenheim IF's
 		### No. 16 Coastal Group (CO: ) ###
 		nav_bomber_equipment_1 = { owner = "ENG" amount = 250 }		# No. 16 Coastal Group -- Vildebeests
 	}	
 	131 = { 														# Newcastle
 		### No. 13 Fighter Command (CO: ) ###
-		fighter_equipment_2 = { owner = "ENG" amount = 1000 }			# I/No. 13 Fighter Group -- Spitfire I's
+		fighter_equipment_2 = { owner = "ENG" amount = 500 }			# I/No. 13 Fighter Group -- Spitfire I's
 		heavy_fighter_equipment_3 = { owner = "ENG" amount = 500 }	# II/No. 13 Fighter Group -- Blenheim IF's
-		strat_bomber_equipment_2 = { owner = "ENG" amount = 1000 }
+		strat_bomber_equipment_2 = { owner = "ENG" amount = 250 }
 	}
 	125 = { 														# East Anglia 
 		### Advanced Air Striking Force (CO: Barratt) -- en route to FRA ###		
 		CAS_equipment_1 = { owner = "ENG" amount = 300 }				# I/AASF -- Fairey Battles
 		fighter_equipment_1 = { owner = "ENG" amount = 1000 }			# BEF Air Component -- Hurricane I's
 		### No. 2 Bomber Command (CO: ) ###
-		CAS_equipment_2 = { owner = "ENG" amount = 500 }				# I/No. 2 Bomber Group -- Blenheim IV's
 	}
 	126 = { 														# Suffolk  
 		### No. 3 Bomber Command (CO: ) ###
 		tac_bomber_equipment_2 = { owner = "ENG" amount = 250 }		# I/No. 3 Bomber Group -- Wellington IC's
+		transport_plane_equipment_1 = { owner = "ENG" amount = 125 }
 	}
 	128 = { 														# Lincoln
 		### No. 5 Bomber Command (CO: ) ###

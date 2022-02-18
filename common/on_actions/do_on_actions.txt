@@ -75,6 +75,14 @@ if = {
 				}
 			}
 
+
+			IRE = {add_ai_strategy  = {
+					type = alliance	
+					id = PREV
+					value = -5000
+				}
+			}
+
 		}
 
 GER = {

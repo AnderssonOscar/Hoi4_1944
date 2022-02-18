@@ -76,20 +76,12 @@ units = {
 		start_equipment_factor = 1
 	}
 	division= {
-		name = "6. Gyalogdandár"
-		location = 9660
-		division_template = "Gyalogdandár"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.7
-	}
-	division= {
 		name = "7. Gyalogdandár"
 		location = 9660
 		division_template = "Gyalogdandár"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.77
 	}
-
 		division= {
 		name = "7. Gyalogdandár"
 		location = 9660
@@ -97,26 +89,13 @@ units = {
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.9
 	}
-	division= {
-		name = "9. Gyalogdandár"
-		location = 9660
-		division_template = "Gyalogdandár"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.59
-	}
+
 	division= {
 		name = "10. Gyalogdandár"
 		location = 9660
 		division_template = "Gyalogdandár"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.8
-	}
-	division= {
-		name = "12. Gyalogdandár"
-		location = 9660
-		division_template = "Gyalogdandár"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.42
 	}
 	division= {
 		name = "13. Gyalogdandár"
@@ -135,17 +114,12 @@ units = {
 	}
 
 	division= {
-		name = "13. Gyalogdandár"
+		division_name = {
+			is_name_ordered = no
+			name_order = no
+		}
 		location = 619
-		division_template = "Gyalogdandár"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.9
-	}
-
-	division= {
-		name = "13. Gyalogdandár"
-		location = 619
-		division_template = "Gyalogdandár"
+		division_template = "Huszár Dandár"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}

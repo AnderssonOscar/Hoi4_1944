@@ -23,6 +23,16 @@ state={
 				naval_base = 2
 			}
 		}
+
+
+		1943.12.30 = {
+			buildings = {
+				industrial_complex = 1
+				anti_air_building = 3
+				infrastructure = 4
+			}
+		}
+
 		add_core_of = SWE
 	}
 

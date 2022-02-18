@@ -17,6 +17,10 @@ war_measures = {
 		available = {
 			is_faction_leader = no
 			has_capitulated = no
+
+			#SWE = {has_war = no}
+			SWE = {has_capitulated = no}
+
 			has_war_with = SOV
 			surrender_progress > 0.12
 			date > 1944.7.25
@@ -58,7 +62,7 @@ war_measures = {
 
 		remove_effect = {
 			every_country = {
-				limit = { has_war_with = FIN }
+				limit = { has_war_with = FIN is_faction_leader = yes }
 				white_peace = FIN 
 			}
 		

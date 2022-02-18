@@ -1,0 +1,88 @@
+
+
+
+
+
+political_actions = {
+
+	SWE_stop_trading_with_axis = {
+
+		icon = generic_prepare_civil_war
+
+			allowed = {
+				tag = SWE	
+			}
+
+		available = {
+			has_capitulated = no
+			has_war = no
+			OR = {
+				date > 1944.11.15 #1944.11.15
+				GER = {surrender_progress > 0.2}
+			}
+			has_government = democratic
+		}
+
+		visible = {
+			OR = {
+				GER = {has_war_with = SOV}
+				GER = {has_war_with = ENG}
+				GER = {has_war_with = USA}
+			}
+		}
+
+		fire_only_once = no
+		cost = 0
+		days_remove = 120
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				 date > 1944.11.15
+
+				SOV = {surrender_progress < 0.01}
+				ENG = {surrender_progress < 0.01}
+				USA = {surrender_progress < 0.01}
+
+				 OR = {
+					NOT = { 16 = {is_fully_controlled_by = GER}} #Paris
+					NOT = { 5 = {is_fully_controlled_by = GER}} #königberg - ermald
+				 }
+				factor = 100
+			}
+		}
+
+
+	complete_effect = {
+			#GER = { country_event = bulgaria.switch.side.1 }
+
+		every_country = {
+			limit = { 
+					is_in_faction_with = GER
+					}
+
+				ROOT = {add_opinion_modifier = { target = PREV modifier = embargo}}
+				ROOT = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
+				ROOT = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
+		}
+	}
+
+		remove_effect = {
+			every_country = {
+				limit = { 
+							is_in_faction_with = GER
+						}
+						
+						ROOT = {remove_opinion_modifier = { target = PREV modifier = embargo}}
+						ROOT = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
+						ROOT = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
+				}
+			}
+	}
+
+
+
+
+}
+
+

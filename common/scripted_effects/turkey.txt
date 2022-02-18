@@ -1,24 +1,39 @@
-
 TUR_stop_selling_chromium = {
 	
+
 	if = {
-		limit = {
+		limit = { 
 			is_ai = yes
 			tag = TUR
-			NOT = {has_war_with = ENG}
-			NOT = {has_war_with = USA}
-			NOT = {has_war_with = SOV}
-			NOT = {is_in_faction_with = GER}
+			has_war = no
 
 			date > 1944.4.15
+			date < 1945.9.15 
 		}
 
-		add_opinion_modifier = { target = GER modifier = large_decrease	}	
-		add_opinion_modifier = { target = GER modifier = large_decrease	}
-		add_opinion_modifier = { target = GER modifier = large_decrease	}
-		add_opinion_modifier = { target = GER modifier = embargo		}
+		every_country = {
+			limit = { 
+					is_in_faction_with = GER
+					}
+			TUR = {add_opinion_modifier = { target = PREV modifier = embargo}}
+			TUR = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
+			TUR = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
+		}
 
 	}
-}
+	else_if = {
+   		 limit = {
+				is_ai = yes
+				tag = TUR
+				#has_war = yes
+		}
 
-
+		every_country = {
+			limit = { 
+					is_in_faction_with = GER
+				}
+					TUR = {remove_opinion_modifier = { target = PREV modifier = embargo}}
+					TUR = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
+			}
+		}
+	}

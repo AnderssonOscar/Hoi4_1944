@@ -2507,7 +2507,52 @@ SOV_unit_production = {
 
 
 
+SOV_build_more_mil = {
+	allowed = { tag = SOV }
+	enable = {
+		date < 1945.6.1
+		date > 1943.12.30
+		has_war_with = GER
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 500
+	}
 
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = -500
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = -500
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = fuel_silo
+		value = -500
+	}
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 500
+	}
+
+	ai_strategy = {
+		type = dockyard_to_military_factory_ratio
+		value = -500
+	}
+
+
+	
+}
 
 
 

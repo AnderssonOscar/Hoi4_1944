@@ -3836,7 +3836,7 @@ air_wings = {
 	219 = { 
 		transport_plane_equipment_1 = { owner = "SOV" amount = 200 }
 		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 500 }	
-		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 1000 }				
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 500 }				
 	}
 
 	195 = { 																	
@@ -3850,30 +3850,29 @@ air_wings = {
 
 		tac_bomber_equipment_2 = { owner = "SOV" amount = 250 } 
 		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 500 }	
-		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 1000 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 750 }	
 
 	}
 
 	217 = { 																		
-		CAS_equipment_1 =  { owner = "SOV" amount = 500 }	
+		CAS_equipment_1 =  { owner = "SOV" amount = 250 }	
 		fighter_equipment_1 = { owner = "SOV"  amount = 650 }
 		heavy_fighter_equipment_1  = { owner = "SOV"  amount = 250 }	
-		CAS_equipment_1 =  { owner = "SOV" amount = 250 }	
 	}
 
 
 	408 = { 																		
-		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 500 }
 		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 1000 }		
 	}
 
 	266 = { 																		
-		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 500 }
 		CAS_equipment_1 =  { owner = "SOV" amount = 250 }	
 	}
 
 	221 = { 																		
-		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 750 }
 		CAS_equipment_2 =  { owner = "SOV" amount = 250 }	
 	}
 }

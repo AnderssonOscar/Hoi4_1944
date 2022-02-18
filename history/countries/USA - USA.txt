@@ -2,7 +2,7 @@
 
 oob = "USA_1936"
 
-starting_train_buffer = 5
+starting_train_buffer = 3 #1944 was 5
 
 if = {
 	limit = { has_dlc = "Man the Guns" }
@@ -1541,6 +1541,13 @@ if = {
 			#special_type_slot_1 = amphibious_drive
 }
 
+
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 4500
+		producer = USA
+    }
 
 
 
