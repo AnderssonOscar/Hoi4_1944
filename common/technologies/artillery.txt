@@ -310,13 +310,20 @@ technologies = {
 		}
 	}
 
-	artillery4 = {
 
-		enable_equipments = {
-			artillery_equipment_3
-		}
+
+
+artillery4 = {
+
+		#enable_equipments = {
+		#	artillery_equipment_3
+		#}
+		#enable_equipment_modules = {
+		#	tank_medium_cannon_2
+		#}
+
 		enable_equipment_modules = {
-			tank_medium_cannon_2
+			tank_heavy_howitzer
 		}
 
 		path = {
@@ -326,7 +333,7 @@ technologies = {
 
 		research_cost = 2
 
-		start_year = 1942
+		start_year = 1943
 
 		folder = {
 			name = artillery_folder
@@ -342,22 +349,72 @@ technologies = {
 
 			modifier = {
 				factor = 2
-				date > "1941.1.9"
+				date > "1942.1.9"
 			}
 
 			modifier = {
 				factor = 2
-				date > "1942.1.1"
+				date > "1943.1.1"
 			}
 
 			modifier = {
 				factor = 5
-				date > "1942.1.6"
+				date > "1944.1.6"
 			}
 		}
 	}
 
+
+
+
 	artillery5 = {
+
+		enable_equipments = {
+			artillery_equipment_3
+		}
+		enable_equipment_modules = {
+			tank_medium_cannon_2
+		}
+
+		path = {
+			leads_to_tech = artillery6
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		start_year = 1943
+
+		folder = {
+			name = artillery_folder
+			position = { x = 0 y = 12 }
+		}
+
+		categories = {
+			artillery
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 2
+				date > "1942.1.9"
+			}
+
+			modifier = {
+				factor = 2
+				date > "1943.1.1"
+			}
+
+			modifier = {
+				factor = 5
+				date > "1944.1.6"
+			}
+		}
+	}
+
+	artillery6 = {
 
 		artillery = {
 			soft_attack = 0.1
@@ -386,16 +443,16 @@ technologies = {
 
 		enable_equipment_modules = {
 			auto_loader
-			tank_heavy_howitzer
+			#tank_heavy_howitzer
 		}
 
 		research_cost = 1
 
-		start_year = 1943
+		start_year = 1944
 
 		folder = {
 			name = artillery_folder
-			position = { x = 0 y = 12 }
+			position = { x = 0 y = 14 }
 		}
 
 		categories = {
@@ -407,17 +464,17 @@ technologies = {
 
 			modifier = {
 				factor = 2
-				date > "1943.1.6"
+				date > "1944.1.6"
 			}
 
 			modifier = {
 				factor = 2
-				date > "1944.1.1"
+				date > "1945.1.1"
 			}
 
 			modifier = {
 				factor = 5
-				date > "1945.1.1"
+				date > "1946.1.1"
 			}
 		}
 	}

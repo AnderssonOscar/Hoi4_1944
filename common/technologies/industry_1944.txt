@@ -14,7 +14,7 @@ modern_rubber_processing = {
 		}
 
 		path = {
-			leads_to_tech = modern_rubber_processing_2
+			leads_to_tech = modern_rubber_processing2
 			research_cost_coeff = 1
 		}
 		
@@ -56,7 +56,7 @@ modern_rubber_processing = {
 	}
 
 
-	modern_rubber_processing_2 = {
+	modern_rubber_processing2 = {
 
 		on_research_complete = {
 			modify_building_resources = {
@@ -125,7 +125,7 @@ modern_oil_processing = {
 		
 
 		path = {
-			leads_to_tech = modern_oil_processing_2
+			leads_to_tech = modern_oil_processing2
 			research_cost_coeff = 1
 		}
 
@@ -167,7 +167,7 @@ modern_oil_processing = {
 	}
 
 
-	modern_oil_processing_2 = {
+	modern_oil_processing2 = {
 
 		fuel_gain_factor_from_states = 0.5
 		

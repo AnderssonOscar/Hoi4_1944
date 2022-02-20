@@ -16,7 +16,7 @@ if = {
 }
 
 starting_train_buffer = 1.6 #1944 was 2.0
-set_fuel_ratio = 0.80 # 1944 was 0.8
+set_fuel_ratio = 0.8 # 1944 was 0.8
 
 # starting_truck_buffer = 0.8
 
@@ -215,7 +215,7 @@ set_war_support = 0.3
 
 		complete_national_focus = GER_hermann_goring_werke
 		complete_national_focus = GER_kdf_wagen
-		complete_national_focus = GER_coal_liquidization
+		unlock_national_focus = GER_coal_liquidization
 		complete_national_focus = GER_extra_tech_slot
 
 		complete_national_focus = GER_autobahn
@@ -337,6 +337,7 @@ set_war_support = 0.3
 			artillery2 = 1
 			artillery3 = 1
 			artillery4 = 1
+			artillery5 = 1
 			antiair1 = 1
 			antiair2 = 1
 			antitank1 = 1
@@ -434,7 +435,7 @@ set_war_support = 0.3
 			rocket_artillery = 1
 			rocket_artillery2 = 1
 			rocket_artillery3 = 1
-			rocket_artillery4 = 1
+			#rocket_artillery4 = 1
 			antiair3 = 1
 			antiair4 = 1
 			antiair5 = 1
@@ -1444,7 +1445,7 @@ create_equipment_variant = {
 					tank_nsb_engine_upgrade = 6
 					tank_nsb_armor_upgrade = 3
 				}
-				#icon = "GFX_GER_improved_medium_tank_medium"
+				icon = "GFX_GER_medium_BCB"
 			}
 
 			create_equipment_variant = {
@@ -1533,16 +1534,19 @@ create_equipment_variant = {
 					tank_nsb_engine_upgrade = 5
 					tank_nsb_armor_upgrade = 9
 				}
-				#icon = "GFX_GER_heavy_CCB"
-			}
+				#icon = ""  # GFX_GER_heavy_CCB = old heavy tank		| 	GFX_GER_medium_ACA = Panzer III Fixed	| 	GFX_GER_heavy_fixed_AFB = Ferdinand		| Fixed Small Howitser
+			}	# GFX_GER_heavy_fixed_BFB =	Ferdinand cammo	| 	GFX_GER_heavy_fixed_BFA = Ferdinand camo thiccer cannon
+				# GFX_GER_heavy_fixed_AFC = Hummel short cannon | 	GFX_GER_heavy_fixed_BFC = Hummel short cannon tiger camo
+				# GFX_GER_heavy_fixed_CFB = Old tank tracks + ferdinand
+				# GFX_GER_heavy_fixed_CFA = Old tracks + ferdiand
 
 			create_equipment_variant = {
 				name = "Hummel"
 				type = medium_tank_artillery_chassis_2
 				parent_version = 0
 				modules = {
-					main_armament_slot = tank_medium_howitzer_2
-					turret_type_slot = tank_light_fixed_superstructure_turret
+					main_armament_slot = tank_heavy_howitzer #tank_medium_howitzer_2
+					turret_type_slot = tank_medium_fixed_superstructure_turret #tank_light_fixed_superstructure_turret
 					suspension_type_slot = tank_bogie_suspension
 					armor_type_slot = tank_welded_armor
 					engine_type_slot = tank_gasoline_engine
@@ -1555,9 +1559,10 @@ create_equipment_variant = {
 					tank_nsb_engine_upgrade = 5
 					tank_nsb_armor_upgrade = 0
 				}
-				#icon = "GFX_GER_medium_BAA"
-			}
-
+				#icon = "" 		# GFX_GER_medium_BAC = Panzer IV smaller 	|	GFX_GER_medium_CCB = Panther	|	GFX_GER_medium_CAC = Mix of Panter & panzer IV	| GFX_GER_medium_BCB = Stug III	| GFX_GER_medium_BAA = Small panzer iv
+			}	# GFX_GER_medium_BAB = Panzer IV	|	GFX_GER_medium_ACC = Panzer IV Anti TanK	| GFX_GER_medium_BCC =	Panzer IV Fixed
+				# GFX_GER_heavy_fixed_CFC = old trakcs hummel short cannon | GFX_GER_heavy_fixed_AFA = ferdinand cammo Anti Tank
+				# GFX_GER_heavy_ACB = Small Tiger
 
 	}
 	create_equipment_variant = {
@@ -1633,7 +1638,7 @@ create_equipment_variant = {
 			}
 		}
 
-		add_named_threat = { threat = 30 name = 1939_bookmark_threat }
+		add_named_threat = { threat = 10 name = 1939_bookmark_threat }
 		set_oob = "GER_1944_nsb"
 
 		#set_fuel_ratio = 0.35 # 1944 was 0.8

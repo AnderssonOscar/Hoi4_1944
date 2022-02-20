@@ -2094,6 +2094,7 @@ if = {
 		artillery3 = 1
 		artillery4 = 1
 		artillery5 = 1
+		#artillery6 = 1
 
 		rocket_artillery = 1
 		rocket_artillery2 = 1
@@ -2412,7 +2413,7 @@ if = {
 					tank_nsb_engine_upgrade = 9
 					tank_nsb_armor_upgrade = 4
 				}
-				icon = "GFX_SOV_advanced_heavy_tank_heavy"
+				#icon = "GFX_SOV_advanced_heavy_tank_medium"
 			}
 	}
 

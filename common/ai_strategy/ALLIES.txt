@@ -387,6 +387,7 @@ allies_dont_invade_axis_allies = {
 	enable = {
 		date > 1943.12.30
 		has_war_with = GER
+		date < 1944.12.1
 	}
 
 	abort_when_not_enabled = yes

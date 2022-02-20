@@ -3,4 +3,149 @@ spriteTypes = {
 		name = "GFX_select_date_1944"
 		texturefile = "gfx/interface/select_date_1944.dds"
 	}
+
+
+
+
+
+
+	SpriteType = {
+		name = "GFX_GER_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_SOV_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_ENG_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_USA_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_POL_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_JAP_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_FRA_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_ITA_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+
+
+	SpriteType = {
+		name = "GFX_artillery6_medium"
+		texturefile = "gfx/interface/technologies/artillery2.dds"
+	}	
+	
+	SpriteType = {
+		name = "GFX_artillery5_medium"
+		texturefile = "gfx/interface/technologies/Art_3_comintern.dds"
+	}		
+
+	SpriteType = {
+		name = "GFX_SOV_artillery5_medium"
+		texturefile = "gfx/interface/technologies/Art_3_comintern.dds"
+	}
+
+
+
+	SpriteType = {
+		name = "GFX_USA_artillery5_medium"
+		texturefile = "gfx/interface/technologies/Art_3_allies.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_ENG_artillery5_medium"
+		texturefile = "gfx/interface/technologies/Art_3_allies.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_FRA_artillery5_medium"
+		texturefile = "gfx/interface/technologies/Art_3_allies.dds"
+	}	
+
+
+
+
+	SpriteType = {
+		name = "GFX_GER_artillery5_medium"
+		texturefile = "gfx/interface/technologies/Art_3_axis.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_ITA_artillery5_medium"
+		texturefile = "gfx/interface/technologies/Art_3_axis.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_JAP_artillery5_medium"
+		texturefile = "gfx/interface/technologies/Art_3_axis.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_artillery4_medium"
+		texturefile = "gfx/interface/technologies/artillery4.dds"
+	}	
+	
+
+
+
+
+
+
+	SpriteType = {
+		name = "GFX_dispersed_industry6_medium"
+		texturefile = "gfx/interface/technologies/dispersed_industry5.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_concentrated_industry6_medium"
+		texturefile = "gfx/interface/technologies/concentrated_industry5.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_construction6_medium"
+		texturefile = "gfx/interface/technologies/advanced_conversion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_excavation6_medium"
+		texturefile = "gfx/interface/technologies/excavation5.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_modern_rubber_processing2_medium"
+		texturefile = "gfx/interface/technologies/modern_rubber_processing.dds"
+	}
+
+
+	SpriteType = {
+		name = "GFX_modern_oil_processing2_medium"
+		texturefile = "gfx/interface/technologies/advanced_oil_processing.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_fuel_refining6_medium"
+		texturefile = "gfx/interface/technologies/fuel_refining5.dds"
+	}
+
 }

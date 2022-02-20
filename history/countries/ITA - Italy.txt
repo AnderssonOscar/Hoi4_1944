@@ -1193,6 +1193,9 @@ if = {
 	limit = {
 		has_dlc = "Man the Guns"
 	}
+
+	set_naval_oob = "ITA_1944_naval_mtg"
+
 	set_technology = {
 		basic_naval_mines = 1
 		submarine_mine_laying = 1

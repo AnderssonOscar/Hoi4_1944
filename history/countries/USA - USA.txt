@@ -1176,6 +1176,7 @@ if = {
 		artillery3 = 1
 		artillery4 = 1
 		artillery5 = 1
+		#artillery6 = 1
 
 		antiair1 = 1
 		antiair2 = 1

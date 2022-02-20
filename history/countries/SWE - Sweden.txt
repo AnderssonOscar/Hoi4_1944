@@ -571,7 +571,7 @@ if = {
 		elections_allowed = yes
 	}
 
-	
+	add_opinion_modifier = { target = GER modifier = large_increase	} #so we can do some tradeing
 
 	oob = "SWE_1944"
 

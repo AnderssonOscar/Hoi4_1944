@@ -351,3 +351,235 @@ if = {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1943.12.30 = {
+
+
+	#oob = "CAN_1944"
+
+	add_political_power = 2589
+	add_command_power = 200
+
+	set_convoys = 50
+	set_stability = 0.8
+	set_war_support = 0.75
+	#add_manpower = 20000
+	
+	add_ideas = {
+		#laws
+		extensive_conscription
+		export_focus
+		partial_economic_mobilisation
+	}
+
+	set_technology = {
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		computing_machine = 1
+
+		radio = 1
+		radio_detection = 1
+		decimetric_radar = 1
+		improved_decimetric_radar = 1
+		centimetric_radar = 1
+		#improved_centimetric_radar = 1
+
+		#industry
+		excavation1 = 1
+		excavation2 = 1
+		excavation3 = 1
+		excavation4 = 1
+
+		#doctrine
+		trench_warfare = 1
+		grand_battle_plan = 1
+		prepared_defense = 1
+		grand_assault = 1
+
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+
+		fuel_silos = 1
+		fuel_refining = 1
+		fuel_refining2 = 1
+
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		construction4 = 1
+
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+		dispersed_industry4 = 1
+
+		naval_bomber1 = 1
+		naval_bomber2 = 1
+
+		CAS1 = 1
+		CAS2 = 1
+
+		tactical_bomber2 = 1
+
+		early_fighter = 1
+		fighter1 = 1
+		fighter2 = 1
+
+		support_weapons = 1
+		support_weapons2 = 1
+		support_weapons3 = 1
+		support_weapons4 = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+
+		improved_infantry_weapons = 1
+		improved_infantry_weapons_2 = 1
+
+		advanced_infantry_weapons = 1
+
+		infantry_at = 1
+		#infantry_at2 = 1
+
+		gw_artillery = 1
+		artillery1 = 1
+		artillery2 = 1
+		artillery3 = 1
+
+		interwar_antiair = 1
+		antiair1 = 1
+		antiair2 = 1
+		antiair3 = 1
+		#antiair4 = 1
+
+		interwar_antitank = 1
+		antitank1 = 1
+		antitank2 = 1
+		antitank3 = 1
+
+		motorised_infantry = 1
+
+		tech_mountaineers = 1
+		tech_support = 1
+
+		tech_engineers = 1
+		tech_engineers2 = 1
+		tech_engineers3 = 1
+
+		tech_recon = 1
+		tech_recon2 = 1
+
+		tech_field_hospital = 1
+		tech_field_hospital2 = 1
+
+		tech_military_police = 1
+
+		tech_maintenance_company = 1
+		
+		basic_train = 1
+	}
+
+		if = {
+		limit = {
+			
+			has_dlc = "No Step Back"
+			
+		}
+		set_technology = {
+			gwtank_chassis = 1
+
+			basic_medium_tank_chassis = 1 
+			improved_medium_tank_chassis = 1 
+
+			basic_light_tank_chassis = 1 
+			improved_light_tank_chassis = 1 
+
+			basic_heavy_tank_chassis = 1 
+			improved_heavy_tank_chassis = 1 
+
+			armor_tech_1 = 1
+
+			engine_tech_1 = 1
+			engine_tech_2 = 1
+
+		}
+
+
+
+	}
+
+
+	if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+		armored_car2 = 1
+	}
+}
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_1
+        amount = 2123
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_2
+        amount = 298
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_air_equipment_1
+        amount = 180
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 431
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 526
+		producer = USA
+    }
+
+	add_equipment_to_stockpile = { 
+        type = train_equipment_1
+        amount = 22
+    }
+}
