@@ -1536,7 +1536,7 @@ ENG_more_fighers = {
 
 	ai_strategy = {
 		type = air_factory_balance
-		value = 150
+		value = 90
 	}
 }
 
@@ -1554,7 +1554,7 @@ ENG_more_military_factories = {
 
 	ai_strategy = {
 		type = added_military_to_civilian_factory_ratio
-		value = 85
+		value = 95
 	}
 }
 

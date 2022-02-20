@@ -37,7 +37,7 @@ state={
 			controller = USA
 
 			ITA = {
-				set_province_controller = 9826
+				#set_province_controller = 9826
 			}
 		}
 	}

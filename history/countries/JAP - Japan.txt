@@ -1434,7 +1434,7 @@ if = {
 
 1943.12.30 = {
 
-
+	add_named_threat = { threat = 40 name = 1939_bookmark_threat }
 	add_to_faction = SIA
 
 	if = {

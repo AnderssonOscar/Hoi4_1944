@@ -22,11 +22,22 @@ political_actions = {
 		}
 
 		visible = {
-			GER = {has_war = yes}
-			SOV = {has_war = yes}
-			USA = {has_war = yes}
-			ENG = {has_war = yes}
+
+			AND = {
+					ENG = {has_capitulated = no}
+					USA = {has_capitulated = no}
+					SOV = {has_capitulated = no}
+					GER = {has_capitulated = no}
+				}
+
+			AND = {
+				GER = {has_war = yes}
+				SOV = {has_war = yes}
+				USA = {has_war = yes}
+				ENG = {has_war = yes}
+			}
 			is_in_faction = no
+			date > 1944.1.1
 		}
 
 		fire_only_once = no
@@ -34,7 +45,7 @@ political_actions = {
 		days_remove = 120
 
 		ai_will_do = {
-			factor = 0
+			factor = 1
 			modifier = {
 				 date > 1944.6.4
 				factor = 100

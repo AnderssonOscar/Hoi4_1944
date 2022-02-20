@@ -22,11 +22,19 @@ political_actions = {
 		}
 
 		visible = {
-			OR = {
+			AND = {
+				ENG = {has_capitulated = no}
+				USA = {has_capitulated = no}
+				SOV = {has_capitulated = no}
+			}
+
+			AND = {
 				GER = {has_war_with = SOV}
 				GER = {has_war_with = ENG}
 				GER = {has_war_with = USA}
 			}
+
+			date > 1944.1.1
 		}
 
 		fire_only_once = no
@@ -34,7 +42,7 @@ political_actions = {
 		days_remove = 120
 
 		ai_will_do = {
-			factor = 0
+			factor = 1
 			modifier = {
 				
 				SOV = {surrender_progress < 0.01}

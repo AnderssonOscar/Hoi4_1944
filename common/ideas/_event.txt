@@ -276,10 +276,10 @@ ideas = {
 
 			modifier = {
 				
-				army_attack_factor = +1.0
+				army_attack_factor = +1.5
 				breakthrough_factor = +1.0
 				#out_of_supply_factor = +0.25
-				supply_consumption_factor = -0.75
+				supply_consumption_factor = -1.0
 				land_reinforce_rate = +0.5
 				army_org_factor = +0.5
 

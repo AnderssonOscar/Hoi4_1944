@@ -789,13 +789,6 @@ if = {
 		producer = SWE
     }
 
-	add_equipment_to_stockpile = {
-        type = medium_tank_chassis_2
-        amount = 11
-		version_name = "Stridsvagn m/42"
-		producer = SWE
-    }
-
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
         amount = 22

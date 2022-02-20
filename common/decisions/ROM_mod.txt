@@ -18,7 +18,7 @@ war_measures = {
 			is_faction_leader = no
 			has_capitulated = no
 			has_war_with = SOV
-			surrender_progress > 0.05
+			surrender_progress > 0.07
 			date > 1944.7.25
 
 			has_government = fascism

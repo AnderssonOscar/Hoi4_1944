@@ -18,27 +18,39 @@ political_actions = {
 			has_war = no
 			OR = {
 				date > 1944.11.15 #1944.11.15
-				GER = {surrender_progress > 0.2}
+				GER = {surrender_progress > 0.1}
 			}
 			has_government = democratic
 		}
 
 		visible = {
-			OR = {
+
+			AND = {
+				ENG = {has_capitulated = no}
+				USA = {has_capitulated = no}
+				SOV = {has_capitulated = no}
+			}
+
+			AND = {
 				GER = {has_war_with = SOV}
 				GER = {has_war_with = ENG}
 				GER = {has_war_with = USA}
 			}
+
+			date > 1944.1.1
 		}
 
 		fire_only_once = no
-		cost = 0
+		cost = 1
 		days_remove = 120
 
 		ai_will_do = {
-			factor = 0
+			factor = 1
 			modifier = {
-				 date > 1944.11.15
+			 OR = {
+				date > 1944.11.15 #1944.11.15
+				GER = {surrender_progress > 0.1}
+			}
 
 				SOV = {surrender_progress < 0.01}
 				ENG = {surrender_progress < 0.01}

@@ -35,7 +35,8 @@ division_template = {
 		engineer = { x = 0 y = 1 } 		
 		anti_tank = { x = 0 y = 2 } 
 		logistics_company = { x = 0 y = 3 }
-		rocket_artillery = { x = 0 y = 4 }
+		artillery = { x = 0 y = 4 }
+		#rocket_artillery = { x = 0 y = 4 }
 	}
 		priority = 1
 }
@@ -2585,7 +2586,7 @@ units = {
 
 	division= {	
 		division_name = { is_name_ordered = no	name_order = 0 }
-				location = 4119
+				location = 4725
 				division_template = "NKVD Pogranichnaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
 				start_experience_factor = 0.01

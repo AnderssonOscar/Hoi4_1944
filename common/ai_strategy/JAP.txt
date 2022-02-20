@@ -104,7 +104,29 @@ JAP_unit_production = {
 
 
 
+JAP_just_hold_china = {
+	allowed = { original_tag = JAP }
+	enable = {
+		country_exists = CHI
+		has_war_with = CHI
+		has_war_with = USA
+		has_war_with = ENG
+		date > 1944.1.1
+		date < 1944.10.15
+	}
 
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = CHI
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
 
 
 

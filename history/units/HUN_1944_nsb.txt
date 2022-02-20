@@ -105,7 +105,7 @@ units = {
 		start_equipment_factor = 0.69
 	}
 	
-	division= {
+	division = {
 		name = "13. Gyalogdandár"
 		location = 619
 		division_template = "Gyalogdandár"
@@ -113,11 +113,8 @@ units = {
 		start_equipment_factor = 0.6
 	}
 
-	division= {
-		division_name = {
-			is_name_ordered = no
-			name_order = no
-		}
+	division = {
+		name = "1. Huszár Dandár"
 		location = 619
 		division_template = "Huszár Dandár"
 		start_experience_factor = 0.2

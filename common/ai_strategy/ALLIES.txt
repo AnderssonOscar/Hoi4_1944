@@ -485,3 +485,41 @@ Stop_guarding_these_borders = {
 	}
 
 }
+
+
+
+
+
+ALLIES_take_germany_first = {
+	allowed = {
+		OR = {
+			tag = USA
+			tag = ENG
+			tag = CAN
+			tag = FRA
+			tag = BRA
+			tag = SAF
+		}
+	}
+	enable = {
+		country_exists = JAP
+		has_war_with = JAP
+		has_war_with = GER
+		date > 1944.6.15
+		date < 1945.4.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = { tag = JAP }
+		value = -5
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = CHI
+		value = -15
+	}
+}

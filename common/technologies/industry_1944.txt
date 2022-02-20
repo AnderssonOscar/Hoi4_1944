@@ -67,7 +67,7 @@ modern_rubber_processing = {
 		}
 		
 		research_cost = 1.5
-		start_year = 1944
+		start_year = 1945
 		
 		folder = {
 			name = industry_folder
@@ -172,7 +172,7 @@ modern_oil_processing = {
 		fuel_gain_factor_from_states = 0.5
 		
 		research_cost = 1.5
-		start_year = 1944
+		start_year = 1945
 		
 		folder = {
 			name = industry_folder
@@ -272,7 +272,7 @@ modern_oil_processing = {
 
 		
 		research_cost = 2
-		start_year = 1944
+		start_year = 1945
 		
 		categories = {
 			industry
@@ -289,7 +289,7 @@ modern_oil_processing = {
 			
 			modifier = {
 				factor = 10
-				date > "1944.1.1"
+				date > "1945.1.1"
 			}
 		}
 	}
@@ -360,7 +360,7 @@ fuel_refining5 = {
 		fuel_gain_factor_from_states = 0.1
 
 		research_cost = 3
-		start_year = 1944
+		start_year = 1945
 		folder = {
 			name = industry_folder
 			position = { x = 3 y = 12 }
@@ -420,7 +420,7 @@ fuel_refining5 = {
 		}
 		
 		research_cost = 2
-		start_year = 1944
+		start_year = 1945
 		
 		categories = {
 			industry
@@ -530,11 +530,11 @@ fuel_refining5 = {
 		#industrial_capacity_factory = 0.15
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.20
-		industry_air_damage_factor = +0.10
-		production_factory_start_efficiency_factor = 0.20
+		industry_air_damage_factor = +0.15
+		production_factory_start_efficiency_factor = 0.15
 
 		research_cost = 2
-		start_year = 1944
+		start_year = 1945
 		
 		folder = {
 			name = industry_folder
@@ -546,12 +546,12 @@ fuel_refining5 = {
 			
 			modifier = {
 				factor = 5
-				date > "1942.1.9"
+				date > "1944.1.9"
 			}
 			
 			modifier = {
 				factor = 20
-				date > "1944.1.1"
+				date > "1945.1.1"
 			}			
 		}
 		
@@ -659,7 +659,7 @@ fuel_refining5 = {
 		
 		
 		research_cost = 2
-		start_year = 1944
+		start_year = 1945
 		
 		folder = {
 			name = industry_folder
@@ -672,7 +672,7 @@ fuel_refining5 = {
 			
 			modifier = {
 				factor = 10
-				date > "1944.1.1"
+				date > "1945.1.1"
 			}
 		}
 		

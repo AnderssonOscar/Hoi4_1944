@@ -162,7 +162,7 @@ set_war_support = 0.3
 		henschel
 		ig_faben
 		heinrich_himmler
-		rudolf_hess
+		#rudolf_hess
 		ludwig_beck
 		gerd_von_rundstedt
 		GER_autarky_idea
@@ -676,10 +676,10 @@ recruit_character = GER_julius_leber
 recruit_character = GER_albert_speer
 recruit_character = GER_hans_oster
 recruit_character = GER_theodor_heuss
-recruit_character = GER_fritz_todt
+#recruit_character = GER_fritz_todt
 recruit_character = GER_joachim_von_ribbentrop
 recruit_character = GER_ernst_thalmann
-recruit_character = GER_rudolf_hess
+#recruit_character = GER_rudolf_hess
 recruit_character = GER_martin_bormann
 recruit_character = GER_wilhelm_canaris
 recruit_character = GER_joseph_goebbels
@@ -1463,8 +1463,8 @@ create_equipment_variant = {
 					special_type_slot_4 = empty
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 1
-					tank_nsb_armor_upgrade = 2
+					tank_nsb_engine_upgrade = 7
+					tank_nsb_armor_upgrade = 1
 				}
 				#icon = "GFX_GER_light_BAC"
 			}
@@ -1633,7 +1633,7 @@ create_equipment_variant = {
 			}
 		}
 
-		add_named_threat = { threat = 100 name = 1939_bookmark_threat }
+		add_named_threat = { threat = 30 name = 1939_bookmark_threat }
 		set_oob = "GER_1944_nsb"
 
 		#set_fuel_ratio = 0.35 # 1944 was 0.8

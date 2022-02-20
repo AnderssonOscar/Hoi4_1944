@@ -29,7 +29,7 @@ SOV_great_patriotic_war = {
 		 fire_only_once = no
 
 		 days_re_enable = 86
-		 days_remove = 16
+		 days_remove = 22
 
 		#cost = 10
 
@@ -38,7 +38,7 @@ SOV_great_patriotic_war = {
 			modifier = {
 				has_manpower > 250000
 				surrender_progress < 0.2
-				factor = 30
+				factor = 50
 			}
 		}
 
@@ -46,14 +46,14 @@ SOV_great_patriotic_war = {
 
 			add_timed_idea = {
 				idea = major_offensive
-				days = 16
+				days = 22
 			}
 		}
 
 			remove_effect = {
 				add_timed_idea = {
-				idea = offensive_exhaustion
-				days = 20
+					idea = offensive_exhaustion
+					days = 20
 			}
 		}
 	}
