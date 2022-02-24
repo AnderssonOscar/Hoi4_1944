@@ -29,6 +29,7 @@
 
 division_template = {
 	name = "Luftwaffe-Feld-Division"
+	division_names_group = GER_LUFTINF_01
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -140,7 +141,7 @@ division_template = {
 		light_tank_destroyer_brigade = { x = 4 y = 0 }
 	}
 	support = {
-        recon = { x = 0 y = 0 }
+        mot_recon = { x = 0 y = 0 }
 	 	engineer = { x = 0 y = 1 }
         artillery = { x = 0 y = 2 }
 		maintenance_company = { x = 0 y = 3 }	
@@ -4425,44 +4426,83 @@ air_wings = {
 	##### Luftflotte 1 (CO: Kesselring) #####
 
 	64 = { 
-		transport_plane_equipment_1 = { owner = "GER" amount = 150 }
-		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 500 }	
-		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 1000 }			
+		transport_plane_equipment_1 = { owner = "GER" amount = 50 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }	
 		heavy_fighter_equipment_1  = { owner = "GER"  amount = 250 }		
 	}
 
-	62 = { 																		# Stettin
-		tac_bomber_equipment_1 = { owner = "GER" amount = 400 } 		
-		CAS_equipment_1 =  { owner = "GER" amount = 500 }	
-		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 750 }	
-		fighter_equipment_2 = { owner = "GER" version_name = "Fw 190" amount = 800 }	
+	192 = { # odessa
+		transport_plane_equipment_1 = { owner = "GER" amount = 100 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }	
 	}
+
+	62 = { 																		# Stettin
+		tac_bomber_equipment_1 = { owner = "GER" amount = 250 } 		
+		CAS_equipment_2 =  { owner = "GER" amount = 250 }
+		CAS_equipment_2 =  { owner = "GER" amount = 250 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+	}
+
+	29 = {
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+	}
+
 	763 = { 																		# Konigsberg 
 
-		CAS_equipment_2 =  { owner = "GER" amount = 250 }
 		tac_bomber_equipment_2 = { owner = "GER" amount = 125 } 
-		fighter_equipment_2  = { owner = "GER"  version_name = "Fw 190" amount = 750 }
-		fighter_equipment_3 = { owner = "GER"  version_name = "Ta 152 A" amount = 500 }	
-		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 500 }		
+		fighter_equipment_3 = { owner = "GER"  version_name = "Ta 152 A" amount = 250 }	
+		fighter_equipment_3 = { owner = "GER"  version_name = "Ta 152 A" amount = 250 }	
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }
+	}
+
+	209 = { 
+		CAS_equipment_2 =  { owner = "GER" amount = 250 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+	}
+
+	206 = { 
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		CAS_equipment_2 = { owner = "GER" amount = 250 }
 	}
 
 	10 = { 
-		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 1000 }		
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }		
 	}
 
 	9 = { 
-		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 750 }
-		CAS_equipment_2 =  { owner = "GER" amount = 500 }		
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		CAS_equipment_2 =  { owner = "GER" amount = 250 }		
+		CAS_equipment_2 =  { owner = "GER" amount = 250 }	
 	}
 
 	57 = { 
-		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 500 }
-		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 1000 }	
-		CAS_equipment_2 = { owner = "GER" amount = 250 }		
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }			
 	}
 
 	6 = { 
-		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 750 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
 		tac_bomber_equipment_2 = { owner = "GER" amount = 250 }		
 	}
 

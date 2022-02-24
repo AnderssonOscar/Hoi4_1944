@@ -15,7 +15,7 @@ if = {
 	set_oob = "GER_1936_nsb"
 }
 
-starting_train_buffer = 1.6 #1944 was 2.0
+starting_train_buffer = 1.5 #1944 was 2.0
 set_fuel_ratio = 0.8 # 1944 was 0.8
 
 # starting_truck_buffer = 0.8
@@ -420,7 +420,7 @@ set_war_support = 0.3
 			advanced_infantry_weapons = 1
 			#advanced_infantry_weapons2 = 1
 			infantry_at = 1
-			infantry_at2 = 1
+			#infantry_at2 = 1
 			tech_engineers3 = 1
 			tech_recon3 = 1
 			tech_military_police = 1
@@ -1641,10 +1641,12 @@ create_equipment_variant = {
 		add_named_threat = { threat = 10 name = 1939_bookmark_threat }
 		set_oob = "GER_1944_nsb"
 
-		#set_fuel_ratio = 0.35 # 1944 was 0.8
+		#set_fuel_ratio = 0.35 # 1944 was 0.8 dosent seems to work
+		set_fuel = 531812
+
 		set_convoys = 50
-		set_stability = 1 
-		set_war_support = 1
+		set_stability = 1.0
+		set_war_support = 0.7
 
 		add_ideas = {
 			medium_war_casualties

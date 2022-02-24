@@ -29,6 +29,12 @@ state={
 			owner = GER
 			controller = GER
 		}
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 4
+			}
+		}
 	}
 
 	provinces={

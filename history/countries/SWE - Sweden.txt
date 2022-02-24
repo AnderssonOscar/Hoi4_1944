@@ -572,6 +572,7 @@ if = {
 	}
 
 	add_opinion_modifier = { target = GER modifier = large_increase	} #so we can do some tradeing
+	add_opinion_modifier = { target = GER modifier = large_increase	}
 
 	oob = "SWE_1944"
 

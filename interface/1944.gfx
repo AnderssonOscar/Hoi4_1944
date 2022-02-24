@@ -101,10 +101,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/Art_3_axis.dds"
 	}	
 
-	SpriteType = {
-		name = "GFX_artillery4_medium"
-		texturefile = "gfx/interface/technologies/artillery4.dds"
-	}	
+#	SpriteType = {
+#		name = "GFX_artillery4_medium"
+#		texturefile = "gfx/interface/technologies/artillery4.dds"
+#	}	
 	
 
 
