@@ -21,6 +21,14 @@ state={
 			}
 		}
 		add_core_of = ENG
+
+
+		1943.12.1 = {
+			buildings = {
+					
+					fuel_silo = 3
+			}
+		}
 	}
 
 	provinces={

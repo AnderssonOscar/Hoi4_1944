@@ -2209,13 +2209,55 @@ SOV_take_germany = {
 
 
 
+
+SOV_dont_hurt_romania_yet = {
+	allowed = {
+			tag = SOV
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		date < 1944.8.1
+		has_war_with = ROM
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+	country_trigger = {
+			tag = ROM
+		}
+		tag = ROM
+		value = -40
+	}
+
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = ROM
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
+
+
 SOV_take_romania = {
 	allowed = { original_tag = SOV }
 	enable = {
 		tag = SOV
 		has_war_with = GER
 		has_war_with = ROM
-		NOT = {has_war_with = FIN}
+		#NOT = { has_war_with = FIN }
+		ROM = { has_capitulated = no }
+
+		AND = {
+			has_full_control_of_state = 197
+			has_full_control_of_state = 203
+			has_full_control_of_state = 202
+		}
 
 		country_exists = GER
 		#has_idea = major_offensive
@@ -2237,7 +2279,7 @@ SOV_take_romania = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = ROM
-		value = 155
+		value = 95
 	}
 }
 
@@ -2251,7 +2293,7 @@ SOV_dont_hurt_finland_yet = {
 	enable = {
 		is_historical_focus_on = yes
 		date < 1944.6.15
-
+		date > 1944.1.1
 	}
 
 	ai_strategy = {
@@ -2282,7 +2324,8 @@ SOV_take_finland = {
 		tag = SOV
 		country_exists = FIN
 		has_war_with = FIN
-		date > 1944.6.15
+		FIN = { has_capitulated = no }
+		date > 1944.7.1 #was 1944.6.15
 	}
 
 	abort_when_not_enabled = yes

@@ -17,7 +17,7 @@ state={
 		add_core_of = SOV
 		1943.12.30 = {
 			buildings = {
-				arms_factory = 5
+				arms_factory = 1
 			}
 		}
 	}

@@ -61,6 +61,12 @@ state=
 			owner = GER
 			controller = GER
 		}
+
+		1943.12.30 = {
+			buildings = {
+				industrial_complex = 4
+			}
+		}
 	}
 	provinces=
 	{
