@@ -14,7 +14,7 @@ allies_enable_invasion_of_GER = {
 
 	enable = {
 		
-		date > 1944.4.15
+		date > 1944.4.22
 		has_war_with = GER
 
 		#set_temp_variable = { days = global.num_days }
@@ -65,7 +65,7 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = 80
+		value = 90
 	}
 
 	ai_strategy = {
@@ -295,7 +295,7 @@ allies_dont_invade_GER_before_dday = {
 	}
 
 	enable = {
-		date < 1944.4.15
+		date < 1944.5.1
 		has_war_with = GER
 	}
 
@@ -507,7 +507,7 @@ ALLIES_take_germany_first = {
 		country_exists = JAP
 		has_war_with = JAP
 		has_war_with = GER
-		date > 1944.6.15
+		date > 1944.5.1
 		date < 1945.4.1
 	}
 
