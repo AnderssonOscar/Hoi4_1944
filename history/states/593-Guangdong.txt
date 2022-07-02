@@ -24,6 +24,16 @@ state= {
 			}
 		}
 
+		1943.12.30 = {
+			buildings = {
+				9938 = {
+					naval_base = 2
+					coastal_bunker = 2
+					bunker = 6
+			}
+		}
+	}
+
 		1938.10.25 = {		
 			remove_core_of = GXC
 			owner = CHI

@@ -96,12 +96,17 @@ division_template = {
 	name = "Senshadan"				# Tank Group - Groupings of tank 'regiments' (battalion-sized units)
 	division_names_group = JAP_ARM_01
 	regiments = {
-		light_armor = { x = 0 y = 0 }
-		light_armor = { x = 0 y = 1 }
-		light_armor = { x = 0 y = 2 }
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		light_armor = { x = 1 y = 2 }
+		light_armor = { x = 1 y = 3 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 } 
 	}	
 }
 division_template = {
@@ -171,12 +176,31 @@ units = {
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.4
 	}
+
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 4196
+		division_template = "Rikusentai"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+
 	division = {
 		name = "Ominato Kichi Shubitai"
 		location = 1055
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
+	}
+
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 1055 
+		division_template = "Rikusentai"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
 	}
 	
 	### Chuo Homengun (East Japan Army) (CO: ) ###
@@ -307,7 +331,7 @@ units = {
 		location = 3995 #Saipan
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.3
+		start_equipment_factor = 0.8
 
 	}
 	division = {
@@ -455,7 +479,10 @@ units = {
 		name = "1 Senshadan"
 		location = 10698
 		division_template = "Senshadan"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.74
 	}
 	division = {
 		name = "1 Kokkyou Keibitai"
@@ -480,7 +507,10 @@ units = {
 		name = "2 Senshadan"
 		location = 10541
 		division_template = "Senshadan"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 		start_experience_factor = 0.2
+		start_equipment_factor = 0.97
 	}
 	division = {
 		name = "5 Kokkyou Keibitai"
@@ -537,7 +567,10 @@ units = {
 		name = "3 Senshadan"
 		location = 3944
 		division_template = "Senshadan"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 		start_experience_factor = 0.2
+		start_equipment_factor = 0.84
 	}
 	division = {
 		name = "2 Kokkyou Keibitai"
@@ -964,6 +997,16 @@ units = {
 		division_template = "Rikusentai"
 		start_experience_factor = 0.5
 	}
+
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 7071 #xiamen
+		division_template = "Rikusentai"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+
 	### 11 Homengun (CO: Okamura) ###
 	division = { # "3 'Ko' Hohei Shidan"
 		division_name = {
@@ -1009,6 +1052,7 @@ units = {
 		location = 1153
 		division_template = "Hohei Shidan"			# Garrison division (lower experience, older equipment)
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "106 Hohei Shidan"
 		division_name = {
@@ -1018,6 +1062,7 @@ units = {
 		location = 3992
 		division_template = "Hohei Shidan"			# Garrison division (lower experience, older equipment)
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	### 13 Homengun (CO: Fujita) ###
@@ -1029,6 +1074,7 @@ units = {
 		location = 10014
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "17 'Getsu' Hohei Shidan"
 		division_name = {
@@ -1038,6 +1084,7 @@ units = {
 		location = 11991
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "22 'Hara' Hohei Shidan"
 		division_name = {
@@ -1047,6 +1094,7 @@ units = {
 		location = 7058
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "116 Hohei Shidan"
 		division_name = {
@@ -1056,6 +1104,7 @@ units = {
 		location = 9974
 		division_template = "Hohei Shidan"			# Garrison division (lower experience, older equipment)
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	### 21 Homengun (CO: Tsuchihashi) ###
@@ -1067,6 +1116,7 @@ units = {
 		location = 11941
 		division_template = "Jidousha Shidan"
 		start_experience_factor = 0.4
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
 	division = { # "18 'Kiku' Hohei Shidan"
 		division_name = {
@@ -1076,7 +1126,42 @@ units = {
 		location = 1202
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
+
+	division = { # "18 'Kiku' Hohei Shidan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 18
+		}
+		location = 4050
+		division_template = "Hohei Shidan"
+		start_experience_factor = 0.23
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+	}
+
+	division = { # "18 'Kiku' Hohei Shidan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 18
+		}
+		location = 12095
+		division_template = "Hohei Shidan"
+		start_experience_factor = 0.32
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+	}
+
+	division = { # "18 'Kiku' Hohei Shidan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 18
+		}
+		location = 7152
+		division_template = "Hohei Shidan"
+		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+	}
+
 	division = { # "38 'Nagoya' Hohei Shidan"
 		division_name = {
 			is_name_ordered = yes
@@ -1085,15 +1170,30 @@ units = {
 		location = 11938
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
 	division = { # "Taiwan Dokuritsu Konsei Ryodan"
-		division_name = {
-			is_name_ordered = yes
-			name_order = 204
-		}
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 9938
-		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		division_template = "Hohei Shidan"
+		start_experience_factor = 0.55
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+	}
+
+	division = { # "Taiwan Dokuritsu Konsei Ryodan"
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9938
+		division_template = "Hohei Shidan"
+		start_experience_factor = 0.45
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+	}
+
+	division = { # "Taiwan Dokuritsu Konsei Ryodan"
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9938
+		division_template = "Hohei Shidan"
+		start_experience_factor = 0.44
+		force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
 	}
 
 ############################################################################################################################################################################
@@ -1362,6 +1462,29 @@ units = {
 			start_equipment_factor = 0.91
 		}
 
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7381
+			division_template = "Senshadan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+			start_experience_factor = 0.27
+			start_equipment_factor = 0.73
+		}
+
+
+	division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 11913
+			division_template = "Senshadan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+			start_experience_factor = 0.35
+			start_equipment_factor = 0.84
+		}
+
+
+
 
 
 #########################################################################################################################################################
@@ -1563,7 +1686,7 @@ units = {
 			division_name = { is_name_ordered = no name_order = 0 }
 			location = 7072
 			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			start_experience_factor = 0.22
 			start_equipment_factor = 1
 		}
@@ -1573,6 +1696,15 @@ units = {
 			location = 7072
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.32
+			start_equipment_factor = 0.93
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 10125
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
 			start_experience_factor = 0.22
 			start_equipment_factor = 1
 		}
@@ -1582,17 +1714,8 @@ units = {
 			location = 10125
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
-		}
-
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10125
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
+			start_experience_factor = 0.43
+			start_equipment_factor = 0.88
 		}
 
 		division = {
@@ -1608,9 +1731,9 @@ units = {
 			division_name = { is_name_ordered = no name_order = 0 }
 			location = 7197
 			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
+			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
+			start_experience_factor = 0.4
+			start_equipment_factor = 0.82
 		}
 
 		division = {
@@ -1618,7 +1741,7 @@ units = {
 			location = 1025
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
+			start_experience_factor = 0.3
 			start_equipment_factor = 1
 		}
 
@@ -1635,9 +1758,9 @@ units = {
 			division_name = { is_name_ordered = no name_order = 0 }
 			location = 7169
 			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
+			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
+			start_experience_factor = 0.31
+			start_equipment_factor = 0.5
 		}
 
 		division = {
@@ -1645,7 +1768,16 @@ units = {
 			location = 6994
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
+			start_experience_factor = 0.1
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 1182
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.5
 			start_equipment_factor = 1
 		}
 
@@ -1654,7 +1786,7 @@ units = {
 			location = 1182
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
+			start_experience_factor = 0.32
 			start_equipment_factor = 1
 		}
 
@@ -1663,16 +1795,7 @@ units = {
 			location = 1182
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
-		}
-
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 1182
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
+			start_experience_factor = 0.32
 			start_equipment_factor = 1
 		}
 
@@ -1681,8 +1804,8 @@ units = {
 			location = 10124
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.5
 		}
 
 		division = {
@@ -1690,8 +1813,144 @@ units = {
 			location = 6928
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.29
+			start_equipment_factor = 0.99
+		}
+
+		#####
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7072
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			start_experience_factor = 0.22
 			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7072
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.32
+			start_equipment_factor = 0.93
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 10125
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
+			start_experience_factor = 0.22
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 10125
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.43
+			start_equipment_factor = 0.88
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7197
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.22
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7197
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
+			start_experience_factor = 0.4
+			start_equipment_factor = 0.82
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 1025
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.3
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 10032
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.22
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7169
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
+			start_experience_factor = 0.31
+			start_equipment_factor = 0.5
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 6994
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.1
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 1182
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.5
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 1182
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.32
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 1182
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.32
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 10124
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.5
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 6928
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.29
+			start_equipment_factor = 0.99
 		}
 
 
@@ -1744,7 +2003,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			start_experience_factor = 0.11
-			start_equipment_factor = 0.91
+			start_equipment_factor = 0.81
 		}
 
 		division = {
@@ -1762,7 +2021,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			start_experience_factor = 0.11
-			start_equipment_factor = 0.74
+			start_equipment_factor = 0.64
 		}
 
 		division = {
@@ -1775,37 +2034,125 @@ units = {
 		}
 
 
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7518
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.73
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 12065
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.73
+		}
+
+
+	division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 9948
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.63
+		}
+
+
+	division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7093
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.73
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 10004
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.26
+			start_equipment_factor = 0.93
+		}
+
+
+	division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 1018
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.32
+			start_equipment_factor = 0.93
+		}
+
+
+
 }
 
-
-
+	
 
 #AIRCRAFT
 air_wings = {
 	### IJA & IJN Air Forces ###
 	282 = { 														# Tokyo
 		# 1 Hikodan 
-		fighter_equipment_1 = { owner = "JAP" amount = 144 }			# 1 Hiko Rentai -- Nakajima Ki-27
+		fighter_equipment_1 = { owner = "JAP" amount = 50 }			# 1 Hiko Rentai -- Nakajima Ki-27
 					# 11 Hiko Rentai -- Nakajima Ki-27
-		CAS_equipment_1 =  { owner = "JAP" amount = 54 }			# 7 Hiko Rentai -- Ki-30/Ki-32
+		CAS_equipment_1 =  { owner = "JAP" amount = 100 }			# 7 Hiko Rentai -- Ki-30/Ki-32
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 	}
 	716 = {															#  Dalian
 		# 2 Hikodan
 		fighter_equipment_1 = { owner = "JAP" amount = 72 }			# 3 Hiko Rentai -- Nakajima Ki-27
 		CAS_equipment_1 =  { owner = "JAP" amount = 54 }			# 5 Hiko Rentai -- Ki-30/Ki-32
 		tac_bomber_equipment_1 =  { owner = "JAP" amount = 54 }		# 9 Hiko Rentai -- Mitsubishi Ki-21
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 	}
 	597 = {															#  Jinan
 		# 4 Hikodan
-		CAS_equipment_1 =  { owner = "JAP" amount = 54 }			# 12 Hiko Rentai -- Ki-30/Ki-32
-		tac_bomber_equipment_1 =  { owner = "JAP" amount = 54 }		# 14 Hiko Rentai -- Mitsubishi Ki-21
+		CAS_equipment_1 =  { owner = "JAP" amount = 50 }			# 12 Hiko Rentai -- Ki-30/Ki-32
+		tac_bomber_equipment_1 =  { owner = "JAP" amount = 100 }		# 14 Hiko Rentai -- Mitsubishi Ki-21
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 	}
+
+	608 = {															#  Jinan
+		# 4 beijing
+		CAS_equipment_1 =  { owner = "JAP" amount = 50 }			# 12 Hiko Rentai -- Ki-30/Ki-32
+		tac_bomber_equipment_1 =  { owner = "JAP" amount = 100 }		# 14 Hiko Rentai -- Mitsubishi Ki-21
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+	}
+
+	528 = {															
+		# 4 kokura
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+	}
+
+	529 = {															
+		# 4 hiroshima
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+	}
+
 	524 = {															# Taiwan
 		# 3 Hikodan 
 		CAS_equipment_1 =  { owner = "JAP" amount = 54 }			# 6 Hiko Rentai -- Ki-30/Ki-32
-		fighter_equipment_1 =  { owner = "JAP" amount = 144 }		# 10 Hiko Rentai -- Nakajima Ki-27
-					# 16 Hiko Rentai -- Nakajima Ki-27
-		# 1 Rengo Kokutai
+		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 		cv_CAS_equipment_1 = { owner = "JAP" amount = 60 }			# Kizarazu Kokutai -- Aichi D1A2
 		nav_bomber_equipment_1 = { owner = "JAP" amount = 144 }		# Kanoya Kokutai -- G3M2 Rikko
 				# Takao Kokutai -- G3M2 Rikko
@@ -1833,16 +2180,37 @@ instant_effect = {
 			type = infantry_equipment_1
 			creator = "JAP"
 		}
-		requested_factories = 8
+		requested_factories = 12
 		progress = 0.1
 		efficiency = 100
 	}
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_2
+			creator = "JAP"
+		}
+		requested_factories = 8
+		progress = 0.1
+		efficiency = 91
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_3
+			creator = "JAP"
+		}
+		requested_factories = 5
+		progress = 0.1
+		efficiency = 91
+	}
+
 	add_equipment_production = {
 		equipment = {
 			type = support_equipment_1
 			creator = "JAP" 
 		}
-		requested_factories = 1
+		requested_factories = 4
 		progress = 0.3
 		efficiency = 100
 	}
@@ -1851,7 +2219,7 @@ instant_effect = {
 			type = motorized_equipment_1
 			creator = "JAP" 
 		}
-		requested_factories = 2
+		requested_factories = 4
 		progress = 0.4
 		efficiency = 100
 	}
@@ -1861,13 +2229,44 @@ instant_effect = {
 			creator = "JAP" 
 			version_name = "Type 95 Ha-Go"
 		}
-		requested_factories = 1
+		requested_factories = 4
 		progress = 0.4
 		efficiency = 100
 	}
+
 	add_equipment_production = {
 		equipment = {
-			type = cv_fighter_equipment_1
+			type = fighter_equipment_2
+			creator = "JAP" 
+		}
+		requested_factories = 15
+		progress = 0.15
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_3
+			creator = "JAP" 
+		}
+		requested_factories = 2
+		progress = 0.15
+		efficiency = 45
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = CAS_equipment_2
+			creator = "GER" 
+		}
+		requested_factories = 4
+		progress = 0.2
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = cv_fighter_equipment_2
 			creator = "JAP" 
 		}
 		requested_factories = 1

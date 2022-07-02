@@ -1556,12 +1556,17 @@ ENG_more_military_factories = {
 		type = added_military_to_civilian_factory_ratio
 		value = 95
 	}
+
+	ai_strategy = {
+		type = dockyard_to_military_factory_ratio
+		value = -50
+	}
 }
 
 
 
 
-ENG_dont_do_naval_inasion_on_jap = {
+ENG_dont_do_naval_invasion_on_jap = {
 	allowed = { 
 		tag = ENG
 	}

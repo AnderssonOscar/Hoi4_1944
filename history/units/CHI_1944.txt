@@ -1604,6 +1604,351 @@ units = {
 			start_equipment_factor = 0.92
 		}
 
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7086
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7086
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 6999
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 6999
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 6999
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 4925
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 4925
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7101
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7101
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7101
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 1319
+			division_template = "Sanjiao Jun"
+			start_experience_factor = 0.26
+			start_equipment_factor = 1
+		}
+
+
+
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7086
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 4099
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7027
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 11986
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7131
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 12084
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 10010
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 10093
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7182
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 4165
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 9978
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 10080
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 10121
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7210
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 1187
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 7192
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 11926
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 4121
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 4121
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
+		division = { 
+			division_name = {
+				is_name_ordered = no
+				name_order = 0
+			}
+			location = 4656
+			division_template = "Juntuán"
+			start_experience_factor = 0.18
+			start_equipment_factor = 0.92
+		}
+
 	#################################################################################################################################################################
 
 	### TROOPS FROM ANNEXED WARLORDS

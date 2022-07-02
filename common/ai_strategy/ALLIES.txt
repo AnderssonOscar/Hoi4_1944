@@ -295,7 +295,7 @@ allies_dont_invade_GER_before_dday = {
 	}
 
 	enable = {
-		date < 1944.5.1
+		date < 1944.5.8
 		has_war_with = GER
 	}
 
@@ -516,7 +516,7 @@ ALLIES_take_germany_first = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = JAP }
-		value = -5
+		value = -15
 	}
 
 	ai_strategy = {

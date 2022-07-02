@@ -6,7 +6,7 @@ set_stability = 0.2 #baseline, THE EMPEROR PROTECTS
 set_war_support = 0.8
 
 set_research_slots = 4
-set_fuel_ratio = 1.0
+set_fuel_ratio = 0.12 ## 1944 set here
 add_ideas = {
 	state_shintoism
 	limited_exports
@@ -257,7 +257,7 @@ create_import = {
 	complete_national_focus = JAP_the_zero
 	complete_national_focus = JAP_unified_fighter_development
 	complete_national_focus = JAP_exploit_the_southern_resource_area
-	complete_national_focus = JAP_the_ultimate_battleship
+	unlock_national_focus = JAP_the_ultimate_battleship
 
 
 	declare_war_on = {
@@ -1437,6 +1437,10 @@ if = {
 	add_named_threat = { threat = 40 name = 1939_bookmark_threat }
 	add_to_faction = SIA
 
+	add_ideas = {
+			low_war_casualties
+		}
+
 	if = {
 		limit = {
 			has_dlc = "La Resistance"
@@ -1627,14 +1631,47 @@ if = {
 set_convoys = 300
 
 
+
+
+
+
+
+
+create_equipment_variant = {
+			name = "Mitsubishi A6M Zero"
+			type = fighter_equipment_2
+			upgrades = {
+				plane_gun_upgrade = 2
+				plane_range_upgrade = 1  
+				plane_engine_upgrade = 3
+				plane_reliability_upgrade = 2
+			}
+		}
+
+
 add_equipment_to_stockpile = {
         type = infantry_equipment_1
-        amount = 2000
+        amount = 40000
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 1100
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_1
+        amount = 500
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_2
+        amount = 615
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 400
+        amount = 1650
     }
 
 	if = {
@@ -1649,10 +1686,6 @@ add_equipment_to_stockpile = {
         amount = 80
     }
 
-	add_equipment_to_stockpile = {  # armor train
-        type = train_equipment_3
-        amount = 20
-    }
 
 	}
 }
