@@ -212,41 +212,6 @@ units = {
 		start_equipment_factor = 0.4 
 	}
 
-		# VI Corpo d'Armata #
-	division = { # 
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		} #  "8a Divisione Motorizzata 'Po'" 
-		location = 923 
-		division_template = "Divisione di Fanteria"	
-		start_experience_factor = 0.3 
-		start_equipment_factor = 0.9 
-	}
-
-	division = { # 
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		} #  "8a Divisione Motorizzata 'Po'" 
-		location = 923 
-		division_template = "Divisione di Fanteria"	
-		start_experience_factor = 0.1 
-		start_equipment_factor = 0.9 
-	}
-	
-			# VI Corpo d'Armata #
-	division = { # 
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		} #  "8a Divisione Motorizzata 'Po'" 
-		location = 3923 
-		division_template = "Divisione di Fanteria"	
-		start_experience_factor = 0.4 
-		start_equipment_factor = 0.9 
-	}
-
 			# VI Corpo d'Armata #
 	division = { # 
 		division_name = {
@@ -259,27 +224,7 @@ units = {
 		start_equipment_factor = 0.7 
 	}
 
-	division = { # 
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		} #  "8a Divisione Motorizzata 'Po'" 
-		location = 3923 
-		division_template = "Divisione di Fanteria"	
-		start_experience_factor = 0.3 
-		start_equipment_factor = 0.7 
-	}
 
-	division = { # 
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		} #  "8a Divisione Motorizzata 'Po'" 
-		location = 3923 
-		division_template = "Divisione di Fanteria"	
-		start_experience_factor = 0.2 
-		start_equipment_factor = 0.7 
-	}
 
 				# VI Corpo d'Armata #
 	division = { # 
@@ -321,74 +266,8 @@ units = {
 		start_equipment_factor = 0.9 
 	}
 
-		division = { #ROME
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 11882
-		division_template = "Divisione Coloniale"	
-		start_experience_factor = 0.1 
-		start_equipment_factor = 0.9 
-	}
 
-		division = { #ROME
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 9904
-		division_template = "Divisione Coloniale"	
-		start_experience_factor = 0.2 
-		start_equipment_factor = 0.9 
-	}
-
-		division = { #ROME
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 9904
-		division_template = "Divisione Coloniale"	
-		start_experience_factor = 0.1 
-		start_equipment_factor = 0.9 
-	}
-
-		division = { #ROME
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 9904
-		division_template = "Divisione Coloniale"	
-		start_experience_factor = 0.1 
-		start_equipment_factor = 0.9 
-	}
-
-		division = { #ROME
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 9904
-		division_template = "Divisione Coloniale"	
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.9 
-	}
-
-		division = { #ROME
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 9904
-		division_template = "Divisione Coloniale"	
-		start_experience_factor = 0.1 
-		start_equipment_factor = 0.9 
-	}
-
-
-		division = {
+	division = {
 		division_name = {
 			is_name_ordered = no
 			name_order = 0
@@ -400,18 +279,8 @@ units = {
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
 	}
 
-		division = {
-		division_name = {
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 6780
-		division_template = "Divisione Motorizzata"	
-		start_experience_factor = 0.4 
-		start_equipment_factor = 0.76 
-	}
 
-		division = {
+	division = {
 		division_name = {
 			is_name_ordered = no
 			name_order = 0
