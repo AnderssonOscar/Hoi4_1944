@@ -980,6 +980,7 @@ if = {
 1943.12.30 = {
 
 		annex_country = { target = ETH transfer_troops = no }
+		set_fuel = 51812
 
 	set_technology = {
 		naval_bomber1 = 1
@@ -1087,7 +1088,7 @@ if = {
 		fuel_refining = 1
 		fuel_refining2 = 1
 		fuel_refining3 = 1
-		fuel_refining4 = 1
+		#fuel_refining4 = 1
 
 		oil_processing = 1
 		improved_oil_processing = 1
