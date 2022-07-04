@@ -11,12 +11,21 @@ on_actions = {
 	GER = { declare_war_on = { target = ENG type = annex_everything } }
 
 	every_country = {
+		limit = { has_war = yes }
+		add_command_power = 50
+	}
+
+	every_country = {
 		limit = { is_in_faction_with = GER }
 		add_to_war = {
 			targeted_alliance = GER
 			enemy = ENG
 		}
+			
 	}
+	
+	
+	
 
 	ENG = {
 		every_country = {
