@@ -7,6 +7,8 @@
 #BUL_is_fascist_axis_ai
 #BUL_is_monarchist_ferdinand_ai
 
+#use remove_decision = GER_MEPO instead of removing
+
 #INTERNAL FACTIONS
 BUL_internal_factions = {
 	BUL_a_royal_visit  = { #Tsar Boris visits a random location in Bulgaria
