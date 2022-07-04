@@ -47,6 +47,8 @@ allies_enable_invasion_of_GER = {
 #		execution_type = rush
 #	}
 
+strike_force_home_base
+
 
 	ai_strategy = {
 		type = invade
@@ -530,6 +532,34 @@ ALLIES_take_germany_first = {
 	}
 
 	abort_when_not_enabled = yes
+	
+	#########try to make them bomb germany
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = { tag = GER }
+		value = 25
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = GER
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = GER
+		value = 50
+	}
+	
+	
+	###########################
 
 	ai_strategy = {
 		type = front_unit_request
