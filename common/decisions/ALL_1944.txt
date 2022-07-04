@@ -85,7 +85,7 @@ operations = {
 				}
 
 				has_war_with = GER
-				date > 1944.3.27
+				date > 1944.5.22
 
 
 			any_other_country = {
@@ -277,7 +277,7 @@ war_measures = {
                 AND = {
                     has_government = communism
                     has_war_support > 0.7
-					surrender_progress > 0.20
+		    surrender_progress > 0.20
                 }
                 AND = {
                     has_government = fascism
