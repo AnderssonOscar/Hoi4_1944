@@ -45,6 +45,15 @@ if = {
 			set_compliance = 33
 			start_resistance = yes
 			set_resistance = 27
+			
+			force_enable_resistance = {
+			    clear = no
+			    occupier = GER
+			    occupied = JAP
+			    occupied = FIN
+			    occupied = ROM
+			}
+			
 		}
 }
 
