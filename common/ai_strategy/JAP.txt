@@ -29,7 +29,7 @@ JAP_unit_buffer_home = {
 		type = put_unit_buffers
 
 		# ratio of total armeis in country to be buffered
-		ratio = 0.25
+		ratio = 0.33
 
 		# you can specify an order id. ratio of same orders ids will be share same ratio
 		#order_id = 2
@@ -57,6 +57,59 @@ JAP_unit_buffer_home = {
 		subtract_fronts_from_need = yes
 	}
 }
+
+
+
+
+
+JAP_USA_landed_in_mainland_japan = {
+	allowed = { original_tag = JAP }
+	enable = {
+		has_war_with = USA
+		
+		date > 1944.1.1
+		date < 1946.1.1
+		
+		
+		NOT = {
+			AND = {
+				282 = {is_fully_controlled_by = JAP}
+				534 = {is_fully_controlled_by = JAP}
+				532 = {is_fully_controlled_by = JAP}
+				535 = {is_fully_controlled_by = JAP}
+				531 = {is_fully_controlled_by = JAP}
+				529 = {is_fully_controlled_by = JAP}
+				530 = {is_fully_controlled_by = JAP}
+				528 = {is_fully_controlled_by = JAP}
+				533 = {is_fully_controlled_by = JAP}
+				536 = {is_fully_controlled_by = JAP}
+				
+			}
+		}
+		
+	}
+
+	abort_when_not_enabled = yes
+	
+	
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = { tag = USA }
+		value = 90
+	}
+	
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = USA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = rush
+	}
+}
+
 
 
 
