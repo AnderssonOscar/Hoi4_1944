@@ -390,34 +390,7 @@ units = {
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
-	division = {
-		name = "2nd VA National Guard Division"
-		location = 788
-		division_template = "National Guard Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "3rd VA National Guard Division"
-		location = 788
-		division_template = "National Guard Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "1st DE National Guard Division"
-		location = 9758
-		division_template = "National Guard Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "2nd DE National Guard Division"
-		location = 9758
-		division_template = "National Guard Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
+	
 	division = {
 		name = "3rd DE National Guard Division"
 		location = 9758
@@ -439,13 +412,7 @@ units = {
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
-	division = {
-		name = "92nd 'Buffalo Soldier' Infantry Division"
-		location = 3957
-		division_template = "Infantry Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
+	
 	division = {
 		name = "97th 'Trident' Motorized Division"
 		location = 3957
@@ -460,13 +427,7 @@ units = {
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
-	division = {
-		name = "86th 'Blackhawk' Motorized Division"
-		location = 3957
-		division_template = "Motorised Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
+	
 	division = {
 		name = "17th Airborne 'Golden Talons'"
 		location = 3878
@@ -1210,20 +1171,7 @@ units = {
 		start_equipment_factor = 1
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 6881
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
-
+	
 	division = {
 		division_name = { 
 			is_name_ordered = no
@@ -1238,19 +1186,7 @@ units = {
 		start_equipment_factor = 1
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 610
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
+	
 
 	division = {
 		division_name = { 
@@ -1364,19 +1300,7 @@ units = {
 		start_equipment_factor = 0.86
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 1562
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
+	
 
 	division = {
 		division_name = { 
@@ -1406,19 +1330,6 @@ units = {
 		start_equipment_factor = 1
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 9713
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
 
 	division = {
 		division_name = { 
@@ -1462,19 +1373,6 @@ units = {
 		start_equipment_factor = 1
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 3588
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
 
 	division = {
 		division_name = { 
@@ -1504,19 +1402,6 @@ units = {
 		start_equipment_factor = 1
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 10387
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
 
 	division = {
 		division_name = { 
@@ -1532,19 +1417,6 @@ units = {
 		start_equipment_factor = 1
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 6881
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
 
 	division = {
 		division_name = { 
@@ -1588,19 +1460,6 @@ units = {
 		start_equipment_factor = 1
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 12211
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
 
 	division = {
 		division_name = { 
@@ -1621,20 +1480,6 @@ units = {
 			is_name_ordered = no
 			name_order = 0
 		}
-		location = 7315
-		division_template = "Infantry Division"
-		start_experience_factor = 0.15
-		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
-
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
 		location = 13091
 		division_template = "Infantry Division"
 		start_experience_factor = 0.15
@@ -1644,19 +1489,6 @@ units = {
 		start_equipment_factor = 1
 	}
 
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 13091
-		division_template = "Infantry Division"
-		start_experience_factor = 0.11
-		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
-		start_equipment_factor = 1
-	}
 
 	division = {
 		division_name = { 
@@ -1670,20 +1502,6 @@ units = {
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "USA" } }
 		start_equipment_factor = 1
-	}
-
-	division = {
-		division_name = { 
-			is_name_ordered = no
-			name_order = 0
-		}
-		location = 1562
-		division_template = "Infantry Division"
-		start_experience_factor = 0.1
-		force_equipment_variants = { infantry_equipment_1 = { owner = "USA" } }
-		force_equipment_variants = { artillery_equipment_1 = { owner = "USA" } }
-		force_equipment_variants = { anti_tank_equipment_1 = { owner = "USA" } }
-		start_equipment_factor = 0.86
 	}
 
 	division = {
