@@ -1186,7 +1186,7 @@ USA_stay_away_from_my_pacific = {
 	ai_strategy = {
 		type = area_priority
 		id = pacific
-		value = 100
+		value = 60 #1944 was 100
 	}
 }
 
@@ -1237,6 +1237,7 @@ USA_think_about_retaliation = {
 	enable = {
 		has_war_with = JAP
 		date > 1942.1.1
+		date < 1944.1.1
 	}
 	abort_when_not_enabled = yes
 
@@ -1258,7 +1259,7 @@ USA_go_time = {
 	}
 	enable = {
 		has_war_with = JAP
-		date > 1943.6.6
+		date > 1944.12.1 #1944 was 1943.6.6
 	}
 	abort_when_not_enabled = yes
 
@@ -1443,7 +1444,7 @@ USA_lend_lease_SOV = {
 		num_divisions > 85 # we must have some divisions ourselves
 
 		date > 1944.1.1
-		date < 1946.1.1
+		date < 1945.1.1
 		NOT = { has_government = fascism }
 		NOT = { is_in_faction_with = GER }
 		NOT = { has_war_with = SOV }
@@ -1471,7 +1472,25 @@ USA_lend_lease_SOV = {
 	ai_strategy = {
 		type = support
 		id = "SOV"
-		value = 225
+		value = 200
+	}
+
+	ai_strategy = {
+		type = support
+		id = "ENG"
+		value = -100
+	}
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = ENG
+		value = -100
+	}
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SOV
+		value = 200
 	}
 }
 
@@ -1518,7 +1537,13 @@ USA_lend_lease_CHI = {
 	ai_strategy = {
 		type = support
 		id = "CHI"
-		value = 150
+		value = 500
+	}
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = CHI
+		value = 500
 	}
 }
 
@@ -1612,5 +1637,51 @@ USA_build_more_mil = {
 	ai_strategy = {
 		type = dockyard_to_military_factory_ratio
 		value = -50
+	}
+}
+
+
+
+
+
+
+
+
+
+
+USA_dont_help_china_boder_too_much = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+	
+		NOT = {has_war_with = CHI}
+
+		has_war_with = JAP
+		CHI = { has_war_with = JAP }
+
+		GER = { has_capitulated = no }
+
+		date > 1944.1.1
+		date < 1945.4.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "CHI"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "YUN"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "GXC"
+		value = 100
 	}
 }

@@ -1469,6 +1469,7 @@ ENG_stop_sending_everyting_to_asia = {
 	}
 	enable = {
 		date > 1943.12.1
+		has_war_with = GER
 	}
 	ai_strategy = {
 		type = area_priority
@@ -1498,6 +1499,7 @@ ENG_stop_camping_africa_2 = {
 	}
 	enable = {
 		date > 1943.12.1
+		date < 1945.12.1
 	}
 
 	ai_strategy = {
@@ -1531,6 +1533,7 @@ ENG_more_fighers = {
 		has_war = yes
 		has_government = democratic
 		date > 1943.12.30
+		date < 1946.1.1
 	}
 	abort_when_not_enabled = yes
 
@@ -1548,6 +1551,7 @@ ENG_more_military_factories = {
 	enable = {
 		date > 1944.1.1
 		has_war_with = GER
+		date < 1945.12.1
 		#num_of_military_factories < 150
 	}
 	abort_when_not_enabled = yes
@@ -1670,4 +1674,17 @@ ENG_lend_lease = {
 		id = "SOV"
 		value = 50
 	}
+
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SOV
+		value = 100
+	}
 }
+
+
+
+
+
+
