@@ -100,11 +100,19 @@ economy_decisions = {
 			modifier = {
 				add = 10
 				has_stability > 0.74
+				has_fuel < 1000
 			}
+		}
+		
+		modifier = {
+			#make facories slow down output for a few days
 		}
 
 		complete_effect = {
-			add_fuel = 40000
+			set_temp_variable = { totalfuel = 1250 }
+			multiply_temp_variable = { totalfuel = num_of_controlled_factories }
+			
+			add_fuel = totalfuel
 			#calculate depending on num_of_controlled_factories
 		}
 	}
