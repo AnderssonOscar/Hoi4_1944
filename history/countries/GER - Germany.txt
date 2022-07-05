@@ -197,6 +197,27 @@ set_war_support = 0.3
 			target = ALB
 			autonomous_state = autonomy_puppet
 		}
+		
+		set_autonomy = {
+			target = NET
+			autonomous_state = autonomy_puppet
+		}
+		
+		set_autonomy = {
+			target = BEL
+			autonomous_state = autonomy_puppet
+		}
+		
+		set_autonomy = {
+			target = NOR
+			autonomous_state = autonomy_puppet
+		}
+		
+		NOR = { become_exiled_in = { target = ENG legitimacy = 70 } }
+		POL = { become_exiled_in = { target = ENG legitimacy = 70 } }
+		YUG = { become_exiled_in = { target = ENG legitimacy = 60 } }
+		DEN = { become_exiled_in = { target = ENG legitimacy = 80 } }
+		
 	}
 	
 
@@ -1657,7 +1678,6 @@ create_equipment_variant = {
 
 		annex_country = { target = YUG transfer_troops = no }
 		annex_country = { target = GRE transfer_troops = no }
-
 
 } 
 
