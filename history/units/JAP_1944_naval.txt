@@ -39,6 +39,21 @@ units = {
 					cv_nav_bomber_equipment_1 =  { owner = "JAP" amount = 18 }
 				}
 			}
+			
+			ship = { name = "Soryu" definition = carrier equipment = { ship_hull_carrier_1 = {amount = 1 owner = JAP version_name = "Soryu Class" } } 	
+				air_wings = { 
+					cv_fighter_equipment_1 =  { owner = "JAP" amount = 24 }
+					cv_CAS_equipment_1 = { owner = "JAP" amount = 18 }
+					cv_nav_bomber_equipment_1 =  { owner = "JAP" amount = 18 }
+				}
+			}
+			
+			ship = { name = "Ryujo" definition = carrier equipment = { ship_hull_carrier_1 = {amount = 1 owner = JAP version_name = "Ryujo Class" } } 				
+				air_wings = { 
+					cv_fighter_equipment_0 =  { owner = "JAP" amount = 18} 
+					cv_CAS_equipment_1 = { owner = "JAP" amount = 12 } 
+				}
+			}
 
 			ship = { name = "Fuso" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_1 = {amount = 1 owner = JAP version_name = "Fuso/Ise Class"} } }
 			ship = { name = "Yamashiro" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_1 = {amount = 1 owner = JAP version_name = "Fuso/Ise Class"} } }
