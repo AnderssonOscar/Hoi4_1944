@@ -390,8 +390,10 @@ if = {
 
 	add_ideas = {
 		#laws
-		war_economy
+	#	war_economy
+		tot_economic_mobilisation
 		#service_by_requirement
+		extensive_conscription
 	}
 
 

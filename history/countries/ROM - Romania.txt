@@ -447,7 +447,7 @@ if = {
 		tot_economic_mobilisation
 		service_by_requirement
 
-		low_war_casualties
+		medium_war_casualties
 	}
 
 	set_popularities = {
@@ -478,6 +478,7 @@ if = {
 		complete_national_focus = ROM_mobile_tank_destroyers
 
 		unlock_national_focus = ROM_expand_ploiesti_oil_production
+		unlock_national_focus = ROM_german_romanian_oil_exploitation_company
 	}
 
 	set_technology = {

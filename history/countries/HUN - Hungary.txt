@@ -291,7 +291,7 @@ recruit_character = HUN_franz_friedrich
 		war_economy
 		extensive_conscription
 		#limited_exports
-		low_war_casualties
+		medium_war_casualties
 
 	}
 

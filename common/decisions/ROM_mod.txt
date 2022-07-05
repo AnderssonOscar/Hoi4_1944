@@ -41,7 +41,7 @@ war_measures = {
 		fire_only_once = yes
 
 		cost = 0
-		days_remove = 6
+		days_remove = 7
 
 		ai_will_do = {
 			factor = 1

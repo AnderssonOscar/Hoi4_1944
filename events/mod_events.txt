@@ -5,6 +5,7 @@
 add_namespace = romania.switch.side
 add_namespace = finland.switch.side
 add_namespace = bulgaria.switch.side
+add_namespace =  warsaw.uprising
 
 # Romania switch side
 country_event = {
@@ -48,4 +49,54 @@ country_event = {
 	option = {
 		name = "OK"
 	}
+}
+
+
+# Warsaw uprising
+country_event = {
+	id = warsaw.uprising.1
+	title = warsaw.uprising.1.t
+	desc = warsaw.uprising.1.d
+
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	
+	option = {
+		name = "Let them be"
+	}
+
+	option = {
+        name = "Raze it to the ground"
+		10 = { set_resistance = 7 }
+
+		add_manpower = -5000
+		add_political_power = -50
+
+		10 = {
+			remove_building = {
+			type = arms_factory
+			level = 5
+		}
+	}
+
+		10 = {
+		   remove_building = {
+		   type = industrial_complex
+		   level = 2
+	   }
+	}
+
+
+		10 = { 
+			remove_building = {
+			type = air_base
+			level = 6
+		}
+
+		add_manpower = -750000
+	}
+
+
+    }
+
 }

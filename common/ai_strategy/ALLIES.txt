@@ -14,7 +14,7 @@ allies_enable_invasion_of_GER = {
 
 	enable = {
 		
-		date > 1944.4.1 #1944.4.1
+		date > 1944.4.2 #1944.4.1
 		has_war_with = GER
 		
 		125 = {is_fully_controlled_by = ENG}
@@ -32,7 +32,7 @@ allies_enable_invasion_of_GER = {
 		
 	}
 
-	abort_when_not_enabled = no # i think it means we dont abort other invasions
+	abort_when_not_enabled = yes # i think it means we dont abort other invasions
 
 
 #	ai_strategy = {
@@ -148,7 +148,7 @@ allies_prepare_in_UK = { #stack troops here until we land in germany
 	}
 
 	enable = {
-		date > 1944.6.1 #
+		date > 1944.1.1 #
 		#date < 1944.6.15 
 
 			is_in_faction_with = ENG
@@ -220,7 +220,7 @@ allies_landed_in_france = {
 		NOT = {
 			OR = {
 				16 = {is_fully_controlled_by = GER}
-				#15 = {is_fully_controlled_by = GER}
+				15 = {is_fully_controlled_by = GER}
 				#29 = {is_fully_controlled_by = GER}
 				#6 =  {is_fully_controlled_by = GER}
 				#14 = {is_fully_controlled_by = GER}
@@ -250,7 +250,7 @@ allies_landed_in_france = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = -20
+		value = -100
 	}
 
 	ai_strategy = {
@@ -453,6 +453,12 @@ allies_dont_invade_axis_allies = {
 	ai_strategy = {
 		type = invade
 		id = "ALB"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "HOL"
 		value = -500
 	}
 

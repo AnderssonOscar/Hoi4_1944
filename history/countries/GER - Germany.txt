@@ -198,25 +198,25 @@ set_war_support = 0.3
 			autonomous_state = autonomy_puppet
 		}
 		
-		set_autonomy = {
-			target = NET
-			autonomous_state = autonomy_reichskommissariat
-		}
+		#set_autonomy = {
+		#	target = HOL
+		#	autonomous_state = autonomy_reichskommissariat
+		#}
 		
 		#set_autonomy = { # 18 july 1944
 		#	target = BEL
 		#	autonomous_state =  autonomy_reichskommissariat
 		#}
 		
-		set_autonomy = {
-			target = NOR
-			autonomous_state =  autonomy_reichskommissariat
-		}
+		#set_autonomy = {
+		#	target = NOR
+		#	autonomous_state = autonomy_reichskommissariat
+		#}
 		
-		NOR = { become_exiled_in = { target = ENG legitimacy = 70 } }
-		POL = { become_exiled_in = { target = ENG legitimacy = 70 } }
-		YUG = { become_exiled_in = { target = ENG legitimacy = 60 } }
-		DEN = { become_exiled_in = { target = ENG legitimacy = 80 } }
+		#NOR = { become_exiled_in = { target = ENG legitimacy = 70 } }
+		#POL = { become_exiled_in = { target = ENG legitimacy = 70 } }
+		#YUG = { become_exiled_in = { target = ENG legitimacy = 60 } }
+		#DEN = { become_exiled_in = { target = ENG legitimacy = 80 } }
 		
 	}
 	

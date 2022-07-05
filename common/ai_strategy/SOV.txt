@@ -2288,7 +2288,7 @@ SOV_dont_hurt_romania_yet = {
 			tag = ROM
 		}
 		tag = ROM
-		value = -40
+		value = -45
 	}
 
 
@@ -2359,11 +2359,11 @@ SOV_dont_hurt_finland_yet = {
 
 	ai_strategy = {
 		type = front_unit_request
-	country_trigger = {
+			country_trigger = {
 			tag = FIN
 		}
 		tag = FIN
-		value = -40
+		value = -35
 	}
 
 
@@ -2403,7 +2403,7 @@ SOV_take_finland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = FIN
-		value = 75
+		value = 60
 	}
 }
 

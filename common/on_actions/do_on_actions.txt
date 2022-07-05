@@ -2,12 +2,14 @@
 #	1944
 ############################################################################################################
 
+
 on_actions = {
 	on_startup = {
 		effect = {
 
 	#add_named_threat = { threat = 60 name = generic.15.t }
 				
+
 	GER = { declare_war_on = { target = ENG type = annex_everything } }
 
 	every_country = {
@@ -24,8 +26,6 @@ on_actions = {
 			
 	}
 	
-	
-	
 
 	ENG = {
 		every_country = {
@@ -37,6 +37,7 @@ on_actions = {
 		}
 	}
 
+	#GER = { activate_decision = GER_reichskommissariat_niederlande }
 
 if = {
 	limit = {
@@ -109,6 +110,10 @@ GER = {
 		#add_manpower = -3500000
 	}
 }
+
+
+
+
 
 
 

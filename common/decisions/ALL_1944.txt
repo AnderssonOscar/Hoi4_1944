@@ -109,7 +109,7 @@ economy_decisions = {
 		}
 
 		complete_effect = {
-			set_temp_variable = { totalfuel = 1250 }
+			set_temp_variable = { totalfuel = 1050 }
 			multiply_temp_variable = { totalfuel = num_of_controlled_factories }
 			
 			add_fuel = totalfuel

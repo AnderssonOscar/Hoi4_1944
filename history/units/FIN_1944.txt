@@ -252,6 +252,15 @@ units = {
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.88
 	}
+
+	division = {
+		name = "7. Divisioona"
+		location = 11153
+		division_template = "Panssardivisoona"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.99
+	}
+
 	division = {
 		name = "4. Divisioona"
 		location = 6057
@@ -438,7 +447,7 @@ units = {
 			name_order = 0
 		}
 		location = 6057
-		division_template = "Erillinen Prikaati"
+		division_template = "Ratsuväkiprikaati"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.96
 	}
@@ -557,8 +566,19 @@ division = {
 			name_order = 0
 		}
 		location = 6057
+		division_template = "Ratsuväkiprikaati"
+		start_experience_factor = 0.44
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = {   
+			is_name_ordered = no
+			name_order = 0
+		}
+		location = 6057
 		division_template = "Erillinen Prikaati"
-		start_experience_factor = 0.15
+		start_experience_factor = 0.44
 		start_equipment_factor = 1
 	}
 

@@ -114,7 +114,7 @@ units = {
 
 
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 9617
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "ROM" } }
@@ -126,7 +126,7 @@ units = {
 
 
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 11670
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }
@@ -137,7 +137,7 @@ units = {
 	}
 
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 11670
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -149,7 +149,7 @@ units = {
 
 	
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 3757
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "ROM" } }
@@ -160,7 +160,7 @@ units = {
 	}
 	
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 3757
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }
@@ -171,7 +171,7 @@ units = {
 	}
 
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 9481
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "ROM" } }
@@ -182,7 +182,7 @@ units = {
 	}
 
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 6480
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }
@@ -193,7 +193,7 @@ units = {
 	}
 	
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 6480
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }
@@ -204,7 +204,7 @@ units = {
 	}
 	
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 6480
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }
@@ -215,7 +215,7 @@ units = {
 	}
 	
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 6480
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }
@@ -226,7 +226,7 @@ units = {
 	}
 	
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 6480
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }
@@ -237,7 +237,7 @@ units = {
 	}
 	
 	division = {
-		division_name = { is_name_ordered = noname_order = 0 }
+		division_name = { is_name_ordered = no name_order = 0 }
 		location = 6480
 		division_template = "Divizia Infanterie"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }

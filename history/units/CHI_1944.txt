@@ -1060,7 +1060,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 206
 		}
-		location = 7097
+		location = 1066
 		division_template = "Juntuán"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
@@ -1073,7 +1073,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 16
 		}
-		location = 7625
+		location = 7137
 		division_template = "Sanjiao Jun"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
@@ -1085,7 +1085,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 27
 		}
-		location = 7625
+		location = 7137
 		division_template = "Juntuán"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
@@ -1109,7 +1109,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 43
 		}
-		location = 6999
+		location = 7965
 		division_template = "Juntuán"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
@@ -1120,7 +1120,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 86
 		}
-		location = 6999
+		location = 7965
 		division_template = "Juntuán"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
@@ -1132,7 +1132,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 409
 		}
-		location = 6999
+		location = 7137
 		division_template = "Juntuán"		# German-trained division (frontline infantry, better equipment and experience)
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
@@ -1257,6 +1257,63 @@ units = {
 	#################################################################################################################################################################
 															#1944
 	#################################################################################################################################################################
+
+
+
+
+	division = { 
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 7039
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.26
+		start_equipment_factor = 1
+	}
+
+	division = { 
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9944
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.26
+		start_equipment_factor = 1
+	}
+
+	division = { 
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9944
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.26
+		start_equipment_factor = 1
+	}
+
+	division = { 
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9984
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.26
+		start_equipment_factor = 1
+	}
+
+	division = { 
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 4504
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.26
+		start_equipment_factor = 1
+	}
+
+	division = { 
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 4504
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.26
+		start_equipment_factor = 1
+	}
 
 
 	division = { 

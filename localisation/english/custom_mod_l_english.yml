@@ -63,9 +63,6 @@ SOV_launch_major_offensive_ger:0 "Launch Major Offensive"
 
 
 
-
-
-
 romania.switch.side.1:0 "Romania is negotiating"
 romania.switch.side.1.t:0 "Romania is negotiating with the soviets."
 romania.switch.side.1.d:0 "We have received information that the romanians are preparing to betray us."
@@ -77,3 +74,7 @@ finland.switch.side.1.d:0 "We have received information that the finland are pre
 bulgaria.switch.side.1:0 "Bulgaria is negotiating"
 bulgaria.switch.side.1.t:0 "Bulgaria is negotiating with the soviets."
 bulgaria.switch.side.1.d:0 "We have received information that the bulgaria are preparing to betray us."
+
+warsaw.uprising.1:0 "Warsaw Uprising"
+warsaw.uprising.1.t:0 "Polish underground resistance has risen"
+warsaw.uprising.1.d:0 "With our enemies on the outskirts of the Warsaw it's inhabitants are trying to sabotage our military effort."

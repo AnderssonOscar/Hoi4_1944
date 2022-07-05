@@ -251,8 +251,8 @@ if = {
 	add_political_power = 2589
 	add_command_power = 200
 
-	set_convoys = 10
-	set_stability = 1 
+	set_convoys = 20
+	set_stability = 30 
 	set_war_support = 0.9
 	add_manpower = 20000
 	
@@ -283,6 +283,7 @@ if = {
 		grand_battle_plan = 1
 		prepared_defense = 1
 		grand_assault = 1
+		infantry_offensive = 1
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1
@@ -369,23 +370,23 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment
-        amount = 50
+        amount = 1000
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 50
+        amount = 400
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 500
+        amount = 550
 		producer = GER
     }
 
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 15
+        amount = 20
     }
 }
