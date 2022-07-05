@@ -259,157 +259,140 @@ division_template = {
 
 units = {
 	division= {	
-		name = "3rd Canadian Infantry Division"		
+		division_name = {is_name_ordered = no name_order = }
 		location = 539
-		division_template = "Infantry Division"			
+		division_template = "Infantry Division"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "USA" } }
 		start_experience_factor = 0.3
-		start_equipment_factor = 1.0
+		start_equipment_factor = 0.9
 	}
 	division = {			
-		name = "29th 'Blue and Gray' Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 9550
 		division_template = "Motorised Division"
-		start_experience_factor = 0.5
+		start_experience_factor = 0.4
 		start_equipment_factor = 1.0
 	}
 	division = {			
-		name = "30th 'Old Hickory' Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 9550
 		division_template = "Motorised Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.7
 	}
 	division = {			
-		name = "28th 'Keystone' Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 3579
 		division_template = "Infantry Division"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {			
-		name = "1st 'Big Red One' Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 3579
 		division_template = "Mechanized Cavalry"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
 	}	
 	division = {			
-		name = "2nd 'Indianhead' Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 3579
 		division_template = "Mechanized Cavalry"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}		
 	division = {			
-		name = "2nd Armoured 'Hell on Wheels' Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 3579
 		division_template = "Mechanized Cavalry"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {			
-		name = "4th 'Ivy' Division"
+		division_name = {is_name_ordered = no name_order = }
+		location = 3579
+		division_template = "Mechanized Cavalry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {			
+		division_name = {is_name_ordered = no name_order = }
 		location = 3579
 		division_template = "Mechanized Cavalry"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {			
-		name = "9th 'Old Reliables' Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 3579
 		division_template = "Mechanized Cavalry"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.88
 	}
 	division = {			
-		name = "79th 'Cross of Lorraine' Division"
-		location = 3579
-		division_template = "Mechanized Cavalry"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
-	division = {			
-		name = "101st US Air 'Screaming Eagles' Division"
-		location = 539
-		division_template = "Airborne Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
-	division = {			
-		name = "82nd Airborne 'All American' Division"
-		location = 539
-		division_template = "Airborne Division"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
-	division = {			
-		name = "90nd Airborne 'Tough Ombres' Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 539
 		division_template = "Motorised Division"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division= {	
-		name = "50th 'Northumbrian' Motorised Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 11521
 		division_template = "Motorised Division"		
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division= {	
-		name = "15th 'Scottish' Motorised Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 11521
 		division_template = "Motorised Division"		
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division= {	
-		name = "43rd 'Wessex' Motorised Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 11521
 		division_template = "Motorised Division"		
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division= {	
-		name = "51st 'Highland' Motorised Division"
+		division_name = {is_name_ordered = no name_order = }
 		location = 6599
-		division_template = "Motorised Division"		
+		division_template = "Motorised Division"	
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
 		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
-	division= {	
-		name = "49th 'West Riding' Motorised Division"
-		location = 6599
-		division_template = "Motorised Division"		
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
+		start_equipment_factor = 0.9
 	}
 
 	division= {	
 		name = "2me Divizia Blinde"
 		location = 6599
 		division_template = "Division Lgre Mcanique" 				
-		start_experience_factor = 0.7
+		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "Gme Division d'infanterie Marocaine"
 		location = 7069
 		division_template = "Division Infanterie" 				
-		start_experience_factor = 0.7
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.9
 	}
 	division= {	
 		name = "8me Division d'infanterie Algerienne"
 		location = 7132
-		division_template = "Division Infanterie" 				
-		start_experience_factor = 0.7
+		division_template = "Division Infanterie" 
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.2
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "9me Division d'infanterie Coloniale"
 		location = 7132
-		division_template = "Division Infanterie" 				
+		division_template = "Division Infanterie" 	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
 		start_experience_factor = 0.7
 		start_equipment_factor = 1.0
 	}
@@ -417,35 +400,35 @@ units = {
 		name = "5me Divizia Blinde"
 		location = 11969
 		division_template = "Division Lgre Mcanique" 				
-		start_experience_factor = 0.7
+		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "4re Division d'infanterie Marocaine"
 		location = 11969
 		division_template = "Division Infanterie" 				
-		start_experience_factor = 0.7
+		start_experience_factor = 0.2
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "7me Division d'infanterie Algerienne"
 		location = 11969
 		division_template = "Division Infanterie" 				
-		start_experience_factor = 0.7
+		start_experience_factor = 0.2
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "3me Division d'infanterie Algerienne"
 		location = 11969
 		division_template = "Division Infanterie" 				
-		start_experience_factor = 0.7
-		start_equipment_factor = 1.0
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.82
 	}
 	division= {	
 		name = "2re Division d'infanterie Marocaine"
 		location = 11969
 		division_template = "Division Infanterie" 				
-		start_experience_factor = 0.7
+		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division= {	
@@ -453,56 +436,62 @@ units = {
 		location = 11969
 		division_template = "Division Infanterie" 				
 		start_experience_factor = 0.7
-		start_equipment_factor = 1.0
+		start_equipment_factor = 0.9
 	}
 	division= {	
 		name = "Troupes de Damascus"
 		location = 13078
 		division_template = "Division Infanterie" 				
-		start_experience_factor = 0.7
+		start_experience_factor = 0.2
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "Trouples de Aleppo"
 		location = 12473
-		division_template = "Brigade Coloniale" 				
-		start_experience_factor = 0.7
+		division_template = "Brigade Coloniale" 	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.4
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "Trouples de Beirut"
 		location = 792
-		division_template = "Brigade Coloniale" 				
-		start_experience_factor = 0.7
+		division_template = "Brigade Coloniale" 
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "Trouples de Gabon"
 		location = 1909
-		division_template = "Brigade Coloniale" 				
-		start_experience_factor = 0.7
+		division_template = "Brigade Coloniale" 	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.2
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "Orleansville Garrison"
 		location = 1145
-		division_template = "Brigade Coloniale" 				
-		start_experience_factor = 0.7
-		start_equipment_factor = 1.0
+		division_template = "Brigade Coloniale" 
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.77
 	}
 	division= {	
 		name = "Algier Garrison"
 		location = 10028
-		division_template = "Brigade Coloniale" 				
+		division_template = "Brigade Coloniale" 	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
 		start_experience_factor = 0.7
 		start_equipment_factor = 1.0
 	}
 	division= {	
 		name = "2me Division d'infanterie Coloniale"
 		location = 4948
-		division_template = "Division Infanterie" 				
-		start_experience_factor = 0.7
-		start_equipment_factor = 1.0
+		division_template = "Division Infanterie" 	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
 	}
 }
 
