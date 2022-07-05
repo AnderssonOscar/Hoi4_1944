@@ -477,7 +477,7 @@ if = {
 		complete_national_focus = ROM_acquire_modern_tanks
 		complete_national_focus = ROM_mobile_tank_destroyers
 
-		complete_national_focus = ROM_expand_ploiesti_oil_production
+		unlock_national_focus = ROM_expand_ploiesti_oil_production
 	}
 
 	set_technology = {

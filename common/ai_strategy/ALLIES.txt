@@ -7,14 +7,14 @@ allies_enable_invasion_of_GER = {
 	allowed = {
 		OR = {
 			tag = USA
-			#tag = ENG
+			tag = ENG
 			#tag = CAN
 		}
 	}
 
 	enable = {
 		
-		date > 1944.4.22
+		date > 1944.4.1 #1944.4.1
 		has_war_with = GER
 		
 		125 = {is_fully_controlled_by = ENG}
@@ -39,34 +39,34 @@ allies_enable_invasion_of_GER = {
 #		type = front_control
 #		country_trigger = { tag = GER }
 
-		priority = 200
-		ratio = 0.5
+		#priority = 100
+		#ratio = 0.5
 #		area = normandy_landing_zone
 #		ordertype = invasion
-#		execute_order = no
-#		execution_type = careful #rush
+#		execute_order = yes 
+#		execution_type = rush #rush
 #	}
 
-strike_force_home_base
 
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 42
+		value = 600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 173
+		value = 600
+	}
 
 	ai_strategy = {
 		type = invade
 		id = "GER"
-		value = 200
+		#state_trigger = { id = 15 }
+		value = 500
 	}
 	
-	ai_strategy = {
-		type = invade
-		id = "JAP"
-		value = -50
-	}
-	
-	ai_strategy = {
-		type = invasion_unit_request  
-		country_trigger = { tag = JAP }
-		value = -50
-	}
 
 #	ai_strategy = {
 #		type = area_priority
@@ -77,20 +77,26 @@ strike_force_home_base
 	ai_strategy = {
 		type = area_priority
 		id = normandy_landing_zone
-		value = 500
+		value = 100
 	}
 		
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = 90
+		value = 45
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = JAP }
+		value = 5
 	}
 
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = GER }
 		state = 15
-		value = 75
+		value = 70
 	}
 
 	#ai_strategy = {
@@ -131,7 +137,8 @@ strike_force_home_base
 
 
 
-allies_unit_buffer_defend_UK = {
+
+allies_prepare_in_UK = { #stack troops here until we land in germany
 	allowed = {
 		OR = {
 			tag = ENG
@@ -141,68 +148,8 @@ allies_unit_buffer_defend_UK = {
 	}
 
 	enable = {
-		date > 1944.1.1 
-
-			is_in_faction_with = ENG
-			has_war_with = GER
-		
-			125 = {is_fully_controlled_by = ENG}
-		
-			AND = {
-				16 = {is_fully_controlled_by = GER}
-				15 = {is_fully_controlled_by = GER}
-				29 = {is_fully_controlled_by = GER}
-				6 =  {is_fully_controlled_by = GER}
-				14 = {is_fully_controlled_by = GER}
-				34 = {is_fully_controlled_by = GER}
-			}
-		}
-
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = put_unit_buffers
-		
-		order_id = 1
-		# south england
-		states = {
-			125
-			126
-			127
-			123
-			122
-		}
-		ratio = 0.15
-
-		subtract_invasions_from_need = no
-		subtract_fronts_from_need = no
-	}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-allies_prepare_in_UK = {
-	allowed = {
-		OR = {
-			tag = ENG
-			tag = USA
-			tag = CAN
-		}
-	}
-
-	enable = {
-		date > 1944.1.1 
-		date < 1944.6.15 
+		date > 1944.6.1 #
+		#date < 1944.6.15 
 
 			is_in_faction_with = ENG
 			has_war_with = GER
@@ -239,10 +186,10 @@ allies_prepare_in_UK = {
 			123
 			122
 		}
-		ratio = 0.45
+		ratio = 0.2
 
-		subtract_invasions_from_need = yes
-		subtract_fronts_from_need = yes
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
 	}
 }
 
@@ -364,6 +311,7 @@ Allies_garrison_invasion = {
 }
 
 
+
 allies_dont_invade_GER_before_dday = {
 	allowed = { 
 		OR = {
@@ -381,7 +329,7 @@ allies_dont_invade_GER_before_dday = {
 	}
 
 	enable = {
-		date < 1944.5.8
+		date < 1944.4.1 #1944.4.1
 		has_war_with = GER
 	}
 
@@ -593,51 +541,14 @@ ALLIES_take_germany_first = {
 		country_exists = JAP
 		has_war_with = JAP
 		has_war_with = GER
-		date > 1944.5.1
-		date < 1945.4.1
+		date > 1944.3.1 #1944.3.1
+		date < 1946.1.1
 	}
 
 	abort_when_not_enabled = yes
 	
-	#########try to make them bomb germany
-	ai_strategy = {
-		type = front_unit_request
-		country_trigger = { tag = GER }
-		value = 25
-	}
-	
-	ai_strategy = {
-		type = area_priority
-		id = europe
-		value = 100
-	}
-	
-	ai_strategy = {
-		type = consider_weak
-		id = GER
-		value = 50
-	}
-	
-	ai_strategy = {
-		type = conquer
-		id = GER
-		value = 50
-	}
-	
-	
 	###########################
 
-	ai_strategy = {
-		type = front_unit_request
-		country_trigger = { tag = JAP }
-		value = -25
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		country_trigger = { tag = GER }
-		value = 25
-	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
@@ -648,6 +559,37 @@ ALLIES_take_germany_first = {
 	ai_strategy = {
 		type = invade
 		id = "JAP"
-		value = -5
+		value = 0
 	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 90
+		value = 600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 76
+		value = 600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 79
+		value = 600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 77
+		value = 600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 87
+		value = 600
+	}
+
 }

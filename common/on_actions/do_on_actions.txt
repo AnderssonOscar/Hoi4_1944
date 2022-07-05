@@ -51,9 +51,9 @@ if = {
 				NOT = {is_core_of = controller}
 				is_fully_controlled_by = controller
 			}
-			set_compliance = 33
+			set_compliance = 24
 			start_resistance = yes
-			set_resistance = 27
+			set_resistance = 28
 			
 			force_enable_resistance = {
 			    clear = no
@@ -279,7 +279,13 @@ GER = {
 			}
 
 				#TODO add mines for japan & norway
-				#add_mines = { region = 42 amount = 100 }
+				JAP = { add_mines = { region = 90 amount = 500 } }
+				JAP = { add_mines = { region = 79 amount = 500 } }
+				JAP = { add_mines = { region = 76 amount = 500 } }
+
+				GER = { add_mines = { region = 173 amount = 500 } }
+				GER = { add_mines = { region = 174 amount = 150 } }
+				GER = { add_mines = { region = 42 amount = 250 } }
 
 		}
 	}

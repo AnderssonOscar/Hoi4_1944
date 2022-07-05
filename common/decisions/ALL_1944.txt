@@ -140,9 +140,9 @@ operations = {
 					tag = ENG
 					tag = USA
 				}
-
+				is_ai = yes
 				has_war_with = GER
-				date > 1944.5.22
+				date > 1944.5.25
 
 
 			any_other_country = {
@@ -172,6 +172,7 @@ operations = {
 					tag = ENG
 					tag = USA
 				}
+				is_ai = yes
 				has_war_with = GER
 			}
 
