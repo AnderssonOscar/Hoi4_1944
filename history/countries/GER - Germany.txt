@@ -203,10 +203,10 @@ set_war_support = 0.3
 			autonomous_state = autonomy_reichskommissariat
 		}
 		
-		set_autonomy = {
-			target = BEL
-			autonomous_state =  autonomy_reichskommissariat
-		}
+		#set_autonomy = { # 18 july 1944
+		#	target = BEL
+		#	autonomous_state =  autonomy_reichskommissariat
+		#}
 		
 		set_autonomy = {
 			target = NOR
