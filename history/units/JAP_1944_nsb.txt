@@ -1726,6 +1726,51 @@ units = {
 			start_experience_factor = 0.22
 			start_equipment_factor = 1
 		}
+		
+				division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7072
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.22
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7072
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.32
+			start_equipment_factor = 0.93
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 10125
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
+			start_experience_factor = 0.22
+			start_equipment_factor = 0.88
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 10125
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.13
+			start_equipment_factor = 0.88
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7197
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.22
+			start_equipment_factor = 1
+		}
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
