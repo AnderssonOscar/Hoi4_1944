@@ -200,17 +200,17 @@ set_war_support = 0.3
 		
 		set_autonomy = {
 			target = NET
-			autonomous_state = autonomy_puppet
+			autonomous_state = autonomy_reichskommissariat
 		}
 		
 		set_autonomy = {
 			target = BEL
-			autonomous_state = autonomy_puppet
+			autonomous_state =  autonomy_reichskommissariat
 		}
 		
 		set_autonomy = {
 			target = NOR
-			autonomous_state = autonomy_puppet
+			autonomous_state =  autonomy_reichskommissariat
 		}
 		
 		NOR = { become_exiled_in = { target = ENG legitimacy = 70 } }
