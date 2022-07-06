@@ -1,1 +1,117 @@
 
+operations = {
+
+	GER_barbarossa_mission = {
+
+		icon = generic_operation
+
+		allowed = {
+			always = no
+			#added through on_action
+		}
+
+		available = {
+			219 = { is_controlled_by_ROOT_or_ally = yes }
+			195 = { is_controlled_by_ROOT_or_ally = yes }
+			202 = { is_controlled_by_ROOT_or_ally = yes }
+			217 = { is_controlled_by_ROOT_or_ally = yes }
+		}
+
+		days_mission_timeout = 180
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		is_good = no
+
+		complete_effect = {
+			add_war_support = 0.1
+			custom_effect_tooltip = barbarossa_mission_tt
+		}
+
+		timeout_effect = {
+
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	GER_operation_margarethe = {
+
+		icon = generic_operation
+
+		allowed = {
+			always = no
+			#added through on_action
+		}
+
+		available = {
+			219 = { is_controlled_by_ROOT_or_ally = yes }
+      date > 1944.3.15
+		}
+
+		days_mission_timeout = 3
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		is_good = no
+
+		complete_effect = {
+			#add_war_support = 0.1
+			#custom_effect_tooltip = barbarossa_mission_tt
+			
+     HUN = {
+        set_politics = {
+          ruling_party = facism
+          last_election = "1944.3.1"
+          election_frequency = 48
+          elections_allowed = no
+        }
+
+        set_popularities = {
+          neutrality = 20
+          democratic = 10
+          fascism = 70
+          communism = 0
+        }
+        
+        		GER = {
+							puppet = PREV
+							set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						}
+    }
+			
+		}
+
+		timeout_effect = {
+
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+}
