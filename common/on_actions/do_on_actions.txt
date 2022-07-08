@@ -12,6 +12,11 @@ on_actions = {
 
 	GER = { declare_war_on = { target = ENG type = annex_everything } }
 
+	GER = {
+		activate_decision = GER_reichskommissariat_niederlande
+		activate_decision = GER_reichskommissariat_norwegen
+	}
+
 	every_country = {
 		limit = { has_war = yes }
 		add_command_power = 50

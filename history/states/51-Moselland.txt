@@ -52,7 +52,7 @@ state={
 			buildings = {
 				anti_air_building = 5
 				synthetic_refinery = 1
-				arms_factory = 8
+				arms_factory = 6
 			}
 		}
 

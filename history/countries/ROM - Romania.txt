@@ -447,7 +447,7 @@ if = {
 		tot_economic_mobilisation
 		service_by_requirement
 
-		medium_war_casualties
+		low_war_casualties
 	}
 
 	set_popularities = {

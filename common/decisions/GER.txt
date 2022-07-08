@@ -533,6 +533,7 @@ GER_reichskommissariats = {
 		}
 	}
 
+	
 	GER_reichskommissariat_niederlande = {
 
 		icon = ger_reichskommissariats
@@ -574,7 +575,7 @@ GER_reichskommissariats = {
 					}
 				}
 				HOL = {
-					start_civil_war = { ideology = fascism size = 1 }
+					start_civil_war = { ideology = fascism size = 1 states = { 7 36 35 } } # fix
 				}
 				random_country = {
 					limit= {
@@ -622,6 +623,7 @@ GER_reichskommissariats = {
 		}
 	}
 
+
 	GER_reichskommissariat_belgien_nordfrankreich = {
 
 		icon = ger_reichskommissariats
@@ -662,7 +664,8 @@ GER_reichskommissariats = {
 					}
 				}
 				BEL = {
-					start_civil_war = { ideology = fascism size = 1 }
+					#start_civil_war = { ideology = fascism size = 1 }
+					start_civil_war = { ideology = fascism size = 1 states = { 6 34 } }
 				}
 				random_country = {
 					limit= {

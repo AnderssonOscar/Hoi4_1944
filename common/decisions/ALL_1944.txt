@@ -74,7 +74,7 @@ economy_decisions = {
 			#num_of_factories > 100
 			has_idea = tot_economic_mobilisation
 			has_war = yes
-			has_fuel < 1000
+			#has_fuel < 1000
 		}
 		
 		available = {
@@ -109,7 +109,7 @@ economy_decisions = {
 		}
 
 		complete_effect = {
-			set_temp_variable = { totalfuel = 1050 }
+			set_temp_variable = { totalfuel = 925 }
 			multiply_temp_variable = { totalfuel = num_of_controlled_factories }
 			
 			add_fuel = totalfuel
@@ -240,15 +240,9 @@ war_measures = {
 
 		available = {
 		AND = {
-				OR = {
-					tag = GER
-					tag = ROM
-					tag = HUN
-					tag = ITA
-					tag = FIN
-				}
 
-			has_stability > 0.5
+
+			#has_stability > 0.5
 			#has_war_support > 0.6
 			alliance_strength_ratio < 0.75
 
@@ -295,7 +289,7 @@ war_measures = {
 
 		complete_effect = {
 			#add_war_support = -0.01
-			add_stability = -0.025
+			add_stability = -0.015
 		}
 	}
 

@@ -63,6 +63,12 @@ war_measures = {
 		remove_effect = {
 			every_country = {
 				limit = { has_war_with = FIN is_faction_leader = yes }
+
+				add_opinion_modifier = {
+					target = FIN
+					modifier = faction_traitor
+				}
+
 				white_peace = FIN 
 			}
 		
@@ -84,7 +90,9 @@ war_measures = {
 				targeted_alliance = ENG
 				enemy = GER
 			}
+			
 		}
+
 
 		FIN = {give_military_access = SOV}
 		}

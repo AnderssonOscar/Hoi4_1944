@@ -982,6 +982,15 @@ if = {
 		annex_country = { target = ETH transfer_troops = no }
 		set_fuel = 51812
 
+		
+	add_ideas = {
+		#laws
+		war_economy
+		service_by_requirement
+		low_war_casualties
+	}
+
+
 	set_technology = {
 		naval_bomber1 = 1
 		naval_bomber2 = 1

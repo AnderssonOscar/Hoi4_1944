@@ -1659,6 +1659,7 @@ create_equipment_variant = {
 			}
 		}
 
+
 		add_named_threat = { threat = 10 name = 1939_bookmark_threat }
 		set_oob = "GER_1944_nsb"
 

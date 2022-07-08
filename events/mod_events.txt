@@ -5,7 +5,8 @@
 add_namespace = romania.switch.side
 add_namespace = finland.switch.side
 add_namespace = bulgaria.switch.side
-add_namespace =  warsaw.uprising
+add_namespace = warsaw.uprising
+add_namespace = operation.margarethe
 
 # Romania switch side
 country_event = {
@@ -98,5 +99,26 @@ country_event = {
 
 
     }
+
+}
+
+
+
+
+
+# operation_margarethe
+country_event = {
+	id = operation.margarethe.1
+	title = operation.margarethe.1.t
+	desc = operation.margarethe.1.d 
+
+	#major = yes
+
+	picture = GFX_news_event_polish_tanks
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+	}
 
 }

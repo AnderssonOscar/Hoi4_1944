@@ -271,6 +271,10 @@ recruit_character = HUN_franz_friedrich
 	
 	oob = "HUN_1944_nsb"
 
+	add_opinion_modifier = { target = GER modifier = large_decrease	}
+	add_opinion_modifier = { target = GER modifier = large_decrease	}
+	add_opinion_modifier = { target = GER modifier = large_decrease	}
+
 	add_political_power = 2589
 	add_command_power = 200
 
@@ -279,19 +283,27 @@ recruit_character = HUN_franz_friedrich
 	set_war_support = 0.9
 	add_manpower = 500
 
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1944.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
 	set_popularities = {
-		neutrality = 40
-		fascism = 40
-		communism = 12
-		democratic = 8
+		neutrality = 30
+		fascism = 50
+		communism = 15
+		democratic = 5
 	}
 	
 	add_ideas = {
 		#laws
 		war_economy
 		extensive_conscription
+		#service_by_requirement
 		#limited_exports
-		medium_war_casualties
+		low_war_casualties
 
 	}
 
