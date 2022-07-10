@@ -81,7 +81,7 @@ economy_decisions = {
 			has_war = yes
            		has_idea = tot_economic_mobilisation
 			#has_army_manpower = {size > 1000000}
-			has_fuel < 1000
+			has_fuel < 10000
         }
 
 		fire_only_once = yes
@@ -108,8 +108,8 @@ economy_decisions = {
 			#make facories slow down output for a few days
 		}
 
-		complete_effect = {
-			set_temp_variable = { totalfuel = 925 }
+		remove_effect = {
+			set_temp_variable = { totalfuel = 845 }
 			multiply_temp_variable = { totalfuel = num_of_controlled_factories }
 			
 			add_fuel = totalfuel

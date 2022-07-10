@@ -2264,7 +2264,7 @@ SOV_take_germany = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = GER
-		value = 150
+		value = 90
 	}
 }
 
@@ -2403,7 +2403,7 @@ SOV_take_finland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = FIN
-		value = 60
+		value = 55
 	}
 }
 

@@ -22,6 +22,13 @@ ideas = {
 					instant = yes
 					build_cost_ic = -0.25
 				}
+
+				artillery_equipment = {
+					instant = yes
+					build_cost_ic = -0.25
+				}
+
+				
 			}
 		}
 

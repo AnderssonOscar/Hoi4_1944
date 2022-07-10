@@ -2988,10 +2988,7 @@ units = {
 
 
 	division= {	
-		division_name = {
-				is_name_ordered = no
-				name_order = 0
-		}
+		division_name = "zbV-Division"
 		location = 9617 #bucharest
 		division_template = "zbV-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
@@ -3000,10 +2997,7 @@ units = {
 	}
 
 	division= {	
-		division_name = {
-				is_name_ordered = no
-				name_order = 0
-		}
+		division_name = "Division zbV 136"
 		location = 9304
 		division_template = "zbV-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
@@ -3012,10 +3006,7 @@ units = {
 	}
 
 	division= {	
-		division_name = {
-				is_name_ordered = no
-				name_order = 0
-		}
+		division_name = "Division zbV Afrika"
 		location = 6242
 		division_template = "zbV-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
@@ -3024,10 +3015,7 @@ units = {
 	}
 
 	division= {	
-		division_name = {
-				is_name_ordered = no
-				name_order = 0
-		}
+		division_name = "zbV 140"
 		location = 9098
 		division_template = "zbV-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }

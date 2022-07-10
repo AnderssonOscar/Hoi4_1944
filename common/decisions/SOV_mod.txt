@@ -20,6 +20,7 @@ SOV_great_patriotic_war = {
 		}
 
 		visible = {
+			is_ai = yes
 			has_war_with = GER
 			surrender_progress < 0.2
 			date > 1944.3.1
@@ -48,6 +49,41 @@ SOV_great_patriotic_war = {
 				idea = major_offensive
 				days = 22
 			}
+
+
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 3*num_of_controlled_factories
+			}
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_3
+				amount = 26*num_of_controlled_factories
+			}
+
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_2
+				amount = 3*num_of_controlled_factories
+			}
+
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 2*num_of_controlled_factories
+			}
+
+			add_equipment_to_stockpile = {
+				type = 	anti_air_equipment_2
+				amount = 2*num_of_controlled_factories
+			}
+
+			add_equipment_to_stockpile = {
+				type = 	anti_tank_equipment_2
+				amount = 2*num_of_controlled_factories
+			}
+
+			
+
+
 		}
 
 			remove_effect = {
@@ -55,6 +91,54 @@ SOV_great_patriotic_war = {
 					idea = offensive_exhaustion
 					days = 20
 			}
+		}
+	}
+
+
+
+
+
+	SOV_attack_japan = {
+		icon = generic_prepare_civil_war
+
+			allowed = {
+				tag = SOV	
+			}
+
+		available = {
+			NOT = { has_war_with = GER }
+			NOT = { has_war_with = JAP }
+			date > 1945.1.1
+		}
+
+		visible = {
+			NOT = { has_war_with = GER }
+			NOT = { has_war_with = JAP }
+			date > 1945.1.1
+		}
+
+		 fire_only_once = yes
+		 days_remove = 0
+
+		#cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = { has_war_with = GER }
+				factor = 50
+			}
+		}
+
+			complete_effect = {
+				declare_war_on = {
+					target = MAN
+					type = annex_everything
+				}
+			}
+
+			remove_effect = {
+
 		}
 	}
 }
