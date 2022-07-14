@@ -1091,6 +1091,12 @@ if = {
 
 	}
 
+
+	add_timed_idea = {
+		idea = USA_american_industry
+		days = 420
+	}
+
 	remove_ideas = {
 		great_depression
 		MTG_naval_treaty_adherent

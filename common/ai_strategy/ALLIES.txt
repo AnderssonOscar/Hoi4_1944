@@ -2,6 +2,44 @@
 
 # 	country_trigger works only on 	 front_control 		front_unit_request 		 invasion_unit_request
 
+allies_dont_spam_invasion = {
+	allowed = {
+			OR = {
+					tag = USA
+					tag = ENG
+					tag = CAN
+					tag = FRA
+					tag = RAJ
+					tag = NZL
+					tag = AST
+					tag = BRA
+					tag = SAF
+					tag = MEX
+					tag = FIN # for later
+				}
+			}
+
+	enable = {
+				date > 1944.7.1
+				has_war_with = GER
+
+				set_temp_variable = { days = global.num_days }
+				modulo_temp_variable = { days = 90 }
+				check_variable = { days > 30 }
+			}
+
+	ai_strategy = {
+		type = invade
+		id = "GER"
+		value = -500
+	}
+
+	#ai_strategy = {
+	#	type = invasion_unit_request  
+	#	country_trigger = { tag = GER }
+	#	value = -10
+	#}
+}
 
 allies_enable_invasion_of_GER = {
 	allowed = {

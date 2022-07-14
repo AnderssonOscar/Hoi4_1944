@@ -1669,6 +1669,10 @@ create_equipment_variant = {
 		set_convoys = 50
 		set_stability = 1.0
 		set_war_support = 0.7
+		add_command_power = 200
+		army_experience = 65
+		navy_experience = 125	
+		air_experience = 75
 
 		add_ideas = {
 			medium_war_casualties
