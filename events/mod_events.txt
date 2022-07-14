@@ -64,7 +64,19 @@ country_event = {
 	
 	option = {
 		name = "Let them be"
+
+		10 = { set_resistance = 100 }
+		10 = { 
+			remove_building = {
+			type = supply_node
+			province = 3544
+			level = 1
+		}
 	}
+
+	custom_effect_tooltip = warsaw.uprising_tool_tip
+	
+}
 
 	option = {
         name = "Raze it to the ground"

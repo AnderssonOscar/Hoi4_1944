@@ -20,12 +20,13 @@ allies_dont_spam_invasion = {
 			}
 
 	enable = {
-				date > 1944.7.1
+				date > 1944.6.6
 				has_war_with = GER
 
 				set_temp_variable = { days = global.num_days }
 				modulo_temp_variable = { days = 90 }
-				check_variable = { days > 30 }
+				check_variable = { days > 87 }
+				#check_variable = { days > 30 }
 			}
 
 	ai_strategy = {
@@ -102,7 +103,7 @@ allies_enable_invasion_of_GER = {
 		type = invade
 		id = "GER"
 		#state_trigger = { state = 15 }
-		value = 500
+		value = 250
 	}
 	
 
@@ -257,8 +258,11 @@ allies_landed_in_france = {
 
 		NOT = {
 			OR = {
-				16 = {is_fully_controlled_by = GER}
+				#16 = {is_fully_controlled_by = GER}
 				#15 = {is_fully_controlled_by = GER}
+
+				GER = {	controls_province = 6449}
+				GER = {	controls_province = 9434}
 				GER = {	controls_province = 3534}
 				GER = {	controls_province = 3549}
 				GER = {	controls_province = 553}

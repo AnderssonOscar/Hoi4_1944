@@ -1830,12 +1830,16 @@ if = {
 
 	add_political_power = 2589
 	add_command_power = 200
+	army_experience = 5
+	navy_experience = 175	
+	air_experience = 35
 
 	set_convoys = 1750
 
 	set_stability = 0.9 
 	set_war_support = 0.9
 
+	activate_decision = women_in_the_workforce
 	
 	if = {
 		limit = {
@@ -2362,7 +2366,7 @@ if = {
 					special_type_slot_4 = extra_ammo_storage
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 6
+					tank_nsb_engine_upgrade = 9
 					tank_nsb_armor_upgrade = 0
 				}
 				icon = "GFX_SOV_improved_medium_tank_medium"
@@ -2386,7 +2390,7 @@ if = {
 					special_type_slot_4 = extra_ammo_storage
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 7
+					tank_nsb_engine_upgrade = 12
 					tank_nsb_armor_upgrade = 1
 				}
 				icon = "GFX_SOV_improved_medium_tank_medium"
@@ -2410,7 +2414,7 @@ if = {
 					special_type_slot_4 = extra_ammo_storage
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 9
+					tank_nsb_engine_upgrade = 12
 					tank_nsb_armor_upgrade = 4
 				}
 				#icon = "GFX_SOV_advanced_heavy_tank_medium"

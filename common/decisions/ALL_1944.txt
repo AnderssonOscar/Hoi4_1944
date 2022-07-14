@@ -144,6 +144,11 @@ operations = {
 				has_war_with = GER
 				date > 1944.5.25
 
+				set_temp_variable = { days = global.num_days }
+				modulo_temp_variable = { days = 90 }
+				check_variable = { days < 87 }
+
+				16 = {is_fully_controlled_by = GER}
 
 			any_other_country = {
 				is_in_faction_with = GER

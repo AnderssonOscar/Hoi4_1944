@@ -91,10 +91,13 @@ bulgaria.switch.side.1.d:0 "We have received information that the bulgaria are p
 warsaw.uprising.1:0 "Warsaw Uprising"
 warsaw.uprising.1.t:0 "Polish underground resistance has risen"
 warsaw.uprising.1.d:0 "With our enemies on the outskirts of the Warsaw it's inhabitants are trying to sabotage our military effort."
-
+warsaw.uprising_tool_tip:0 "Partisans will destroy Warsaws supply hub."
 
 operation.margarethe.1:0 "Operation Margarethe"
 operation.margarethe.1.t:0 "Operation Margarethe"
 operation.margarethe.1.d:0 "We have successfully gotten hungary back in line."
 
 operation.margarethe.decision.1.d:0 "We need to stop the hungarians secretly negotiating a separate peace with the Allies"
+
+
+

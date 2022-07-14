@@ -46,12 +46,14 @@ operations = {
 					elections_allowed = no
 				}
 
+				
 				set_popularities = {
-					neutrality = 30
-					democratic = 00
+					neutrality = 20
+					democratic = 10
 					fascism = 70
-					communism = 00
+					communism = 0
 				}
+
 
 				GER = {
 					puppet = PREV

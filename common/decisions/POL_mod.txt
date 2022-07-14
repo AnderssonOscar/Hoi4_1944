@@ -50,7 +50,7 @@ war_measures = {
 
 
 	complete_effect = {
-			10 = { set_resistance = 100 }
+			#10 = { set_resistance = 100 }
 			GER = { country_event = warsaw.uprising.1 }
 		}
 
