@@ -15,16 +15,16 @@ SOV_great_patriotic_war = {
 		available = {
 			has_war_with = GER
 			surrender_progress < 0.2
-			#date > 1944.3.1
-			#date < 1945.9.1 
+			date > 1944.3.1
+			date < 1945.9.1 
 		}
 
 		visible = {
-			#is_ai = yes
+			is_ai = yes
 			has_war_with = GER
 			surrender_progress < 0.2
-			#date > 1944.3.1
-			#date < 1945.9.1
+			date > 1944.3.1
+			date < 1945.9.1
 		}
 
 		 fire_only_once = no
@@ -133,6 +133,76 @@ SOV_great_patriotic_war = {
 			}
 		}
 
+
+	if = { limit = {
+				219 = {
+						is_fully_controlled_by = SOV}
+						num_divisions < 375
+					}
+
+		219 = {
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.18 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.38 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.18 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.38 start_equipment_factor = 0.58 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.28 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.18 start_equipment_factor = 0.8 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.38 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.44 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.28 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.38 start_equipment_factor = 0.6 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Legko-Tankovaya Diviziya \" division_template = \"Legko-Tankovaya Diviziya\" start_experience_factor = 0.42 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Legko-Tankovaya Diviziya \" division_template = \"Legko-Tankovaya Diviziya\" start_experience_factor = 0.52 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"SOV\" } }" 
+					owner = SOV
+				}
+			}
+		}
+		
 		}
 
 			remove_effect = {
@@ -143,10 +213,12 @@ SOV_great_patriotic_war = {
 		}
 	}
 
+}
 
 
 
 
+SOV_diplomacy_asia_decision_category = {
 	SOV_attack_japan = {
 		icon = generic_prepare_civil_war
 

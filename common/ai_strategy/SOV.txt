@@ -2363,7 +2363,7 @@ SOV_dont_hurt_finland_yet = {
 			tag = FIN
 		}
 		tag = FIN
-		value = -25
+		value = -30
 	}
 
 
@@ -2669,9 +2669,22 @@ SOV_stockpile_less_make_more_troops = {
 
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
-		value = -40
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = medium_armor
+		value = 900
 	}
 }
+
 
 
 SOV_make_more_troops = {

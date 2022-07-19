@@ -585,6 +585,11 @@ GER_reichskommissariats = {
 					transfer_state = 7
 					transfer_state = 35
 					transfer_state = 36
+
+					transfer_navy = {
+						target = HOL
+					}
+
 					GER = {
 						puppet = PREV
 						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }

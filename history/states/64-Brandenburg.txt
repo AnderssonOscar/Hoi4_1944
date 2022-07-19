@@ -11,7 +11,13 @@ state={
 	history={
 		owner = GER
 		victory_points = {
-			6521 50 
+			6521 65 
+		}
+		victory_points = {
+			13238 15 
+		}
+		victory_points = {
+			13237 10 
 		}
 		victory_points = {
 			3522 5 

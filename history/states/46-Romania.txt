@@ -6,7 +6,7 @@ state={
 	resources={
 	#	oil=44 # was: 70
 		
-		oil=21 # 1944
+		oil=17 # 1944
 
 	}
 

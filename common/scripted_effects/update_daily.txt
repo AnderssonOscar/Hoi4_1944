@@ -17,6 +17,5 @@ MOD_daily_update = {
 		#TUR_stop_selling_chromium = yes
 		#POR_stop_selling_tungsten_to_all = yes
 		#SWE_stop_selling_to_germany = yes
-
 	}
 }

@@ -273,7 +273,7 @@ recruit_character = HUN_franz_friedrich
 
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
-	add_opinion_modifier = { target = GER modifier = large_decrease	}
+	#add_opinion_modifier = { target = GER modifier = faction_traitor }
 
 	add_political_power = 2589
 	add_command_power = 200

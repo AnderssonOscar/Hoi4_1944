@@ -483,8 +483,17 @@ set_technology = { #VANILLA & DLC
 
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
-	add_opinion_modifier = { target = GER modifier = large_decrease	}
+	#add_opinion_modifier = { target = GER modifier = faction_traitor }
 
+	if = {
+		limit = {
+			has_dlc = "Battle for the Bosporus"
+		}
+			set_variable = { BUL_date_of_tsars_death = 1943.8.28 } #1943.8.28
+			set_country_flag = BUL_tsar_boris_is_dead_flag
+			unlock_national_focus = BUL_plot_against_boris
+	}
+	
 
 	add_ideas = {
 		#laws

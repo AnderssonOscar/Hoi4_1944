@@ -9,7 +9,6 @@ economy_decisions = {
 
 		visible = { 
 			#num_divisions > 100
-			num_of_factories > 100
 			has_war = yes
 			has_tech = gw_artillery
 			has_tech = infantry_weapons
@@ -17,13 +16,13 @@ economy_decisions = {
 		}
 		
 		available = {
-			has_war = yes
+			num_of_factories > 10
             has_idea = tot_economic_mobilisation
-			has_army_manpower = {size > 1000000}
+			has_army_manpower = {size > 50000}
         }
 
 		fire_only_once = yes
-		days_remove = 90
+		days_remove = 30
 		cost = 100
 
 		remove_trigger = {
@@ -37,25 +36,35 @@ economy_decisions = {
 		ai_will_do = {
 			base = 1
 			modifier = {
-				add = 10
+				add = 15
 				has_stability > 0.74
+				has_equipment = {
+					infantry_equipment < 100
+				}
 			}
 		}
 
 		complete_effect = {
+
+			set_temp_variable = { support_eq = 2 }
+			multiply_temp_variable = { support_eq = num_of_controlled_factories }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
-				amount = 500
+				amount = support_eq
 			}
 
+			set_temp_variable = { inf_eq = 22 }
+			multiply_temp_variable = { inf_eq = num_of_controlled_factories }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
-				amount = 5000
+				amount = inf_eq
 			}
 
+			set_temp_variable = { art_eq = 1.5 }
+			multiply_temp_variable = { art_eq = num_of_controlled_factories }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_1
-				amount = 500
+				amount = art_eq
 			}
 		}
 	}

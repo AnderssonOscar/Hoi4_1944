@@ -1658,8 +1658,10 @@ create_equipment_variant = {
 				set_nationality = GER
 			}
 		}
+		
 
-		activate_decision = women_in_the_workforce
+		GER_friedrich_paulus = { retire = yes }
+		#activate_decision = women_in_the_workforce
 		add_named_threat = { threat = 10 name = 1939_bookmark_threat }
 		set_oob = "GER_1944_nsb"
 
@@ -1675,6 +1677,7 @@ create_equipment_variant = {
 		air_experience = 75
 
 		add_ideas = {
+			wilhelm_keitel
 			medium_war_casualties
 		}
 
@@ -1683,6 +1686,7 @@ create_equipment_variant = {
 
 		annex_country = { target = YUG transfer_troops = no }
 		annex_country = { target = GRE transfer_troops = no }
+		
 
 } 
 
