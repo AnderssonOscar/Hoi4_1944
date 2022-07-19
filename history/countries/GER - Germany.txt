@@ -1676,8 +1676,15 @@ create_equipment_variant = {
 		navy_experience = 125	
 		air_experience = 75
 
+
+		remove_ideas = {
+			ludwig_beck
+		}
+
 		add_ideas = {
 			wilhelm_keitel
+			GER_joseph_goebbels
+			GER_walther_funk
 			medium_war_casualties
 		}
 
@@ -1731,7 +1738,7 @@ create_equipment_variant = {
         amount = 6500
     }
 
-	if = {
+if = {
 	limit = {
 		
 		has_dlc = "No Step Back"
@@ -1748,5 +1755,5 @@ add_equipment_to_stockpile = {
         amount = 50
     }
 
-	}
 }
+
