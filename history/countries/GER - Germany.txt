@@ -1683,8 +1683,8 @@ create_equipment_variant = {
 
 		add_ideas = {
 			wilhelm_keitel
-			GER_joseph_goebbels
-			GER_walther_funk
+			joseph_goebbels
+			walther_funk
 			medium_war_casualties
 		}
 
