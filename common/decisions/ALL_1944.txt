@@ -37,30 +37,30 @@ economy_decisions = {
 			base = 1
 			modifier = {
 				add = 15
-				has_stability > 0.74
+				#has_stability > 0.74
 				has_equipment = {
 					infantry_equipment < 100
 				}
 			}
 		}
 
-		complete_effect = {
+		remove_effect = {
 
-			set_temp_variable = { support_eq = 2 }
+			set_temp_variable = { support_eq = 2.6 }
 			multiply_temp_variable = { support_eq = num_of_controlled_factories }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
 				amount = support_eq
 			}
 
-			set_temp_variable = { inf_eq = 22 }
+			set_temp_variable = { inf_eq = 27 }
 			multiply_temp_variable = { inf_eq = num_of_controlled_factories }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = inf_eq
 			}
 
-			set_temp_variable = { art_eq = 1.5 }
+			set_temp_variable = { art_eq = 1.1 }
 			multiply_temp_variable = { art_eq = num_of_controlled_factories }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_1
@@ -122,6 +122,7 @@ economy_decisions = {
 			multiply_temp_variable = { totalfuel = num_of_controlled_factories }
 			
 			add_fuel = totalfuel
+			add_stability = -0.05
 			#calculate depending on num_of_controlled_factories
 		}
 	}

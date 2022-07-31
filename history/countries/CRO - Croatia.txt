@@ -54,7 +54,12 @@ set_convoys = 5
 	complete_national_focus = flexible_navy
 	complete_national_focus = industrial_effort
 	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	unlock_national_focus = production_effort
+	unlock_national_focus = production_effort_2
+
+	complete_national_focus = political_effort
+	complete_national_focus = collectivist_ethos
+	complete_national_focus = nationalism_focus
 	
 	set_technology = {
 	
@@ -183,6 +188,7 @@ add_country_leader_role = { #This replaces the commented script below - fixing a
 
 		#doctrine
 		trench_warfare = 1
+		prepared_defense = 1
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1

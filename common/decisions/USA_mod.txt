@@ -37,7 +37,7 @@ war_measures = {
 				CHI = {	controls_province = 1319}
 				YUN = {	controls_province = 1319}
 			}
-			RAJ = {	controls_province = 4245}
+			RAJ = {controls_province = 4245}
 
 		}
 
@@ -55,9 +55,9 @@ war_measures = {
 		days_re_enable = 33
 
 		ai_will_do = {
-			factor = 10
+			factor = 50
 			modifier = {
-				surrender_progress < 0.1
+				CHI = { surrender_progress < 0.1 }
 				factor = -100
 			}
 		}
@@ -65,7 +65,7 @@ war_measures = {
 
 
 		complete_effect = {
-
+ 
 		CHI = { 
 
 		
