@@ -256,14 +256,13 @@ if = {
 	set_war_support = 0.9
 	add_manpower = 20000
 	
+	add_timed_idea = { idea = FIN_start_bonus days = 17 }
+
 	add_ideas = {
 		#laws
 		tot_economic_mobilisation
 		all_adults_serve
 		limited_exports
-
-
-
 	}
 
 	set_technology = {

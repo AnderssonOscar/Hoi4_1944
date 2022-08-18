@@ -28,7 +28,13 @@ state = {
 			}
 		}
 
-					1943.12.1 = {
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 1
+			}
+		}
+
+		1943.12.1 = {
 			owner = ROM
 			controller = ROM
 		}

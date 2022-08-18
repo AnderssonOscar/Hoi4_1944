@@ -1676,6 +1676,7 @@ create_equipment_variant = {
 		navy_experience = 125	
 		air_experience = 75
 
+		add_political_power = 500
 
 		remove_ideas = {
 			ludwig_beck

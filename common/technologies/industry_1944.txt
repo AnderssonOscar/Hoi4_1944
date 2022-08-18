@@ -39,11 +39,11 @@ modern_rubber_processing = {
 				rubber > 10
 			}
 			modifier = {
-				factor = 0.5
+				factor = 1.5
 				rubber > 20
 			}	
 			modifier = {
-				factor = 0.5
+				factor = 3.5
 				rubber > 30
 			}			
 		}

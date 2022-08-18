@@ -289,8 +289,17 @@ air_wings = {
 	46 = {
 		fighter_equipment_2 =  {
 			owner = "ROM"
-			amount = 175
+			amount = 245
 		}
+
+		fighter_equipment_1 =  {
+			owner = "ROM"
+			amount = 65
+		}
+
+		fighter_equipment_1 = { owner = "ROM" creator = "GER" version_name = "Bf 109 E" amount = 35 }
+		fighter_equipment_1 = { owner = "ROM" creator = "ITA" amount = 65 }	
+
 		CAS_equipment_2 = {
 			owner = "ROM"
 			amount = 85

@@ -23,7 +23,7 @@ economy_decisions = {
 
 		fire_only_once = yes
 		days_remove = 30
-		cost = 100
+		cost = 75
 
 		remove_trigger = {
         	OR = {
@@ -36,8 +36,10 @@ economy_decisions = {
 		ai_will_do = {
 			base = 1
 			modifier = {
-				add = 15
+				add = 25
 				#has_stability > 0.74
+				date > 1944.3.1
+				has_political_power > 125
 				has_equipment = {
 					infantry_equipment < 100
 				}
@@ -48,6 +50,7 @@ economy_decisions = {
 
 			set_temp_variable = { support_eq = 2.6 }
 			multiply_temp_variable = { support_eq = num_of_controlled_factories }
+			add_to_temp_variable = { var = support_eq value = 65 }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
 				amount = support_eq
@@ -55,6 +58,7 @@ economy_decisions = {
 
 			set_temp_variable = { inf_eq = 27 }
 			multiply_temp_variable = { inf_eq = num_of_controlled_factories }
+			add_to_temp_variable = { var = inf_eq value = 575 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = inf_eq
@@ -62,6 +66,7 @@ economy_decisions = {
 
 			set_temp_variable = { art_eq = 1.1 }
 			multiply_temp_variable = { art_eq = num_of_controlled_factories }
+			add_to_temp_variable = { var = art_eq value = 85 }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_1
 				amount = art_eq
@@ -118,7 +123,7 @@ economy_decisions = {
 		}
 
 		remove_effect = {
-			set_temp_variable = { totalfuel = 845 }
+			set_temp_variable = { totalfuel = 815 }
 			multiply_temp_variable = { totalfuel = num_of_controlled_factories }
 			
 			add_fuel = totalfuel
@@ -287,7 +292,7 @@ war_measures = {
 		days_remove = 10
 		days_re_enable = 90
 
-		cost = 100
+		cost = 50
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -328,15 +333,8 @@ war_measures = {
 			has_manpower < 25000
 
              OR = {
-
-                AND = {
-                   has_idea = all_adults_serve
-                }
-
-                AND = {
-                   has_idea = scraping_the_barrel
-                }
-
+				has_idea = all_adults_serve
+				has_idea = scraping_the_barrel
              }
 
             OR = {
@@ -344,7 +342,7 @@ war_measures = {
                 AND = {
                     has_government = communism
                     has_war_support > 0.7
-		    surrender_progress > 0.20
+		   			surrender_progress > 0.20
                 }
                 AND = {
                     has_government = fascism

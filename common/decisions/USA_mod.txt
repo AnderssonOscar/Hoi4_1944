@@ -19,7 +19,7 @@ war_measures = {
 			#has_war_with = GER
 			#surrender_progress > 0.01
 			
-			date > 1944.2.1 
+			date > 1944.2.15 
 			date < 1946.1.1
 
 			has_war_with = JAP
@@ -52,7 +52,7 @@ war_measures = {
 
 		cost = 0
 		#days_remove = 1
-		days_re_enable = 33
+		days_re_enable = 31
 
 		ai_will_do = {
 			factor = 50
@@ -80,7 +80,7 @@ war_measures = {
 				max = 330
 			}
 
-			set_temp_variable = { inf_eq = 34 }
+			set_temp_variable = { inf_eq = 36.7 }
 			multiply_temp_variable = { inf_eq = days }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_2
@@ -88,7 +88,7 @@ war_measures = {
 				producer = USA
 			}
 
-			set_temp_variable = { support_eq = 3 }
+			set_temp_variable = { support_eq = 3.1 }
 			multiply_temp_variable = { support_eq = days }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
@@ -96,7 +96,7 @@ war_measures = {
 				producer = USA
 			}
 
-			set_temp_variable = { art_eq = 1 }
+			set_temp_variable = { art_eq = 0.1 }
 			multiply_temp_variable = { art_eq = days }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_2

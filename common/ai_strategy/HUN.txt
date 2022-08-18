@@ -1,0 +1,120 @@
+
+
+
+HUN_unit_buffer_capital= { 
+	allowed = {
+		original_tag = HUN
+	}
+	enable = { 
+			has_war = yes
+			date > 1944.1.1
+			AND = {
+				has_war_with = SOV
+				has_war_with = ROM
+			}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		ratio = 0.35
+
+		states = {
+			43
+		}
+
+		#area = scandinavia
+
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+}
+
+HUN_unit_production = {
+
+	allowed = {	original_tag = HUN }
+	enable = {
+		always = yes
+		date > 1944.1.1
+		date < 1945.1.1
+	}
+	abort = {
+		always = no
+	}
+
+
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -100
+	}
+
+	ai_strategy = { type = equipment_production_factor id = cas value = -200 }
+
+	ai_strategy = { type = equipment_variant_production_factor id = fighter_equipment      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = heavy_fighter_equipment      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
+}
+
+
+
+
+HUN_build_more_mil = {
+	allowed = { tag = HUN }
+	enable = {
+		date < 1945.1.1
+		date > 1943.12.30
+		has_war_with = SOV
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 250
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = fuel_silo
+		value = -500
+	}
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 75
+	}
+
+	ai_strategy = {
+		type = dockyard_to_military_factory_ratio
+		value = -5
+	}
+}

@@ -227,7 +227,7 @@ FIN_defend_fronts  = {
 
 		ordertype = front
 		execution_type = careful
-		execute_order = yes
+		execute_order = no
 	}
 
 		ai_strategy = {

@@ -26,7 +26,7 @@ division_template = {
 }
 division_template = {
 	name = "Alpine Odred"			# Mountain Brigade	
-w
+
 	division_names_group = CRO_MTN_01
 
 	regiments = {

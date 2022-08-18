@@ -2321,27 +2321,41 @@ GER_blitzkrieg_russia  = { #Rolling incursions
 
 }
 
-GER_normandy_buffer = {
+GER_normandy_buffer = { #1944 changed
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
+		date > 1944.3.15
 		is_historical_focus_on = yes
-		FRA = {
-			has_capitulated = yes
+		AND = {
+			16 = {is_fully_controlled_by = GER}
+			22 = {is_fully_controlled_by = GER}
+			56 = {is_fully_controlled_by = GER}
+			33 = {is_fully_controlled_by = GER}
 		}
+		#FRA = {
+		#	has_capitulated = yes
+		#}
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = put_unit_buffers
 		states = {
-			42
-			51
-			55
-			57
+			56
+			36
+			7
+			6
+			29
+			15
+			14
+			23
+			19
+			21
+			735
 		}
-		ratio = 0.07
+		ratio = 0.17
 		area = normandy_landing_zone
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = yes
@@ -2506,13 +2520,70 @@ GER_dont_rush_sov = { # mainly here to stop germany from helping finland to much
 		}
 
 		ordertype = front
-		execute_order = yes
+		execute_order = no
 		execution_type = careful
 	}
 }
 
 
+GER_defend_homeland = {
+	allowed = { original_tag = GER }
+	enable = {
+		
+		has_war_with = ENG
+		has_war_with = USA
+		date > 1944.1.1
+		date < 1946.1.1
 
+		AND = {
+			86 = { is_fully_controlled_by = GER }
+			4 = { is_fully_controlled_by = GER }
+		}
+
+		NOT = {
+			OR = {
+				17 = {is_fully_controlled_by = GER}
+				42 = {is_fully_controlled_by = GER}
+				51 = {is_fully_controlled_by = GER}
+				56 = {is_fully_controlled_by = GER}
+			}
+		}
+
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = BEL
+		value = 33
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = HOL
+		value = 35
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = 30
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = scandinavia
+		value = -70
+	}
+
+	ai_strategy = { 
+		type = front_unit_request
+		country_trigger = { always = yes }
+		area = scandinavia
+		value = -70
+	}
+
+}
 
 
 GER_unit_production = {
@@ -2548,5 +2619,72 @@ GER_unit_production = {
 		type = equipment_variant_production_factor
 		id = scout_plane_equipment
 		value = -250
+	}
+}
+
+
+
+
+
+GER_stop_stupid_garrison = {
+	allowed = {
+		tag = GER
+	}
+
+	enable = {
+		#is_historical_focus_on = yes
+		date > 1944.1.1
+			has_war_with = SOV
+	}
+
+	ai_strategy = {
+		type = garrison
+		value = -100
+	}
+}
+
+
+
+GER_build_more_mil = {
+	allowed = { tag = GER }
+	enable = {
+		date < 1945.3.1
+		date > 1944.1.1
+		has_war_with = SOV
+		has_war_with = USA
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 500
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = -500
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = -500
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = fuel_silo
+		value = -500
+	}
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 500
+	}
+
+	ai_strategy = {
+		type = dockyard_to_military_factory_ratio
+		value = -500
 	}
 }

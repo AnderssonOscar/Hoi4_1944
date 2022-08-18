@@ -1045,7 +1045,7 @@ if = {
 		active = yes
 	}
 
-	set_convoys = 1500
+	set_convoys = 1900
 	oob = "USA_1944_nsb"
 
 	#focuses

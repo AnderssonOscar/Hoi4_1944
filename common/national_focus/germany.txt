@@ -9151,7 +9151,7 @@ focus_tree = {
 
 		add_equipment_to_stockpile = {
 			type = anti_tank_equipment_2
-			amount = 3000
+			amount = 2000
 			producer = GER
 		}
 
@@ -9200,7 +9200,7 @@ focus_tree = {
 	
 					division_template = {
 						name = "Volksgrenadier"
-						is_locked = yes
+						is_locked = no
 						priority = 1
 						division_names_group = GER_ALTINF_01
 						regiments = {
@@ -9384,7 +9384,7 @@ focus_tree = {
 	
 					division_template = {
 						name = "Volkssturm"
-						is_locked = yes
+						is_locked = no
 						priority = 0
 						division_names_group = GER_VOLNF_01
 						regiments = {

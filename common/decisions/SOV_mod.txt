@@ -16,15 +16,15 @@ SOV_great_patriotic_war = {
 			has_war_with = GER
 			surrender_progress < 0.2
 			date > 1944.3.1
-			date < 1946.1.1 
+			date < 1945.6.1 
 		}
 
 		visible = {
 			is_ai = yes
 			has_war_with = GER
 			surrender_progress < 0.2
-			date > 1944.3.1
-			date < 1946.1.1
+			date > 1944.1.1
+			#date < 1946.1.1
 		}
 
 		 fire_only_once = no
@@ -37,7 +37,7 @@ SOV_great_patriotic_war = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				has_manpower > 250000
+				has_manpower > 50000
 				surrender_progress < 0.2
 				factor = 50
 			}
@@ -49,6 +49,28 @@ SOV_great_patriotic_war = {
 				idea = major_offensive
 				days = 20
 			}
+
+
+			set_temp_variable = { mod_start_date_days = 709560 } #1944.1.1
+			set_temp_variable = { days = global.num_days }
+
+			subtract_from_temp_variable = { days = mod_start_date_days }
+
+			set_temp_variable = { starthigh = 547 }
+
+			add_to_variable = {
+				var = starthigh
+				value = num_of_controlled_factories
+			}
+
+			subtract_from_temp_variable = { starthigh = days }
+
+
+			clamp_temp_variable = {
+				var = starthigh
+				min = 0
+				max = 547
+			}
 	
 
 		if = { limit = {
@@ -56,8 +78,8 @@ SOV_great_patriotic_war = {
 				support_equipment < 300
 			}
 		 }
-			set_temp_variable = { support_eq = num_of_controlled_factories }
-			multiply_temp_variable = { support_eq = 4 }
+			set_temp_variable = { support_eq = starthigh }
+			multiply_temp_variable = { support_eq = 3 }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
 				amount = support_eq
@@ -70,8 +92,8 @@ SOV_great_patriotic_war = {
 				infantry_equipment < 5000
 			}
 		 }
-			set_temp_variable = { inf_eq = num_of_controlled_factories }
-			multiply_temp_variable = { inf_eq = 39 }
+			set_temp_variable = { inf_eq = starthigh }
+			multiply_temp_variable = { inf_eq = 99 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
 				amount = inf_eq
@@ -84,8 +106,8 @@ SOV_great_patriotic_war = {
 				artillery_equipment < 250
 			}
 		 }
-			set_temp_variable = { artillery_eq = num_of_controlled_factories }
-			multiply_temp_variable = { artillery_eq = 3 }
+			set_temp_variable = { artillery_eq = starthigh }
+			multiply_temp_variable = { artillery_eq = 2 }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_2
 				amount = artillery_eq
@@ -98,13 +120,27 @@ SOV_great_patriotic_war = {
 				motorized_equipment_1 < 250
 			}
 		 }
-			set_temp_variable = { motorized_eq = num_of_controlled_factories }
-			multiply_temp_variable = { motorized_eq = 2 }
+			set_temp_variable = { motorized_eq = starthigh }
+			multiply_temp_variable = { motorized_eq = 4 }
 			add_equipment_to_stockpile = {
 				type = motorized_equipment_1
 				amount = motorized_eq
 			}
 		}
+
+		if = { limit = {
+			has_equipment = {
+				mechanized_equipment < 350
+			}
+		 }
+			set_temp_variable = { mechanized_eq = starthigh }
+			multiply_temp_variable = { mechanized_eq = 2 }
+			add_equipment_to_stockpile = {
+				type = mechanized_equipment_2
+				amount = mechanized_eq
+			}
+		}
+
 
 
 	if = { limit = {
@@ -112,8 +148,8 @@ SOV_great_patriotic_war = {
 				anti_air_equipment < 250
 			}
 		 }
-			set_temp_variable = { anti_air_eq = num_of_controlled_factories }
-			multiply_temp_variable = { anti_air_eq = 3 }
+			set_temp_variable = { anti_air_eq = starthigh }
+			multiply_temp_variable = { anti_air_eq = 6 }
 			add_equipment_to_stockpile = {
 				type = anti_air_equipment_2
 				amount = anti_air_eq
@@ -125,7 +161,7 @@ SOV_great_patriotic_war = {
 				anti_tank_equipment < 250
 			}
 		 }
-			set_temp_variable = { anti_tank_eq = num_of_controlled_factories }
+			set_temp_variable = { anti_tank_eq = starthigh }
 			multiply_temp_variable = { anti_tank_eq = 4 }
 			add_equipment_to_stockpile = {
 				type = anti_tank_equipment_2

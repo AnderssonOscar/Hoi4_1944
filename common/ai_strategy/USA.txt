@@ -69,8 +69,8 @@ USA_dont_forget_about_italy = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = {tag = ITA}
-		tag = ITA
-		value = 130
+		#tag = ITA
+		value = 70
 	}
 
 	ai_strategy = {
@@ -1259,7 +1259,13 @@ USA_go_time = {
 	}
 	enable = {
 		has_war_with = JAP
-		date > 1944.12.1 #1944 was 1943.6.6
+		OR = {
+			date > 1944.12.1 #1944 was 1943.6.6
+			AND = {
+				NOT = { 16 = {is_fully_controlled_by = GER} }
+				has_war_with = GER
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -1646,6 +1652,30 @@ USA_build_more_mil = {
 
 
 
+USA_help_out_in_france= {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+
+		has_war_with = GER
+		FRA = { has_war_with = GER }
+
+		date > 1944.6.1
+		date < 1946.1.1
+
+
+		NOT = {16 = {is_fully_controlled_by = GER}}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "FRA"
+		value = 80
+	}
+
+}
 
 
 

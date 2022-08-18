@@ -79,7 +79,7 @@ division_template = {
 		engineer = { x = 0 y = 1 } 		
 		signal_company = { x = 0 y = 2 } 
 		logistics_company = { x = 0 y = 3 }
-		field_hospital = { x = 0 y = 4 }
+		#field_hospital = { x = 0 y = 4 }
 	}
 		priority = 2
 }
@@ -251,10 +251,10 @@ division_template = {
 	support = {
 		light_tank_recon = { x = 0 y = 0 }		# BT-7 tanks
 		engineer = { x = 0 y = 1 }
-		field_hospital = { x = 0 y = 2 }
+		#field_hospital = { x = 0 y = 2 }
 		#anti_tank = { x = 0 y = 3 }
-		artillery = { x = 0 y = 3 }
-		signal_company  = { x = 0 y = 4 }
+		artillery = { x = 0 y = 2 }
+		#signal_company  = { x = 0 y = 4 }
 	}
 }
 

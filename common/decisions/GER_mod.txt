@@ -7,36 +7,26 @@ operations = {
 
 		allowed = {
 			tag = GER
-			#added through on_action
+		}
+
+		visible = { 
+			HUN = { has_government = neutrality }
+			HUN = {has_war_with = SOV} 
+			NOT = {has_war_with = HUN}
 		}
 
 		available = {
-			#219 = { is_controlled_by_ROOT_or_ally = yes }
-			#195 = { is_controlled_by_ROOT_or_ally = yes }
-			#202 = { is_controlled_by_ROOT_or_ally = yes }
-			#217 = { is_controlled_by_ROOT_or_ally = yes }
+			43 = {is_fully_controlled_by = HUN}
 			date > 1944.3.15
-			#date < 1946.1.1
-			#HUN = { has_government = neutrality }
-			HUN = {has_war_with = SOV} 
-			NOT = {has_war_with = HUN}
-			#custom_effect_tooltip = "fdsfsdf"
 		}
-
-		#days_mission_timeout = 0
-		cost = 100
+		cost = 50
 		days_remove = 3
 		fire_only_once = yes
 
-		activation = {
-
-		}
 
 		is_good = no
 
 		remove_effect = {
-			#add_war_support = 0.1
-			#custom_effect_tooltip = barbarossa_mission_tt
 
 			HUN = {
 				set_politics = {
@@ -63,26 +53,140 @@ operations = {
 				GER = { country_event = operation.margarethe.1 }
 				#custom_effect_tooltip = operation.margarethe.decision.1.d
 		}
-
-		}
-
-		timeout_effect = {
-
-		}
-
-
+	}
 
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+special_projects = {
+
+	GER_rocket_bases_1 = {
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			29 = {is_fully_controlled_by = GER}
+			date > 1944.3.1
+			has_war_with = ENG
+		}
+
+
+		visible = { has_tech = rocket_engines }  #improved_rocket_engines
+
+		cost = 50
+		ai_will_do = {
+			factor = 30
+		}
+
+		cancel_trigger = {
+			NOT = { 29 = {is_fully_controlled_by = GER} }
+		  }
+
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			29 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = rocket_site 
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+
+		complete_effect = { 
+			
+		 }
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	GER_rocket_bases_2 = {
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			57 = {is_fully_controlled_by = GER}
+			date > 1944.7.1
+			has_war_with = ENG
+		}
+
+		visible = { has_tech = rocket_engines } 
+
+		cost = 75
+		ai_will_do = {
+			factor = 5
+		}
+
+		cancel_trigger = {
+			NOT = { 57 = {is_fully_controlled_by = GER} }
+		  }
+
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+
+			if = {
+				limit = {
+					not = { has_tech = improved_rocket_engines }
+				}
+				set_technology = {
+					improved_rocket_engines = 1
+				}
+			}
+
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = rocket_site 
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		complete_effect = { 
+			
+		 }
+	}
+}
+	

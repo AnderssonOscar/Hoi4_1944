@@ -67,13 +67,13 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mechanized
-		value = 0
+		value = 22
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 15 #1944 was 5
+		value = 33 #1944 was 5
 	}
 
 	ai_strategy = {
@@ -2374,7 +2374,7 @@ SOV_dont_hurt_finland_yet = {
 		}
 
 		ordertype = front
-		execute_order = yes
+		execute_order = no
 		execution_type = careful
 	}
 }
@@ -2591,7 +2591,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 25
+		value = 35
 	}
 
 	ai_strategy = {
@@ -2599,8 +2599,9 @@ SOV_unit_production = {
 		id = tactical_bomber
 		value = -100
 	}
+	 
 
-
+	ai_strategy = { type = equipment_variant_production_factor id = railway_gun_equipment      value = -100 }
 	ai_strategy = { type = equipment_variant_production_factor id = heavy_fighter_equipment      value = -100 }
 	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
 	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
