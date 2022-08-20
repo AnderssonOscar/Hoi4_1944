@@ -136,6 +136,7 @@ if = {
 	set_technology = {
 		armored_car1 = 1
 		armored_car2 = 1
+		armored_car3 = 1
 	}
 }
 
@@ -165,8 +166,9 @@ set_war_support = 0.3
 		#rudolf_hess
 		ludwig_beck
 		gerd_von_rundstedt
-		GER_autarky_idea
-
+		#GER_autarky_idea
+		blohm_und_voss
+		messerschmitt
 		#laws
 		#tot_economic_mobilisation
 		war_economy
@@ -281,6 +283,8 @@ set_war_support = 0.3
 		unlock_national_focus = GER_strategic_air_effort
 		unlock_national_focus = GER_air_innovation_2
 		unlock_national_focus = GER_rocketry_focus
+		unlock_national_focus = GER_wunderwaffe
+
 
 	#BUILDINGS
 	
@@ -499,6 +503,7 @@ set_war_support = 0.3
 
 				engine_tech_1 = 1
 				engine_tech_2 = 1
+				engine_tech_3 = 1
 
 				basic_train = 1
 				wartime_train = 1

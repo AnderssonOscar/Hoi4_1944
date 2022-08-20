@@ -79,7 +79,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { support_eq = starthigh }
-			multiply_temp_variable = { support_eq = 3 }
+			multiply_temp_variable = { support_eq = 4.9 }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
 				amount = support_eq
@@ -93,7 +93,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { inf_eq = starthigh }
-			multiply_temp_variable = { inf_eq = 99 }
+			multiply_temp_variable = { inf_eq = 129 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
 				amount = inf_eq
@@ -107,7 +107,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { artillery_eq = starthigh }
-			multiply_temp_variable = { artillery_eq = 2 }
+			multiply_temp_variable = { artillery_eq = 3.3 }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_2
 				amount = artillery_eq
@@ -121,7 +121,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { motorized_eq = starthigh }
-			multiply_temp_variable = { motorized_eq = 4 }
+			multiply_temp_variable = { motorized_eq = 5 }
 			add_equipment_to_stockpile = {
 				type = motorized_equipment_1
 				amount = motorized_eq
@@ -162,7 +162,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { anti_tank_eq = starthigh }
-			multiply_temp_variable = { anti_tank_eq = 4 }
+			multiply_temp_variable = { anti_tank_eq = 5.1 }
 			add_equipment_to_stockpile = {
 				type = anti_tank_equipment_2
 				amount = anti_tank_eq
@@ -173,7 +173,7 @@ SOV_great_patriotic_war = {
 	if = { limit = {
 				219 = {
 						is_fully_controlled_by = SOV}
-						num_divisions < 375
+						num_divisions < 455
 					}
 
 		219 = {

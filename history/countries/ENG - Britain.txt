@@ -659,7 +659,7 @@ if = {
 			has_dlc = "Man the Guns"
 		}
 		set_technology = {
-	basic_naval_mines = 1
+		basic_naval_mines = 1
 		submarine_mine_laying = 1
 		early_ship_hull_light = 1
 		basic_ship_hull_light = 1
@@ -691,6 +691,7 @@ if = {
 		modify_global_flag = { flag = MTG_naval_treaty_signatories value = -2 }
 	}
 
+	set_stability = 0.86
 	set_convoys = 2000
 }
 

@@ -1639,7 +1639,7 @@ SOV_unit_buffer_for_asian_threat = {
 	}
 	enable = { #1944 change
 		
-			has_war = yes
+			#has_war = yes
 			has_war_with = JAP
 		
 	}
@@ -2422,7 +2422,7 @@ SOV_stop_stupid_garrison = {
 
 	ai_strategy = {
 		type = garrison
-		value = 1
+		value = -130
 	}
 }
 
@@ -2490,6 +2490,36 @@ SOV_dont_do_naval_invasion_bul = {
 
 
 
+SOV_dont_do_naval_invasion_nor = {
+	allowed = { 
+		tag = SOV
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1945.5.1
+		has_war_with = GER
+		NOT = {has_war_with = JAP}
+		NOT = {has_war_with = ENG}
+		NOT = {has_war_with = USA}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "NOR"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = NOR }
+		value = -500
+	}
+}
+
+
 
 SOV_Stop_guarding_these_borders = {
 	allowed = {
@@ -2499,7 +2529,33 @@ SOV_Stop_guarding_these_borders = {
 	enable = {
 		#is_historical_focus_on = yes
 		date > 1944.1.1
+		NOT = { has_war_with = TUR}
 		NOT = { has_war_with = ENG}
+		NOT = { has_war_with = USA}
+		NOT = { has_war_with = FRA}
+
+		has_war_with = GER
+		ENG = {has_war_with = GER}
+		USA = {has_war_with = GER}
+		FRA = {has_war_with = GER}
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = USA
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = -100
 	}
 
 	ai_strategy = {

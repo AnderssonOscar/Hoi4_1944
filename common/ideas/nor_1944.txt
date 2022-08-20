@@ -1,0 +1,12 @@
+ideas = {
+	country = {
+		
+	NOR_dont_surrender = {
+		modifier = {
+			#max_surrender_limit_offset = +99
+			forced_surrender_limit = +10
+			#surrender_limit = +10
+			}
+		}
+	}
+}

@@ -8,15 +8,19 @@ division_template = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
 	}
 	support = {
-		engineer = { x = 0 y = 0 }   
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 }  
+		anti_air = { x = 0 y = 2 }
 	}
 }
 division_template = {
@@ -29,8 +33,9 @@ division_template = {
 		cavalry = { x = 0 y = 1 }
 		cavalry = { x = 0 y = 2 }
 		cavalry = { x = 0 y = 3 }
-		motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
+		#cavalry = { x = 0 y = 4 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
 	}
 }
 division_template = {
@@ -39,12 +44,23 @@ division_template = {
 	division_names_group = BUL_ARM_01
 
 	regiments = {
-		light_armor = { x = 0 y = 0 }
-		light_armor = { x = 0 y = 1 }
-		motorized = { x = 1 y = 0 }
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1}
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		light_armor = { x = 2 y = 0 }
+		light_armor = { x = 2 y = 1 }
+		light_armor = { x = 2 y = 2 }
+		light_armor = { x = 2 y = 3 }
+		mot_artillery_brigade  = { x = 3 y = 0 }
+		mot_artillery_brigade  = { x = 3 y = 1 }
 	}
 	support = {
-		recon = { x = 0 y = 0 }   
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 }  
+		anti_air = { x = 0 y = 2 } 
 	}
 }
 
@@ -58,8 +74,8 @@ units = {
 		}
 		location = 949  # Sofia
 		division_template = "Konna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.26
+		start_equipment_factor = 0.92
 
 	}
 	division = {
@@ -70,17 +86,21 @@ units = {
 		}
 		location = 949  # Sofia
 		division_template = "Konna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.32
+		start_equipment_factor = 0.68
 
 	}
 	division = {
 		name = "Nezavisim Tankov Polk"
 		location = 949  # Sofia
 		division_template = "Tankov Polk"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.7
-		force_equipment_variants = { light_tank_chassis_1 = { owner = "BUL" creator = "ITA" amount = 14 version_name = "L3/35"} }
+		start_experience_factor = 0.48
+		start_equipment_factor = 0.94
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "BUL" creator = "ITA" amount = 63 version_name = "L3/35"} }
+		force_equipment_variants = { infantry_equipment_2 = { owner = "BUL" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "BUL" } }
+		force_equipment_variants = { anti_air_equipment_2 = { owner = "BUL" } }
+
 	}
 
 	# 1-va Armija
@@ -92,8 +112,8 @@ units = {
 		}
 		location = 949  # Sofia
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.26
+		start_equipment_factor = 1
 
 	}
 	division = {
@@ -104,8 +124,8 @@ units = {
 		}
 		location = 949  # Sofia
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.44
+		start_equipment_factor = 0.95
 
 	}
 
@@ -118,8 +138,8 @@ units = {
 		}
 		location = 6923  # Plovdiv
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.33
+		start_equipment_factor = 0.69
 
 	}
 	division = {
@@ -130,8 +150,8 @@ units = {
 		}
 		location = 6923  # Plovdiv
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.35
+		start_equipment_factor = 0.88
 
 	}
 	division = {
@@ -142,8 +162,8 @@ units = {
 		}
 		location = 6923  # Plovdiv
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.33
+		start_equipment_factor = 1
 
 	}
 
@@ -156,8 +176,8 @@ units = {
 		}
 		location = 9783  # Varna
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.33
+		start_equipment_factor = 0.92
 
 	}
 	division = {
@@ -168,8 +188,8 @@ units = {
 		}
 		location = 9783  # Varna
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.27
+		start_equipment_factor = 0.78
 
 	}
 
@@ -182,8 +202,8 @@ units = {
 		}
 		location = 9610  # Pleven
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.31
+		start_equipment_factor = 0.88
 
 	}
 	division = {
@@ -194,8 +214,8 @@ units = {
 		}
 		location = 9610  # Pleven
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.33
+		start_equipment_factor = 0.92
 
 	}
 	division = {
@@ -206,8 +226,8 @@ units = {
 		}
 		location = 9610  # Pleven
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.85
 
 	}
 }
@@ -215,11 +235,13 @@ units = {
 air_wings = {
 	### Vuzdushnite voiski -- Sofia (early purchases of GER Ar 65, He 51 fighters)
 	48 = {
-		tac_bomber_equipment_1 =  { owner = "BUL" creator = "SOV" amount = 36 }	# 5-ta Aviatsiyata Grupa -- B.71 Jerva (SB-100-2M), MB.210 # 1-vo Aviatsiyata Grupa -- P.43 Chaika, MB.210
+		tac_bomber_equipment_1 =  { owner = "BUL" creator = "SOV" amount = 52 }	# 5-ta Aviatsiyata Grupa -- B.71 Jerva (SB-100-2M), MB.210 # 1-vo Aviatsiyata Grupa -- P.43 Chaika, MB.210
 		tac_bomber_equipment_0 =  { owner = "BUL" creator = "FRA" amount = 12 }
-		CAS_equipment_1 =  { owner = "BUL" creator = "POL" version_name = "PZL P.43" amount = 36 }
+		CAS_equipment_1 =  { owner = "BUL" creator = "POL" version_name = "PZL P.43" amount = 46 }
 		fighter_equipment_0 =  { owner = "BUL" creator = "POL" version_name = "PZL P.24" amount = 36 }				# 6-ta Aviatsiyata Grupa -- PZL P.24
-		fighter_equipment_1 =  { owner = "BUL" amount = 72 }				# 2-vo Aviatsiyata Grupa -- Avia B.534 Dogan
+		fighter_equipment_1 =  { owner = "BUL" amount = 165 }				# 2-vo Aviatsiyata Grupa -- Avia B.534 Dogan
+
+		fighter_equipment_1 = { owner = "BUL" creator = "GER" version_name = "Bf 109 E" amount = 115 }
 	}
 }
 
@@ -227,10 +249,10 @@ air_wings = {
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_1
+			type = infantry_equipment_2
 			creator = "BUL"
 		}
-		requested_factories = 1
+		requested_factories = 9
 		progress = 0.48
 		efficiency = 100
 	}
@@ -239,10 +261,31 @@ instant_effect = {
 			type = support_equipment_1
 			creator = "BUL"
 		}
-		requested_factories = 1
+		requested_factories = 4
 		progress = 0.69
 		efficiency = 100
 	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_2
+			creator = "BUL"
+		}
+		requested_factories = 2
+		progress = 0.47
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = anti_air_equipment_2
+			creator = "BUL" 
+		}
+		requested_factories = 2
+		progress = 0.3
+		efficiency = 75
+	}
+
 	add_equipment_production = {
 		equipment = {
 			type = motorized_equipment_1
@@ -254,10 +297,10 @@ instant_effect = {
 	}
 	add_equipment_production = {
 		equipment = {
-			type = fighter_equipment_1
+			type = fighter_equipment_2
 			creator = "BUL"
 		}
-		requested_factories = 1
+		requested_factories = 2
 		progress = 0.55
 		efficiency = 100
 	}

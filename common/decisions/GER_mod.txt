@@ -13,6 +13,7 @@ operations = {
 			HUN = { has_government = neutrality }
 			HUN = {has_war_with = SOV} 
 			NOT = {has_war_with = HUN}
+			HUN = { is_ai = yes }
 		}
 
 		available = {
@@ -56,7 +57,12 @@ operations = {
 	}
 
 		ai_will_do = {
-			factor = 50
+			factor = 1
+
+			modifier = {
+				date > 1944.3.16
+				factor = 100
+			}
 		}
 	}
 	

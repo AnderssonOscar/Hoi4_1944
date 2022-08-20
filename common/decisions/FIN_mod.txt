@@ -82,8 +82,11 @@ war_measures = {
 			FIN = {give_military_access = ENG}
 			ENG = { add_to_faction = FIN }
 
-			FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
-			FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
+			#FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
+			#FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
+
+			FIN = { delete_units = { division_template = "Panssardivisoona" disband = yes } }
+			FIN = { delete_units = { division_template = "Erillinen Prikaati" disband = yes } }
 
 		FIN = {
 			add_to_war = {

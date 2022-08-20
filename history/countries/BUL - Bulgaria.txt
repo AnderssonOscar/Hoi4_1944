@@ -347,7 +347,7 @@ set_technology = { #VANILLA & DLC
 		complete_national_focus = BUL_dissolve_the_military_union
 		complete_national_focus = BUL_acquire_modern_tools
 		unlock_national_focus = BUL_negotiate_bulgarian_rearmament
-		complete_national_focus = BUL_the_tsars_regime
+		unlock_national_focus = BUL_the_tsars_regime
 		complete_national_focus = BUL_improve_the_road_system
 		complete_national_focus = BUL_restore_the_tarnovo_constitution
 		complete_national_focus = BUL_freedom_of_press
@@ -355,7 +355,7 @@ set_technology = { #VANILLA & DLC
 		complete_national_focus = BUL_promote_bulgarian_nationalism
 		complete_national_focus = BUL_limited_womens_suffrage
 		complete_national_focus = BUL_expand_sofia_university
-		complete_national_focus = BUL_bulgarian_irredentism
+		unlock_national_focus = BUL_bulgarian_irredentism
 		complete_national_focus = BUL_approach_germany
 		complete_national_focus = BUL_reorganize_the_military_industry
 		complete_national_focus = BUL_illusions_of_a_non_partisan_system
@@ -473,13 +473,15 @@ set_technology = { #VANILLA & DLC
 
 1943.12.30 = {
 
+	oob = "BUL_1944_nsb"
+
 	add_political_power = 2589
 	add_command_power = 200
 
-	set_convoys = 1
-	set_stability = 0.9 
-	set_war_support = 0.9
-	add_manpower = 500
+	set_convoys = 27
+	set_stability = 1.0
+	set_war_support = 0.47
+	add_manpower = 14564
 
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
@@ -489,29 +491,41 @@ set_technology = { #VANILLA & DLC
 		limit = {
 			has_dlc = "Battle for the Bosporus"
 		}
+			retire_character = BUL_boris_iii
+			promote_character = BUL_regency_council
 			set_variable = { BUL_date_of_tsars_death = 1943.8.28 } #1943.8.28
 			set_country_flag = BUL_tsar_boris_is_dead_flag
+			set_country_flag = BUL_ff_destroyed_flag
+			#remove_ideas = BUL_tsar_boris_positive_01
+			remove_ideas = BUL_tsar_boris_positive_02
+			#remove_ideas = BUL_tsar_boris_positive_03
 			unlock_national_focus = BUL_plot_against_boris
+			complete_national_focus = BUL_liberalization_of_trade_policies
+			complete_national_focus = BUL_form_a_regency_council
+			complete_national_focus = BUL_national_railway_lines
+			complete_national_focus = BUL_national_military_academy
+			complete_national_focus = BUL_found_the_brannik
+			unlock_national_focus = BUL_join_the_tripartite_pact
 	}
 	
 
 	add_ideas = {
 		#laws
-		tot_economic_mobilisation
-		service_by_requirement
-		limited_exports
+		war_economy
+		extensive_conscription
+		#limited_exports
 
 		low_war_casualties
 	}
 
 	set_popularities = { 
-		democratic = 5
-		fascism = 55
-		neutrality = 40
+		democratic = 10
+		fascism = 45
+		neutrality = 45
 	}
 
 	set_politics = {
-		ruling_party = fascism
+		ruling_party = neutrality
 		last_election = "1940.12.20"
 		election_frequency = 48
 		elections_allowed = no
@@ -523,10 +537,15 @@ set_technology = { #VANILLA & DLC
 
 		#electronics
 		electronic_mechanical_engineering = 1
+		mechanical_computing = 1
 		radio = 1
+		radio_detection = 1
+		decimetric_radar = 1
+		improved_decimetric_radar = 1
 
 		#doctrine
 		trench_warfare = 1
+		prepared_defense = 1
 
 		#industry
 		
@@ -542,6 +561,7 @@ set_technology = { #VANILLA & DLC
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
+		dispersed_industry4 = 1
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1
@@ -549,15 +569,24 @@ set_technology = { #VANILLA & DLC
 		fuel_silos = 1
 		fuel_refining = 1
 		fuel_refining2 = 1
+		fuel_refining3 = 1
+
+		synth_oil_experiments = 1
 
 		#weapons
 		support_weapons = 1
 		support_weapons2 = 1
+		support_weapons3 = 1
+
+		fighter1 = 1
+		fighter2 = 1
+		CAS1 = 1
 
 		infantry_weapons = 1
 		infantry_weapons1 = 1
 		infantry_weapons2 = 1
 		improved_infantry_weapons = 1
+		improved_infantry_weapons_2 = 1
 
 		interwar_antitank = 1
 		antitank1 = 1
@@ -569,8 +598,11 @@ set_technology = { #VANILLA & DLC
 		artillery2 = 1
 		artillery3 = 1
 		
+		
+		interwar_antiair = 1
 		antiair1 = 1
 		antiair2 = 1
+		antiair3 = 1
 
 		motorised_infantry = 1
 
@@ -608,6 +640,7 @@ set_technology = { #VANILLA & DLC
 				gwtank_chassis = 1
 
 				basic_medium_tank_chassis = 1 
+				improved_medium_tank_chassis = 1 
 
 				basic_light_tank_chassis = 1 
 
@@ -615,26 +648,62 @@ set_technology = { #VANILLA & DLC
 				improved_heavy_tank_chassis = 1 
 
 				armor_tech_1 = 1
+				armor_tech_2 = 1
 
 				engine_tech_1 = 1
+				engine_tech_2 = 1
 
 		}
 	}
 
 	add_equipment_to_stockpile = {
-        type = infantry_equipment
-        amount = 250
+        type = infantry_equipment_1
+        amount = 2257
+		producer = GER
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 250
+        amount = 275
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 225
+    }
+
+	add_equipment_to_stockpile = {
+        type = light_tank_chassis_2
+        amount = 47
+		variant_name  = "Panzerkampfwagen II"
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = light_tank_chassis_1
+        amount = 38
+		variant_name  = "LT vz. 35"
+		producer = CZE
+    }
+
+	add_equipment_to_stockpile = {
+        type = light_tank_chassis_1
+        amount = 29
+		variant_name  = "Panzer 35(t)"
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = light_tank_chassis_2
+        amount = 22
+		variant_name  = "Panzer 38(t)"
 		producer = GER
     }
 
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 10
+        amount = 12
     }
 }

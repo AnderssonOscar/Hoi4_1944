@@ -85,15 +85,15 @@ political_actions = {
 		fire_only_once = no
 
 		modifier = {
-			stability_weekly = 0.005
+			stability_weekly = 0.006
 			consumer_goods_factor = 0.025
 			industrial_capacity_factory = -0.05
 		}
 
 		days_remove = 90
-		days_re_enable = 180
+		days_re_enable = 120
 
-		cost = 100
+		cost = 75
 
 		complete_effect = {
 

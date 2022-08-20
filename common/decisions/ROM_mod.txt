@@ -18,7 +18,7 @@ war_measures = {
 			is_faction_leader = no
 			has_capitulated = no
 			has_war_with = SOV
-			surrender_progress > 0.07
+			surrender_progress > 0.1
 			date > 1944.7.25
 
 			has_government = fascism
@@ -33,26 +33,44 @@ war_measures = {
 			}
 		}
 
-		visible = {
-			has_war_with = SOV
-			surrender_progress > 0.07
+		cancel_if_not_visible = yes
+
+
+		cancel_trigger = {
+			surrender_progress < 0.09
 		}
 
-		fire_only_once = yes
+		cancel_effect = {
+			GER = { country_event = romania.cancel.switch.side.1 }
+			HUN = { country_event = romania.cancel.switch.side.1 }
+			ITA = { country_event = romania.cancel.switch.side.1 }
+		}
+
+		visible = {
+			date > 1944.1.1
+			date < 1945.8.1
+			GER = {has_war_with = SOV}
+			has_war_with = SOV
+			surrender_progress > 0.01
+		}
+
+		fire_only_once = no
 
 		cost = 0
-		days_remove = 7
+		days_remove = 10
+		days_re_enable = 10
 
 		ai_will_do = {
 			factor = 1
 			modifier = {
 
+			AND = {
 				NOT = {
 					 78 = {is_fully_controlled_by = ROM} 
 					766 = {is_fully_controlled_by = ROM}
 				}
-
-				surrender_progress > 0.07
+				surrender_progress > 0.1
+			}
 				factor = 100
 			}
 		}
@@ -60,6 +78,8 @@ war_measures = {
 
 	complete_effect = {
 			GER = { country_event = romania.switch.side.1 }
+			HUN = { country_event = romania.switch.side.1 }
+			ITA = { country_event = romania.switch.side.1 }
 		}
 
 		remove_effect = {
@@ -93,6 +113,11 @@ war_measures = {
 				fascism = 20
 				communism = 30
 			}
+
+
+			ROM = { delete_units = { division_template = "Divizia Infanterie" disband = yes } }
+			add_stability = -0.21
+			add_war_support = -0.24
 
 
 			if = {

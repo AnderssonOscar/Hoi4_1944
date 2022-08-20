@@ -691,7 +691,7 @@ set_technology = {
 
 capital = 219
 
-starting_train_buffer = 3.0
+starting_train_buffer = 2.1
 
 if = {
 	limit = {

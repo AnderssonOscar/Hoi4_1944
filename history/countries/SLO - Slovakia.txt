@@ -133,3 +133,118 @@ set_popularities = {
 	fascism = 90
 	communism = 5
 }
+
+
+1943.12.30 = {
+	add_political_power = 2289
+	add_command_power = 200
+
+	set_stability = 0.63 
+	add_manpower = 1200
+
+	add_ideas = {
+		#laws
+		tot_economic_mobilisation
+	}
+
+	set_technology = {
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+
+		#industry
+		excavation1 = 1
+		excavation2 = 1
+		excavation3 = 1
+
+		#doctrine
+		trench_warfare = 1
+		prepared_defense = 1
+
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+
+		fuel_silos = 1
+		fuel_refining = 1
+
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+
+		early_fighter = 1
+		fighter1 = 1
+
+		support_weapons = 1
+		support_weapons2 = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+
+		gw_artillery = 1
+		artillery1 = 1
+		artillery2 = 1
+
+		interwar_antiair = 1
+		antiair1 = 1
+
+		interwar_antitank = 1
+		antitank1 = 1
+
+		motorised_infantry = 1
+
+		tech_mountaineers = 1
+		tech_support = 1
+
+		tech_engineers = 1
+		tech_engineers2 = 1
+
+		tech_recon = 1
+		tech_recon2 = 1
+
+		tech_field_hospital = 1
+
+		tech_military_police = 1
+
+		tech_maintenance_company = 1
+		
+		basic_train = 1
+	}
+
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+				gwtank_chassis = 1
+				basic_light_tank_chassis = 1 
+		}
+	}
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 1250
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 250
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 500
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = { 
+        type = train_equipment_1
+        amount = 11
+    }
+
+}

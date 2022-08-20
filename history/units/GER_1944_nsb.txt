@@ -2230,7 +2230,7 @@ units = {
 				is_name_ordered = no
 				name_order = 0
 		}
-		location = 6636
+		location = 11516
 		division_template = "Infanterie-Division"
 		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "GER" } }

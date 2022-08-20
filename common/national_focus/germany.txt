@@ -9172,7 +9172,7 @@ focus_tree = {
 		x = 14
 		y = 10
 		cost = 4
-		available_if_capitulated = yes
+		available_if_capitulated = no
 		prerequisite = { focus = GER_hand_out_panzerfausts }
 		
 		ai_will_do = {
@@ -9358,7 +9358,7 @@ focus_tree = {
 		x = 14
 		y = 11
 		cost = 2
-		available_if_capitulated = yes
+		available_if_capitulated = no
 		prerequisite = { focus = GER_form_volksgrenadier }
 		ai_will_do = {
 			factor = 8

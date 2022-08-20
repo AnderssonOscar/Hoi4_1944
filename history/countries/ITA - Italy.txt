@@ -18,8 +18,8 @@ if = {
 starting_train_buffer = 1.5
 
 set_research_slots = 4
-set_stability = 0.6
-set_war_support = 0.7
+set_stability = 0.53
+set_war_support = 0.54
 add_ideas = {
 	victor_emmanuel
 	vittoria_mutilata
@@ -987,7 +987,7 @@ if = {
 		#laws
 		war_economy
 		service_by_requirement
-		low_war_casualties
+		medium_war_casualties
 	}
 
 

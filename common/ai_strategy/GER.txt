@@ -2525,6 +2525,103 @@ GER_dont_rush_sov = { # mainly here to stop germany from helping finland to much
 	}
 }
 
+GER_Finland_is_about_to_surrender = {
+	allowed = { original_tag = GER }
+
+	enable = {
+			date > 1944.1.1
+			FIN = { has_war_with = SOV}
+			GER = { has_war_with = SOV}
+			#check_variable = { fin_switch = true }
+
+			check_variable = {
+				var = fin_switch
+				value = 1
+				compare = equals
+			}
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "FIN"
+		value = 100
+	}
+}
+
+
+GER_stuck_in_finland = {
+	allowed = { original_tag = GER }
+
+	enable = {
+			date > 1944.1.1
+			FIN = { has_war_with = GER}
+			GER = { has_war_with = SOV}
+			GER = { has_war_with = ENG}
+
+			check_variable = {
+				var = fin_switch
+				value = 1
+				compare = equals
+			}
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = FIN
+		value = -10
+	}
+}
+
+
+
+GER_Romania_is_about_to_surrender = {
+	allowed = { original_tag = GER }
+
+	enable = {
+			date > 1944.1.1
+			ROM = { has_war_with = SOV}
+			GER = { has_war_with = SOV}
+			#check_variable = { fin_switch = true }
+
+			check_variable = {
+				var = rom_switch
+				value = 1
+				compare = equals
+			}
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "ROM"
+		value = 100
+	}
+}
+
+
+GER_Bulgaria_is_about_to_surrender = {
+	allowed = { original_tag = GER }
+
+	enable = {
+			date > 1944.1.1
+			BUL = { has_war_with = SOV}
+			GER = { has_war_with = SOV}
+			#check_variable = { fin_switch = true }
+
+			check_variable = {
+				var = bul_switch
+				value = 1
+				compare = equals
+			}
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "BUL"
+		value = 100
+	}
+}
+
+
 
 GER_defend_homeland = {
 	allowed = { original_tag = GER }
@@ -2536,14 +2633,14 @@ GER_defend_homeland = {
 		date < 1946.1.1
 
 		AND = {
-			86 = { is_fully_controlled_by = GER }
-			4 = { is_fully_controlled_by = GER }
+			86 = { is_fully_controlled_by = GER } #poznan
+			4 = { is_fully_controlled_by = GER } #austria
 		}
 
 		NOT = {
 			OR = {
-				17 = {is_fully_controlled_by = GER}
-				42 = {is_fully_controlled_by = GER}
+				17 = {is_fully_controlled_by = GER} #french-comte
+				42 = {is_fully_controlled_by = GER} #moselland
 				51 = {is_fully_controlled_by = GER}
 				56 = {is_fully_controlled_by = GER}
 			}
@@ -2582,7 +2679,6 @@ GER_defend_homeland = {
 		area = scandinavia
 		value = -70
 	}
-
 }
 
 

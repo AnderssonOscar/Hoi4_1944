@@ -430,6 +430,7 @@ ideas = {
 					has_war_support > 0.7
 					surrender_progress > 0
 				}
+
 				enemies_strength_ratio > 0.75
 				#any_enemy_country = {
 				#	strength_ratio = {
@@ -494,10 +495,36 @@ ideas = {
 					}
 					NOT = { has_idea = BUL_army_restrictions }
 				}
+
+				if = {
+					limit = {
+						is_ai = yes
+						OR = {
+							tag = GER
+							tag = ROM
+							tag = ITA
+							tag = HUN
+							tag = FRA
+						}
+					}
+
+					NOT = {
+						date > 1943.12.30
+						date < 1944.4.1
+					}
+				}
 			}
 
 			ai_will_do = {
    				factor = 1
+
+				   modifier = {
+					has_idea = tot_economic_mobilisation
+					has_war_support > 0.7
+				  	 has_decision = women_in_the_workforce
+					factor = -100
+				   }
+
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
@@ -630,10 +657,37 @@ ideas = {
 					}
 					NOT = { has_idea = BUL_army_restrictions }
 				}
+
+
+				if = {
+					limit = {
+						OR = {
+							tag = GER
+							tag = ROM
+							tag = ITA
+							tag = HUN
+							tag = FRA
+						}
+						is_ai = yes
+					}
+					NOT = {
+						date > 1943.12.30
+						date < 1944.10.1
+					}
+				}
 			}
 
 			ai_will_do = {
    				factor = 1
+
+				modifier = {
+					has_idea = tot_economic_mobilisation
+					has_war_support > 0.7
+				  	has_decision = women_in_the_workforce
+					factor = -100
+				   }
+
+
 				modifier = {
 					#Prio if low on manpower
 					factor = 20

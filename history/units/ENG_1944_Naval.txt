@@ -644,6 +644,296 @@ instant_effect = {
 		amount = 1
 	}
 
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = floating_harbor_equipment_1
+			creator = "ENG"
+		}
+		requested_factories = 1
+		progress = 1
+		amount = 1
+	}
+
 
 	add_equipment_production = {
 		equipment = {

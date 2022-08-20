@@ -200,8 +200,9 @@ units = {
 		location = 619
 		division_template = "Panceloshadosztaly"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.8
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "GER" version_name = "Panzer 35(t)" } }
+		start_experience_factor = 0.68
+		start_equipment_factor = 0.79
 	}
 	
 	
@@ -216,7 +217,20 @@ air_wings = {
 	43 = {
 		fighter_equipment_2 =  {
 			owner = "HUN"
-			amount = 125
+			amount = 145
+		}
+
+		fighter_equipment_1 =  {
+			owner = "HUN"
+			amount = 65
+		}
+		fighter_equipment_1 = { owner = "CRO" creator = "ITA" amount = 44 }	
+
+		fighter_equipment_1 = { owner = "HUN" creator = "GER" version_name = "Bf 109 E" amount = 25 }
+
+		CAS_equipment_2 =  {
+			owner = "HUN"
+			amount = 65
 		}
 	}
 }

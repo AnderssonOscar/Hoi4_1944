@@ -53,7 +53,7 @@ allies_enable_invasion_of_GER = {
 
 	enable = {
 		
-		date > 1944.4.4 #1944.4.1
+		date > 1944.4.14 #1944.4.1
 		has_war_with = GER
 		
 		125 = {is_fully_controlled_by = ENG}
@@ -353,14 +353,20 @@ allies_landed_in_france = {
 
 	ai_strategy = {
 		type = area_priority
-		id = europe
+		id = normandy_landing_zone
 		value = 100
 	}
 
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = GER }
-		value = 75
+		value = 78
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = 82
+		target = normandy_landing_zone
 	}
 }
 
@@ -427,7 +433,7 @@ allies_dont_invade_GER_before_dday = {
 	}
 
 	enable = {
-		date < 1944.4.3 #1944.4.1
+		date < 1944.4.12 #1944.4.1
 		has_war_with = GER
 	}
 
@@ -562,7 +568,7 @@ allies_dont_invade_axis_allies = {
 
 	ai_strategy = {
 		type = invade
-		id = "D04"
+		id = "D04" #HOL
 		value = -500
 	}
 
@@ -574,7 +580,7 @@ allies_dont_invade_axis_allies = {
 
 	ai_strategy = {
 		type = invade
-		id = "HOL"
+		id = "HOL" #maybe works?
 		value = -500
 	}
 

@@ -41,16 +41,16 @@ political_actions = {
 		}
 
 		fire_only_once = no
-		cost = 1
+		cost = 0
 		days_remove = 120
 
 		ai_will_do = {
 			factor = 1
 			modifier = {
-			 OR = {
-				date > 1944.11.15 #1944.11.15
-				GER = {surrender_progress > 0.1}
-			}
+			# OR = {
+			#	date > 1944.11.15 #1944.11.15
+			#	GER = {surrender_progress > 0.1}
+			#}
 
 				SOV = {surrender_progress < 0.01}
 				ENG = {surrender_progress < 0.01}

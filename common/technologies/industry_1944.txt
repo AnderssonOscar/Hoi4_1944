@@ -45,7 +45,19 @@ modern_rubber_processing = {
 			modifier = {
 				factor = 3.5
 				rubber > 30
-			}			
+			}	
+
+			modifier = {
+				tag = SOV
+				date > "1944.1.1"
+				factor = 100
+			}
+			
+			modifier = {
+				tag = GER
+				date > "1943.12.30"
+				factor = 100
+			}
 		}
 		
 		ai_research_weights = {
@@ -93,7 +105,14 @@ modern_rubber_processing = {
 			modifier = {
 				factor = 0.5
 				rubber > 30
-			}			
+			}	
+			
+
+			modifier = {
+				tag = GER
+				date > "1944.10.15"
+				factor = 35
+			}
 		}
 		
 		ai_research_weights = {
@@ -156,7 +175,14 @@ modern_oil_processing = {
 			modifier = {
 				factor = 0.5
 				oil > 30
-			}			
+			}
+			
+	
+			modifier = {
+				tag = GER
+				date > "1944.1.1"
+				factor = 50
+			}
 		}
 		
 		ai_research_weights = {
@@ -198,7 +224,24 @@ modern_oil_processing = {
 			modifier = {
 				factor = 0.5
 				oil > 30
-			}			
+			}
+			
+			modifier = {
+				factor = 50
+				
+				if = {
+					limit = {
+						OR = {
+							tag = GER
+						}
+
+					NOT = {
+						date > "1944.7.1"
+					}
+				}
+
+			}
+		}
 		}
 		
 		ai_research_weights = {
@@ -350,7 +393,14 @@ fuel_refining5 = {
 			modifier = {
 				factor = 1.5
 				num_of_naval_factories > 40
-			}				
+			}
+			
+
+			modifier = {
+				tag = GER
+				date > "1944.1.1"
+				factor = 25
+			}
 		}		
 	}
 
@@ -389,6 +439,12 @@ fuel_refining5 = {
 				factor = 1.5
 				num_of_military_factories > 40
 			}	
+
+			modifier = {
+				tag = GER
+				date > "1944.8.1"
+				factor = 25
+			}
 
 			modifier = {
 				factor = 1.5
