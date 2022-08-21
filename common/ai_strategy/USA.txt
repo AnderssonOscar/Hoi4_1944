@@ -38,7 +38,7 @@ USA_garrison_ITALY = {
 
 	ai_strategy = {
 		type = put_unit_buffers
-		ratio = 0.20
+		ratio = 0.17
 		states = { 
 			117
 			156

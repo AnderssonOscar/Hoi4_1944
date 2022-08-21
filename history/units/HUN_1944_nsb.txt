@@ -1,4 +1,4 @@
-﻿division_template = {
+division_template = {
 	name = "Gyalogdandár"				# Infantry Brigade
 	division_names_group = HUN_INF_01
 	
@@ -95,8 +95,8 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
 		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
-		start_experience_factor = 0.5
-		start_equipment_factor = 0.83
+		start_experience_factor = 0.02
+		start_equipment_factor = 0.73
 	}
 	
 	division= {
@@ -105,9 +105,9 @@ units = {
 		division_template = "Gyalogdandár"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
-		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "GER" } }
 		start_experience_factor = 0.5
-		start_equipment_factor = 1
+		start_equipment_factor = 0.33
 	}
 	
 	division= {
@@ -117,19 +117,19 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.9
+		start_experience_factor = 0.03
+		start_equipment_factor = 0.7
 	}
 	
 	division= {
 		division_name = { is_name_ordered = no name_order = 0 }
 		location = 9660
 		division_template = "Gyalogdandár"
-		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { infantry_equipment_1 = { owner = "YUG" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
 		start_experience_factor = 0.5
-		start_equipment_factor = 1
+		start_equipment_factor = 0.42
 	}
 	division= {
 		division_name = { is_name_ordered = no name_order = 0 }
@@ -137,8 +137,8 @@ units = {
 		division_template = "Gyalogdandár"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
-		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
-		start_experience_factor = 0.2
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+		start_experience_factor = 0.08
 		start_equipment_factor = 0.61
 	}
 	
@@ -148,8 +148,8 @@ units = {
 		division_template = "Gyalogdandár"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "HUN" } }
-		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
-		start_experience_factor = 0.1
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "YUG" } }
+		start_experience_factor = 0.01
 		start_equipment_factor = 0.6
 	}
 	
@@ -160,7 +160,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "HUN" } }
-		start_experience_factor = 0.1
+		start_experience_factor = 0.12
 		start_equipment_factor = 1
 	}
 	
@@ -170,7 +170,7 @@ units = {
 		location = 619
 		division_template = "Mountaineers"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
-		start_experience_factor = 0.3
+		start_experience_factor = 0.12
 		start_equipment_factor = 0.9
 	}
 	
@@ -190,7 +190,7 @@ units = {
 		location = 619
 		division_template = "Huszár Dandár"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
-		start_experience_factor = 0.2
+		start_experience_factor = 0.02
 		start_equipment_factor = 0.8
 	}
 	
@@ -201,7 +201,7 @@ units = {
 		division_template = "Panceloshadosztaly"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
 		force_equipment_variants = { light_tank_chassis_1 = { owner = "GER" version_name = "Panzer 35(t)" } }
-		start_experience_factor = 0.68
+		start_experience_factor = 0.18
 		start_equipment_factor = 0.79
 	}
 	
@@ -251,7 +251,7 @@ instant_effect = {
 			type = support_equipment_1
 			creator = "HUN"
 		}
-		requested_factories = 4
+		requested_factories = 3
 		progress = 0.75
 		efficiency = 100
 	}
@@ -261,7 +261,17 @@ instant_effect = {
 			type = artillery_equipment_2
 			creator = "HUN"
 		}
-		requested_factories = 8
+		requested_factories = 4
+		progress = 0.82
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = anti_air_equipment_2
+			creator = "HUN"
+		}
+		requested_factories = 3
 		progress = 0.82
 		efficiency = 100
 	}
@@ -273,6 +283,26 @@ instant_effect = {
 		}
 		requested_factories = 2
 		progress = 0.4
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_2
+			creator = "HUN" 
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 61
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = train_equipment_1
+			creator = "HUN" 
+		}
+		requested_factories = 3
+		progress = 0.84
 		efficiency = 100
 	}
 }

@@ -72,13 +72,27 @@ GER_endsieg_attack:0 "Endsieg is here"
 
 SOV_launch_major_offensive_ger:0 "Launch Major Offensive"
 
+HUN_upgrade_army_equipment:0 "Refit Our Forces"
+HUN_upgrade_army_equipment_desc:0 "Our army is in need of new equipment"
+HUN_upgrade_army_equipment_tooltip:0 ""
 
+HUN_war_economy_focus:0 "Prepare For Defence Of The Homeland"
+HUN_war_economy_focus_desc:0 ""
+HUN_war_economy_focus_tooltip:0 ""
+
+HUN_reform_army:0 "Reform The Armed Forces"
+HUN_reform_army_desc:0 "Reform The Armed Forces"
+HUN_reform_army_tooltip:0 "Receive 8 Infantry divisons and 2 armored divisions"
 
 
 
 romania.switch.side.1:0 "Romania is negotiating"
 romania.switch.side.1.t:0 "Romania is negotiating with the soviets."
-romania.switch.side.1.d:0 "We have received information that the romanians are preparing to betray us."
+romania.switch.side.1.d:0 "We have received information that the romanians are preparing to betray us. \nStop them by taking back the lost territory whitin 12 days."
+
+romania.cancel.switch.side.1:0 "Romanian counter-offensive"
+romania.cancel.switch.side.1.t:0 "Our Romanian counter-offensive was successful."
+romania.cancel.switch.side.1.d:0 "Romania has withdrawn from negotiations with the Soviets, for now."
 
 finland.switch.side.1:0 "finland is negotiating"
 finland.switch.side.1.t:0 "finland is negotiating with the soviets."

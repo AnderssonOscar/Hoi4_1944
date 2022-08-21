@@ -2568,7 +2568,7 @@ GER_stuck_in_finland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = FIN
-		value = -10
+		value = -30
 	}
 }
 
@@ -2621,7 +2621,34 @@ GER_Bulgaria_is_about_to_surrender = {
 	}
 }
 
+GER_Defend_hol = {
+	allowed = { 
+		original_tag = GER
+	 }
 
+	 enable = {
+			date > 1944.5.1
+
+		OR = {
+			NOT = { 6 = {is_fully_controlled_by = GER } }
+			NOT = { 14 = {is_fully_controlled_by = GER } }
+			NOT = { 15 = {is_fully_controlled_by = GER } } 
+			NOT = { 29 = {is_fully_controlled_by = GER } }
+		}
+	}
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			6
+			35
+			7
+		}
+		ratio = 0.08
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
 
 GER_defend_homeland = {
 	allowed = { original_tag = GER }
@@ -2632,19 +2659,26 @@ GER_defend_homeland = {
 		date > 1944.1.1
 		date < 1946.1.1
 
-		AND = {
+		
 			86 = { is_fully_controlled_by = GER } #poznan
 			4 = { is_fully_controlled_by = GER } #austria
+		
+
+			
+		random_country = {
+			limit = {
+				owns_state = 7
+				is_puppet_of = GER
+			}
+			
 		}
 
-		NOT = {
 			OR = {
-				17 = {is_fully_controlled_by = GER} #french-comte
-				42 = {is_fully_controlled_by = GER} #moselland
-				51 = {is_fully_controlled_by = GER}
-				56 = {is_fully_controlled_by = GER}
+				NOT = { 17 = {is_fully_controlled_by = GER } } #french-comte
+				NOT = { 42 = {is_fully_controlled_by = GER } } #moselland
+				NOT = { 51 = {is_fully_controlled_by = GER } } #RHINEland
+				NOT = { 56 = {is_fully_controlled_by = GER } } #wesser-ems
 			}
-		}
 
 	}
 	abort_when_not_enabled = yes
@@ -2730,12 +2764,13 @@ GER_stop_stupid_garrison = {
 	enable = {
 		#is_historical_focus_on = yes
 		date > 1944.1.1
+		date < 1945.1.1
 			has_war_with = SOV
 	}
 
 	ai_strategy = {
 		type = garrison
-		value = -100
+		value = -500
 	}
 }
 
@@ -2782,5 +2817,194 @@ GER_build_more_mil = {
 	ai_strategy = {
 		type = dockyard_to_military_factory_ratio
 		value = -500
+	}
+}
+
+
+
+
+
+
+
+GER_konsigs_festung_buffer = { #1944 
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		date > 1944.6.1
+		is_historical_focus_on = yes
+
+			GER = {	controls_province = 6332}
+
+			OR = {
+				NOT = { GER = {	controls_province = 9499 } }
+				NOT = { GER = {	controls_province = 6314 } }
+				NOT = { GER = {	controls_province = 9731 } }
+				NOT = { 188 = {is_fully_controlled_by = GER} } #memel
+				NOT = { 763 = {is_fully_controlled_by = GER} } #königsberg
+				NOT = { 5 = {is_fully_controlled_by = GER}  } #ermland-masuren
+			
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			763
+		}
+		ratio = 0.12
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+	}
+}
+
+
+GER_warsawa_festung_buffer = { #1944 
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		date > 1944.6.1
+		is_historical_focus_on = yes
+
+		OR = {
+			GER = {	controls_province = 3544}
+		}
+
+			OR = {
+				NOT = { 10 = {is_fully_controlled_by = GER} } #warsawa
+				NOT = { 98 = {is_fully_controlled_by = GER} } #plock
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			10
+		}
+		ratio = 0.08
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
+
+
+
+GER_east_germany = { #1944 
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1944.7.1
+		is_historical_focus_on = yes
+		
+		OR = {
+			GER = {	controls_province = 3473}
+			GER = {	controls_province = 9570}
+		}
+
+
+			OR = {
+				NOT = { 86 = {is_fully_controlled_by = GER} } #poznan
+				NOT = { 67 = {is_fully_controlled_by = GER} } #oberschleisen
+				NOT = { 68 = {is_fully_controlled_by = GER} }  #ostmark
+				NOT = { 65 = {is_fully_controlled_by = GER} }  #sachsen # south
+			
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			66
+			68
+			86
+		}
+		ratio = 0.11
+		#area = europe
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
+
+
+
+GER_berlin_festung = { #1944 
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1944.7.1
+		is_historical_focus_on = yes
+
+		OR = {
+			GER = {	controls_province = 6521}
+			GER = {	controls_province = 13237}
+			GER = {	controls_province = 13238}
+			GER = {	controls_province = 13236}
+		}
+
+		OR = {
+
+				NOT = { 64 = {is_fully_controlled_by = GER} }
+				NOT = {controls_province = 514}
+				NOT = {controls_province = 3535}
+				NOT = {controls_province = 6390}
+
+				#NOT = { 68 = {is_fully_controlled_by = GER} }
+				#NOT = { 62 = {is_fully_controlled_by = GER} }
+				#NOT = { 65 = {is_fully_controlled_by = GER} }
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			64
+		}
+		ratio = 0.19
+		#area = europe
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+	}
+}
+
+
+GER_budapest_festung = { #1944 
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = HUN
+		}
+	}
+	enable = {
+		date > 1944.7.1
+		is_historical_focus_on = yes
+
+		HUN = {	controls_province = 9660}
+
+
+			OR = {
+				NOT = { 43 = {is_fully_controlled_by = HUN} }
+				NOT = { 154 = {is_fully_controlled_by = HUN} }
+			
+		}	
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			43
+			#10
+		}
+		ratio = 0.06
+		#area = europe
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
 	}
 }

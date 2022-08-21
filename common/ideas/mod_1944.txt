@@ -1,10 +1,10 @@
 ideas = {
 	country = {
 		
-	NOR_dont_surrender = {
+	dont_surrender_mod = {
 		modifier = {
 			#max_surrender_limit_offset = +99
-			forced_surrender_limit = +10
+			forced_surrender_limit = +0.2
 			#surrender_limit = +10
 			}
 		}

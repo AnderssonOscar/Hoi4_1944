@@ -261,70 +261,80 @@ allies_landed_in_france = {
 		enable = {
 			has_war_with = GER
 
-		NOT = {
 			OR = {
-				#16 = {is_fully_controlled_by = GER}
-				#15 = {is_fully_controlled_by = GER}
 
 				AND = {
-					GER = {	controls_province = 3552}
-					GER = {	controls_province = 542}
-					GER = {	controls_province = 3758}
+					NOT = {
+						GER = {	controls_province = 3552}
+						GER = {	controls_province = 542}
+						GER = {	controls_province = 3758}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 6536}
-					GER = {	controls_province = 6548}
-					GER = {	controls_province = 542}
+					NOT = {
+						GER = {	controls_province = 6536}
+						GER = {	controls_province = 6548}
+						GER = {	controls_province = 542}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 9510}
+					NOT = {
+						GER = {	controls_province = 9510}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 6657}
+					NOT = {
+						GER = {	controls_province = 6657}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 6449}
-					GER = {	controls_province = 3579}
+					NOT = {
+						GER = {	controls_province = 6449}
+						GER = {	controls_province = 3579}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 9434}
+					NOT = {
+						GER = {	controls_province = 9434}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 485}
+					NOT = {
+						GER = {	controls_province = 485}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 575}
+					NOT = {
+						GER = {	controls_province = 575}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 6598}
+					NOT = {
+						GER = {	controls_province = 6598}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 6560}
-					GER = {	controls_province = 6446}
+					NOT = {
+						GER = {	controls_province = 6560}
+						GER = {	controls_province = 6446}
+					}
 				}
 
 				AND = {
-					GER = {	controls_province = 9737}
-					GER = {	controls_province = 6621}
+					NOT = {
+						GER = {	controls_province = 9737}
+						GER = {	controls_province = 6621}
+					}
 				}
-
-
-
-				#29 = {is_fully_controlled_by = GER}
-				#6 =  {is_fully_controlled_by = GER}
-				#14 = {is_fully_controlled_by = GER}
-				#34 = {is_fully_controlled_by = GER}
-			}
-			
 		}
 	}
 
@@ -360,14 +370,34 @@ allies_landed_in_france = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = GER }
-		value = 78
+		value = 70
 	}
 
 	ai_strategy = {
 		type = force_defend_ally_borders
-		value = 82
+		value = 75
 		target = normandy_landing_zone
 	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = FRA
+		value = 50
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders 
+		id = BUL
+		value = 80
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders 
+		id = ROM
+		value = 80
+	}
+
+	
 }
 
 
@@ -433,7 +463,7 @@ allies_dont_invade_GER_before_dday = {
 	}
 
 	enable = {
-		date < 1944.4.12 #1944.4.1
+		date < 1944.4.18 #1944.4.1
 		has_war_with = GER
 	}
 

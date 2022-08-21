@@ -1382,6 +1382,30 @@ create_equipment_variant = {
 			icon = "GFX_CZE_basic_main_tank"
 		}
 
+
+		create_equipment_variant = {
+			name = "Jagdpanzer 38"
+			type = light_tank_destroyer_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon_2
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = sloped_armor
+				special_type_slot_2 = easy_maintenance
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 8
+				tank_nsb_armor_upgrade = 14
+			}
+			
+			icon = "GFX_CZE_basic_main_tank"
+		}
+
 		
 			create_equipment_variant = {
 				name = "Panzer IV Ausf. H"

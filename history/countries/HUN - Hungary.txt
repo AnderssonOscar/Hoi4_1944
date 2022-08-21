@@ -280,7 +280,7 @@ recruit_character = HUN_franz_friedrich
 
 	set_convoys = 10
 	set_stability = 0.9 
-	set_war_support = 0.69
+	set_war_support = 0.49
 	add_manpower = 110432
 
 	set_politics = {
@@ -291,12 +291,13 @@ recruit_character = HUN_franz_friedrich
 	}
 
 	set_popularities = {
-		neutrality = 30
-		fascism = 50
-		communism = 15
-		democratic = 5
+		neutrality = 35
+		fascism = 45
+		communism = 10
+		democratic = 10
 	}
 	
+
 	add_ideas = {
 		#laws
 		war_economy
@@ -304,7 +305,10 @@ recruit_character = HUN_franz_friedrich
 		#service_by_requirement
 		#limited_exports
 		medium_war_casualties
-
+		dont_surrender_mod
+		HUN_mavag
+		mw_aircraft
+		
 	}
 
 	if = {
@@ -320,6 +324,14 @@ recruit_character = HUN_franz_friedrich
 	complete_national_focus = HUN_expand_the_manfred_weiss_steel_works
 	complete_national_focus = HUN_assault_gun_focus
 
+	complete_national_focus = HUN_support_urbanization
+	complete_national_focus = HUN_expand_the_aluminum_industry
+
+	unlock_national_focus = HUN_fighter_competition
+	unlock_national_focus = HUN_bomber_competition
+	unlock_national_focus = HUN_expand_the_technical_university_of_budapest
+
+	unlock_national_focus = HUN_joint_tank_procurement
 	}
 
 
@@ -475,12 +487,12 @@ recruit_character = HUN_franz_friedrich
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
-        amount = 12050
+        amount = 2050
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 710
+        amount = 110
     }
 
 	add_equipment_to_stockpile = {
@@ -490,14 +502,7 @@ recruit_character = HUN_franz_friedrich
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 642
-		producer = GER
-    }
-
-	add_equipment_to_stockpile = {
-        type = medium_tank_chassis_2
-        amount = 30
-		variant_name  = "Panzer IV Ausf. H"
+        amount = 342
 		producer = GER
     }
 
@@ -506,6 +511,13 @@ recruit_character = HUN_franz_friedrich
         amount = 25
 		variant_name  = "Panzer III Ausf. F"
 		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = medium_tank_chassis_2
+        amount = 115
+		variant_name  = "41M Turán"
+		producer = HUN
     }
 
 	add_equipment_to_stockpile = {

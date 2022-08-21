@@ -50,6 +50,7 @@ division_template = {
 		cavalry = { x = 1 y = 0 }
 		cavalry = { x = 1 y = 1 }
 		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
 		light_armor = { x = 2 y = 0 }
 		light_armor = { x = 2 y = 1 }
 		light_armor = { x = 2 y = 2 }
@@ -86,8 +87,8 @@ units = {
 		}
 		location = 949  # Sofia
 		division_template = "Konna Divizija"
-		start_experience_factor = 0.32
-		start_equipment_factor = 0.68
+		start_experience_factor = 0.17
+		start_equipment_factor = 0.78
 
 	}
 	division = {
@@ -112,7 +113,7 @@ units = {
 		}
 		location = 949  # Sofia
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.26
+		start_experience_factor = 0.22
 		start_equipment_factor = 1
 
 	}
@@ -124,7 +125,7 @@ units = {
 		}
 		location = 949  # Sofia
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.44
+		start_experience_factor = 0.21
 		start_equipment_factor = 0.95
 
 	}
@@ -138,7 +139,7 @@ units = {
 		}
 		location = 6923  # Plovdiv
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.33
+		start_experience_factor = 0.23
 		start_equipment_factor = 0.69
 
 	}
@@ -150,7 +151,7 @@ units = {
 		}
 		location = 6923  # Plovdiv
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.35
+		start_experience_factor = 0.22
 		start_equipment_factor = 0.88
 
 	}
@@ -162,7 +163,7 @@ units = {
 		}
 		location = 6923  # Plovdiv
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.33
+		start_experience_factor = 0.26
 		start_equipment_factor = 1
 
 	}
@@ -176,7 +177,7 @@ units = {
 		}
 		location = 9783  # Varna
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.33
+		start_experience_factor = 0.19
 		start_equipment_factor = 0.92
 
 	}
@@ -202,7 +203,7 @@ units = {
 		}
 		location = 9610  # Pleven
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.31
+		start_experience_factor = 0.28
 		start_equipment_factor = 0.88
 
 	}
@@ -214,7 +215,7 @@ units = {
 		}
 		location = 9610  # Pleven
 		division_template = "Pekhotna Divizija"
-		start_experience_factor = 0.33
+		start_experience_factor = 0.23
 		start_equipment_factor = 0.92
 
 	}
@@ -271,7 +272,7 @@ instant_effect = {
 			type = artillery_equipment_2
 			creator = "BUL"
 		}
-		requested_factories = 2
+		requested_factories = 3
 		progress = 0.47
 		efficiency = 100
 	}
@@ -281,7 +282,7 @@ instant_effect = {
 			type = anti_air_equipment_2
 			creator = "BUL" 
 		}
-		requested_factories = 2
+		requested_factories = 3
 		progress = 0.3
 		efficiency = 75
 	}
@@ -300,7 +301,7 @@ instant_effect = {
 			type = fighter_equipment_2
 			creator = "BUL"
 		}
-		requested_factories = 2
+		requested_factories = 3
 		progress = 0.55
 		efficiency = 100
 	}

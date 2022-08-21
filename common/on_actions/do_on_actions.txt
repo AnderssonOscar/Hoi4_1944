@@ -17,7 +17,7 @@ on_actions = {
 		activate_decision = GER_reichskommissariat_norwegen
 
 		add_ideas = {
-			NOR_dont_surrender
+			dont_surrender_mod
 		}
 	}
 
@@ -27,7 +27,7 @@ on_actions = {
 		}
 
 		add_ideas = {
-			NOR_dont_surrender
+			dont_surrender_mod
 		}
 	}
 
@@ -333,9 +333,13 @@ GER = {
 				JAP = { add_mines = { region = 79 amount = 500 } }
 				JAP = { add_mines = { region = 76 amount = 500 } }
 
-				GER = { add_mines = { region = 173 amount = 500 } }
+				GER = { add_mines = { region = 173 amount = 780 } }
 				GER = { add_mines = { region = 174 amount = 150 } }
 				GER = { add_mines = { region = 42 amount = 250 } }
+
+				ITA = { add_mines = { region = 168 amount = 850 } }
+				GER = { add_mines = { region = 202 amount = 750 } }
+	
 
 		}
 	}

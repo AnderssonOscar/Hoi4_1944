@@ -1,36 +1,7 @@
 
 
 
-HUN_unit_buffer_capital= { 
-	allowed = {
-		original_tag = HUN
-	}
-	enable = { 
-			has_war = yes
-			date > 1944.1.1
-			AND = {
-				has_war_with = SOV
-				has_war_with = ROM
-			}
-	}
 
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = put_unit_buffers
-
-		ratio = 0.35
-
-		states = {
-			43
-		}
-
-		#area = scandinavia
-
-		subtract_invasions_from_need = no
-		subtract_fronts_from_need = yes
-	}
-}
 
 HUN_unit_production = {
 

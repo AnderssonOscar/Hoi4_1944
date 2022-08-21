@@ -2823,7 +2823,12 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 90
+			factor = -5
+
+			modifier = {
+				factor = 10
+				date < 1943.12.30
+			}
 		}
 
 		available = {
@@ -5029,26 +5034,26 @@ focus_tree = {
 		id = HUN_upgrade_army_equipment
 		icon = GFX_focus_secret_rearmament
 		x = 15
-		y = 8
+		y = 7
 		cost = 10
 		available_if_capitulated = yes
 		#prerequisite = { focus = GER_gottedamerung }
 		
 		ai_will_do = {
-			factor = 5
+			factor = 1000
 
 			modifier = {
-				factor = 100
-				OR = {
-					surrender_progress > 0.01
-					date > 1944.7.1
-				}
+				factor = 1000
+				#OR = {
+					#surrender_progress > 0.01
+					date > 1943.12.30
+				#}
 			}
 		}
 
 		available = {
 			has_war = yes
-			date > 1944.1.1
+			date > 1943.12.30
 		}
 
 	completion_reward = {
@@ -5101,19 +5106,115 @@ focus_tree = {
 
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_2
-			amount = 790
+			amount = 630
 			producer = HUN
 		}
 
 		add_equipment_to_stockpile = {
+			type = anti_air_equipment_2
+			amount = 465
+			producer = SWE
+		}
+
+		add_equipment_to_stockpile = {
 			type = infantry_equipment_2
-			amount = 7925
+			amount = 9985
 			producer = HUN
 		}
+
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = 545
+			producer = HUN
+		}
+
+		add_equipment_to_stockpile = {
+			type = motorized_equipment_1
+			amount = 292
+			producer = HUN
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 98
+			variant_name = "Panzer IV Ausf. H"
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_3
+			amount = 29
+			variant_name = "Panther Ausf. G"
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_destroyer_chassis_2
+			amount = 108
+			variant_name = "Sturmgeschutz III"
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = light_tank_destroyer_chassis_2
+			amount = 178
+			variant_name = "Jagdpanzer 38"
+			producer = GER
+		}
+
 	}
 }
 
 
+
+
+
+
+
+
+focus = {
+	id = HUN_war_economy_focus
+	icon = GFX_focus_generic_combined_arms
+	x = 15
+	y = 8
+	cost = 5
+	available_if_capitulated = yes
+	prerequisite = { focus = HUN_upgrade_army_equipment }
+	
+	ai_will_do = {
+		factor = 1000
+
+		modifier = {
+			factor = 1000
+			OR = {
+				surrender_progress > 0.01
+				date > 1944.4.1
+			}
+		}
+	}
+
+	available = {
+		has_war = yes
+		#date > 1944.1.1
+	}
+
+		completion_reward = {
+
+			#add_ideas = {
+			#	free_trade#
+			#}
+
+			add_ideas = {
+				tot_economic_mobilisation
+			}
+			add_ideas = {
+				service_by_requirement
+			}
+
+				add_stability = 0.1
+				add_war_support = 0.2
+		}
+}
 
 
 
@@ -5125,17 +5226,17 @@ focus_tree = {
 		icon = GFX_focus_generic_little_entente
 		x = 15
 		y = 9
-		cost = 10
+		cost = 8
 		available_if_capitulated = no
-		prerequisite = { focus = HUN_upgrade_army_equipment }
+		prerequisite = { focus = HUN_war_economy_focus }
 		ai_will_do = {
-			factor = 8
+			factor = 1000
 
 			modifier = {
-				factor = 100
+				factor = 1000
 
 				OR = {
-					surrender_progress > 0.01
+					surrender_progress > 0.1
 					date > 1944.8.1
 				}
 			}
@@ -5144,13 +5245,13 @@ focus_tree = {
 	available = {
 			has_war = yes
 		OR = {
-			surrender_progress > 0.30
+			surrender_progress > 0.10
 			date > 1944.8.1
 			}
 		}
 		
 		completion_reward = {
-			#custom_effect_tooltip = GER_form_volksturm_tooltip
+			custom_effect_tooltip = HUN_reform_army_tooltip
 
 			hidden_effect = {
 	
@@ -5253,12 +5354,17 @@ focus_tree = {
 					limit = { ROOT = { has_full_control_of_state = PREV } is_core_of = ROOT	}
 
 					create_unit = {
-						division = "name = \"Szent László Infantry\" division_template = \"Szent László Infantry\" start_experience_factor = 0.83 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_3 = { owner = \"GER\" }}" 
+						division = "name = \"Szent László Infantry\" division_template = \"Szent László Infantry\" start_experience_factor = 0.88 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_3 = { owner = \"GER\" }}" 
 						owner = HUN
 					}
 
 					create_unit = {
-						division = "name = \"Reformed Panceloshadosztaly\" division_template = \"Reformed Panceloshadosztaly\" start_experience_factor = 0.59 start_equipment_factor = 1 force_equipment_variants = { light_tank_chassis_2 = { owner = \"GER\" version_name = \"Panzer 38(t)\" } } start_experience_factor = 0.41 start_equipment_factor = 1 force_equipment_variants = { medium_tank_chassis_2 = { owner = \"HUN\" version_name = \"41M Turán\" } } force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
+						division = "name = \"Reformed Panceloshadosztaly\" division_template = \"Reformed Panceloshadosztaly\" start_experience_factor = 0.73 start_equipment_factor = 1 force_equipment_variants = { light_tank_chassis_2 = { owner = \"GER\" version_name = \"Panzer 38(t)\" } } force_equipment_variants = { medium_tank_chassis_2 = { owner = \"HUN\" version_name = \"41M Turán\" } } force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_3 = { owner = \"GER\" }}" 
+						owner = HUN
+					}
+
+					create_unit = {
+						division = "name = \"Reformed Panceloshadosztaly\" division_template = \"Reformed Panceloshadosztaly\" start_experience_factor = 0.61 start_equipment_factor = 0.41 force_equipment_variants = { light_tank_chassis_2 = { owner = \"GER\" version_name = \"Panzer 38(t)\" } } force_equipment_variants = { medium_tank_chassis_2 = { owner = \"HUN\" version_name = \"41M Turán\" } } force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_1 = { owner = \"HUN\" }}" 
 						owner = HUN
 					}
 				}
@@ -5267,17 +5373,17 @@ focus_tree = {
 					limit = { ROOT = { has_full_control_of_state = PREV } is_core_of = ROOT	}
 
 					create_unit = {
-						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.36 start_equipment_factor = 0.86 force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
+						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.46 start_equipment_factor = 0.86 force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
 						owner = HUN
 					}
 
 					create_unit = {
-						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.31 start_equipment_factor = 0.93 force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
+						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.41 start_equipment_factor = 0.93 force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
 						owner = HUN
 					}
 
 					create_unit = {
-						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.26 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
+						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.36 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
 						owner = HUN
 					}
 
@@ -5292,20 +5398,32 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.31 start_equipment_factor = 0.96 force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
+						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.51 start_equipment_factor = 0.96 force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
 						owner = HUN
 					}
 
 					create_unit = {
-						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.27 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_1 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
+						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.29 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_1 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
+						owner = HUN
+					}
+					
+					create_unit = {
+						division = "name = \"Reformed Gyalogdandár\" division_template = \"Reformed Gyalogdandár\" start_experience_factor = 0.61 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_2 = { owner = \"HUN\" }}" 
 						owner = HUN
 					}
 
 				}
-			}			
+			}
+			
+			add_doctrine_cost_reduction = {
+				name = HUN_reform_army
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_grand_battle_plan
+			}
 			
 			#add_stability = -0.05
-			add_war_support = 0.05
+			#add_war_support = 0.05
 		}
 	}
 

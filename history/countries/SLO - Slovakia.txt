@@ -145,6 +145,7 @@ set_popularities = {
 	add_ideas = {
 		#laws
 		tot_economic_mobilisation
+		extensive_conscription
 	}
 
 	set_technology = {
