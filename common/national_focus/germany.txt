@@ -9656,7 +9656,12 @@ focus_tree = {
 		prerequisite = { focus = GER_protect_industry }
 		
 		ai_will_do = {
-			factor = 10
+			factor = 1
+
+			modifier = {
+				factor = 100
+				surrender_progress > 0.01
+			}
 		}
 
 		available = {
@@ -9841,16 +9846,15 @@ focus_tree = {
 
 		modifier = {
 			factor = 15
-			NOT = {	
 				GER = {
 					OR = { 
-						has_full_control_of_state = 94
-						has_full_control_of_state = 89
-						has_full_control_of_state = 809
-						has_full_control_of_state = 51	
+
+						NOT = { has_full_control_of_state = 94 }
+						NOT = { has_full_control_of_state = 89 }
+						NOT = { has_full_control_of_state = 809 }
+						NOT = { has_full_control_of_state = 51 }
 					}
 				}
-			}
 		}
 	}
 

@@ -2621,7 +2621,7 @@ GER_Bulgaria_is_about_to_surrender = {
 	}
 }
 
-GER_Defend_hol = {
+GER_defend_hol = {
 	allowed = { 
 		original_tag = GER
 	 }
@@ -2644,7 +2644,7 @@ GER_Defend_hol = {
 			35
 			7
 		}
-		ratio = 0.08
+		ratio = 0.09
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = no
 	}
@@ -2664,20 +2664,12 @@ GER_defend_homeland = {
 			4 = { is_fully_controlled_by = GER } #austria
 		
 
-			
-		random_country = {
-			limit = {
-				owns_state = 7
-				is_puppet_of = GER
-			}
-			
-		}
-
 			OR = {
 				NOT = { 17 = {is_fully_controlled_by = GER } } #french-comte
 				NOT = { 42 = {is_fully_controlled_by = GER } } #moselland
 				NOT = { 51 = {is_fully_controlled_by = GER } } #RHINEland
 				NOT = { 56 = {is_fully_controlled_by = GER } } #wesser-ems
+				NOT = { 18 = {is_fully_controlled_by = GER } } #champagne
 			}
 
 	}

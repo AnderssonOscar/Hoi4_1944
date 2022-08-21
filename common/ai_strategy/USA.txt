@@ -70,7 +70,7 @@ USA_dont_forget_about_italy = {
 		type = front_unit_request
 		country_trigger = {tag = ITA}
 		#tag = ITA
-		value = 70
+		value = 72
 	}
 
 	ai_strategy = {
