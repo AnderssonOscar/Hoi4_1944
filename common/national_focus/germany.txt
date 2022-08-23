@@ -9180,15 +9180,20 @@ focus_tree = {
 
 			modifier = {
 				factor = 100
-				surrender_progress > 0.1
+				#surrender_progress > 0.1
 			}
 		}
 
 		available = {
 			has_war = yes
 		OR = {
-			surrender_progress > 0.2
+			#surrender_progress > 0.2
 			date > 1944.8.1
+		
+				any_other_country = {
+					is_in_faction_with = GER
+					NOT = { controls_province = 11506} #paris
+				}
 			}
 		}
 

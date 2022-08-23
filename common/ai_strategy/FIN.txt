@@ -241,6 +241,50 @@ FIN_defend_fronts  = {
 
 
 
+FIN_dont_leave_finland  = {
+	allowed = {
+		tag = FIN
+	}
+
+	enable = {
+		date > 1944.5.1 
+		date < 1946.1.1
+		has_war_with = GER
+	}
+
+	abort_when_not_enabled = yes
+
+		ai_strategy = {
+			type = garrison
+			value = 100
+	}
+
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		ratio = 0.5
+
+		states = {
+			111
+			149
+			150
+			148
+		}
+		#area = scandinavia
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = -100
+	}
+}
+
+
+
 
 
 

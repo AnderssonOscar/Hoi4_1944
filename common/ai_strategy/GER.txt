@@ -3039,3 +3039,54 @@ GER_budapest_festung = { #1944
 		subtract_fronts_from_need = no
 	}
 }
+
+
+
+
+
+GER_stop_wasting_pp = { #
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+		}
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1945.6.1
+		is_historical_focus_on = yes
+		}	
+
+	ai_strategy = {
+		type = befriend
+		id = "JAP"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "TUR"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "SIA"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "MAN"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "MEN"
+		value = -500
+	}
+
+	abort_when_not_enabled = yes
+}

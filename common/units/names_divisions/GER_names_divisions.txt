@@ -503,6 +503,40 @@ GER_LTINF_01 =
 
 
 
+GER_ERSATZ_01 = 
+{
+	name = "Ersatz divisionen"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry"  }
+
+	fallback_name = "%d. Ersatz-division"
+
+	link_numbering_with = { GER_Inf_01 }
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+	    1 = { "%d. Ersatz-division" }
+		2 = { "%d. Ersatz-division" }
+		3 = { "%d. Ersatz-division" }
+		4 = { "%d. Ersatz-division" }
+		5 = { "%d. Ersatz-division" }
+		6 = { "%d. Ersatz-division" }
+		7 = { "%d. Ersatz-division" }
+		8 = { "%d. Ersatz-division" }
+		9 = { "%d. Ersatz-division" }
+		10 = { "%d. Ersatz-division" }
+		11 = { "%d. Ersatz-division" }
+		12 = { "%d. Ersatz-division" }
+		13 = { "%d. Ersatz-division" }
+		14 = { "%d. Ersatz-division" }
+	}
+}
+
 
 GER_VOLNF_01 = 
 {

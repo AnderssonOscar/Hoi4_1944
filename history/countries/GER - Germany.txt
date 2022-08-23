@@ -284,6 +284,7 @@ set_war_support = 0.3
 		unlock_national_focus = GER_air_innovation_2
 		unlock_national_focus = GER_rocketry_focus
 		unlock_national_focus = GER_wunderwaffe
+		unlock_national_focus= GER_turkey_friend
 
 
 	#BUILDINGS
@@ -1705,7 +1706,7 @@ create_equipment_variant = {
 		navy_experience = 125	
 		air_experience = 75
 
-		add_political_power = 500
+		add_political_power = 900
 
 		remove_ideas = {
 			ludwig_beck

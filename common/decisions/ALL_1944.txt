@@ -149,7 +149,7 @@ operations = {
 			}
 
 		available = {
-			date > 1944.5.28
+			date > 1944.5.30
 			OR = {
 				NOT = { 15 = {is_fully_controlled_by = GER} }
 				NOT = { 14 = {is_fully_controlled_by = GER} }

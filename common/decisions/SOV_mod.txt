@@ -20,7 +20,7 @@ SOV_great_patriotic_war = {
 		}
 
 		visible = {
-			is_ai = yes
+			#is_ai = yes
 			has_war_with = GER
 			surrender_progress < 0.2
 			date > 1944.1.1
@@ -37,7 +37,7 @@ SOV_great_patriotic_war = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				has_manpower > 50000
+				has_manpower > 250000
 				surrender_progress < 0.2
 				factor = 50
 			}
@@ -79,7 +79,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { support_eq = starthigh }
-			multiply_temp_variable = { support_eq = 4.9 }
+			multiply_temp_variable = { support_eq = 4.7 }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
 				amount = support_eq
@@ -93,7 +93,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { inf_eq = starthigh }
-			multiply_temp_variable = { inf_eq = 129 }
+			multiply_temp_variable = { inf_eq = 120.4 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
 				amount = inf_eq
@@ -107,7 +107,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { artillery_eq = starthigh }
-			multiply_temp_variable = { artillery_eq = 3.3 }
+			multiply_temp_variable = { artillery_eq = 3.1 }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_2
 				amount = artillery_eq
@@ -173,7 +173,7 @@ SOV_great_patriotic_war = {
 	if = { limit = {
 				219 = {
 						is_fully_controlled_by = SOV}
-						num_divisions < 425
+						num_divisions < 419
 					}
 
 		219 = {
