@@ -44,7 +44,9 @@ state={
 				synthetic_refinery = 3
 				6325 = {
 					naval_base = 4
+					coastal_bunker = 4
 				}
+
 			}
 		}
 	}

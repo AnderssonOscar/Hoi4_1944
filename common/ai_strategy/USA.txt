@@ -38,7 +38,7 @@ USA_garrison_ITALY = {
 
 	ai_strategy = {
 		type = put_unit_buffers
-		ratio = 0.17
+		ratio = 0.15
 		states = { 
 			117
 			156
@@ -70,7 +70,7 @@ USA_dont_forget_about_italy = {
 		type = front_unit_request
 		country_trigger = {tag = ITA}
 		#tag = ITA
-		value = 72
+		value = 75
 	}
 
 	ai_strategy = {

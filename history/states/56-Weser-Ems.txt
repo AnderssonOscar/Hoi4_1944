@@ -35,6 +35,17 @@ state={
 				dockyard = 3
 			}
 		}
+
+
+		1943.12.30 = {
+			buildings = {
+				241 = {
+					coastal_bunker = 6
+				}
+			}
+		}
+
+
 	}
 
 	provinces={

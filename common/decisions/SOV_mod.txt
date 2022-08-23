@@ -173,7 +173,7 @@ SOV_great_patriotic_war = {
 	if = { limit = {
 				219 = {
 						is_fully_controlled_by = SOV}
-						num_divisions < 455
+						num_divisions < 425
 					}
 
 		219 = {

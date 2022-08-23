@@ -83,6 +83,15 @@ war_measures = {
 		}
 
 		remove_effect = {
+
+			if = {
+				limit = {
+					has_capitulated = no
+				}
+				
+			
+
+
 			every_country = {
 				limit = { has_war_with = ROM  is_faction_leader = yes }
 				white_peace = ROM 
@@ -207,6 +216,7 @@ war_measures = {
 			}
 		}
 	}
+}
 
 
 

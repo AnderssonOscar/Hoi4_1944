@@ -524,6 +524,21 @@ GER_VOLNF_01 =
 	    1 = { "%d. Volksturm-Division" }
 		2 = { "%d. Volksturm-Division" }
 		3 = { "%d. Volksturm-Division" }
+		4 = { "%d. Volksturm-Division" }
+		5 = { "%d. Volksturm-Division" }
+		6 = { "%d. Volksturm-Division" }
+		7 = { "%d. Volksturm-Division" }
+		8 = { "%d. Volksturm-Division" }
+		9 = { "%d. Volksturm-Division" }
+		10 = { "%d. Volksturm-Division" }
+		11 = { "%d. Volksturm-Division" }
+		12 = { "%d. Volksturm-Division" }
+		13 = { "%d. Volksturm-Division" }
+		14 = { "%d. Volksturm-Division" }
+		15 = { "%d. Volksturm-Division" }
+		16 = { "%d. Volksturm-Division" }
+		17 = { "%d. Volksturm-Division" }
+		18 = { "%d. Volksturm-Division" }
 	}
 }
 
@@ -880,6 +895,41 @@ GER_GAR_01 =
 	}
 }
 
+
+GER_GAR_02 = 
+{
+	name = "Bodenständige Divisions"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry"  }
+
+	fallback_name = "%d. Bodenständige"
+
+	link_numbering_with = { GER_Inf_01 }
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+	    1 = { "%d. Bodenständige-Division" }
+		2 = { "%d.Bodenständige-Division" }
+		3 = { "%d. Bodenständige-Division" }
+		4 = { "%d. Bodenständige-Division" }
+		5 = { "%d.Bodenständige-Division" }
+		6 = { "%d. Bodenständige-Division" }
+		7 = { "%d. Bodenständige-Division" }
+		8 = { "%d.Bodenständige-Division" }
+		9 = { "%d. Bodenständige-Division" }
+		10 = { "%d. Bodenständige-Division" }
+		11 = { "%d.Bodenständige-Division" }
+		12 = { "%d. Bodenständige-Division" }
+		13 = { "%d. Bodenständige-Division" }
+		14 = { "%d.Bodenständige-Division" }
+		15 = { "%d. Bodenständige-Division" }
+	}
+}
 
 
 GER_Arm_01 = 

@@ -16,9 +16,12 @@ economy_decisions = {
 		}
 		
 		available = {
+			#set_temp_variable = { days = global.num_days } #for testing
+			#modulo_temp_variable = { days = 90 }
 			num_of_factories > 10
             has_idea = tot_economic_mobilisation
 			has_army_manpower = {size > 50000}
+			
         }
 
 		fire_only_once = yes
@@ -139,6 +142,62 @@ economy_decisions = {
 
 operations = {
 
+	start_resistance_in_france = {
+		icon = generic_prepare_civil_war
+			allowed = {
+				tag = ENG
+			}
+
+		available = {
+			date > 1944.5.28
+			OR = {
+				NOT = { 15 = {is_fully_controlled_by = GER} }
+				NOT = { 14 = {is_fully_controlled_by = GER} }
+				NOT = { 30 = {is_fully_controlled_by = GER} }
+			}
+			is_ai = yes
+		}
+
+		visible = {
+			tag = ENG
+			is_ai = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 100
+			}
+		}
+
+		complete_effect = {
+			15 = {
+				set_resistance = 67
+				set_compliance = 47
+			}
+
+			14 = {
+				set_resistance = 48
+				set_compliance = 44
+			}
+
+			30 = {
+				set_resistance = 42
+				set_compliance = 41
+			}
+
+			16 = {
+				set_resistance = 39
+			}
+		}
+	}
+
+
+
 	operation_overlord = {
 
 			icon = generic_operation
@@ -157,7 +216,7 @@ operations = {
 				}
 				is_ai = yes
 				has_war_with = GER
-				date > 1944.5.29
+				date > 1944.5.26
 
 				set_temp_variable = { days = global.num_days }
 				modulo_temp_variable = { days = 90 }
@@ -329,8 +388,8 @@ war_measures = {
 
         available = {
             has_war = yes
-            has_idea = tot_economic_mobilisation
-			has_manpower < 25000
+           # has_idea = tot_economic_mobilisation
+			#has_manpower < 25000
 
              OR = {
 				has_idea = all_adults_serve
@@ -341,21 +400,21 @@ war_measures = {
 
                 AND = {
                     has_government = communism
-                    has_war_support > 0.7
-		   			surrender_progress > 0.20
+                    has_war_support > 0.6
+		   			surrender_progress > 0.10
                 }
                 AND = {
                     has_government = fascism
                     OR = {
-                        has_war_support > 0.7
-                        surrender_progress > 0.20
+                        has_war_support > 0.6
+                        surrender_progress > 0.10
                     }
                 }
                 AND = {
                     has_government = neutrality
-                    has_war_support > 0.8
-                    has_stability > 0.5
-					surrender_progress > 0.3
+                    has_war_support > 0.7
+                   # has_stability > 0.5
+					surrender_progress > 0.2
                 }
             }
         }
@@ -363,6 +422,13 @@ war_measures = {
 		fire_only_once = yes
         visible = {
             has_war = yes
+			OR = {
+				has_government = communism
+				has_government = neutrality
+				has_government = fascism
+			}
+
+			has_capitulated = no
         }
         cost = 50
         days_remove = -1
@@ -370,7 +436,7 @@ war_measures = {
         remove_trigger = {
         	OR = {
             	has_war = no
-            	not = { has_idea = tot_economic_mobilisation }
+            #	not = { has_idea = tot_economic_mobilisation }
 				not = { has_idea = all_adults_serve }
                 not = { has_idea = scraping_the_barrel }
             }
@@ -378,15 +444,24 @@ war_measures = {
 
         modifier = {
             conscription = 0.01
-            stability_factor = -0.025
-			war_support_factor = -0.05
+            stability_factor = -0.05
+			war_support_factor = -0.1
         }
+
+		complete_effect = {
+			set_temp_variable = { totatmanpower = 1224.6 }
+			multiply_temp_variable = { totatmanpower = num_of_controlled_states }
+			add_to_temp_variable = { var = totatmanpower value = 11818 }
+			add_manpower = totatmanpower
+		}
+
         ai_will_do = {
 			factor = 0
 
 			modifier = {
-				factor = 3
-				has_manpower < 10000
+				factor = 5
+				has_manpower < 5000
+				has_stability > 0.45
 			}
 		}
 		complete_effect = {

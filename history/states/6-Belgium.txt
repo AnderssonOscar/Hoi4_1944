@@ -37,6 +37,15 @@ state={
 			owner = GER
 			controller = GER
 
+			buildings = {
+				6560 = {
+					coastal_bunker = 3
+				}
+
+				6598 = {
+					coastal_bunker = 5
+				}
+			}
      	}  
 	}
 

@@ -2326,13 +2326,26 @@ GER_normandy_buffer = { #1944 changed
 		original_tag = GER
 	}
 	enable = {
-		date > 1944.3.15
+		date > 1944.4.10
 		is_historical_focus_on = yes
 		AND = {
-			16 = {is_fully_controlled_by = GER}
-			22 = {is_fully_controlled_by = GER}
-			56 = {is_fully_controlled_by = GER}
-			33 = {is_fully_controlled_by = GER}
+			16 = {is_fully_controlled_by = GER} #paris
+			24 = {is_fully_controlled_by = GER} #centre
+			33 = {is_fully_controlled_by = GER} #centre sud
+			27 = {is_fully_controlled_by = GER} #bourgogne
+			26 = {is_fully_controlled_by = GER} #auvergne
+			17 = {is_fully_controlled_by = GER} #french-comte
+			18 = {is_fully_controlled_by = GER} #champange
+			
+
+			#If reich is under threat
+			66 = {is_fully_controlled_by = GER} #
+			68 = {is_fully_controlled_by = GER} #ostmark
+			52 = {is_fully_controlled_by = GER} #munich
+			51 = {is_fully_controlled_by = GER} #rhineland
+			#56 = {is_fully_controlled_by = GER} #weser_ems
+			#59 = {is_fully_controlled_by = GER} #hannover
+
 		}
 		#FRA = {
 		#	has_capitulated = yes
@@ -2344,6 +2357,7 @@ GER_normandy_buffer = { #1944 changed
 		type = put_unit_buffers
 		states = {
 			56
+			59
 			36
 			7
 			6
@@ -2355,9 +2369,9 @@ GER_normandy_buffer = { #1944 changed
 			21
 			735
 		}
-		ratio = 0.17
-		area = normandy_landing_zone
-		subtract_invasions_from_need = no
+		ratio = 0.22
+		#area = normandy_landing_zone
+		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
 	}
 }
@@ -2644,7 +2658,7 @@ GER_defend_hol = {
 			35
 			7
 		}
-		ratio = 0.09
+		ratio = 0.1
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = no
 	}
@@ -2678,19 +2692,19 @@ GER_defend_homeland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = BEL
-		value = 33
+		value = 30
 	}
 
 	ai_strategy = {
 		type = front_unit_request
 		tag = HOL
-		value = 35
+		value = 30
 	}
 
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
-		value = 30
+		value = 23
 	}
 
 	ai_strategy = {
@@ -2922,6 +2936,31 @@ GER_east_germany = { #1944
 	}
 }
 
+GER_guard_greece = { #1944 
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1944.1.1
+		is_historical_focus_on = yes
+		has_war_with = ENG
+		NOT = {has_war_with = BUL}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			186
+			47
+			731
+		}
+		ratio = 0.041
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
 
 
 GER_berlin_festung = { #1944 

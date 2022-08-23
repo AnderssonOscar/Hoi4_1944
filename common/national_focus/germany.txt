@@ -9661,12 +9661,20 @@ focus_tree = {
 			modifier = {
 				factor = 100
 				surrender_progress > 0.01
+				date > 1944.11.1
 			}
 		}
 
 		available = {
 			has_war = yes
 			date > 1944.1.1
+
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				date > 1944.11.1
+			}
 		}
 		completion_reward = {
 			custom_effect_tooltip = GER_everyting_for_war_effort_tooltip

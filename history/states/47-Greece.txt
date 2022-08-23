@@ -48,9 +48,17 @@ state={
 		}
 		add_core_of = GRE
 
-				1943.12.1 = {
+		1943.12.1 = {
 			owner = GER
 			controller = GER
+		}
+
+		1943.12.30 = {
+			buildings = {
+				4109 = {
+					coastal_bunker = 6
+				}
+			}
 		}
 
 	}
