@@ -18,7 +18,7 @@ war_measures = {
 			is_faction_leader = no
 			has_capitulated = no
 			has_war_with = SOV
-			surrender_progress > 0.1
+			surrender_progress > 0.09
 			date > 1944.7.25
 
 			has_government = fascism
@@ -51,14 +51,14 @@ war_measures = {
 			date < 1945.8.1
 			GER = {has_war_with = SOV}
 			has_war_with = SOV
-			surrender_progress > 0.01
+			#surrender_progress > 0.01
 		}
 
 		fire_only_once = no
 
 		cost = 0
 		days_remove = 12
-		days_re_enable = 10
+		days_re_enable = 8
 
 		ai_will_do = {
 			factor = 1
@@ -69,7 +69,7 @@ war_measures = {
 					 78 = {is_fully_controlled_by = ROM} 
 					766 = {is_fully_controlled_by = ROM}
 				}
-				surrender_progress > 0.1
+				surrender_progress > 0.09
 			}
 				factor = 100
 			}

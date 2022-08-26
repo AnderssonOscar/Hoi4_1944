@@ -41,9 +41,15 @@ state={
 		}
 		add_core_of = NOR
 
-					1943.12.1 = {
+		1943.12.1 = {
 			owner = GER
 			controller = GER
+
+			buildings = {
+				dockyard = 1
+				industrial_complex = 1
+			}
+
 		}
 	}
 

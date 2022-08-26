@@ -23,6 +23,18 @@ ROM_defend_the_front = {
 	}
 
 	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "SLO"
+		value = -5
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "HUN"
+		value = -5
+	}
+
+	ai_strategy = {
 	 	type = front_unit_request
 		 country_trigger = {tag = SOV}
 		value = 115

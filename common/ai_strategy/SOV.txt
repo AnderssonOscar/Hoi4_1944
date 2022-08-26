@@ -2308,7 +2308,7 @@ SOV_dont_hurt_romania_yet = {
 SOV_take_romania = {
 	allowed = { original_tag = SOV }
 	enable = {
-		tag = SOV
+		#tag = SOV
 		has_war_with = GER
 		has_war_with = ROM
 		#NOT = { has_war_with = FIN }
@@ -2320,9 +2320,9 @@ SOV_take_romania = {
 			has_full_control_of_state = 202
 		}
 
-		country_exists = GER
+		#country_exists = GER
 		#has_idea = major_offensive
-		date > 1944.8.15
+		date > 1944.8.14
 	}
 
 	abort_when_not_enabled = yes
@@ -2340,7 +2340,7 @@ SOV_take_romania = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = ROM
-		value = 95
+		value = 103
 	}
 }
 
@@ -2484,6 +2484,37 @@ SOV_dont_do_naval_invasion_bul = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = BUL }
+		value = -500
+	}
+}
+
+
+
+SOV_dont_do_naval_invasion_ITA = {
+	allowed = { 
+		tag = SOV
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1945.6.1
+		has_war_with = GER
+		NOT = {has_war_with = JAP}
+		NOT = {has_war_with = ENG}
+		NOT = {has_war_with = USA}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "ITA"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = ITA }
 		value = -500
 	}
 }

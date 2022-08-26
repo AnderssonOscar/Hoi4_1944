@@ -41,6 +41,7 @@ state={
 			buildings = {
 				radar_station = 4
 				anti_air_building = 5
+				synthetic_refinery = 2
 			}
 		}
 	}

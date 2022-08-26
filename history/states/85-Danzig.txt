@@ -28,9 +28,10 @@ state={
 			add_claim_by = GER
 		}
 
-			1943.12.1 = {
+		1943.12.30 = {
 			owner = GER
 			controller = GER
+			add_core_of = GER
 		}
 
 

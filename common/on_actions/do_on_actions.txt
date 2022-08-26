@@ -17,6 +17,29 @@ on_actions = {
 				date > 1943.12.31
 			}
 
+			set_fuel = 1190000
+			add_political_power = 800
+			army_experience = 50
+
+			set_technology = {
+				modern_oil_processing = 1
+				fuel_refining5 = 1
+				modern_rubber_processing = 1
+			}
+
+			add_ideas = {
+				GER_synthetic_oil_production
+			}
+		}
+}
+
+
+	GER = {
+		if = {
+			limit = {
+				is_ai = yes
+				date > 1943.12.31
+			}
 
 					64 = {
 					create_unit = {

@@ -195,7 +195,7 @@ modern_oil_processing = {
 
 	modern_oil_processing2 = {
 
-		fuel_gain_factor_from_states = 0.5
+		fuel_gain_factor_from_states = 1.0
 		
 		research_cost = 1.5
 		start_year = 1945

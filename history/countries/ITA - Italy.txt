@@ -980,14 +980,31 @@ if = {
 1943.12.30 = {
 
 		annex_country = { target = ETH transfer_troops = no }
-		set_fuel = 51812
+		set_fuel = 121812
 
+		unlock_national_focus = ITA_extra_tech_slot
+		set_research_slots = 4
 		
 	add_ideas = {
 		#laws
 		war_economy
 		service_by_requirement
 		medium_war_casualties
+		export_focus
+		dont_surrender_mod
+		macchi
+	}
+
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+			
+		}
+		set_technology = {
+			basic_train = 1
+			wartime_train = 1
+			armored_train = 1
+		}
 	}
 
 
@@ -1041,7 +1058,7 @@ if = {
 
         tech_logistics_company = 1
         tech_logistics_company2 = 1
-        tech_logistics_company3 = 1
+        #tech_logistics_company3 = 1
 
 		tech_military_police = 1
 		tech_military_police2 = 1
@@ -1064,8 +1081,8 @@ if = {
 
 		antitank1 = 1
 		antitank2 = 1
-		antitank3 = 1
-		antitank4= 1
+		#antitank3 = 1
+		#antitank4 = 1
 
 		#electronics
 		mechanical_computing = 1
@@ -1097,7 +1114,7 @@ if = {
 		fuel_refining = 1
 		fuel_refining2 = 1
 		fuel_refining3 = 1
-		#fuel_refining4 = 1
+		fuel_refining4 = 1
 
 		oil_processing = 1
 		improved_oil_processing = 1
@@ -1106,7 +1123,7 @@ if = {
 		construction2 = 1
 		construction3 = 1
 		construction4 = 1
-		construction5 = 1
+		#construction5 = 1
 
 		concentrated_industry = 1
 		concentrated_industry2 = 1
@@ -1131,7 +1148,7 @@ if = {
 		#advanced_infantry_weapons2 = 1
 
 		infantry_at = 1
-		infantry_at2 = 1
+		#infantry_at2 = 1
 
 		
 		#doctrines
@@ -1258,6 +1275,35 @@ if = {
 
 	}
 
+
+
+
+
+	create_equipment_variant = {
+		name = "C.202 Folgore II serie"
+		type = fighter_equipment_2
+		upgrades = {
+			plane_gun_upgrade = 3
+			plane_range_upgrade = 0  
+			plane_engine_upgrade = 3
+			plane_reliability_upgrade = 3
+		}
+	}
+
+		create_equipment_variant = {
+		name = "G.55 Centauro I serie"
+		type = fighter_equipment_3
+		upgrades = {
+			plane_gun_upgrade = 0
+			plane_range_upgrade = 0  
+			plane_engine_upgrade = 2
+			plane_reliability_upgrade = 0
+		}
+	}
+
+
+
+
 }
 }
 
@@ -1283,13 +1329,23 @@ if = {
 
 
 add_equipment_to_stockpile = {
-        type = infantry_equipment_1
-        amount = 2000
+        type = infantry_equipment_2
+        amount = 4600
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 800
+        amount = 710
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_2
+        amount = 490
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_air_equipment_2
+        amount = 590
     }
 
 	if = {
@@ -1301,12 +1357,12 @@ add_equipment_to_stockpile = {
 
 add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 90
+        amount = 42
     }
 
 	add_equipment_to_stockpile = {  # armor train
         type = train_equipment_3
-        amount = 20
+        amount = 29
     }
 
 	}

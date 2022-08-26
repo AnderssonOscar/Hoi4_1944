@@ -29,6 +29,13 @@ state={
 				industrial_complex = 3
 			}
 		}
+
+		1943.12.30 = {
+			buildings = {
+				synthetic_refinery = 3
+				anti_air_building = 2
+			}
+		}
 	}
 
 	provinces={

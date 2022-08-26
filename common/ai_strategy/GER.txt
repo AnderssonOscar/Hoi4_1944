@@ -2369,7 +2369,7 @@ GER_normandy_buffer = { #1944 changed
 			21
 			735
 		}
-		ratio = 0.22
+		ratio = 0.25
 		#area = normandy_landing_zone
 		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
@@ -2758,6 +2758,65 @@ GER_unit_production = {
 	}
 }
 
+GER_out_of_tungsten = {
+
+	allowed = {	original_tag = GER }
+
+	enable = { 
+		date > 1944.6.1
+		num_of_military_factories < 225
+		tungsten < 41
+		NOT = { 16 = {is_fully_controlled_by = GER} } #paris
+		has_war_with = SOV
+	}
+
+	abort_when_not_enabled = yes
+
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = anti_air
+		value = 37
+	}
+
+	ai_strategy = { type = equipment_variant_production_factor id = artillery_equipment value = 25 }
+	ai_strategy = { type = equipment_variant_production_factor id = anti_tank_equipment value = 20 }
+
+	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_chassis value = -25 }
+	ai_strategy = { type = equipment_variant_production_factor      id = heavy_tank_chassis value = -500 }
+
+	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_artillery_chassis value = -500 }
+	ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_artillery_chassis value = -500 }
+
+	ai_strategy = { type = equipment_variant_production_factor id = railway_gun_equipment      value = -1000 }
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -1000 }
+
+	ai_strategy = { type = equipment_variant_production_factor id = armored_car_equipment value = -1000 }
+
+	#ai_strategy = { type = equipment_variant_production_factor id = medium_tank_destroyer_equipment value = -1000 }
+	#ai_strategy = { type = equipment_variant_production_factor id = light_tank_destroyer_equipment value = -1000 }
+	#ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_destroyer_equipment value = -1000 }
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 98
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = -10
+	}
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -2806,7 +2865,7 @@ GER_build_more_mil = {
 	ai_strategy = {
 		type = building_target
 		id = synthetic_refinery
-		value = -500
+		value = 29
 	}
 
 	ai_strategy = {
@@ -2963,6 +3022,35 @@ GER_guard_greece = { #1944
 }
 
 
+
+
+GER_guard_norway = { #1944 
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1944.1.1
+		is_historical_focus_on = yes
+		has_war_with = ENG
+		has_war_with = SOV
+
+		#GER = {	controls_province = 3058}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			144 #tungsten
+		}
+		ratio = 0.046
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
+
+
 GER_berlin_festung = { #1944 
 	allowed = {
 		original_tag = GER
@@ -3058,35 +3146,11 @@ GER_stop_wasting_pp = { #
 		is_historical_focus_on = yes
 		}	
 
-	ai_strategy = {
-		type = befriend
-		id = "JAP"
-		value = -500
-	}
-
-	ai_strategy = {
-		type = befriend
-		id = "TUR"
-		value = -500
-	}
-
-	ai_strategy = {
-		type = befriend
-		id = "SIA"
-		value = -500
-	}
-
-	ai_strategy = {
-		type = befriend
-		id = "MAN"
-		value = -500
-	}
-
-	ai_strategy = {
-		type = befriend
-		id = "MEN"
-		value = -500
-	}
+		ai_strategy = {
+			type = pp_spend_priority
+			id = relation
+			value = -9999
+		}
 
 	abort_when_not_enabled = yes
 }

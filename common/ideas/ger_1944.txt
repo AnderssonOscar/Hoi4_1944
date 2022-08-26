@@ -44,6 +44,12 @@ ideas = {
 			}
 		}
 
+	GER_synthetic_oil_production = {
+		modifier = {
+			fuel_gain_factor_from_states = 1.5 #150% more
+			}
+		}
+
 	GER_protect_industry = {
 		modifier = {
 				static_anti_air_hit_chance_factor = 0.25
