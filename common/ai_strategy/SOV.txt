@@ -2220,7 +2220,7 @@ SOV_take_it_easy = {
 		#strength_ratio = { tag = GER ratio > 0.75 }
 
 		date > 1944.1.1
-		date < 1945.3.1 #Dont take it easy
+		#date < 1945.3.1 #Dont take it easy
 	}
 
 	abort_when_not_enabled = yes
@@ -2240,7 +2240,6 @@ SOV_take_it_easy = {
 SOV_take_germany = {
 	allowed = { original_tag = SOV }
 	enable = {
-		tag = SOV
 		has_war_with = GER
 		NOT = {has_war_with = FIN}
 
@@ -2280,6 +2279,7 @@ SOV_dont_hurt_romania_yet = {
 		is_historical_focus_on = yes
 		date < 1944.8.1
 		has_war_with = ROM
+		NOT = {has_idea = major_offensive}
 	}
 
 	ai_strategy = {
@@ -2313,6 +2313,7 @@ SOV_take_romania = {
 		has_war_with = ROM
 		#NOT = { has_war_with = FIN }
 		ROM = { has_capitulated = no }
+		has_idea = major_offensive
 
 		AND = {
 			has_full_control_of_state = 197

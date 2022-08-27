@@ -1696,7 +1696,7 @@ create_equipment_variant = {
 		set_oob = "GER_1944_nsb"
 
 		#set_fuel_ratio = 0.35 # 1944 was 0.8 dosent seems to work
-		set_fuel = 131812
+		set_fuel = 361812
 
 
 		set_convoys = 50

@@ -336,6 +336,17 @@ ability = {
 		unit_modifiers = {
 			no_supply_grace = 720
 		}
+
+
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				cannot_retreat_while_defending = 1.0
+				combat_offense = -0.5
+				combat_breakthrough = -0.5
+				days = 24
+				tooltip = name
+			}
+		}
 		
 		one_time_effect = {
 			supply_units = 720

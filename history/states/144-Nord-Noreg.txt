@@ -42,7 +42,7 @@ state={
 			controller = GER
 
 			buildings = {
-				infrastructure = 1
+				infrastructure = 3
 			}
 		}
 	}

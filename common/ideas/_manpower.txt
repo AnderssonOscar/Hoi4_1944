@@ -521,7 +521,7 @@ ideas = {
 				   modifier = {
 					has_idea = tot_economic_mobilisation
 					has_war_support > 0.7
-				  	 has_decision = women_in_the_workforce
+				  	NOT = { has_decision = women_in_the_workforce }
 					factor = -100
 				   }
 

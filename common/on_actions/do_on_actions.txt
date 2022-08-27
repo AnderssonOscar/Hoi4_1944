@@ -10,6 +10,54 @@ on_actions = {
 	#add_named_threat = { threat = 60 name = generic.15.t }
 			
 
+
+	SOV = {
+		if = {
+			limit = {
+				is_ai = yes
+				date > 1943.12.31
+			}
+			add_political_power = 1750
+			army_experience = 390
+			add_command_power = 250
+
+			add_equipment_to_stockpile = { 
+				type = convoy_1
+				amount = 3950
+			}
+
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_2
+				amount = 195000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment_1
+				amount = 9500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = artillery_equipment_3
+				amount = 5500
+			}
+
+			add_equipment_to_stockpile = {
+				type = anti_air_equipment_2
+				amount = 6050
+			}
+
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_2
+				amount = 2900
+			}
+
+			set_technology = {
+				modern_rubber_processing = 1
+			}
+
+		}
+	}
+
 	GER = {
 		if = {
 			limit = {

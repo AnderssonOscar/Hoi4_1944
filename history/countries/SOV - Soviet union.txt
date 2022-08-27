@@ -1830,11 +1830,11 @@ if = {
 
 	add_political_power = 2589
 	add_command_power = 200
-	army_experience = 5
+	army_experience = 100
 	navy_experience = 175	
 	air_experience = 35
 
-	set_convoys = 1750
+	set_convoys = 980
 
 	set_stability = 0.9 
 	set_war_support = 0.9
@@ -2444,7 +2444,7 @@ if = {
 
 	add_equipment_to_stockpile = { 
 			type = infantry_equipment_1
-			amount = 78412
+			amount = 38412
 		}
 
 	add_equipment_to_stockpile = { 
@@ -2470,11 +2470,6 @@ if = {
 	add_equipment_to_stockpile = { 
 			type = support_equipment_1
 			amount = 2000
-		}
-
-	add_equipment_to_stockpile = { 
-			type = motorized_equipment_1
-			amount = 4000
 		}
 	
 	add_equipment_to_stockpile = { 

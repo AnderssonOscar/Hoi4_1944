@@ -9580,8 +9580,8 @@ focus_tree = {
 				
 		
 
-			add_stability = -0.05
-			add_war_support = 0.05
+			#add_stability = -0.05
+			#add_war_support = 0.05
 		}
 	}
 
@@ -9774,7 +9774,7 @@ focus_tree = {
 		}
 
 		bypass = {
-			date > 1944.3.1
+			date > 1944.4.1
 
 		NOT = {
 			AND = {
