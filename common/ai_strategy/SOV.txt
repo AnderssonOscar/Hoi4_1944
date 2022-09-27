@@ -2241,7 +2241,12 @@ SOV_take_germany = {
 	allowed = { original_tag = SOV }
 	enable = {
 		has_war_with = GER
-		NOT = {has_war_with = FIN}
+
+		OR = {
+			date > 1944.6.22
+			NOT = { 15 = {is_fully_controlled_by = GER} }
+			NOT = {has_war_with = FIN}
+		}
 
 		country_exists = GER
 		has_idea = major_offensive
@@ -2354,7 +2359,7 @@ SOV_dont_hurt_finland_yet = {
 
 	enable = {
 		is_historical_focus_on = yes
-		date < 1944.6.15
+		date < 1944.6.10
 		date > 1944.1.1
 	}
 
@@ -2387,7 +2392,7 @@ SOV_take_finland = {
 		country_exists = FIN
 		has_war_with = FIN
 		FIN = { has_capitulated = no }
-		date > 1944.7.1 #was 1944.6.15
+		date > 1944.6.10 #was 1944.6.10
 	}
 
 	abort_when_not_enabled = yes

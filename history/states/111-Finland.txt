@@ -39,6 +39,7 @@ state={
 				radar_station = 2
 				arms_factory = 2
 				anti_air_building = 5
+				industrial_complex = 2
 			}
 		}
 

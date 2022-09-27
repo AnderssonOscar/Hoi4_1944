@@ -158,7 +158,7 @@ SOV_great_patriotic_war = {
 
 		if = { limit = {
 			has_equipment = {
-				anti_tank_equipment < 650
+				anti_tank_equipment < 650 
 			}
 		 }
 			set_temp_variable = { anti_tank_eq = starthigh }
@@ -247,7 +247,7 @@ SOV_great_patriotic_war = {
 			remove_effect = {
 				add_timed_idea = {
 					idea = offensive_exhaustion
-					days = 30
+					days = 25
 			}
 		}
 	}

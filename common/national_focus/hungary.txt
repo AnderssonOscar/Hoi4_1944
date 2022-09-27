@@ -5188,7 +5188,7 @@ focus = {
 			factor = 1000
 			OR = {
 				surrender_progress > 0.01
-				date > 1944.4.1
+				date > 1944.3.1
 			}
 		}
 	}
@@ -5236,7 +5236,7 @@ focus = {
 				factor = 1000
 
 				OR = {
-					surrender_progress > 0.1
+					surrender_progress > 0.05
 					date > 1944.8.1
 				}
 			}
@@ -5245,7 +5245,7 @@ focus = {
 	available = {
 			has_war = yes
 		OR = {
-			surrender_progress > 0.10
+			surrender_progress > 0.05
 			date > 1944.8.1
 			}
 		}

@@ -163,28 +163,34 @@ operations = {
 
 		available = {
 			date > 1944.5.31
+			date < 1945.2.1
+			has_war_with = GER
+			NOT = {has_war_with = USA}
+			127 = {is_fully_controlled_by = ENG} #england
+
 			OR = {
 				NOT = { 15 = {is_fully_controlled_by = GER} }
 				NOT = { 14 = {is_fully_controlled_by = GER} }
 				NOT = { 30 = {is_fully_controlled_by = GER} }
-			}
+			}	
+			16 = {is_fully_controlled_by = GER} 
+			33 = {is_fully_controlled_by = GER} 
+			18 = {is_fully_controlled_by = GER} 
+			20 = {is_fully_controlled_by = GER} 
 			#is_ai = yes
 		}
 
 		visible = {
 			tag = ENG
-			is_ai = yes
+			#is_ai = yes
 		}
 
-		fire_only_once = yes
-
+		fire_only_once = no
+		days_re_enable = 87
 		cost = 0
 
 		ai_will_do = {
-			factor = 100
-			modifier = { 
-				factor = 100
-			}
+			factor = 250
 		}
 
 		complete_effect = {
@@ -264,7 +270,7 @@ operations = {
 			
 			available = {
 				has_war_with = GER
-				date > 1944.5.30
+				date > 1944.5.29
 
 				set_temp_variable = { days = global.num_days }
 				modulo_temp_variable = { days = 90 }
@@ -272,7 +278,7 @@ operations = {
 
 				16 = {is_fully_controlled_by = GER}
 
-				GER = {
+			GER = {
 
 				AND = {
 					controls_state = 16
@@ -285,7 +291,6 @@ operations = {
 			}
 
 			#cost = 25
-			
 		 	days_re_enable = 30
 			fire_only_once = no
 
@@ -310,11 +315,16 @@ operations = {
 					#supply_consumption_factor = -0.25
 					#dig_in_speed_factor = +0.25
 					army_speed_factor = +0.5
-					#army_attack_factor = +1.0
-					#breakthrough_factor = +1.0
+					army_attack_factor = +1.0
+					breakthrough_factor = +1.0
+					army_org_regain = +10.0
+					army_org_factor = +1.0
+					naval_invasion_penalty = -1.0
+
+					#max_commander_army_group_size = +1.0
 			}
 
-			days_remove = 7
+			days_remove = 9
 			
 			
 			complete_effect = {
@@ -329,19 +339,20 @@ operations = {
 				 }
 					add_equipment_to_stockpile = {
 						type = transport_plane_equipment_1
-						amount = 100
+						amount = 75
 					}
 				}
 			}
 
 			remove_effect = {
 
-
-					
+				if = { limit = {
+					tag = USA
+					date < 1944.7.1
+				
+				}
 
 				15 = {
-
-					if = { limit = {tag = USA}
 
 					FRA = {	set_province_controller = 3549 }
 					create_unit = {
@@ -365,34 +376,10 @@ operations = {
 					create_unit = {
 						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.31 start_equipment_factor = 1" 
 						owner = USA
+						#prioritize_location = 11535
 					}
 				}
 			}
-
-
-					#15 = {set_state_province_controller = {controller = USA province = 11535} }
-
-				#15 = {
-				#	USA = {	set_province_controller = 11535 }
-				#}
-					#Airborne Division
-				#15 = {
-				#create_unit = {
-						#division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.42 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"USA\" } }" 
-						#owner = USA
-						#prioritize_location = 11535
-					#}
-				#}
-
-
-
-
-
-
-
-
-
-
 
 			}
 		}

@@ -22,7 +22,7 @@ war_measures = {
 			SWE = {has_capitulated = no}
 
 			has_war_with = SOV
-			surrender_progress > 0.12
+			surrender_progress > 0.08
 			date > 1944.7.25
 
 			any_country = {
@@ -37,7 +37,7 @@ war_measures = {
 
 		visible = {
 			has_war_with = SOV
-			surrender_progress > 0.12
+			surrender_progress > 0.08
 		}
 
 		fire_only_once = yes
@@ -48,7 +48,7 @@ war_measures = {
 		ai_will_do = {
 			factor = 10
 			modifier = {
-				surrender_progress > 0.12
+				surrender_progress > 0.08
 				factor = 10
 			}
 		}
