@@ -26,7 +26,15 @@ state={
 				industrial_complex = 7
 
 			}
+		}
 
+		
+		1943.12.30 = {
+			buildings = {
+				synthetic_refinery = 3
+				industrial_complex = 5
+				arms_factory = 7
+			}
 		}
 
 	}

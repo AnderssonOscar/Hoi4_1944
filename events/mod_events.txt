@@ -9,6 +9,96 @@ add_namespace = bulgaria.switch.side
 add_namespace = warsaw.uprising
 add_namespace = operation.margarethe
 add_namespace = 20_july.plot
+add_namespace = italy.fascist
+
+add_namespace = german.ryti.ribbentrop
+add_namespace = finland.ryti.ribbentrop
+
+
+
+# Romania switch side
+country_event = {
+	id = romania.switch.side.2
+	title = romania.switch.side.1.t
+	desc = romania.switch.side.1.d
+	picture = GFX_report_event_romania_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Our offensive will sort this out."
+
+		set_variable = { 
+			var = rom_switch
+			value = 1
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 25
+				AND = {
+					HUN =  { is_ai = yes }
+					ITA =  { is_ai = yes }
+				}
+			}
+		}
+
+		custom_effect_tooltip = "You have 12 days to retake the lost territory."
+	}
+
+	option = {
+		name = "Launch Operation Margarethe II"
+
+		GER = {
+			add_manpower = -25000 
+			add_political_power = -200
+			add_war_support = -0.05
+		}
+
+		ROM = {
+			add_stability = -0.25
+			add_war_support = -0.4
+			add_manpower = -75000 
+
+			transfer_units_fraction = {
+				target = SOV
+				size = 0.25
+				stockpile_ratio = 0.0
+				army_ratio = 0.25
+				navy_ratio = 1.0
+				air_ratio = 1.0
+		}
+
+		add_timed_idea = { idea = dont_surrender_mod days = 365 }
+	}
+
+		#every_state = {
+			#limit = { 
+				#is_core_of = ROM
+				#NOT = { is_fully_controlled_by = ROM }
+			# }
+			 #SOV = { transfer_state = PREV }
+		#}
+
+		GER = {
+			set_autonomy = { target = ROM autonomy_state = autonomy_integrated_puppet end_wars = no }
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 25
+				OR = {
+					HUN =  { is_ai = no }
+					ITA =  { is_ai = no }
+				}
+			}
+		}
+
+		custom_effect_tooltip = "Stop romania from switching sides."
+	}
+}
+
 
 # Romania switch side
 country_event = {
@@ -20,9 +110,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "OK"
-
-
+		name = "Ok"
 		set_variable = { 
 			var = rom_switch
 			value = 1
@@ -42,6 +130,24 @@ country_event = {
 	option = {
 		name = "Good"
 
+
+		set_variable = { 
+			var = rom_switch
+			value = 0
+		}
+	}
+}
+
+country_event = {
+	id = romania.cancel.switch.side.2
+	title = romania.cancel.switch.side.2.t
+	desc = romania.cancel.switch.side.2.d
+	picture = GFX_news_event_polish_tanks
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Good"
 
 		set_variable = { 
 			var = rom_switch
@@ -206,8 +312,8 @@ country_event = {
 			name = "I am invincible!"
 
 			add_stability = -0.1
-			add_war_support = +0.05
-			add_political_power = +200
+			add_war_support = +0.1
+			add_political_power = +300
 
 			
 			custom_effect_tooltip = "you don't investigate any further.."
@@ -220,13 +326,387 @@ country_event = {
 			name = "Let the Gestapo sort this out"
 			
 			retire_character = GER_erwin_rommel
+			retire_character = GER_gunther_von_kluge
 			add_manpower = -7000
-			add_political_power = -75
-			add_stability = -0.05
-			add_war_support = -0.05
+			#add_political_power = -75
+			add_stability = +0.05
+			add_command_power = +50.0
+			#add_war_support = -0.05
 
 			ai_chance = {
 				base = 25
 			}
 		}
 }
+
+# fix italy for 1944
+country_event = {
+	id = italy.fascist.0
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		complete_national_focus = ITA_the_italian_social_republic
+		hidden_effect = {
+			ITA_set_special_characters_as_fascist_effect = yes
+			ITA_start_civil_war_effect = yes
+			set_global_flag = ITA_antifascist_civil_war_triggered_flag
+
+		#	modify_global_flag = {
+		#		flag = ITA_antifascist_civil_war_triggered_flag
+		#		value = -1
+		#	}
+
+			play_song = "bella_ciao"
+		}
+	}
+}
+
+
+
+
+
+
+
+##########################################################################################
+# Ryti–Ribbentrop Agreement
+country_event = {
+	id = german.ryti.ribbentrop.1
+	title = german.ryti.ribbentrop.1.t
+	desc = german.ryti.ribbentrop.1.d 
+ 
+	#major = yes
+
+	picture = GFX_report_event_soviet_tanks_snow
+	is_triggered_only = yes
+	
+	option = {
+		name = "Send a large military aid package"
+		
+
+			#FIN = { add_manpower = +25000 }
+			#GER = { add_manpower = -25000 }
+
+			set_temp_variable = { support_eq = 4.1 }
+			multiply_temp_variable = { support_eq = GER:num_of_military_factories}
+			add_to_temp_variable = { var = support_eq value = 98 }
+
+			set_temp_variable = { inf_eq = 79.7 }
+			multiply_temp_variable = { inf_eq = GER:num_of_military_factories  }
+			add_to_temp_variable = { var = inf_eq value = 1675 }
+
+			set_temp_variable = { at_eq = 3.9 }
+			multiply_temp_variable = { at_eq = GER:num_of_military_factories  }
+			add_to_temp_variable = { var = at_eq value = 125 }
+
+			set_temp_variable = { anti_air_eq = 2.6 }
+			multiply_temp_variable = { anti_air_eq = GER:num_of_military_factories  }
+			add_to_temp_variable = { var = anti_air_eq value = 80 }
+
+			set_temp_variable = { motor_eq = 2.35 }
+			multiply_temp_variable = { motor_eq = GER:num_of_military_factories  }
+			add_to_temp_variable = { var = motor_eq value = 84 }
+
+	FIN = {
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = support_eq
+			producer = GER
+		} 
+
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_3
+			amount = inf_eq
+			producer = GER
+		}
+	
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment_2
+			amount = at_eq
+			producer = GER
+		}
+	
+		add_equipment_to_stockpile = {
+			type = anti_air_equipment_3
+			amount = anti_air_eq
+			producer = GER
+		}
+	
+		add_equipment_to_stockpile = {
+			type = motorized_equipment_1
+			amount = motor_eq
+			producer = GER
+		}
+		
+
+	hidden_effect = {
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 68 #40
+			variant_name = "Panzer IV Ausf. H"
+			producer = GER
+		}
+	
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 48
+			variant_name = "T-34-85"
+			producer = SOV
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 28
+			variant_name = "T-34-1943"
+			producer = SOV
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 32
+			variant_name = "T-34-1941"
+			producer = SOV
+		}
+		
+		add_equipment_to_stockpile = {
+			type = heavy_tank_chassis_1
+			amount = 32
+			variant_name = "KV-1"
+			producer = SOV
+		}
+	
+		add_equipment_to_stockpile = {
+			type = medium_tank_destroyer_chassis_2
+			amount = 37
+			variant_name = "Sturmgeschutz III"
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = light_tank_chassis_2
+			amount = 47
+			variant_name = "BT-7"
+			producer = SOV
+		}
+	}
+	
+	custom_effect_tooltip = german_ryti_ribbentrop_tanks_tt
+
+	
+		if = {
+			limit = {
+				not = { has_tech = infantry_at }
+			}
+			set_technology = {
+				infantry_at = 1
+			}
+		}
+
+		if = {
+			limit = {
+				not = { has_tech = infantry_at2 }
+			}
+			set_technology = {
+				infantry_at2 = 1
+			}
+		}
+	}
+
+
+
+		add_timed_idea = { idea = GER_ryt_ribbentrop_agreement days = 60 } 
+		hidden_effect = { FIN = { country_event = finland.ryti.ribbentrop.1} }
+		ai_chance = {
+			base = 1
+			modifier = {
+
+				OR = {
+					AND = {
+						surrender_progress < 0.01
+						FIN = { surrender_progress < 0.5 }
+					}
+					FIN = { is_ai = no }
+				}
+				
+				factor = 100
+			}
+		}
+	}
+ 
+	option = {
+		name = "Send military aid package"
+
+
+		#FIN = { add_manpower = +10000 }
+		#GER = { add_manpower = -10000 }
+
+		set_temp_variable = { support_eq = 2.3 }
+		multiply_temp_variable = { support_eq = num_of_military_factories}
+		add_to_temp_variable = { var = support_eq value = 98 }
+
+		set_temp_variable = { inf_eq = 49.7 }
+		multiply_temp_variable = { inf_eq = num_of_military_factories  }
+		add_to_temp_variable = { var = inf_eq value = 1675 }
+
+		set_temp_variable = { at_eq = 2.1 }
+		multiply_temp_variable = { at_eq = num_of_military_factories  }
+		add_to_temp_variable = { var = at_eq value = 125 }
+
+		set_temp_variable = { anti_air_eq = 1.2 }
+		multiply_temp_variable = { anti_air_eq = num_of_military_factories  }
+		add_to_temp_variable = { var = anti_air_eq value = 80 }
+
+	FIN = {
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = support_eq
+			producer = GER
+		} 
+	
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_2
+			amount = inf_eq
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment_2
+			amount = at_eq
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = anti_air_equipment_2
+			amount = anti_air_eq
+			producer = GER
+		}
+
+		if = {
+			limit = {
+				not = { has_tech = infantry_at }
+			}
+			set_technology = {
+				infantry_at = 1
+			} 
+		}
+	}
+
+		add_timed_idea = { idea = GER_ryt_ribbentrop_agreement days = 30 } 
+
+		hidden_effect = {
+			FIN = { country_event = finland.ryti.ribbentrop.2}
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+
+			OR = {
+				surrender_progress < 0.1
+				FIN = {surrender_progress < 0.10}
+			}
+				factor = 50
+			}
+		}
+	}
+	
+	option = {
+		name = "We can't spare anything."
+		FIN = { country_event = finland.ryti.ribbentrop.3}
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					surrender_progress > 0.1
+					FIN = {surrender_progress > 0.15}
+				}
+
+				factor = 100
+			}
+		}
+	}
+}
+
+
+# Finland Ryti–Ribbentrop Agreement Large shipment
+country_event = {
+	id = finland.ryti.ribbentrop.1
+	title = finland.ryti.ribbentrop.1.t
+	desc = finland.ryti.ribbentrop.1.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Great" 
+		FIN = { add_manpower = +25000 }
+		FIN = { add_war_support = 0.1 }
+
+		custom_effect_tooltip = finland_ryti_ribbentrop_large_tt
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+# Finland Ryti–Ribbentrop Agreement shipment
+country_event = {
+	id = finland.ryti.ribbentrop.2
+	title = finland.ryti.ribbentrop.2.t
+	desc = finland.ryti.ribbentrop.2.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+
+		FIN = { add_manpower = +1000 }
+		custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+# Finland Ryti–Ribbentrop Agreement no shipment
+country_event = {
+	id = finland.ryti.ribbentrop.3
+	title = finland.ryti.ribbentrop.3.t
+	desc = finland.ryti.ribbentrop.3.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Crap"
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

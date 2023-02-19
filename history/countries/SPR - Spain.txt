@@ -285,7 +285,7 @@ if = {
 		early_ship_hull_heavy = 1
 		basic_battery = 1
 		basic_medium_battery = 1
-		basic_secondary_battery = 1
+		 
 		basic_torpedo = 1
 		basic_depth_charges = 1
 		mtg_transport = 1
@@ -765,6 +765,77 @@ if = {
 
 1943.12.30 = {
 
+	#set_stability = 0.97 
+	set_war_support = 0.44
+
+	complete_national_focus = SPA_national_recovery
+	complete_national_focus = SPA_fascist_economic_aid
+	complete_national_focus = SPA_adopt_the_26_points
+	complete_national_focus = SPA_dictator_for_life
+	complete_national_focus = SPA_la_division_azul
+	complete_national_focus = SPA_the_tangiers_enclave
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "SPA_1944_air_bba"
+		else = {
+			set_air_oob = "SPA_1944_air_legacy"
+	}
+}
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				survivability_studies = 1
+
+				aa_lmg = 1
+				aa_cannon_1 = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+
+				range_improvements = 1
+
+				early_bombs = 1
+				aircraft_construction = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+			}
+		else = {
+			set_technology = {
+				naval_bomber1 = 1
+				
+				cv_fighter1 = 1
+
+				CAS1 = 1
+				CAS2 = 1
+		
+				fighter1 = 1
+				fighter2 = 1
+		
+				heavy_fighter1 = 1
+		
+				strategic_bomber1 = 1
+		
+				tactical_bomber1 = 1
+				tactical_bomber2 = 1
+			}
+		}
+	}
+
 
 	set_politics = {
 		ruling_party = fascism
@@ -887,6 +958,70 @@ if = {
 
 				basic_light_tank_chassis = 1 
 
+		}
+	}
+
+
+	
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				#survivability_studies = 1
+
+				aa_lmg = 1
+				#aa_hmg = 1
+
+				aa_cannon_1 = 1
+				#aa_cannon_2 = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+				#engines_3 = 1
+
+				#range_improvements = 1
+
+				early_bombs = 1
+
+				#aircraft_construction = 1
+
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+				#advanced_small_airframe = 1
+
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				#improved_medium_airframe = 1
+
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+				#improved_large_airframe = 1
+				#advanced_large_airframe = 1
+			}
+		else = {
+			set_technology = {
+
+				naval_bomber1 = 1
+
+				CAS1 = 1
+				#CAS2 = 1
+		
+				early_fighter = 1
+				fighter1 = 1
+				fighter2 = 1
+				#fighter3 = 1
+		
+				heavy_fighter1 = 1
+				#heavy_fighter2 = 1
+		
+				strategic_bomber1 = 1
+				#strategic_bomber2 = 1
+		
+				tactical_bomber1 = 1
+				#tactical_bomber2 = 1
+			}
 		}
 	}
 

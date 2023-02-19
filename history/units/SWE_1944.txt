@@ -154,7 +154,7 @@ units = {
 		location = 6050 #Stockholm
 		division_template = "Kavalleribrigaden"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "SWE" } }
-		start_experience_factor = 0.3
+		start_experience_factor = 0.21
 		start_equipment_factor = 0.88
 
 	}
@@ -176,7 +176,7 @@ units = {
 		}
 		location = 9186 # Boden
 		division_template = "Arméfördelning"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.19
 		start_equipment_factor = 0.78
 
 	}
@@ -226,7 +226,7 @@ units = {
 		location = 11380
 		division_template = "Arméfördelning"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "SWE" } }
-		start_experience_factor = 0.21
+		start_experience_factor = 0.11
 		start_equipment_factor = 1
 	}
 
@@ -251,7 +251,7 @@ units = {
 		location = 9147
 		division_template = "Arméfördelning"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "SWE" } }
-		start_experience_factor = 0.21
+		start_experience_factor = 0.17
 		start_equipment_factor = 1
 	}
 
@@ -334,7 +334,7 @@ units = {
 		division_template = "Pansarregemente"
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = SWE version_name = "Stridsvagn m/42" } }
 		force_equipment_variants = { light_tank_chassis_1 = { owner = SWE version_name = "Stridsvagn m/31" } }
-		force_equipment_variants = { infantry_equipment_3 = { owner = "SWE" } }
+		force_equipment_variants = { infantry_equipment_2 = { owner = "SWE" } }
 		start_experience_factor = 0.14
 		start_equipment_factor = 1
 	}
@@ -381,24 +381,6 @@ units = {
 }
 
 
-### Flygvapnet ###
-air_wings = {
-	141 = {
-		tac_bomber_equipment_1 = { owner = "SWE" amount = 36 }			# 1. Bombflyggruppen -- Junkers 86K
-		CAS_equipment_1 = { owner = "SWE" amount = 36 }					# 4. Bombflyggruppen -- Hawker Hart
-		fighter_equipment_0 =  { owner = "SWE" amount = 36 }			# 8. Jaktflyggruppen -- Gloster Gladiators
-
-		fighter_equipment_1 =  { owner = "SWE" amount = 60 }
-		fighter_equipment_2 =  { owner = "SWE" amount = 92 }
-		tac_bomber_equipment_2 = { owner = "SWE" amount = 90 }
-
-		#fighter_equipment_2 = { owner = "SWE" creator = "ITA" version_name = "Bf 109 E" amount = 175 }
-	}
-	140 = {
-		nav_bomber_equipment_1 =  { owner = "SWE" amount = 12 }			# 2. Torpedflyggruppen -- Heinkel He 115
-	}
-}
-
 ### Starting Production ###
 instant_effect = {
 	add_equipment_production = {
@@ -408,7 +390,7 @@ instant_effect = {
 		}
 		requested_factories = 5
 		progress = 0.29
-		efficiency = 90
+		efficiency = 78
 	}
 	
 	add_equipment_production = {
@@ -416,9 +398,9 @@ instant_effect = {
 			type = support_equipment_1
 			creator = "SWE"
 		}
-		requested_factories = 3
+		requested_factories = 2
 		progress = 0.61
-		efficiency = 100
+		efficiency = 83
 	}
 
 	add_equipment_production = {
@@ -428,7 +410,7 @@ instant_effect = {
 		}
 		requested_factories = 2
 		progress = 0.29
-		efficiency = 87
+		efficiency = 77
 	}
 	
 	add_equipment_production = {
@@ -448,7 +430,7 @@ instant_effect = {
 		}
 		requested_factories = 1
 		progress = 0.2
-		efficiency = 89
+		efficiency = 69
 	}
 
 	add_equipment_production = {
@@ -457,18 +439,8 @@ instant_effect = {
 			creator = "SWE"
 			version_name = "Stridsvagn m/42" 
 		}
-		requested_factories = 2
-		progress = 0.4
-		efficiency = 82
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = fighter_equipment_2
-			creator = "GER" 
-		}
 		requested_factories = 1
-		progress = 0.15
-		efficiency = 75
+		progress = 0.4
+		efficiency = 69
 	}
 }

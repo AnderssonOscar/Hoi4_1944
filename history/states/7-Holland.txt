@@ -44,6 +44,9 @@ state={
 			industrial_complex = 3
 			dockyard = 3
 			air_base = 10
+			radar_station = 1
+			fuel_silo = 1
+			anti_air_building = 2
 			3314 = {
 				naval_base = 5
 

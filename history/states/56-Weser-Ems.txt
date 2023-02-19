@@ -42,6 +42,7 @@ state={
 				241 = {
 					coastal_bunker = 6
 				}
+				anti_air_building = 2
 			}
 		}
 

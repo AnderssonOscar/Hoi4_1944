@@ -7,14 +7,15 @@ HUN_unit_production = {
 
 	allowed = {	original_tag = HUN }
 	enable = {
-		always = yes
-		date > 1944.1.1
-		date < 1945.1.1
-	}
-	abort = {
-		always = no
-	}
+		is_in_faction_with = GER
+		has_war_with = SOV
+		has_war_with = ENG
+		has_war_with = USA
 
+		date > 1944.1.1
+		date < 1945.6.1
+	}
+	abort_when_not_enabled = yes
 
 	#Air unit factors
 	ai_strategy = {
@@ -27,6 +28,18 @@ HUN_unit_production = {
 		type = unit_ratio
 		id = strategic_bomber
 		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = -100 
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = -100 
 	}
 
 	ai_strategy = {
@@ -43,16 +56,43 @@ HUN_unit_production = {
 
 	ai_strategy = {
 		type = equipment_production_factor
+		id = cas
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = heavy_fighter
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
 		id = tactical_bomber
 		value = -100
 	}
 
-	ai_strategy = { type = equipment_production_factor id = cas value = -200 }
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = -100
+	}
 
-	ai_strategy = { type = equipment_variant_production_factor id = fighter_equipment      value = -100 }
-	ai_strategy = { type = equipment_variant_production_factor id = heavy_fighter_equipment      value = -100 }
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = -100
+	}
+
+	ai_strategy = { type = equipment_variant_production_factor id = light_tank_chassis value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_tank_chassis value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_chassis value = -250 }
+
+	ai_strategy = { type = equipment_production_factor id = cas value = -200 }
+	ai_strategy = { type = equipment_variant_production_factor id = small_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = large_plane_airframe      value = -100 }
 	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
-	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
 }
 
 

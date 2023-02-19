@@ -34,6 +34,46 @@ state={
 			12237 1 
 		}
 
+		JAP = {
+			set_province_controller = 10423
+			set_province_controller = 12400
+			set_province_controller = 11004
+			set_province_controller = 11018
+			set_province_controller = 12428
+			set_province_controller = 12240
+			set_province_controller = 1389
+			set_province_controller = 4393
+			set_province_controller = 7614
+			set_province_controller = 12154
+			set_province_controller = 12193
+			set_province_controller = 7365
+			set_province_controller = 5135
+
+		}
+
+		1943.12.30 = {
+			buildings = {
+				air_base = 5
+
+				4329 = {
+					naval_base = 5
+	
+				}
+				12237 = {
+					naval_base = 4
+	
+				}
+				12154 = {
+					naval_base = 1
+	
+				}
+				12240 = {
+					naval_base = 1
+	
+				}
+			}
+		}
+
 	}
 
 	provinces={

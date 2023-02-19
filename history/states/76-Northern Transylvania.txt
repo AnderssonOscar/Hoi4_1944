@@ -18,7 +18,7 @@ state={
 		add_core_of = ROM
 		add_core_of = TRA
 
-				1943.12.1 = {
+		1943.12.1 = {
 			owner = HUN
 			controller = HUN
 		}

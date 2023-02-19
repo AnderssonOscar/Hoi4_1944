@@ -1,0 +1,11 @@
+collaborationist_formation = { 
+	allowed = {
+		original_tag = GER
+	}
+
+	visible = {
+		has_war_with = SOV
+		#date > 1944.1.1
+	}
+}
+

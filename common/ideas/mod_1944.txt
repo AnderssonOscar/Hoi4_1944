@@ -3,10 +3,18 @@ ideas = {
 		
 	dont_surrender_mod = {
 		modifier = {
-			#max_surrender_limit_offset = +99
-			forced_surrender_limit = +0.2
+			#max_surrender_limit_offset = -0.5
+			forced_surrender_limit = +0.15
 			#surrender_limit = +10
+			#surrender_limit = 0.20
 			}
 		}
+
+
+		safe_industry = {
+			modifier = {
+				industry_air_damage_factor = -0.5
+				}
+			}
 	}
 }

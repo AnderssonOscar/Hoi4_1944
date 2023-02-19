@@ -1,4 +1,4 @@
-﻿
+
 units= {
 
 	##### NAVAL UNITS #####
@@ -13,6 +13,12 @@ units= {
 			ship = { name = "NMS Regele Ferdinand" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ROM version_name = "Regele Ferdinand Class" } } }
 			ship = { name = "NMS Regina Maria" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ROM version_name = "Regele Ferdinand Class" } } }
 			ship = { name = "NMS Delfinul" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = ROM version_name = "Delfinul Class" } } }
+
+			ship = { name = "NMS TM-4" definition = submarine equipment = { ship_hull_midget_submarine = { amount = 1 owner = ROM creator = "ITA" version_name = "CB Class" } } }
+			ship = { name = "NMS TM-5" definition = submarine equipment = { ship_hull_midget_submarine = { amount = 1 owner = ROM creator = "ITA" version_name = "CB Class" } } }
+			ship = { name = "NMS TM-6" definition = submarine equipment = { ship_hull_midget_submarine = { amount = 1 owner = ROM creator = "ITA" version_name = "CB Class" } } }
+			ship = { name = "NMS TM-7" definition = submarine equipment = { ship_hull_midget_submarine = { amount = 1 owner = ROM creator = "ITA" version_name = "CB Class" } } }
+			ship = { name = "NMS TM-9" definition = submarine equipment = { ship_hull_midget_submarine = { amount = 1 owner = ROM creator = "ITA" version_name = "CB Class" } } }
 		}				
 	}
 } 

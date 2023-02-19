@@ -1,0 +1,61 @@
+﻿
+
+
+### Air Wings ###
+air_wings = {
+
+	159 = { 																# Milan
+		### 1a Squadra Aerea (CO: Fougier) ###
+		small_plane_airframe_2 = { owner = "ITA" version_name = "C.202 Folgore II serie" amount = 100 }
+		small_plane_airframe_2 = { owner = "ITA" version_name = "C.202 Folgore II serie" amount = 100 }	
+		small_plane_airframe_2 = { owner = "ITA" version_name = "C.202 Folgore II serie" amount = 100 }	
+		small_plane_airframe_2 = { owner = "ITA" version_name = "C.202 Folgore II serie" amount = 100 }	
+		small_plane_airframe_2 = { owner = "ITA" version_name = "C.202 Folgore II serie" amount = 100 }	
+		small_plane_airframe_1 = { owner = "ITA" version_name = "Re.2000" amount = 100 }
+		medium_plane_airframe_1 =  { owner = "ITA" amount = 100 version_name = "SM.79" }
+		medium_plane_airframe_1 =  { owner = "ITA" amount = 100 version_name = "SM.79" }
+
+	}
+	2 = {																	# Rome
+		### 3a Squadra Aerea (CO: Pelligrini) ###
+		small_plane_airframe_3 = { owner = "ITA" version_name = "G.55 Centauro I serie" amount = 100 }					# 8a Brigada Aerea 'Ibis' -- G.50
+		medium_plane_airframe_1 =  { owner = "ITA" amount = 100 version_name = "SM.79" }
+	}
+
+	160 = {																	# Bari
+		small_plane_airframe_1 = { owner = "ITA" amount = 200 version_name = "G.50"}
+		small_plane_airframe_1 = { owner = "ITA" amount = 100 version_name = "G.50"}		
+		small_plane_cas_airframe_1 =  { owner = "ITA" amount = 50 version_name = "Ba.65" }	
+		medium_plane_airframe_1 =  { owner = "ITA" amount = 50 version_name = "SM.81" }
+
+		transport_plane_equipment_1 = { owner = "ITA" amount = 50 }
+	}
+}
+	
+	#########################
+	## STARTING PRODUCTION ##
+	#########################
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_2
+			creator = "ITA" 
+			version_name = "C.202 Folgore II serie"
+		}
+		requested_factories = 5
+		progress = 0.2
+		efficiency = 90
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_cas_airframe_1
+			creator = "ITA" 
+			version_name = "Ba.65"
+		}
+		requested_factories = 2
+		progress = 0.2
+		efficiency = 90
+	}
+}
+	#####################

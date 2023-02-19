@@ -28,6 +28,28 @@ state={
 			4226 1 
 		}
 
+
+		1943.12.30 = {
+			buildings = {
+
+				infrastructure = 2
+				air_base = 2
+
+				1269 = {
+					naval_base = 5
+	
+				}
+				4226 = {
+					naval_base = 3
+	
+				}
+				10234 = {
+					naval_base = 3
+	
+				}
+			}
+		}
+
 	}
 
 	provinces={

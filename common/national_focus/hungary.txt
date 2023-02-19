@@ -4428,10 +4428,10 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_the_botond
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
-			factor = 60
+			factor = 1
 		}
 
 		available = {
@@ -5058,6 +5058,12 @@ focus_tree = {
 
 	completion_reward = {
 
+			set_temp_variable = { manpower_base = 611 }
+			multiply_temp_variable = { manpower_base = num_of_controlled_factories }
+			add_to_temp_variable = { var = manpower_base value = 2672 }
+
+			add_manpower =manpower_base
+
 			if = {
 				limit = {
 					not = { has_tech = infantry_at2 }
@@ -5134,6 +5140,11 @@ focus_tree = {
 			producer = HUN
 		}
 
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+
 		add_equipment_to_stockpile = {
 			type = medium_tank_chassis_2
 			amount = 98
@@ -5160,6 +5171,30 @@ focus_tree = {
 			amount = 178
 			variant_name = "Jagdpanzer 38"
 			producer = GER
+		}
+		else = {
+
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment_2
+				amount = 200
+				producer = GER
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_equipment_2
+				amount = 300
+				producer = GER
+			}
+
+		}
+	}
+
+
+		add_tech_bonus = {
+			name = HUN_armored_warfare
+			bonus = 2.0
+			uses = 1
+			category = armor
 		}
 
 	}
@@ -5204,6 +5239,12 @@ focus = {
 			#	free_trade#
 			#}
 
+			set_temp_variable = { manpower_base = 1471 }
+			multiply_temp_variable = { manpower_base = num_of_controlled_factories }
+			add_to_temp_variable = { var = manpower_base value = 5672 }
+	
+			add_manpower =manpower_base
+
 			add_ideas = {
 				tot_economic_mobilisation
 			}
@@ -5212,7 +5253,7 @@ focus = {
 			}
 
 				add_stability = 0.1
-				add_war_support = 0.2
+				add_war_support = 0.3
 		}
 }
 
@@ -5358,6 +5399,11 @@ focus = {
 						owner = HUN
 					}
 
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+					
 					create_unit = {
 						division = "name = \"Reformed Panceloshadosztaly\" division_template = \"Reformed Panceloshadosztaly\" start_experience_factor = 0.73 start_equipment_factor = 1 force_equipment_variants = { light_tank_chassis_2 = { owner = \"GER\" version_name = \"Panzer 38(t)\" } } force_equipment_variants = { medium_tank_chassis_2 = { owner = \"HUN\" version_name = \"41M Turán\" } } force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_3 = { owner = \"GER\" }}" 
 						owner = HUN
@@ -5367,7 +5413,20 @@ focus = {
 						division = "name = \"Reformed Panceloshadosztaly\" division_template = \"Reformed Panceloshadosztaly\" start_experience_factor = 0.61 start_equipment_factor = 0.41 force_equipment_variants = { light_tank_chassis_2 = { owner = \"GER\" version_name = \"Panzer 38(t)\" } } force_equipment_variants = { medium_tank_chassis_2 = { owner = \"HUN\" version_name = \"41M Turán\" } } force_equipment_variants = { infantry_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_2 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_1 = { owner = \"HUN\" }}" 
 						owner = HUN
 					}
+
+					else = {
+						create_unit = {
+							division = "name = \"Szent László Infantry\" division_template = \"Szent László Infantry\" start_experience_factor = 0.88 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_3 = { owner = \"GER\" }}" 
+							owner = HUN
+						}
+
+						create_unit = {
+							division = "name = \"Szent László Infantry\" division_template = \"Szent László Infantry\" start_experience_factor = 0.88 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { artillery_equipment_3 = { owner = \"HUN\" } force_equipment_variants = { anti_air_equipment_3 = { owner = \"GER\" }}" 
+							owner = HUN
+						}
+					}
 				}
+			}
 
 				random_owned_controlled_state = {
 					limit = { ROOT = { has_full_control_of_state = PREV } is_core_of = ROOT	}

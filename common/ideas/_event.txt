@@ -250,40 +250,23 @@ ideas = {
 
 		major_offensive = {
 			
-			allowed = {
-				always = yes # yes means not Triggered via event
-			}
-
+			allowed = { always = yes }
 			removal_cost = -1
 			picture = tur_disorganised_armed_forces
-
-			
-			on_add = {
-				#add_command_power = 200
-			}
-
-			on_remove = {
-				
-			}
-			
-
-
-			#targeted_modifier = {
-			#	tag = SOV
-			#	attack_bonus_against = 0.10
-			#	defense_bonus_against = 0.05
-			#}
+			#on_add = { add_command_power = 200 }
+			#on_remove = {	}
+			removal_cost = -1
 
 			modifier = {
 				
-				army_attack_factor = +1.5
-				breakthrough_factor = +1.0
+				#army_attack_factor = +1.25
+				#breakthrough_factor = +1.0
 				#out_of_supply_factor = +0.25
-				supply_consumption_factor = -1.5
+				supply_consumption_factor = -0.75
 				land_reinforce_rate = +0.5
-				army_org_factor = +0.5
+				army_org_factor = +0.40
 
-				terrain_penalty_reduction = +0.5
+				terrain_penalty_reduction = +0.25
 
 				max_planning_factor = +0.5
 				planning_speed = +2.0
@@ -291,12 +274,8 @@ ideas = {
 				ground_attack_factor = +0.5
 
 				command_power_gain_mult = +10.0
-				#command_power_gain = +10 crash
 			}
-
 				#add_command_power = 200
-
-
 		}
 
 		
@@ -314,6 +293,10 @@ ideas = {
 				breakthrough_factor = -1.5
 				#land_reinforce_rate = -1
 
+				army_org_factor = -0.25
+				supply_consumption_factor = +0.25
+				army_speed_factor = -0.25
+				dig_in_speed_factor = -0.5
 				ground_attack_factor = -0.5
 			}
 		}
@@ -333,7 +316,7 @@ ideas = {
 			
 			modifier = {
 				#stability_factor = -0.05
-				conscription = -0.03
+				conscription = -0.025
 				#recruitable_population_factor = -0.99
 			}
 		}

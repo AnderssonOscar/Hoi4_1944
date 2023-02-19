@@ -15,14 +15,9 @@ war_measures = {
 			}
 
 		available = {
-			is_faction_leader = no
-			has_capitulated = no
-
-			#SWE = {has_war = no}
-			SWE = {has_capitulated = no}
 
 			has_war_with = SOV
-			surrender_progress > 0.08
+			surrender_progress > 0.07
 			date > 1944.7.25
 
 			any_country = {
@@ -37,7 +32,11 @@ war_measures = {
 
 		visible = {
 			has_war_with = SOV
-			surrender_progress > 0.08
+			is_faction_leader = no
+			is_in_faction_with = GER
+			has_capitulated = no
+
+			NOT = {is_in_faction_with = SWE} 
 		}
 
 		fire_only_once = yes
@@ -46,10 +45,27 @@ war_measures = {
 		days_remove = 14
 
 		ai_will_do = {
-			factor = 10
+			factor = 1
+
 			modifier = {
-				surrender_progress > 0.08
+				date < 1944.9.4
+				surrender_progress > 0.1
 				factor = 10
+			}
+
+			modifier = {
+				date > 1944.9.4
+				surrender_progress > 0.07
+				factor = 100
+			}
+			modifier = {
+
+				is_in_faction_with = SWE
+				SWE = { has_war_with = SOV }
+				SWE = { surrender_progress < 0.1 }
+				surrender_progress < 0.5
+
+				factor = -250
 			}
 		}
 
@@ -93,9 +109,16 @@ war_measures = {
 				targeted_alliance = ENG
 				enemy = GER
 			}
-			
+			add_timed_idea = { idea = dont_surrender_mod days = 90 }
 		}
 
+		FIN = {
+			diplomatic_relation = {
+				country = SOV
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
 
 		FIN = {give_military_access = SOV}
 		}
@@ -154,14 +177,65 @@ war_measures = {
 
 
 
+	FIN_request_german_support = {
+
+		icon = generic_prepare_civil_war
+
+			allowed = {
+				tag = FIN	
+			}
+
+		available = {
+			OR = {
+				date > 1944.6.27 # 1944.6.27
+				surrender_progress > 0.05
+			}
+		}
+
+		visible = {
+			is_in_faction_with = GER
+			has_war_with = SOV  
+  
+			date > 1944.1.1
+			has_capitulated = no
+
+			GER = {
+				has_capitulated = no
+				has_war_with = SOV
+				has_government = fascism
+			}
+		}
+ 
+		fire_only_once = yes
+		cost = 0
+		#days_remove = 7
+ 
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					surrender_progress > 0.07
+					AND = { 
+						surrender_progress > 0.01
+						date > 1944.6.27
+					}
+				}
+				factor = 50
+			}
+		} 
 
 
 
+		complete_effect = {
+			GER = { country_event = german.ryti.ribbentrop.1}
+		}
 
 
+		remove_effect = {
 
+		}
 
-
+	}
 }
 
 

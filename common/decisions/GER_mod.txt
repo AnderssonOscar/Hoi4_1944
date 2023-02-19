@@ -47,7 +47,7 @@ operations = {
 
 
 				GER = {
-					puppet = PREV
+					#puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
 				}
 
@@ -101,9 +101,13 @@ special_projects = {
 
 		visible = { has_tech = rocket_engines }  #improved_rocket_engines
 
-		cost = 50
+		cost = 25
 		ai_will_do = {
-			factor = 30
+		factor = 1
+			modifier = {
+				date > 1944.3.1
+				factor = 100
+			}
 		}
 
 		cancel_trigger = {
@@ -129,21 +133,6 @@ special_projects = {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 	GER_rocket_bases_2 = {
 		allowed = {
@@ -160,7 +149,11 @@ special_projects = {
 
 		cost = 75
 		ai_will_do = {
-			factor = 5
+			factor = 1
+			modifier = {
+				51 = {is_fully_controlled_by = GER}
+				factor = 100
+			}
 		}
 
 		cancel_trigger = {
@@ -249,7 +242,7 @@ war_measures = {
 
 		complete_effect = {
 
-			add_stability = -0.1
+			add_stability = -0.05
 
 			division_template = {
 				name = "Ersatz-division"

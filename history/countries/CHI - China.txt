@@ -87,7 +87,7 @@ if = {
 		early_ship_hull_light = 1
 		early_ship_hull_cruiser = 1
 		basic_battery = 1
-		basic_secondary_battery = 1
+		 
 		basic_torpedo = 1
 		coastal_defense_ships = 1
 	}
@@ -144,7 +144,7 @@ set_convoys = 40
 		complete_national_focus = CHI_mission_to_the_soviet_union
 		complete_national_focus = CHI_hire_chennault
 		complete_national_focus = CHI_rapprochement_with_soviet_union
-		complete_national_focus = CHI_invite_soviet_advisers
+		unlock_national_focus = CHI_invite_soviet_advisers
 		complete_national_focus = CHI_military_affairs_commission
 		complete_national_focus = CHI_burma_road
 		unlock_national_focus = CHI_the_soviet_volunteer_group
@@ -388,6 +388,9 @@ if = {
 
 	set_convoys = 875
 
+	set_stability = 0.31 
+	set_war_support = 0.24
+
 	add_ideas = {
 		#laws
 	#	war_economy
@@ -396,7 +399,9 @@ if = {
 		extensive_conscription
 	}
 
-
+	remove_ideas = {
+		german_advisors	
+	}
 
 	if = {
 		limit = { has_dlc = "Waking the Tiger" }
@@ -409,7 +414,7 @@ if = {
 		complete_national_focus = CHI_mission_to_the_soviet_union
 		complete_national_focus = CHI_hire_chennault
 		complete_national_focus = CHI_rapprochement_with_soviet_union
-		complete_national_focus = CHI_invite_soviet_advisers
+		unlock_national_focus = CHI_invite_soviet_advisers
 		complete_national_focus = CHI_military_affairs_commission
 		complete_national_focus = CHI_burma_road
 		unlock_national_focus = CHI_the_soviet_volunteer_group
@@ -429,6 +434,71 @@ if = {
 	}
 
 
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				#survivability_studies = 1
+
+				aa_lmg = 1
+				#aa_hmg = 1
+
+				#aa_cannon_1 = 1
+				#aa_cannon_2 = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+				#engines_3 = 1
+
+				#range_improvements = 1
+
+				early_bombs = 1
+
+				#aircraft_construction = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				#improved_small_airframe = 1
+				#advanced_small_airframe = 1
+
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				#improved_medium_airframe = 1
+
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+				#improved_large_airframe = 1
+				#advanced_large_airframe = 1
+			}
+		else = {
+			set_technology = {
+
+				naval_bomber1 = 1
+
+				CAS1 = 1
+				#CAS2 = 1
+		
+				early_fighter = 1
+				fighter1 = 1
+				#fighter2 = 1
+				#fighter3 = 1
+		
+				heavy_fighter1 = 1
+				#heavy_fighter2 = 1
+		
+				strategic_bomber1 = 1
+				#strategic_bomber2 = 1
+		
+				tactical_bomber1 = 1
+				#tactical_bomber2 = 1
+			}
+		}
+	}
 
 
 

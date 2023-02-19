@@ -44,9 +44,15 @@ ideas = {
 			}
 		}
 
+	GER_everyting_for_war_effort = {
+		modifier = {
+			consumer_goods_factor = -0.05
+			}
+		}
+
 	GER_synthetic_oil_production = {
 		modifier = {
-			fuel_gain_factor_from_states = 1.5 #150% more
+			fuel_gain_factor_from_states = 0.75
 			}
 		}
 
@@ -61,7 +67,11 @@ ideas = {
 			}
 		}
 
-
+	GER_ryt_ribbentrop_agreement = {
+		modifier = {
+			consumer_goods_factor = 0.1
+			} 
+		}
 
 	}
 }

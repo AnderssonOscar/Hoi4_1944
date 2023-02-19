@@ -689,7 +689,7 @@ news_event = {
 	major = yes
 	
 	is_triggered_only = yes
-	
+
 	option = {
 		name = news.22.a
 		trigger = {
@@ -4931,10 +4931,147 @@ news_event = {
 }
 
 # Germany Breaks Molotov-Ribbentrop Pact
+news_event = {
+	id = news.153
+	title = news.153.t
+	desc = news.153.d
+	picture = GFX_news_event_german_inspect_troops
+	
+	hidden = yes
+	major = yes
 
+	trigger = {
+		SOV = {
+			has_defensive_war_with = GER
+			has_opinion_modifier = MR_pact
+		}
+		NOT = { has_global_flag = MR_pact_broken_event_flag }
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = MR_pact_broken_event_flag
+			SOV = { 
+				remove_opinion_modifier = { target = GER modifier = MR_pact }
+				remove_ideas = SOV_molotov_ribbentrop_pact
+			}
+			GER = { remove_opinion_modifier = { target = SOV modifier = MR_pact } }
+			every_other_country = {
+				limit = { has_opinion_modifier = MR_pact_fascists }
+				remove_opinion_modifier = { target = GER modifier = MR_pact_fascists }
+			}
+		}
+	}
+	
+	option = {
+		name = news.153.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = SOV
+				is_in_faction_with = SOV
+			}
+		}
+		if = {
+			limit = {
+				original_tag = ENG
+				has_government = communism
+				has_country_leader = {
+					name = "Rajani Palme Dutt"
+					ruling_only = yes
+				}
+			}
+			create_country_leader = {
+				name = "Harry Pollitt"
+				desc = "POLITICS_HARRY_POLLITT_DESC"
+				picture = GFX_portrait_Harry_Pollitt
+				expire = "1965.1.1"
+				ideology = leninism
+				traits = {
+					staunch_stalinist
+				}
+			}
+		}
+	}
+	option = {
+		name = news.153.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = news.153.c
+		trigger = { 
+			OR = {
+				TAG = SOV
+				is_in_faction_with = SOV
+			}
+		}
+	}
+}
 
 # USSR Breaks Molotov-Ribbentrop Pact
+news_event = {
+	id = news.154
+	title = news.154.t
+	desc = news.154.d
+	picture = GFX_news_event_006
+	
+	major = yes
 
+	trigger = {
+		GER = {
+			has_defensive_war_with = SOV
+			has_opinion_modifier = MR_pact
+		}
+		NOT = { has_global_flag = MR_pact_broken_event_flag }
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = MR_pact_broken_event_flag
+			SOV = { 
+				remove_opinion_modifier = { target = GER modifier = MR_pact }
+				remove_ideas = SOV_molotov_ribbentrop_pact
+			}
+			GER = { remove_opinion_modifier = { target = SOV modifier = MR_pact } }
+			every_other_country = {
+				limit = { has_opinion_modifier = MR_pact_fascists }
+				remove_opinion_modifier = { target = GER modifier = MR_pact_fascists }
+			}
+		}
+	}
+	
+	option = {
+		name = news.153.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = SOV
+				is_in_faction_with = GER
+			}
+		}
+	}
+	option = {
+		name = news.154.b
+		trigger = {
+			OR = {
+				TAG = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+	option = {
+		name = news.154.c
+		trigger = { TAG = SOV }
+	}
+}
 
 # Germany declares war without having remilitarized Rhineland. Which then happens.
 news_event = {
@@ -4979,7 +5116,34 @@ news_event = {
 }
 
 # Komet Sighted
+news_event = {
+	id = news.156
+	title = news.156.t
+	desc = news.156.d
+	picture = GFX_news_event_komet
+	
+	#major = yes
 
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = GER
+		has_tech = rocket_engines
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = news.156.a
+		add_stability = -0.01
+		custom_effect_tooltip = news.156.a.tt
+		add_stability = 0.01
+		custom_effect_tooltip = news.156.a.2.tt
+	}
+}
 
 # USA intervenes in war between ppl in America
 news_event = {
@@ -6481,7 +6645,35 @@ news_event = {
 
 
 #Italy Pursues Closer Bonds With Germany
+news_event = {
+	id = news.184
+	title = news.184.t
+	desc = news.184.d
+	picture = GFX_news_event_french_parade
 
+	major = yes
+	hidden = yes
+
+	is_triggered_only = yes
+
+	fire_for_sender = no
+
+	#Our nations share many common interests.
+	option = {
+		name = news.184.a
+		trigger = {
+			tag = GER
+		}
+	}
+
+	#We will keep an eye on the situation.
+	option = {
+		name = news.184.b
+		trigger = {
+			NOT = { tag = GER }
+		}
+	}
+}
 
 #Italy Seeks Extensive Military Pact
 news_event = {
@@ -10405,7 +10597,42 @@ news_event = {
 
 }
 #NZL finishes Bob Semple tank
+news_event = {
+	id = news.270
+	title = news.270.t
+	desc = news.270.desc
+	picture = GFX_news_event_glorious_vehicle
+	
+	major = yes
 
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		NZL = { 
+			OR = {
+				has_tech = basic_light_tank 
+				has_tech = basic_light_tank_chassis
+			}
+		}
+	}
+	
+	option = {
+		name = news.270.a
+		trigger = {
+			TAG = NZL
+		}
+	}
+	option = {
+		name = news.270.b
+		trigger = { 
+			NOT = {
+				TAG = NZL	
+			}
+		}
+	}
+
+}
 
 #NZL finishes Big Bob tank
 news_event = {
@@ -11864,7 +12091,7 @@ news_event = {
 			NOT = { country_exists = AUS }
 		}
 	}
-	picture = GFX_news_event_hitler_handshake
+	picture = GFX_news_event_generic_sign_treaty3
 	
 	major = yes
 	
@@ -12776,7 +13003,43 @@ news_event = {
 		}
 	}
 }
+news_event = { #Panay Incident - initial incident
+	id = news.334
+	title = news.334.t
+	desc = news.334.d
+	picture = GFX_news_event_panay_incident
 
+	trigger = {
+		NOT = { tag = USA }
+	}
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.334.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = JAP
+					TAG = ENG
+				}
+			}
+		}
+	}
+	option = {
+		name = news.334.b
+		trigger = { TAG = JAP }
+	}
+	option = {
+		name = news.334.c
+		trigger = { TAG = ENG }
+		ENG = {
+			add_opinion_modifier = { target = JAP modifier = panay_inc2_opinion_modifier }
+		}
+	}
+}
 
 news_event = { #Panay Incident - US declares war on Japan
 	id = news.335
@@ -12897,11 +13160,53 @@ news_event = {
 news_event = {
 	id = news.337
 	title = news.337.title
-	desc = news.337.desc
+
+	desc = {
+		text = news.337.desc
+		trigger = {
+			ITA = {
+				NOT = {	owns_state = 550 } #ERITREA
+				NOT = {	owns_state = 559 } #SOMALILAND
+				NOT = {	owns_state = 844 } #JUBALAND
+			}
+		}
+	}
+	desc = {
+		text = news.337.desc_some_states
+		trigger = {
+			ITA = {
+				NOT = {
+					AND = {
+						owns_state = 550 #ERITREA
+						owns_state = 559 #SOMALILAND
+						owns_state = 844 #JUBALAND
+					}
+				}
+				count_triggers = {
+					amount = 1
+					owns_state = 550 #ERITREA
+					owns_state = 559 #SOMALILAND
+					owns_state = 844 #JUBALAND
+				}
+			}
+		}
+	}
+	desc = {
+		text = news.337.desc_no_states
+		trigger = {
+			ITA = {
+				owns_state = 550 #ERITREA
+				owns_state = 559 #SOMALILAND
+				owns_state = 844 #JUBALAND
+			}
+		}
+	}
+
 	picture = GFX_news_event_african_soldiers
 	
 	major = yes
 	
+	fire_only_once = yes
 	is_triggered_only = yes
 	
 	immediate = {
@@ -12937,3 +13242,88 @@ news_event = {
 		}
 	}
 }
+
+
+### Country reunited
+news_event = {
+	id = news.350
+	title = news.350.t
+	desc = news.350.desc
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.350.a
+		trigger = {
+			original_tag = ROOT
+			NOT = { has_government = ROOT }
+		}
+	}
+	option = {
+		name = news.350.b
+		trigger = {
+			original_tag = ROOT
+			has_government = ROOT
+		}
+	}
+	option = {
+		name = news.350.c
+		trigger = {
+			NOT = {
+				original_tag = ROOT
+			}
+		}
+	}
+}
+
+### Yellow river blown
+news_event = {
+	id = news.409
+	title = news.409.t
+	desc = news.409.desc
+	picture = GFX_news_event_074
+	
+	major = yes
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = news.409.a
+		trigger = {
+			OR = {
+				TAG = CHI
+				is_in_faction_with = CHI
+			}
+		}
+	}
+	option = {
+		name = news.409.b
+		trigger = {
+			OR = {
+				TAG = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = news.409.c
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					OR = {
+						TAG = JAP
+						is_in_faction_with = JAP
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+

@@ -20,7 +20,7 @@ state=
 			12140 1
 		 }
 
-		 		1943.12.1 = {
+		1943.12.31 = {
 			owner = JAP
 			controller = JAP
 		}

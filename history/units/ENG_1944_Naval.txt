@@ -8,20 +8,12 @@ units = {
 		task_force = {				
 			name = "Home Fleet"					# CO: Forbes	
 			location = 11064 # Scapa Flow
-			ship = { name = "HMS Ark Royal" definition = carrier equipment = { ship_hull_carrier_1 = { amount = 1 owner = ENG version_name = "Ark Royal Class" } } 
-				air_wings = {
-					cv_fighter_equipment_1 =  { owner = "ENG" amount = 12 }				# Sea Gladiator (REVISIT -- can be variant)
-					cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 18 }			# Swordfish
-					cv_CAS_equipment_1 =  { owner = "ENG" amount = 18 }					# Blackburn Skua
-				}
-			}
+
 			ship = { name = "HMS Nelson" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Nelson Class" } } }
-			ship = { name = "HMS Rodney" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Nelson Class" } } }
 			ship = { name = "HMS Royal Oak" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }				
 			ship = { name = "HMS Royal Sovereign" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }			
 			ship = { name = "HMS Ramillies" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }				
-			ship = { name = "HMS Hood" definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Admiral Class" } } }		# Hood variant			
-			ship = { name = "HMS Repulse" definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Renown Class" } } }					
+			ship = { name = "HMS Hood" definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Admiral Class" } } }		# Hood variant							
 			ship = { name = "HMS Renown" definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Renown Class" } } }				
 			ship = { name = "HMS Norfolk" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 			ship = { name = "HMS Calcutta" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
@@ -69,18 +61,14 @@ units = {
 			ship = { name = "HMS Cardiff" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
 			ship = { name = "HMS Delhi" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class"} } }
 			ship = { name = "HMS Dunedin" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class"} } }
-			ship = { name = "HMS Emerald" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
-			ship = { name = "HMS Enterprise" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
+			ship = { name = "HMS Emerald" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			ship = { name = "HMS Enterprise" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 		}				
 		task_force = {				
 			name = "Rosyth Command"				# CO: Ramsey
 			location = 6300 # Rosyth
 			ship = { name = "HMS Furious" definition = carrier start_experience_factor = 0.25 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = ENG version_name = "Courageous Class"} } 
-				air_wings = {
-					cv_fighter_equipment_0 =  { owner = "ENG" amount = 12 }				# Sea Gladiator (REVISIT -- can be variant)
-					cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 12 }			# Swordfish
-					cv_CAS_equipment_1 =  { owner = "ENG" amount = 12 }					# Blackburn Skua
-				}
+				
 			}
 			### 15th Destroyer Flotilla
 			# Destroyer Division 29
@@ -173,11 +161,7 @@ units = {
 			name = "Channel Force"				# CO: Holland
 			location = 9458 # Portsmouth
 			ship = { name = "HMS Courageous" definition = carrier start_experience_factor = 0.25 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = ENG version_name = "Courageous Class"} } 
-				air_wings = {
-					cv_fighter_equipment_0 =  { owner = "ENG" amount = 12 }				# Sea Gladiator (REVISIT -- can be variant)
-					cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 12 }			# Swordfish
-					cv_CAS_equipment_1 =  { owner = "ENG" amount = 12 }					# Blackburn Skua
-				}
+				
 			}
 			ship = { name = "HMS Resolution" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class" } } }			
 			ship = { name = "HMS Revenge" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class" } } }					
@@ -204,9 +188,7 @@ units = {
 			name = "Plymouth Squadron"			# CO: Vian
 			location = 540 # Plymouth
 			ship = { name = "HMS Hermes" definition = carrier equipment = { ship_hull_carrier_conversion_ca = { amount = 1 owner = ENG version_name = "Hermes Class" } } 
-				air_wings = {
-					cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 12 }
-				}
+				
 			}
 			# Western Approaches Destroyer Division
 			# 11th Destroyer Flotilla
@@ -351,11 +333,7 @@ units = {
 			name = "Mediterranean Fleet"		# CO: A. Cunningham
 			location = 4076 # Alexandria
 			ship = { name = "HMS Glorious" definition = carrier start_experience_factor = 0.25 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = ENG version_name = "Courageous Class" } } 
-				air_wings = {
-					cv_fighter_equipment_0 =  { owner = "ENG" amount = 12 }				# Sea Gladiator (REVISIT -- can be variant)
-					cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 12 }			# Swordfish
-					cv_CAS_equipment_1 =  { owner = "ENG" amount = 12 }					# Blackburn Skua
-				}
+				
 			}
 			ship = { name = "HMS Warspite" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Queen Elizabeth Class" } } }			
 			ship = { name = "HMS Barham" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Queen Elizabeth Class" } } }				
@@ -364,8 +342,6 @@ units = {
 			ship = { name = "HMS Shropshire" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 			ship = { name = "HMS Sussex" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 			ship = { name = "HMS Arethusa" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Leander Class" } } }
-			ship = { name = "HMS Penelope" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Leander Class" } } }
-			ship = { name = "HMS Galatea" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Leander Class" } } }
 			ship = { name = "HMS Coventry" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
 			ship = { name = "HMS Bulldog" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
 			ship = { name = "HMS Wolsey" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }	
@@ -380,8 +356,6 @@ units = {
 			ship = { name = "HMS Greyhound" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
 			# Destroyer Division 2
 			ship = { name = "HMS Garland" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
-			ship = { name = "HMS Gipsy" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
-			ship = { name = "HMS Grenade" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
 			ship = { name = "HMS Griffin" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
 			### 2nd Destroyer Flotilla
 			ship = { name = "HMS Hardy" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
@@ -399,8 +373,6 @@ units = {
 			ship = { name = "HMS Imperial" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
 			# Destroyer Division 6
 			ship = { name = "HMS Icarus" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
-			ship = { name = "HMS Impulsive" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
-			ship = { name = "HMS Intrepid" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
 			ship = { name = "HMS Ivanhoe" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
 			### 4th Destroyer Flotilla
 			# Destroyer Division 7
@@ -443,12 +415,12 @@ units = {
 			location = 13010  # Bermuda
 			ship = { name = "HMS Berwick" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 			ship = { name = "HMS York" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
-			ship = { name = "HMS Orion" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
+			ship = { name = "HMS Orion" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 		}				
 		task_force = {				
 			name = "South Atlantic Fleet"			# CO: D'Oyly Lon
 			location = 2038 # Sierra Leone
-			ship = { name = "HMS Neptune" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
+			ship = { name = "HMS Neptune" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 			ship = { name = "HMS Dauntless" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class"} } }
 			ship = { name = "HMS Danae" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class"} } }
 			ship = { name = "HMS Durban" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class"} } }
@@ -462,7 +434,7 @@ units = {
 			location = 12960 # Falkland Is.
 			ship = { name = "HMS Exeter" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 			ship = { name = "HMS Cumberland" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
-			ship = { name = "HMS Ajax" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
+			ship = { name = "HMS Ajax" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
 			ship = { name = "HMS Havock" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
 			ship = { name = "HMS Hotspur" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }	
 		}				
@@ -475,144 +447,10 @@ units = {
 		}
 	}
 
-	### FAR EAST ###			
-	fleet = {
-		name = "Far East Command"
-		naval_base = 12299 # Singapore
-		task_force = {				
-			name = "East Indies Fleet"				# CO: Leatham
-			location = 10201 # Trincomalee, Ceylon
-			ship = { name = "HMS Gloucester" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Town Class" } } }
-			ship = { name = "HMS Manchester" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Town Class" } } }
-			ship = { name = "HMS Liverpool" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Town Class" } } }
-		}				
-		task_force = {				
-			name = "Hong Kong Destroyer Division"
-			location = 10062 # Hong Kong			
-			# Hong Kong Division
-			ship = { name = "HMS Scout" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class" } } }		
-			ship = { name = "HMS Tenedos" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class" } } }		
-			ship = { name = "HMS Thanet" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class" } } }		
-			ship = { name = "HMS Thracian" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class" } } }		
-		}				
-		task_force = {				
-			name = "Singapore Squadron"				# CO: Noble
-			location = 12299 # Singapore
-			ship = { name = "HMS Eagle" definition = carrier equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = ENG version_name = "Eagle Class" } } 
-				air_wings = {
-					cv_fighter_equipment_0 =  { owner = "ENG" amount = 12 }				# Sea Gladiator (REVISIT -- can be variant)
-					cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 12 }			# Swordfish
-					cv_CAS_equipment_1 =  { owner = "ENG" amount = 8 }					# Blackburn Skua
-				}
-			}
-			ship = { name = "HMS Kent" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
-			ship = { name = "HMS Cornwall" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
-			ship = { name = "HMS Dorsetshire" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } }	}
-			ship = { name = "HMS Birmingham" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Town Class" } } }
-			### 21st Destroyer Flotilla
-			ship = { name = "HMS Duncan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
-			# Destroyer Division 41
-			ship = { name = "HMS Decoy" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } } # to RCN as Kootenay, 1943
-			ship = { name = "HMS Defender" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		
-			ship = { name = "HMS Duchess" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		
-			ship = { name = "HMS Delight" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		
-			# Destroyer Division 42
-			ship = { name = "HMS Dainty" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		
-			ship = { name = "HMS Daring" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		
-			ship = { name = "HMS Diamond" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		
-			ship = { name = "HMS Diana" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } } # to RCN as Margaree, 1940	
-		}				
-		task_force = {				
-			name = "4th Submarine Flotilla"				# CO: Keble-White
-			location = 12299 # Singapore
-			# Submarine Division 41
-			ship = { name = "HMS Grampus" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = ENG version_name = "Grampus Class" } } }
-			ship = { name = "HMS Rorqual" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = ENG version_name = "Grampus Class" } } }
-			# Submarine Division 42
-			ship = { name = "HMS Olympus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Parthian" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Proteus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Regent" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Rover" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			# Submarine Division 44
-			ship = { name = "HMS Odin" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Otus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-		}				
-		task_force = {				
-			name = "Submarine Division 43"			
-			location = 10062 # Hong Kong			
-			# Submarine Division 43
-			ship = { name = "HMS Orpheus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Pandora" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Perseus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Phoenix" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Rainbow" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Regulus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-		}
-	}
 }
 instant_effect = {
 ### Under Construction Notes ###
 	# BB: King George V-class (x2) ("HMS King George V" "HMS Prince of Wales")
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_heavy_2
-			creator = "ENG" 
-			version_name = "King George V Class"
-		}
-		name = "HMS King George V"
-		requested_factories = 1
-		progress = 1
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_heavy_2
-			creator = "ENG" 
-			version_name = "King George V Class"
-		}
-		name = "HMS Prince of Wales"
-		requested_factories = 1
-		progress = 1
-		amount = 1
-	}
-	# CV: Illustrious-class (x2) ("HMS Illustrious" "HMS Formidable")
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_carrier_2
-			creator = "ENG" 
-			version_name = "Illustrious Class"
-		}
-		name = "HMS Illustrious"
-		requested_factories = 1
-		progress = 1
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_carrier_2
-			creator = "ENG" 
-			version_name = "Illustrious Class"
-		}
-		name = "HMS Formidable"
-		requested_factories = 1
-		progress = 1
-		amount = 1
-	}
-	# CL: Dido-class variant (x6) ("HMS Bonaventure" "HMS Dido" "HMS Euryalus" "HMS Hermoine" "HMS Naiad" "HMS Phoebe")
-	# REVISIT, OBSOLETE
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_2
-			creator = "ENG"
-			version_name = "Dido Class"
-		}
-		name = "HMS Euryalus"
-		requested_factories = 1
-		progress = 0.85
-		amount = 1
-	}
-
 
 	add_equipment_production = {
 		equipment = {
@@ -935,128 +773,4 @@ instant_effect = {
 	}
 
 
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_2
-			creator = "ENG"
-			version_name = "Dido Class"
-		}
-		name = "HMS Hermoine"
-		requested_factories = 1
-		progress = 0.90
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_2
-			creator = "ENG"
-			version_name = "Dido Class"
-		}
-		name = "HMS Naiad"
-		requested_factories = 1
-		progress = 0.40
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_2
-			creator = "ENG"
-			version_name = "Dido Class"
-		}
-		name = "HMS Phoebe"
-		requested_factories = 1
-		progress = 0.90
-		amount = 1
-	}
-	# CL: Crown Colony-class (x4) ("HMS Fiji" "HMS Kenya" "HMS Nigeria" "HMS Mauritius")
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_3
-			creator = "ENG"
-			version_name = "Crown Colony Class"
-		}
-		name = "HMS Fiji"
-		requested_factories = 1
-		progress = 0.90
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_3
-			creator = "ENG"
-			version_name = "Crown Colony Class"
-		}
-		name = "HMS Kenya"
-		requested_factories = 1
-		progress = 0.96
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_3
-			creator = "ENG"
-			version_name = "Crown Colony Class"
-		}
-		name = "HMS Nigeria"
-		requested_factories = 1
-		progress = 0.90
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_cruiser_3
-			creator = "ENG"
-			version_name = "Crown Colony Class"
-		}
-		name = "HMS Mauritius"
-		requested_factories = 1
-		progress = 0.90
-		amount = 1
-	}
-
-	# DD: J/K/N class (x8) ("HMS Jaguar" "HMS Kandahar" "HMS Kashmir" "HMS Kelvin" "HMS Khartoum" "HMS Kimberley" "HMS Kingston" "HMS Kipling")
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_light_3
-			creator = "ENG"
-			version_name = "J/K/N Class"
-		}
-		name = "HMS Jaguar"
-		requested_factories = 1
-		progress = 0.95
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_light_3
-			creator = "ENG"
-			version_name = "J/K/N Class"
-		}
-		name = "HMS Kandahar"
-		requested_factories = 1
-		progress = 0.895
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_light_3
-			creator = "ENG"
-			version_name = "J/K/N Class"
-		}
-		name = "HMS Kashmir"
-		requested_factories = 1
-		progress = 0.97
-		amount = 1
-	}
-	add_equipment_production = {
-		equipment = {
-			type = ship_hull_light_3
-			creator = "ENG"
-			version_name = "J/K/N Class"
-		}
-		name = "HMS Kingston"
-		requested_factories = 1
-		progress = 0.95
-		amount = 1
-	}
 }

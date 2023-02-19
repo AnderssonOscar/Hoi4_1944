@@ -4,7 +4,7 @@ state={
 
 	history={
 		add_core_of = PNG
-		owner = AST
+		owner = JAP
 		buildings = {
 			infrastructure = 1
 			air_base = 1
@@ -25,6 +25,32 @@ state={
 		
 		victory_points = {
 			7251 5 
+		}
+
+		
+		AST = {
+			set_province_controller = 1329
+			set_province_controller = 1301
+		}
+
+
+		1943.12.30 = {
+			buildings = {
+				infrastructure = 2
+				air_base = 2
+				7251 = {
+					naval_base = 5
+	
+				}
+				4352 = {
+					naval_base = 2
+	
+				}
+				7339 = {
+					naval_base = 1
+	
+				}
+			}
 		}
 		
 	}

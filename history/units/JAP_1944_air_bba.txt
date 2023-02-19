@@ -1,0 +1,137 @@
+﻿
+#AIRCRAFT
+air_wings = {
+	### IJA & IJN Air Forces ###
+	282 = { 														# Tokyo
+
+			small_plane_cas_airframe_1 =  { owner = "JAP" version_name = "Ki-30/32" amount = 100 }
+
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+	}
+	716 = {															#  Dalian
+			# 2 Hikodan
+			small_plane_airframe_1 = { owner = "JAP" creator = "JAP" version_name = "Ki-27" amount = 100 }	
+
+			small_plane_cas_airframe_1 =  { owner = "JAP" version_name = "Ki-30/32" amount = 100 }
+			medium_plane_airframe_1 =  { owner = "JAP" version_name = "G3M2" amount = 100 } 
+
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+	}
+	597 = {															#  Jinan
+			# 4 Hikodan
+			small_plane_cas_airframe_1 =  { owner = "JAP" version_name = "Ki-30/32" amount = 100 }
+			medium_plane_airframe_1 =  { owner = "JAP" version_name = "G3M2" amount = 100 } 
+
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+	}
+
+	608 = {															#  Jinan
+			# 4 beijing
+			small_plane_cas_airframe_1 =  { owner = "JAP" version_name = "Ki-30/32" amount = 100 }
+			medium_plane_airframe_1 =  { owner = "JAP" version_name = "G3M2" amount = 100 } 
+
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+	}
+
+	528 = {															
+			# 4 kokura
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+	}
+
+	529 = {															
+			# 4 hiroshima
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+	}
+
+	524 = {															# Taiwan
+
+		small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+		small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+
+		small_plane_cas_airframe_1 =  { owner = "JAP" version_name = "Ki-30/32" amount = 100 }
+
+		cv_small_plane_airframe_1 =  { owner = "JAP" amount = 50 version_name = "A5M" }
+		cv_small_plane_cas_airframe_0 = { owner = "JAP" amount = 50 version_name = "Aichi D1A2"}
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "JAP" amount = 50 version_name = "B5N" }
+
+	}
+	591 = {				
+													# Hainan
+		cv_small_plane_airframe_1 =  { owner = "JAP" amount = 50 version_name = "A5M" }
+		cv_small_plane_cas_airframe_0 = { owner = "JAP" amount = 50 version_name = "Aichi D1A2"}
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "JAP" amount = 50 version_name = "B5N" }
+	
+	}
+
+
+	"Hosho"  = { 
+		cv_small_plane_airframe_1 =  { owner = "JAP" amount = 18 version_name = "A5M" }
+		cv_small_plane_cas_airframe_0 = { owner = "JAP" amount = 20 version_name = "Aichi D1A2"}
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "JAP" amount = 20 version_name = "B5N" }
+	}
+	"Shokaku"  = { 
+		cv_small_plane_airframe_1 =  { owner = "JAP" amount = 18 version_name = "A5M" }
+		cv_small_plane_cas_airframe_0 = { owner = "JAP" amount = 20 version_name = "Aichi D1A2"}
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "JAP" amount = 20 version_name = "B5N" }
+	}
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+	
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_2
+			creator = "JAP" 
+			version_name = "Mitsubishi A6M Zero"
+		}
+		requested_factories = 25
+		progress = 0.85
+		efficiency = 88
+	}
+}

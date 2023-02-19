@@ -1,4 +1,4 @@
-﻿start_equipment_factor = 0.6
+﻿#start_equipment_factor = 0.6
 ##### Division Templates #####
 division_template = {
 	name = "Jalkaväkidivisioona"		# Infantry Division
@@ -16,6 +16,7 @@ division_template = {
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
+		anti_tank_brigade = { x = 3 y = 0 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
@@ -24,7 +25,7 @@ division_template = {
 	}
 }
 division_template = {
-	name = "Panssardivisoona"		# Infantry Division
+	name = "Armeijakunta"		# Infantry corp
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -35,7 +36,6 @@ division_template = {
 		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
-		anti_tank_brigade = { x = 2 y = 2 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
@@ -62,15 +62,20 @@ division_template = {
 	name = "Panssariosasto"
 
 	regiments = {
-		light_armor = { x = 0 y = 0 }
-		light_armor = { x = 0 y = 1 }
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
 		light_armor = { x = 1 y = 0 }
 		light_armor = { x = 1 y = 1 }
+		heavy_armor = { x = 1 y = 2 }
+		medium_armor = { x = 1 y = 3 }
+		medium_tank_destroyer_brigade = { x = 2 y = 0 }
 	}
 	support = {
 		recon = { x = 0 y = 0 }
 	 	engineer = { x = 0 y = 1 }
-        	artillery = { x = 0 y = 2 }
+        artillery = { x = 0 y = 2 }
 	}
 }
 division_template = {
@@ -106,6 +111,7 @@ units = {
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
 		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_1 = { owner = "SWE" } }
 	}
 	division = {
 		name = "Osasto Aland"
@@ -113,6 +119,7 @@ units = {
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.85
+		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
 	}
 
 	division = {
@@ -129,6 +136,7 @@ units = {
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.96
+		force_equipment_variants = { infantry_equipment_1 = { owner = "SWE" } }
 	}
 
 	division = {
@@ -160,6 +168,7 @@ units = {
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.15
 		start_equipment_factor = 0.86
+		force_equipment_variants = { infantry_equipment_1 = { owner = "SWE" } }
 	}
 	division = {
 		name = "Osasto Hanko"
@@ -174,6 +183,7 @@ units = {
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.95
+		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
 	}
 	division = {
 		name = "Osasto Oulu"
@@ -181,25 +191,26 @@ units = {
 		division_template = "Erillinen Prikaati"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.89
+		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
 	}
 	division = {
 		name = "21. Divisioona"
 		location = 11105
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.89
 	}
 	division = {
 		name = "23. Divisioona"
 		location = 11105
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.87
 	}
 	division = {
 		name = "9. Divisioona"
 		location = 11105
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.4
 		start_equipment_factor = 0.84
 	}
@@ -213,42 +224,42 @@ units = {
 	division = {
 		name = "12. Divisioona"
 		location = 3060
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.88
 	}
 	division = {
 		name = "5. Divisioona"
 		location = 3060
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.87
 	}
 	division = {
 		name = "2. Divisioona"
 		location = 9100
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.4
 		start_equipment_factor = 1
 	}
 	division = {
 		name = "18. Divisioona"
 		location = 9150
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.74
 	}
 	division = {
 		name = "10. Divisioona"
 		location = 9150
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.84
 	}
 	division = {
 		name = "7. Divisioona"
 		location = 11153
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.88
 	}
@@ -256,7 +267,7 @@ units = {
 	division = {
 		name = "7. Divisioona"
 		location = 11153
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.99
 	}
@@ -264,14 +275,14 @@ units = {
 	division = {
 		name = "4. Divisioona"
 		location = 6057
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.96
 	}
 	division = {
 		name = "19. Divisioona"
 		location = 3084
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.89
 	}
@@ -299,56 +310,56 @@ units = {
 	division = {
 		name = "14. Divisioona"
 		location = 155
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.95
 	}
 	division = {
 		name = "5. Divisioona"
 		location = 11096
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 1
 	}
 	division = {
 		name = "17. Divisioona"
 		location = 3067
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.63
 	}
 	division = {
 		name = "Divisioona J"
 		location = 9158
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.31
 		start_equipment_factor = 1
 	}
 	division = {
 		name = "1. Divisioona"
 		location = 11096
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.34
 		start_equipment_factor = 0.94
 	}
 	division = {
 		name = "4. Divisioona"
 		location = 6128
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.62
 		start_equipment_factor = 0.85
 	}
 	division = {
 		name = "6. Divisioona"
 		location = 11175
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.4
 		start_equipment_factor = 0.96
 	}
 	division = {
 		name = "Petsamo Erillisosato"
 		location = 6012
-		division_template = "Panssardivisoona"
+		division_template = "Armeijakunta"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.88
 	}
@@ -356,10 +367,14 @@ units = {
 		name = "Panssariosasto 'Lagus'"
 		location = 9198
 		division_template = "Panssariosasto"
-		start_experience_factor = 0.8
-		start_equipment_factor = 0.97
-	}
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } } #get locked equipment requirements
+		force_equipment_variants = { heavy_tank_chassis_1 = { owner = SOV version_name = "KV-1" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1941" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = SOV version_name = "T-26TU mod. 1933" } }
+		start_experience_factor = 0.82
+		start_equipment_factor = 0.99
 
+	}
 
 
 	division = {
@@ -369,6 +384,8 @@ units = {
 		}
 		location = 3060 
 		division_template = "Jalkaväkidivisioona"
+		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		start_experience_factor = 0.21
 		start_equipment_factor = 0.85
 	}
@@ -380,6 +397,8 @@ units = {
 		}
 		location = 3060 
 		division_template = "Jalkaväkidivisioona"
+		force_equipment_variants = { artillery_equipment_2 = { owner = "SWE" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
 		start_experience_factor = 0.21
 		start_equipment_factor = 0.85
 	}
@@ -393,6 +412,8 @@ units = {
 		division_template = "Jalkaväkidivisioona"
 		start_experience_factor = 0.21
 		start_equipment_factor = 0.85
+		force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SWE" } }
 	}
 
 	division = {
@@ -404,6 +425,8 @@ units = {
 		division_template = "Jalkaväkidivisioona"
 		start_experience_factor = 0.21
 		start_equipment_factor = 0.85
+		force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
 	}
 
 	division = {
@@ -415,6 +438,8 @@ units = {
 		division_template = "Jalkaväkidivisioona"
 		start_experience_factor = 0.21
 		start_equipment_factor = 0.85
+		force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
 	}
 
 	division = {
@@ -426,6 +451,8 @@ units = {
 		division_template = "Jalkaväkidivisioona"
 		start_experience_factor = 0.21
 		start_equipment_factor = 0.85
+		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 	}
 
 
@@ -582,19 +609,7 @@ division = {
 		start_equipment_factor = 1
 	}
 
-
 }
-
-
-air_wings = {
-	111 = { 														# Helsinki
-		CAS_equipment_1 = { owner = "FIN" amount = 35 }				# 1, 4 Bomber Groups -- Fokker C.Xs, Blenheim Is
-		fighter_equipment_0 = { owner = "FIN" amount = 65 }			# 2 Fighter Group -- Fokker D.XXIs, Bristol Bulldogs
-		fighter_equipment_1 = { owner = "FIN" creator = "GER" version_name = "Bf 109 E" amount = 175 }
-
-	}
-}
-
 
 
 ### Starting Production ###

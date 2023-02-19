@@ -55,31 +55,41 @@ political_actions = {
 		}
 
 
-	complete_effect = {
-			#GER = { country_event = bulgaria.switch.side.1 }
+		complete_effect = {
 
-		every_country = {
-			limit = { 
-					is_in_faction_with = GER
-					}
-
-				ROOT = {add_opinion_modifier = { target = PREV modifier = embargo}}
-				ROOT = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
-				ROOT = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
-		}
-	}
-
-		remove_effect = {
 			every_country = {
 				limit = { 
-							is_in_faction_with = GER
+						is_in_faction_with = GER
 						}
-						
-						ROOT = {remove_opinion_modifier = { target = PREV modifier = embargo}}
-						ROOT = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
-						ROOT = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
-				}
+	
+						if = {
+							limit = { has_dlc = "By Blood Alone" }
+								ROOT = { send_embargo = PREV }
+							else = {
+								ROOT = {add_opinion_modifier = { target = PREV modifier = embargo}}
+								ROOT = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
+								ROOT = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
+							}
+						}
+					}
 			}
+	
+			remove_effect = {
+				every_country = {
+					limit = { 
+								is_in_faction_with = GER
+							}
+							if = {
+								limit = { has_dlc = "By Blood Alone" }
+									ROOT = { break_embargo = PREV }
+								else = {
+									ROOT = {remove_opinion_modifier = { target = PREV modifier = embargo}}
+									ROOT = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
+									ROOT = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
+						}
+					}
+				}
+		}
 	}
 
 

@@ -5363,7 +5363,7 @@ focus_tree = {
 		}
 	}
 
-	############################################
+############################################
 	############## BALKAN BRANCH ###############
 	############################################
 
@@ -5380,9 +5380,15 @@ focus_tree = {
 		bypass = {
 			OR = {
 				NOT = {
-					OR = {
-						YUG = { owns_state = 102 }
-						102 = { owner = { is_subject_of = YUG } }
+					AND = {
+						OR = {
+							YUG = { owns_state = 102 }
+							102 = { owner = { is_subject_of = YUG } }
+						}
+						OR = {
+							YUG = { owns_state = 853 }
+							853 = { owner = { is_subject_of = YUG } }
+						}
 					}
 				}
 				has_war_with = YUG
@@ -5449,6 +5455,8 @@ focus_tree = {
 					OR = {
 						owns_state = 102
 						102 = { owner = { is_subject_of = YUG } }
+						owns_state = 853
+						853 = { owner = { is_subject_of = YUG } }
 					}
 				}
 				custom_trigger_tooltip = {
@@ -5458,6 +5466,10 @@ focus_tree = {
 						OR = {
 							owns_state = 102
 							102 = { owner = { is_subject_of = YUG } }
+						}
+						OR = {
+							owns_state = 853
+							853 = { owner = { is_subject_of = YUG } }
 						}
 						OR = {
 							owns_state = 45
@@ -5472,11 +5484,11 @@ focus_tree = {
 							803 = { owner = { is_subject_of = YUG } }
 						}
 						OR = { #Herzegovina
-							owns_state = 803
+							owns_state = 804
 							804 = { owner = { is_subject_of = YUG } }
 						}
 						OR = { #Kosovo
-							owns_state = 803
+							owns_state = 802
 							802 = { owner = { is_subject_of = YUG } }
 						}
 						OR = {
@@ -5644,7 +5656,7 @@ focus_tree = {
 				limit = {
 					ITA = {
 						OR = {
-							has_completed_focus = ITA_slovenia_dalmatia_claims
+							has_completed_focus = ITA_balkan_ambition
 							owns_state = 44
 						}
 						is_friend_or_potential_friend_of_GER = yes
@@ -5661,7 +5673,7 @@ focus_tree = {
 					ITA = {
 						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
 						if = {
-							limit = { has_completed_focus = ITA_slovenia_dalmatia_claims }
+							limit = { has_completed_focus = ITA_balkan_ambition }
 							transfer_state = 103
 						}
 						if = {
@@ -5757,7 +5769,7 @@ focus_tree = {
 		#			OR = {
 		#				NOT = { country_exists = ITA }
 		#				ITA = { has_war_with = GRE }
-		#				NOT = { has_completed_focus = ITA_greece_war_goal }
+		#				NOT = { has_completed_focus = ITA_war_with_greece }
 		#				AND = {
 		#					ITA = {
 		#						NOT = { is_in_faction_with = GER }
@@ -5813,7 +5825,7 @@ focus_tree = {
 					ITA = {
 						NOT = { has_war_with = GRE }
 						country_exists = ITA
-						has_completed_focus = ITA_greece_war_goal
+						has_completed_focus = ITA_war_with_greece
 						OR = {
 							is_in_faction_with = GER
 							is_in_faction = no							
@@ -9374,7 +9386,7 @@ focus_tree = {
 	available = {
 			has_war = yes
 		OR = {
-			surrender_progress > 0.30
+			surrender_progress > 0.20
 			date > 1944.10.1
 			}
 		}
@@ -9386,15 +9398,17 @@ focus_tree = {
 	
 					division_template = {
 						name = "Volkssturm"
-						is_locked = no
+						is_locked = yes
 						priority = 0
+						#force_allow_recruiting = yes
+						template_counter = 60
 						division_names_group = GER_VOLNF_01
 						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-		    	   		 	infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+							militia = { x = 1 y = 0 }
+							militia = { x = 1 y = 1 }
 						}
 						support = {
 							engineer = { x = 0 y = 0 }
@@ -9414,7 +9428,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.02 start_equipment_factor = 0.95 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.02 start_equipment_factor = 0.95 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }" 
 						owner = GER
 					}
 
@@ -9424,12 +9438,12 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.02 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
 						owner = GER
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_1 = { owner = \"FRA\" } }" 
 						owner = GER
 					}
 
@@ -9439,7 +9453,7 @@ focus_tree = {
 					}
 
 										create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.88 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.88 force_equipment_variants = { infantry_equipment_1 = { owner = \"POL\" } }" 
 						owner = GER
 					}
 
@@ -9464,7 +9478,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.03 start_equipment_factor = 0.65 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.03 start_equipment_factor = 0.65 force_equipment_variants = { infantry_equipment_1 = { owner = \"DEN\" } }" 
 						owner = GER
 					}
 				}
@@ -9498,7 +9512,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.05 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.05 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment = { owner = \"FRA\" } }" 
 						owner = GER
 					}
 
@@ -9537,12 +9551,12 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.01 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.01 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
 						owner = GER
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }" 
 						owner = GER
 					}
 
@@ -9552,7 +9566,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.03 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.03 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment = { owner = \"SOV\" } }" 
 						owner = GER
 					}
 
@@ -9567,7 +9581,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.01 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.01 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_1 = { owner = \"HOL\" } }" 
 						owner = GER
 					}
 
@@ -9619,8 +9633,7 @@ focus_tree = {
 		} 
 		}
 	}
-
-
+	
 
 	focus = {
 		id = GER_protect_industry
@@ -9681,6 +9694,11 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = GER_everyting_for_war_effort_tooltip
 
+			add_timed_idea ={
+				idea = GER_everyting_for_war_effort
+				days = 365
+			} 
+
 				every_controlled_state = {
 					limit = {
 						industrial_complex > 1
@@ -9691,7 +9709,6 @@ focus_tree = {
 						size > 1
 						include_locked = yes
 					} 
-
 				}
 
 				remove_building = { type = industrial_complex level = 1 }
@@ -9774,29 +9791,52 @@ focus_tree = {
 		}
 
 		bypass = {
-			date > 1944.4.1
 
-		NOT = {
+		OR = {
+
 			AND = {
-				
-						OR = {
-							GER = { controls_province = 923}
-							ITA = { controls_province = 923}
-						}
-				
-						OR = {
-							GER = { controls_province = 963}
-							ITA = { controls_province = 963}
-						}
+				OR = {
+					GER = { has_full_control_of_state = 117}
+					ITA = { has_full_control_of_state = 117}
+				}
 
-						OR = {
-							GER = { controls_province = 6831}
-							ITA = { controls_province = 6831}
-						}
+				OR = {
+					GER = { has_full_control_of_state = 849}
+					ITA = { has_full_control_of_state = 849}
+				}
+
+				OR = {
+					GER = { has_full_control_of_state = 2}
+					ITA = { has_full_control_of_state = 2}
+				}
+			}
+
+
+		AND = {
+			date > 1944.4.1
+			NOT = {
+				AND = {
 					
+							OR = {
+								GER = { controls_province = 923}
+								ITA = { controls_province = 923}
+							}
+					
+							OR = {
+								GER = { controls_province = 963}
+								ITA = { controls_province = 963}
+							}
+
+							OR = {
+								GER = { controls_province = 6831}
+								ITA = { controls_province = 6831}
+							}
+						
+					}
 				}
 			}
 		}
+	}
 
 		completion_reward = {
 			custom_effect_tooltip = GER_gustav_line_tooltip
@@ -9895,36 +9935,36 @@ focus_tree = {
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 13241 }	}
+	if = {	limit = {	GER = { controls_province = 13262 }	}
 		763 = { 
 
 				add_building_construction = { #east
 					type = bunker
 					level = 7
-					province = 13241
+					province = 13262
 					instant_build = yes
 				}
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 13240 }	}
+	if = {	limit = {	GER = { controls_province = 13261 }	}
 		763 = { 
 				add_building_construction = { #south
 					type = bunker
 					level = 7
-					province = 13240
+					province = 13261
 					instant_build = yes
 				}
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 13239 }	}
+	if = {	limit = {	GER = { controls_province = 13260 }	}
 		763 = {
 
 				add_building_construction = { #west
 					type = bunker
 					level = 7
-					province = 13239
+					province = 13260
 					instant_build = yes
 				}
 			}
@@ -10000,34 +10040,34 @@ focus_tree = {
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13237 }	}
+		if = {	limit = {	GER = { controls_province = 13258 }	}
 			64 = { #outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 10
+						level = 7
 						province = 13237
 						instant_build = yes
 					}
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13238 }	}
+		if = {	limit = {	GER = { controls_province = 13257 }	}
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 10
-						province = 13238
+						level = 7
+						province = 13257
 						instant_build = yes
 					}
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13236 }	}
+		if = {	limit = {	GER = { controls_province = 13259 }	}
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 10
-						province = 13236
+						level = 8
+						province = 13259
 						instant_build = yes
 					}
 				}
@@ -10039,7 +10079,7 @@ focus_tree = {
 			68 = { #kustrin
 				add_building_construction = {
 						type = bunker
-						level = 9
+						level = 8
 						province = 3473
 						instant_build = yes
 					}
@@ -10051,7 +10091,7 @@ focus_tree = {
 			86 = { #poznan
 				add_building_construction = {
 						type = bunker
-						level = 9
+						level = 8
 						province = 6558
 						instant_build = yes
 					}

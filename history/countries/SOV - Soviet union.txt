@@ -793,7 +793,7 @@ if = {
 		basic_light_battery = 1
 		basic_torpedo = 1
 		basic_depth_charges = 1
-		basic_secondary_battery = 1
+		 
 		mtg_transport = 1
 	}
 }
@@ -1824,11 +1824,27 @@ if = {
 
 
 1943.12.30 = {
-
 	
+	SOV_andrey_vlasov = { retire = yes }
+
+	set_variable = { SOV_offensive_start_day = global.num_days }
+	set_variable = { SOV_ger_offensive_multiplier = 1 }
+
+	add_opinion_modifier = { target = JAP modifier = large_decrease	}	
+	add_opinion_modifier = { target = JAP modifier = large_decrease	}
+	add_opinion_modifier = { target = JAP modifier = large_decrease	}
+
 	oob = "SOV_1944_nsb"
 
-	add_political_power = 2589
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "SOV_1944_naval_mtg"
+		else = {
+			set_naval_oob = "SOV_1939_naval_legacy"
+		}
+	}
+
+	add_political_power = 2989
 	add_command_power = 200
 	army_experience = 100
 	navy_experience = 175	
@@ -1909,62 +1925,6 @@ if = {
 	}
 
 
-	#############################################		FOCUS			################################################
-
-
-
-
-	#1944
-	unlock_national_focus = SOV_increase_state_reserves
-	unlock_national_focus = SOV_improve_railway_network
-	unlock_national_focus = SOV_shift_to_armaments_production
-	unlock_national_focus = SOV_optimize_production_lines
-	unlock_national_focus = SOV_restoration_and_development
-	unlock_national_focus = SOV_steel_casting_industry
-	unlock_national_focus = SOV_oil_production
-	unlock_national_focus = SOV_synthetic_rubber
-
-	unlock_national_focus = SOV_behead_the_snake
-	unlock_national_focus = SOV_stalins_cult_of_personality
-
-	unlock_national_focus = SOV_claims_in_baltic
-	unlock_national_focus = SOV_claims_on_poland
-	unlock_national_focus = SOV_demand_eastern_poland
-	unlock_national_focus = SOV_secure_leningrad
-	unlock_national_focus = SOV_claim_on_bessarabia
-
-	unlock_national_focus = SOV_middle_east_diplomacy
-	unlock_national_focus = SOV_support_afghan_ideology
-	unlock_national_focus = SOV_preemptive_invasion_of_iran
-
-	unlock_national_focus = SOV_desperate_measures
-	unlock_national_focus = SOV_rehabilitated_military
-	unlock_national_focus = SOV_lessons_of_war
-	unlock_national_focus = SOV_penal_battalions
-	unlock_national_focus = SOV_an_adaptable_army
-	unlock_national_focus = SOV_organization_of_the_partisans
-	unlock_national_focus = SOV_smersh
-	unlock_national_focus = SOV_barrier_troops
-	unlock_national_focus = SOV_military_reorganization
-
-	unlock_national_focus = SOV_military_engineering_university
-	unlock_national_focus = SOV_move_industry_to_the_urals
-	unlock_national_focus = SOV_the_road_of_life
-	unlock_national_focus = SOV_the_defense_of_moscow
-
-	unlock_national_focus = SOV_the_means_to_wage_war
-	unlock_national_focus = SOV_leningrad_polytechnical_institute
-
-	unlock_national_focus = SOV_secure_the_administration
-
-
-	unlock_national_focus = SOV_superior_war_machines
-	unlock_national_focus = SOV_soviet_artillery
-	unlock_national_focus = SOV_pc_of_mortar_armament
-	unlock_national_focus = SOV_send_military_advisors_to_spain
-	complete_national_focus = SOV_the_new_soviet_woman
-	unlock_national_focus = SOV_they_will_know_fear
-	complete_national_focus = SOV_foster_flying_clubs
 
 	##################################################		TECH		##########################################################
 
@@ -2054,26 +2014,6 @@ if = {
 		rubber_processing = 1
 		improved_rubber_processing = 1
 		advanced_rubber_processing = 1
-		
-		early_fighter = 1
-		fighter1 = 1
-		fighter2 = 1
-		fighter3 = 1
-
-		CAS1 = 1
-		CAS2 = 1
-
-		heavy_fighter1 = 1
-		heavy_fighter2 = 1
-
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-
-		tactical_bomber1 = 1
-		tactical_bomber2 = 1
-
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
 
 		support_weapons = 1
 		support_weapons2 = 1
@@ -2172,6 +2112,69 @@ if = {
 	}
 
 
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				#survivability_studies = 1
+
+				aa_lmg = 1
+				aa_hmg = 1
+
+				aa_cannon_1 = 1
+				#aa_cannon_2 = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+				engines_3 = 1
+
+				range_improvements = 1
+
+				early_bombs = 1
+
+				aircraft_construction = 1
+
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+				advanced_small_airframe = 1
+
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				improved_medium_airframe = 1
+
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+				#improved_large_airframe = 1
+			}
+		else = {
+			set_technology = {
+				
+				early_fighter = 1
+				fighter1 = 1
+				fighter2 = 1
+				fighter3 = 1
+		
+				CAS1 = 1
+				CAS2 = 1
+		
+				heavy_fighter1 = 1
+				heavy_fighter2 = 1
+		
+				naval_bomber1 = 1
+				naval_bomber2 = 1
+		
+				tactical_bomber1 = 1
+				tactical_bomber2 = 1
+		
+				strategic_bomber1 = 1
+				strategic_bomber2 = 1
+			}
+		}
+	}
+
+
 
 if = {
 	limit = {
@@ -2191,7 +2194,7 @@ if = {
 		basic_ship_hull_cruiser = 1
 
 		basic_cruiser_armor_scheme = 1
-		improved_cruiser_armor_scheme = 1
+		 
 
 		early_ship_hull_heavy = 1
 		basic_ship_hull_heavy = 1
@@ -2228,8 +2231,8 @@ if = {
 		mtg_transport = 1
 		mtg_landing_craft = 1
 
-		basic_secondary_battery = 1
-		improved_secondary_battery = 1
+		 
+		 
 		
 		basic_fire_control_system = 1
 		improved_fire_control_system = 1
@@ -2286,39 +2289,231 @@ if = {
 
 
 
+	#############################################		FOCUS			################################################
+
+
+
+
+	#1944
+	unlock_national_focus = SOV_increase_state_reserves
+	unlock_national_focus = SOV_improve_railway_network
+	unlock_national_focus = SOV_shift_to_armaments_production
+	unlock_national_focus = SOV_optimize_production_lines
+	unlock_national_focus = SOV_restoration_and_development
+	unlock_national_focus = SOV_steel_casting_industry
+	unlock_national_focus = SOV_oil_production
+	unlock_national_focus = SOV_synthetic_rubber
+
+	unlock_national_focus = SOV_behead_the_snake
+	unlock_national_focus = SOV_stalins_cult_of_personality
+
+	unlock_national_focus = SOV_claims_in_baltic
+	unlock_national_focus = SOV_claims_on_poland
+	unlock_national_focus = SOV_demand_eastern_poland
+	unlock_national_focus = SOV_secure_leningrad
+	unlock_national_focus = SOV_claim_on_bessarabia
+
+	unlock_national_focus = SOV_middle_east_diplomacy
+	unlock_national_focus = SOV_support_afghan_ideology
+	unlock_national_focus = SOV_preemptive_invasion_of_iran
+
+	unlock_national_focus = SOV_desperate_measures
+	unlock_national_focus = SOV_rehabilitated_military
+	complete_national_focus = SOV_lessons_of_war
+	unlock_national_focus = SOV_penal_battalions
+	unlock_national_focus = SOV_an_adaptable_army
+	unlock_national_focus = SOV_organization_of_the_partisans
+	unlock_national_focus = SOV_smersh
+	unlock_national_focus = SOV_barrier_troops
+	unlock_national_focus = SOV_military_reorganization
+
+	unlock_national_focus = SOV_military_engineering_university
+	unlock_national_focus = SOV_move_industry_to_the_urals
+	unlock_national_focus = SOV_the_road_of_life
+	unlock_national_focus = SOV_the_defense_of_moscow
+
+	unlock_national_focus = SOV_the_means_to_wage_war
+	unlock_national_focus = SOV_leningrad_polytechnical_institute
+
+	unlock_national_focus = SOV_secure_the_administration
+
+
+	unlock_national_focus = SOV_superior_war_machines
+	unlock_national_focus = SOV_soviet_artillery
+	unlock_national_focus = SOV_pc_of_mortar_armament
+	unlock_national_focus = SOV_send_military_advisors_to_spain
+	complete_national_focus = SOV_the_new_soviet_woman
+	unlock_national_focus = SOV_they_will_know_fear
+	complete_national_focus = SOV_foster_flying_clubs
+
 
 	#######################################			AIRPLANES		####################################
 
 
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+
+
 		create_equipment_variant = {
-			name = "La-5 A"
-			type = fighter_equipment_2
-			upgrades = {
-				plane_gun_upgrade = 2
-				plane_range_upgrade = 1  
-				plane_engine_upgrade = 2
-				plane_reliability_upgrade = 4
+			name = "I-15" #
+			type = small_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+			obsolete = yes
+		}
+
+		create_equipment_variant = {
+			name = "I-16" #
+			type = small_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = light_mg_2x
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+			icon = "GFX_SOV_fighter1_medium"
+		}
+
+		create_equipment_variant = {
+			name = "DB-3" #
+			type = medium_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = bomb_locks
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = lmg_defense_turret
+			}
+			icon = "GFX_SOV_early_bomber_medium"
+		}
+
+		create_equipment_variant = {
+			name = "TB-3" #
+			type = large_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = large_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = empty
+				engine_type_slot = engine_1_4x
+				special_type_slot_1 = lmg_defense_turret_2x
+			}
+			icon = "GFX_SOV_transport_plane_equipment_1_medium"
+		}
+
+		create_equipment_variant = {
+			name = "ANT-40" #
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = bomb_locks
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = lmg_defense_turret_2x
+			}
+			icon = "GFX_SOV_tactical_bomber1_medium"
+		}
+
+		create_equipment_variant = {
+			name = "I-153" #
+			type = small_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				fixed_auxiliary_weapon_slot_1 = rocket_rails
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+		}
+		create_equipment_variant = {
+			name = "I-16 Type 10" #
+			type = small_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				fixed_auxiliary_weapon_slot_1 = empty
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+		}
+		create_equipment_variant = {
+			name = "MBR-2" #
+			type = small_plane_cas_airframe_1
+			modules = {
+				fixed_main_weapon_slot = bomb_locks
+				fixed_auxiliary_weapon_slot_1 = empty
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = floats
+				special_type_slot_2 = fuel_tanks_small
+			}
+		}
+		create_equipment_variant = {
+			name = "Pe-8" #
+			type = large_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = large_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+				engine_type_slot = engine_3_4x
+				special_type_slot_1 = lmg_defense_turret
+				special_type_slot_2 = cannon_defense_turret_2x
 			}
 		}
 
 		create_equipment_variant = {
-			name = "Yak-3 A"
-			type = fighter_equipment_3
-			upgrades = {
-				plane_gun_upgrade = 4
-				plane_range_upgrade = 0  
-				plane_engine_upgrade = 5
-				plane_reliability_upgrade = 1
+			name = "La-5 A" 
+			type = small_plane_airframe_2
+			modules = {
+				fixed_main_weapon_slot = aircraft_cannon_1_2x
+				fixed_auxiliary_weapon_slot_1 = bomb_locks
+				engine_type_slot = engine_3_1x
+				special_type_slot_1 = fuel_tanks_small
+				special_type_slot_2 = armor_plate_small
+				special_type_slot_3 = empty
 			}
+			icon = "GFX_SOV_light_plane_3_medium"
 		}
 
+		create_equipment_variant = {
+			name = "Yak-3 A" 
+			type = small_plane_airframe_3
+			modules = {
+				fixed_main_weapon_slot = aircraft_cannon_1_2x
+				fixed_auxiliary_weapon_slot_1 = light_mg_2x
+				engine_type_slot = engine_3_1x
+				special_type_slot_1 = armor_plate_small
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+			}
+			icon = "GFX_SOV_light_plane_1_medium"
+		}
 
+	else = {
+		
+		
+			create_equipment_variant = {
+				name = "La-5 A"
+				type = fighter_equipment_2
+				upgrades = {
+					plane_gun_upgrade = 2
+					plane_range_upgrade = 1  
+					plane_engine_upgrade = 2
+					plane_reliability_upgrade = 4
+				}
+			}
 
+			create_equipment_variant = {
+				name = "Yak-3 A"
+				type = fighter_equipment_3
+				upgrades = {
+					plane_gun_upgrade = 4
+					plane_range_upgrade = 0  
+					plane_engine_upgrade = 5
+					plane_reliability_upgrade = 1
+				}
+			}
+
+		}
+	}
 
 	#######################################			TANKS		####################################
 
-
-	
 	if = {
 		limit = {	
 			has_dlc = "No Step Back"	
@@ -2348,6 +2543,29 @@ if = {
 				icon = "GFX_SOV_improved_medium_tank_medium"
 			}
 
+
+			
+			create_equipment_variant = {
+				name = "T-34-1941"
+				type = medium_tank_chassis_2
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_medium_cannon
+					turret_type_slot = tank_medium_two_man_tank_turret
+					suspension_type_slot = tank_christie_suspension
+					armor_type_slot = tank_welded_armor
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = tank_radio_1
+					special_type_slot_2 = sloped_armor
+					special_type_slot_3 = empty
+					special_type_slot_4 = extra_ammo_storage
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 7
+					tank_nsb_armor_upgrade = 0
+				}
+				icon = "GFX_SOV_improved_medium_tank_medium"
+			}
 
 
 			create_equipment_variant = {
@@ -2401,7 +2619,7 @@ if = {
 				type = light_tank_chassis_3
 				parent_version = 0
 				modules = {
-					main_armament_slot = tank_anti_air_cannon_2
+					main_armament_slot = tank_auto_cannon_2
 					turret_type_slot = tank_light_two_man_tank_turret
 					suspension_type_slot = tank_torsion_bar_suspension
 					armor_type_slot = tank_welded_armor
@@ -2440,16 +2658,28 @@ if = {
 	}
 
 
-
+	
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "SOV_1944_air_bba"
+		else = {
+			set_air_oob = "SOV_1944_air_legacy"
+	}
+}
 
 	add_equipment_to_stockpile = { 
 			type = infantry_equipment_1
-			amount = 38412
+			amount = 48412
+		}
+
+	add_equipment_to_stockpile = { 
+			type = infantry_equipment_2
+			amount = 18412
 		}
 
 	add_equipment_to_stockpile = { 
 			type = anti_tank_equipment_1
-			amount = 1899
+			amount = 2899
 		}
 		
 	add_equipment_to_stockpile = { 
@@ -2459,38 +2689,33 @@ if = {
 
 	add_equipment_to_stockpile = { 
 			type = anti_air_equipment_2
-			amount = 1551
+			amount = 2951
 		}
 
 	add_equipment_to_stockpile = { 
 			type = artillery_equipment_2
-			amount = 1640
+			amount = 3640
 		}
 
 	add_equipment_to_stockpile = { 
 			type = support_equipment_1
-			amount = 2000
+			amount = 3700
 		}
 	
 	add_equipment_to_stockpile = { 
 			type = train_equipment_1
-			amount = 5
+			amount = 25
 		}
 
+	add_equipment_to_stockpile = {
+			type = motorized_equipment_1
+			amount = 2326
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	add_equipment_to_stockpile = {
+        type = light_tank_chassis_1
+        amount = 986
+		variant_name  = "T-26TU"
+		producer = SOV
+    }
 }

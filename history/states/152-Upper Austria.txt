@@ -39,6 +39,12 @@ state={
 			controller = GER
 			add_core_of = GER
 		}
+
+		1943.12.30 = {
+			buildings = {
+				anti_air_building = 3
+			}
+		}
 	}
 
 	provinces={

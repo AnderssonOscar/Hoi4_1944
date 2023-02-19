@@ -1,0 +1,25 @@
+
+# this mtth entries can be used as variables
+# example set_variable = { a = mtth:entry_name }
+# and define entry_name here
+#
+# entry_name = {
+# 	base = 50
+# 	
+# 	modifier = {
+# 		tag = GER
+# 		add = 50
+# 	}
+# }
+
+
+sov_offensive_mtth = {
+ 	base = 1
+ 	
+ 	modifier = {
+ 		date > 1944.1.10
+ 		add = 0.5
+ 	}
+ }
+
+

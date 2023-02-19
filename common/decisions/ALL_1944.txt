@@ -50,9 +50,9 @@ economy_decisions = {
 
 		remove_effect = {
 
-			set_temp_variable = { support_eq = 2.6 }
+			set_temp_variable = { support_eq = 2.8 }
 			multiply_temp_variable = { support_eq = num_of_controlled_factories }
-			add_to_temp_variable = { var = support_eq value = 96 }
+			add_to_temp_variable = { var = support_eq value = 98 }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
 				amount = support_eq
@@ -60,13 +60,13 @@ economy_decisions = {
 
 			set_temp_variable = { inf_eq = 29.7 }
 			multiply_temp_variable = { inf_eq = num_of_controlled_factories }
-			add_to_temp_variable = { var = inf_eq value = 1675 }
+			add_to_temp_variable = { var = inf_eq value = 2675 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = inf_eq
 			}
 
-			set_temp_variable = { art_eq = 1.1 }
+			set_temp_variable = { art_eq = 1.2 }
 			multiply_temp_variable = { art_eq = num_of_controlled_factories }
 			add_to_temp_variable = { var = art_eq value = 118 }
 			add_equipment_to_stockpile = {
@@ -79,9 +79,98 @@ economy_decisions = {
 	
 	
 	
+ration_army_fuel = {
+
+	visible = { 
+		num_divisions > 12
+		has_war = yes
+	}
 	
+	available = {
+		has_war = yes
+		has_idea = tot_economic_mobilisation
+	}
+
+	fire_only_once = no
+	days_remove = 60
+	days_re_enable = 30
+	cost = 50
+
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = -10
+
+			OR = {
+				is_in_faction_with = USA
+				fuel_ratio > 0.8
+				num_divisions < 24
+			}
+		}
+
+		modifier = {
+			add = 50
+			OR = {
+				is_in_faction_with = GER
+				tag = GER
+			}
+			num_divisions > 24
+			fuel_ratio < 0.33
+		}
+	}
 	
+	modifier = {
+		army_fuel_consumption_factor = -0.15
+		army_armor_speed_factor = -0.15
+	}
+}
+
+
+ration_airforce_fuel = {
+
+	visible = { 
+		has_war = yes
+	}
 	
+	available = {
+		has_idea = tot_economic_mobilisation
+	}
+
+	fire_only_once = no
+	days_remove = 60
+	days_re_enable = 30
+	cost = 50
+
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = -10
+
+			OR = {
+				is_in_faction_with = USA
+				fuel_ratio > 0.8
+				is_major = no
+			}
+		}
+
+		modifier = {
+			add = 50
+			OR = {
+				is_in_faction_with = GER
+				tag = GER
+			}
+			is_major = yes
+			fuel_ratio < 0.33
+		}
+	}
+	
+	modifier = {
+		air_fuel_consumption_factor = -0.15
+		air_range_factor = -0.1
+	}
+}
+	
+
 	
 	siphon_gas = { #get more fuel
 
@@ -136,6 +225,8 @@ economy_decisions = {
 		
 		modifier = {
 			#make facories slow down output for a few days
+			army_speed_factor = -0.25
+			industrial_capacity_factory = -0.25 
 		}
 
 		remove_effect = {
@@ -143,7 +234,7 @@ economy_decisions = {
 			multiply_temp_variable = { totalfuel = num_of_controlled_factories }
 			
 			add_fuel = totalfuel
-			add_stability = -0.05
+			add_stability = -0.025
 			#calculate depending on num_of_controlled_factories
 		}
 	}
@@ -162,7 +253,7 @@ operations = {
 			}
 
 		available = {
-			date > 1944.5.31
+			date > 1944.6.5
 			date < 1945.2.1
 			has_war_with = GER
 			NOT = {has_war_with = USA}
@@ -196,30 +287,28 @@ operations = {
 		complete_effect = {
 			GER = { 
 			15 = {
-				set_resistance = 67
+				set_resistance = 62
 			#	set_compliance = 47
 
 				damage_building = {
 					type = coastal_bunker
-					damage = 5
+					damage = 2
 				}
 			}
 
 			14 = {
-				set_resistance = 68
+				set_resistance = 64
 				#set_compliance = 44
 			}
 
 			30 = {
-				set_resistance = 62
+				set_resistance = 61
 				#set_compliance = 41
 			}
 
 			16 = {
-				set_resistance = 49
+				set_resistance = 47
 			}
-
-
 
 
 			every_controlled_state = {
@@ -234,20 +323,18 @@ operations = {
 				}
 				damage_building = {
 					type = supply_node
-					damage = 0.26
+					damage = 0.21
 				}
 
 				damage_building = {
 					type = infrastructure
-					damage = 3
+					damage = 1
 				}
 				
 				damage_building = {
 					type = rail_way
-					damage = 3
+					damage = 2
 				}
-
-
 
 			}
 
@@ -270,7 +357,7 @@ operations = {
 			
 			available = {
 				has_war_with = GER
-				date > 1944.5.29
+				date > 1944.6.3
 
 				set_temp_variable = { days = global.num_days }
 				modulo_temp_variable = { days = 90 }
@@ -291,7 +378,7 @@ operations = {
 			}
 
 			#cost = 25
-		 	days_re_enable = 30
+		 	days_re_enable = 80
 			fire_only_once = no
 
 			ai_will_do = {
@@ -315,8 +402,8 @@ operations = {
 					#supply_consumption_factor = -0.25
 					#dig_in_speed_factor = +0.25
 					army_speed_factor = +0.5
-					army_attack_factor = +1.0
-					breakthrough_factor = +1.0
+					army_attack_factor = +1.25
+					breakthrough_factor = +1.25
 					army_org_regain = +10.0
 					army_org_factor = +1.0
 					naval_invasion_penalty = -1.0
@@ -324,7 +411,7 @@ operations = {
 					#max_commander_army_group_size = +1.0
 			}
 
-			days_remove = 9
+			days_remove = 8
 			
 			
 			complete_effect = {
@@ -334,12 +421,12 @@ operations = {
 
 				if = { limit = {
 					has_equipment = {
-						transport_plane_equipment_1 < 150
+						transport_plane_equipment_1 < 300
 					}
 				 }
 					add_equipment_to_stockpile = {
 						type = transport_plane_equipment_1
-						amount = 75
+						amount = 200
 					}
 				}
 			}
@@ -356,19 +443,19 @@ operations = {
 
 					FRA = {	set_province_controller = 3549 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.25 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.29 start_equipment_factor = 1" 
 						owner = USA
 					}
 
 					FRA = {	set_province_controller = 553 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.25 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.33 start_equipment_factor = 1" 
 						owner = USA
 					}
 
 					FRA = {	set_province_controller = 11521 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.35 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.43 start_equipment_factor = 0.76" 
 						owner = USA
 					}
 

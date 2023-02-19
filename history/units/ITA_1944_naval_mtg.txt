@@ -8,9 +8,13 @@ units= {
 		task_force = { 
 			name = "Squadra di Mar Rosso" 	
 			location = 11584 # Asmara, Eritrea		
-			ship = { name = "RCT Francesco Nullo" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ITA version_name = "Curatone Class" } } }
-			ship = { name = "RCT Mitragliere" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ITA version_name = "Curatone Class" } } }	
-		}					
+			ship = { name = "RI Luigi Cadorna" definition = light_cruiser start_experience_factor = 0.32 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ITA version_name = "Giussano Class" } } }
+			ship = { name = "RCT Carabiniere" definition = destroyer start_experience_factor = 0.42 equipment = { ship_hull_light_2 = { amount = 1 owner = ITA version_name = "Soldati Class" } } }
+			ship = { name = "RCT Mitragliere" definition = destroyer start_experience_factor = 0.35 equipment = { ship_hull_light_2 = { amount = 1 owner = ITA version_name = "Soldati Class" } } }	
+			ship = { name = "RCT Legionario" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+			ship = { name = "RCT Nicoloso da Recco" definition = destroyer start_experience_factor = 0.39 equipment = { ship_hull_light_2 = { amount = 1 owner = ITA version_name = "Soldati Class" } } }
+			
+		}					 
 		task_force = {					
 			name = "VIII Gruppo Sommergibili"							
 			location = 11584 		#venice
@@ -21,6 +25,8 @@ units= {
 			ship = { name = "RSmg Macallè" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = ITA version_name = "Calvi Class" } } }			
 			ship = { name = "RSmg Archimede" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = ITA version_name = "Marcello Class" } } }
 			ship = { name = "RSmg Torricelli" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = ITA version_name = "Marcello Class" } } }
+			ship = { name = "RSmg Platino" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = ITA version_name = "Acciaio Class" } } }
+			ship = { name = "RSmg Volframio" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = ITA version_name = "Acciaio Class" } } }
 		}
 	}
 } 
@@ -34,13 +40,13 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = ship_hull_submarine_2
+			type = ship_hull_submarine_3
 			creator = "ITA"
-			version_name = "Marcello Class"
+			version_name = "Acciaio Class"
 		}
 		name = "RSmg Comandante Faà di Bruno"
-		requested_factories = 6
-		progress = 0.65
+		requested_factories = 8
+		progress = 0.83
 		amount = 1
 	}
 }

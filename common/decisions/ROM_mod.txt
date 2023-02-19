@@ -20,6 +20,7 @@ war_measures = {
 			has_war_with = SOV
 			surrender_progress > 0.09
 			date > 1944.7.25
+			is_in_faction_with = GER
 
 			has_government = fascism
 
@@ -41,16 +42,31 @@ war_measures = {
 		}
 
 		cancel_effect = {
-			GER = { country_event = romania.cancel.switch.side.1 }
-			HUN = { country_event = romania.cancel.switch.side.1 }
-			ITA = { country_event = romania.cancel.switch.side.1 }
+
+			if = {
+				limit = {
+					is_puppet_of = GER
+				}
+
+				GER = { country_event = romania.cancel.switch.side.2 } #did the operation
+				HUN = { country_event = romania.cancel.switch.side.2 }
+				ITA = { country_event = romania.cancel.switch.side.2 }
+
+			else = {
+
+				GER = { country_event = romania.cancel.switch.side.1 } #did nothing
+				HUN = { country_event = romania.cancel.switch.side.1 }
+				ITA = { country_event = romania.cancel.switch.side.1 }
+			}
 		}
+	}
 
 		visible = {
 			date > 1944.1.1
 			date < 1945.8.1
 			GER = {has_war_with = SOV}
 			has_war_with = SOV
+			is_puppet = no
 			#surrender_progress > 0.01
 		}
 
@@ -77,7 +93,7 @@ war_measures = {
 
 
 	complete_effect = {
-			GER = { country_event = romania.switch.side.1 }
+			GER = { country_event = romania.switch.side.2 } #choice for germany
 			HUN = { country_event = romania.switch.side.1 }
 			ITA = { country_event = romania.switch.side.1 }
 		}
@@ -89,13 +105,18 @@ war_measures = {
 					has_capitulated = no
 				}
 				
-			
-
-
 			every_country = {
-				limit = { has_war_with = ROM  is_faction_leader = yes }
+				limit = {
+					 has_war_with = BUL 
+				OR = { 
+					is_faction_leader = yes 
+					is_in_faction = no
+				}
+			 }
 				white_peace = ROM 
 			}
+
+			GER = { remove_from_faction = ROM }
 
 			SOV = { transfer_state = 78 }
 			SOV = { transfer_state = 766 }
@@ -117,16 +138,45 @@ war_measures = {
 			}
 
 			set_popularities = {
-				neutrality = 30
+				neutrality = 20
 				democratic = 20
 				fascism = 20
-				communism = 30
+				communism = 40
 			}
 
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
+				}
+				SOV = {
+					set_autonomy = {
+						target = ROM
+						autonomous_state = autonomy_integrated_puppet
+						end_wars  = no 
+						end_civil_wars = no
+					}
+				}
+				else = {
+					SOV = {
+					set_autonomy = {
+							target = ROM
+							autonomous_state = autonomy_puppet
+							end_wars  = no 
+							end_civil_wars = no
+						}
+					}
+				}
+			}
 
-			ROM = { delete_units = { division_template = "Divizia Infanterie" disband = yes } }
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				ROM = { delete_units = { division_template = "Divizia Infanterie" disband = yes } }
+			}
+
 			add_stability = -0.21
-			add_war_support = -0.24
+			add_war_support = -0.50
 
 
 
@@ -205,15 +255,14 @@ war_measures = {
 					GER = { remove_resource_rights = 46 } 
 			}
 
-			GER = { remove_from_faction = ROM }
 			SOV = { add_to_faction = ROM }
 
-		ROM = {
-			add_to_war = {
-				targeted_alliance = SOV
-				enemy = GER
-				}
-			}
+		#ROM = {
+		#	add_to_war = {
+		#		targeted_alliance = SOV
+		#		enemy = GER
+		#		}
+		#	}
 		}
 	}
 }

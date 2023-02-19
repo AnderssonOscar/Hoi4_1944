@@ -22,6 +22,17 @@ state={
 		}
 		add_core_of = AST
 
+		1943.12.30 = {
+			buildings = {
+				air_base = 5
+
+				7669 = {
+					naval_base = 5
+	
+				}
+			}
+		}
+
 	}
 
 	provinces={

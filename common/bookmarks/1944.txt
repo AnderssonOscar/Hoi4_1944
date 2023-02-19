@@ -108,11 +108,11 @@ bookmarks = {
 			ideology = fascism
 			ideas={
 				vittoria_mutilata
-				victor_emmanuel
+				#victor_emmanuel
 			}
 			focuses = {
 				ITA_pact_of_steel
-				ITA_spanish_italian_faction
+				#ITA_spanish_italian_faction
 				ITA_italy_first
 			}			
 		}

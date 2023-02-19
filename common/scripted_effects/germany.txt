@@ -1,0 +1,15 @@
+
+GER_calculate_casualities_inflicted_on_SOV = {
+	
+	if = {
+		limit = { 
+			tag = GER
+			has_war_with = SOV
+		}
+
+		SOV = { set_temp_variable = { SOV_casualties = casualties_k } }
+		set_variable = { global.SOV_casualties_g = SOV_casualties }
+	}
+}
+
+

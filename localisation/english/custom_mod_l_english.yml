@@ -11,6 +11,19 @@ siphon_gas_desc:0 "Siphon Gas from every available source."
 old_weapon_caches:0 "Old Weapon Caches"
 old_weapon_caches_desc:0 ""
 
+
+GER_rocket_bases_1:0 "Develop the V1 rocket & build launch site."
+GER_rocket_bases_1_desc:0 ""
+
+GER_rocket_bases_2:0 "Develop the V2 rocket & build launch site."
+GER_rocket_bases_2_desc:0 ""
+
+ration_army_fuel:0 "Ration the fuel of the army."
+ration_army_fuel_desc:0 ""
+
+ration_airforce_fuel:0 "Ration the fuel of the airforce."
+ration_airforce_fuel_desc:0 ""
+
 dig_in_and_hold:0 "Dig in and hold"
 dig_in_and_hold_desc:0 "Dig deeper!"
 
@@ -88,11 +101,15 @@ HUN_reform_army_tooltip:0 "Receive 8 Infantry divisons and 2 armored divisions"
 
 romania.switch.side.1:0 "Romania is negotiating"
 romania.switch.side.1.t:0 "Romania is negotiating with the soviets."
-romania.switch.side.1.d:0 "We have received information that the romanians are preparing to betray us. \nStop them by taking back the lost territory whitin 12 days."
+romania.switch.side.1.d:0 "We have received information that the romanians are preparing to betray us. \nStop them by taking back the lost territory whitin 12 days.\n\nWe could also seize control of the country..."
 
 romania.cancel.switch.side.1:0 "Romanian counter-offensive"
 romania.cancel.switch.side.1.t:0 "Our Romanian counter-offensive was successful."
 romania.cancel.switch.side.1.d:0 "Romania has withdrawn from negotiations with the Soviets, for now."
+
+romania.cancel.switch.side.2:0 "Romanian goverment under german control"
+romania.cancel.switch.side.2.t:0 "Romanian goverment under german control"
+romania.cancel.switch.side.2.d:0 "Germany launched their so called Operation Margarethe II which took control of the romainan goverment.\nThere will be no more negotiations."
 
 finland.switch.side.1:0 "finland is negotiating"
 finland.switch.side.1.t:0 "finland is negotiating with the soviets."
@@ -111,7 +128,34 @@ operation.margarethe.1:0 "Operation Margarethe"
 operation.margarethe.1.t:0 "Operation Margarethe"
 operation.margarethe.1.d:0 "We have successfully gotten hungary back in line."
 
+operation.margarethe.2:0 "Operation Margarethe II"
+operation.margarethe.2.t:0 "Operation Margarethe II"
+operation.margarethe.2.d:0 "We have successfully gotten romania back in line."
+
 operation.margarethe.decision.1.d:0 "We need to stop the hungarians secretly negotiating a separate peace with the Allies"
 
+german.ryti.ribbentrop.1:0 "Ryti–Ribbentrop Agreement"
+german.ryti.ribbentrop.1.t:0 "Ryti–Ribbentrop Agreement"
+german.ryti.ribbentrop.1.d:0 "Finland requests our extended support against the bolsheviks\n\nWe can divert part of our industry for a while to supply the finnish."
+german_ryti_ribbentrop_tanks_tt:0 "§Y~300§ §W units of§ §Y Tanks Of Mixed Type & Quality§ §W is added to the national stockpile.§\n"
 
 
+finland.ryti.ribbentrop.1:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.1.t:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.1.d:0 "We pledged to continued the war against the soviets, Germany has in turn sent us a large shipment of supplies, men and a mix of tanks."
+finland_ryti_ribbentrop_large_tt:0 "\nA §Glarge shipment of german equipment and tanks have been added to our storage.§"
+
+finland.ryti.ribbentrop.2:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.2.t:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.2.d:0 "We pledged to continued the war against the soviets, Germany has in turn sent us a shipment of supplies."
+german_ryti_ribbentrop_medium_tt:0 "\nA §Ggerman shipment of equipment have been added to our storage.§"
+
+finland.ryti.ribbentrop.3:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.3.t:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.3.d:0 "Germany has declined to support us."
+
+collaborationist_formation:0 "Collaboration Decisions"
+collaborationist_formation_desc:1 "To help the war effort we need to allow collaboration with the previously undesirable."
+Recruit_Andrey_Vlasov:0 "Recruit Andrey Vlasov"
+Russian_Liberation_Army:0 "From the Russian Liberation Army"
+Recruit_POWS:0 "Recruit POWs"

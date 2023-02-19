@@ -10,8 +10,9 @@ operations = {
 		}
 
 		visible = { 
-			date > 1944.1.1
+			date > 1994.1.1 #dont need when it exist in natioanl focus
 			is_puppet_of = GER
+			
 
 			OR = {
 				has_war_with = SOV

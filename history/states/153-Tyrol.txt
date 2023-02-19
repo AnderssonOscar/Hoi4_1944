@@ -27,12 +27,14 @@ state={
 		1943.12.30 = {
 			buildings = {
 				industrial_complex = 4
+				anti_air_building = 3
 			}
 		}
+		
 	}
 
 	provinces={
-		668 671 673 3675 6673 6678 6680 9633 9636 11618 11634 
+		668 671 673 3675 6673 9633 9636 11618 11634 
 	}
 
 	local_supplies=12.0 

@@ -1,20 +1,23 @@
 
 
 ROM_defend_the_front = {
+
+	allowed = { tag = ROM }
+
 	enable = {
-		tag = ROM
 		is_historical_focus_on = yes
+
 		has_war_with = SOV 
+		
+		NOT = { has_war_with = BUL }
 		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
 		date > 1944.1.1
 	}
 
-	abort = {
-		OR = {
-			has_war_with = BUL
-			has_war_with = HUN
-		}
-	}
+	abort_when_not_enabled = yes
+
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
@@ -25,13 +28,13 @@ ROM_defend_the_front = {
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "SLO"
-		value = -5
+		value = 5
 	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "HUN"
-		value = -5
+		value = 2
 	}
 
 	ai_strategy = {
@@ -39,7 +42,145 @@ ROM_defend_the_front = {
 		 country_trigger = {tag = SOV}
 		value = 115
 	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 26 
+		value = 30000 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = garrison
+		value = -500
+	}
+
+	ai_strategy = {
+		type = garrison_reinforcement_priority #supression
+		value = -100
+	}
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.05
+		states = {
+			766
+		}
+
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
 }
+
+
+ROM_dont_waste_pp = {
+
+	allowed = { tag = ROM }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		date > 1944.1.1
+		date < 1945.1.1
+
+		has_political_power < 500
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -100
+	}
+
+	ai_strategy = { 
+		type = pp_spend_priority
+		id = admiral
+		value = -100
+	}
+}
+
+
+ROM_hold_soviet_offensive = {
+
+	allowed = { tag = ROM }
+
+	enable = {
+		OR = {
+			SOV = { has_idea = major_offensive } 
+
+			AND = {
+				SOV = { NOT = { has_idea = major_offensive } }
+				SOV = { NOT = { has_idea = offensive_exhaustion } } 
+			}
+		}
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		date > 1944.1.1
+		date < 1944.9.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = { tag = SOV }
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
+
+ROM_attack_after_soviet_offensive = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		SOV = { has_idea = offensive_exhaustion } 
+		surrender_progress < 0.24
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		NOT = { has_war_with = BUL }
+		is_in_faction_with = GER
+
+		OR = {
+			NOT = { controls_province = 6727} #core romania coast-river
+			NOT = { controls_province = 6743} 
+			NOT = { controls_province = 9683} 
+			NOT = { controls_province = 11686} 
+
+			NOT = { controls_province = 11686} #Iasi
+		}
+
+		NOT = { controls_province = 11670 } #if we gain odessa stop
+
+		date > 1944.1.1
+		date < 1944.9.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = { tag = SOV }
+		ordertype = front
+		execute_order = yes
+		execution_type = balanced
+	}
+}
+
+
+
 
 ROM_unit_buffer_capital= { 
 	allowed = {
@@ -48,6 +189,9 @@ ROM_unit_buffer_capital= {
 	enable = { 
 			has_war = yes
 			date > 1944.1.1
+			surrender_progress > 0.16
+			is_historical_focus_on = yes
+
 			OR = {
 				has_war_with = SOV
 				has_war_with = GER
@@ -59,13 +203,11 @@ ROM_unit_buffer_capital= {
 	ai_strategy = {
 		type = put_unit_buffers
 
-		ratio = 0.15
+		ratio = 0.1
 
 		states = {
 			46
 		}
-
-		#area = scandinavia
 
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = yes
@@ -76,14 +218,16 @@ ROM_unit_production = {
 
 	allowed = {	original_tag = ROM }
 	enable = {
-		always = yes
-		date > 1944.1.1
-		date < 1945.1.1
-	}
-	abort = {
-		always = no
-	}
+		is_historical_focus_on = yes
+		is_in_faction_with = GER
+		has_war_with = SOV
+		has_war_with = ENG
+		has_war_with = USA
 
+		date > 1944.1.1
+		date < 1945.3.1
+	}
+	abort_when_not_enabled = yes
 
 	#Air unit factors
 	ai_strategy = {
@@ -96,6 +240,18 @@ ROM_unit_production = {
 		type = unit_ratio
 		id = strategic_bomber
 		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = -100 
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = -100 
 	}
 
 	ai_strategy = {
@@ -112,16 +268,43 @@ ROM_unit_production = {
 
 	ai_strategy = {
 		type = equipment_production_factor
+		id = cas
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = heavy_fighter
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
 		id = tactical_bomber
 		value = -100
 	}
 
-	ai_strategy = { type = equipment_production_factor id = cas value = -200 }
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = -100
+	}
 
-	ai_strategy = { type = equipment_variant_production_factor id = fighter_equipment      value = -100 }
-	ai_strategy = { type = equipment_variant_production_factor id = heavy_fighter_equipment      value = -100 }
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = -100
+	}
+
+	ai_strategy = { type = equipment_variant_production_factor id = light_tank_chassis value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_tank_chassis value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_chassis value = -250 }
+
+	ai_strategy = { type = equipment_production_factor id = cas value = -200 }
+	ai_strategy = { type = equipment_variant_production_factor id = small_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = large_plane_airframe      value = -100 }
 	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
-	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
 }
 
 
@@ -130,6 +313,7 @@ ROM_unit_production = {
 ROM_build_more_mil = {
 	allowed = { tag = ROM }
 	enable = {
+		is_historical_focus_on = yes
 		date < 1945.1.1
 		date > 1943.12.30
 		has_war_with = SOV

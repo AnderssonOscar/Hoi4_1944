@@ -47,7 +47,7 @@ state={
 				bunker = 10
 
 			}
-			anti_air_building = 5
+			anti_air_building = 2
 			air_base = 5
 
 		}
@@ -57,7 +57,7 @@ state={
 				industrial_complex = 4
 			}
 		}
-					1943.12.1 = {
+		1943.12.1 = {
 			owner = GER
 			controller = GER
 		}

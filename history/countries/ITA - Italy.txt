@@ -21,7 +21,7 @@ set_research_slots = 4
 set_stability = 0.53
 set_war_support = 0.54
 add_ideas = {
-	victor_emmanuel
+	#victor_emmanuel
 	vittoria_mutilata
 	limited_exports
 	limited_conscription
@@ -41,6 +41,341 @@ add_ideas = {
 	set_resistance = 0
 	set_garrison_strength = 1.0
 }
+
+
+
+
+
+#1944
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_technology = {
+			photo_reconnaisance = 1
+
+			survivability_studies = 1
+
+			aa_lmg = 1
+			aa_hmg = 1
+
+			aa_cannon_1 = 1
+			#aa_cannon_2 = 1
+			
+			engines_1 = 1
+			engines_2 = 1
+			engines_3 = 1
+
+			range_improvements = 1
+
+			early_bombs = 1
+
+			aircraft_construction = 1
+			
+			engines_1 = 1
+			engines_2 = 1
+
+			iw_small_airframe = 1
+			basic_small_airframe = 1
+			improved_small_airframe = 1
+			advanced_small_airframe = 1
+
+			iw_medium_airframe = 1
+			basic_medium_airframe = 1
+			improved_medium_airframe = 1
+
+			iw_large_airframe = 1
+			basic_large_airframe = 1
+			improved_large_airframe = 1
+		}
+	else = {
+		#set_air_oob = "ITA_1936_air_legacy"
+		set_technology = {
+			naval_bomber1 = 1
+			naval_bomber2 = 1
+	
+			CAS1 = 1
+			CAS2 = 1
+	
+			fighter1 = 1
+			fighter2 = 1
+			fighter3 = 1
+	
+			heavy_fighter1 = 1
+			heavy_fighter2 = 1
+	
+			strategic_bomber1 = 1
+			strategic_bomber2 = 1
+	
+			tactical_bomber1 = 1
+			tactical_bomber2 = 1
+		}
+	}
+}
+
+
+
+#######################################
+############ MISSIOLINIS ##############
+#######################################
+
+set_variable = { ITA_missiolinis_number_of_missions_triggered = 0 }
+set_variable = { ITA_missiolinis_number_of_missions_resolved = 0 }
+set_variable = { ITA_missiolinis_active_missions = 0 }
+set_variable = { ITA_missiolinis_successful_missions = 0 }
+set_variable = { ITA_missiolinis_failed_missions = 0 }
+
+set_variable = { ITA_missiolinis_min_cd_between_missions = 30 } #WARNING: IF THIS CHANGES IT*S NECESSARY TO UPDATE THE VALUE IN THE FLAG USED IN ITA_missiolinis_initialize_new_mission_effect
+
+set_country_flag = { flag = ITA_missiolinis_level_flag value = 1 } #Basic level - Default missions
+
+#DECISIONS values
+#ETH_hold_the_north_time initialized in ETH scope inside the ETH history file
+set_variable = { ITA_missiolinis_conquer_ethiopia_days = 170 }
+set_variable = { ITA_missiolinis_pacify_ethiopia_days = 720 }
+set_variable = { ITA_missiolinis_default_days = 350 }
+
+set_variable = { ITA_missiolinis_number_of_civs_goal = 4 } #Used by Strengthen Heavy Industry Missiolini
+set_variable = { ITA_missiolinis_fielded_manpower_goal = 1000000 } # (1kk) Used by Strengthen the Army Missiolini
+set_variable = { ITA_missiolinis_fielded_manpower_goal_repeatable = 500000 } # (500k) Used by Strengthen the Army Missiolini
+set_variable = { ITA_missiolinis_trucks_to_produce = 500 } #Used by Stockpile Trucks Missiolini
+set_variable = { ITA_missiolinis_fighters_to_produce = 300 } #Used by Strengthened the Airforce Missiolini
+set_variable = { ITA_missiolinis_bombers_to_produce = 300 } #Used by Strengthened the Airforce Missiolini
+set_variable = { ITA_missiolinis_aircraft_to_produce = 300 } #Unused yet. Might be used in the future by Strengthened the Airforce Missiolini
+
+
+############# MILITIA CAP ###############
+set_variable = { ITA_militias_cap = 12 } #WARNING THIS VALUE NEEDS TOP MATCH THE division_cap value for the blackshirt template in the OOB
+
+
+############ ATOMIC RESEARCH ############
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	set_variable = { global.atomic_research_race = 0 }
+}
+
+
+#######################################
+################ BOP ##################
+#######################################
+
+#set_variable = { ITA_cores_lost_for_modifiers = 0 } #TODO_Manu: This will be killed once there is code support for has_bop_modifier or something like that
+set_variable = { ITA_bop_take_over_ministry_cost = 50 }
+set_variable = { ITA_bop_resign_ministry_cost = 15 }
+set_variable = { ITA_bop_liturgical_reforms_cd = 365 }
+
+set_variable = { ITA_bop_concesions_to_the_bourgeoisie_cost = 100 } # Changes if going democratic
+set_variable = { ITA_bop_concesions_to_the_bourgeoisie_days = 180 } # Changes if going democratic
+
+
+set_variable = { ITA_bop_generic_council_cost = 25 }
+
+#Naval Cooperation Programs
+set_variable = { ITA_export_midget_submarines_days = 90 }
+
+
+################
+### BBA vars ###
+################
+
+# ETHIOPIAN STATES ARRAY
+every_state = {
+	limit = {
+		is_initial_ethiopian_state = yes
+	}
+	add_to_array = { ROOT.ITA_initial_ethiopian_states = THIS }
+}
+
+#INDUSTRIALIZATION
+set_variable = { ITA_new_industrialization_program_factories_required = 100 }
+
+#VALLO ALPINO ORIENTALE
+set_variable = { ITA_vallo_alpino_days = 180 }
+set_variable = { ITA_vallo_alpino_cp_cost = 25 }
+set_variable = { ITA_vallo_alpino_pp_cost = 15 }
+set_variable = { ITA_vallo_alpino_cp_cost_negative = -25 }
+set_variable = { ITA_vallo_alpino_pp_cost_negative = -15 }
+
+#COLONIAL MANAGEMENT
+set_variable = { ITA_colonial_management_days = 30 }
+set_variable = { ITA_colonial_management_cd = 335 }
+set_variable = { ITA_reorganize_irregulars_days = 60 }
+set_variable = { ITA_reorganize_ascari_days = 60 }
+set_variable = { ITA_infrastructure_program_in_state_days = 120 }
+set_variable = { ITA_infrastructure_program_in_state_cost = 50 }
+set_variable = { ITA_abolish_the_colonies_days = 365 }
+
+#NAVAL COOPERATION PROGRAMS
+set_variable = { ITA_joint_maneuvers_with_country_days = 60 }
+
+#DIPLOMACY
+set_variable = { ITA_pressure_government_days = 30 }
+set_variable = { ITA_pressure_government_cd = 365 }
+set_variable = { ITA_pressure_country_government_cost = 50 }
+set_variable = { ITA_ideological_rallies_days = 90 }
+set_variable = { ITA_promote_ideology_rallies_cost = 50 }
+set_variable = { ITA_send_ultimatum_to_country_cost = 75 }
+set_variable = { ITA_ultimatum_days = 14 }
+
+
+# DYNAMIC MODIFIERS
+
+#PARTISAN STATE MODIFIERS FOR CW - Set up in LATIUM (Rome) state for easier access
+2 = {
+	set_variable = { ITA_fronte_militare_clandestino_required_garrison_factor = 0.15 } #Fronte Militare Clandestino focus
+	set_variable = { ITA_fronte_militare_clandestino_resistance_growth_on_our_occupied_states = 0.1 } #Fronte Militare Clandestino focus
+	set_variable = { ITA_fronte_militare_clandestino_resistance_damage_to_garrison_on_our_occupied_states = 0 } #Gappisti focus
+	set_variable = { ITA_fronte_militare_clandestino_resistance_target_on_our_occupied_states = 0 } #Gappisti focus
+	set_variable = { ITA_fronte_militare_clandestino_compliance_growth_on_our_occupied_states = 0 } #Partisan Republics focus
+}
+
+#RICOSTRUZIONE INDUSTRIALE
+set_variable = { ITA_iri_production_speed_industrial_complex_factor = 0.05 }
+set_variable = { ITA_iri_industrial_concern_cost_factor = -0.35 }
+set_variable = { ITA_iri_tank_manufacturer_cost_factor = -0.15 }
+set_variable = { ITA_iri_materiel_manufacturer_cost_factor = -0.15 }
+set_variable = { ITA_iri_aircraft_manufacturer_cost_factor = -0.15 }
+set_variable = { ITA_iri_naval_manufacturer_cost_factor = -0.15 }
+
+set_variable = { ITA_iri_production_speed_arms_factory_factor = 0 }
+set_variable = { ITA_iri_consumer_goods_factor = 0 }
+set_variable = { ITA_iri_local_resources_factor = 0 }
+set_variable = { ITA_iri_production_speed_infrastructure_factor = 0 }
+set_variable = { ITA_re_supply_node_range = 0 }
+set_variable = { ITA_iri_production_speed_dockyard_factor = 0 }
+
+add_dynamic_modifier = { modifier = ITA_ricostruzione_industriale_dynamic_modifier }
+
+
+#MILITARY INDUSTRY
+set_variable = { ITA_military_industry_dm_production_factory_start_efficiency_factor = -0.05 }
+set_variable = { ITA_military_industry_dm_factory_max_efficiency_factor = -0.1 }
+set_variable = { ITA_military_industry_dm_production_factory_efficiency_gain_factor = -0.05 }
+set_variable = { ITA_military_industry_dm_industrial_capacity_factory = -0.1 }
+
+set_variable = { ITA_military_industry_dm_line_change_production_efficiency_factor = 0 }
+set_variable = { ITA_military_industry_dm_production_lack_of_resource_penalty_factor = 0 }
+set_variable = { ITA_military_industry_dm_equipment_upgrade_xp_cost = 0 }
+set_variable = { ITA_military_industry_dm_industrial_capacity_dockyard = 0 }
+set_variable = { ITA_military_industry_air_equipment_upgrade_xp_cost = 0 }
+
+add_dynamic_modifier = { modifier = ITA_military_industry_dynamic_modifier }
+add_ideas = ITA_hidden_research_penalties_ns #TODO_Manu: Hidden NS to apply research penalties as part of the Military Industry Dynamic Modifier. Delete when code support is in
+
+
+#REGIO ESERCITO
+#set_variable = { ITA_re_army_experience_loss_factor = -0.1 }
+set_variable = { ITA_re_army_max_dig_in_factor = 0.1 }
+set_variable = { ITA_re_land_doctrine_cost_factor = 0.1 }
+#set_variable = { ITA_re_land_reinforce_rate = -0.05 }
+set_variable = { ITA_re_army_speed_factor = -0.1 }
+set_variable = { ITA_re_army_army_org_factor = -0.1 }
+set_variable = { ITA_re_org_loss_when_moving = 0.15 }
+
+set_variable = { ITA_re_army_morale_factor = 0 }
+set_variable = { ITA_re_army_leader_cost_factor = 0 }
+set_variable = { ITA_re_experience_gain_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_infantry_defence_factor = 0 }
+set_variable = { ITA_re_army_core_defence_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_cavalry_speed_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_cavalry_attack_factor = 0 }
+set_variable = { ITA_re_unit_cavalry_design_cost_factor = 0 }
+set_variable = { ITA_re_unit_camelry_design_cost_factor = 0 }
+set_variable = { ITA_re_promote_cost_factor = 0 }
+set_variable = { ITA_re_special_forces_cap = 0 }
+set_variable = { ITA_re_special_forces_attack_factor = 0 }
+set_variable = { ITA_re_special_forces_defence_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_mountaineers_defence_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_mountaineers_max_org_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_paratrooper_max_org_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_militia_max_org_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_militia_defence_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_militia_attack_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_militia_speed_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_blackshirt_assault_battalion_defence_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_blackshirt_assault_battalion_attack_factor = 0 }
+set_variable = { ITA_re_special_forces_out_of_supply_factor = 0 }
+set_variable = { ITA_re_conscription_factor = 0 }
+set_variable = { ITA_re_command_power_gain_mult = 0 }
+set_variable = { ITA_re_non_core_manpower = 0 }
+set_variable = { ITA_re_army_attack_factor = 0 }
+set_variable = { ITA_re_modifier_army_sub_unit_cavalry_defence_factor = 0 }
+set_variable = { ITA_re_max_command_power_mult = 0 }
+set_variable = { ITA_re_supply_consumption_factor = 0 }
+set_variable = { ITA_re_acclimatization_hot_climate_gain_factor = 0 }
+set_variable = { ITA_re_heat_attrition_factor = 0 }
+
+add_dynamic_modifier = { modifier = ITA_regio_esercito_dynamic_modifier }
+
+
+#REGIA AERONAUTICA
+set_variable = { ITA_ra_air_ace_generation_chance_factor = 0.1 }
+set_variable = { ITA_ra_air_superiority_bonus_in_combat = 0.05 }
+set_variable = { ITA_ra_air_doctrine_cost_factor = 0.1 }
+set_variable = { ITA_ra_air_nav_efficiency = -0.1 }
+set_variable = { ITA_ra_air_night_penalty = 0.15 }
+set_variable = { ITA_ra_air_weather_penalty = 0.15 }
+set_variable = { ITA_ra_air_accidents_factor= 0.05 }
+
+set_variable = { ITA_ra_air_training_xp_gain_factor = 0 }
+set_variable = { ITA_ra_air_mission_xp_gain_factor = 0 }
+set_variable = { ITA_ra_strategic_bomb_visibility = 0 }
+set_variable = { ITA_ra_air_strategic_bomber_bombing_factor = 0 }
+set_variable = { ITA_ra_air_range_factor = 0 }
+set_variable = { ITA_ra_air_superiority_efficiency = 0 }
+set_variable = { ITA_ra_air_intercept_efficiency = 0 }
+
+add_dynamic_modifier = { modifier = ITA_regia_aeronautica_dynamic_modifier }
+
+
+#REGIA MARINA
+set_variable = { ITA_rm_naval_has_potf_in_combat_attack = 0.1 }
+set_variable = { ITA_rm_screening_efficiency = 0.05 }
+set_variable = { ITA_rm_naval_doctrine_cost_factor = 0.1 }
+set_variable = { ITA_rm_naval_coordination = -0.05 }
+set_variable = { ITA_rm_naval_detection = -0.1 }
+set_variable = { ITA_rm_spotting_chance = -0.1 }
+
+set_variable = { ITA_rm_convoy_raiding_efficiency_factor = 0 }
+set_variable = { ITA_rm_naval_strike_attack_factor = 0 }
+set_variable = { ITA_rm_navy_submarine_attack_factor = 0 }
+set_variable = { ITA_rm_navy_capital_ship_attack_factor = 0 }
+set_variable = { ITA_rm_naval_morale_factor = 0 }
+set_variable = { ITA_rm_strike_force_movement_org_loss = 0 }
+set_variable = { ITA_rm_special_forces_cap = 0 }
+set_variable = { ITA_rm_amphibious_invasion = 0 }
+set_variable = { ITA_rm_naval_invasion_capacity = 0 }
+set_variable = { ITA_rm_invasion_preparation = 0 }
+set_variable = { ITA_rm_naval_strike_agility_factor = 0 }
+set_variable = { ITA_rm_naval_critical_score_chance_factor = 0 }
+set_variable = { ITA_rm_sub_retreat_speed = 0 }
+set_variable = { ITA_rm_decryption_factor = 0 }
+set_variable = { ITA_rm_navy_intel_factor = 0 }
+set_variable = { ITA_rm_naval_invasion_prep_speed = 0 }
+
+add_dynamic_modifier = { modifier = ITA_regia_marina_dynamic_modifier }
+
+
+#INTERNATIONAL AID (Commie)
+set_variable = { ITA_infantry_equipment_from_leftist_aid = 0 }
+set_variable = { ITA_support_equipment_from_leftist_aid = 0 }
+set_variable = { ITA_trucks_from_leftist_aid = 0 }
+set_variable = { ITA_consumer_goods_from_leftist_aid = 0 }
+
+
+#DANNES STUFF
+set_variable = { ITA_iri_conversion_cost_civ_to_mil_factor = 0 } #Civilian Industry
+set_variable = { ITA_re_infantry_attack = 0 } #Army
+set_variable = { ITA_re_motorized_attack = 0 } #Army
+set_variable = { ITA_re_out_of_supply = 0 } #Army
+set_variable = { ITA_re_armor_attack = 0 } #Army
+set_variable = { ITA_re_irregular_org = 0 } #Army/Irregular
+set_variable = { ITA_ra_air_agility_factor = 0 } #Airforce
+set_variable = { ITA_ra_ground_attack_factor = 0 } #Airforce
+set_variable = { ITA_ra_air_cas_present_factor = 0 } #Airforce
+set_variable = { ITA_ra_air_mission_efficiency = 0 } #Airforce
+set_variable = { ITA_ra_air_attack = 0 } #Airforce
+set_variable = { ITA_ra_air_interception = 0 } #Airforce
 
 # Starting tech
 set_technology = {
@@ -78,6 +413,7 @@ if = {
 	set_technology = {
 		gwtank_chassis = 1
 		basic_light_tank_chassis = 1
+		basic_medium_tank_chassis = 1 
 	}
 }
 if = {
@@ -108,12 +444,12 @@ if = {
 		basic_depth_charges = 1
 		basic_torpedo = 1
 		basic_battery = 1
-		basic_secondary_battery = 1
+		 
 		basic_cruiser_armor_scheme = 1
 		basic_heavy_battery = 1
 		basic_medium_battery = 1
 		basic_light_battery = 1
-		improved_secondary_battery = 1
+		 
 		basic_heavy_armor_scheme = 1
 		early_ship_hull_submarine = 1
 		basic_ship_hull_submarine = 1
@@ -175,37 +511,47 @@ if = {
 		extensive_conscription
 	}
 
-	complete_national_focus = ITA_ethiopian_war_logistics
-	complete_national_focus = ITA_industrial_effort
-	complete_national_focus = ITA_industrial_effort_2
-	complete_national_focus = ITA_victoryinETH
-	unlock_national_focus = ITA_slovenia_dalmatia_claims
-	unlock_national_focus = ITA_albania_war_goal
-	complete_national_focus = ITA_light_ship_effort
-	complete_national_focus = ITA_escort_effort
-	complete_national_focus = ITA_submarine_effort
-	complete_national_focus = ITA_bulgaria_friend
-	complete_national_focus = ITA_pact_of_steel
+	### FOCUS TREE ###
+	unlock_national_focus = ITA_solid_progress
+	#1936
+	complete_national_focus = ITA_ethiopian_war_logistics_bba #35
+	complete_national_focus = ITA_italian_highways_bba #35
+	complete_national_focus = ITA_servizio_informazione_militare
+	complete_national_focus = ITA_triumph_in_africa_bba
+	complete_national_focus = ITA_ministry_of_italian_africa #35
+	complete_national_focus = ITA_foreign_affairs #35
+	unlock_national_focus = ITA_the_new_emperor_of_ethiopia #35
+	unlock_national_focus = ITA_devaluate_the_lire #35
+	unlock_national_focus = ITA_topple_amhara_rulers #35
+	
+	#1937
+	unlock_national_focus = ITA_corpo_di_truppe_volontarie #35
+	complete_national_focus = ITA_army_primacy_bba #35
+	complete_national_focus = ITA_culto_del_duce
+	complete_national_focus = ITA_fiocchi_munizioni #35
+	complete_national_focus = ITA_naval_power_projection #35
+	complete_national_focus = ITA_air_innovations_bba #35
+	complete_national_focus = ITA_expand_rome_flying_school #35
+	complete_national_focus = ITA_oto_naval_guns #35
+	complete_national_focus = ITA_develop_libya #35
 
-	complete_national_focus = ITA_army_primacy
-	complete_national_focus = ITA_mare_nostrum
-	unlock_national_focus = ITA_modernized_artillery
-	complete_national_focus = ITA_air_innovation
-	complete_national_focus = ITA_modernized_army
-	complete_national_focus = ITA_fortification_effort
-	complete_national_focus = ITA_extra_tech_slot
-	complete_national_focus = ITA_special_forces
-	complete_national_focus = ITA_capital_ships
+	#1938
+	complete_national_focus = ITA_steel_industry_in_terni
+	complete_national_focus = ITA_citta_dell_aria
+	complete_national_focus = ITA_the_man_of_providence #35
+	complete_national_focus = ITA_security_militias #35
+	complete_national_focus = ITA_railway_innovations
+	unlock_national_focus = ITA_expand_foggia_farm_fields
 
-    complete_national_focus = ITA_carrier_effort
-    complete_national_focus = ITA_romania_friend
-    unlock_national_focus = ITA_german_millitary_cooperation
-    complete_national_focus = ITA_italian_highways
-    complete_national_focus = ITA_bomber_effort 
-    unlock_national_focus = ITA_greece_war_goal
-    unlock_national_focus = ITA_german_rd_treaty 
-    complete_national_focus = ITA_naval_air_effort 
-    complete_national_focus = ITA_atlantic_fleet 	
+	#1939
+	unlock_national_focus = ITA_potential_allies_in_the_balkans #35
+	complete_national_focus = ITA_develop_eritrea #35
+	complete_national_focus = ITA_industria_della_gomma_sintetica #35
+	unlock_national_focus = ITA_albanian_occupation #35 #Apr 1939
+	complete_national_focus = ITA_pact_of_steel #35 #May 39
+	complete_national_focus = ITA_expand_naval_facilities #35
+	complete_national_focus = ITA_stockpile_fuel #35
+
 
 	#Simulate Claims on Yugoslavia focus effects
 	add_state_claim = 102
@@ -340,7 +686,6 @@ set_popularities = {
 }
 
 recruit_character = ITA_palmiro_togliatti
-recruit_character = ITA_victor_emmanuel_iii
 recruit_character = ITA_ferruccio_parri
 recruit_character = ITA_benito_mussolini
 recruit_character = ITA_pietro_badoglio
@@ -358,8 +703,6 @@ recruit_character = ITA_carlo_bergamini
 recruit_character = ITA_angelo_iachino
 recruit_character = ITA_alfredo_guzzoni
 recruit_character = ITA_renato_sandalli
-recruit_character = ITA_guiseppe_fioravanzo
-recruit_character = ITA_francesco_pricolo
 recruit_character = ITA_silvio_scaroni
 recruit_character = ITA_vittorio_ambrosio
 recruit_character = ITA_arturo_riccardi
@@ -980,10 +1323,12 @@ if = {
 1943.12.30 = {
 
 		annex_country = { target = ETH transfer_troops = no }
-		set_fuel = 121812
+		set_fuel = 111812
 
-		unlock_national_focus = ITA_extra_tech_slot
-		set_research_slots = 4
+		set_research_slots = 3
+
+		set_stability = 0.56
+		set_war_support = 0.28
 		
 	add_ideas = {
 		#laws
@@ -993,6 +1338,49 @@ if = {
 		export_focus
 		dont_surrender_mod
 		macchi
+		#safe_industry
+	}
+
+	retire_character = ITA_italo_balbo
+	
+	remove_ideas = {
+		ITA_stockpiling_fuel
+		ITA_battaglia_per_la_terra
+	}
+
+	set_country_flag = ITA_rsi_cw_flag #SET AS RSI ALIAS
+	set_cosmetic_tag = ITA_rsi
+
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+		#upgrade_intelligence_agency = upgrade_army_department
+		#upgrade_intelligence_agency = upgrade_airforce_department
+			
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+		#upgrade_intelligence_agency = upgrade_passive_defense
+		#upgrade_intelligence_agency = upgrade_anti_partisan
+
+		upgrade_intelligence_agency = upgrade_invisible_ink
+		upgrade_intelligence_agency = upgrade_suicide_pills
+
+		upgrade_intelligence_agency = upgrade_training_centers
+		upgrade_intelligence_agency = upgrade_commando_training
+		upgrade_intelligence_agency = upgrade_interrogation_techniques
+
+		upgrade_intelligence_agency = upgrade_form_department
+		upgrade_intelligence_agency = upgrade_decryption_boost #radio
+		upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		#upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		#upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		#upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+		#upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
 	}
 
 	if = {
@@ -1007,26 +1395,73 @@ if = {
 		}
 	}
 
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				survivability_studies = 1
+
+				aa_lmg = 1
+				aa_hmg = 1
+
+				aa_cannon_1 = 1
+				#aa_cannon_2 = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+				engines_3 = 1
+
+				range_improvements = 1
+
+				early_bombs = 1
+
+				aircraft_construction = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+				advanced_small_airframe = 1
+
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				improved_medium_airframe = 1
+
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+				improved_large_airframe = 1
+			}
+		else = {
+			#set_air_oob = "ITA_1936_air_legacy"
+			set_technology = {
+				naval_bomber1 = 1
+				naval_bomber2 = 1
+		
+				CAS1 = 1
+				CAS2 = 1
+		
+				fighter1 = 1
+				fighter2 = 1
+				fighter3 = 1
+		
+				heavy_fighter1 = 1
+				heavy_fighter2 = 1
+		
+				strategic_bomber1 = 1
+				strategic_bomber2 = 1
+		
+				tactical_bomber1 = 1
+				tactical_bomber2 = 1
+			}
+		}
+	}
+
 
 	set_technology = {
-		naval_bomber1 = 1
-		naval_bomber2 = 1
 
-		CAS1 = 1
-		CAS2 = 1
-
-		fighter1 = 1
-		fighter2 = 1
-		fighter3 = 1
-
-		heavy_fighter1 = 1
-		heavy_fighter2 = 1
-
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-
-		tactical_bomber1 = 1
-		tactical_bomber2 = 1
 
 		tech_engineers = 1
 		tech_engineers2 = 1
@@ -1035,7 +1470,6 @@ if = {
 		tech_recon = 1
 		tech_recon2 = 1
 		tech_recon3 = 1
-
 
 		tech_special_forces = 1
 		advanced_special_forces = 1 #advanced
@@ -1094,7 +1528,7 @@ if = {
 		decimetric_radar = 1
 		improved_decimetric_radar = 1
 		centimetric_radar = 1
-		#improved_centimetric_radar = 1
+		improved_centimetric_radar = 1
 
 		#industry
 		excavation1 = 1
@@ -1220,11 +1654,13 @@ if = {
 	limit = {
 		has_dlc = "Man the Guns"
 	}
-
 	set_naval_oob = "ITA_1944_naval_mtg"
 
 	set_technology = {
+
+		midget_submarines = 1 
 		basic_naval_mines = 1
+		improved_naval_mines = 1
 		submarine_mine_laying = 1
 
 		early_ship_hull_light = 1
@@ -1233,12 +1669,13 @@ if = {
 
 		early_ship_hull_submarine = 1
 		basic_ship_hull_submarine = 1
+		improved_ship_hull_submarine = 1
 
 		early_ship_hull_cruiser = 1
 		basic_ship_hull_cruiser = 1
 
 		basic_cruiser_armor_scheme = 1
-		improved_cruiser_armor_scheme = 1
+		 
 
 		early_ship_hull_heavy = 1
 		basic_ship_hull_heavy = 1
@@ -1257,6 +1694,8 @@ if = {
 		basic_heavy_battery = 1
 
 		basic_torpedo = 1
+		magnetic_detonator = 1
+		electric_torpedo = 1
 		sonar = 1
 
 		smoke_generator = 1
@@ -1268,43 +1707,308 @@ if = {
 		mtg_transport = 1
 		mtg_landing_craft = 1
 
-		basic_secondary_battery = 1
-		improved_secondary_battery = 1
-		
-		basic_fire_control_system = 1
+		fire_control_methods_1 = 1
+		fire_control_methods_2 = 1
 
+		improved_ship_torpedo_launcher = 1
+
+		basic_light_shell = 1
+		improved_light_battery = 1
+		improved_light_shell = 1
+
+		basic_medium_shell = 1
+		improved_medium_battery = 1
+		improved_medium_shell = 1
+
+		basic_heavy_shell = 1
+		improved_heavy_shell = 1
+		improved_heavy_battery = 1
 	}
-
-
-
-
 
 	create_equipment_variant = {
-		name = "C.202 Folgore II serie"
-		type = fighter_equipment_2
-		upgrades = {
-			plane_gun_upgrade = 3
-			plane_range_upgrade = 0  
-			plane_engine_upgrade = 3
-			plane_reliability_upgrade = 3
+		name = "Acciaio Class"
+		type = ship_hull_submarine_3
+		name_group = ITA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_engine_slot = sub_ship_engine_3
+			fixed_ship_torpedo_slot = ship_torpedo_sub_3
+			front_1_custom_slot = ship_torpedo_sub_2
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = ship_torpedo_sub_2
 		}
+		obsolete = no
 	}
+}
+
+
+
+
+	complete_national_focus = ITA_investments_in_edison
+	unlock_national_focus = ITA_increase_artillery_production
+	complete_national_focus = ITA_vallo_alpino_del_littorio
+	complete_national_focus = ITA_la_battaglia_per_la_terra
+	unlock_national_focus = ITA_ministero_della_cultura_popolare
+	unlock_national_focus = ITA_brescia_small_arms_industry
+	unlock_national_focus = ITA_milan_comms_industry
+	complete_national_focus = ITA_preserve_army_traditions
+	complete_national_focus = ITA_reggianes_exports
+	complete_national_focus = ITA_intensify_torpedo_manufacturing
+	complete_national_focus = ITA_german_military_cooperation
+	complete_national_focus = ITA_italian_tankettes
+	complete_national_focus = ITA_redirect_alfa_romeo_production
+	complete_national_focus = ITA_army_leaders
+	complete_national_focus = ITA_superesercito
+	complete_national_focus = ITA_superaereo
+	complete_national_focus = ITA_supermarina
+	complete_national_focus = ITA_diving_bombers
+	complete_national_focus = ITA_self_propelled_guns
+	complete_national_focus = ITA_legge_bottai
+	complete_national_focus = ITA_la_battaglia_per_le_nascite
+
+	complete_national_focus = ITA_incrociatori_leggeri
+	unlock_national_focus = ITA_treaty_with_germany
+	complete_national_focus = ITA_midget_submarines
+	complete_national_focus = ITA_decima_flottiglia_mas
+	#activate_decision = ITA_vallo_alpino_occidentale
+	unlock_national_focus = ITA_albanian_oil
+
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
 
 		create_equipment_variant = {
-		name = "G.55 Centauro I serie"
-		type = fighter_equipment_3
-		upgrades = {
-			plane_gun_upgrade = 0
-			plane_range_upgrade = 0  
-			plane_engine_upgrade = 2
-			plane_reliability_upgrade = 0
+			name = "CR.32" #
+			type = small_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = light_mg_2x
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+		}
+
+		create_equipment_variant = {
+			name = "G.50" #
+			type = small_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = heavy_mg_2x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+		}
+
+		create_equipment_variant = {
+			name = "BR.20" #
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = fuel_tanks_medium
+				special_type_slot_2 = lmg_defense_turret
+			}
+		}
+
+		create_equipment_variant = {
+			name = "CR.42" #
+			type = small_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = heavy_mg_2x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+			obsolete = yes
+			icon = "GFX_ITA_early_fighter_medium"
+		}
+
+		create_equipment_variant = {
+			name = "Z.506" #
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+				engine_type_slot = engine_2_3x
+				special_type_slot_1 = fuel_tanks_medium
+				special_type_slot_2 = lmg_defense_turret
+				special_type_slot_3 = flying_boat_medium
+			}
+			icon = "GFX_ITA_medium_plane_1_medium"
+		}
+
+		create_equipment_variant = {
+			name = "Ca.135" #
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = hmg_defense_turret
+			}
+		}
+
+		create_equipment_variant = {
+			name = "Ca.313" #
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = recon_camera
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = hmg_defense_turret
+			}
+		}
+
+		create_equipment_variant = {
+			name = "Ca.111" #
+			type = small_plane_cas_airframe_0
+			modules = {
+				fixed_main_weapon_slot = small_bomb_bay
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+			obsolete = yes
+			icon = "GFX_ITA_CAS1_medium"
+		}
+		create_equipment_variant = {
+			name = "Ca.101" #
+			type = medium_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				engine_type_slot = engine_1_3x
+				special_type_slot_1 = lmg_defense_turret
+			}
+			obsolete = yes
+			icon = "GFX_ITA_early_bomber_old_medium"
+		}
+		create_equipment_variant = {
+			name = "Ca.133" #
+			type = medium_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = bomb_locks
+				engine_type_slot = engine_1_3x
+				special_type_slot_1 = lmg_defense_turret_2x
+			}
+			obsolete = yes
+			icon = "GFX_ITA_early_bomber_old_medium"
+		}
+		create_equipment_variant = {
+			name = "SM.81" #
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
+				engine_type_slot = engine_1_3x
+				special_type_slot_1 = lmg_defense_turret_2x
+			}
+			icon = "GFX_ITA_early_bomber_medium"
+		}
+		create_equipment_variant = {
+			name = "SM.79" #
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+				engine_type_slot = engine_2_3x
+				special_type_slot_1 = lmg_defense_turret_2x
+			}
+			icon = "GFX_ITA_naval_bomber1_medium"
+		}
+		create_equipment_variant = {
+			name = "Ba.65" #
+			type = small_plane_cas_airframe_1
+			modules = {
+				fixed_main_weapon_slot = small_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = light_mg_2x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+			icon = "GFX_ITA_CAS1_medium"
+		}
+
+		############ 1944 ############
+
+		create_equipment_variant = {
+			name = "Re.2000" #
+			type = small_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = heavy_mg_2x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+		}
+
+		create_equipment_variant = {
+			name = "C.202 Folgore II serie"
+			type = small_plane_airframe_2
+			modules = {
+				fixed_main_weapon_slot = light_mg_2x
+				fixed_auxiliary_weapon_slot_1 = heavy_mg_2x
+				engine_type_slot = engine_3_1x
+				special_type_slot_1 = drop_tanks
+				special_type_slot_2 = non_strategic_materials_small #non_strategic_materials_medium non_strategic_materials_large
+			}
+		}
+
+		create_equipment_variant = {
+			name = "G.55 Centauro I serie"
+			type = small_plane_airframe_3
+			modules = {
+				fixed_main_weapon_slot = light_mg_2x
+				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
+				fixed_auxiliary_weapon_slot_2 = aircraft_cannon_1_2x
+				engine_type_slot = engine_3_1x
+				special_type_slot_1 = fuel_tanks_small
+				special_type_slot_2 = non_strategic_materials_small
+			}
+		}
+
+		else = {
+
+			create_equipment_variant = {
+				name = "C.202 Folgore II serie"
+				type = fighter_equipment_2
+				upgrades = {
+					plane_gun_upgrade = 3
+					plane_range_upgrade = 0  
+					plane_engine_upgrade = 3
+					plane_reliability_upgrade = 3
+				}
+			}
+		
+				create_equipment_variant = {
+				name = "G.55 Centauro I serie"
+				type = fighter_equipment_3
+				upgrades = {
+					plane_gun_upgrade = 0
+					plane_range_upgrade = 0  
+					plane_engine_upgrade = 2
+					plane_reliability_upgrade = 0
+				}
+			}
 		}
 	}
 
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -1326,7 +2030,13 @@ if = {
 
 1943.12.30 = {
 
-
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "ITA_1944_air_bba"
+		else = {
+			set_air_oob = "ITA_1944_air_legacy"
+	}
+}
 
 add_equipment_to_stockpile = {
         type = infantry_equipment_2

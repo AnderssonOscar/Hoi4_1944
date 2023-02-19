@@ -773,7 +773,7 @@ technologies = {
 		}
 	}
 	
-	volkssturm = {
+	volkssturm = { #1944
 		xp_research_type = army
 		xp_unlock_cost = 100
 		xor={
@@ -781,7 +781,7 @@ technologies = {
 		}
 
 		
-		conscription = 0.02
+		conscription = 0.01
 		
 		path = {
 			leads_to_tech = nd_conscription 
@@ -830,10 +830,10 @@ technologies = {
 		}
 	}
 	
-	nd_conscription = {
+	nd_conscription = { #1944
 		xp_research_type = army
 		xp_unlock_cost = 100
-		conscription = 0.03
+		conscription = 0.02
 
 		path = {
 			leads_to_tech = werwolf_guerillas 
@@ -2620,7 +2620,8 @@ technologies = {
 		}
 		
 		land_reinforce_rate = 0.02
-		minimum_training_level = -0.1		
+		minimum_training_level = -0.1
+		weekly_casualties_war_support = 0.001
 
 		doctrine = yes	
 		research_cost = 2.25

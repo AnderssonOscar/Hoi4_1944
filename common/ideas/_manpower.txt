@@ -143,6 +143,10 @@ ideas = {
 					has_idea_with_trait = military_theorist
 					factor = 20
 				}
+				modifier = {
+					factor = 0
+					NOT = { has_idea = volunteer_only }
+				}
 			}
 
 			cancel_if_invalid = no
@@ -243,19 +247,35 @@ ideas = {
 					factor = 50
 				}
 
-				modifier = { # china relies a lot on throwing bodies at the enemy
+				# china relies a lot on throwing bodies at the enemy
+				modifier = {
 					factor = 3
 
 					original_tag = CHI
 					has_manpower < 300000
 				}
 
+				# soviet also relies a lot on throwing bodies at the enemy
 				modifier = {
 					factor = 3
 
 					original_tag = SOV
 					has_manpower < 300000
 				}
+
+				modifier = {
+					factor = 5
+
+					original_tag = SOV
+					has_war = yes
+					has_manpower < 1000000
+				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = limited_conscription }
+				}
+
 			}
 
 			cost = 150
@@ -294,6 +314,16 @@ ideas = {
 				OR = {
 					has_war_support > 0.6
 					surrender_progress > 0
+				}
+
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					OR = {
+						date > 1943.12.31
+						date < 1944.2.1
+					}
 				}
 
 				if = {
@@ -382,10 +412,10 @@ ideas = {
 				}
 
 				modifier = {
-					factor = 3
+					factor = 5
 
 					original_tag = SOV
-					has_manpower < 200000
+					has_manpower < 400000
 				}
 
 				modifier = { # germany needs this before russia, badly
@@ -395,14 +425,11 @@ ideas = {
 					has_manpower < 2000000
 				}
 
-				modifier = { 
-
-						date > 1943.12.30
-						date < 1944.1.20
-
-						factor = -100
-					
+				modifier = {
+					factor = 0
+					NOT = { has_idea = extensive_conscription }
 				}
+
 			}
 
 			cost = 150
@@ -430,7 +457,6 @@ ideas = {
 					has_war_support > 0.7
 					surrender_progress > 0
 				}
-
 				enemies_strength_ratio > 0.75
 				#any_enemy_country = {
 				#	strength_ratio = {
@@ -438,6 +464,20 @@ ideas = {
 				#		ratio > 0.75
 				#	}
 				#}
+
+				if = {
+					limit = {
+						is_ai = yes
+					}
+
+					set_temp_variable = { days = global.num_days }
+					modulo_temp_variable = { days = 30 }
+					check_variable = { days > 20 }
+
+					has_manpower < 75000
+				}
+			
+
 
 				if = {
 					limit = {
@@ -495,63 +535,26 @@ ideas = {
 					}
 					NOT = { has_idea = BUL_army_restrictions }
 				}
-
-				if = {
-					limit = {
-						is_ai = yes
-						OR = {
-							tag = GER
-							tag = ROM
-							tag = ITA
-							tag = HUN
-							tag = FRA
-						}
-					}
-
-					NOT = {
-						date > 1943.12.30
-						date < 1944.4.1
-					}
-				}
 			}
 
 			ai_will_do = {
    				factor = 1
-
-				   modifier = {
-					has_idea = tot_economic_mobilisation
-					has_war_support > 0.7
-				  	NOT = { has_decision = women_in_the_workforce }
-					factor = -100
-				   }
-
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
-					manpower_per_military_factory <  600
+					manpower_per_military_factory <  500
 				}
 				modifier = {
 					#Lower chance if has decent amount
 					factor = 0.5
-					manpower_per_military_factory >  1000
+					manpower_per_military_factory >  800
 				}
 				modifier = {
 					#Block has plenty manpower
 					factor = 0
 					NOT = { tag = CHI }
-					manpower_per_military_factory >  5000
+					manpower_per_military_factory >  2200
 				}
-
-
-				modifier = { 
-
-						date > 1943.12.30
-						date < 1944.1.20
-	
-						factor = -100
-					
-				}
-
 
 				modifier = { # china relies a lot on throwing bodies at the enemy
 					factor = 3
@@ -560,12 +563,17 @@ ideas = {
 					has_manpower < 200000
 				}
 				modifier = {
-					factor = -100
+					factor = 10
 					original_tag = SOV
-					date > 1944.1.1
-					date < 1946.1.1
-					has_manpower > 500000
+					date > 1943.1.1
+					has_manpower < 2000000
 				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = service_by_requirement }
+				}
+
 			}
 
 			cost = 150
@@ -586,7 +594,6 @@ ideas = {
 
 		scraping_the_barrel = {
 
-
 			available = {
 				#has_manpower_for_recruit_change_to =  { value = 0.25 group = mobilization_laws }
 				has_war = yes
@@ -601,6 +608,22 @@ ideas = {
 				#		ratio > 1
 				#	}
 				#}
+
+				
+
+				if = {
+					limit = {
+						is_ai = yes
+					}
+
+					set_temp_variable = { days = global.num_days }
+					modulo_temp_variable = { days = 30 }
+					check_variable = { days > 20 }
+
+					has_manpower < 75000
+				}
+			
+
 				if = {
 					limit = {
 						original_tag = AST
@@ -657,62 +680,37 @@ ideas = {
 					}
 					NOT = { has_idea = BUL_army_restrictions }
 				}
-
-
-				if = {
-					limit = {
-						OR = {
-							tag = GER
-							tag = ROM
-							tag = ITA
-							tag = HUN
-							tag = FRA
-						}
-						is_ai = yes
-					}
-					NOT = {
-						date > 1943.12.30
-						date < 1944.10.1
-					}
-				}
 			}
 
 			ai_will_do = {
    				factor = 1
-
-				modifier = {
-					has_idea = tot_economic_mobilisation
-					has_war_support > 0.7
-				  	has_decision = women_in_the_workforce
-					factor = -100
-				   }
-
-
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
-					manpower_per_military_factory <  500
+					manpower_per_military_factory <  300
 				}
 				modifier = {
 					#Lower chance if has decent amount
 					factor = 0.5
-					manpower_per_military_factory >  1000
+					manpower_per_military_factory >  600
 				}
 				modifier = {
 					#Block has plenty manpower
-					factor = 0
-					manpower_per_military_factory >  5000
+					factor = -10
+					manpower_per_military_factory >  2150
 				}
 
-				modifier = { 
+				modifier = {
+					factor = 0
+					NOT = { has_idea = all_adults_serve }
+				}
 
-					date > 1943.12.30
-					date < 1944.1.20
-
-					factor = -100
-				
-			}
-
+				modifier = {
+					factor = -10
+					original_tag = GER
+					date > 1944.1.1
+					has_manpower > 25000
+				}
 
 			}
 
@@ -730,5 +728,122 @@ ideas = {
 
 			cancel_if_invalid = no
 		}
+
+		### Ethiopian National Levy
+		ETH_chitet_law = {
+			picture = ETH_chitet_law
+			cost = 150
+			removal_cost = -1
+			level = 6
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+				always = no
+			}
+
+			ai_will_do = {
+   				factor = 0
+			}
+
+			modifier = {
+				conscription = 0.045
+				custom_modifier_tooltip = ETH_chitet_law_tt
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+
+			default = yes
+
+			cancel_if_invalid = no
+		}
+		ETH_chitet_law_peace_time = {
+			picture = ETH_chitet_law
+
+			cost = 150
+			removal_cost = -1
+			level = 6
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+				always = no
+			}
+
+			ai_will_do = {
+   				factor = 0
+			}
+
+			modifier = {
+				conscription = 0.005
+				custom_modifier_tooltip = ETH_chitet_law_tt
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+
+			default = yes
+
+			cancel_if_invalid = no
+		}
+
+		### Swiss Citizen Militia ###
+
+		SWI_citizen_militia_1 = {
+			cost = 200
+			picture = citizen_militia_1
+			removal_cost = -1
+			level = 6
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+				has_completed_focus = SWI_professionalize_militias
+				has_completed_focus = SWI_join_the_allies
+				has_completed_focus = SWI_join_france
+				has_completed_focus = SWI_jump_into_action
+			}
+			ai_will_do = {
+				factor = 0
+			}
+
+			modifier = {
+				conscription = 0.1
+				custom_modifier_tooltip = SWI_army_limitations_TT
+				ai_desired_divisions_factor = 1
+			}
+		}
+
+		SWI_citizen_militia_2 = {
+			picture = citizen_militia_2
+			cost = 200
+			removal_cost = -1
+			level = 6
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+ 				has_completed_focus = SWI_professionalize_militias
+				has_completed_focus = SWI_join_the_allies
+				has_completed_focus = SWI_join_france
+				has_completed_focus = SWI_jump_into_action
+			}
+			ai_will_do = {
+				factor = 0
+			}
+
+			modifier = {
+				conscription = 0.2
+				custom_modifier_tooltip = SWI_army_limitations_TT
+				ai_desired_divisions_factor = 2
+			}
+		}
 	}
+
+
 }

@@ -1,0 +1,178 @@
+﻿							
+###### AIRFORCE ######
+air_wings = {
+
+	219 = { 
+		transport_plane_equipment_1 = { owner = "SOV" amount = 500 }
+
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}			
+	}
+
+	235 = { 
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+	}
+
+	214 = { 
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}			
+	}
+
+
+	195 = { 																	
+
+		medium_plane_airframe_1 =  { owner = "SOV" amount = 100 version_name = "ANT-40"}
+		medium_plane_airframe_1 =  { owner = "SOV" amount = 100 version_name = "ANT-40"}
+		medium_plane_airframe_1 =  { owner = "SOV" amount = 100 version_name = "ANT-40"}
+		medium_plane_airframe_1 =  { owner = "SOV" amount = 100 version_name = "ANT-40"}	 	
+
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+	}
+	218 = { 																		
+
+		medium_plane_airframe_1 =  { owner = "SOV" amount = 100 version_name = "ANT-40"}
+		medium_plane_airframe_1 =  { owner = "SOV" amount = 100 version_name = "ANT-40"}
+		medium_plane_airframe_1 =  { owner = "SOV" amount = 100 version_name = "ANT-40"}
+
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}		
+
+	}
+
+	217 = { 																		
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}		
+	}
+
+
+	408 = { 																		
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+		small_plane_airframe_3 = { owner = "SOV" version_name = "Yak-3 A" amount = 100}
+
+
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+	}
+
+	266 = { 																		
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+		small_plane_cas_airframe_1 =  { owner = "SOV" version_name = "MBR-2" amount = 100 }
+	}
+
+	221 = { 																		
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}
+
+		small_plane_cas_airframe_1 = { owner = "SOV" version_name = "MBR-2" amount = 100 }
+		small_plane_cas_airframe_1 = { owner = "SOV" version_name = "MBR-2" amount = 100 }
+		small_plane_cas_airframe_1 = { owner = "SOV" version_name = "MBR-2" amount = 100 }
+	}
+
+	264 = {
+		large_plane_airframe_1 = { owner = "SOV" version_name = "Pe-8" amount = 100 }
+		large_plane_airframe_1 = { owner = "SOV" version_name = "Pe-8" amount = 100 }
+		
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+		small_plane_airframe_2 = { owner = "SOV" version_name = "La-5 A" amount = 100}	
+	}
+}
+
+
+	#########################
+	## STARTING PRODUCTION ##
+	#########################
+instant_effect = {
+	
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_2
+			creator = "SOV" 
+			version_name = "La-5 A"
+		}
+		requested_factories = 15
+		progress = 0.15
+		efficiency = 84
+	}
+}
+	#####################

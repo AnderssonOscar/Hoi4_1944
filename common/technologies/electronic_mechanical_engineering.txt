@@ -939,8 +939,17 @@ technologies = {
 
 		# can build v1s/rocket planes
 		enable_equipments = {
+			limit = {
+				NOT = { has_dlc = "By Blood Alone" }
+			}
 			rocket_interceptor_equipment_1
+		}
+		enable_equipments = {
 			guided_missile_equipment_1
+		}
+
+		enable_equipment_modules = {
+			rocket_engine_1
 		}
 		
 		rocket_artillery = {
@@ -994,8 +1003,17 @@ technologies = {
 		# can build v2s
 		
 		enable_equipments = {
+			limit = {
+				NOT = { has_dlc = "By Blood Alone" }
+			}
 			rocket_interceptor_equipment_2
+		}
+		enable_equipments = {
 			guided_missile_equipment_2
+		}
+
+		enable_equipment_modules = {
+			rocket_engine_2
 		}
 		
 		rocket_artillery = {
@@ -1040,8 +1058,18 @@ technologies = {
 		# can build ICBMs?
 		
 		enable_equipments = {
+			limit = {
+				NOT = { has_dlc = "By Blood Alone" }
+			}
 			rocket_interceptor_equipment_3
+		}
+		enable_equipments = {
 			guided_missile_equipment_3
+		}
+
+		enable_equipment_modules = {
+			rocket_engine_3
+			guided_anti_ship_missile
 		}
 		
 		rocket_artillery = {
@@ -1085,10 +1113,20 @@ technologies = {
 		research_cost = 2
 		enable_equipment_modules = {
 			tank_gas_turbine_engine
+			jet_engine_1x
+			jet_engine_2x
+			jet_engine_3x
+			jet_engine_4x
+			jet_engine_6x
 		}
 		folder = {
 			name = air_techs_folder
 			position = { x = 2 y = 11 }
+		}
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = -1 y = 11 }
 		}
 		
 		desc = "JET_ENGINES_SPECIAL"
@@ -1152,7 +1190,45 @@ technologies = {
 			nuclear
 		}
 		
-
+		on_research_complete = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					if = {
+						limit = {
+							check_variable = { global.atomic_research_race < 3 }
+						}
+						add_to_variable = { global.atomic_research_race = 1 }
+						if = {
+							limit = {
+								original_tag = ITA
+								NOT = { has_country_flag = ITA_pioneer_in_atomic_research_flag }
+							}
+							set_country_flag = ITA_pioneer_in_atomic_research_flag
+						}
+						else_if = {
+							limit = {
+								check_variable = { global.atomic_research_race = 3 }
+								NOT = {
+									any_country = {
+										original_tag = ITA
+										has_country_flag = ITA_pioneer_in_atomic_research_flag
+									}
+								}
+							}
+							random_country = {
+								limit = {
+									original_tag = ITA
+								}
+								set_country_flag = ITA_late_to_the_atomic_party_flag
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	nuclear_reactor = {

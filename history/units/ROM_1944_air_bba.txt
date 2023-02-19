@@ -1,0 +1,28 @@
+﻿
+
+
+### Fortele Aeriene Regale ale României (FFAR) ###
+air_wings = {
+	46 = {
+	
+		small_plane_airframe_2 = { owner = "ROM" creator = "GER" version_name = "Fw 190" amount = 100 }
+		small_plane_airframe_2 = { owner = "ROM" creator = "ITA" version_name = "C.202 Folgore II serie" amount = 100 }
+		small_plane_airframe_1 = { owner = "ROM" creator = "ITA" version_name = "G.50" amount = 70}	
+
+		small_plane_airframe_2 = { owner = "ROM" creator = "ROM" version_name = "IAR 80" amount = 100 }
+		small_plane_airframe_2 = { owner = "ROM" creator = "ROM" version_name = "IAR 80" amount = 100 }
+
+		small_plane_airframe_1 = { owner = "ROM" creator = "GER" version_name = "Bf 109 E" amount = 100 }
+		small_plane_airframe_1 = { owner = "ROM" creator = "GER" version_name = "Bf 109 E" amount = 50 }
+
+		small_plane_airframe_0 = { owner = "ROM" creator = "POL" version_name = "PZL P.24" amount = 40 }
+		small_plane_airframe_0 = { owner = "ROM" creator = "ROM" version_name = "IAR 14" amount = 20}
+
+		medium_plane_airframe_1 = {	owner = "ROM" creator = "ITA" version_name = "SM.79" amount = 70}	
+		#small_plane_airframe_1 = {owner = "ROM" creator = "GER" version_name = "He 112" amount = 30 }
+
+		small_plane_cas_airframe_1 =  { owner = "ROM"  creator = "GER" version_name = "Ju 87" amount = 60 }	
+		small_plane_cas_airframe_1 =  { owner = "ROM"  creator = "GER" version_name = "Ju 87" amount = 40 }	
+		medium_plane_airframe_2 = {  owner = "ROM"  creator = "GER" version_name = "Ju 88" amount = 40}
+	}
+}

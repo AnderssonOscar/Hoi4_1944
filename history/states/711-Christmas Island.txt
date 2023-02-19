@@ -13,6 +13,14 @@ state={
 				naval_base = 1
 			}
 		}
+
+		1943.12.30 = {
+			buildings = {
+				13005 = {
+					naval_base = 4
+				}
+			}
+		}
 	}
 	
 	provinces={

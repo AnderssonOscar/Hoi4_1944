@@ -8,15 +8,15 @@ SOV_great_patriotic_war = {
 	SOV_launch_major_offensive_ger = {
 		icon = generic_prepare_civil_war
 
-			allowed = {
+			allowed = { 
 				tag = SOV	
 			}
 
 		available = {
 			has_war_with = GER
 			surrender_progress < 0.2
-			date > 1944.3.1
-			date < 1945.6.1 
+			date > 1944.2.15
+			date < 1946.1.1 
 		}
 
 		visible = {
@@ -25,21 +25,23 @@ SOV_great_patriotic_war = {
 			surrender_progress < 0.2
 			date > 1944.1.1
 			#date < 1946.1.1
+
+			NOT = { has_idea = major_offensive }
+			NOT = { has_idea = offensive_exhaustion }
 		}
 
 		 fire_only_once = no
 
-		 days_re_enable = 44
-		 days_remove = 20
+		 days_re_enable = 44 #44
+		 days_remove = 20 #20
 
 		#cost = 10 
 
 		ai_will_do = {
-			factor = 1
+			factor = 100
 			modifier = {
-				has_manpower > 200000
-				surrender_progress < 0.25
-				factor = 50
+				surrender_progress < 0.3
+				factor = 1000
 			}
 		}
 
@@ -51,26 +53,28 @@ SOV_great_patriotic_war = {
 			}
 
 
-			set_temp_variable = { mod_start_date_days = 709560 } #1944.1.1
+			set_temp_variable = { mod_start_date_days = SOV_offensive_start_day } #1944.1.1 709560
 			set_temp_variable = { days = global.num_days }
 
 			subtract_from_temp_variable = { days = mod_start_date_days }
 
-			set_temp_variable = { starthigh = 547 }
+			set_temp_variable = { starthigh = 125 }
 
-			add_to_variable = {
-				var = starthigh
-				value = num_of_controlled_factories
-			}
+			add_to_temp_variable = { var = starthigh value = num_divisions }
+			add_to_temp_variable = { var = starthigh value = days }
 
-			subtract_from_temp_variable = { starthigh = days }
+			set_temp_variable = { daysdivde = starthigh }
+			divide_temp_variable = { daysdivde = 2 }
 
+			#subtract_from_temp_variable = { starthigh = days }
 
 			clamp_temp_variable = {
-				var = starthigh
+				var = daysdivde
 				min = 0
-				max = 547
+				max = 1095
 			}
+
+			set_temp_variable = { equipment_base_num = daysdivde }
 	
 
 		if = { limit = {
@@ -78,8 +82,8 @@ SOV_great_patriotic_war = {
 				support_equipment < 2000
 			}
 		 }
-			set_temp_variable = { support_eq = starthigh }
-			multiply_temp_variable = { support_eq = 8.7 }
+			set_temp_variable = { support_eq = equipment_base_num }
+			multiply_temp_variable = { support_eq = 10.9 }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
 				amount = support_eq
@@ -92,8 +96,8 @@ SOV_great_patriotic_war = {
 				infantry_equipment < 15000
 			}
 		 }
-			set_temp_variable = { inf_eq = starthigh }
-			multiply_temp_variable = { inf_eq = 220.4 }
+			set_temp_variable = { inf_eq = equipment_base_num }
+			multiply_temp_variable = { inf_eq = 211.4 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
 				amount = inf_eq
@@ -106,8 +110,8 @@ SOV_great_patriotic_war = {
 				artillery_equipment < 900
 			}
 		 }
-			set_temp_variable = { artillery_eq = starthigh }
-			multiply_temp_variable = { artillery_eq = 6.7 }
+			set_temp_variable = { artillery_eq = equipment_base_num }
+			multiply_temp_variable = { artillery_eq = 9.6 }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_2
 				amount = artillery_eq
@@ -120,7 +124,7 @@ SOV_great_patriotic_war = {
 				motorized_equipment_1 < 5000
 			}
 		 }
-			set_temp_variable = { motorized_eq = starthigh }
+			set_temp_variable = { motorized_eq = equipment_base_num }
 			multiply_temp_variable = { motorized_eq = 7.9 }
 			add_equipment_to_stockpile = {
 				type = motorized_equipment_1
@@ -133,7 +137,7 @@ SOV_great_patriotic_war = {
 				mechanized_equipment < 350
 			}
 		 }
-			set_temp_variable = { mechanized_eq = starthigh }
+			set_temp_variable = { mechanized_eq = equipment_base_num }
 			multiply_temp_variable = { mechanized_eq = 2 }
 			add_equipment_to_stockpile = {
 				type = mechanized_equipment_2
@@ -148,8 +152,8 @@ SOV_great_patriotic_war = {
 				anti_air_equipment < 750
 			}
 		 }
-			set_temp_variable = { anti_air_eq = starthigh }
-			multiply_temp_variable = { anti_air_eq = 8.9 }
+			set_temp_variable = { anti_air_eq = equipment_base_num }
+			multiply_temp_variable = { anti_air_eq = 11.4 }
 			add_equipment_to_stockpile = {
 				type = anti_air_equipment_2
 				amount = anti_air_eq
@@ -161,8 +165,8 @@ SOV_great_patriotic_war = {
 				anti_tank_equipment < 650 
 			}
 		 }
-			set_temp_variable = { anti_tank_eq = starthigh }
-			multiply_temp_variable = { anti_tank_eq = 6.6 }
+			set_temp_variable = { anti_tank_eq = equipment_base_num }
+			multiply_temp_variable = { anti_tank_eq = 9.6 }
 			add_equipment_to_stockpile = {
 				type = anti_tank_equipment_2
 				amount = anti_tank_eq
@@ -170,7 +174,30 @@ SOV_great_patriotic_war = {
 		}
 
 
+		if = {
+			 limit = {
+					date < 1945.1.1
+					date > 1944.1.1
+				 }
+
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe_2
+				amount = 250
+				variant_name = "La-5 A"
+				producer = SOV
+			}
+
+			add_equipment_to_stockpile = {
+				type = small_plane_cas_airframe_1
+				amount = 100
+				variant_name = "MBR-2"
+				producer = SOV
+			}
+		}
+
+
 	if = { limit = {
+					date < 1945.3.1
 					OR = {
 						num_divisions < 421
 						GER = {is_ai = no}
@@ -196,7 +223,7 @@ SOV_great_patriotic_war = {
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.58 start_equipment_factor = 0.58 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.58 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
@@ -206,7 +233,7 @@ SOV_great_patriotic_war = {
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.48 start_equipment_factor = 0.8 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.48 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
@@ -226,7 +253,7 @@ SOV_great_patriotic_war = {
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.58 start_equipment_factor = 0.6 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya \" division_template = \"Infantry-Division\" start_experience_factor = 0.58 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"SOV\" } }  force_equipment_variants = { anti_air_equipment_1 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
@@ -252,7 +279,166 @@ SOV_great_patriotic_war = {
 		}
 	}
 
+
+
+
+	SOV_take_germany = {
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = SOV }
+
+		available = {
+			date > 1944.1.1
+
+			NOT = { has_idea = offensive_exhaustion }
+			has_idea = major_offensive	
+
+		OR = {
+			OR = {
+				date < 1944.8.20
+				date > 1944.9.20
+			}
+			ROM = { has_war_with = GER }
+			ROM = { surrender_progress > 0.4 }
+			ROM = { has_capitulated = yes }
+		}
+	}
+
+		visible = {
+			has_war_with = GER
+			NOT = { has_war_with = JAP } # dont get rekt by japan
+		}
+
+		fire_only_once = no
+		days_re_enable = 30
+		days_remove = 20
+		
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 1.25
+			breakthrough_bonus_against = 1.25
+		}
+
+		targeted_modifier = {
+			tag = HUN
+			attack_bonus_against =  0.5
+			breakthrough_bonus_against =  0.5
+		}
+
+
+		complete_effect = { }
+		remove_effect = { 
+
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				SOV =  {surrender_progress < 0.2 }
+				factor = 1000
+			}
+		}
+	}
+
+
+
+
+	SOV_take_romania = {
+			icon = generic_prepare_civil_war
+			allowed = { original_tag = SOV }
+	
+			available = {
+				date > 1944.8.20
+				NOT = { has_idea = offensive_exhaustion }
+				#has_idea = major_offensive
+
+				AND = {
+					has_full_control_of_state = 197
+					has_full_control_of_state = 203
+					has_full_control_of_state = 202
+				}
+
+				ROM =  {surrender_progress < 0.5 }		
+			}
+	
+			visible = {
+				has_war_with = GER
+				has_war_with = ROM
+				NOT = { has_war_with = JAP } # dont get rekt by japan
+				#check_variable = { SOV.offensive_end_day < global.num_days }
+			}
+	
+			fire_only_once = no
+			days_re_enable = 30
+			days_remove = 20 # same as major_offensive
+			
+			targeted_modifier = {
+				tag = ROM
+				attack_bonus_against = 1.25
+				breakthrough_bonus_against = 1.25
+			}
+
+
+			#set_variable = { SOV.offensive_end_day = global.num_days }
+			#add_to_temp_variable = { SOV.offensive_end_day = 15 } #same as offensive_exhaustion
+			
+			complete_effect = { }
+			remove_effect = { }
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROM =  {surrender_progress < 0.4 }
+					factor = 1000
+				}
+			}
+	}
+
+
+	SOV_take_finland = {
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = SOV }
+
+		available = {
+			date > 1944.8.1
+			NOT = { has_idea = offensive_exhaustion }
+			#has_idea = major_offensive
+			FIN =  {surrender_progress < 0.2 }		
+		}
+
+		visible = {
+			has_war_with = GER
+			has_war_with = FIN
+			NOT = { has_war_with = JAP } # dont get rekt by japan
+		}
+
+		fire_only_once = no
+		days_re_enable = 30
+		days_remove = 25
+		
+		targeted_modifier = {
+			tag = FIN
+			attack_bonus_against = 1.0
+			breakthrough_bonus_against = 1.0
+		}
+
+		complete_effect = { }
+		remove_effect = { }
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				FIN =  {surrender_progress < 0.1 }
+				factor = 1000
+			}
+		}
+	}
+
+
+
+
+
 }
+
 
 
 
@@ -268,13 +454,12 @@ SOV_diplomacy_asia_decision_category = {
 		available = {
 			NOT = { has_war_with = GER }
 			NOT = { has_war_with = JAP }
+			USA = { has_war_with = JAP }
 			date > 1945.1.1
 		}
 
 		visible = {
-			NOT = { has_war_with = GER }
-			NOT = { has_war_with = JAP }
-			date > 1945.1.1
+			date > 1944.1.1
 		}
 
 		 fire_only_once = yes
@@ -291,6 +476,23 @@ SOV_diplomacy_asia_decision_category = {
 		}
 
 			complete_effect = {
+				every_country = {
+					limit = { 
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+						} 
+					}
+
+					SOV = {
+						diplomatic_relation = {
+							country = PREV
+							relation = non_aggression_pact
+							active = no
+						}
+					}
+				}
+
 				declare_war_on = {
 					target = MAN
 					type = annex_everything

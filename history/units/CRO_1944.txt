@@ -142,15 +142,15 @@ units = {
 
 
 ### Air Forces ###
-air_wings = {
-	104 = { 
-		fighter_equipment_1 = { owner = "CRO" creator = "GER" version_name = "Bf 109 E" amount = 23 }
-		fighter_equipment_2 = { owner = "CRO" creator = "ITA" amount = 16 }	
-		fighter_equipment_1 = { owner = "CRO" creator = "ITA" amount = 19 }	
-		fighter_equipment_0 = { owner = "CRO" creator = "YUG" amount = 14 }	
-		tac_bomber_equipment_1  = { owner = "CRO" creator = "ITA" amount = 17 }	
-	}
-}
+#air_wings = {
+#	104 = { 
+#		fighter_equipment_1 = { owner = "CRO" creator = "GER" version_name = "Bf 109 E" amount = 23 }
+#		fighter_equipment_2 = { owner = "CRO" creator = "ITA" amount = 16 }	
+#		fighter_equipment_1 = { owner = "CRO" creator = "ITA" amount = 19 }	
+#		fighter_equipment_0 = { owner = "CRO" creator = "YUG" amount = 14 }	
+#		tac_bomber_equipment_1  = { owner = "CRO" creator = "ITA" amount = 17 }	
+#	}
+#}
 
 
 

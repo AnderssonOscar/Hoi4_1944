@@ -38,6 +38,8 @@ state={
 				dockyard = 1
 				industrial_complex = 1
 				anti_air_building = 1
+				fuel_silo = 1
+				radar_station = 1
 			}
 
 		}

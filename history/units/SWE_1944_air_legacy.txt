@@ -1,0 +1,24 @@
+﻿
+
+### Flygvapnet ###
+air_wings = {
+	141 = {
+		tac_bomber_equipment_1 = { owner = "SWE" amount = 36 }			# 1. Bombflyggruppen -- Junkers 86K
+		CAS_equipment_1 = { owner = "SWE" amount = 36 }					# 4. Bombflyggruppen -- Hawker Hart
+		fighter_equipment_0 =  { owner = "SWE" amount = 36 }			# 8. Jaktflyggruppen -- Gloster Gladiators
+
+		fighter_equipment_1 =  { owner = "SWE" amount = 60 }
+		fighter_equipment_2 =  { owner = "SWE" amount = 92 }
+		tac_bomber_equipment_2 = { owner = "SWE" amount = 90 }
+
+		tac_bomber_equipment_1 = { owner = "SWE" creator = "ITA" amount = 86 }
+		fighter_equipment_0 = { owner = "SWE" creator = "USA" amount = 72 }
+		fighter_equipment_2 = { owner = "SWE" creator = "USA" amount = 60 }
+
+		CAS_equipment_1 = { owner = "SWE" creator = "USA" amount = 100 }
+		fighter_equipment_1 = { owner = "SWE" creator = "USA" amount = 60 }
+	}
+	140 = {
+		nav_bomber_equipment_1 =  { owner = "SWE" amount = 12 }			# 2. Torpedflyggruppen -- Heinkel He 115 
+	}
+}

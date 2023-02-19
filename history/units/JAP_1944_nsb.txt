@@ -1494,7 +1494,7 @@ units = {
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10369
+			location = 8235
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			start_experience_factor = 0.25
@@ -1503,7 +1503,7 @@ units = {
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10369
+			location = 4593
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			start_experience_factor = 0.25
@@ -1512,7 +1512,7 @@ units = {
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10396
+			location = 11004
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			start_experience_factor = 0.25
@@ -1521,7 +1521,7 @@ units = {
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10990
+			location = 11018
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			start_experience_factor = 0.25
@@ -1539,11 +1539,65 @@ units = {
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
-			location = 1546
+			location = 12154
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			start_experience_factor = 0.25
 			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 5135
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.31
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 12428
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.3
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 12371
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.3
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7251 #rabaul
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.31
+			start_equipment_factor = 1
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7251 #rabaul
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.3
+			start_equipment_factor = 0.91
+		}
+
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7352 #rabaul
+			division_template = "Hohei Shidan"	
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+			start_experience_factor = 0.24
+			start_equipment_factor = 0.71
 		}
 
 #########################################################################################################################################################
@@ -2143,77 +2197,6 @@ units = {
 
 	
 
-#AIRCRAFT
-air_wings = {
-	### IJA & IJN Air Forces ###
-	282 = { 														# Tokyo
-		# 1 Hikodan 
-		fighter_equipment_1 = { owner = "JAP" amount = 50 }			# 1 Hiko Rentai -- Nakajima Ki-27
-					# 11 Hiko Rentai -- Nakajima Ki-27
-		CAS_equipment_1 =  { owner = "JAP" amount = 100 }			# 7 Hiko Rentai -- Ki-30/Ki-32
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-	}
-	716 = {															#  Dalian
-		# 2 Hikodan
-		fighter_equipment_1 = { owner = "JAP" amount = 72 }			# 3 Hiko Rentai -- Nakajima Ki-27
-		CAS_equipment_1 =  { owner = "JAP" amount = 54 }			# 5 Hiko Rentai -- Ki-30/Ki-32
-		tac_bomber_equipment_1 =  { owner = "JAP" amount = 54 }		# 9 Hiko Rentai -- Mitsubishi Ki-21
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-	}
-	597 = {															#  Jinan
-		# 4 Hikodan
-		CAS_equipment_1 =  { owner = "JAP" amount = 50 }			# 12 Hiko Rentai -- Ki-30/Ki-32
-		tac_bomber_equipment_1 =  { owner = "JAP" amount = 100 }		# 14 Hiko Rentai -- Mitsubishi Ki-21
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-	}
-
-	608 = {															#  Jinan
-		# 4 beijing
-		CAS_equipment_1 =  { owner = "JAP" amount = 50 }			# 12 Hiko Rentai -- Ki-30/Ki-32
-		tac_bomber_equipment_1 =  { owner = "JAP" amount = 100 }		# 14 Hiko Rentai -- Mitsubishi Ki-21
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-	}
-
-	528 = {															
-		# 4 kokura
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-	}
-
-	529 = {															
-		# 4 hiroshima
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-	}
-
-	524 = {															# Taiwan
-		# 3 Hikodan 
-		CAS_equipment_1 =  { owner = "JAP" amount = 54 }			# 6 Hiko Rentai -- Ki-30/Ki-32
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		cv_CAS_equipment_1 = { owner = "JAP" amount = 60 }			# Kizarazu Kokutai -- Aichi D1A2
-		nav_bomber_equipment_1 = { owner = "JAP" amount = 144 }		# Kanoya Kokutai -- G3M2 Rikko
-				# Takao Kokutai -- G3M2 Rikko
-	}
-	591 = {															# Hainan
-		# 2 Rengo Kokutai
-		# 3 Rengo Kokutai
-		cv_fighter_equipment_1 = { owner = "JAP" amount = 156 }		# 12/I Kokutai -- Mitsubishi A5M2
-				# 14/I Kokutai -- Mitsubishi A5M2
-				# 15/I Kokutai -- Mitsubishi A5M2
-		cv_nav_bomber_equipment_1 = { owner = "JAP" amount = 72 }	# 12/II Kokutai -- Nakakima B5N2
-			# 14/II Kokutai -- Nakakima B5N2
-		nav_bomber_equipment_1 = { owner = "JAP" amount = 144 }		# 13 Kokutai -- G3M2 Rikko
-				# 15/II Kokutai -- Mitsubishi B2M2
-	}
-}
 
 
 #########################
@@ -2247,7 +2230,17 @@ instant_effect = {
 		}
 		requested_factories = 5
 		progress = 0.1
-		efficiency = 91
+		efficiency = 78
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_2
+			creator = "JAP"
+		}
+		requested_factories = 4
+		progress = 0.1
+		efficiency = 81
 	}
 
 	add_equipment_production = {
@@ -2255,9 +2248,9 @@ instant_effect = {
 			type = support_equipment_1
 			creator = "JAP" 
 		}
-		requested_factories = 4
-		progress = 0.3
-		efficiency = 100
+		requested_factories = 8
+		progress = 0.9
+		efficiency = 90
 	}
 	add_equipment_production = {
 		equipment = {
@@ -2266,7 +2259,7 @@ instant_effect = {
 		}
 		requested_factories = 4
 		progress = 0.4
-		efficiency = 100
+		efficiency = 90
 	}
 	add_equipment_production = {
 		equipment = {
@@ -2278,55 +2271,4 @@ instant_effect = {
 		progress = 0.4
 		efficiency = 100
 	}
-
-	add_equipment_production = {
-		equipment = {
-			type = fighter_equipment_2
-			creator = "JAP" 
-		}
-		requested_factories = 15
-		progress = 0.15
-		efficiency = 100
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = fighter_equipment_3
-			creator = "JAP" 
-		}
-		requested_factories = 2
-		progress = 0.15
-		efficiency = 45
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = CAS_equipment_2
-			creator = "GER" 
-		}
-		requested_factories = 4
-		progress = 0.2
-		efficiency = 100
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = cv_fighter_equipment_2
-			creator = "JAP" 
-		}
-		requested_factories = 1
-		progress = 0.15
-		efficiency = 100
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = cv_nav_bomber_equipment_1
-			creator = "JAP" 
-		}
-		requested_factories = 2
-		progress = 0.2
-		efficiency = 100
-	}
-
 }

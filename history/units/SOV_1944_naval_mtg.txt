@@ -91,7 +91,7 @@ units= {
 
 	### Black Sea Fleet -- Sevastopol
 	fleet = {
-		name = "Chernomorskiy Flot"
+		name = "Chernomorskiy Flot" #1944 fix
 		naval_base = 719 # novorossysk
 		task_force = {	
 			name = "Chernomorskiy Flot"
@@ -99,20 +99,32 @@ units= {
 			ship = { name = "Parizhskaya Kommuna" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = SOV version_name = "Marat Class" } } }
 			ship = { name = "Krasni Kavkaz" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Chervona Ukraina Class" } } }
 			ship = { name = "Krasny Krym" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Chervona Ukraina Class" } } }
-			ship = { name = "Chervona Ukraina" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Chervona Ukraina Class" } } }
-			ship = { name = "Komintern" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Komintern Class" } } }
+			#ship = { name = "Chervona Ukraina" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Chervona Ukraina Class" } } }
+			#ship = { name = "Komintern" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Komintern Class" } } }
 			ship = { name = "Bug" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Bug Class" } } }
 			# 5ya Flotiliya Esmintsev
-			ship = { name = "Moskva" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = SOV version_name = "Leningrad & Minsk Class" } } }
+			#ship = { name = "Moskva" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = SOV version_name = "Leningrad & Minsk Class" } } }
 			ship = { name = "Bodryy" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = SOV version_name = "Gnevnyy Class" } } }
 			ship = { name = "Boykiy" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = SOV version_name = "Gnevnyy Class" } } }
+
+			ship = { name = "Smyshlyony" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = SOV version_name = "Gnevnyy Class" } } }
+			ship = { name = "Soobrazitelny" definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = SOV version_name = "Soobrazitelnyi Class" } } }
+
+			ship = { name = "Sposobny" definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = SOV version_name = "Soobrazitelnyi Class" } } }
+			ship = { name = "Svobodny" definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = SOV version_name = "Soobrazitelnyi Class" } } }
+ 
+
+			
 			# 6ya Flotiliya Esmintsev
 			ship = { name = "Kharkov" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = SOV version_name = "Leningrad & Minsk Class" } } }
 			ship = { name = "Yakov Sverdlov" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Orfey Class" } } }
 			ship = { name = "Frunze" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Orfey Class" } } }
 		}	
+
+
+
 		task_force = {	
-			name = "Chernomorskiy Podvodniy Flot"
+			name = "Chernomorskiy Podvodniy Flot"  #partial fix 1944
 			location = 719 # Sevastopopl
 			# 9iy Podvodniy Flot
 			ship = { ordered_name = 201 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
@@ -131,7 +143,13 @@ units= {
 			ship = { name = "A-5" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "AG Class" } } }
 			# 17iy  Podvodniy Flot
 			ship = { ordered_name = 4 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
-			ship = { ordered_name = 5 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }					
+			ship = { ordered_name = 5 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }		
+			
+			ship = { definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+
+			ship = { definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }
 		}	
 	}
 

@@ -17,14 +17,17 @@ state={
 			industrial_complex = 1
 			air_base = 2
 
+			3174 = {
+				naval_base = 1
+			}
+
 		}
 		add_core_of = EST
 
-			1943.12.1 = {
+		1943.12.1 = {
 			owner = GER
 			controller = GER
 		}
-
 	}
 
 	provinces={

@@ -9,7 +9,7 @@ allies_dont_spam_invasion = {
 					tag = ENG
 					tag = CAN
 					tag = FRA
-					tag = RAJ
+					#tag = RAJ
 					tag = NZL
 					tag = AST
 					tag = BRA
@@ -53,7 +53,7 @@ allies_dont_just_focus_jap = { #if dday fails, just dont give give - this needs 
 					tag = ENG
 					tag = CAN
 					tag = FRA
-					tag = RAJ
+					#tag = RAJ
 					tag = NZL
 					tag = AST
 					tag = BRA
@@ -95,7 +95,7 @@ allies_dont_invade_GER_before_dday = {
 				tag = ENG
 				tag = CAN
 				tag = FRA
-				tag = RAJ
+				#tag = RAJ
 				tag = NZL
 				tag = AST
 				tag = BRA
@@ -199,6 +199,12 @@ allies_enable_invasion_of_GER = {
 		id = "GER"
 		#state_trigger = { state = 15 }
 		value = 250
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		strategic_region = 25 #greece
+		value = -250
 	}
 	
 
@@ -336,7 +342,7 @@ Allies_rush_GER = { #intrconnected with - Allies_careful_GER
 			tag = ENG
 			tag = CAN
 			tag = FRA
-			tag = RAJ
+			#tag = RAJ
 			tag = NZL
 			tag = AST
 			tag = BRA
@@ -347,11 +353,13 @@ Allies_rush_GER = { #intrconnected with - Allies_careful_GER
 
 	enable = {
 
+		date < 1945.6.1
+
 		GER = {
 			OR = {
-				AND = { #
-					has_full_control_of_state = 18
-					has_full_control_of_state = 17
+				AND = { #if germany loses control of any of these stop rushing
+					has_full_control_of_state = 18 #champange
+					has_full_control_of_state = 17 #france-comte
 				}
 
 				 #hurry up so soviets dont take everything
@@ -365,6 +373,8 @@ Allies_rush_GER = { #intrconnected with - Allies_careful_GER
 
 		#date < 1945.2.1
 	}
+
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_control
@@ -388,7 +398,7 @@ Allies_careful_GER = {  #intrconnected with - Allies_rush_GER
 			tag = ENG
 			tag = CAN
 			tag = FRA
-			tag = RAJ
+			#tag = RAJ
 			tag = NZL
 			tag = AST
 			tag = BRA
@@ -399,12 +409,15 @@ Allies_careful_GER = {  #intrconnected with - Allies_rush_GER
 
 	enable = {
 
+		date < 1945.6.1
+
 		GER = {
-			NOT = { has_full_control_of_state = 18 }
-			NOT = { has_full_control_of_state = 17 }
+			NOT = { has_full_control_of_state = 18 }#champange
+			NOT = { has_full_control_of_state = 17 }#france-comte
+
  
 			#AND = {
-				has_full_control_of_state = 68 #kurstin
+				has_full_control_of_state = 68 #ostmark
 				has_full_control_of_state = 4 #vienna
 			#}
 		}
@@ -412,13 +425,15 @@ Allies_careful_GER = {  #intrconnected with - Allies_rush_GER
 		#date < 1945.2.1
 	}
 
+	abort_when_not_enabled = yes
+
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			tag = GER
 		}
 
-		ordertype = front
+		ordertype = front 
 		execute_order = yes
 		execution_type = careful
 	}
@@ -433,7 +448,7 @@ allies_landed_in_france = {
 				tag = ENG
 				tag = CAN
 				tag = FRA
-				tag = RAJ
+				#tag = RAJ
 				tag = NZL
 				tag = AST
 				#tag = BRA
@@ -553,6 +568,7 @@ allies_landed_in_france = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = GER }
+		#id = europe
 		value = 62
 	}
 
@@ -697,11 +713,11 @@ allies_dont_invade_axis_allies = {
 
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = invade
-		id = "ITA"
-		value = -500
-	}
+	#ai_strategy = { #2022-12-03
+	#	type = invade
+	#	id = "ITA"
+	#	value = -500
+	#}
 
 	ai_strategy = {
 		type = invasion_unit_request  
@@ -820,7 +836,7 @@ Stop_guarding_these_borders = {
 
 
 
-ALLIES_take_germany_first = {
+ALLIES_take_germany_first = { #ALLIES_take_japan_after_germany
 	allowed = {
 		OR = {
 			tag = USA
@@ -832,11 +848,16 @@ ALLIES_take_germany_first = {
 		}
 	}
 	enable = {
-		country_exists = JAP
 		has_war_with = JAP
 		has_war_with = GER
+
+		OR = {
+			GER = { surrender_progress < 0.5 }
+			16 = { is_fully_controlled_by = GER } #paris
+		}
+
 		date > 1944.3.1 #1944.3.1
-		date < 1946.1.1
+		#date < 1945.4.1
 	}
 
 	abort_when_not_enabled = yes
@@ -891,14 +912,191 @@ ALLIES_take_germany_first = {
 		id = 87
 		value = 600
 	}
-
 }
 
 
+ALLIES_take_japan_after_germany = { #ALLIES_take_germany_first
+	allowed = {
+		OR = {
+			tag = USA
+		}
+	}
+	enable = {
+		has_war_with = JAP
+
+		OR = {
+			GER = { surrender_progress > 0.5 }
+			AND = {
+				NOT = { 16 = { is_fully_controlled_by = GER } }#paris
+				NOT = { 24 = { is_fully_controlled_by = GER } }
+				NOT = { 15 = { is_fully_controlled_by = GER } }
+				NOT = { 18 = { is_fully_controlled_by = GER } }
+				NOT = { 30 = { is_fully_controlled_by = GER } }
+			}
+		}
+
+		date > 1944.3.1
+	}
+
+	abort_when_not_enabled = yes
+	
+	###########################
 
 
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = CHI
+		value = 0
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = YUN
+		value = 0
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "JAP"
+		value = 10
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = pacific
+		value = 20
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 90
+		value = -600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 76
+		value = -600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 79
+		value = -600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 77
+		value = -600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 87
+		value =-600
+	}
+}
 
 
+ALLIES_bomb_normandy = {
+	allowed = {
+		OR = {
+			tag = ENG
+			tag = USA
+		}
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = GER
+		date > 1944.6.1
+		date < 1944.6.25
+
+		surrender_progress < 0.025
+
+		#france coast
+		OR = {
+			NOT = { 15 = {is_fully_controlled_by = GER} }
+			NOT = { 16 = {is_fully_controlled_by = GER} }
+			NOT = { 14 = {is_fully_controlled_by = GER} }
+			NOT = { 23 = {is_fully_controlled_by = GER} }
+			NOT = { 19 = {is_fully_controlled_by = GER} }
+			NOT = { 21 = {is_fully_controlled_by = GER} }
+		}
+
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 208 
+		value = 35000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 19 
+		value = 35000 #value of stocked main front in active combat is usually around 35,000
+	}
+}
+
+
+ALLIES_bomb_germany = {
+	allowed = {
+		OR = {
+			tag = ENG
+			tag = USA
+		}
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = GER
+		date > 1944.1.1
+		date < 1945.6.1
+
+		64 = {is_fully_controlled_by = GER}
+		59 = {is_fully_controlled_by = GER}
+		60 = {is_fully_controlled_by = GER}
+		65 = {is_fully_controlled_by = GER}
+
+
+		set_temp_variable = { days = global.num_days }
+		modulo_temp_variable = { days = 60 }
+		check_variable = { days > 20 }
+
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 6 
+		value = 30000 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 7 
+		value = 30001 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 8 
+		value = 30000 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 5 
+		value = 25000 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 38 
+		value = 30000 #value of stocked main front in active combat is usually around 35,000
+	}
+}
 
 
 
@@ -913,6 +1111,7 @@ USA_small_nation_help_in_italy = {
 			original_tag = BRA
 			original_tag = MEX
 			original_tag = SAF
+			original_tag = CAN
 		}
 	}
 
@@ -924,7 +1123,13 @@ USA_small_nation_help_in_italy = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = {tag = ITA}
-		value = 90
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = USA
+		value = 20
 	}
 
 
@@ -935,7 +1140,7 @@ USA_small_nation_help_in_italy = {
 		}
 
 		ordertype = front
-		execute_order = no
+		execute_order = yes
 		execution_type = careful
 	}
 }

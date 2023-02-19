@@ -837,7 +837,7 @@ units = {
 	}
 	division = {
 		name = "40th 'Sunshine' Infantry Division"
-		location = 12237
+		location = 12931
 		division_template = "Infantry Division"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
@@ -851,7 +851,7 @@ units = {
 	}
 	division = {
 		name = "5th Marine 'The Spearhead'"
-		location = 12237
+		location = 1222
 		division_template = "Marine Brigade"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
@@ -859,49 +859,49 @@ units = {
 
 	division = {
 		name = "1st Marine 'Old Breed'"
-		location = 12237
+		location = 10251
 		division_template = "Marine Brigade"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "5th Marine 'The Spearhead'"
-		location = 12237
+		location = 1301
 		division_template = "Marine Brigade"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "33rd 'Prairie Lightning' NG Division"
-		location = 12371
+		location = 2129
 		division_template = "National Guard Division"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "6th 'Sight Seeing Sixth' Infantry Division"
-		location = 7529
+		location = 1617
 		division_template = "Infantry Division"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "41st 'Sun Setters' Infantry Division"
-		location = 7529
+		location = 4635
 		division_template = "Infantry Division"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "24th 'Victory' Infantry Division"
-		location = 10423
+		location = 7627
 		division_template = "Infantry Division"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "32nd 'Les Terribles' Infantry Division"
-		location = 10423
+		location = 1602
 		division_template = "Infantry Division"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
@@ -3647,7 +3647,7 @@ division = {
 		start_experience_factor = 0.21
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 1
@@ -3663,7 +3663,7 @@ division = {
 		start_experience_factor = 0.15
 		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 0.86
@@ -3679,7 +3679,7 @@ division = {
 		start_experience_factor = 0.4
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 1
@@ -3695,7 +3695,7 @@ division = {
 		start_experience_factor = 0.28
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 0.9
@@ -3711,7 +3711,7 @@ division = {
 		start_experience_factor = 0.2
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 1
@@ -3727,7 +3727,7 @@ division = {
 		start_experience_factor = 0.3
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 1
@@ -3743,7 +3743,7 @@ division = {
 		start_experience_factor = 0.4
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 1
@@ -3759,7 +3759,7 @@ division = {
 		start_experience_factor = 0.28
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 0.9
@@ -3775,7 +3775,7 @@ division = {
 		start_experience_factor = 0.4
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 1
@@ -3791,7 +3791,7 @@ division = {
 		start_experience_factor = 0.3
 		force_equipment_variants = { infantry_equipment_3 = { owner = "USA" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "USA" } }
-		force_equipment_variants = { medium_tank_destroyer_chassis_3 = { owner = USA version_name = "M18 Hellcat" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = USA version_name = "M18 Hellcat" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "USA" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
 		start_equipment_factor = 1
@@ -3801,101 +3801,6 @@ division = {
 
 
 
-}
-
-
-air_wings = {
-	2 = {
-		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
-
-		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 500 }
-	}
-	156 = {
-		tac_bomber_equipment_2 = {
-			owner = "USA"
-			amount = 250
-		}
-	}
-	127 = {
-		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
-
-		tac_bomber_equipment_2 = {
-			owner = "USA"
-			amount = 500
-		}
-	}
-	129 = {
-		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
-
-		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 250 }
-
-		nav_bomber_equipment_2 = {
-			owner = "USA"
-			amount = 500
-		}
-	}
-	357 = {
-		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
-
-		tac_bomber_equipment_2 = {
-			owner = "USA"
-			amount = 1000
-		}
-	}
-	523 = {
-		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
-
-		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 250 }
-
-	}
-	633 = {
-		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
-
-		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
-
-		tac_bomber_equipment_2 = {
-			owner = "USA"
-			amount = 100
-		}
-	}
-	737 = {
-		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
-
-	}
-	633 = {
-		fighter_equipment_1 = {
-			owner = "USA"
-			amount = 1000
-		}
-		CAS_equipment_2 = {
-			owner = "USA"
-			amount = 500
-		}
-	}
-	629 = {
-		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
-
-		CAS_equipment_2 = {
-			owner = "USA"
-			amount = 500
-		}
-	}
-
-	##ENGLAND
-		120 = {
-		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
-
-		CAS_equipment_2 = {
-			owner = "USA"
-			amount = 250
-		}
-	}
-
-	132 = {
-		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 500 }
-		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 500 }
-		transport_plane_equipment_1 = { owner = "USA" amount = 250 }
-	}
 }
 
 
@@ -3947,16 +3852,6 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = cv_fighter_equipment_2
-			creator = "USA"
-		}
-		requested_factories = 5
-		progress = 1.0
-		efficiency = 100
-	}
-
-	add_equipment_production = {
-		equipment = {
 			type = motorized_equipment_1
 			creator = "USA"
 		}
@@ -3964,25 +3859,4 @@ instant_effect = {
 		progress = 1.0
 		efficiency = 100
 	}
-
-	add_equipment_production = {
-		equipment = {
-			type = fighter_equipment_3
-			creator = "USA"
-		}
-		requested_factories = 15
-		progress = 1.0
-		efficiency = 100
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = CAS_equipment_2
-			creator = "USA"
-		}
-		requested_factories = 6
-		progress = 1.0
-		efficiency = 100
-	}
-
 }

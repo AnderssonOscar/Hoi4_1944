@@ -92,7 +92,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = unit_ratio
 		id = cas
-		value = 2 #because doctrine this = 15
+		value = 5 #because doctrine this = 15
 	}
 
 	ai_strategy = {
@@ -164,7 +164,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = infantry
-		value = 15
+		value = 20
 	}
 
 	ai_strategy = {
@@ -175,8 +175,14 @@ SOV_unit_production = {
 
 	ai_strategy = {
 		type = equipment_production_min_factories
+		id = infantry
+		value = 25
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
 		id = artillery
-		value = 4
+		value = 10
 	}
 
 	ai_strategy = {
@@ -1289,7 +1295,8 @@ SOV_scorched_earth_german_front_stalingrad = {
 SOV_dont_do_so_many_naval_invasions_please = {
 
 	allowed = { original_tag = SOV }
-
+	enable = { always = yes }
+	
 	ai_strategy = {
 		type = invasion_unit_request
 		tag = GER
@@ -2144,12 +2151,6 @@ SOV_prepare_to_fight_japan_manchukuo = {
 	}
 
 	ai_strategy = {
-		type = invade
-		id = "JAP"
-		value = 80
-	}
-
-	ai_strategy = {
 		type = consider_weak
 		id = "JAP"
 		value = 100
@@ -2207,20 +2208,48 @@ SOV_dont_stack_man_border = {
 
 
 
+
+
+SOV_pressure_on_germany = {
+	allowed = { original_tag = SOV }
+	enable = {
+		has_war_with = GER
+		NOT = { has_war_with = JAP } # dont get rekt by japan
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = GER
+		value = 85
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = GER
+		value = 100
+	}
+}
+
 SOV_take_it_easy = {
 	allowed = { original_tag = SOV }
 	enable = {
-		tag = SOV
 		has_war_with = GER
-		country_exists = GER
-		
-		NOT = {has_idea = major_offensive}
+		NOT = { has_war_with = JAP } # dont get rekt by japan
+		NOT = { has_idea = major_offensive }
 
-		#GER = {surrender_progress < 0.05}
-		#strength_ratio = { tag = GER ratio > 0.75 }
+		OR = {
+			has_idea = offensive_exhaustion
+
+			AND = {
+				date > 1944.1.1
+				date < 1944.6.22 #bagration
+			}
+		}
 
 		date > 1944.1.1
-		#date < 1945.3.1 #Dont take it easy
+		date < 1945.6.1
 	}
 
 	abort_when_not_enabled = yes
@@ -2234,23 +2263,20 @@ SOV_take_it_easy = {
 		execute_order = yes
 		execution_type = careful
 	}
-
 }
 
-SOV_take_germany = {
+
+SOV_back_to_normal = {
 	allowed = { original_tag = SOV }
 	enable = {
 		has_war_with = GER
-
-		OR = {
-			date > 1944.6.22
-			NOT = { 15 = {is_fully_controlled_by = GER} }
-			NOT = {has_war_with = FIN}
-		}
-
 		country_exists = GER
-		has_idea = major_offensive
-		date > 1944.1.1
+		NOT = { has_war_with = JAP } # dont get rekt by japan
+		
+		NOT = { has_idea = major_offensive } # dont go normal under offensive
+		NOT = { has_idea = offensive_exhaustion } #dont go normal under offensive_exhaustion
+
+		date > 1944.8.19 # end of bagration / start of romanian offensive
 	}
 
 	abort_when_not_enabled = yes
@@ -2262,13 +2288,38 @@ SOV_take_germany = {
 
 		ordertype = front
 		execute_order = yes
+		execution_type = balanced
+	}
+
+}
+
+SOV_take_germany = {
+	allowed = { original_tag = SOV }
+	enable = {
+
+		NOT = { has_war_with = ENG } #just in case
+		NOT = { has_war_with = USA } #just in case
+
+		NOT = { has_war_with = JAP } # dont get rekt by japan
+		has_war_with = GER
+
+		has_idea = major_offensive
+
+		date > 1944.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = GER
+		}
+
+		ordertype = front
+		execute_order = yes
 		execution_type = rush
 		
-	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = GER
-		value = 90
 	}
 }
 
@@ -2282,30 +2333,19 @@ SOV_dont_hurt_romania_yet = {
 
 	enable = {
 		is_historical_focus_on = yes
-		date < 1944.8.1
 		has_war_with = ROM
-		NOT = {has_idea = major_offensive}
+		has_war_with = GER
+
+		date > 1944.1.1
+		date < 1944.8.19
 	}
 
-	ai_strategy = {
-		type = front_unit_request
-	country_trigger = {
-			tag = ROM
-		}
-		tag = ROM
-		value = -45
-	}
-
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = front_control
-		country_trigger = {
-			tag = ROM
-		}
-
-		ordertype = front
-		execute_order = yes
-		execution_type = careful
+		type = strategic_air_importance
+		id = 26 
+		value = -30000 #value of stocked main front in active combat is usually around 35,000
 	}
 }
 
@@ -2313,41 +2353,37 @@ SOV_dont_hurt_romania_yet = {
 SOV_take_romania = {
 	allowed = { original_tag = SOV }
 	enable = {
-		#tag = SOV
 		has_war_with = GER
 		has_war_with = ROM
-		#NOT = { has_war_with = FIN }
+
 		ROM = { has_capitulated = no }
-		has_idea = major_offensive
+		ROM = { surrender_progress < 0.75 }
+ 
+		date > 1944.8.19
+
+		OR = {
+			has_idea = major_offensive
+			NOT = { has_idea = offensive_exhaustion }
+		}
 
 		AND = {
 			has_full_control_of_state = 197
 			has_full_control_of_state = 203
 			has_full_control_of_state = 202
 		}
-
-		#country_exists = GER
-		#has_idea = major_offensive
-		date > 1944.8.14
+		#date > 1944.8.1 #1944.8.14
 	}
 
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = front_control
-		country_trigger = {
-			tag = ROM
-		}
-
+		tag = ROM
+		priority = 100
+		ratio = 0.5
 		ordertype = front
 		execute_order = yes
 		execution_type = rush
-		
-	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = ROM
-		value = 103
-	}
+	}	
 }
 
 
@@ -2359,8 +2395,18 @@ SOV_dont_hurt_finland_yet = {
 
 	enable = {
 		is_historical_focus_on = yes
-		date < 1944.6.10
 		date > 1944.1.1
+
+		OR = {
+			AND = {
+				date < 1944.6.10
+				#date > 1944.1.1
+			}
+			AND = {
+				date < 1944.8.1
+				has_idea = offensive_exhaustion
+			}
+		}
 	}
 
 	ai_strategy = {
@@ -2372,7 +2418,6 @@ SOV_dont_hurt_finland_yet = {
 		value = -30
 	}
 
-
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
@@ -2380,19 +2425,66 @@ SOV_dont_hurt_finland_yet = {
 		}
 
 		ordertype = front
-		execute_order = no
+		execute_order = yes
 		execution_type = careful
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = FIN
+		value = -100
 	}
 }
 
-SOV_take_finland = {
+SOV_take_finland_medium = {
 	allowed = { original_tag = SOV }
 	enable = {
 		tag = SOV
+
 		country_exists = FIN
 		has_war_with = FIN
+		
 		FIN = { has_capitulated = no }
+		FIN = { is_in_faction_with = GER }
 		date > 1944.6.10 #was 1944.6.10
+		date < 1944.8.1
+	}
+
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = FIN
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = balanced
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = FIN
+		value = 55
+	}
+	ai_strategy = {
+		type = front_armor_score
+		id = FIN
+		value = -100
+	}
+}
+
+SOV_take_finland_high = {
+	allowed = { original_tag = SOV }
+	enable = {
+		tag = SOV
+
+		country_exists = FIN
+		has_war_with = FIN
+		
+		FIN = { has_capitulated = no }
+		FIN = { is_in_faction_with = GER }
+		date > 1944.8.7 #1944.8.7 exhaustion disepears
+		date < 1945.1.1
 	}
 
 	abort_when_not_enabled = yes
@@ -2410,6 +2502,12 @@ SOV_take_finland = {
 		type = front_unit_request
 		tag = FIN
 		value = 55
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = FIN
+		value = 50
 	}
 }
 
@@ -2429,6 +2527,11 @@ SOV_stop_stupid_garrison = {
 	ai_strategy = {
 		type = garrison
 		value = -130
+	}
+
+	ai_strategy = {
+		type = garrison_reinforcement_priority
+		value = -100
 	}
 }
 
@@ -2552,6 +2655,36 @@ SOV_dont_do_naval_invasion_nor = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = NOR }
+		value = -500
+	}
+}
+
+
+SOV_dont_do_naval_invasion_fin = {
+	allowed = { 
+		tag = SOV
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1945.5.1
+		has_war_with = GER
+		NOT = {has_war_with = JAP}
+		NOT = {has_war_with = ENG}
+		NOT = {has_war_with = USA}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "FIN"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = FIN }
 		value = -500
 	}
 }
@@ -2684,7 +2817,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 35
+		value = 28
 	}
 
 	ai_strategy = {
@@ -2694,10 +2827,9 @@ SOV_unit_production = {
 	}
 	 
 
-	ai_strategy = { type = equipment_variant_production_factor id = railway_gun_equipment      value = -100 }
-	ai_strategy = { type = equipment_variant_production_factor id = heavy_fighter_equipment      value = -100 }
+	#ai_strategy = { type = equipment_variant_production_factor id = small_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = large_plane_airframe      value = -100 }
 	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
-	ai_strategy = { type = equipment_variant_production_factor id = scout_plane_equipment        value = -250 }
 }
 
 

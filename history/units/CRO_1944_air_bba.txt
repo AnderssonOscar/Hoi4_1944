@@ -1,0 +1,19 @@
+﻿
+
+### Air Forces ###
+air_wings = {
+	104 = {																# Bosnia
+
+		small_plane_airframe_1 = { owner = "CRO" creator = "GER" version_name = "Bf 109 E" amount = 50 }
+		small_plane_airframe_2 = { owner = "CRO" creator = "GER" version_name = "Fw 190" amount = 40 }
+		small_plane_airframe_2 = { owner = "CRO" creator = "ITA" version_name = "C.202 Folgore II serie" amount = 60 }
+		small_plane_airframe_1 = { owner = "CRO" creator = "ITA" version_name = "G.50" amount = 40}	
+		small_plane_airframe_1 = { owner = "CRO" creator = "YUG" version_name = "Ikarus IK-2" amount = 48}	
+
+		small_plane_cas_airframe_0 = { owner = "CRO" amount = 60 creator = "GER" version_name = "Do 17"}	
+		medium_plane_airframe_1 = { owner = "CRO" amount = 40 creator = "ITA" version_name = "SM.79"}
+	}
+}
+
+
+### Starting Production ###

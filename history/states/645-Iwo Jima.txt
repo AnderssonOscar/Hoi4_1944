@@ -20,6 +20,15 @@ state=
 			13025 5
 		 }
 
+		 1943.12.31 = {
+			buildings = {
+				air_base = 5
+				13025 = {
+					naval_base = 5
+				}
+			}
+		 }
+
 	}
 	provinces={
 		13025

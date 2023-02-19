@@ -182,7 +182,7 @@ GER_Inf_01 =
 		123 = { "%d. Infanterie-Division" }
 		122 = { "%d. Infanterie-Division" }
 		137 = { "%d. Infanterie-Division" }
-		100 = { "%d. leichte Infanterie-Division" }
+		100 = { "%d. Infanterie-Division" }
 		126 = { "%d. Infanterie-Division" }
 		125 = { "%d. Infanterie-Division" }
 		129 = { "%d. Infanterie-Division" }
@@ -196,13 +196,13 @@ GER_Inf_01 =
 		333 = { "%d. Infanterie-Division" }
 		340 = { "%d. Infanterie-Division" }
 		337 = { "%d. Infanterie-Division" }
-		99 = { "%d. leichte Infanterie-Division" }
+		99 = { "%d. Infanterie-Division" }
 		342 = { "%d. Infanterie-Division" }
 		335 = { "%d. Infanterie-Division" }
 		106 = { "%d. Infanterie-Division" }
 		320 = { "%d. Infanterie-Division" }
-		97 = { "%d. leichte Infanterie-Division" }
-		101 = { "%d. leichte Infanterie-Division" }
+		97 = { "%d. Infanterie-Division" }
+		101 = { "%d. Infanterie-Division" }
 		110 = { "%d. Infanterie-Division" }
 		112 = { "%d. Infanterie-Division" }
 		113 = { "%d. Infanterie-Division" }
@@ -247,33 +247,12 @@ GER_Inf_01 =
 		346 = { "%d. Infanterie-Division" }
 		344 = { "%d. Infanterie-Division" }
 		343 = { "%d. Infanterie-Division" }
-		909 = { "Luftwaffen-Feld-Division 1" }
-		910 = { "Luftwaffen-Feld-Division 2" }
-		911 = { "Luftwaffen-Feld-Division 3" }
-		912 = { "Luftwaffen-Feld-Division 4" }
-		914 = { "Luftwaffen-Feld-Division 6" }
-		913 = { "Luftwaffen-Feld-Division 5" }
-		915 = { "Luftwaffen-Feld-Division 7" }
-		917 = { "Luftwaffen-Feld-Division 9" }
-		919 = { "Luftwaffen-Feld-Division 11" }
-		920 = { "Luftwaffen-Feld-Division 12" }
-		923 = { "Luftwaffen-Feld-Division 15" }
 		347 = { "%d. Infanterie-Division" }
-		916 = { "Luftwaffen-Feld-Division 8" }
 		326 = { "%d. Infanterie-Division" }
 		338 = { "%d. Infanterie-Division" }
-		921 = { "Luftwaffen-Feld-Division 13" }
-		922 = { "Luftwaffen-Feld-Division 14" }
 		334 = { "%d. Infanterie-Division" }
-		918 = { "Luftwaffen-Feld-Division 10" }
-		924 = { "Luftwaffen-Feld-Division 16" }
-		925 = { "Luftwaffen-Feld-Division 17" }
-		926 = { "Luftwaffen-Feld-Division 18" }
-		929 = { "Luftwaffen-Feld-Division 21" }
 		282 = { "%d. Infanterie-Division" }
 		355 = { "%d. Infanterie-Division" }
-		927 = { "Luftwaffen-Feld-Division 19" }
-		928 = { "Luftwaffen-Feld-Division 20" }
 		356 = { "%d. Infanterie-Division" }
 		264 = { "%d. Infanterie-Division" }
 		265 = { "%d. Infanterie-Division" }
@@ -355,7 +334,6 @@ GER_Inf_01 =
 		901 = { "Infanterie-Division 'Friedrich Ludwig Jahn'" }
 		907 = { "Infanterie-Division 'Theodor Körner'" }
 		906 = { "Infanterie-Division 'Schlageter'" }
-		930 = { "1. Luftwaffen-Ausbildungs-Division" }
 		900 = { "Infanterie-Division 'Ferdinand von Schill'" }
 		902 = { "Infanterie-Division 'Güstrow'" }
 		
@@ -395,8 +373,6 @@ GER_ALTINF_01 =
 		78 = { "%d. Sturm-Division" }
 		44 = { "(44.) Reichsgrenadier-Division Hoch- und Deutschmeister" }
 		91 = { "%d.(Luftlande) Infanterie-Division" }
-		944 = { "19. Luftwaffen-Sturm-Division" }
-		945 = { "20. Luftwaffen-Sturm-Division" }
 		560 = { "%d. Volks-Grenadier-Division" }
 		12 = { "%d. Volks-Grenadier-Division" }
 		361 = { "%d. Volks-Grenadier-Division" }
@@ -550,7 +526,7 @@ GER_VOLNF_01 =
 
 	fallback_name = "%d. Volksturm-Division"
 
-	link_numbering_with = { GER_Inf_01 }
+	#link_numbering_with = { GER_Inf_01 }
 
 	# Names with numbers (only one number per entry)
 	ordered =
@@ -588,7 +564,7 @@ GER_LUFTINF_01 =
 
 	fallback_name = "%d. Luftwaffe-Feld-Division"
 
-	link_numbering_with = { GER_Inf_01 }
+	#link_numbering_with = { GER_Inf_01 }
 
 	# Names with numbers (only one number per entry)
 	ordered =
@@ -596,6 +572,10 @@ GER_LUFTINF_01 =
 	    1 = { "%d. Luftwaffen-Feld-Division" }
 		2 = { "%d. Luftwaffen-Feld-Division" }
 		3 = { "%d. Luftwaffen-Feld-Division" }
+		4 = { "%d. Luftwaffen-Feld-Division" }
+		5 = { "%d. Luftwaffen-Feld-Division" }
+		6 = { "%d. Luftwaffen-Feld-Division" }
+		7 = { "%d. Luftwaffen-Feld-Division" }
 	}
 }
 

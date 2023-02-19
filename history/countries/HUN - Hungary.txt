@@ -275,13 +275,17 @@ recruit_character = HUN_franz_friedrich
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
 	#add_opinion_modifier = { target = GER modifier = faction_traitor }
 
-	add_political_power = 2589
+	army_experience = 110
+	navy_experience = 0	
+	air_experience = 75
+
+	add_political_power = 2189
 	add_command_power = 200
 
 	set_convoys = 10
 	set_stability = 0.9 
-	set_war_support = 0.49
-	add_manpower = 110432
+	set_war_support = 0.11
+	add_manpower = 147432
 
 	set_politics = {
 		ruling_party = neutrality
@@ -343,6 +347,7 @@ recruit_character = HUN_franz_friedrich
 		radio_detection = 1
 		decimetric_radar = 1
 		improved_decimetric_radar = 1
+		centimetric_radar = 1
 
 		#industry
 		excavation1 = 1
@@ -363,6 +368,11 @@ recruit_character = HUN_franz_friedrich
 		fuel_silos = 1
 		fuel_refining = 1
 		fuel_refining2 = 1
+		fuel_refining3 = 1
+
+		synth_oil_experiments = 1
+		oil_processing = 1
+		rubber_processing = 1
 
 		construction1 = 1
 		construction2 = 1
@@ -372,13 +382,6 @@ recruit_character = HUN_franz_friedrich
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
 		dispersed_industry4 = 1
-
-		early_fighter = 1
-		fighter1 = 1
-		fighter2 = 1
-
-		CAS1 = 1
-		CAS2 = 1
 
 		support_weapons = 1
 		support_weapons2 = 1
@@ -433,6 +436,73 @@ recruit_character = HUN_franz_friedrich
 		basic_train = 1
 	}
 
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				#survivability_studies = 1
+
+				aa_lmg = 1
+				aa_hmg = 1
+
+				aa_cannon_1 = 1
+				#aa_cannon_2 = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+				#engines_3 = 1
+
+				#range_improvements = 1
+
+				early_bombs = 1
+
+				aircraft_construction = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+				engines_3 = 1
+
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+				#advanced_small_airframe = 1
+
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				improved_medium_airframe = 1
+
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+				#improved_large_airframe = 1
+				#advanced_large_airframe = 1
+			}
+		else = {
+			set_technology = {
+
+				naval_bomber1 = 1
+
+				CAS1 = 1
+				CAS2 = 1
+		
+				early_fighter = 1
+				fighter1 = 1
+				fighter2 = 1
+				#fighter3 = 1
+		
+				heavy_fighter1 = 1
+				#heavy_fighter2 = 1
+		
+				strategic_bomber1 = 1
+				#strategic_bomber2 = 1
+		
+				tactical_bomber1 = 1
+				tactical_bomber2 = 1
+			}
+		}
+	}
+
 	if = {
 		limit = {
 			
@@ -481,9 +551,34 @@ recruit_character = HUN_franz_friedrich
 			}
 			#icon = "GFX_GER_improved_medium_tank_medium"
 		}
-
-
 	}
+
+	if = {
+		limit = {
+			has_dlc = "By Blood Alone"
+		}
+		create_equipment_variant = {
+			name = "WM-16"
+			type = small_plane_cas_airframe_0
+			modules = {
+				fixed_main_weapon_slot = bomb_locks
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+		}
+
+
+		
+	}
+
+	
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "HUN_1944_air_bba"
+		else = {
+			set_air_oob = "HUN_1944_air_legacy"
+	}
+}
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
@@ -500,11 +595,15 @@ recruit_character = HUN_franz_friedrich
         amount = 112
     }
 
+
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
         amount = 342
 		producer = GER
     }
+
+	if = {
+		limit = { has_dlc = "No Step Back" }		
 
 	add_equipment_to_stockpile = {
         type = medium_tank_chassis_1
@@ -526,6 +625,7 @@ recruit_character = HUN_franz_friedrich
 		variant_name  = "T-34-85"
 		producer = SOV
     }
+}
 
 
 	add_equipment_to_stockpile = { 
