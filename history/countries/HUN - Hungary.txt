@@ -285,7 +285,7 @@ recruit_character = HUN_franz_friedrich
 	set_convoys = 10
 	set_stability = 0.9 
 	set_war_support = 0.11
-	add_manpower = 147432
+	add_manpower = 187432
 
 	set_politics = {
 		ruling_party = neutrality
@@ -431,7 +431,7 @@ recruit_character = HUN_franz_friedrich
 		tech_military_police = 1
 
 		tech_maintenance_company = 1
-		#tech_maintenance_company2 = 1
+		tech_maintenance_company2 = 1
 		
 		basic_train = 1
 	}
@@ -582,23 +582,23 @@ recruit_character = HUN_franz_friedrich
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
-        amount = 2050
+        amount = 2950
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 110
+        amount = 170
     }
 
 	add_equipment_to_stockpile = {
         type = artillery_equipment_1
-        amount = 112
+        amount = 172
     }
 
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 342
+        amount = 392
 		producer = GER
     }
 

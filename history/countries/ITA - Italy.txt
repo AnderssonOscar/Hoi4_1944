@@ -1544,6 +1544,7 @@ if = {
 		synth_oil_experiments = 1
 		rubber_processing = 1
 		improved_rubber_processing = 1
+		advanced_rubber_processing = 1
 
 		fuel_refining = 1
 		fuel_refining2 = 1
@@ -1771,7 +1772,7 @@ if = {
 	complete_national_focus = ITA_midget_submarines
 	complete_national_focus = ITA_decima_flottiglia_mas
 	#activate_decision = ITA_vallo_alpino_occidentale
-	unlock_national_focus = ITA_albanian_oil
+	#unlock_national_focus = ITA_albanian_oil
 
 
 	if = {

@@ -27,9 +27,10 @@ state={
 
 		1943.12.30 = {
 			buildings = {
-				industrial_complex = 1
-				arms_factory = 1
+				industrial_complex = 2
+				arms_factory = 2
 				anti_air_building = 1
+				dockyard = 1
 			}
 		}
 		add_core_of = SWE

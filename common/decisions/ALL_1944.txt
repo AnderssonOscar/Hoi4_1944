@@ -524,7 +524,7 @@ war_measures = {
 		}
 
 		fire_only_once = no
-		days_remove = 10
+		days_remove = 12
 		days_re_enable = 90
 
 		cost = 50
@@ -538,13 +538,15 @@ war_measures = {
 			}
 		}
 		modifier = {
-			army_defence_factor = 1.0
-			dig_in_speed_factor = 2.5
+			army_defence_factor = 0.5
+			army_org_factor = 0.5
+			max_dig_in_factor = 0.5
+			dig_in_speed_factor = 2.0
 		}
 
 		complete_effect = {
 			#add_war_support = -0.01
-			add_stability = -0.015
+			add_stability = -0.01
 		}
 	}
 
@@ -590,7 +592,7 @@ war_measures = {
                     has_government = neutrality
                     has_war_support > 0.7
                    # has_stability > 0.5
-					surrender_progress > 0.2
+					surrender_progress > 0.1
                 }
             }
         }
@@ -621,13 +623,13 @@ war_measures = {
         modifier = {
             conscription = 0.01
             stability_factor = -0.05
-			war_support_factor = -0.1
+			war_support_factor = -0.05
         }
 
 		complete_effect = {
-			set_temp_variable = { totatmanpower = 1224.6 }
+			set_temp_variable = { totatmanpower = 1524.6 }
 			multiply_temp_variable = { totatmanpower = num_of_controlled_states }
-			add_to_temp_variable = { var = totatmanpower value = 11818 }
+			add_to_temp_variable = { var = totatmanpower value = 12918 }
 			add_manpower = totatmanpower
 		}
 

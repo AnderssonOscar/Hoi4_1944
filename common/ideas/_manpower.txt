@@ -470,11 +470,11 @@ ideas = {
 						is_ai = yes
 					}
 
-					set_temp_variable = { days = global.num_days }
-					modulo_temp_variable = { days = 30 }
-					check_variable = { days > 20 }
+					#set_temp_variable = { days = global.num_days }
+					#modulo_temp_variable = { days = 30 }
+					#check_variable = { days > 20 }
 
-					has_manpower < 75000
+					has_manpower < 100000
 				}
 			
 
@@ -542,7 +542,7 @@ ideas = {
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
-					manpower_per_military_factory <  500
+					manpower_per_military_factory <  700
 				}
 				modifier = {
 					#Lower chance if has decent amount
@@ -599,7 +599,7 @@ ideas = {
 				has_war = yes
 				OR = {
 					has_war_support > 0.85
-					surrender_progress > 0.25
+					surrender_progress > 0.15
 				}
 				enemies_strength_ratio > 1
 				#any_enemy_country = {
@@ -620,7 +620,8 @@ ideas = {
 					modulo_temp_variable = { days = 30 }
 					check_variable = { days > 20 }
 
-					has_manpower < 75000
+					has_manpower < 25000
+					has_idea = all_adults_serve
 				}
 			
 
@@ -710,6 +711,12 @@ ideas = {
 					original_tag = GER
 					date > 1944.1.1
 					has_manpower > 25000
+				}
+
+				modifier = {
+					factor = -10
+					original_tag = SOV
+					date < 1945.4.1
 				}
 
 			}

@@ -3,4 +3,4 @@ tags={
 	"Historical"
 }
 name="1944"
-supported_version="1.12.6"
+supported_version="1.12.10"

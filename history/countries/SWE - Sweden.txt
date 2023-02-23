@@ -594,8 +594,8 @@ if = {
 	add_political_power = 2289
 	add_command_power = 200
 
-	army_experience = 65
-	navy_experience = 25	
+	army_experience = 75
+	navy_experience = 35	
 	air_experience = 275
 
 	set_convoys = 50
@@ -610,6 +610,13 @@ if = {
 		partial_economic_mobilisation
 		bofors
 		landsverk
+	}
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
 	}
 
 	if = {
@@ -711,6 +718,8 @@ if = {
 		fuel_refining2 = 1
 		fuel_refining3 = 1
 
+		rubber_processing = 1
+
 		construction1 = 1
 		construction2 = 1
 		construction3 = 1
@@ -771,6 +780,7 @@ if = {
 		tech_military_police = 1
 
 		tech_maintenance_company = 1
+		tech_maintenance_company2 = 1
 
 		tech_signal_company = 1
 		
@@ -778,6 +788,32 @@ if = {
 		tech_logistics_company2 = 1
 		
 		basic_train = 1
+	}
+
+	if = {
+		limit = { has_dlc = "Man the Guns" } 
+		set_technology = {
+			sonar = 1
+			smoke_generator = 1
+
+			damage_control_1 = 1
+
+			fire_control_methods_1 = 1
+			fire_control_methods_2 = 1
+
+			basic_light_shell = 1
+			improved_light_battery = 1
+			improved_light_shell = 1
+	
+			basic_medium_shell = 1
+			improved_medium_battery = 1
+			#improved_medium_shell = 1
+	
+			basic_heavy_shell = 1
+
+			improved_ship_hull_submarine = 1
+			improved_ship_hull_light = 1
+		}
 	}
 
 
@@ -895,32 +931,43 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
-        amount = 2123
+        amount = 4523
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_2
+        amount = 1523
     }
 
 	add_equipment_to_stockpile = {
         type = artillery_equipment_2
-        amount = 98
+        amount = 188
     }
 
 	add_equipment_to_stockpile = {
         type = anti_air_equipment_1
-        amount = 80
+        amount = 190
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 131
+        amount = 211
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 326
+        amount = 426
 		producer = SWE
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 111
+		producer = USA
     }
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 22
+        amount = 26
     }
 }

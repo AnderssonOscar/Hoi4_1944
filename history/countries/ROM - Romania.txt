@@ -196,7 +196,7 @@ set_convoys = 10
 		complete_national_focus = ROM_expand_the_galati_shipyards
 		complete_national_focus = ROM_trade_treaty_with_germany
 		complete_national_focus = ROM_iar_80
-		#complete_national_focus = ROM_appoint_allied_friendly_government
+		complete_national_focus = ROM_appoint_allied_friendly_government
 		complete_national_focus = ROM_cas
 		complete_national_focus = ROM_royal_guards_divisions
 		complete_national_focus = ROM_the_zb_53
@@ -444,6 +444,7 @@ if = {
 	remove_ideas = {
 		ROM_king_carol_ii_hedonist
 		#ROM_king_carol_ii_paid_with_pp
+		ROM_iron_guard
 	}
 
 	add_ideas = {
@@ -458,11 +459,14 @@ if = {
 	}
 
 	retire_character = ROM_corneliu_codreanu
+	retire_character = ROM_octavian_goga
 
 	ROM_ion_antonescu = {
 		promote_character = yes
 		promote_character = fascism
 	}
+	promote_character = { character = ROM_ion_antonescu ideology = fascism }
+	promote_character = ROM_ion_antonescu
 
 	activate_decision = women_in_the_workforce
 
@@ -840,6 +844,11 @@ if = {
     }
 
 	add_equipment_to_stockpile = {
+        type = infantry_equipment_2
+        amount = 1950
+    }
+
+	add_equipment_to_stockpile = {
         type = anti_tank_equipment_2
         amount = 272
 		producer = GER
@@ -858,7 +867,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 121
+        amount = 171
     }
 
 	add_equipment_to_stockpile = {
