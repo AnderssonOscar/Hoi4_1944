@@ -580,7 +580,7 @@ if = {
 		fascism = 8
 	}
 
-	set_fuel = 103420
+	set_fuel = 119420
 
 	add_opinion_modifier = { target = GER modifier = large_increase	} #so we can do some tradeing
 	add_opinion_modifier = { target = GER modifier = large_increase	}
@@ -591,17 +591,17 @@ if = {
 
 	oob = "SWE_1944"
 
-	add_political_power = 2289
+	add_political_power = 2589
 	add_command_power = 200
 
-	army_experience = 75
-	navy_experience = 35	
+	army_experience = 90
+	navy_experience = 40	
 	air_experience = 275
 
-	set_convoys = 50
-	set_stability = 0.85
-	set_war_support = 0.31
-	#add_manpower = 20000
+	set_convoys = 60
+	set_stability = 0.86
+	set_war_support = 0.32
+	add_manpower = 76500
 	
 	add_ideas = {
 		#laws
@@ -793,6 +793,9 @@ if = {
 	if = {
 		limit = { has_dlc = "Man the Guns" } 
 		set_technology = {
+
+			basic_heavy_armor_scheme = 1
+
 			sonar = 1
 			smoke_generator = 1
 
@@ -801,14 +804,17 @@ if = {
 			fire_control_methods_1 = 1
 			fire_control_methods_2 = 1
 
+			basic_light_battery = 1
 			basic_light_shell = 1
 			improved_light_battery = 1
 			improved_light_shell = 1
 	
+			basic_medium_battery = 1
 			basic_medium_shell = 1
 			improved_medium_battery = 1
 			#improved_medium_shell = 1
 	
+			basic_heavy_battery = 1
 			basic_heavy_shell = 1
 
 			improved_ship_hull_submarine = 1
@@ -968,6 +974,6 @@ if = {
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 26
+        amount = 31
     }
 }

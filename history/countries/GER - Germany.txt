@@ -1450,8 +1450,8 @@ if = {
 				special_type_slot_4 = empty
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
-				tank_nsb_armor_upgrade = 11
+				tank_nsb_engine_upgrade = 9
+				tank_nsb_armor_upgrade = 10
 			}
 			
 			icon = "GFX_CZE_basic_main_tank"
@@ -1544,7 +1544,7 @@ if = {
 				}
 				upgrades = {
 					tank_nsb_engine_upgrade = 6
-					tank_nsb_armor_upgrade = 3
+					tank_nsb_armor_upgrade = 2
 				}
 				icon = "GFX_GER_medium_BCB"
 			}
@@ -1565,7 +1565,7 @@ if = {
 					special_type_slot_4 = empty
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 7
+					tank_nsb_engine_upgrade = 8
 					tank_nsb_armor_upgrade = 1
 				}
 				#icon = "GFX_GER_light_BAC"
@@ -1588,7 +1588,7 @@ if = {
 					special_type_slot_4 = empty
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 3
+					tank_nsb_engine_upgrade = 4
 					tank_nsb_armor_upgrade = 0
 				}
 			#	icon = "GFX_GER_light_CBB"
@@ -1681,7 +1681,7 @@ if = {
 					special_type_slot_4 = empty
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 5
+					tank_nsb_engine_upgrade = 6
 					tank_nsb_armor_upgrade = 0
 				}
 				icon = "GFX_GER_improved_medium_art"
@@ -1897,7 +1897,7 @@ if = {
 			type = small_plane_naval_bomber_airframe_1
 			modules = {
 				fixed_main_weapon_slot = torpedo_mounting
-				engine_type_slot = engine_1_1x
+				engine_type_slot = engine_2_1x
 				special_type_slot_1 = lmg_defense_turret
 				special_type_slot_2 = floats
 			}
@@ -2120,11 +2120,11 @@ if = {
 
 		set_convoys = 180
 		set_stability = 0.96
-		set_war_support = 0.54
+		set_war_support = 0.52
 		add_command_power = 200
-		army_experience = 45
+		army_experience = 75
 		navy_experience = 125	
-		air_experience = 50
+		air_experience = 65
 
 		add_political_power = 650
 

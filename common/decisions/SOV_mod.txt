@@ -123,11 +123,11 @@ SOV_great_patriotic_war = {
 
 		if = { limit = {
 			has_equipment = {
-				motorized_equipment_1 < 5000
+				motorized_equipment_1 < 7000
 			}
 		 }
 			set_temp_variable = { motorized_eq = equipment_base_num }
-			multiply_temp_variable = { motorized_eq = 7.9 }
+			multiply_temp_variable = { motorized_eq = 8.4 }
 			add_equipment_to_stockpile = {
 				type = motorized_equipment_1
 				amount = motorized_eq
@@ -326,6 +326,10 @@ SOV_great_patriotic_war = {
 			breakthrough_bonus_against =  0.5
 		}
 
+		modifier = {
+			supply_consumption_factor = -0.25
+		}
+
 
 		complete_effect = { }
 		remove_effect = { 
@@ -419,7 +423,7 @@ SOV_great_patriotic_war = {
 		
 		targeted_modifier = {
 			tag = FIN
-			attack_bonus_against = 1.0
+			attack_bonus_against = 1.1
 			breakthrough_bonus_against = 1.0
 		}
 

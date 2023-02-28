@@ -8,9 +8,50 @@ on_actions = {
 		effect = {
 
 	#add_named_threat = { threat = 60 name = generic.15.t }
+		
+
+	every_country = {
+		limit = { 
+			num_of_factories > 12
+			num_divisions > 1
+		 }
+		 
+		add_ideas = { 
+			mod_boost
+		}
+	}
+	
+	SWE = {
+		if = {
+			limit = {
+				is_ai = no
+				date > 1943.12.31
+				
+			}
 			
+				country_event = { id = finland.3 hours = 24 }
+
+				add_tech_bonus = {
+					name = SWE_support_boost
+					bonus = 1.0
+					uses = 1
+					category = support_tech
+				}
+
+				add_tech_bonus = {
+					name = SWE_armor_boost
+					bonus = 1.0
+					uses = 1
+					technology = basic_medium_tank_chassis
+					technology = improved_medium_tank_chassis
+					technology = advanced_medium_tank_chassis
+					technology = mechanised_infantry
+				}
+			}
+	}
+
 		ITA = {
-			country_event = { id = italy.fascist.0 hours = 5 }
+			country_event = { id = italy.fascist.0 hours = 1 }
 		}
 
 	SOV = {
@@ -62,158 +103,8 @@ on_actions = {
 				modern_rubber_processing = 1
 			}
 
-		}
-	}
-
-	GER = {
-		if = {
-			limit = {
-				is_ai = yes
-				date > 1943.12.31
-			}
-
-			set_fuel = 1190000
-			add_political_power = 1250
-			army_experience = 195
-			add_command_power = 80
-
-			set_technology = {
-				modern_oil_processing = 1
-				fuel_refining5 = 1
-				modern_rubber_processing = 1
-
-				tech_field_hospital3 = 1
-				tech_maintenance_company3 = 1
-
-				construction5 = 1
-				excavation4 = 1
-			}
-
-			add_ideas = {
-				GER_synthetic_oil_production
-			}
-
-			add_equipment_to_stockpile = { 
-				type = infantry_equipment_2
-				amount = 75000
-			}
-
-			add_equipment_to_stockpile = { 
-				type = motorized_equipment_1
-				amount = 1700
-			}
-
-			add_equipment_to_stockpile = {
-				type = anti_air_equipment_2
-				amount = 1150
-			}
-
-			add_equipment_to_stockpile = { 
-				type = artillery_equipment_2
-				amount = 1100
-			}
-
-			add_equipment_to_stockpile = {
-				type = anti_tank_equipment_2
-				amount = 900
-			}
-
-			add_equipment_to_stockpile = {
-				type = support_equipment_1
-				amount = 2850
 			}
 		}
-}
-
-
-	GER = {
-		if = {
-			limit = {
-				is_ai = yes
-				date > 1943.12.31
-			}
-
-					64 = {
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-
-					create_unit = {
-						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
-						owner = GER
-					}
-				}
-				
-
-		}
-
-	}
 
 	GER = { declare_war_on = { target = ENG type = annex_everything } }
 
@@ -263,42 +154,6 @@ on_actions = {
 
 	#GER = { activate_decision = GER_reichskommissariat_niederlande }
 
-if = {
-	limit = {
-		has_dlc = "La Resistance"
-	}
-		every_state = {
-			limit = {
-				OR = {
-					controller = {has_war = yes}
-				}
-
-				
-				#NOT = {is_core_of = CZE }
-				NOT = {is_core_of = controller}
-				is_fully_controlled_by = controller
-			}
-			set_compliance = 24
-			start_resistance = yes
-			set_resistance = 28
-			
-			force_enable_resistance = {
-			    clear = no
-			    occupier = GER
-			    occupied = JAP
-			    occupied = FIN
-			    occupied = ROM
-			}
-		}
-
-		69 = {
-			set_compliance = 64
-			start_resistance = no
-			set_resistance = 6
-		}
-
-
-}
 
 
 	AFG = {
@@ -389,174 +244,6 @@ GER = {
 
 
 
-
-
-###########################################################################################################################################################
-#####################################################     MORE INDUSTRY #################################################################################
-###########################################################################################################################################################
-
-		############################### USA RUBBER INDUSTRY ######################################
-			USA = {
-				modify_building_resources = {
-					building = synthetic_refinery
-					resource = rubber
-					amount = 4
-				}
-			}
-
-####################################################### INDUSTRY #####################################################
-			every_state = {
-				limit = {
-
-					date > 1943.12.29
-
-					is_core_of = controller
-					is_fully_controlled_by = controller
-
-					controller = { num_of_factories > 15}
-					NOT = { has_state_flag = war_building_slot_flag }
-
-					#controller = { is_on_continent = europe }
-
-
-					NOT = { is_controlled_by = GER } #Germany already got to civs added to states 
-						
-
-
-					OR = {
-						arms_factory  > 1
-						industrial_complex > 1
-						dockyard > 1
-					}
-						
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-				}
-
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-
-
-			every_state = {
-				limit = {
-
-					date > 1943.12.29
-
-					is_core_of = controller
-					is_fully_controlled_by = controller
-
-					controller = { num_of_factories > 15}
-					NOT = { has_state_flag = war_building_slot_flag }
-
-					#controller = { is_on_continent = europe }
-
-
-					OR = {
-						arms_factory  > 1
-						industrial_complex > 1
-						dockyard > 1
-					}
-						
-
-					free_building_slots = {
-
-						building = arms_factory
-						size > 3
-						include_locked = yes
-					}
-				}
-
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-
-
-
-
-
-########################################AIR BASE###################################################################################################################
-
-
-			every_state = {
-				limit = {
-
-					date > 1943.12.29
-
-
-					is_fully_controlled_by = controller
-
-					controller = { num_of_factories > 25}
-					NOT = { has_state_flag = war_building_slot_flag }
-
-					#controller = { is_on_continent = europe }
-
-					AND = {
-						air_base  > 1
-						air_base  < 6
-					}
-				}
-						
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-
-
-###########################################################################################################################################################
-
-
-		#Extra for these
-
-
-			every_state = {
-				limit = {
-
-					date > 1943.12.29
-
-					is_core_of = controller
-					is_fully_controlled_by = controller
-
-					NOT = { has_state_flag = war_building_slot_flag }
-
-					OR = {
-						is_controlled_by = USA
-						is_controlled_by = ENG
-					}
-
-
-					free_building_slots = {
-
-						building = arms_factory
-						size > 5
-						include_locked = yes
-					}
-				}
-
-				add_extra_state_shared_building_slots = 5
-				add_building_construction = {
-					type = arms_factory
-					level = 5
-					instant_build = yes
-				}
-			}
-
-
-
-
 ###########################################################################################################################################################
 ###########################################################################################################################################################
 ###########################################################################################################################################################
@@ -605,5 +292,4 @@ GER = {
 			MOD_daily_update = yes
 		}
 	}
-
 }

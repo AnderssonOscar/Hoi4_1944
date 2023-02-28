@@ -468,13 +468,15 @@ ideas = {
 				if = {
 					limit = {
 						is_ai = yes
+						#is_major = no
 					}
 
 					#set_temp_variable = { days = global.num_days }
 					#modulo_temp_variable = { days = 30 }
 					#check_variable = { days > 20 }
-
-					has_manpower < 100000
+					conscription_ratio > 0.85
+					has_idea = service_by_requirement
+					#has_manpower < 75000
 				}
 			
 
@@ -616,11 +618,12 @@ ideas = {
 						is_ai = yes
 					}
 
-					set_temp_variable = { days = global.num_days }
-					modulo_temp_variable = { days = 30 }
-					check_variable = { days > 20 }
+					#set_temp_variable = { days = global.num_days }
+					#modulo_temp_variable = { days = 30 }
+					#check_variable = { days > 20 }
 
-					has_manpower < 25000
+					has_manpower < 50000
+					conscription_ratio > 0.85
 					has_idea = all_adults_serve
 				}
 			

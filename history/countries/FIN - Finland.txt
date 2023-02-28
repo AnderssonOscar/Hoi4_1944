@@ -262,6 +262,13 @@ if = {
 	
 	add_timed_idea = { idea = FIN_start_bonus days = 17 }
 
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+	}
+
 	add_ideas = {
 		#laws
 		tot_economic_mobilisation

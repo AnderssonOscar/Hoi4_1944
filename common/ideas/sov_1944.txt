@@ -10,6 +10,7 @@ ideas = {
 				production_speed_arms_factory_factor = +0.25
 
 				#tank_manufacturer_cost_factor = -0.25
+				supply_consumption_factor = -0.1
 			}
 
 			equipment_bonus = {

@@ -300,6 +300,13 @@ recruit_character = HUN_franz_friedrich
 		communism = 10
 		democratic = 10
 	}
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+	}
 	
 
 	add_ideas = {

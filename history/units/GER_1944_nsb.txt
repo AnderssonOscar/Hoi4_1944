@@ -1189,7 +1189,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.41
+		start_experience_factor = 0.51
 		start_equipment_factor = 0.86
 		start_manpower_factor = 1.0
 	}
@@ -1202,7 +1202,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.31
+		start_experience_factor = 0.39
 		start_equipment_factor = 0.86
 		start_manpower_factor = 1.0
 	}
@@ -1228,7 +1228,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.33
+		start_experience_factor = 0.53
 		start_equipment_factor = 0.86
 		start_manpower_factor = 1.0
 	}
@@ -1615,8 +1615,8 @@ units = {
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
 		start_experience_factor = 0.69
-		start_equipment_factor = 0.86
-		start_manpower_factor = 0.94
+		start_equipment_factor = 0.89
+		start_manpower_factor = 0.95
 	}
 
 	division= {	
@@ -1627,7 +1627,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.15
+		start_experience_factor = 0.19
 		start_equipment_factor = 0.99
 		start_manpower_factor = 0.94
 	}
@@ -1653,8 +1653,8 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.25
-		start_equipment_factor = 0.86
+		start_experience_factor = 0.48
+		start_equipment_factor = 0.99
 		start_manpower_factor = 1.0
 	}
 
@@ -1679,7 +1679,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_3 = { owner = "GER" } }
-		start_experience_factor = 0.25
+		start_experience_factor = 0.28
 		start_equipment_factor = 1.0
 		start_manpower_factor = 1.0
 	}
@@ -1705,8 +1705,8 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.07
-		start_equipment_factor = 0.78
+		start_experience_factor = 0.09
+		start_equipment_factor = 0.83
 		start_manpower_factor = 1.0
 	}
 
@@ -1731,9 +1731,9 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.21
-		start_equipment_factor = 0.86
-		start_manpower_factor = 0.96
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.89
+		start_manpower_factor = 0.97
 	}
 
 	division= {	
@@ -1744,8 +1744,8 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.64
-		start_equipment_factor = 0.86
+		start_experience_factor = 0.67
+		start_equipment_factor = 0.89
 		start_manpower_factor = 1.0
 	}
 
@@ -1878,7 +1878,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.5
+		start_experience_factor = 0.55
 		start_equipment_factor = 0.96
 		start_manpower_factor = 1.0
 	}
@@ -1891,7 +1891,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.5
+		start_experience_factor = 0.58
 		start_equipment_factor = 0.96
 		start_manpower_factor = 1.0
 	}
@@ -1904,7 +1904,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.5
+		start_experience_factor = 0.71
 		start_equipment_factor = 1
 		start_manpower_factor = 1.0
 	}
@@ -2512,9 +2512,9 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.27
-		start_equipment_factor = 0.86
-		start_manpower_factor = 0.91
+		start_experience_factor = 0.77
+		start_equipment_factor = 0.89
+		start_manpower_factor = 0.88
 	}
 
 	division= {	
@@ -3000,7 +3000,7 @@ units = {
 		location = 11479 #Lwow
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "NOR" } }
-		start_experience_factor = 0.1
+		start_experience_factor = 0.54
 		start_equipment_factor = 0.65
 		start_manpower_factor = 0.97
 	}
@@ -3021,7 +3021,7 @@ units = {
 		location = 3325
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
-		start_experience_factor = 0.05
+		start_experience_factor = 0.12
 		start_equipment_factor = 0.90
 		start_manpower_factor = 1.0
 	}
@@ -3031,7 +3031,7 @@ units = {
 		location = 6593
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
-		start_experience_factor = 0.1
+		start_experience_factor = 0.19
 		start_equipment_factor = 0.90
 		start_manpower_factor = 1.0
 	}
@@ -3090,7 +3090,7 @@ units = {
 		location = 9904 # Rome
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "POL" } }
-		start_experience_factor = 0.01
+		start_experience_factor = 0.06
 		start_equipment_factor = 0.88
 		start_manpower_factor = 1.0
 	}
@@ -3111,7 +3111,7 @@ units = {
 		location = 391 # amsterdam
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
-		start_experience_factor = 0.01
+		start_experience_factor = 0.21
 		start_equipment_factor = 0.87
 		start_manpower_factor = 1.0
 	}
@@ -3122,8 +3122,8 @@ units = {
 		location = 6598
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "NOR" } }
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.65
+		start_experience_factor = 0.11
+		start_equipment_factor = 0.69
 		start_manpower_factor = 1.0
 	}
 
@@ -3133,7 +3133,7 @@ units = {
 		location = 3560
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
-		start_experience_factor = 0.05
+		start_experience_factor = 0.25
 		start_equipment_factor = 0.90
 		start_manpower_factor = 1.0
 	}
@@ -3180,8 +3180,8 @@ units = {
 		location = 9940 # Crete
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "ENG" } }
-		start_experience_factor = 0.01
-		start_equipment_factor = 0.70
+		start_experience_factor = 0.09
+		start_equipment_factor = 0.79
 		start_manpower_factor = 0.69
 	}
 
@@ -3190,7 +3190,7 @@ units = {
 		location = 6550
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GRE" } }
-		start_experience_factor = 0.1
+		start_experience_factor = 0.15
 		start_equipment_factor = 0.80
 		start_manpower_factor = 1.0
 	}
@@ -3243,7 +3243,7 @@ units = {
 		location = 10203
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
-		start_experience_factor = 0.01
+		start_experience_factor = 0.21
 		start_equipment_factor = 0.70
 		start_manpower_factor = 1.0
 	}
@@ -3588,7 +3588,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.3
+		start_experience_factor = 0.36
 		start_equipment_factor = 0.91
 	}
 
@@ -3612,7 +3612,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_1 = { owner = "GER" } }
-		start_experience_factor = 0.25
+		start_experience_factor = 0.29
 		start_equipment_factor = 0.91
 	}
 
@@ -3624,7 +3624,7 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_1 = { owner = "GER" } }
-		start_experience_factor = 0.01
+		start_experience_factor = 0.04
 		start_equipment_factor = 0.98
 	}
 
@@ -3648,8 +3648,8 @@ units = {
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_1 = { owner = "GER" } }
 		force_equipment_variants = { anti_air_equipment_1 = { owner = "GER" } }
-		start_experience_factor = 0.15
-		start_equipment_factor = 0.81
+		start_experience_factor = 0.47
+		start_equipment_factor = 0.83
 	}
 
 	division= {	
@@ -3715,7 +3715,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "GER" } }
 		force_equipment_variants = { light_tank_destroyer_chassis_1 = { owner = GER version_name = "Marder III" } }
-		start_experience_factor = 0.12
+		start_experience_factor = 0.49
 		start_equipment_factor = 0.81
 		start_manpower_factor = 1.0
 	}
@@ -3727,7 +3727,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
 		force_equipment_variants = { light_tank_destroyer_chassis_1 = { owner = GER version_name = "Marder III" } }
-		start_experience_factor = 0.61
+		start_experience_factor = 0.69
 		start_equipment_factor = 0.71
 		start_manpower_factor = 0.84
 	}
@@ -3761,7 +3761,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
 		force_equipment_variants = { artillery_equipment_3 = { owner = "GER" } }
 		force_equipment_variants = { light_tank_destroyer_chassis_1 = { owner = GER version_name = "Marder III" } }
-		start_experience_factor = 0.12
+		start_experience_factor = 0.42
 		start_equipment_factor = 0.89
 		start_manpower_factor = 0.98
 	}
@@ -3773,7 +3773,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
 		force_equipment_variants = { light_tank_destroyer_chassis_1 = { owner = GER version_name = "Marder III" } }
-		start_experience_factor = 0.23
+		start_experience_factor = 0.29
 		start_equipment_factor = 0.81
 		start_manpower_factor = 1.0
 	}
@@ -3828,7 +3828,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.41
+		start_experience_factor = 0.49
 		start_equipment_factor = 0.78
 		start_manpower_factor = 0.87
 	}
@@ -3841,7 +3841,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_1 = { owner = "GER" } }
-		start_experience_factor = 0.36
+		start_experience_factor = 0.46
 		start_equipment_factor = 0.84
 		start_manpower_factor = 1.0
 	}
@@ -3867,7 +3867,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.36
+		start_experience_factor = 0.43
 		start_equipment_factor = 0.91
 		start_manpower_factor = 1.0
 	}
@@ -3880,7 +3880,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.53
+		start_experience_factor = 0.58
 		start_equipment_factor = 0.88
 		start_manpower_factor = 0.94
 	}
@@ -3893,7 +3893,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.26
+		start_experience_factor = 0.29
 		start_equipment_factor = 0.71
 		start_manpower_factor = 1.0
 	}
@@ -3906,8 +3906,8 @@ units = {
 		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.56
-		start_equipment_factor = 0.81
+		start_experience_factor = 0.61
+		start_equipment_factor = 0.87
 		start_manpower_factor = 1.0
 	}
 
@@ -3919,8 +3919,8 @@ units = {
 		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_1 = { owner = "GER" } }
-		start_experience_factor = 0.36
-		start_equipment_factor = 0.71
+		start_experience_factor = 0.38
+		start_equipment_factor = 0.79
 		start_manpower_factor = 0.93
 	}
 
@@ -3932,9 +3932,9 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.46
-		start_equipment_factor = 0.51
-		start_manpower_factor = 0.78
+		start_experience_factor = 0.49
+		start_equipment_factor = 0.55
+		start_manpower_factor = 0.83
 	}
 
 	
@@ -3945,8 +3945,8 @@ units = {
 		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
 	force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.46
-		start_equipment_factor = 0.71
+		start_experience_factor = 0.49
+		start_equipment_factor = 0.77
 		start_manpower_factor = 1.0
 	}
 
@@ -3971,7 +3971,7 @@ units = {
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = GER version_name = "Panzer IV Ausf. H" } }
 		force_equipment_variants = { heavy_tank_chassis_2 = { owner = GER version_name = "Tiger I" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.77
+		start_experience_factor = 0.79
 		start_equipment_factor = 0.92
 		start_manpower_factor = 1.0
 	}
@@ -3986,7 +3986,7 @@ units = {
 		force_equipment_variants = { medium_tank_artillery_chassis_2 = { owner = GER version_name = "Hummel" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
 		#force_equipment_variants = { medium_tank_chassis_2 = { owner = GER version_name = "Panzer IV Ausf. H" } }
-		start_experience_factor = 0.16
+		start_experience_factor = 0.19
 		start_equipment_factor = 0.71
 		start_manpower_factor = 1.0
 	}
@@ -4236,8 +4236,8 @@ units = {
 		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
 		force_equipment_variants = { heavy_tank_chassis_2 = { owner = GER version_name = "Tiger I" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.89
+		start_experience_factor = 0.76
+		start_equipment_factor = 0.91
 		start_manpower_factor = 1.0
 	}
 
@@ -4260,7 +4260,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
 		force_equipment_variants = { heavy_tank_chassis_2 = { owner = GER version_name = "Tiger I" } }
 		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
-		start_experience_factor = 0.06
+		start_experience_factor = 0.16
 		start_equipment_factor = 0.88
 		start_manpower_factor = 0.81
 	}

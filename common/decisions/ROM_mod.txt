@@ -1,8 +1,4 @@
 
-
-
-
-
 war_measures = {
 
 	ROM_surrender_soviet = {

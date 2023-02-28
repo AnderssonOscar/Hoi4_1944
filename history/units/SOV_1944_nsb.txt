@@ -268,7 +268,7 @@ units = {
 
 	#North Finland
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11183
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -278,7 +278,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11183
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -288,7 +288,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11183
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -298,7 +298,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 142
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -308,7 +308,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9203
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -318,7 +318,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 74
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -328,7 +328,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 15
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -338,7 +338,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9123
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -352,7 +352,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11181
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -362,7 +362,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9162
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -372,7 +372,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 176
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -382,7 +382,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 36
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -392,7 +392,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 134
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -402,7 +402,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 170
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -412,7 +412,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6021
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -422,7 +422,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3078
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -432,7 +432,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -442,7 +442,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -452,7 +452,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11094
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -462,7 +462,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -472,7 +472,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -490,7 +490,7 @@ units = {
 	#South Finland
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11059
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -500,7 +500,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11059
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -510,7 +510,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9190
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -520,7 +520,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9190
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -530,7 +530,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9082
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -540,7 +540,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9082
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -550,7 +550,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11183
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -560,7 +560,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11183
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -570,7 +570,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11183
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -580,7 +580,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 142
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -590,7 +590,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9203
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -600,7 +600,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 74
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -610,7 +610,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 15
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -620,7 +620,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9123
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -634,7 +634,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11181
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -644,7 +644,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9162
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -654,7 +654,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 176
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -664,7 +664,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 36
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -674,7 +674,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 134
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -684,7 +684,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 170
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -694,7 +694,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6021
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -704,7 +704,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3078
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -714,7 +714,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -724,7 +724,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -734,7 +734,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11094
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -744,7 +744,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -754,7 +754,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -772,7 +772,7 @@ units = {
 	#South Finland
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11059
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -782,7 +782,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11059
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -792,7 +792,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9190
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -802,7 +802,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9190
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -812,7 +812,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9082
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -822,7 +822,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9082
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -841,7 +841,7 @@ units = {
 	#South Finland & Leningrad
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3151
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -851,7 +851,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3151
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -861,7 +861,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3151
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -871,7 +871,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3151
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -881,7 +881,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 149
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -891,7 +891,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 149
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -901,7 +901,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 149
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -911,7 +911,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 149
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -927,7 +927,7 @@ units = {
 ###########################################################################################################################
 				#Turkey
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3653
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -937,7 +937,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 12441
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -947,7 +947,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 12320
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -959,7 +959,7 @@ units = {
 		#stalingrad
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3529
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -969,7 +969,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 498
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -980,7 +980,7 @@ units = {
 
 	#Rostov
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9417
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -997,7 +997,7 @@ units = {
 
 	#Moscow
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6380
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1009,7 +1009,7 @@ units = {
 
 	#North - leningrad
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11068
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1020,7 +1020,7 @@ units = {
 			}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9197
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1031,7 +1031,7 @@ units = {
 			}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3151
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1042,7 +1042,7 @@ units = {
 			}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 71
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1053,7 +1053,7 @@ units = {
 			}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6154
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1064,7 +1064,7 @@ units = {
 			}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 70
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1080,7 +1080,7 @@ units = {
 
 	#Misc
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11234
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1091,7 +1091,7 @@ units = {
 			}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11220
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1102,7 +1102,7 @@ units = {
 			}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9288
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1113,7 +1113,7 @@ units = {
 			}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 320
 				division_template = "Guards-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1131,7 +1131,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11068
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1141,7 +1141,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11068
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1151,7 +1151,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9197
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1161,7 +1161,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9197
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1171,7 +1171,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 70
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1181,7 +1181,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 70
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1192,7 +1192,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6095
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1202,7 +1202,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6095
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1213,7 +1213,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6035
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1223,7 +1223,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6035
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1233,7 +1233,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 71
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1243,7 +1243,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 71
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1253,7 +1253,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6154
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1263,7 +1263,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6154
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -1273,7 +1273,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1283,7 +1283,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1293,7 +1293,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9234
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1303,7 +1303,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9234
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1313,7 +1313,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 320
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -1323,7 +1323,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 320
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1333,7 +1333,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6225
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1342,7 +1342,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6225
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1352,7 +1352,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9242
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1362,7 +1362,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9242
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1372,7 +1372,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3344
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1382,7 +1382,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3344
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1392,7 +1392,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9287
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1402,7 +1402,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9287
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1412,7 +1412,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11234
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1422,7 +1422,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11234
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1432,7 +1432,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 387
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -1442,7 +1442,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 387
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1452,7 +1452,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 323
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1462,7 +1462,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 323
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1472,7 +1472,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6293
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1482,7 +1482,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6293
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1492,7 +1492,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11353
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1502,7 +1502,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11353
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1512,7 +1512,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11220
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1522,7 +1522,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11220
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -1532,7 +1532,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6354
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1542,7 +1542,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6354
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -1551,7 +1551,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11271
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1561,7 +1561,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11271
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1571,7 +1571,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6233
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -1581,7 +1581,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6233
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1591,7 +1591,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6344
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -1601,7 +1601,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6344
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1611,7 +1611,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6319
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1621,7 +1621,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6319
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1631,7 +1631,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6380
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -1641,7 +1641,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9249
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1651,7 +1651,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9249
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1661,7 +1661,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6380
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1672,7 +1672,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3507
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1682,7 +1682,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3507
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1692,7 +1692,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11453
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1702,7 +1702,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11453
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -1712,7 +1712,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6380
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1722,7 +1722,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9568
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1732,7 +1732,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9568
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1742,7 +1742,7 @@ units = {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3543
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1752,7 +1752,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3543
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1762,7 +1762,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 550
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1772,7 +1772,7 @@ units = {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 550
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1782,7 +1782,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11490
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1792,7 +1792,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11490
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1802,7 +1802,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6497
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1812,7 +1812,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6497
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1822,7 +1822,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9465
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1832,7 +1832,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9465
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1842,7 +1842,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3494
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1852,7 +1852,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3494
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1862,7 +1862,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11454
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1872,7 +1872,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11454
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1882,7 +1882,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 488
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1892,7 +1892,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 488
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1901,7 +1901,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3468
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1912,7 +1912,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3468
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1922,7 +1922,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6478
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1932,7 +1932,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6478
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1941,7 +1941,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9433
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1951,7 +1951,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9433
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1960,7 +1960,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11437
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1970,7 +1970,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11437
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1979,7 +1979,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11422
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1989,7 +1989,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11422
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -1999,7 +1999,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 588
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2009,7 +2009,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 588
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2019,7 +2019,7 @@ units = {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3573
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2029,7 +2029,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3573
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2039,7 +2039,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 737
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2049,7 +2049,7 @@ units = {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 737
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2059,7 +2059,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 721
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2069,7 +2069,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 721
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2081,7 +2081,7 @@ units = {
 
 	#Guard Crimea
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 568
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2091,7 +2091,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 568
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2108,7 +2108,7 @@ units = {
 ###########################################################################################################################
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9680
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2120,7 +2120,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9680
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2147,7 +2147,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 550
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2156,14 +2156,14 @@ units = {
 				force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1943" } }
 				force_equipment_variants = { light_tank_chassis_1 = { owner = "SOV" creator = "SOV" version_name = "BT-5" } }
 				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
-				start_experience_factor = 0.27
+				start_experience_factor = 0.77
 				start_equipment_factor = 0.89
 	}
 
 
 
 		division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11490
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2173,12 +2173,12 @@ units = {
 				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.32
 				start_equipment_factor = 0.97
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6497
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2188,13 +2188,13 @@ units = {
 				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.31
 				start_equipment_factor = 1
 	}
 
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6497
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2204,13 +2204,13 @@ units = {
 				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.33
 				start_equipment_factor = 1
 	}
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9465
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2220,12 +2220,12 @@ units = {
 				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.61
 				start_equipment_factor = 0.97
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 488
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2235,12 +2235,12 @@ units = {
 				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
-				start_experience_factor = 0.29
+				start_experience_factor = 0.49
 				start_equipment_factor = 0.97
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9433
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2250,12 +2250,12 @@ units = {
 				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
-				start_experience_factor = 0.29
+				start_experience_factor = 0.31
 				start_equipment_factor = 0.97
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 418
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2265,13 +2265,13 @@ units = {
 				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.59
 				start_equipment_factor = 1
 	}
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 418
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2281,14 +2281,14 @@ units = {
 				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.66
 				start_equipment_factor = 1
 	}
 
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6122
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2298,14 +2298,14 @@ units = {
 				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.57
 				start_equipment_factor = 1
 	}
 
 
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9197
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2315,14 +2315,14 @@ units = {
 				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.53
 				start_equipment_factor = 1
 	}
 
 
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3151
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2332,13 +2332,13 @@ units = {
 				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.33
 				start_equipment_factor = 1
 	}
 
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6035
 				division_template = "Legko-Tankovaya Diviziya"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2348,7 +2348,7 @@ units = {
 				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
 				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
-				start_experience_factor = 0.22
+				start_experience_factor = 0.72
 				start_equipment_factor = 1
 	}
 
@@ -2363,7 +2363,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11349
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2374,7 +2374,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 525
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2385,7 +2385,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3734
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2396,7 +2396,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3140
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2407,7 +2407,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 306
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2418,7 +2418,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11490
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2450,7 +2450,7 @@ units = {
 	#Mech copy
 
 		division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11349
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2461,7 +2461,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 525
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2472,7 +2472,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3734
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2483,7 +2483,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3140
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2494,7 +2494,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 306
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2505,7 +2505,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11490
 				division_template = "Mechanized Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2525,7 +2525,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11879
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2537,7 +2537,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6684
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2548,7 +2548,7 @@ units = {
 
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 12189
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2559,7 +2559,7 @@ units = {
 
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 10722
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2571,7 +2571,7 @@ units = {
 
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 7763
 				division_template = "NKVD Pogranichnaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2580,7 +2580,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 4725
 				division_template = "NKVD Pogranichnaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2589,7 +2589,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 4725
 				division_template = "NKVD Pogranichnaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2598,7 +2598,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 957
 				division_template = "NKVD Pogranichnaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2607,7 +2607,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6686
 				division_template = "NKVD Pogranichnaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2624,7 +2624,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 10696
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2633,7 +2633,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 4705
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2642,7 +2642,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 4719
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2651,7 +2651,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 12543
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2660,7 +2660,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 4725
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2669,7 +2669,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 12192
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2678,7 +2678,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9604
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2687,7 +2687,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6684
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2696,7 +2696,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3787
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2714,7 +2714,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 4824
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2723,7 +2723,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 10696
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2732,7 +2732,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 4333
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2743,7 +2743,7 @@ units = {
 
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 12530
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2752,7 +2752,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 1684
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2761,7 +2761,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 7844
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2770,7 +2770,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 12530
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2779,7 +2779,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 1684
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2788,7 +2788,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 7844
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2797,7 +2797,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 12530
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2806,7 +2806,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 1684
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2815,7 +2815,7 @@ units = {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 7844
 				division_template = "Kavaleriyskaya Diviziya"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2865,7 +2865,7 @@ division= {
 			division_template = "Infantry-Division"
 			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
-			start_experience_factor = 0.21
+			start_experience_factor = 0.33
 			start_equipment_factor = 0.94
 }
 
@@ -2939,7 +2939,7 @@ division= {
 
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11068
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2949,7 +2949,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11068
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -2960,7 +2960,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9197
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2970,7 +2970,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9197
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -2980,7 +2980,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 70
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -2991,7 +2991,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 70
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3001,7 +3001,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6095
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3012,7 +3012,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6095
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3022,7 +3022,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6035
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3032,7 +3032,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6035
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3042,7 +3042,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 71
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3052,7 +3052,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 71
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3062,7 +3062,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6154
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3072,7 +3072,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6154
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3082,7 +3082,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3092,7 +3092,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9212
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3102,7 +3102,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9234
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3112,7 +3112,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9234
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3122,7 +3122,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 320
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3132,7 +3132,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 320
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3142,7 +3142,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6225
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3151,7 +3151,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6225
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3161,7 +3161,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9242
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3171,7 +3171,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9242
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3181,7 +3181,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3344
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3191,7 +3191,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3344
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3201,7 +3201,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9287
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3211,7 +3211,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9287
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3221,7 +3221,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11234
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3231,7 +3231,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11234
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3241,7 +3241,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 387
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3251,7 +3251,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 387
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3261,7 +3261,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 323
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3271,7 +3271,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 323
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3281,7 +3281,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6293
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3291,7 +3291,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6293
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3301,7 +3301,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11353
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3311,7 +3311,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11353
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3321,7 +3321,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11220
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3331,7 +3331,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11220
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3341,7 +3341,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6354
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3351,7 +3351,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6354
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3360,7 +3360,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11271
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3370,7 +3370,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11271
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3380,7 +3380,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6380
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3390,7 +3390,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6233
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3400,7 +3400,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6233
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3410,7 +3410,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6344
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
@@ -3420,7 +3420,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6344
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3430,7 +3430,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6319
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3440,7 +3440,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6319
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3450,7 +3450,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6380
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3460,7 +3460,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9249
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3470,7 +3470,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9249
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3480,7 +3480,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6380
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3490,7 +3490,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3507
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3500,7 +3500,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3507
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3510,7 +3510,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11453
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3520,7 +3520,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11453
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3530,7 +3530,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6380
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3540,7 +3540,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9568
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3550,7 +3550,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9568
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3560,7 +3560,7 @@ division= {
 	}	
 			
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3543
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3570,7 +3570,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3543
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3580,7 +3580,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 550
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3590,7 +3590,7 @@ division= {
 	}	
 	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 550
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3600,7 +3600,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11490
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3610,7 +3610,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11490
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3620,7 +3620,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6497
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3630,7 +3630,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6497
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3640,7 +3640,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9465
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3650,7 +3650,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9465
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3660,7 +3660,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3494
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3670,7 +3670,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3494
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3680,7 +3680,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11454
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3690,7 +3690,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11454
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3700,7 +3700,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 488
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3710,7 +3710,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 488
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3719,7 +3719,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3468
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3729,7 +3729,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3468
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3738,7 +3738,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6478
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3748,7 +3748,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 6478
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3758,7 +3758,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9433
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3768,7 +3768,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 9433
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3778,7 +3778,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11437
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3788,7 +3788,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11437
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3797,7 +3797,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11422
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3807,7 +3807,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 11422
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3816,7 +3816,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 588
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3826,7 +3826,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 588
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3835,7 +3835,7 @@ division= {
 				start_equipment_factor = 0.94
 	}	
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3573
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3845,7 +3845,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 3573
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3855,7 +3855,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 737
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3865,7 +3865,7 @@ division= {
 	}	
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 737
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3875,7 +3875,7 @@ division= {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 721
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3885,7 +3885,7 @@ division= {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 721
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
@@ -3897,7 +3897,7 @@ division= {
 
 	#Guard Crimea
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 568
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -3908,7 +3908,7 @@ division= {
 	}
 
 	division= {	
-		division_name = { is_name_ordered = no	name_order = 0 }
+
 				location = 568
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
@@ -4073,7 +4073,51 @@ instant_effect = {
 			creator = "SOV" 
 		}
 		requested_factories = 1
-		progress = 1
+		progress = 99
+		amount = 1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = railway_gun_equipment_1
+			creator = "SOV" 
+		}
+		requested_factories = 1
+		progress = 99
+		amount = 1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = railway_gun_equipment_1
+			creator = "SOV" 
+		}
+		requested_factories = 1
+		progress = 99
+		amount = 1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = railway_gun_equipment_1
+			creator = "SOV" 
+		}
+		requested_factories = 1
+		progress = 99
+		amount = 1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = railway_gun_equipment_1
+			creator = "SOV" 
+		}
+		requested_factories = 1
+		progress = 99
 		amount = 1
 		efficiency = 100
 	}

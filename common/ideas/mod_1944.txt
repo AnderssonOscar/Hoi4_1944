@@ -10,11 +10,20 @@ ideas = {
 			}
 		}
 
-
-		safe_industry = {
-			modifier = {
-				industry_air_damage_factor = -0.5
-				}
+	safe_industry = {
+		modifier = {
+			industry_air_damage_factor = -0.25
 			}
+		}
+
+	mod_boost = {
+		modifier = {
+			political_power_factor = +0.75
+			command_power_gain_mult = +0.25
+			max_command_power_mult = +0.5
+			mobilization_speed = +0.175
+			}
+		}
+
 	}
 }

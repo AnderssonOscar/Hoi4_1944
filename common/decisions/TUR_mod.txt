@@ -1,8 +1,4 @@
 
-
-
-
-
 political_actions = {
 
 	TUR_stop_trading_with_axis = {

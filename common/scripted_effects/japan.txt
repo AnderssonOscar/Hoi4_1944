@@ -1,0 +1,11 @@
+JAP_start_effects = {
+	
+	if = {
+		limit = { 
+			tag = JAP
+			is_ai = yes
+			date > 1944.1.2
+		}
+
+	}
+}
