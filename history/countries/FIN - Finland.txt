@@ -517,22 +517,22 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment
-        amount = 1000
+        amount = 1800
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 100
+        amount = 215
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 410
+        amount = 470
 		producer = GER
     }
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 22
+        amount = 23
     }
 }

@@ -11,28 +11,39 @@ Resistance_start_effects = {
 			limit = {
 				has_dlc = "La Resistance"
 			}
+
+
 				every_state = {
 					limit = {
-						OR = {
-							controller = {has_war = yes}
-						}
-		
-						
-						#NOT = {is_core_of = CZE }
+						controller = {has_war = yes}
 						NOT = {is_core_of = controller}
 						is_fully_controlled_by = controller
+
+						OR = {
+							controller = { is_in_faction_with = JAP }
+							controller = { is_in_faction_with = GER }
+						}
 					}
+					
 					set_compliance = 24
-					start_resistance = yes
-					set_resistance = 28
+					start_resistance = is_core_of
+					set_resistance = 29
 					
 					force_enable_resistance = {
 						clear = no
-						occupier = GER
-						occupied = JAP
-						occupied = FIN
-						occupied = ROM
+						occupier = controller
+						occupied = is_core_of
 					}
+
+					#add_state_modifier = {
+					#	modifier = { resistance_target = +0.25 }
+					#}
+				}
+
+				104 = {
+					set_compliance = 24
+					start_resistance = yes
+					set_resistance = 68
 				}
 		
 				69 = {

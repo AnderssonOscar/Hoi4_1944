@@ -28,6 +28,11 @@ state={
 
 
 		1943.12.30 = {
+
+			buildings = {
+				industrial_complex = 2
+			}
+
 			controller = SOV
 			owner = SOV
 			GER = {

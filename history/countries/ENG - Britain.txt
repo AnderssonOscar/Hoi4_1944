@@ -467,6 +467,7 @@ add_to_faction = RAJ		# Must be after puppet
 add_to_faction = MAL
 add_to_faction = NOR
 add_to_faction = DEN
+add_to_faction = POL
 add_to_faction = BRA
 add_to_faction = GRE
 add_to_faction = YUG
