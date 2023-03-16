@@ -106,7 +106,6 @@ on_actions = {
 			}
 		}
 
-	GER = { declare_war_on = { target = ENG type = annex_everything } }
 
 	GER = {
 		activate_decision = GER_reichskommissariat_niederlande
@@ -130,26 +129,6 @@ on_actions = {
 	every_country = {
 		limit = { has_war = yes }
 		add_command_power = 50
-	}
-
-	every_country = {
-		limit = { is_in_faction_with = GER }
-		add_to_war = {
-			targeted_alliance = GER
-			enemy = ENG
-		}
-			
-	}
-	
-
-	ENG = {
-		every_country = {
-			limit = { is_in_faction_with = ENG }
-			add_to_war = {
-				targeted_alliance = ENG
-				enemy = GER
-			}
-		}
 	}
 
 	#GER = { activate_decision = GER_reichskommissariat_niederlande }

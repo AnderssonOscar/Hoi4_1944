@@ -4,6 +4,7 @@ bookmarks = {
 		desc = "1944_DESC"
 		date = 1944.1.1.12
 		picture = "GFX_select_date_1944"
+		default = yes
 		default_country = "GER"
 	
 		GER = {
@@ -12,7 +13,6 @@ bookmarks = {
 			ideas = {
 				sour_loser
 				general_staff
-				GER_mefo_bills_15
 				GER_autarky_idea
 			}
 			focuses = {
@@ -60,7 +60,6 @@ bookmarks = {
 			ideology = democratic
 			ideas = {
 				home_of_the_free
-				great_depression_3
 				air_war_plans_division_focus
 				USA_war_department
 				new_deal
@@ -76,9 +75,7 @@ bookmarks = {
 			history = "ROM_BLITZKRIEG_DESC"
 			ideology = neutrality
 			ideas = {
-				ROM_king_carol_ii_hedonist
 				ROM_preserve_greater_romania
-				ROM_iron_guard
 			}
 			focuses = {
 				ROM_balkans_dominance
@@ -92,9 +89,7 @@ bookmarks = {
 			history = "HUN_BLITZKRIEG_DESC"
 			ideology = neutrality
 			ideas = {
-				HUN_treaty_of_triannon_3
 				HUN_interventionism
-				HUN_strengthen_fascists
 			}
 			focuses = {
 				HUN_elect_a_king
@@ -111,9 +106,9 @@ bookmarks = {
 				#victor_emmanuel
 			}
 			focuses = {
-				ITA_pact_of_steel
+				#ITA_pact_of_steel
 				#ITA_spanish_italian_faction
-				ITA_italy_first
+				#ITA_italy_first
 			}			
 		}
 
@@ -127,9 +122,13 @@ bookmarks = {
 			}
 			focuses = {
 				BUL_the_third_bulgarian_empire
-				BUL_the_return_of_ferdinand_i
+				#BUL_the_return_of_ferdinand_i
 				BUL_bulgaria_on_the_three_seas
 			}
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
 		}
 
 		effect = {

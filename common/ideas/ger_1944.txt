@@ -69,7 +69,7 @@ ideas = {
 
 	GER_ryt_ribbentrop_agreement = {
 		modifier = {
-			consumer_goods_factor = 0.1
+			consumer_goods_factor = 0.075
 			} 
 		}
 

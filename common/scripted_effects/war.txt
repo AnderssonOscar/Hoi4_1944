@@ -1,0 +1,41 @@
+war_start_effects = {
+	
+	if = {
+		limit = { 
+			date > 1943.12.31
+			check_variable = { global.var_war_instant_start_effects = 0 }
+		}
+		GER = { declare_war_on = { target = ENG type = annex_everything } }
+		set_variable = { global.var_war_instant_start_effects = 1 }
+	}
+
+
+	if = {
+		limit = { 
+			date > 1944.1.1
+			check_variable = { global.var_war_start_effects = 0 }
+		}
+		set_variable = { global.var_war_start_effects = 1 }
+
+		every_country = {
+			limit = { is_in_faction_with = GER }
+			add_to_war = {
+				targeted_alliance = GER
+				enemy = ENG
+			}
+		}	
+
+		ENG = {
+			every_country = {
+				limit = { is_in_faction_with = ENG }
+				add_to_war = {
+					targeted_alliance = ENG
+					enemy = GER
+				}
+			}
+		}
+
+	}
+	
+
+}

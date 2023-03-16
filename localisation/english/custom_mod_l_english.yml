@@ -12,17 +12,20 @@ old_weapon_caches:0 "Old Weapon Caches"
 old_weapon_caches_desc:0 ""
 
 
-GER_rocket_bases_1:0 "Develop the V1 rocket & build launch site."
+GER_rocket_bases_1:0 "Develop the V1 rocket & build launch site"
 GER_rocket_bases_1_desc:0 ""
 
-GER_rocket_bases_2:0 "Develop the V2 rocket & build launch site."
+GER_rocket_bases_2:0 "Develop the V2 rocket & build launch site"
 GER_rocket_bases_2_desc:0 ""
 
-ration_army_fuel:0 "Ration the fuel of the army."
+ration_army_fuel:0 "Ration the fuel of the army"
 ration_army_fuel_desc:0 ""
 
-ration_airforce_fuel:0 "Ration the fuel of the airforce."
+ration_airforce_fuel:0 "Ration the fuel of the airforce"
 ration_airforce_fuel_desc:0 ""
+
+seize_some_trucks:0 "Seize civilian trucks"
+seize_some_trucks_desc:0 ""
 
 dig_in_and_hold:0 "Dig in and hold"
 dig_in_and_hold_desc:0 "Dig deeper!"
