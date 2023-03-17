@@ -1866,6 +1866,7 @@ if = {
 			special_type_slot_1 = hmg_defense_turret_2x
 			special_type_slot_2 = hmg_defense_turret_2x
 			special_type_slot_3 = bomb_sights_1
+			special_type_slot_4 = armor_plate_large
 		}
 	}
 
@@ -1883,6 +1884,7 @@ if = {
 			special_type_slot_1 = lmg_defense_turret_2x
 			special_type_slot_2 = lmg_defense_turret
 			special_type_slot_3 = bomb_sights_1
+			special_type_slot_4 = armor_plate_medium
 			#special_type_slot_3 = self_sealing_fuel_tanks_small
 			#special_type_slot_3 = lmg_defense_turret_2x
 			#special_type_slot_4 = hmg_defense_turret_2x
@@ -1902,6 +1904,8 @@ if = {
 			special_type_slot_1 = hmg_defense_turret_2x
 			special_type_slot_2 = hmg_defense_turret_2x
 			special_type_slot_3 = bomb_sights_1
+			special_type_slot_4 = self_sealing_fuel_tanks_large
+			special_type_slot_5 = armor_plate_large
 		}
 	}
 
@@ -1918,6 +1922,7 @@ if = {
 			special_type_slot_3 = lmg_defense_turret_2x
 			special_type_slot_4 = hmg_defense_turret_2x
 			special_type_slot_5 = bomb_sights_1
+			special_type_slot_6 = self_sealing_fuel_tanks_large
 		}
 	}
 

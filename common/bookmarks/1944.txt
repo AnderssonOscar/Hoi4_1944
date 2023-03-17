@@ -112,7 +112,13 @@ bookmarks = {
 			}			
 		}
 
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
 		"BUL"={
+			minor = yes
 			history = "BUL_BLITZKRIEG_DESC"
 			ideology = neutrality
 			ideas = {
@@ -127,8 +133,20 @@ bookmarks = {
 			}
 		}
 
-		"---"={
-			history = "OTHER_GATHERING_STORM_DESC"
+		"CHI"={
+			minor = yes
+			history = "CHI_BLITZKRIEG_DESC"
+			ideology = neutrality
+			ideas = {
+				CHI_army_corruption_2
+				CHI_hyper_inflation_1
+				CHI_nine_power_treaty
+			}
+			focuses = {
+				CHI_renegotiate_the_unequal_treaties
+				CHI_invite_the_flying_tigers
+				CHI_war_of_resistance
+			}
 		}
 
 		effect = {
