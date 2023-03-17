@@ -2083,6 +2083,9 @@ if = {
 		basic_heavy_battery = 1
 		  
 		basic_depth_charges = 1
+		improved_depth_charges = 1
+		advanced_depth_charges = 1
+		
 		basic_submarine_snorkel = 1
 		sonar = 1
 		improved_ship_hull_heavy = 1

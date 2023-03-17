@@ -121,7 +121,7 @@ ration_army_fuel = {
 	
 	modifier = {
 		army_fuel_consumption_factor = -0.15
-		army_armor_speed_factor = -0.15
+		army_armor_speed_factor = -0.25
 	}
 }
 
@@ -166,7 +166,7 @@ ration_airforce_fuel = {
 	
 	modifier = {
 		air_fuel_consumption_factor = -0.15
-		air_range_factor = -0.1
+		air_range_factor = -0.2
 	}
 }
 	

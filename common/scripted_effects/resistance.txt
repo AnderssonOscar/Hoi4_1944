@@ -2,7 +2,7 @@ Resistance_start_effects = {
 	
 	if = {
 		limit = { 
-			date > 1944.1.3
+			date > 1944.1.2
 			check_variable = { global.var_Resistance_start_effects = 0 }
 		}
 
@@ -40,10 +40,28 @@ Resistance_start_effects = {
 					#}
 				}
 
-				104 = {
-					set_compliance = 24
+				39 = {
+					set_compliance = 73
 					start_resistance = yes
-					set_resistance = 68
+					set_resistance = 8
+				}
+
+				86 = {
+					set_compliance = 69
+					start_resistance = yes
+					set_resistance = 9
+				}
+
+				807 = {
+					set_compliance = 61
+					start_resistance = yes
+					set_resistance = 16
+				}
+
+				104 = {
+					set_compliance = 51
+					start_resistance = yes
+					set_resistance = 12
 				}
 		
 				69 = {

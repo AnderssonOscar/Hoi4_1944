@@ -405,6 +405,7 @@ division_template = {
 	regiments = {
 		infantry = { x = 0 y = 0 }	
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
    		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
   		infantry = { x = 2 y = 0 }
@@ -4334,10 +4335,20 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
+			type = rocket_artillery_equipment_2
+			creator = "GER" 
+		}
+		requested_factories = 1
+		progress = 0.64
+		efficiency = 77
+	}
+
+	add_equipment_production = {
+		equipment = {
 			type = anti_tank_equipment_2
 			creator = "GER" 
 		}
-		requested_factories = 10
+		requested_factories = 8
 		progress = 0.3
 		efficiency = 79
 	}
@@ -4367,7 +4378,7 @@ instant_effect = {
 			type = motorized_equipment_1
 			creator = "GER" 
 		}
-		requested_factories = 10
+		requested_factories = 11
 		progress = 0.2
 		efficiency = 100
 	}
@@ -4447,6 +4458,17 @@ instant_effect = {
 		requested_factories = 5
 		progress = 0.4
 		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = light_tank_artillery_chassis_2
+			creator = "GER"
+			version_name = "Wespe" 
+		}
+		requested_factories = 1
+		progress = 0.4
+		efficiency = 89
 	}
 
 	add_equipment_production = {

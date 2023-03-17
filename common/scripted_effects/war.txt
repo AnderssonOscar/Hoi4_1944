@@ -5,7 +5,7 @@ war_start_effects = {
 			date > 1943.12.31
 			check_variable = { global.var_war_instant_start_effects = 0 }
 		}
-		GER = { declare_war_on = { target = ENG type = annex_everything } }
+		#GER = { declare_war_on = { target = ENG type = annex_everything } }
 		set_variable = { global.var_war_instant_start_effects = 1 }
 	}
 

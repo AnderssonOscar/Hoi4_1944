@@ -7,8 +7,10 @@ on_actions = {
 	on_startup = {
 		effect = {
 
-	#add_named_threat = { threat = 60 name = generic.15.t }
-		
+			GER = { declare_war_on = { target = ENG type = annex_everything } }
+			MOD_start_update = yes
+
+		#add_named_threat = { threat = 60 name = generic.15.t }
 
 	every_country = {
 		limit = { 
