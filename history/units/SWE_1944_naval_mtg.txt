@@ -96,7 +96,7 @@ instant_effect = {
 		name = "HMS Tre Kronor" 
 		requested_factories = 1
 		progress = 0.45
-		amount = 3
+		amount = 1
 	}
 
 	add_equipment_production = {
@@ -108,6 +108,6 @@ instant_effect = {
 		name = "HMS Göta Lejon" 
 		requested_factories = 1
 		progress = 0.41
-		amount = 3
+		amount = 1
 	}
 }
