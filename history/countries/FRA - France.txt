@@ -1098,6 +1098,15 @@ if = {
 		democratic = 82
 	}
 
+	add_country_leader_role = {
+		character = FRA_charles_de_gaulle
+		promote_leader = yes
+		country_leader = {
+			ideology = conservatism
+			expire = "1946.1.26.1"
+		}
+	}
+
 
 	set_technology = {
 
