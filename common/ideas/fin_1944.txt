@@ -1,6 +1,7 @@
 ideas = {
 	country = {
 		FIN_start_bonus = {
+			picture = generic_wall_line
 			modifier = {
 				army_org_factor = 2.0
 				dig_in_speed_factor = 2.0

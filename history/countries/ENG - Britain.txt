@@ -15,7 +15,7 @@ if = {
 	set_oob = "ENG_1936_nsb"
 }
 
-starting_train_buffer = 4
+starting_train_buffer = 3
 
 if = {
 	limit = {
@@ -258,7 +258,7 @@ if = {
 	complete_national_focus = limited_rearmament_focus
 	complete_national_focus = air_defense_focus
 	complete_national_focus = radar_focus
-	complete_national_focus = shadow_scheme_focus
+	unlock_national_focus = shadow_scheme_focus
 	complete_national_focus = uk_empire_focus
 	complete_national_focus = uk_service_focus
 	complete_national_focus = uk_colonial_focus
@@ -1837,12 +1837,13 @@ if = {
 		upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
 	}
 
+	army_experience = 90
+	navy_experience = 200	
+	air_experience = 250
 
-
-	
 	add_political_power = 1450
 	add_command_power = 100
-	set_convoys = 900
+	set_convoys = 950
 
 	set_stability = 0.8
 	#set_war_support = 0.1
@@ -1861,6 +1862,16 @@ if = {
 		extensive_conscription
 
 		ENG_george_vi
+		#low_war_casualties
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		remove_ideas = {
+			MTG_naval_treaty_adherent
+		}
 	}
 
 	set_technology = {
@@ -2677,7 +2688,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 3910
+        amount = 4910
 		producer = USA
     }
 
