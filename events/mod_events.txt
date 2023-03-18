@@ -14,7 +14,7 @@ add_namespace = italy.fascist
 add_namespace = german.ryti.ribbentrop
 add_namespace = finland.ryti.ribbentrop
 
-
+add_namespace = allies.dday.start
 
 # Romania switch side
 country_event = {
@@ -691,6 +691,43 @@ country_event = {
 	
 	option = {
 		name = "Crap"
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+
+
+# USA/ENG D-Day
+country_event = {
+	id = allies.dday.start.1
+	title = allies.dday.start.1.t
+	desc = allies.dday.start.1.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { USA = {is_ai = yes} }
+			add_timed_idea = { idea = dday_bonus days = 14 } 
+		}
+
+		if = {
+			limit = { ENG = {is_ai = yes} }
+			add_timed_idea = { idea = dday_bonus days = 14 } 
+		}
+	 }
+
+	option = {
+		name = "Ok"
+
+		custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
 
 		ai_chance = {
 			base = 1

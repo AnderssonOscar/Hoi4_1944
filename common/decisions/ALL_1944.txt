@@ -449,8 +449,8 @@ operations = {
 					breakthrough_factor = +1.25
 					army_org_regain = +10.0
 					army_org_factor = +1.0
-					naval_invasion_penalty = -1.0
-
+					naval_invasion_penalty = -1.25
+					supply_consumption_factor = -1.0
 					#max_commander_army_group_size = +1.0
 			}
 

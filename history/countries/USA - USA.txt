@@ -1487,6 +1487,11 @@ if = {
 
 		basic_heavy_shell = 1
 		improved_heavy_shell = 1
+
+		basic_dp_light_battery = 1
+		improved_dp_light_battery = 1
+
+		magnetic_detonator = 1
 	}
 	else = {
 		set_technology = {
@@ -1532,15 +1537,13 @@ if = {
 			engines_1 = 1
 			engines_2 = 1
 			engines_3 = 1
+			engines_4 = 1
 
 			range_improvements = 1
 
 			early_bombs = 1
 
 			aircraft_construction = 1
-			
-			engines_1 = 1
-			engines_2 = 1
 
 			iw_small_airframe = 1
 			basic_small_airframe = 1

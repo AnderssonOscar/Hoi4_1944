@@ -2,6 +2,7 @@ ideas = {
 	country = {
 		
 	dont_surrender_mod = {
+		picture = chi_war_of_resistance3
 		modifier = {
 			#max_surrender_limit_offset = -0.5
 			forced_surrender_limit = +0.15
@@ -17,11 +18,27 @@ ideas = {
 		}
 
 	mod_boost = {
+		picture = generic_artillery_manufacturer_2
 		modifier = {
 			political_power_factor = +0.75
 			command_power_gain_mult = +0.25
 			max_command_power_mult = +0.5
 			mobilization_speed = +0.175
+			}
+		}
+
+		dday_bonus = {
+			picture = eng_preparing_the_second_front
+			modifier = {
+				out_of_supply_factor = -0.5
+				supply_consumption_factor = -0.5
+
+				land_reinforce_rate = +0.5
+				army_org_factor = +0.5
+
+				terrain_penalty_reduction = +0.5
+				ground_attack_factor = +0.5
+				command_power_gain_mult = +10.0
 			}
 		}
 

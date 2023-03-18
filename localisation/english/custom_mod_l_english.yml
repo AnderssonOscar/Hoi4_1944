@@ -57,6 +57,10 @@ GER_simplify_production:0 "Simplify arms production"
 GER_simplify_production_desc:0 "We can increase our production by lowering our standards."
 GER_simplify_production_tooltip:0 "Production increase:"
 
+GER_fighter_production:0 "Figther aircraft production"
+GER_fighter_production_desc:0 "We have to increase our production of fighters."
+GER_fighter_production_tooltip:0 "Production increase:"
+
 GER_protect_industry:0 "Protect the industries"
 GER_protect_industry_desc:0 "Focus on protecting our precious industry from air raids"
 GER_protect_industry_tooltip:0 "Protection from air raids:"
@@ -162,3 +166,6 @@ collaborationist_formation_desc:1 "To help the war effort we need to allow colla
 Recruit_Andrey_Vlasov:0 "Recruit Andrey Vlasov"
 Russian_Liberation_Army:0 "From the Russian Liberation Army"
 Recruit_POWS:0 "Recruit POWs"
+
+GER_oder_neisse_defence:0"Prepare defences along the oder-neisse river"
+GER_oder_neisse_defence_desc:0"Construct defensive fortifications from Stettin to outside of Dresden."

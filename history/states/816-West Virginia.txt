@@ -10,6 +10,12 @@ state={
 			infrastructure = 3
 			air_base = 3
 		}
+
+		1943.12.30 = {
+			buildings = {
+				synthetic_refinery = 3
+			}
+		}
 		victory_points = {
 			7588 3
 		}
