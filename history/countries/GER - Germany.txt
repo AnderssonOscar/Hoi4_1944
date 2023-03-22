@@ -2125,7 +2125,7 @@ if = {
 		set_stability = 0.96
 		set_war_support = 0.52
 		add_command_power = 200
-		army_experience = 75
+		army_experience = 95
 		navy_experience = 125	
 		air_experience = 65
 

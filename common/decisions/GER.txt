@@ -1243,6 +1243,7 @@ GER_military_buildup = {
 
 		visible = {
 			has_war = yes
+			date < 1944.1.1 #1944
 			AND = {
 				has_deployed_air_force_size = {
 					type = fighter
@@ -1284,7 +1285,7 @@ special_projects = {
 		visible = { has_tech = atomic_research }
 		cost = 0
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 		cancel_trigger = { NOT = { has_global_flag = GER_heavy_water_production_underway } } #can be removed via intelligence ops
 		days_remove = 365

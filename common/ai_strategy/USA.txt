@@ -1630,7 +1630,7 @@ USA_lend_lease_SOV = {
 		has_war = yes
 		num_divisions > 85 # we must have some divisions ourselves
 
-		date > 1944.1.1
+		date > 1943.1.1
 		date < 1946.1.1
 		NOT = { has_government = fascism }
 		NOT = { is_in_faction_with = GER }
@@ -1650,7 +1650,7 @@ USA_lend_lease_SOV = {
 	ai_strategy = {
 		type = support
 		id = "SOV"
-		value = 200
+		value = 250
 	}
 
 	ai_strategy = {

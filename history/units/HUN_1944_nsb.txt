@@ -163,6 +163,28 @@ units = {
 		start_experience_factor = 0.22
 		start_equipment_factor = 1
 	}
+
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "HUN" } }
+		start_experience_factor = 0.31
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "HUN" } }
+		start_experience_factor = 0.29
+		start_equipment_factor = 0.91
+	}
 	
 	
 	division = {

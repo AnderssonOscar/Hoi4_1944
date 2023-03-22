@@ -449,18 +449,18 @@ operations = {
 					breakthrough_factor = +1.25
 					army_org_regain = +10.0
 					army_org_factor = +1.0
-					naval_invasion_penalty = -1.25
-					supply_consumption_factor = -1.0
+					naval_invasion_penalty = -1.35
+					supply_consumption_factor = -1.25
 					#max_commander_army_group_size = +1.0
 			}
 
-			days_remove = 8
+			days_remove = 9
 			
 			
 			complete_effect = {
 				#set_state_province_controller = {controller = USA province = 11399} 
 
-
+				country_event = allies.dday.start.1 
 
 				if = { limit = {
 					has_equipment = {
@@ -479,14 +479,13 @@ operations = {
 				if = { limit = {
 					tag = USA
 					date < 1944.7.1
-				
 				}
 
 				15 = {
 
 					FRA = {	set_province_controller = 3549 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.29 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.39 start_equipment_factor = 1" 
 						owner = USA
 					}
 
@@ -498,13 +497,13 @@ operations = {
 
 					FRA = {	set_province_controller = 11521 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.43 start_equipment_factor = 0.76" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.47 start_equipment_factor = 0.76" 
 						owner = USA
 					}
 
 					FRA = {	set_province_controller = 6569 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.31 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.35 start_equipment_factor = 1" 
 						owner = USA
 						#prioritize_location = 11535
 					}

@@ -28,7 +28,7 @@ GER_start_effects = {
 
 		set_fuel = 1190000
 		add_political_power = 1250
-		army_experience = 195
+		army_experience = 295
 		add_command_power = 80
 
 		add_manpower = 950000
@@ -62,13 +62,18 @@ GER_start_effects = {
 		}
 
 		add_equipment_to_stockpile = { 
+			type = infantry_equipment_1
+			amount = 15000
+		}
+
+		add_equipment_to_stockpile = { 
 			type = motorized_equipment_1
-			amount = 2900
+			amount = 3900
 		}
 
 		add_equipment_to_stockpile = {
 			type = mechanized_equipment_2
-			amount = 1250
+			amount = 1550
 		}
 
 		add_equipment_to_stockpile = {
@@ -78,12 +83,12 @@ GER_start_effects = {
 
 		add_equipment_to_stockpile = { 
 			type = artillery_equipment_2
-			amount = 1700
+			amount = 2700
 		}
 
 		add_equipment_to_stockpile = {
 			type = anti_tank_equipment_2
-			amount = 900
+			amount = 1900
 		}
 
 		add_equipment_to_stockpile = {

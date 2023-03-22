@@ -713,21 +713,23 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		hidden_effect = {
 		if = {
 			limit = { USA = {is_ai = yes} }
-			add_timed_idea = { idea = dday_bonus days = 14 } 
+			add_timed_idea = { idea = dday_bonus days = 17 } 
 		}
 
 		if = {
 			limit = { ENG = {is_ai = yes} }
-			add_timed_idea = { idea = dday_bonus days = 14 } 
+			add_timed_idea = { idea = dday_bonus days = 17 } 
 		}
+	}
 	 }
 
 	option = {
 		name = "Ok"
 
-		custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
+		#custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
 
 		ai_chance = {
 			base = 1

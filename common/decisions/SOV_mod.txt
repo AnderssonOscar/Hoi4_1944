@@ -99,7 +99,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { inf_eq = equipment_base_num }
-			multiply_temp_variable = { inf_eq = 211.4 }
+			multiply_temp_variable = { inf_eq = 221.4 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
 				amount = inf_eq
@@ -113,7 +113,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { artillery_eq = equipment_base_num }
-			multiply_temp_variable = { artillery_eq = 9.6 }
+			multiply_temp_variable = { artillery_eq = 11.9 }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_2
 				amount = artillery_eq
@@ -140,7 +140,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { mechanized_eq = equipment_base_num }
-			multiply_temp_variable = { mechanized_eq = 2 }
+			multiply_temp_variable = { mechanized_eq = 3.5 }
 			add_equipment_to_stockpile = {
 				type = mechanized_equipment_2
 				amount = mechanized_eq
@@ -168,7 +168,7 @@ SOV_great_patriotic_war = {
 			}
 		 }
 			set_temp_variable = { anti_tank_eq = equipment_base_num }
-			multiply_temp_variable = { anti_tank_eq = 9.6 }
+			multiply_temp_variable = { anti_tank_eq = 11.6 }
 			add_equipment_to_stockpile = {
 				type = anti_tank_equipment_2
 				amount = anti_tank_eq

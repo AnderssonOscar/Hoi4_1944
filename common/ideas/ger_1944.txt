@@ -81,6 +81,10 @@ ideas = {
 				build_cost_ic = +0.5 instant = yes
 			}
 
+			small_plane_naval_bomber_airframe = {
+				build_cost_ic = +0.5 instant = yes
+			}
+
 			transport_plane_equipment = {
 				build_cost_ic = +0.5 instant = yes
 			}

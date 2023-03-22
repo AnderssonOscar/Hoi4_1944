@@ -46,7 +46,7 @@ allies_dont_spam_invasion = {
 	#}
 }
 
-allies_dont_just_focus_jap = { #if dday fails, just dont give give - this needs - allies_dont_spam_invasion
+allies_dont_just_focus_jap = { #if dday fails, - this needs - allies_dont_spam_invasion
 	allowed = {
 			OR = {
 					tag = USA
