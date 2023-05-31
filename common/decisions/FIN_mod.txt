@@ -110,6 +110,7 @@ war_measures = {
 				enemy = GER
 			}
 			add_timed_idea = { idea = dont_surrender_mod days = 90 }
+			add_timed_idea = { idea = FIN_armistice_effect days = 30 }
 		}
 
 		FIN = {

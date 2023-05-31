@@ -22,7 +22,7 @@ ideas = {
 		modifier = {
 			political_power_factor = +0.75
 			command_power_gain_mult = +0.25
-			max_command_power_mult = +0.5
+			max_command_power_mult = +0.75
 			mobilization_speed = +0.175
 			}
 		}

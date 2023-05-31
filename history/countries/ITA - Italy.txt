@@ -2057,7 +2057,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 135
+        amount = 335
     }
 
 	add_equipment_to_stockpile = {

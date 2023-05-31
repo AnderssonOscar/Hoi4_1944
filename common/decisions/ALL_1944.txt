@@ -387,6 +387,107 @@ operations = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	operation_overlord_prep = {
+
+		icon = generic_operation
+	
+		allowed = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+		}
+		
+		available = {
+			has_war_with = GER
+			date > 1944.5.1
+
+			16 = {is_fully_controlled_by = GER}
+
+		GER = {
+
+			AND = {
+				controls_state = 16
+				controls_state = 15
+				controls_state = 29
+			}
+		}
+
+		}
+
+		#cost = 25
+		#days_re_enable = 80
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 250
+		}
+		
+		visible = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+			is_ai = yes
+			has_war_with = GER
+		}
+
+		modifier = {
+			naval_invasion_prep_speed = -10.0
+			#naval_speed_factor = +1.0 #only works for ships, not convoy
+		}
+
+
+		days_remove = 30
+		
+		
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+
+
+
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	operation_overlord = {
 
 			icon = generic_operation
@@ -438,20 +539,26 @@ operations = {
 			}
 
 			modifier = {
-					naval_invasion_prep_speed = +100.00
+					naval_invasion_prep_speed = +1000.0
 					#amphibious_invasion #speed
 					#naval_invasion_capacity = +10.00
 					#naval_invasion_penalty = -0.25
 					#supply_consumption_factor = -0.25
 					#dig_in_speed_factor = +0.25
 					army_speed_factor = +0.5
-					army_attack_factor = +1.25
-					breakthrough_factor = +1.25
+					#army_attack_factor = +1.25
+					#breakthrough_factor = +1.25
 					army_org_regain = +10.0
 					army_org_factor = +1.0
-					naval_invasion_penalty = -1.35
+					naval_invasion_penalty = -1.5
 					supply_consumption_factor = -1.25
 					#max_commander_army_group_size = +1.0
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 1.25
+				breakthrough_bonus_against = 1.5
 			}
 
 			days_remove = 9

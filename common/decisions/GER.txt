@@ -1416,6 +1416,8 @@ special_projects = {
 			controls_state = 74 # Eastern Sudetenland
 			controls_state = 9 # Bohemia
 			controls_state = 75 # Moravia
+
+			date < 1944.1.1
 		}
 		days_remove = 180
 		modifier = {

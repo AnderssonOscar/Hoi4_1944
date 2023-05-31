@@ -223,7 +223,7 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = 140
+		value = 80
 	}
 
 	ai_strategy = {
@@ -612,7 +612,7 @@ Allies_garrison_invasion = {
 		 }
 	
 	enable = {
-		date > 1944.6.1
+		date > 1944.6.7
 		has_war_with = GER
 
 		NOT = {

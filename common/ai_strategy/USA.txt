@@ -1832,7 +1832,7 @@ USA_help_out_in_france= {
 	ai_strategy = {
 		type = force_defend_ally_borders
 		id = "FRA"
-		value = 80
+		value = 85
 	}
 
 }
