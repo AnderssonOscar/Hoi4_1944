@@ -2,7 +2,7 @@ Resistance_start_effects = {
 	
 	if = {
 		limit = { 
-			date > 1944.1.3
+			#date > 1944.1.2
 			check_variable = { global.var_Resistance_start_effects = 0 }
 		}
 
@@ -11,7 +11,6 @@ Resistance_start_effects = {
 			limit = {
 				has_dlc = "La Resistance"
 			}
-
 
 				every_state = {
 					limit = {
@@ -25,31 +24,52 @@ Resistance_start_effects = {
 						}
 					}
 					
-					set_compliance = 24
 					start_resistance = is_core_of
 					set_resistance = 29
+					set_compliance = 24
+					add_resistance_target = 26
 					
 					force_enable_resistance = {
 						clear = no
 						occupier = controller
 						occupied = is_core_of
 					}
+				}
 
-					#add_state_modifier = {
-					#	modifier = { resistance_target = +0.25 }
-					#}
+				39 = {
+					set_compliance = 93
+					start_resistance = yes
+					set_resistance = 3
+				}
+
+				86 = {
+					set_compliance = 69
+					start_resistance = yes
+					set_resistance = 9
+				}
+
+				807 = {
+					set_compliance = 87
+					start_resistance = yes
+					set_resistance = 11
 				}
 
 				104 = {
-					set_compliance = 24
+					set_compliance = 51
 					start_resistance = yes
-					set_resistance = 68
+					set_resistance = 12
 				}
 		
 				69 = {
-					set_compliance = 64
+					set_compliance = 94
 					start_resistance = no
 					set_resistance = 6
+				}
+
+				9 = {
+					set_compliance = 71
+					start_resistance = no
+					set_resistance = 13
 				}
 
 				set_variable = { global.var_Resistance_start_effects = 1 }

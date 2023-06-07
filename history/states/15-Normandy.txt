@@ -48,14 +48,14 @@ state={
 			buildings = {
 
 			6449 = {
-				naval_base = 6
+				naval_base = 7
 			}
 			9434 = {
-				naval_base = 7
+				naval_base = 8
 			}
 
 			485 = {
-				naval_base = 4
+				naval_base = 5
 			}
 				radar_station = 2
 				anti_air_building = 2

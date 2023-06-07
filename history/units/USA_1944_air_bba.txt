@@ -338,7 +338,7 @@ instant_effect = {
 		}
 		requested_factories = 15
 		progress = 0.15
-		efficiency = 84
+		efficiency = 89
 	}
 
 	add_equipment_production = {
@@ -361,7 +361,7 @@ instant_effect = {
 		}
 		requested_factories = 10
 		progress = 0.15
-		efficiency = 84
+		efficiency = 89
 	}
 
 	add_equipment_production = {
@@ -370,9 +370,9 @@ instant_effect = {
 			creator = "USA" 
 			version_name = "B-29 Superfortress A"
 		}
-		requested_factories = 10
+		requested_factories = 20
 		progress = 0.15
-		efficiency = 51
+		efficiency = 59
 	}
 
 	add_equipment_production = {

@@ -118,7 +118,7 @@ if = {
 		basic_medium_battery = 1
 		basic_heavy_battery = 1
 		 
-		 
+		improved_airplane_launcher = 1
 		basic_depth_charges = 1
 		sonar = 1
 
@@ -568,6 +568,9 @@ set_war_support = 0.3
 		 
 		 
 		basic_depth_charges = 1
+		improved_depth_charges = 1
+		#advanced_depth_charges = 1
+
 		basic_submarine_snorkel = 1
 		sonar = 1
 		improved_ship_hull_heavy = 1
@@ -2122,7 +2125,7 @@ if = {
 		set_stability = 0.96
 		set_war_support = 0.52
 		add_command_power = 200
-		army_experience = 75
+		army_experience = 95
 		navy_experience = 125	
 		air_experience = 65
 
@@ -2162,30 +2165,42 @@ if = {
 	
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 6000
+		amount = 9000
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 6100
+		amount = 7100
 		producer = SOV
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 4100
+		amount = 7100
 		producer = ITA
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 3000
+		amount = 9000
 		producer = FRA
 	}
 
 	add_equipment_to_stockpile = {
+		type = infantry_equipment_1
+		amount = 6000
+		producer = POL
+	}
+
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_1
+		amount = 5000
+		producer = CZE
+	}
+
+	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 450
+        amount = 1250
     }
 
 	add_equipment_to_stockpile = {
@@ -2258,6 +2273,14 @@ if = {
 			amount = 215
 			variant_name = "Sturmgeschutz III"
 		}
+
+		add_equipment_to_stockpile = {
+			type = light_tank_chassis_1
+			amount = 355
+			variant_name = "H-35"
+			producer = FRA
+		}
+
 
 	}
 

@@ -14,7 +14,9 @@ add_namespace = italy.fascist
 add_namespace = german.ryti.ribbentrop
 add_namespace = finland.ryti.ribbentrop
 
+add_namespace = allies.dday.start
 
+add_namespace = mod.start
 
 # Romania switch side
 country_event = {
@@ -311,9 +313,9 @@ country_event = {
 		option = {
 			name = "I am invincible!"
 
-			add_stability = -0.1
-			add_war_support = +0.1
-			add_political_power = +300
+			add_stability = -0.05
+			add_war_support = -0.05
+			add_political_power = +350
 
 			
 			custom_effect_tooltip = "you don't investigate any further.."
@@ -329,8 +331,10 @@ country_event = {
 			retire_character = GER_gunther_von_kluge
 			add_manpower = -7000
 			#add_political_power = -75
-			add_stability = +0.05
+			add_stability = +0.025
+			add_war_support = +0.025
 			add_command_power = +50.0
+			add_political_power = -100
 			#add_war_support = -0.05
 
 			ai_chance = {
@@ -696,6 +700,74 @@ country_event = {
 				factor = 10
 			}
 		}
+	}
+}
+
+
+
+# USA/ENG D-Day
+country_event = {
+	id = allies.dday.start.1
+	title = allies.dday.start.1.t
+	desc = allies.dday.start.1.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		if = {
+			limit = { USA = {is_ai = yes} }
+			add_timed_idea = { idea = dday_bonus days = 17 } 
+		}
+
+		if = {
+			limit = { ENG = {is_ai = yes} }
+			add_timed_idea = { idea = dday_bonus days = 17 } 
+		}
+	}
+	 }
+
+	option = {
+		name = "Ok"
+
+		#custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+
+news_event = {
+	id = mod.start.1
+	title = mod.start.1.t
+	desc = mod.start.1.d
+	picture = GFX_news_event_german_reichstag_ruins
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = "Start"
+
+		#custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
+
+		hidden_effect = {
+		if = {
+			limit = { check_variable = { global.var_start_effects = 0 } }
+		
+		set_variable = { global.var_start_effects = 1 }
+		Resistance_start_effects = yes
+		industry_start_effects = yes
+		industry_extra_start_effects = yes
+		}
+	}
+
 	}
 }
 

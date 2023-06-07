@@ -7,8 +7,16 @@ on_actions = {
 	on_startup = {
 		effect = {
 
-	#add_named_threat = { threat = 60 name = generic.15.t }
-		
+			GER = { declare_war_on = { target = ENG type = annex_everything } }
+			MOD_start_update = yes
+
+			every_country = {
+				limit = {is_ai = no}
+				country_event = {
+					id = mod.start.1
+				}
+			}
+		#add_named_threat = { threat = 60 name = generic.15.t }
 
 	every_country = {
 		limit = { 
@@ -106,7 +114,6 @@ on_actions = {
 			}
 		}
 
-	GER = { declare_war_on = { target = ENG type = annex_everything } }
 
 	GER = {
 		activate_decision = GER_reichskommissariat_niederlande
@@ -130,26 +137,6 @@ on_actions = {
 	every_country = {
 		limit = { has_war = yes }
 		add_command_power = 50
-	}
-
-	every_country = {
-		limit = { is_in_faction_with = GER }
-		add_to_war = {
-			targeted_alliance = GER
-			enemy = ENG
-		}
-			
-	}
-	
-
-	ENG = {
-		every_country = {
-			limit = { is_in_faction_with = ENG }
-			add_to_war = {
-				targeted_alliance = ENG
-				enemy = GER
-			}
-		}
 	}
 
 	#GER = { activate_decision = GER_reichskommissariat_niederlande }

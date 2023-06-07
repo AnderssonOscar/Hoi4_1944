@@ -221,7 +221,10 @@ if = {
 
 1943.12.30 = {
 
-	army_experience = 185
+	complete_national_focus = doctrine_effort
+	complete_national_focus = political_effort
+
+	army_experience = 215
 	navy_experience = 5	
 	air_experience = 35
 
@@ -255,10 +258,10 @@ if = {
 	add_political_power = 2589
 	add_command_power = 200
 
-	set_convoys = 27
-	set_stability = 0.97 
-	set_war_support = 0.44
-	#add_manpower = 20000
+	set_convoys = 37
+	set_stability = 0.99 
+	set_war_support = 0.49
+	add_manpower = 23600
 	
 	add_timed_idea = { idea = FIN_start_bonus days = 17 }
 
@@ -517,22 +520,40 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment
-        amount = 1800
+        amount = 2950
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 1450
+		producer = SWE
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 215
+        amount = 265
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_tank_equipment_1
+        amount = 56
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_1
+        amount = 78
+		producer = GER
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 470
+        amount = 590
 		producer = GER
     }
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 23
+        amount = 26
     }
 }

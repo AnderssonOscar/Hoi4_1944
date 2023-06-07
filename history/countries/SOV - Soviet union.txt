@@ -1846,9 +1846,9 @@ if = {
 
 	add_political_power = 2989
 	add_command_power = 200
-	army_experience = 100
-	navy_experience = 175	
-	air_experience = 35
+	army_experience = 190
+	navy_experience = 125	
+	air_experience = 95
 
 	set_convoys = 980
 
@@ -2674,12 +2674,12 @@ if = {
 
 	add_equipment_to_stockpile = { 
 			type = infantry_equipment_2
-			amount = 18412
+			amount = 28412
 		}
 
 	add_equipment_to_stockpile = { 
 			type = anti_tank_equipment_1
-			amount = 2899
+			amount = 3899
 		}
 		
 	add_equipment_to_stockpile = { 
@@ -2704,12 +2704,12 @@ if = {
 	
 	add_equipment_to_stockpile = { 
 			type = train_equipment_1
-			amount = 25
+			amount = 125
 		}
 
 	add_equipment_to_stockpile = {
 			type = motorized_equipment_1
-			amount = 2326
+			amount = 4326
 	}
 
 	add_equipment_to_stockpile = {

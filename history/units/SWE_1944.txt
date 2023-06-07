@@ -383,6 +383,17 @@ units = {
 
 ### Starting Production ###
 instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = train_equipment_1
+			creator = "SWE" 
+		}
+		requested_factories = 1
+		progress = 0.2
+		efficiency = 81
+	}
+
 	add_equipment_production = {
 		equipment = {
 			type = infantry_equipment_2

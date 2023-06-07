@@ -1556,7 +1556,7 @@ USA_unit_production = {
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = cas
-		value = 10
+		value = 20
 	}
 
 	ai_strategy = {
@@ -1574,13 +1574,19 @@ USA_unit_production = {
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = strategic_bomber
-		value = 20
+		value = 25
 	}
 	
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = large_plane_airframe
 		value = 5
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 25
 	}
 
 	ai_strategy = {
@@ -1624,7 +1630,7 @@ USA_lend_lease_SOV = {
 		has_war = yes
 		num_divisions > 85 # we must have some divisions ourselves
 
-		date > 1944.1.1
+		date > 1943.1.1
 		date < 1946.1.1
 		NOT = { has_government = fascism }
 		NOT = { is_in_faction_with = GER }
@@ -1644,7 +1650,7 @@ USA_lend_lease_SOV = {
 	ai_strategy = {
 		type = support
 		id = "SOV"
-		value = 200
+		value = 250
 	}
 
 	ai_strategy = {
@@ -1826,7 +1832,7 @@ USA_help_out_in_france= {
 	ai_strategy = {
 		type = force_defend_ally_borders
 		id = "FRA"
-		value = 80
+		value = 85
 	}
 
 }

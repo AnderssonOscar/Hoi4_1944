@@ -187,6 +187,119 @@ special_projects = {
 			
 		 }
 	}
+
+
+
+	GER_oder_neisse_defence = {
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			OR = {
+				NOT = { 87 = { is_fully_controlled_by = GER } }
+				NOT = { 807 = { is_fully_controlled_by = GER } }
+				NOT = { 86 = { is_fully_controlled_by = GER } }
+				NOT = { 63 = { is_fully_controlled_by = GER } }
+				NOT = { 10 = { is_fully_controlled_by = GER } }
+			}
+		}
+
+		visible = { 
+			date > 1944.1.1
+			62 = {is_fully_controlled_by = GER}
+			64 = {is_fully_controlled_by = GER}
+			65 = {is_fully_controlled_by = GER}
+			GER = { controls_province = 6282 } #stettin
+			GER = { controls_province = 3572 }
+
+			has_war_with = SOV
+		 } 
+
+		cost = 75
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					NOT = { 86 = { is_fully_controlled_by = GER } }
+					NOT = { 63 = { is_fully_controlled_by = GER } }
+				}
+				factor = 100
+			}
+		}
+
+		cancel_trigger = {
+				NOT = { 62 = {is_fully_controlled_by = GER} }
+				NOT = { 64 = {is_fully_controlled_by = GER} }
+				NOT = { 65 = {is_fully_controlled_by = GER} }
+				NOT = { GER = { controls_province = 6282 } } #stettin
+				#NOT = { GER = { controls_province = 3572 } }
+		  }
+
+		fire_only_once = yes
+		days_remove = 7
+		remove_effect = {
+
+			if = {	limit = {	GER = { controls_province = 6282 }	} #stettin
+			62 = { 
+				add_building_construction = {
+						type = bunker
+						level = 5
+						province = 6282
+						instant_build = yes
+					}
+				}
+			}
+
+			if = {	limit = {	GER = { controls_province = 3207 }	}
+			62 = { 
+				add_building_construction = {
+						type = bunker
+						level = 4
+						province = 3207
+						instant_build = yes
+					}
+				}
+			}
+
+			if = {	limit = {	GER = { controls_province = 9496 }	}
+			64 = { 
+				add_building_construction = {
+						type = bunker
+						level = 4
+						province = 9496
+						instant_build = yes
+					}
+				}
+			}
+
+			if = {	limit = {	GER = { controls_province = 3572 }	}
+			68 = { 
+				add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3572
+						instant_build = yes
+					}
+				}
+			}
+
+			if = {	limit = {	GER = { controls_province = 9535 }	}
+			65 = { 
+				add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9535
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+		complete_effect = { 
+			#add_manpower = -6500
+		 }
+	}
 }
 	
 

@@ -1084,11 +1084,19 @@ if = {
 	set_convoys = 100
 	set_stability = 0.9 
 	set_war_support = 0.9
+	add_manpower = 63600
 
 	add_ideas = {
 		#laws
 		tot_economic_mobilisation
 		service_by_requirement
+		low_war_casualties
+	}
+
+	remove_ideas = {
+		FRA_protected_by_the_maginot_line
+		FRA_victors_of_wwi
+		FRA_devalue_the_franc
 	}
 
 	set_popularities = {
@@ -1097,6 +1105,25 @@ if = {
 		communism = 8
 		democratic = 82
 	}
+
+	add_country_leader_role = {
+		character = FRA_charles_de_gaulle
+		promote_leader = yes
+		country_leader = {
+			ideology = conservatism
+			expire = "1946.1.26.1"
+		}
+	}
+
+	
+	complete_national_focus = FRA_strengthen_government_support
+	complete_national_focus = FRA_expand_the_citizenship
+	complete_national_focus = FRA_infantry_tanks
+	complete_national_focus = FRA_nationalize_key_industry
+	unlock_national_focus = FRA_invest_in_the_colonies
+	complete_national_focus = FRA_form_the_state_arsenals
+	complete_national_focus = FRA_general_work_council
+	complete_national_focus = FRA_defensive_strategems
 
 
 	set_technology = {
@@ -1560,14 +1587,20 @@ if = {
 
 
 
-
-
-
-
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_1
+		amount = 32500
+    }
 
 	add_equipment_to_stockpile = {
-        type = infantry_equipment
-        amount = FRA
+        type = support_equipment_1
+        amount = 865
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_1
+        amount = 450
+		producer = FRA
     }
 
 	add_equipment_to_stockpile = {
@@ -1576,9 +1609,14 @@ if = {
 		producer = FRA
     }
 
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 950
+		producer = USA
+    }
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 5
+        amount = 38
     }
 }

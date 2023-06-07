@@ -1,10 +1,20 @@
 ideas = {
 	country = {
 		FIN_start_bonus = {
+			picture = generic_wall_line
 			modifier = {
 				army_org_factor = 2.0
 				dig_in_speed_factor = 2.0
 				}
 			}
+
+			FIN_armistice_effect = {
+				picture = great_depression
+				modifier = {
+					army_org_factor = -0.5
+					dig_in_speed_factor = -0.5
+					army_speed_factor = -0.5
+					}
+				}
 	}
 }

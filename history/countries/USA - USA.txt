@@ -1487,6 +1487,11 @@ if = {
 
 		basic_heavy_shell = 1
 		improved_heavy_shell = 1
+
+		basic_dp_light_battery = 1
+		improved_dp_light_battery = 1
+
+		magnetic_detonator = 1
 	}
 	else = {
 		set_technology = {
@@ -1532,15 +1537,13 @@ if = {
 			engines_1 = 1
 			engines_2 = 1
 			engines_3 = 1
+			engines_4 = 1
 
 			range_improvements = 1
 
 			early_bombs = 1
 
 			aircraft_construction = 1
-			
-			engines_1 = 1
-			engines_2 = 1
 
 			iw_small_airframe = 1
 			basic_small_airframe = 1
@@ -1866,6 +1869,7 @@ if = {
 			special_type_slot_1 = hmg_defense_turret_2x
 			special_type_slot_2 = hmg_defense_turret_2x
 			special_type_slot_3 = bomb_sights_1
+			special_type_slot_4 = armor_plate_large
 		}
 	}
 
@@ -1883,6 +1887,7 @@ if = {
 			special_type_slot_1 = lmg_defense_turret_2x
 			special_type_slot_2 = lmg_defense_turret
 			special_type_slot_3 = bomb_sights_1
+			special_type_slot_4 = armor_plate_medium
 			#special_type_slot_3 = self_sealing_fuel_tanks_small
 			#special_type_slot_3 = lmg_defense_turret_2x
 			#special_type_slot_4 = hmg_defense_turret_2x
@@ -1902,6 +1907,8 @@ if = {
 			special_type_slot_1 = hmg_defense_turret_2x
 			special_type_slot_2 = hmg_defense_turret_2x
 			special_type_slot_3 = bomb_sights_1
+			special_type_slot_4 = self_sealing_fuel_tanks_large
+			special_type_slot_5 = armor_plate_large
 		}
 	}
 
@@ -1918,6 +1925,7 @@ if = {
 			special_type_slot_3 = lmg_defense_turret_2x
 			special_type_slot_4 = hmg_defense_turret_2x
 			special_type_slot_5 = bomb_sights_1
+			special_type_slot_6 = self_sealing_fuel_tanks_large
 		}
 	}
 

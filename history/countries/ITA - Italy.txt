@@ -1341,6 +1341,12 @@ if = {
 		#safe_industry
 	}
 
+	set_popularities = {
+		democratic = 27
+		fascism = 58
+		communism = 15
+	}
+
 	retire_character = ITA_italo_balbo
 	
 	remove_ideas = {
@@ -2039,14 +2045,29 @@ if = {
 	}
 }
 
-add_equipment_to_stockpile = {
+	add_equipment_to_stockpile = {
         type = infantry_equipment_2
-        amount = 4600
+        amount = 5900
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_1
+        amount = 1300
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 335
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_tank_equipment_1
+        amount = 192
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 710
+        amount = 790
     }
 
 	add_equipment_to_stockpile = {

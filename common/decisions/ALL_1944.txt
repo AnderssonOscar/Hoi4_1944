@@ -121,7 +121,7 @@ ration_army_fuel = {
 	
 	modifier = {
 		army_fuel_consumption_factor = -0.15
-		army_armor_speed_factor = -0.15
+		army_armor_speed_factor = -0.25
 	}
 }
 
@@ -166,7 +166,7 @@ ration_airforce_fuel = {
 	
 	modifier = {
 		air_fuel_consumption_factor = -0.15
-		air_range_factor = -0.1
+		air_range_factor = -0.2
 	}
 }
 	
@@ -316,7 +316,7 @@ operations = {
 
 		visible = {
 			tag = ENG
-			#is_ai = yes
+			is_ai = yes
 		}
 
 		fire_only_once = no
@@ -387,6 +387,107 @@ operations = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	operation_overlord_prep = {
+
+		icon = generic_operation
+	
+		allowed = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+		}
+		
+		available = {
+			has_war_with = GER
+			date > 1944.5.1
+
+			16 = {is_fully_controlled_by = GER}
+
+		GER = {
+
+			AND = {
+				controls_state = 16
+				controls_state = 15
+				controls_state = 29
+			}
+		}
+
+		}
+
+		#cost = 25
+		#days_re_enable = 80
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 250
+		}
+		
+		visible = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+			is_ai = yes
+			has_war_with = GER
+		}
+
+		modifier = {
+			naval_invasion_prep_speed = -10.0
+			#naval_speed_factor = +1.0 #only works for ships, not convoy
+		}
+
+
+		days_remove = 30
+		
+		
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+
+
+
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	operation_overlord = {
 
 			icon = generic_operation
@@ -438,29 +539,35 @@ operations = {
 			}
 
 			modifier = {
-					naval_invasion_prep_speed = +100.00
+					naval_invasion_prep_speed = +1000.0
 					#amphibious_invasion #speed
 					#naval_invasion_capacity = +10.00
 					#naval_invasion_penalty = -0.25
 					#supply_consumption_factor = -0.25
 					#dig_in_speed_factor = +0.25
 					army_speed_factor = +0.5
-					army_attack_factor = +1.25
-					breakthrough_factor = +1.25
+					#army_attack_factor = +1.25
+					#breakthrough_factor = +1.25
 					army_org_regain = +10.0
 					army_org_factor = +1.0
-					naval_invasion_penalty = -1.0
-
+					naval_invasion_penalty = -2.35
+					supply_consumption_factor = -1.25
 					#max_commander_army_group_size = +1.0
 			}
 
-			days_remove = 8
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 1.5
+				breakthrough_bonus_against = 1.75
+			}
+
+			days_remove = 11
 			
 			
 			complete_effect = {
 				#set_state_province_controller = {controller = USA province = 11399} 
 
-
+				country_event = allies.dday.start.1 
 
 				if = { limit = {
 					has_equipment = {
@@ -479,14 +586,13 @@ operations = {
 				if = { limit = {
 					tag = USA
 					date < 1944.7.1
-				
 				}
 
 				15 = {
 
 					FRA = {	set_province_controller = 3549 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.29 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.39 start_equipment_factor = 1" 
 						owner = USA
 					}
 
@@ -498,13 +604,13 @@ operations = {
 
 					FRA = {	set_province_controller = 11521 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.43 start_equipment_factor = 0.76" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.47 start_equipment_factor = 0.76" 
 						owner = USA
 					}
 
 					FRA = {	set_province_controller = 6569 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.31 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.35 start_equipment_factor = 1" 
 						owner = USA
 						#prioritize_location = 11535
 					}

@@ -252,7 +252,7 @@ ideas = {
 			
 			allowed = { always = yes }
 			removal_cost = -1
-			picture = tur_disorganised_armed_forces
+			picture = generic_intel_bonus
 			#on_add = { add_command_power = 200 }
 			#on_remove = {	}
 			removal_cost = -1
@@ -286,7 +286,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = tur_disorganised_armed_forces
+			picture = great_depression
 			
 			modifier = {
 				army_attack_factor = -1.25
@@ -312,7 +312,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = tur_disorganised_armed_forces
+			picture = prc_low_popular_support
 			
 			modifier = {
 				#stability_factor = -0.05
@@ -328,7 +328,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = tur_disorganised_armed_forces
+			picture = prc_low_popular_support2 #tur_disorganised_armed_forces
 			
 			modifier = {
 				#stability_factor = -0.05
@@ -343,7 +343,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = tur_disorganised_armed_forces
+			picture = prc_low_popular_support3 #tur_disorganised_armed_forces
 			
 			modifier = {
 				#stability_factor = -0.05

@@ -12,17 +12,20 @@ old_weapon_caches:0 "Old Weapon Caches"
 old_weapon_caches_desc:0 ""
 
 
-GER_rocket_bases_1:0 "Develop the V1 rocket & build launch site."
+GER_rocket_bases_1:0 "Develop the V1 rocket & build launch site"
 GER_rocket_bases_1_desc:0 ""
 
-GER_rocket_bases_2:0 "Develop the V2 rocket & build launch site."
+GER_rocket_bases_2:0 "Develop the V2 rocket & build launch site"
 GER_rocket_bases_2_desc:0 ""
 
-ration_army_fuel:0 "Ration the fuel of the army."
+ration_army_fuel:0 "Ration the fuel of the army"
 ration_army_fuel_desc:0 ""
 
-ration_airforce_fuel:0 "Ration the fuel of the airforce."
+ration_airforce_fuel:0 "Ration the fuel of the airforce"
 ration_airforce_fuel_desc:0 ""
+
+seize_some_trucks:0 "Seize civilian trucks"
+seize_some_trucks_desc:0 ""
 
 dig_in_and_hold:0 "Dig in and hold"
 dig_in_and_hold_desc:0 "Dig deeper!"
@@ -53,6 +56,10 @@ GER_form_volksturm_tooltip:0 "Receive 32 Volksturm divisions of varying quality.
 GER_simplify_production:0 "Simplify arms production"
 GER_simplify_production_desc:0 "We can increase our production by lowering our standards."
 GER_simplify_production_tooltip:0 "Production increase:"
+
+GER_fighter_production:0 "Figther aircraft production"
+GER_fighter_production_desc:0 "We have to increase our production of fighters."
+GER_fighter_production_tooltip:0 "Production increase:"
 
 GER_protect_industry:0 "Protect the industries"
 GER_protect_industry_desc:0 "Focus on protecting our precious industry from air raids"
@@ -159,3 +166,10 @@ collaborationist_formation_desc:1 "To help the war effort we need to allow colla
 Recruit_Andrey_Vlasov:0 "Recruit Andrey Vlasov"
 Russian_Liberation_Army:0 "From the Russian Liberation Army"
 Recruit_POWS:0 "Recruit POWs"
+
+GER_oder_neisse_defence:0"Prepare defences along the oder-neisse river"
+GER_oder_neisse_defence_desc:0"Construct defensive fortifications from Stettin to outside of Dresden."
+
+mod.start.1:0 "1944: Downfall"
+mod.start.1.t:0 "1944: Downfall"
+mod.start.1.d:0 "\n\tWelcome to 1944: Downfall.\n\nPress the Start button before unpausing the game."

@@ -46,7 +46,7 @@ allies_dont_spam_invasion = {
 	#}
 }
 
-allies_dont_just_focus_jap = { #if dday fails, just dont give give - this needs - allies_dont_spam_invasion
+allies_dont_just_focus_jap = { #if dday fails, - this needs - allies_dont_spam_invasion
 	allowed = {
 			OR = {
 					tag = USA
@@ -223,7 +223,7 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = 140
+		value = 80
 	}
 
 	ai_strategy = {
@@ -612,7 +612,7 @@ Allies_garrison_invasion = {
 		 }
 	
 	enable = {
-		date > 1944.6.1
+		date > 1944.6.7
 		has_war_with = GER
 
 		NOT = {
@@ -708,7 +708,7 @@ allies_dont_invade_axis_allies = {
 	enable = {
 		date > 1943.12.30
 		has_war_with = GER
-		date < 1946.1.1
+		date < 1945.7.1
 	}
 
 	abort_when_not_enabled = yes
@@ -1010,7 +1010,7 @@ ALLIES_bomb_normandy = {
 	enable = {
 		is_historical_focus_on = yes
 		has_war_with = GER
-		date > 1944.6.1
+		date > 1944.5.20
 		date < 1944.6.25
 
 		surrender_progress < 0.025

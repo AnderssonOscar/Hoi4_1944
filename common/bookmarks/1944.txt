@@ -4,6 +4,7 @@ bookmarks = {
 		desc = "1944_DESC"
 		date = 1944.1.1.12
 		picture = "GFX_select_date_1944"
+		default = yes
 		default_country = "GER"
 	
 		GER = {
@@ -12,7 +13,6 @@ bookmarks = {
 			ideas = {
 				sour_loser
 				general_staff
-				GER_mefo_bills_15
 				GER_autarky_idea
 			}
 			focuses = {
@@ -60,7 +60,6 @@ bookmarks = {
 			ideology = democratic
 			ideas = {
 				home_of_the_free
-				great_depression_3
 				air_war_plans_division_focus
 				USA_war_department
 				new_deal
@@ -76,9 +75,7 @@ bookmarks = {
 			history = "ROM_BLITZKRIEG_DESC"
 			ideology = neutrality
 			ideas = {
-				ROM_king_carol_ii_hedonist
 				ROM_preserve_greater_romania
-				ROM_iron_guard
 			}
 			focuses = {
 				ROM_balkans_dominance
@@ -92,14 +89,12 @@ bookmarks = {
 			history = "HUN_BLITZKRIEG_DESC"
 			ideology = neutrality
 			ideas = {
-				HUN_treaty_of_triannon_3
 				HUN_interventionism
-				HUN_strengthen_fascists
 			}
 			focuses = {
 				HUN_elect_a_king
-				HUN_secret_rearmament
-				HUN_renounce_the_treaty_of_trianon
+				#HUN_secret_rearmament
+				#HUN_renounce_the_treaty_of_trianon
 			}
 		}
 
@@ -111,13 +106,19 @@ bookmarks = {
 				#victor_emmanuel
 			}
 			focuses = {
-				ITA_pact_of_steel
+				#ITA_pact_of_steel
 				#ITA_spanish_italian_faction
-				ITA_italy_first
+				#ITA_italy_first
 			}			
 		}
 
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
 		"BUL"={
+			minor = yes
 			history = "BUL_BLITZKRIEG_DESC"
 			ideology = neutrality
 			ideas = {
@@ -127,8 +128,40 @@ bookmarks = {
 			}
 			focuses = {
 				BUL_the_third_bulgarian_empire
-				BUL_the_return_of_ferdinand_i
+				#BUL_the_return_of_ferdinand_i
 				BUL_bulgaria_on_the_three_seas
+			}
+		}
+
+		"JAP" = {
+			minor = yes
+			history = JAP_BLITZKRIEG_DESC
+			ideology = fascism
+			ideas={
+				state_shintoism
+				JAP_guide_the_zaibatsus
+				JAP_militarism
+			}	
+			focuses = {
+				JAP_the_zero
+				JAP_warrior_spirit
+				JAP_strike_on_the_southern_resource_area
+			}		
+		}
+
+		"CHI"={
+			minor = yes
+			history = "CHI_BLITZKRIEG_DESC"
+			ideology = neutrality
+			ideas = {
+				CHI_army_corruption_2
+				CHI_hyper_inflation_1
+				CHI_nine_power_treaty
+			}
+			focuses = {
+				CHI_renegotiate_the_unequal_treaties
+				CHI_invite_the_flying_tigers
+				CHI_war_of_resistance
 			}
 		}
 

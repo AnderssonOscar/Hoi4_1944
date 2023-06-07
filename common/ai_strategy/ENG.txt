@@ -292,7 +292,7 @@ bba_air_prod_2 = {
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = cas
-		value = 5
+		value = 10
 	}
  
 	ai_strategy = {

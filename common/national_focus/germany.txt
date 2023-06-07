@@ -9119,7 +9119,7 @@ focus_tree = {
 		completion_reward = {
 		add_timed_idea ={
 			idea = GER_gottedamerung
-			days = 360
+			days = 720
 		} 
 	}
 }
@@ -9629,6 +9629,33 @@ focus_tree = {
 		custom_effect_tooltip = GER_simplify_production_tooltip
 		add_timed_idea ={
 			idea = GER_simplify_production
+			days = 720
+		} 
+		}
+	}
+
+	focus = {
+		id = GER_fighter_production
+		icon = GFX_focus_generic_aircraft_production
+		x = 20
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_simplify_production }
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			date > 1944.1.1
+			has_war = yes
+		}
+
+	completion_reward = {
+		custom_effect_tooltip = GER_fighter_production_tooltip
+		add_timed_idea ={
+			idea = GER_fighter_production
 			days = 360
 		} 
 		}
@@ -10027,14 +10054,14 @@ focus_tree = {
 			64 = { #berlin
 				add_building_construction = {
 						type = bunker
-						level = 10
+						level = 9
 						province = 6521
 						instant_build = yes
 					}
 
 				add_state_modifier = {
 					modifier = {
-						local_supplies = 1.0
+						local_supplies = 0.25
 					}
 				}
 				}
@@ -10138,7 +10165,7 @@ focus_tree = {
 
 			add_timed_idea ={
 			idea = GER_festung_supply
-			days = 360
+			days = 720
 		}
 
 		}

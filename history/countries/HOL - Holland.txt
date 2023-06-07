@@ -474,6 +474,8 @@ if = {
 
 1943.12.30 = {
 
+	oob = "HOL_1944"
+
 	if = {
 		limit = { has_dlc = "Man the Guns" }
 			set_naval_oob = "HOL_1944_naval_mtg"

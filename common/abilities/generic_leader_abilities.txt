@@ -78,6 +78,21 @@ ability = {
 		allowed = {
 			is_leading_army_group = no
 			is_border_war = no
+
+			FROM = {NOT = { has_idea = dday_bonus }}
+
+			OWNER = {	# 1944 dont last stand dday
+				if = {
+					limit = {
+						tag = GER
+					}
+					OR = {
+						USA = { NOT = { has_idea = dday_bonus } }
+						ENG = { NOT = { has_idea = dday_bonus } }
+					}
+				}
+			}
+
 			OWNER = {
 				NOT = {
 					has_completed_focus = JAP_warrior_spirit

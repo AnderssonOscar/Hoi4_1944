@@ -204,7 +204,7 @@ set_convoys = 10
 		complete_national_focus = ROM_hunedoara_steel_works
 		complete_national_focus = ROM_appoint_german_friendly_government
 		complete_national_focus = ROM_invite_german_advisors
-		complete_national_focus = ROM_iron_guard
+		unlock_national_focus = ROM_iron_guard
 
 		#King stuff
 		unlock_national_focus = ROM_institute_royal_dictatorship
@@ -453,7 +453,7 @@ if = {
 		service_by_requirement
 
 		medium_war_casualties
-
+		ROM_figurehead_king_michael
 		ROM_leonidas_works
 		ROM_iar
 	}
@@ -465,15 +465,15 @@ if = {
 		create_intelligence_agency = yes
 	}
 
-	retire_character = ROM_corneliu_codreanu
-	retire_character = ROM_octavian_goga
+	#retire_character = ROM_corneliu_codreanu
+	#retire_character = ROM_octavian_goga
 
-	ROM_ion_antonescu = {
-		promote_character = yes
-		promote_character = fascism
-	}
-	promote_character = { character = ROM_ion_antonescu ideology = fascism }
-	promote_character = ROM_ion_antonescu
+	#ROM_ion_antonescu = {
+	#	promote_character = yes
+	#	promote_character = fascism
+	#}
+	#promote_character = { character = ROM_ion_antonescu ideology = fascism }
+	#promote_character = ROM_ion_antonescu
 
 	activate_decision = women_in_the_workforce
 
@@ -595,6 +595,17 @@ if = {
 		complete_national_focus = ROM_license_german_equipment
 		complete_national_focus = ROM_the_maresal
 	}
+
+	add_country_leader_role = {
+		character = ROM_ion_antonescu
+		promote_leader = yes
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.1.1.1"
+		}
+	}
+
+	retire_character = ROM_corneliu_codreanu
 
 	set_technology = {
 
