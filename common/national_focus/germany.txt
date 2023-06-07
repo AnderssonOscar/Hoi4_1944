@@ -9660,6 +9660,33 @@ focus_tree = {
 		} 
 		}
 	}
+
+	focus = {
+		id = GER_fighter_production
+		icon = GFX_focus_generic_aircraft_production
+		x = 20
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_simplify_production }
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			date > 1944.1.1
+			has_war = yes
+		}
+
+	completion_reward = {
+		custom_effect_tooltip = GER_fighter_production_tooltip
+		add_timed_idea ={
+			idea = GER_fighter_production
+			days = 360
+		} 
+		}
+	}
 	
 
 	focus = {
