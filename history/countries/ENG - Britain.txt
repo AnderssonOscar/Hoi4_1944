@@ -1841,9 +1841,9 @@ if = {
 	navy_experience = 200	
 	air_experience = 250
 
-	add_political_power = 1450
+	add_political_power = 1550
 	add_command_power = 100
-	set_convoys = 950
+	set_convoys = 1290
 
 	set_stability = 0.8
 	#set_war_support = 0.1
@@ -1861,8 +1861,9 @@ if = {
 		war_economy
 		extensive_conscription
 
+		ENG_Air_industry
 		ENG_george_vi
-		#low_war_casualties
+		low_war_casualties
 	}
 
 	if = {

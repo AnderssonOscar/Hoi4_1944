@@ -172,4 +172,4 @@ GER_oder_neisse_defence_desc:0"Construct defensive fortifications from Stettin t
 
 mod.start.1:0 "1944: Downfall"
 mod.start.1.t:0 "1944: Downfall"
-mod.start.1.d:0 "\n\tWelcome to 1944: Downfall.\n\nPress the Start button before unpausing the game."
+mod.start.1.d:0 "\n\tWelcome to 1944: Downfall.\n\nIf you experience crashes at the start of the game it is recommended to not start the game at max speed for the first couple of days.\n\nPress the Start button before unpausing the game."

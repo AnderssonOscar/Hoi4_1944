@@ -20,7 +20,7 @@ GER_start_effects = {
 		limit = { 
 			tag = GER
 			is_ai = yes
-			date > 1944.1.1
+			date > 1943.12.31
 			check_variable = { global.var_GER_start_effects = 0 }
 		}
 

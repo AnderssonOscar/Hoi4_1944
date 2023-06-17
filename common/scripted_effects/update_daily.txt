@@ -16,9 +16,9 @@ MOD_daily_update = {
 	GER_calculate_casualities_inflicted_on_SOV = yes
 	
 	#industry_start_effects = yes
-	industry_extra_start_effects = yes
+	#industry_extra_start_effects = yes
 	#Resistance_start_effects = yes
-	GER_start_effects = yes
+	#GER_start_effects = yes
 	war_start_effects = yes
 
 	if = { limit = { is_ai = yes } 

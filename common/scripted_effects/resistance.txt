@@ -24,10 +24,16 @@ Resistance_start_effects = {
 						}
 					}
 					
-					start_resistance = is_core_of
-					set_resistance = 29
-					set_compliance = 24
-					add_resistance_target = 26
+					if = {
+						limit = {
+							has_resistance = no
+						}
+						start_resistance = is_core_of
+					}
+
+					set_resistance = 19
+					set_compliance = 33
+					add_resistance_target = 25
 					
 					force_enable_resistance = {
 						clear = no
@@ -36,40 +42,51 @@ Resistance_start_effects = {
 					}
 				}
 
-				39 = {
-					set_compliance = 93
-					start_resistance = yes
-					set_resistance = 3
-				}
-
-				86 = {
-					set_compliance = 69
-					start_resistance = yes
-					set_resistance = 9
-				}
-
-				807 = {
-					set_compliance = 87
-					start_resistance = yes
-					set_resistance = 11
-				}
 
 				104 = {
 					set_compliance = 51
 					start_resistance = yes
 					set_resistance = 12
 				}
-		
-				69 = {
-					set_compliance = 94
-					start_resistance = no
-					set_resistance = 6
-				}
+				
 
+				102 = {
+					set_compliance = 51
+					start_resistance = yes
+					set_resistance = 15
+				}
+		
+				#CZE
 				9 = {
 					set_compliance = 71
 					start_resistance = no
 					set_resistance = 13
+				}
+
+				74 = {
+					set_compliance = 67
+					start_resistance = no
+					set_resistance = 16
+				}
+
+				75 = {
+					set_compliance = 67
+					start_resistance = no
+					set_resistance = 16
+				}
+
+
+				#CRO
+				104 = {
+					set_compliance = 19
+					start_resistance = no
+					set_resistance = 55
+				}
+
+				854 = {
+					set_compliance = 66
+					start_resistance = no
+					set_resistance = 14
 				}
 
 				set_variable = { global.var_Resistance_start_effects = 1 }

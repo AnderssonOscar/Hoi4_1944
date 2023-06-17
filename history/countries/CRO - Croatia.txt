@@ -171,6 +171,7 @@ add_country_leader_role = { #This replaces the commented script below - fixing a
 		#laws
 		tot_economic_mobilisation
 		service_by_requirement
+		low_war_casualties
 		#limited_exports
 
 	}

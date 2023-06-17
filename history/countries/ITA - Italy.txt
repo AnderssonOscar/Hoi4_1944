@@ -685,9 +685,12 @@ set_popularities = {
 	communism = 2
 }
 
-recruit_character = ITA_palmiro_togliatti
-recruit_character = ITA_ferruccio_parri
 recruit_character = ITA_benito_mussolini
+recruit_character = ITA_grand_council
+recruit_character = ITA_vittorio_emanuele_iii
+recruit_character = ITA_ferruccio_parri
+recruit_character = ITA_palmiro_togliatti
+recruit_character = ITA_rodolfo_graziani
 recruit_character = ITA_pietro_badoglio
 recruit_character = ITA_emilio_de_bono
 recruit_character = ITA_ugo_cavallero
@@ -695,14 +698,48 @@ recruit_character = ITA_giovanni_messe
 recruit_character = ITA_sebastiano_visconti_prasca
 recruit_character = ITA_ubaldo_soddu
 recruit_character = ITA_italo_balbo
-recruit_character = ITA_rodolfo_graziani
+
+recruit_character = ITA_ettore_bastico
+recruit_character = ITA_italo_gariboldi
+recruit_character = ITA_pietro_pintor
+recruit_character = ITA_mario_berti
+recruit_character = ITA_carlo_geloso
+recruit_character = ITA_giuseppe_tellera
+recruit_character = ITA_francesco_zingales
+recruit_character = ITA_ezio_rosi
+recruit_character = ITA_mario_vercellino
+recruit_character = ITA_prince_filiberto
+recruit_character = ITA_prince_adalberto
+recruit_character = ITA_prince_umberto
+recruit_character = ITA_alessandro_pirzio_biroli
+recruit_character = ITA_carlo_vecchiarelli
+recruit_character = ITA_mario_robotti
+recruit_character = ITA_ettore_baldassarre
+recruit_character = ITA_amedeo_guillet
+recruit_character = ITA_annibale_bergonzoli
+recruit_character = ITA_hamid_idris_awate
+recruit_character = ITA_ibrahim_farag_mohammed
+recruit_character = ITA_mario_ricci
+recruit_character = ITA_norma_barbolini
+recruit_character = ITA_luigi_longo
+recruit_character = ITA_ada_gobetti
+recruit_character = ITA_randolfo_pacciardi
+recruit_character = ITA_giuseppe_pieche
+recruit_character = ITA_giovanni_duca
+recruit_character = ITA_giuseppe_de_stefanis
+recruit_character = ITA_prince_aimone
+
 recruit_character = ITA_inigo_campioni
 recruit_character = ITA_alberto_da_zara
 recruit_character = ITA_giuseppe_fioravanzo
 recruit_character = ITA_carlo_bergamini
 recruit_character = ITA_angelo_iachino
+recruit_character = ITA_giuseppe_di_bartolo
+recruit_character = ITA_junio_valerio_borghese
+
 recruit_character = ITA_alfredo_guzzoni
 recruit_character = ITA_renato_sandalli
+recruit_character = ITA_francesco_pricolo
 recruit_character = ITA_silvio_scaroni
 recruit_character = ITA_vittorio_ambrosio
 recruit_character = ITA_arturo_riccardi
@@ -719,13 +756,96 @@ recruit_character = ITA_giovanni_marinelli
 recruit_character = ITA_serafino_mazzolini
 recruit_character = ITA_roberto_farinacci
 recruit_character = ITA_ivanoe_bonomi
-recruit_character = ITA_junio_valerio_borghese
 recruit_character = ITA_luigi_einaudi
 recruit_character = ITA_amadeo_bordiga
 recruit_character = ITA_paolo_thaon_di_revel
 recruit_character = ITA_dino_grandi
 recruit_character = ITA_carlo_scorza
 recruit_character = ITA_gian_galeazzo_ciano
+
+recruit_character = ITA_alberto_pariani
+recruit_character = ITA_romeo_bernotti
+recruit_character = ITA_aldo_pellegrini
+recruit_character = ITA_achille_starace
+recruit_character = ITA_renato_ricci
+recruit_character = ITA_carlo_favagrossa
+recruit_character = ITA_alberto_beneduce
+recruit_character = ITA_guido_jung
+recruit_character = ITA_adelchi_serena
+recruit_character = ITA_curzio_malaparte
+recruit_character = ITA_giuseppe_bottai
+recruit_character = ITA_antonio_pesenti
+recruit_character = ITA_fausto_gullo
+recruit_character = ITA_giulio_paggio
+recruit_character = ITA_ignazio_silone
+recruit_character = ITA_vittorio_emanuele_orlando
+recruit_character = ITA_mario_scelba
+recruit_character = ITA_guido_de_ruggiero
+recruit_character = ITA_enrico_fermi
+recruit_character = ITA_alberto_tarchiani
+recruit_character = ITA_giuseppe_borea
+recruit_character = ITA_raffaele_de_courten
+
+recruit_character = ITA_sandro_pertini
+recruit_character = ITA_pietro_d_acquarone
+recruit_character = ITA_alberto_de_stefani
+recruit_character = ITA_ugo_luca
+recruit_character = ITA_pompeo_colajanni
+recruit_character = ITA_alcide_de_gasperi
+recruit_character = ITA_comitato_di_liberazione_nazionale
+recruit_character = ITA_papa_pio_xi
+recruit_character = ITA_papa_pio_xii
+recruit_character = ITA_antonio_gramsci
+
+recruit_character = ITA_haile_selassie_gugsa_doppleganger
+recruit_character = ITA_abba_jofir_doppleganger
+recruit_character = ITA_hailu_tekle_haymanot_doppleganger
+recruit_character = ITA_seyoum_mengesha_doppleganger
+
+
+########################################
+##### MISSIOLINIS - TRIGGER EVENTS #####
+########################################
+
+### IF NOT BBA, trigger the first Missiolini from here #TODO_Manu: PLEASE CHECK IF THIS ACTUALLY WORKS (character has just been recruited)
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	ITA_benito_mussolini = { unit_leader_event = { id = BBA_italo_ethiopian_war_events.01 days = 14 } }  # JAN 36 - Conquer Ethiopia  - APR/JUNE 36 - (120-170 days)
+}
+
+ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.11 days = 185 random_days = 5 } } # JUN 36 - Conquer Ethiopia  - DEC 36 - (170 days)
+#ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.21 days = 370 random_days = 5 } } # JAN 37 - Pacify Ethiopia - DEC 39 - (720 days) #TODO_Manu: This is now triggered after war with MTTH
+ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.31 days = 370 random_days = 5 } } # JAN 37 - Industrialization - DEC 37 - (350 days)
+ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.41 days = 735 random_days = 5 } } # JAN 38 - Increase Army - DEC 38 (350 days)
+ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.00 days = 1105 random_days = 5 } } # JAN 39 - Random mission dispatcher (350 days) - This event auto-triggers itself every 6 months
+# Next Missiolini is random and comes in JUN 39, next one in JUN 40.
+
+
+#CIVIL WAR SPLIT FLAGS
+ITA_set_up_character_cw_flags_effect = yes
+
+
+#PURGE FLAGS
+ITA_achille_starace = { set_character_flag = ITA_character_can_be_purged }
+ITA_renato_ricci = { set_character_flag = ITA_character_can_be_purged }
+ITA_carlo_scorza = { set_character_flag = ITA_character_can_be_purged }
+ITA_roberto_farinacci = { set_character_flag = ITA_character_can_be_purged }
+ITA_alberto_beneduce = { set_character_flag = ITA_character_can_be_purged }
+ITA_carlo_favagrossa = { set_character_flag = ITA_character_can_be_purged }
+ITA_giacomo_acerbo = { set_character_flag = ITA_character_can_be_purged }
+ITA_guido_jung = { set_character_flag = ITA_character_can_be_purged }
+ITA_serafino_mazzolini = { set_character_flag = ITA_character_can_be_purged }
+ITA_rodolfo_graziani = { set_character_flag = ITA_character_can_be_purged }
+ITA_ubaldo_soddu = { set_character_flag = ITA_character_can_be_purged }
+ITA_ugo_cavallero = { set_character_flag = ITA_character_can_be_purged }
+ITA_francesco_zingales = { set_character_flag = ITA_character_can_be_purged }
+ITA_alessandro_pirzio_biroli = { set_character_flag = ITA_character_can_be_purged }
+ITA_ettore_baldassarre = { set_character_flag = ITA_character_can_be_purged }
+ITA_annibale_bergonzoli = { set_character_flag = ITA_character_can_be_purged }
+ITA_pietro_badoglio = { set_character_flag = ITA_character_can_be_purged } 
+ITA_emilio_de_bono = { set_character_flag = ITA_character_can_be_purged }
 
 
 if = {

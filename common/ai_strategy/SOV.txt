@@ -2321,6 +2321,12 @@ SOV_take_germany = {
 		execution_type = rush
 		
 	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = GER
+		value = 85
+	}
 }
 
 
@@ -2346,6 +2352,12 @@ SOV_dont_hurt_romania_yet = {
 		type = strategic_air_importance
 		id = 26 
 		value = -30000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = ROM
+		value = 0
 	}
 }
 
@@ -2384,6 +2396,12 @@ SOV_take_romania = {
 		execute_order = yes
 		execution_type = rush
 	}	
+
+	ai_strategy = {
+		type = front_armor_score
+		id = ROM
+		value = 70
+	}
 }
 
 

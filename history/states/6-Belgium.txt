@@ -38,6 +38,7 @@ state={
 			controller = GER
 
 			buildings = {
+				anti_air_building = 1
 				6560 = {
 					coastal_bunker = 3
 				}

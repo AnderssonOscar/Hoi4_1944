@@ -542,7 +542,7 @@ set_technology = { #VANILLA & DLC
 		war_economy
 		extensive_conscription
 		#limited_exports
-		low_war_casualties
+		#low_war_casualties
 	}
 	remove_ideas = {
 		BUL_second_national_catastrophe

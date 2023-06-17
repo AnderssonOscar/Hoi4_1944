@@ -765,6 +765,7 @@ news_event = {
 		Resistance_start_effects = yes
 		industry_start_effects = yes
 		industry_extra_start_effects = yes
+		GER_start_effects = yes
 		}
 	}
 

@@ -277,12 +277,12 @@ air_wings = {
 		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
 		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
 
-		transport_plane_equipment_1 = { owner = "USA" amount = 900 }
+		transport_plane_equipment_1 = { owner = "USA" amount = 500 }
 	}
 	
 
 	370 = {
-		transport_plane_equipment_1 = { owner = "USA" amount = 1000 }
+		transport_plane_equipment_1 = { owner = "USA" amount = 600 }
 
 		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
 		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
