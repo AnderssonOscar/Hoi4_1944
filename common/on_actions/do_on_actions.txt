@@ -151,6 +151,14 @@ on_actions = {
 			}
 		}
 
+		VEN = {
+			add_ai_strategy  = {
+				type = alliance	
+				id = GER
+				value = -5000
+				}
+			}
+
 	SOV = {
 		add_ai_strategy  = {
 			type = alliance	
@@ -173,19 +181,6 @@ on_actions = {
 					}
 				}
 
-				PRU = {add_ai_strategy  = {
-					type = alliance	
-					id = PREV
-					value = -5000
-				}
-			}
-
-				PAN = {add_ai_strategy  = {
-					type = alliance	
-					id = PREV
-					value = -5000
-				}
-			}
 
 			SWI = {add_ai_strategy  = {
 				type = alliance	

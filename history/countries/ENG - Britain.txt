@@ -471,6 +471,20 @@ add_to_faction = POL
 add_to_faction = BRA
 add_to_faction = GRE
 add_to_faction = YUG
+
+add_to_faction = HON
+add_to_faction = COL
+add_to_faction = ELS
+add_to_faction = NIC
+add_to_faction = COS
+add_to_faction = CUB
+add_to_faction = DOM
+add_to_faction = PAN
+add_to_faction = ECU
+add_to_faction = PRU
+add_to_faction = BOL
+add_to_faction = CHL
+add_to_faction = HAI
 #add_to_faction = LIB
 
 #give_guarantee = CZE

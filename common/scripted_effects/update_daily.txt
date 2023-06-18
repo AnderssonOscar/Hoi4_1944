@@ -4,6 +4,7 @@
 
 MOD_start_update = {
 	#war_start_effects = yes
+	#tech_start_effects = yes
 }
 
 MOD_daily_update = {

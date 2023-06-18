@@ -658,6 +658,19 @@ minor_allies_dont_invade_GER = {
 				tag = BRA
 				tag = SAF
 				tag = MEX
+				tag = HON
+				tag = COL
+				tag = ELS
+				tag = NIC
+				tag = COS
+				tag = CUB
+				tag = DOM
+				tag = PAN
+				tag = ECU
+				tag = PRU
+				tag = BOL
+				tag = CHL
+				tag = HAI
 			}
 	}
 
@@ -702,6 +715,19 @@ allies_dont_invade_axis_allies = {
 				tag = MEX
 				tag = BRA
 				tag = FIN
+				tag = HON
+				tag = COL
+				tag = ELS
+				tag = NIC
+				tag = COS
+				tag = CUB
+				tag = DOM
+				tag = PAN
+				tag = ECU
+				tag = PRU
+				tag = BOL
+				tag = CHL
+				tag = HAI
 				}
 	}
 
