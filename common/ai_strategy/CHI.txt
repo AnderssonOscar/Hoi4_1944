@@ -154,7 +154,7 @@ CHI_dont_waste_on_offensive_air_early = {
 
 	ai_strategy = {
 		type = equipment_variant_production_factor
-		id = large_plane_airframe
+		id = medium_plane_airframe
 		value = -100
 	}
 	
@@ -202,6 +202,7 @@ CHI_prio_military_even_at_peace = {
 	enable = {
 		always = yes
 	}
+	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = added_military_to_civilian_factory_ratio

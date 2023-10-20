@@ -244,14 +244,25 @@ ration_airforce_fuel = {
 
 	visible = { 
 		num_of_factories > 30
-		has_tech = motorised_infantry
+		has_tech = tech_trucks
 	}
 	
 	available = {
 
-		has_equipment = {
-			motorized_equipment_1 < 101
-		}
+			#has_equipment = {}
+			#motorized_equipment_1 < 101
+
+			OR = {
+				AND = {
+					has_war = yes
+					has_war_support > 0.5
+				}
+
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
 	}
 	
 	fire_only_once = yes
@@ -275,7 +286,7 @@ ration_airforce_fuel = {
 		multiply_temp_variable = { trucks = num_of_controlled_factories }
 
 		add_equipment_to_stockpile = {
-			type = motorized_equipment_1
+			type = motorized_equipment_0
 			amount = trucks
 		}
 		add_stability = -0.025

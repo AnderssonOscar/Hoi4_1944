@@ -6,8 +6,10 @@ state=
 	
 	state_category = small_island
 	
-	history=
-	{
+	history = {
+		victory_points = {
+			408 1
+		}
 		owner = SWE
 		add_core_of = SWE
 		buildings = {
@@ -15,18 +17,6 @@ state=
 			408 = {
 				naval_base = 1
 			}
-		}
-
-		1943.12.30 = {
-			buildings = {
-				anti_air_building = 2
-
-			408 = {
-				naval_base = 2
-			}
-
-			radar_station = 2
-		}
 		}
 	}
 	provinces={

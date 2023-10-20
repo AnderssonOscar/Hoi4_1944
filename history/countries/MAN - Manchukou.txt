@@ -96,6 +96,7 @@ set_convoys = 5
 	
 	oob = "MAN_1939"
 	set_technology = {
+		tech_trucks = 1
 		#doctrines
 		grand_battle_plan = 1
 		trench_warfare = 1

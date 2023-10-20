@@ -10,7 +10,7 @@
 # protect
 # influence
 
-SOV_unit_production = {
+SOV_unit_production = { #1944
 	allowed = {
 		original_tag = SOV
 	}
@@ -520,6 +520,7 @@ SOV_template_design_2 = {
 	enable = {
 		date > 1940.1.1
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = template_prio
@@ -647,6 +648,7 @@ SOV_naval_role_ratios_historical = {
 	enable = {
 		always = yes
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -731,10 +733,10 @@ SOV_home_land_is_safe = {
 	allowed = {
 		original_tag = SOV
 	}
-
 	enable = {
 		always = yes
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = garrison
@@ -855,6 +857,8 @@ SOV_dont_send_lend_lease_that_early_to_china = {
 			surrender_progress < 0.4
 		}
 	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = {
 		type = send_lend_lease_desire
 		id = CHI
@@ -1296,6 +1300,7 @@ SOV_dont_do_so_many_naval_invasions_please = {
 
 	allowed = { original_tag = SOV }
 	enable = { always = yes }
+	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = invasion_unit_request
@@ -1952,6 +1957,80 @@ SOV_ultimatum_EST = {
 	}
 }
 
+SOV_nothing_bad_could_possibly_happen_now = {
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		always = no #No longer necessary
+		is_historical_focus_on = yes
+		NOT = { has_war_with = GER }
+		date < 1942.2.1
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = GER
+
+		value = -30 # we have a lovely non-aggression pact, so there's no reason to be worried. At all.
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = ROM
+
+		value = -20 # we have a lovely non-aggression pact, so there's no reason to be worried. At all.
+	}
+	
+}
+
+SOV_defense_in_depth = {
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		is_historical_focus_on = yes
+		date > 1940.1.1 
+		date < 1943.1.1 #Maybe this isn't such a good idea now?
+		OR = {
+			has_war = no
+			GER = { has_idea = GER_barbarossa }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		# ratio of total armeis in country to be buffered
+		ratio = 0.15
+
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+		order_id = 5
+
+		# states to put garrison orders (if no state is friendly, strat is invalid)
+		states = {
+			219 #Moscow
+			254 #Ryazan
+			253 #Ivanovo
+			248 #Yaroslavl
+			223 #Tula
+		}
+
+		area = defend_moscow_zone #Hold in reserve until the line encroaches
+
+		# by default if you have orders in target areas, the buffer will request less units.
+		# you can override this to disable the feature
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+}
+
 ###########################
 ### avoid attacking Romania until we have sent ultimatum
 ###########################
@@ -2426,6 +2505,7 @@ SOV_dont_hurt_finland_yet = {
 			}
 		}
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_unit_request
@@ -2541,6 +2621,7 @@ SOV_stop_stupid_garrison = {
 		date > 1943.12.30
 		has_war_with = GER
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = garrison
@@ -2671,6 +2752,12 @@ SOV_dont_do_naval_invasion_nor = {
 	}
 
 	ai_strategy = {
+		type = invade
+		id = "D05"
+		value = -500
+	}
+
+	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = NOR }
 		value = -500
@@ -2727,6 +2814,7 @@ SOV_Stop_guarding_these_borders = {
 		USA = {has_war_with = GER}
 		FRA = {has_war_with = GER}
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_unit_request

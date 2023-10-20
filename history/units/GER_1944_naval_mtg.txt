@@ -137,6 +137,8 @@
             task_force = {
             name = "Tirpitz Geschwader"
             location = 11050
+
+			ship = { name = "Tirpitz" definition = battleship start_experience_factor = 0.44 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Bismarck Class" } } }
             ship = { ordered_name = 17 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
 			ship = { ordered_name = 204 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Greif
 			ship = { ordered_name = 205 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Falke
@@ -244,6 +246,7 @@ instant_effect = {
 		requested_factories = 5
 		progress = 0.86
 		amount = 1
+		industrial_manufacturer = mio:GER_blohm_und_voss_organization
 	}
 
 	add_equipment_production = {
@@ -255,6 +258,7 @@ instant_effect = {
 		requested_factories = 5
 		progress = 0.75
 		amount = 1
+		industrial_manufacturer = mio:GER_blohm_und_voss_organization
 	}
 
 	add_equipment_production = {
@@ -266,6 +270,7 @@ instant_effect = {
 		requested_factories = 10
 		progress = 0.25
 		amount = 1
+		industrial_manufacturer = mio:GER_blohm_und_voss_organization
 	}
 
 }

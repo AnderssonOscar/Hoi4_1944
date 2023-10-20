@@ -759,6 +759,7 @@ infantry_SOV = {
 			anti_tank_brigade
 			artillery_brigade
 			rocket_artillery_brigade
+			anti_air_brigade 
 	#		light_tank_destroyer_brigade
 	#		medium_tank_destroyer_brigade
 		}
@@ -865,6 +866,8 @@ mountaineers_SOV = {
 			field_hospital
 			logistics_company
 			anti_tank
+			artillery_brigade 
+			engineer 
 		}
 	}
 }
@@ -963,6 +966,7 @@ marines_SOV = {
 			marine
 			engineer
 			logistics_company
+			recon
 		}
 	}
 }
@@ -1290,6 +1294,8 @@ anti_armor_SOV = {
 			anti_tank
 			military_police
 			artillery
+			motorized 
+			mot_recon 
 	#		anti_air
 			rocket_artillery
 			anti_tank_brigade
@@ -1395,6 +1401,7 @@ anti_armor_SOV = {
 			anti_tank
 			light_tank_destroyer_brigade
 			mot_artillery_brigade
+			recon 
 		}
 
 		replace_at_match = 0.4
@@ -1510,6 +1517,7 @@ anti_armor_SOV = {
 			artillery
 			anti_air
 			rocket_artillery
+			recon
 		}
 	}
 }

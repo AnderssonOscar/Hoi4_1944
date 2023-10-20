@@ -1734,7 +1734,7 @@ if = {
 
 
 			set_technology = {
-		
+				tech_trucks = 1
 				mechanised_infantry = 1
 
 				tech_engineers = 1

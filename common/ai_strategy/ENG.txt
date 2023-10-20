@@ -371,6 +371,7 @@ build_more_patrol_bombers = {
 		}
 		tag = ENG
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = unit_ratio
@@ -385,49 +386,79 @@ build_more_patrol_bombers = {
 	}
 }
 
+eng_fighter_enhanced_production = {
+	allowed = { original_tag = ENG }
 
+	enable = {
+		date < 1943.1.1
+	}
 
+	abort = {
+		has_equipment = { small_plane_airframe > 4000 }
+	}
 
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 20
+	}
 
+	ai_strategy = {
+		type = air_xp_spend_priority
+		id = upgrade_xp_cutoff
+		value = 100
+	}
 
+}
 
+eng_the_home_fleet  = {
+	allowed = { original_tag = ENG }
 
+	enable = {
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
 
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 16 # north sea
+	}
+}
 
+eng_the_med_fleet  = {
+	allowed = { original_tag = ENG }
 
+	enable = {
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
 
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 69 # nice #eastern med
+	}
+}
 
+eng_build_kgv_battleships = {
+	allowed = { original_tag = ENG }
 
+	enable = {
+		date > 1936.1.1
+	}
+	abort_when_not_enabled = yes
 
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 20
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	ai_strategy = {
+		type = navy_xp_spend_priority
+		id = upgrade_xp_cutoff
+		value = 100
+	}
+}
 
 protect_poland_against_germany = {
 	allowed = { original_tag = ENG }
@@ -459,6 +490,63 @@ protect_poland_against_germany = {
 		id = POL
 		target = guarantee
 		value = 20
+	}
+}
+
+ENG_trade_with_poland = {
+	# Poland has a mirrored version of this
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		OR = {
+			POL = { has_government = neutrality }
+			POL = { has_government = democratic }
+		}
+		has_government = democratic
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = POL
+		value = 60
+	}
+}
+
+ENG_less_weapon_purchases_more_for_construction = {
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		date < 1939.1.1
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_spend_factories
+		value = -80  # 80 % less factories
+	}
+	ai_strategy = {  # Don't even try buying infantry equipment too early
+		type = equipment_market_buying_threshold
+		id = infantry_equipment
+		value = -20000  # Absolute number of units
+	}
+}
+
+ENG_fewer_factories_for_purchases_please = {
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		date > 1939.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_spend_factories
+		value = -50  # 50 % less factories
 	}
 }
 
@@ -510,6 +598,22 @@ defend_poland_against_germany = {
 	}
 }
 
+royal_air_force = {
+	allowed = { original_tag = ENG }
+	enable = {
+		date > 1939.4.1
+	}
+	abort = {
+		date < 1939.4.1
+	}
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = 50
+	}
+
+}
+
 ENG_template_design_1 = {
 	allowed = { original_tag = ENG }
 	enable = {
@@ -518,7 +622,6 @@ ENG_template_design_1 = {
 	abort = {
 		date > 1940.1.1
 	}
-
 	ai_strategy = {
 		type = template_prio
 		id = infantry
@@ -573,6 +676,7 @@ ENG_template_design_2 = {
 	enable = {
 		date > 1940.1.1
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = template_prio
@@ -797,6 +901,7 @@ ENG_naval_role_ratios_historical = {
 		original_tag = ENG
 	}
 	enable = { always = yes }
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -1010,6 +1115,7 @@ ENG_USA_focus_on_europe = {
 		}
 		has_global_flag = FRA_already_surrendered
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_unit_request
@@ -1036,6 +1142,7 @@ ENG_USA_focus_on_europe_more = {
 		}
 		has_global_flag = FRA_already_surrendered
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_unit_request
@@ -1057,6 +1164,7 @@ ENG_USA_focus_on_europe_loads_more = {
 		date > 1943.6.1
 		has_global_flag = FRA_already_surrendered
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_unit_request
@@ -1147,6 +1255,7 @@ ENG_gang_up_GER_with_USA = {
 			}
 		}
 	}
+	abort_when_not_enabled = yes
 	# after FRA falls, both ENG and USA will try to help in europe and africa
 	ai_strategy = {
 		type = force_defend_ally_borders
@@ -1380,7 +1489,10 @@ ENG_Defends_Mediterranean = {
 		tag = ENG
 	}
 
-	enable = { always = yes }
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
 
 	# Alexandria
 	ai_strategy = {
@@ -1409,8 +1521,13 @@ ENG_convoy_raids_german_italian_convoys = {
 	allowed = {
 		tag = ENG
 	}
-
-	enable = { always = yes }
+	enable = {
+		OR = {
+			has_war_with = GER
+			has_war_with = ITA
+		}
+	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = naval_convoy_raid_region
@@ -1657,6 +1774,8 @@ ENG_USA_d_day = {
 	enable = {
 		date > 1943.9.1
 	}
+	abort_when_not_enabled = yes
+
 
 	ai_strategy = {
 		type = area_priority
@@ -1710,6 +1829,7 @@ ENG_stop_sending_everyting_to_asia = {
 		date > 1943.12.1
 		has_war_with = GER
 	}
+	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = area_priority
 		id = asia
@@ -1740,6 +1860,7 @@ ENG_stop_camping_africa_2 = {
 		date > 1943.12.1
 		date < 1945.12.1
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = area_priority

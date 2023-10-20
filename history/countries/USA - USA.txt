@@ -1,4 +1,4 @@
-capital = 361
+capital = 361 #1944
 
 oob = "USA_1936"
 
@@ -1150,6 +1150,8 @@ if = {
 	}
 
 	set_technology = {
+
+		tech_trucks = 1
 		naval_bomber1 = 1
 		naval_bomber2 = 1
 
@@ -1908,7 +1910,7 @@ if = {
 			special_type_slot_2 = hmg_defense_turret_2x
 			special_type_slot_3 = bomb_sights_1
 			special_type_slot_4 = self_sealing_fuel_tanks_large
-			special_type_slot_5 = armor_plate_large
+			special_type_slot_5 = empty #armor_plate_large
 		}
 	}
 

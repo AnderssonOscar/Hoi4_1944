@@ -27,19 +27,19 @@ state={
 		1943.12.1 = {
 			buildings = {
 				11153 = {
-					bunker = 4
+					bunker = 1
 				}
 
 				6057 = {
-					bunker = 4
+					bunker = 1
 				}
 
 				3084 = {
-					bunker = 4
+					bunker = 1
 				}
 
 				6106 = {
-					bunker = 4
+					bunker = 1
 				}
 			}
 		}

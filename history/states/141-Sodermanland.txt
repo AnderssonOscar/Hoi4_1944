@@ -1,20 +1,26 @@
 
-state={
-	id=141
-	name="STATE_141" # Svealand
+state = {
+	id = 141
+	name = "STATE_141" # Svealand
 	manpower = 1488181
 	state_category = city
 	
-	resources={
-		steel=24 # was: 40
-		aluminium=2 # was: 4
+	resources = {
+		steel = 24 # was: 40
+		aluminium = 2 # was: 4
 	}
 
-	history={
+	history = {
 		owner = SWE
+
 		victory_points = {
-			6050 20 
+			6050 20 # Stockholm
 		}
+
+		victory_points = {
+			9149 3 # Uppsala
+		}
+
 		buildings = {
 			infrastructure = 4 #was: 7
 			arms_factory = 2
@@ -26,20 +32,22 @@ state={
 				coastal_bunker = 3
 			}
 		}
+
 		1943.12.30 = {
 			buildings = {
-				industrial_complex = 1
-				anti_air_building = 2
 				fuel_silo = 1
-				radar_station = 1
+				industrial_complex = 1
+				arms_factory = 1
 			}
 		}
+
 		add_core_of = SWE
+
 	}
 
-	provinces={
+	provinces = {
 		35 161 3106 3182 6050 6084 6127 6164 6188 6209 9109 9149 9185 9209 11044 11082 11163 11188 11278 13097 13098 
 	}
 
-	local_supplies=0.0 
+	local_supplies = 0.0 
 }

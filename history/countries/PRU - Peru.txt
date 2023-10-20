@@ -98,6 +98,7 @@ set_convoys = 5
 	}
 
 	set_technology = {
+		tech_trucks = 1
 		tactical_bomber1 = 1
 		interwar_artillery = 1
 		infantry_weapons1 = 1

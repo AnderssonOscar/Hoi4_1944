@@ -17,7 +17,7 @@ war_measures = {
 		available = {
 
 			has_war_with = SOV
-			surrender_progress > 0.07
+			surrender_progress > 0.06
 			date > 1944.7.25
 
 			any_country = {

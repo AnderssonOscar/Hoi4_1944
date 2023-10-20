@@ -67,6 +67,7 @@ Axis_dont_forget_about_italy = {
 		date > 1943.12.30
 		has_war_with = USA
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_unit_request

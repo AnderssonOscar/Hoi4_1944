@@ -389,7 +389,7 @@ set_stability = 0.85
 	}
 
 	set_technology = {
-
+		tech_trucks = 1
 		#electronics
 		electronic_mechanical_engineering = 1
 		computing_machine = 1

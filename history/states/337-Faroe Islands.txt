@@ -1,13 +1,11 @@
-state=
-{
+state = {
 	id=337
 	name="STATE_337"
 	manpower = 25900
 	
 	state_category = small_island
 	
-	history=
-	{
+	history = {
 		owner = DEN
 		buildings = {
 			infrastructure = 2
@@ -15,14 +13,17 @@ state=
 				naval_base = 1
 			}
 		}
-
-			1943.12.1 = {
-			owner = ENG
-			controller = ENG
+		1943.12.1 = {
+			owner = GER
+			controller = GER
 		}
 		add_core_of = DEN
-	}
-	provinces= { 13003 }
 
-	local_supplies=0.0 
+		victory_points = { #Tórshavn
+			13003 1
+		}
+	}
+
+	provinces = { 13003 }
+	local_supplies = 0.0 
 }

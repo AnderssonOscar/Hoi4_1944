@@ -1,19 +1,24 @@
 
-state={
-	id=138
-	name="STATE_138"
+state = {
+	id = 138
+	name = "STATE_138"
 	manpower = 1047701
 	
 	state_category = city
 
-	history={
+	history = {
 		owner = SWE
+
 		victory_points = {
-			9279 5 
+			9279 5 # Malmö
 		}
 		victory_points = {
-			11215 1 
+			11215 1 # Karlskrona
 		}
+		victory_points = {
+			6345 1 # Helsingborg
+		}
+
 		buildings = {
 			infrastructure = 3 #was: 5
 			industrial_complex = 1
@@ -30,19 +35,18 @@ state={
 
 		1943.12.30 = {
 			buildings = {
-				industrial_complex = 3
-				anti_air_building = 2
-				infrastructure = 4
-				arms_factory = 2
-				radar_station = 2
+				fuel_silo = 1
+				industrial_complex = 2
+				arms_factory = 3
 			}
 		}
+
 		add_core_of = SWE
 	}
 
-	provinces={
+	provinces = {
 		3307 6120 6345 6412 9279 9300 9362 11160 11215 11327 11376 
 	}
 
-	local_supplies=0.0 
+	local_supplies = 0.0 
 }

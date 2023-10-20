@@ -1933,6 +1933,7 @@ if = {
 
 	set_technology = {
 
+		tech_trucks = 1
 		#Electronics
 		electronic_mechanical_engineering = 1
 		computing_machine = 1

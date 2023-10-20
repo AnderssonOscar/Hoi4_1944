@@ -1,4 +1,4 @@
-armor_ENG = {
+armor_ENG = { #1944
 
 	available_for = {
 		ENG
@@ -723,11 +723,12 @@ infantry_ENG = {
 		allowed_types = {
 			infantry		
 			engineer
-			#recon
+			recon
 			#field_hospital
-			#anti_tank
+			anti_tank
 			artillery
 			anti_tank_brigade
+			anti_air_brigade
 			artillery_brigade
 			anti_air
 			rocket_artillery
@@ -830,8 +831,8 @@ mountaineers_ENG = {
 			}
 			
 			regiments = {
-				mountaineers = 8
-				artillery_brigade = 2
+				mountaineers = 9
+				artillery_brigade = 1
 			}
 		}
 		
@@ -843,6 +844,8 @@ mountaineers_ENG = {
 			field_hospital
 			logistics_company
 			anti_tank
+			artillery_brigade
+			engineer
 		}
 	}
 }
@@ -939,6 +942,7 @@ marines_ENG = {
 			marine
 			engineer
 			logistics_company
+			recon
 		}
 	}
 }

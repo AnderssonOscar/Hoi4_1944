@@ -28,6 +28,7 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
@@ -288,6 +289,8 @@ set_war_support = 0.3
 		unlock_national_focus = GER_wunderwaffe
 		unlock_national_focus= GER_turkey_friend
 
+
+		unlock_national_focus = GER_swedish_trade_agreement
 
 	#BUILDINGS
 	
@@ -2112,6 +2115,23 @@ if = {
 
 1943.12.30 = {
 
+	create_import = {
+		resource = steel
+		factories = 6
+		exporter = SWE
+	}
+
+	create_import = {
+		resource = tungsten
+		factories = 5
+		exporter = POR
+	}
+
+	create_import = {
+		resource = chromium
+		factories = 3
+		exporter = TUR
+	}
 
 		GER_friedrich_paulus = { retire = yes }
 		#activate_decision = women_in_the_workforce

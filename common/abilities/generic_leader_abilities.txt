@@ -1,4 +1,4 @@
-ability = {
+ability = { #1944
 	force_attack = {
 		name = ABILITY_FORCE_ATTACK
 		desc = ABILITY_FORCE_ATTACK_DESC
@@ -97,6 +97,7 @@ ability = {
 				NOT = {
 					has_completed_focus = JAP_warrior_spirit
 					has_completed_focus = SPA_cultivate_fanaticism
+					has_completed_focus = SWE_winter_drill
 				}
 			}
 		}
@@ -224,7 +225,7 @@ ability = {
 		}
 		
 		unit_modifiers = {
-			paratrooper_count_per_plane = 1.0
+			paratrooper_weight_factor = -0.10
 			paradrop_organization_factor = 2.0
 			paratrooper_aa_defense = 0.5
 		}

@@ -1,6 +1,6 @@
 
 
-
+#1944
 USA_stop_camping_america = {
 
 	allowed = {
@@ -11,6 +11,7 @@ USA_stop_camping_america = {
 		tag = USA
 		date > 1943.12.1
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = area_priority
@@ -397,7 +398,7 @@ USA_gang_up_GER_with_ENG = {
 		date > 1940.6.6
 		is_in_faction_with = ENG
 	}
-
+	abort_when_not_enabled = yes
 	# help fronts in europe & africa
 	ai_strategy = {
 		type = force_defend_ally_borders
@@ -435,6 +436,7 @@ USA_focus_on_africa = {
 			290 = { CONTROLLER = { has_war_with = ROOT } } # spanish africa
 		}
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_unit_request
@@ -720,6 +722,7 @@ USA_template_design_2 = {
 	enable = {
 		date > 1940.1.1
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = template_prio
@@ -857,6 +860,7 @@ USA_naval_role_ratios_historical = {
 	enable = {
 		always = yes
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -1435,6 +1439,7 @@ USA_start_buffering_in_pacific = {
 	enable = {
 		date > 1943.3.3
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = put_unit_buffers

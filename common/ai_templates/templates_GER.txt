@@ -1,4 +1,4 @@
-armored_GER = {
+armored_GER = { #1944
 
 	available_for = {
 		GER
@@ -1045,7 +1045,7 @@ infantry_GER = {
 			engineer
 			#recon
 			#field_hospital
-			#anti_tank
+			anti_tank
 			artillery
 			anti_tank_brigade
 			artillery_brigade
@@ -1144,6 +1144,7 @@ infantry_GER = {
 			#anti_tank
 			artillery
 			anti_tank_brigade
+			anti_air_brigade 
 			artillery_brigade
 			anti_air
 			rocket_artillery
@@ -1252,6 +1253,8 @@ mountaineers_GER = {
 			field_hospital
 			logistics_company
 			anti_tank
+			artillery_brigade
+			engineer
 		}
 	}
 }
@@ -1355,6 +1358,10 @@ marines_GER = {
 			marine
 			engineer
 			logistics_company
+			artillery_brigade
+			artillery
+			anti_tank
+			recon
 		}
 	}
 }
@@ -1587,11 +1594,11 @@ anti_armor_GER = {
 			artillery
 			anti_tank_brigade
 			artillery_brigade
-
+			recon
 		}
 	}
 	
-	light_armor_anti_amor_GER = {
+	light_armor_anti_armor_GER = {
 	
 		upgrade_prio = {
 			factor = 2

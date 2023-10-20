@@ -1587,7 +1587,7 @@ if = {
 
 
 	set_technology = {
-
+		tech_trucks = 1
 
 		tech_engineers = 1
 		tech_engineers2 = 1
