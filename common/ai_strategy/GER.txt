@@ -3258,7 +3258,7 @@ GER_defend_hol = {
 			35
 			7
 		}
-		ratio = 0.1
+		ratio = 0.15
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = no
 	}
@@ -3289,11 +3289,11 @@ GER_defend_homeland = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = front_unit_request
-		tag = BEL
-		value = 30
-	}
+	#ai_strategy = {
+	#	type = front_unit_request
+	#	tag = BEL
+	#	value = 30
+	#}
 
 	ai_strategy = {
 		type = front_unit_request
@@ -3304,7 +3304,7 @@ GER_defend_homeland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
-		value = 23
+		value = 22 #was 23
 	}
 
 	ai_strategy = {

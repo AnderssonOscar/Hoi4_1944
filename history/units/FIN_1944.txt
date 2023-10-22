@@ -15,7 +15,7 @@ division_template = {
 		infantry = { x = 1 y = 3 }
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
-		#infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 2 }
 		anti_tank_brigade = { x = 3 y = 0 }
 	}
 	support = {
@@ -385,9 +385,9 @@ units = {
 		location = 3060 
 		division_template = "Jalkaväkidivisioona"
 		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "FIN" } }
 		start_experience_factor = 0.21
-		start_equipment_factor = 0.85
+		start_equipment_factor = 0.67
 	}
 
 	division = {
@@ -398,9 +398,9 @@ units = {
 		location = 3060 
 		division_template = "Jalkaväkidivisioona"
 		force_equipment_variants = { artillery_equipment_2 = { owner = "SWE" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
 		start_experience_factor = 0.21
-		start_equipment_factor = 0.85
+		start_equipment_factor = 0.71
 	}
 
 	division = {
@@ -411,9 +411,9 @@ units = {
 		location = 11153 
 		division_template = "Jalkaväkidivisioona"
 		start_experience_factor = 0.21
-		start_equipment_factor = 0.85
+		start_equipment_factor = 0.81
 		force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SWE" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "SWE" } }
 	}
 
 	division = {
@@ -424,9 +424,9 @@ units = {
 		location = 11153 
 		division_template = "Jalkaväkidivisioona"
 		start_experience_factor = 0.21
-		start_equipment_factor = 0.85
+		start_equipment_factor = 0.75
 		force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
 	}
 
 	division = {
@@ -437,8 +437,8 @@ units = {
 		location = 3084 
 		division_template = "Jalkaväkidivisioona"
 		start_experience_factor = 0.21
-		start_equipment_factor = 0.85
-		force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+		start_equipment_factor = 0.72
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
 	}
 
@@ -450,9 +450,9 @@ units = {
 		location = 6057 
 		division_template = "Jalkaväkidivisioona"
 		start_experience_factor = 0.21
-		start_equipment_factor = 0.85
-		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
-		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
+		start_equipment_factor = 0.78
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "GER" } }
 	}
 
 
@@ -476,7 +476,7 @@ units = {
 		location = 6057
 		division_template = "Ratsuväkiprikaati"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.96
+		start_equipment_factor = 0.91
 	}
 
 	division = {

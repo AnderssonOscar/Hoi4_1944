@@ -28,6 +28,20 @@ on_actions = {
 			mod_boost
 		}
 	}
+
+	FRA = {
+		if = {
+			limit = {
+				is_ai = yes
+				date > 1943.12.31
+				
+			}
+			set_capital = {
+				state = 459 
+				remember_old_capital = no
+			}
+		}
+	}
 	
 	SWE = {
 		if = {
@@ -261,6 +275,8 @@ GER = {
 				GER = { add_mines = { region = 207 amount = 410 } }
 				GER = { add_mines = { region = 174 amount = 150 } }
 				GER = { add_mines = { region = 42 amount = 250 } }
+
+				FIN = { add_mines = { region = 9 amount = 380 } }
 
 				ITA = { add_mines = { region = 168 amount = 850 } }
 				GER = { add_mines = { region = 202 amount = 750 } }

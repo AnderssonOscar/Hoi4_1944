@@ -1,9 +1,0 @@
-version="0.1"
-tags={
-	"Historical"
-	"Balance"
-}
-name="1944"
-picture="thumbnail.png"
-supported_version="1.13.3"
-remote_file_id="2983200841"

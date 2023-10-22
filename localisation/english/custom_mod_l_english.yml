@@ -170,6 +170,51 @@ Recruit_POWS:0 "Recruit POWs"
 GER_oder_neisse_defence:0"Prepare defences along the oder-neisse river"
 GER_oder_neisse_defence_desc:0"Construct defensive fortifications from Stettin to outside of Dresden."
 
+
+german.sabotage.ports.1:0 "Cherbourg port is lost"
+german.sabotage.ports.1.t:0 "Cherbourg port is lost"
+german.sabotage.ports.1.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.2:0 "Brest port is lost"
+german.sabotage.ports.2.t:0 "Brest port is lost"
+german.sabotage.ports.2.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.3:0 "Lorient port is lost"
+german.sabotage.ports.3.t:0 "Lorient port is lost"
+german.sabotage.ports.3.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.4:0 "Saint-Nazaire port is lost"
+german.sabotage.ports.4.t:0 "Saint-Nazaire port is lost"
+german.sabotage.ports.4.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.5:0 "La Rochelleport is lost"
+german.sabotage.ports.5.t:0 "La Rochelle port is lost"
+german.sabotage.ports.5.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.6:0 "Le Havre port is lost"
+german.sabotage.ports.6.t:0 "Le Havre port is lost"
+german.sabotage.ports.6.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.7:0 "Dunkerque port is lost"
+german.sabotage.ports.7.t:0 "Dunkerque port is lost"
+german.sabotage.ports.7.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.8:0 "Antwerpen port is lost"
+german.sabotage.ports.8.t:0 "Antwerpen port is lost"
+german.sabotage.ports.8.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.1.a:0 "Render the port facilities useless."
+german.sabotage.ports.1.b:0 "We will be back soon"
+
+
+
+finland.estonia.lost.1:0 "Estonia is lost"
+finland.estonia.lost.1.t:0 "Estonia is lost"
+finland.estonia.lost.1.d:0 "Finland will now be more willing to negotiate a seperate peace with the soviets."
+
+finland.estonia.lost.1.a:0 "Traitors"
+
+
 mod.start.1:0 "1944: Downfall"
 mod.start.1.t:0 "1944: Downfall"
 mod.start.1.d:0 "\n\tWelcome to 1944: Downfall.\n\nIf you experience crashes at the start of the game it is recommended to not start the game at max speed for the first couple of days.\n\nPress the Start button before unpausing the game."

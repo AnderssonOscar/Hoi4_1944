@@ -39,11 +39,11 @@ state={
 				}
 
 				9100 = {
-					bunker = 3
+					bunker = 2
 				}
 
 				9206 = {
-					bunker = 3
+					bunker = 2
 				}
 
 				

@@ -17,7 +17,7 @@ war_measures = {
 		available = {
 
 			has_war_with = SOV
-			surrender_progress > 0.06
+			surrender_progress > FIN_surrender_limit
 			date > 1944.7.25
 
 			any_country = {
@@ -35,6 +35,7 @@ war_measures = {
 			is_faction_leader = no
 			is_in_faction_with = GER
 			has_capitulated = no
+			has_government = neutrality
 
 			NOT = {is_in_faction_with = SWE} 
 		}
@@ -189,7 +190,7 @@ war_measures = {
 		available = {
 			OR = {
 				date > 1944.6.27 # 1944.6.27
-				surrender_progress > 0.05
+				surrender_progress > 0.00
 			}
 		}
 
@@ -215,9 +216,9 @@ war_measures = {
 			factor = 1
 			modifier = {
 				OR = {
-					surrender_progress > 0.07
+					surrender_progress > 0.06
 					AND = { 
-						surrender_progress > 0.01
+						surrender_progress > 0.0
 						date > 1944.6.27
 					}
 				}

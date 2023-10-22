@@ -810,17 +810,18 @@ if = {
 	complete_national_focus = FIN_parmis_devils
 
 
-	complete_national_focus = FIN_suomen_ilmavoimat
+	unlock_national_focus = FIN_suomen_ilmavoimat
 	complete_national_focus = FIN_pilot_training
 
 	complete_national_focus = FIN_expand_imatra_hydropower_plant
 
 	complete_national_focus = FIN_tire_factory_at_nokia
 
-	army_experience = 115
+	army_experience = 25
 	navy_experience = 5	
 	air_experience = 35
 
+	set_variable = { FIN_surrender_limit = 0.07 }
 
 	set_politics = {
 		ruling_party = neutrality
@@ -835,7 +836,7 @@ if = {
 		id = FIN_power_balance
 		left_side = FIN_bad_side
 		right_side = FIN_good_side
-		set_value = 0.47
+		set_value = 0.45
 	}
 
 	retire_country_leader = yes
@@ -868,9 +869,9 @@ if = {
 	add_command_power = 200
 
 	set_convoys = 37
-	set_stability = 0.99 
-	set_war_support = 0.49
-	add_manpower = 600
+	set_stability = 0.97 
+	set_war_support = 0.45
+	add_manpower = -52600
 	
 	add_timed_idea = { idea = FIN_start_bonus days = 17 }
 
@@ -1129,18 +1130,18 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment
-        amount = 1950
+        amount = 1150
     }
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment
-        amount = 1450
+        amount = 850
 		producer = SWE
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 215
+        amount = 120
     }
 
 	add_equipment_to_stockpile = {
@@ -1157,7 +1158,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 390
+        amount = 156
 		producer = GER
     }
 

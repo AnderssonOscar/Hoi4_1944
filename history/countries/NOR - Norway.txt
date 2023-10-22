@@ -396,7 +396,7 @@ if = {
 		war_economy
 		extensive_conscription
 
-		dont_surrender_mod
+		#dont_surrender_mod
 	}
 
 	add_political_power = 2489

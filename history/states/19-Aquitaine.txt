@@ -3,7 +3,7 @@ state={
 	id=19
 	name="STATE_19"
 	resources={
-		steel=25.000
+		steel=8.000 #1944 was 25.000
 		aluminium=11.000
 	}
 
@@ -18,7 +18,7 @@ state={
 			dockyard = 1
 			air_base = 3
 			9737 = {
-				naval_base = 3
+				naval_base = 2 #1944 was 3
 				coastal_bunker = 1
 
 			}

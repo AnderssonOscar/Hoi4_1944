@@ -518,11 +518,45 @@ GER_reichskommissariats = {
 							set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
 						}
 						#set_cosmetic_tag = NOR_GER_fascism
-						set_country_flag = NOR_switched_to_fasc_hist
+						#set_country_flag = NOR_switched_to_fasc_hist
 
 						NOR_fcw_big_fascist_support = yes
 						complete_national_focus = NOR_fascist_invasion_of_norway
+						complete_national_focus = NOR_quislings_regime
+						complete_national_focus = NOR_crackdown_on_civilian_life
+						complete_national_focus = NOR_elevate_hirden
+						complete_national_focus = NOR_the_administrative_council
+						unlock_national_focus = NOR_abandoning_nynorsk
+						unlock_national_focus = NOR_pan_germanic_cooperation
+						complete_national_focus = NOR_secret_police
+						unlock_national_focus = NOR_bring_back_quisling
 						NOR_apply_resistance_to_fascists = yes 
+
+						add_political_power = 1500
+
+						add_equipment_to_stockpile = {
+							type = convoy_1
+							amount = 45
+							producer = NOR
+						}
+	
+						add_equipment_to_stockpile = { 
+							type = train_equipment_1
+							amount = 9
+						}
+	
+						add_equipment_to_stockpile = {
+							type = infantry_equipment_1
+							amount = 8000
+							producer = NOR
+						}
+
+						PREV = {
+							complete_national_focus = NOR_the_kings_no
+							complete_national_focus = NOR_approach_kretsen
+							complete_national_focus = NOR_establish_milorg
+							unlock_national_focus = NOR_quislings_coup
+						}
 
 						create_country_leader = {
 							name = "Josef Terboven"
@@ -549,10 +583,39 @@ GER_reichskommissariats = {
 					transfer_state = 924
 					transfer_state = 925
 					#set_cosmetic_tag = NOR_GER_fascism
-					set_country_flag = NOR_switched_to_fasc_hist
+					#set_country_flag = NOR_switched_to_fasc_hist
 					NOR_fcw_big_fascist_support = yes
 					complete_national_focus = NOR_fascist_invasion_of_norway
+					complete_national_focus = NOR_quislings_regime
+					complete_national_focus = NOR_crackdown_on_civilian_life
+					complete_national_focus = NOR_elevate_hirden
+					complete_national_focus = NOR_the_administrative_council
+					unlock_national_focus = NOR_abandoning_nynorsk
+					unlock_national_focus = NOR_pan_germanic_cooperation
+					complete_national_focus = NOR_secret_police
+					unlock_national_focus = NOR_bring_back_quisling
 					NOR_apply_resistance_to_fascists = yes 
+					
+
+					add_political_power = 1500
+
+					add_equipment_to_stockpile = {
+						type = convoy_1
+						amount = 45
+						producer = NOR
+					}
+
+					add_equipment_to_stockpile = { 
+						type = train_equipment_1
+						amount = 9
+					}
+
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 8000
+						producer = NOR
+					}
+
 					create_country_leader = {
 						name = "Josef Terboven"
 						desc = "POLITICS_JOSEF_TERBOVEN_DESC"
@@ -566,6 +629,7 @@ GER_reichskommissariats = {
 				set_autonomy = { target = NOR autonomy_state = autonomy_integrated_puppet }
 			}
 		}
+
 	}
 	
 	GER_reichskommissariat_niederlande = {

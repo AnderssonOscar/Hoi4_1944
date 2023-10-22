@@ -22,7 +22,7 @@ state={
 			industrial_complex = 7
 			air_base = 3
 			6560 = {
-				naval_base = 3
+				naval_base = 1
 			}
 			6598 = {
 				naval_base = 8
@@ -36,6 +36,8 @@ state={
 		 1944.1.1 = {
 			owner = GER
 			controller = GER
+
+			add_core_of = FRA #dont create belgium at invasion
 
 			buildings = {
 				anti_air_building = 1

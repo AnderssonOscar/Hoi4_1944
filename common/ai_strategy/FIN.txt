@@ -238,6 +238,25 @@ FIN_defend_fronts  = {
 }
 
 
+FIN_dont_use_murmank_ports = {
+	allowed = {
+		tag = FIN
+	}
+
+	enable = {
+		date > 1943.12.30 
+		date < 1945.1.1
+		has_war_with = SOV
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 46 #murmansk
+		value = 100
+	}
+}
 
 
 

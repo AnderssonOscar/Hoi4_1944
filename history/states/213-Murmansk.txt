@@ -33,6 +33,12 @@ state={
 			FIN = {
 				set_province_controller = 6117
 			}
+
+		buildings = {
+			3134 = {
+				bunker = 1
+				}
+			}
 		}
 
 

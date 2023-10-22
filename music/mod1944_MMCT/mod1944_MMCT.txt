@@ -23,9 +23,12 @@ music = {
 music = {
   song = "Over There"
   chance = {
+	factor = 1
     modifier = {
-		 factor = 2 
-		 has_government = democratic
+		 factor = 100 
+		 date > 1944.5.25
+		 date < 1944.7.5
+		 has_war = yes
 		}
     #modifier = { factor = 0 has_war = yes } #example modifier: music will not play when at war
   }

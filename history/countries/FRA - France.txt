@@ -1078,7 +1078,7 @@ if = {
 		}
 	}
 
-
+	capital = 459
 	add_political_power = 2589
 	add_command_power = 200
 
