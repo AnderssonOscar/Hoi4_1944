@@ -3,8 +3,9 @@ ideas = {
 		FIN_start_bonus = {
 			picture = generic_wall_line
 			modifier = {
-				army_org_factor = 2.0
+				army_org_factor = 1.0
 				dig_in_speed_factor = 2.0
+				army_speed_factor = -1.0
 				}
 			}
 

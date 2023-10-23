@@ -789,6 +789,8 @@ if = {
 
 1943.12.30 = {
 
+	set_variable = { FIN_finnish_army_army_org_factor = 0.05 }
+	set_variable = { FIN_finnish_army_conscription_factor = 0.01 }
 	remove_ideas = FIN_fortification_effort
 	#complete_national_focus = doctrine_effort
 	#complete_national_focus = political_effort
@@ -869,9 +871,9 @@ if = {
 	add_command_power = 200
 
 	set_convoys = 37
-	set_stability = 0.97 
-	set_war_support = 0.45
-	add_manpower = -52600
+	set_stability = 0.94 
+	set_war_support = 0.43
+	#add_manpower = 100
 	
 	add_timed_idea = { idea = FIN_start_bonus days = 17 }
 
@@ -888,6 +890,10 @@ if = {
 		all_adults_serve
 		low_war_casualties
 		#limited_exports
+	}
+	remove_ideas = {
+		FIN_union_of_finnish_brothers_in_arms
+		FIN_lotta_svard
 	}
 
 	set_technology = {

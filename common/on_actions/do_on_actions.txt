@@ -43,6 +43,17 @@ on_actions = {
 		}
 	}
 	
+	
+	FIN = {
+		if = {
+			limit = {
+				date > 1943.12.31
+			}
+			add_manpower = -115000
+		}
+	}
+
+
 	SWE = {
 		if = {
 			limit = {

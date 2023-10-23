@@ -117,6 +117,11 @@ GER_start_effects = {
 				type = train_equipment_3
 				amount = 85
 			}
+
+			add_equipment_to_stockpile = { 
+				type = train_equipment_1
+				amount = 96
+			}
 		}
 
 

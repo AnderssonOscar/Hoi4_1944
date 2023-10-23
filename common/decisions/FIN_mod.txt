@@ -123,6 +123,14 @@ war_measures = {
 		}
 
 		FIN = {give_military_access = SOV}
+
+			every_country = { #stop spamming white death
+				limit = {
+					has_variable = FIN_white_death_target_country
+				}
+					clear_variable = FIN_white_death_target_country
+				}
+
 		}
 	}
 

@@ -493,6 +493,51 @@ if = {
 
 
 	if = {
+		limit = { has_dlc = "Man the Guns" } 
+		set_technology = {
+			
+			basic_naval_mines = 1
+			submarine_mine_laying = 1
+			early_ship_hull_light = 1
+			basic_ship_hull_light = 1
+			early_ship_hull_submarine = 1
+			basic_ship_hull_submarine = 1
+			early_ship_hull_cruiser = 1
+			basic_battery = 1
+			basic_cruiser_armor_scheme = 1
+			basic_torpedo = 1
+			basic_depth_charges = 1
+			coastal_defense_ships = 1
+			mtg_transport = 1
+			early_ship_hull_carrier = 1
+
+			sonar = 1
+			smoke_generator = 1
+
+			damage_control_1 = 1
+
+			fire_control_methods_1 = 1
+
+			basic_light_battery = 1
+			basic_light_shell = 1
+			improved_light_battery = 1
+			#improved_light_shell = 1
+	
+			basic_medium_battery = 1
+			basic_medium_shell = 1
+
+			improved_ship_hull_submarine = 1
+			improved_ship_hull_light = 1
+
+			improved_ship_torpedo_launcher = 1
+
+			basic_fire_control_system = 1
+			improved_depth_charges = 1
+		}
+	}
+
+
+	if = {
 		limit = { has_dlc = "No Step Back" }
 			
 
@@ -860,7 +905,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
-        amount = 2950
+        amount = 5950
     }
 
 	add_equipment_to_stockpile = {
@@ -870,13 +915,13 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = anti_tank_equipment_2
-        amount = 272
+        amount = 22
 		producer = GER
     }
 
 	add_equipment_to_stockpile = {
         type = anti_tank_equipment_2
-        amount = 161
+        amount = 11
     }
 
 	add_equipment_to_stockpile = {
@@ -887,12 +932,12 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 171
+        amount = 221
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 670
+        amount = 470
 		producer = GER
     }
 
