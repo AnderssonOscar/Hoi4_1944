@@ -656,6 +656,10 @@ set_popularities = {
 	add_to_faction = ALB
 
 		declare_war_on = { target = SOV type = annex_everything }
+		declare_war_on = {
+			target = ENG
+			type = annex_everything
+		}
 
 add_ideas = {
 		sour_loser

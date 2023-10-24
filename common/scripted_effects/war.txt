@@ -35,6 +35,16 @@ war_start_effects = {
 			}
 		}
 
+		ENG = {
+			every_country = {
+				limit = { is_in_faction_with = ENG }
+				add_to_war = {
+					targeted_alliance = ENG
+					enemy = JAP
+				}
+			}
+		}
+
 	}
 	
 

@@ -7,9 +7,14 @@ on_actions = {
 	on_startup = {
 		effect = {
 
-			GER = { declare_war_on = { target = ENG type = annex_everything } }
-			MOD_start_update = yes
+			#GER = { declare_war_on = { target = ENG type = annex_everything } }
+			#MOD_start_update = yes
 
+			GRE = {
+				country_event = {
+					id =  greece.setup.0
+				}
+			}
 			every_country = {
 				limit = {is_ai = no}
 				country_event = {

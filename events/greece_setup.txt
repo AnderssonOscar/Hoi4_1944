@@ -1,0 +1,134 @@
+﻿###########################
+# Greece Events
+###########################
+
+add_namespace = greece.setup
+
+country_event = {
+	id = greece.setup.0
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+
+		hidden_effect = {
+
+			GRE = {
+				if = {
+					limit = {
+						date > 1943.12.30
+						check_variable = { global.var_gre_puppet_startup = 0 }
+					}
+		
+						set_variable = { global.var_gre_puppet_startup = 1 }
+		
+		
+						hidden_effect = {
+							GRE = {
+								set_state_controller = 47
+								set_state_controller = 186
+								set_state_controller = 185
+								set_state_controller = 731
+								set_state_controller = 187
+								set_state_controller = 182
+								set_state_controller = 164
+							}
+						}
+		
+						GRE = {
+							start_civil_war = {
+								ideology = fascism
+								size = 1
+								transfer_state = 47
+								transfer_state = 186
+								transfer_state = 185
+								transfer_state = 731
+								transfer_state = 187
+								transfer_state = 182
+								transfer_state = 164
+		
+								GER = {
+									puppet = PREV
+									set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+								}
+		
+								set_popularities = {
+									democratic = 2
+									fascism = 68
+									communism = 10
+									neutrality = 20
+								}
+		
+								add_ideas = {
+									#laws
+									tot_economic_mobilisation
+									extensive_conscription
+									low_war_casualties
+									dont_surrender_mod
+								}
+		
+								add_equipment_to_stockpile = {
+									type = motorized_equipment_1
+									amount = 156
+									producer = GER
+								}
+							
+								add_equipment_to_stockpile = { 
+									type = train_equipment_1
+									amount = 12
+								}
+		
+								add_equipment_to_stockpile = { 
+									type = convoy_1
+									amount = 10
+								}
+		
+								add_command_power = 1000
+		
+								
+						if = {
+							limit = { has_dlc = "Battle for the Bosporus" }
+								set_variable = { var = GRE_monarchist_loyalty value = 0 }
+								set_variable = { var = GRE_republican_loyalty value = -10 }
+								set_variable = { var = GRE_communist_loyalty value = -10 }
+								set_variable = { var = GRE_fascist_loyalty value = 10 }
+		
+								#set_variable = { var = GRE_debt_to_the_ifc_britain_var value = 5 }
+								#set_variable = { var = GRE_debt_to_the_ifc_france_var value = 5 }
+								#set_variable = { var = GRE_debt_to_the_ifc_italy_var value = 5 }
+								#set_variable = { var = GRE_debt_to_the_ifc_paid_var value = 15 }
+						}
+		
+								set_cosmetic_tag = GRE_fascism
+								create_country_leader = {
+									name = "Hermann Neubacher"
+									desc = ""
+									picture = GRE_hermann_neubacher
+									expire = "1965.1.1"
+									ideology = nazism
+									traits = {
+									}
+								}
+		
+		
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

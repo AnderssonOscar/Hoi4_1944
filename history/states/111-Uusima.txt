@@ -35,7 +35,7 @@ state = {
 		1943.12.30 = {
 			buildings = {
 				radar_station = 2
-				arms_factory = 3
+				#arms_factory = 3
 				anti_air_building = 3
 				fuel_silo = 1
 			}

@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = GFX_portrait_gre_hermann_neubacher
+		texturefile = "gfx/leaders/GRE/Portrait_Greece_Hermann_Neubacher.dds"
+	}
+}

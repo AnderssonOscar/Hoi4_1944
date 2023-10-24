@@ -12,22 +12,23 @@
 #Consult the music modding page on the HOI4 wiki for more info: https://hoi4.paradoxwikis.com/Music_modding.
 
 music_station = "mod1944_MMCT"
-music = {
-    song = "erika"
-    chance = {
-      modifier = { factor = 1 }
+#music = {
+#    song = "erika"
+#    chance = {
+#	factor = 1
+#      modifier = { factor = 1 }
       #modifier = { factor = 0 has_war = yes } #example modifier: music will not play when at war
-    }
-}
+#    }
+#}
 
 music = {
   song = "Over There"
   chance = {
 	factor = 1
     modifier = {
-		 factor = 100 
+		 factor = 20 
 		 date > 1944.5.25
-		 date < 1944.7.5
+		 date < 1944.6.22
 		 has_war = yes
 		}
     #modifier = { factor = 0 has_war = yes } #example modifier: music will not play when at war
@@ -73,15 +74,3 @@ music = {
 }
 
 
-music = {
-	song = "erika"
-	
-	chance = {
-		modifier = {
-			factor = 2
-			has_war_with = SOV
-			has_war = yes
-			has_government = fascism
-		}		
-	}	
-}

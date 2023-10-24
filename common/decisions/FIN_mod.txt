@@ -31,6 +31,7 @@ war_measures = {
 		}
 
 		visible = {
+			is_ai = yes
 			has_war_with = SOV
 			is_faction_leader = no
 			is_in_faction_with = GER

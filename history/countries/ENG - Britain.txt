@@ -1860,7 +1860,7 @@ if = {
 	add_political_power = 1550
 	add_command_power = 100
 	set_convoys = 1290
-
+	add_manpower = 700000
 	set_stability = 0.8
 	#set_war_support = 0.1
 	
