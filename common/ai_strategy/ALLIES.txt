@@ -777,19 +777,13 @@ allies_dont_invade_axis_allies = {
 
 	ai_strategy = {
 		type = invade
-		id = "D04" #GRE
+		id = "D04" #HOL
 		value = -500
 	}
 
 	ai_strategy = {
 		type = invade
-		id = "D05" #HOL
-		value = -500
-	}
-
-	ai_strategy = {
-		type = invade
-		id = "D06" #NOR
+		id = "D05" #NOR
 		value = -500
 	}
 
@@ -1185,5 +1179,125 @@ USA_small_nation_help_in_italy = {
 		ordertype = front
 		execute_order = yes
 		execution_type = careful
+	}
+}
+
+
+
+Allies_without_ENG_disallow_invasion_of_GRE = {#greece
+	allowed = {
+		OR = {
+			tag = USA
+			tag = CAN
+			tag = FRA
+			tag = RAJ
+			tag = NZL
+			tag = AST
+			tag = BRA
+			tag = SAF
+			tag = MEX
+			tag = BRA
+			tag = FIN
+			tag = HON
+			tag = COL
+			tag = ELS
+			tag = NIC
+			tag = COS
+			tag = CUB
+			tag = DOM
+			tag = PAN
+			tag = ECU
+			tag = PRU
+			tag = BOL
+			tag = CHL
+			tag = HAI
+		}
+	}
+
+	enable = {
+		date > 1943.12.30
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GRE"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GRE }
+		value = -500
+	}
+}
+
+
+
+ENG_disallow_invasion_of_GRE = {#greece
+	allowed = {
+		tag = ENG
+	}
+
+	enable = {
+		has_war_with = GRE
+		has_war_with = GER
+
+		ROM = { has_war_with = SOV }
+		#BUL = { has_war_with = SOV }
+
+		16 = {is_fully_controlled_by = GER} #Paris
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GRE"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GRE }
+		value = -500
+	}
+}
+
+
+ENG_enable_invasion_of_GRE = {#greece
+	allowed = {
+		tag = ENG
+	}
+
+	enable = {
+		has_war_with = GRE
+		has_war_with = GER
+
+		OR = {
+			NOT = { ROM = {has_government = fascism} }
+			date > 1944.9.1
+			GER = { surrender_progress > 0.1 }
+		}
+
+		NOT = { 16 = {is_fully_controlled_by = GER} } #Paris
+		divisions_in_state = { state = 47 size < 2 }
+		divisions_in_state = { state = 186 size < 2 }
+		divisions_in_state = { state = 731 size < 2 }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GRE"
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GRE }
+		value = 10
 	}
 }

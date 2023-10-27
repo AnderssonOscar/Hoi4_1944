@@ -470,7 +470,7 @@ add_to_faction = NOR
 add_to_faction = DEN
 add_to_faction = POL
 add_to_faction = BRA
-add_to_faction = GRE
+#add_to_faction = GRE
 add_to_faction = YUG
 
 add_to_faction = HON
@@ -1859,7 +1859,7 @@ if = {
 
 	add_political_power = 1550
 	add_command_power = 100
-	set_convoys = 1290
+	set_convoys = 2590
 	add_manpower = 700000
 	set_stability = 0.8
 	#set_war_support = 0.1
@@ -2444,7 +2444,7 @@ if = {
 						special_type_slot_3 = lmg_defense_turret
 						special_type_slot_4 = fuel_tanks_large
 						special_type_slot_5 = self_sealing_fuel_tanks_large
-						special_type_slot_6 = armor_plate_large
+						#special_type_slot_6 = armor_plate_large
 		
 					}
 					icon = "GFX_ENG_strategic_bomber2_medium"

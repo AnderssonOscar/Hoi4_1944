@@ -2765,7 +2765,7 @@ SOV_dont_do_naval_invasion_nor = {
 
 	ai_strategy = {
 		type = invade
-		id = "D06"
+		id = "GRE"
 		value = -500
 	}
 

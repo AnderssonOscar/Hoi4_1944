@@ -1,4 +1,5 @@
-﻿division_template = {
+﻿
+division_template = {
 	name = "Trigonikó Pezikoú" 					# Triangular Infantry Division
 	division_names_group = GRE_INF_01
 	# Prior to 1940 mobilization = 3rd, 4th, 5th, 9th, 10, 13th;
@@ -16,6 +17,7 @@
 		infantry = { x = 2 y = 2 }
 	}
 }
+
 division_template = {
 	name = "Tetrágono Pezikoú" 					# Square Infantry Division
 	division_names_group = GRE_MNT_01
@@ -45,6 +47,64 @@ division_template = {
 	}
 	support = {
 		recon = { x = 0 y = 0 }      # Motorized recon inf bn
+	}
+}
+
+division_template = {
+	name = "Tagmata Asfaleias" 
+	division_names_group = GRE_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		#infantry = { x = 1 y = 0 }
+	}
+	support = 	{
+			military_police = { x = 0 y = 0 }
+		}
+		priority = 0
+}
+
+units = {
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 4109
+		division_template = "Tagmata Asfaleias"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GRE" } }
+		start_experience_factor = 0.11
+		start_equipment_factor = 0.85
+		start_manpower_factor = 1
+	}
+
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 3914
+		division_template = "Tagmata Asfaleias"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GRE" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.91
+		start_manpower_factor = 1
+	}
+
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 7211
+		division_template = "Tagmata Asfaleias"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GRE" } }
+		start_experience_factor = 0.19
+		start_equipment_factor = 0.95
+		start_manpower_factor = 1
+	}
+
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 11818
+		division_template = "Tagmata Asfaleias"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GRE" } }
+		start_experience_factor = 0.22
+		start_equipment_factor = 1
+		start_manpower_factor = 1
 	}
 }
 

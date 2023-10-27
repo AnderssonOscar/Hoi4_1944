@@ -202,6 +202,10 @@ set_war_support = 0.3
 			target = ALB
 			autonomous_state = autonomy_puppet
 		}
+		set_autonomy = {
+			target = GRE
+			autonomous_state = autonomy_integrated_puppet
+		}
 		
 		#set_autonomy = {
 		#	target = HOL
@@ -646,6 +650,7 @@ set_popularities = {
 	create_faction = Axis
 	add_to_faction = GER
 	add_to_faction = ITA
+	add_to_faction = GRE
 	add_to_faction = SLO
 	add_to_faction = HUN
 	add_to_faction = ROM
@@ -2189,36 +2194,36 @@ if = {
 	
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 11000
+		amount = 12000
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 7100
+		amount = 9100
 		producer = SOV
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 8100
+		amount = 16100
 		producer = ITA
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 9000
+		amount = 18000
 		producer = FRA
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 6000
+		amount = 8000
 		producer = POL
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 9000
+		amount = 12000
 		producer = CZE
 	}
 

@@ -33,7 +33,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_war_with = USA
-		date > 1944.6.1
+		date > 1944.5.1
 		GER = { NOT = {	controls_province = 6449 } }
 	}
 
@@ -47,7 +47,7 @@ country_event = {
 		}
 		GER = {
 			add_manpower = -2000 
-			add_political_power = -50
+			add_political_power = -25
 		}
 		15 = { 
 			remove_building = {
@@ -84,7 +84,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_war_with = USA
-		date > 1944.6.1
+		date > 1944.5.1
 		GER = { NOT = {	controls_province = 3552 } }
 	}
 
@@ -97,8 +97,8 @@ country_event = {
 			base = 8
 		}
 		GER = {
-			add_manpower = -2000 
-			add_political_power = -50
+			add_manpower = -2500 
+			add_political_power = -25
 		}
 		14 = { 
 			remove_building = {
@@ -135,7 +135,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_war_with = USA
-		date > 1944.6.1
+		date > 1944.5.1
 		GER = { NOT = {	controls_province = 6536 } }
 	}
 	mean_time_to_happen = { days = 1}
@@ -147,8 +147,8 @@ country_event = {
 			base = 8
 		}
 		GER = {
-			add_manpower = -2000 
-			add_political_power = -50
+			add_manpower = -2500 
+			add_political_power = -25
 		}
 		14 = { 
 			remove_building = {
@@ -184,7 +184,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_war_with = USA
-		date > 1944.6.1
+		date > 1944.5.1
 		GER = { NOT = {	controls_province = 9510 } }
 	}
 	mean_time_to_happen = { days = 1}
@@ -196,8 +196,8 @@ country_event = {
 			base = 8
 		}
 		GER = {
-			add_manpower = -2000 
-			add_political_power = -50
+			add_manpower = -2500 
+			add_political_power = -25
 		}
 		14 = { 
 			remove_building = {
@@ -234,7 +234,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_war_with = USA
-		date > 1944.6.1
+		date > 1944.5.1
 		GER = { NOT = {	controls_province = 6657 } }
 	}
 	mean_time_to_happen = { days = 1}
@@ -246,8 +246,8 @@ country_event = {
 			base = 8
 		}
 		GER = {
-			add_manpower = -2000 
-			add_political_power = -50
+			add_manpower = -2500 
+			add_political_power = -25
 		}
 		23 = { 
 			remove_building = {
@@ -284,7 +284,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_war_with = USA
-		date > 1944.6.1
+		date > 1944.5.1
 		GER = { NOT = {	controls_province = 9434 } }
 	}
 	mean_time_to_happen = { days = 1}
@@ -296,8 +296,8 @@ country_event = {
 			base = 8
 		}
 		GER = {
-			add_manpower = -2000 
-			add_political_power = -50
+			add_manpower = -2500 
+			add_political_power = -25
 		}
 		15 = { 
 			remove_building = {
@@ -333,7 +333,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_war_with = USA
-		date > 1944.6.1
+		date > 1944.5.1
 		GER = { NOT = {	controls_province = 575 } }
 	}
 	mean_time_to_happen = { days = 1}
@@ -345,8 +345,8 @@ country_event = {
 			base = 8
 		}
 		GER = {
-			add_manpower = -2000 
-			add_political_power = -50
+			add_manpower = -2500 
+			add_political_power = -25
 		}
 		29 = { 
 			remove_building = {
@@ -382,7 +382,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_war_with = USA
-		date > 1944.6.1
+		date > 1944.5.1
 		GER = { NOT = {	controls_province = 6598 } }
 	}
 	mean_time_to_happen = { days = 1}
@@ -394,7 +394,7 @@ country_event = {
 			base = 8
 		}
 		GER = {
-			add_manpower = -2000 
+			add_manpower = -2500 
 			add_political_power = -25
 		}
 		6 = { 
@@ -1154,24 +1154,27 @@ news_event = {
 	
 	is_triggered_only = yes
 	fire_only_once = yes
+	hidden = yes
+
+	immediate = {
+		hidden_effect = {
+		if = {
+			limit = { check_variable = { global.var_start_effects = 0 } }
+				set_variable = { global.var_start_effects = 1 }
+				industry_start_effects = yes
+				industry_extra_start_effects = yes
+				GER_start_effects = yes
+				tech_start_effects = yes
+				Resistance_start_effects = yes
+				country_event = { id = greece.setup.0 }
+			}
+		}
+	}
 
 	option = {
 		name = "Start"
 
 		#custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
-
-		hidden_effect = {
-		if = {
-			limit = { check_variable = { global.var_start_effects = 0 } }
-		
-		set_variable = { global.var_start_effects = 1 }
-		Resistance_start_effects = yes
-		industry_start_effects = yes
-		industry_extra_start_effects = yes
-		GER_start_effects = yes
-		tech_start_effects = yes
-		}
-	}
 
 	}
 }

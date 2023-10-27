@@ -875,6 +875,11 @@ if = {
 		partial_economic_mobilisation
 	}
 
+	remove_ideas = {
+		SWE_hungershield
+		SWE_rapid_mobilization_idea
+	}
+
 	if = {
 		limit = {
 			has_dlc = "La Resistance"

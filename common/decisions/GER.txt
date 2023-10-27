@@ -530,8 +530,11 @@ GER_reichskommissariats = {
 						unlock_national_focus = NOR_pan_germanic_cooperation
 						complete_national_focus = NOR_secret_police
 						unlock_national_focus = NOR_bring_back_quisling
-						NOR_apply_resistance_to_fascists = yes 
+						#NOR_apply_resistance_to_fascists = yes 
+						unlock_national_focus = NOR_quislings_coup
+						set_global_flag =  NOR_quislings_coup_happened
 
+						add_manpower = 60000
 						add_political_power = 1500
 
 						add_equipment_to_stockpile = {
@@ -549,6 +552,16 @@ GER_reichskommissariats = {
 							type = infantry_equipment_1
 							amount = 8000
 							producer = NOR
+						}
+
+						add_equipment_to_stockpile = {
+							type = support_equipment_1
+							amount = 120
+						}
+			
+						add_equipment_to_stockpile = {
+							type = artillery_equipment_1
+							amount = 78
 						}
 
 						PREV = {
@@ -587,6 +600,7 @@ GER_reichskommissariats = {
 					NOR_fcw_big_fascist_support = yes
 					complete_national_focus = NOR_fascist_invasion_of_norway
 					complete_national_focus = NOR_quislings_regime
+					unlock_national_focus = NOR_quislings_coup
 					complete_national_focus = NOR_crackdown_on_civilian_life
 					complete_national_focus = NOR_elevate_hirden
 					complete_national_focus = NOR_the_administrative_council
@@ -595,7 +609,7 @@ GER_reichskommissariats = {
 					complete_national_focus = NOR_secret_police
 					unlock_national_focus = NOR_bring_back_quisling
 					NOR_apply_resistance_to_fascists = yes 
-					
+					set_global_flag =  NOR_quislings_coup_happened
 
 					add_political_power = 1500
 

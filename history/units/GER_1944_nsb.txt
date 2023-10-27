@@ -3178,7 +3178,7 @@ units = {
 
 	division= {	
 
-		location = 9940 # Crete
+		location = 12058 # Crete
 		division_template = "Sicherungs-Division"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "ENG" } }
 		start_experience_factor = 0.09

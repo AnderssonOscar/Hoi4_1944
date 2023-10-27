@@ -219,4 +219,50 @@ finland.estonia.lost.1.a:0 "Traitors"
 
 mod.start.1:0 "1944: Downfall"
 mod.start.1.t:0 "1944: Downfall"
-mod.start.1.d:0 "\n\tWelcome to 1944: Downfall.\n\nIf you experience crashes at the start of the game it is recommended to not start the game at max speed for the first couple of days.\n\nPress the Start button before unpausing the game."
+mod.start.1.d:0 "\n\tWelcome to 1944: Downfall.\n\n"
+
+
+
+
+
+
+
+
+#Greece
+GRE_Secure_The_Hellenic_State:0 "Secure The Hellenic State"
+GRE_Secure_The_Hellenic_State_desc:0 ""
+GRE_Secure_The_Hellenic_State_tooltip:0 ""
+
+GRE_Deal_With_Enemys_Of_The_State:0 "Deal With Enemys Of The State"
+GRE_Deal_With_Enemys_Of_The_State_desc:0 "We need to take back control of the parts of our country that is plagued by resistance groups"
+GRE_Deal_With_Enemys_Of_The_State_tooltip:0 "We need to take back control of the parts of our country that is plagued by resistance groups:"
+
+GRE_Raw_Resources_Focus:0 "Raw Resources Focus"
+GRE_Raw_Resources_Focus_desc:0 "We must contribute resources more for the war effort"
+GRE_Raw_Resources_Focus_tooltip:0 "We must contribute resources more for the war effort:"
+
+GRE_Industry_Focus:0 "Military Industry Focus"
+GRE_Industry_Focus_desc:0 "Industry must be rebuilt if our nation are to stand a chance in this war"
+GRE_Industry_Focus_tooltip:0 "Industry must be rebuilt if our nation are to stand a chance in this war:"
+
+GRE_Food_Focus:0 "Food Import Focus"
+GRE_Food_Focus_desc:0 "To avoid another famine we have to secure our food imports"
+GRE_Food_Focus_tooltip:0 "To avoid another famine we have to secure our food imports:"
+
+GRE_Raise_New_Security_Battalions:0 "Raise New Security Battalions"
+GRE_Raise_New_Security_Battalions_desc:0 "We cant keep relying on foreign forces to protect our regime."
+GRE_Raise_New_Security_Battalions_tooltip:0 "We cant keep relying on foreign forces to protect our regime:"
+
+GRE_Raise_Hellenic_Divisions:0 "Raise Hellenic Divisions"
+GRE_Raise_Hellenic_Divisions_desc:0 "Our german overlord have allowed us to create divisions for the protection of our new state"
+GRE_Raise_Hellenic_Divisions_tooltip:0 "Our german overlord have allowed us to create divisions for the protection of our new state:"
+
+GRE_Hellenic_Occupation_Troops:0 "Hellenic Occupation Troops"
+GRE_Hellenic_Occupation_Troops_desc:0 "Replace the axis occupation troops with our own."
+GRE_Hellenic_Occupation_Troops_tooltip:0 "Replace the axis occupation troops with our own:"
+
+GRE_occupation_cost:0 "Paying for German Occupation"
+GRE_occupation_cost_desc:0 "Payment for the troops stationed in our country"
+
+GRE_recent_famine:0 "Recent Famine"
+GRE_recent_famine_desc:0 "We recently recovered from a famine"

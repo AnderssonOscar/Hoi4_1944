@@ -22,8 +22,8 @@ state={
 		add_claim_by = BUL
 
 		1943.12.1 = {
-			owner = GER
-			controller = GER
+		#	owner = GER
+		#	controller = GER
 		}
 
 		1943.12.30 = {

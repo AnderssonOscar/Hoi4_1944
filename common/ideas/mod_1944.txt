@@ -5,8 +5,8 @@ ideas = {
 		picture = chi_war_of_resistance3
 		modifier = {
 			#max_surrender_limit_offset = -0.5
-			forced_surrender_limit = +0.15
-			#surrender_limit = +10
+			#forced_surrender_limit = +0.15
+			surrender_limit = 1
 			#surrender_limit = 0.20
 			}
 		}

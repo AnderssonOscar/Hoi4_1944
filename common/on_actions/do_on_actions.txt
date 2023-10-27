@@ -7,20 +7,21 @@ on_actions = {
 	on_startup = {
 		effect = {
 
-			#GER = { declare_war_on = { target = ENG type = annex_everything } }
-			#MOD_start_update = yes
-
-			GRE = {
-				country_event = {
-					id =  greece.setup.0
-				}
+			GER = {
+				activate_decision = GER_reichskommissariat_niederlande
+				activate_decision = GER_reichskommissariat_norwegen
 			}
+
 			every_country = {
 				limit = {is_ai = no}
 				country_event = {
 					id = mod.start.1
 				}
 			}
+			every_country = {
+				set_country_flag = FIN_aware_about_motti_tactics_flag
+			}
+
 		#add_named_threat = { threat = 60 name = generic.15.t }
 
 	every_country = {
@@ -144,15 +145,6 @@ on_actions = {
 			}
 		}
 
-
-	GER = {
-		activate_decision = GER_reichskommissariat_niederlande
-		activate_decision = GER_reichskommissariat_norwegen
-
-		add_ideas = {
-			dont_surrender_mod
-		}
-	}
 
 	random_country = {
 		limit = {
