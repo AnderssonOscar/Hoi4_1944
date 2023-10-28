@@ -329,6 +329,10 @@ set_war_support = 0.3
 	}
 
 	set_technology = {
+			basic_train = 1
+			wartime_train = 1
+			armored_train = 1
+
 			naval_bomber2 = 1
 			basic_medium_art = 1
 
@@ -497,9 +501,7 @@ set_war_support = 0.3
 	}
 	if = {
 		limit = {
-			
 			has_dlc = "No Step Back"
-			
 		}
 		set_technology = {
 				basic_medium_tank_chassis = 1 
@@ -522,12 +524,53 @@ set_war_support = 0.3
 				engine_tech_2 = 1
 				engine_tech_3 = 1
 
-				basic_train = 1
-				wartime_train = 1
-				armored_train = 1
 				railway_gun = 1
 		}
+		 else = {
+			set_technology = {
+				gwtank = 1
+
+				basic_light_tank = 1
+				improved_light_tank = 1
+
+				basic_medium_tank = 1
+				improved_medium_tank = 1
+				advanced_medium_tank = 1
+
+				basic_heavy_tank = 1
+				improved_heavy_tank = 1
+				advanced_heavy_tank = 1
+
+				basic_light_art = 1
+				improved_light_art = 1
+
+				basic_medium_art = 1
+				improved_medium_art = 1
+
+				basic_heavy_art = 1
+				improved_heavy_art = 1
+
+				basic_light_spaa = 1
+				improved_light_spaa = 1
+
+				basic_medium_spaa = 1
+				improved_medium_spaa = 1
+
+				basic_heavy_spaa = 1
+				improved_heavy_spaa = 1
+
+				basic_light_td = 1
+				improved_light_td = 1
+
+				basic_medium_td = 1
+				improved_medium_td = 1
+
+				basic_heavy_td = 1
+				improved_heavy_td = 1
+			}
+		}
 	}
+
 	if = {
 		limit = {
 			not = {
@@ -1860,7 +1903,7 @@ if = {
 			modules = {
 				fixed_main_weapon_slot = small_bomb_bay
 				engine_type_slot = engine_1_2x
-				special_type_slot_1 = lmg_defense_turret_2x
+				special_type_slot_1 = hmg_defense_turret
 			}
 			icon = "GFX_GER_medium_plane_1_medium"
 		}
@@ -2171,7 +2214,13 @@ if = {
 			medium_war_casualties
 		}
 
-		set_oob = "GER_1944_nsb"
+		if = {
+			limit = { has_dlc = "No Step Back" }
+			set_oob = "GER_1944_nsb"
+		else = {
+			set_oob = "GER_1944"
+		}
+	}
 
 		if = {
 			limit = { has_dlc = "By Blood Alone" }

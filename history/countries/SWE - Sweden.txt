@@ -875,9 +875,12 @@ if = {
 		partial_economic_mobilisation
 	}
 
-	remove_ideas = {
-		SWE_hungershield
-		SWE_rapid_mobilization_idea
+	if = {
+		limit = { has_dlc = "Arms Against Tyranny" }
+		remove_ideas = {
+			SWE_hungershield
+			SWE_rapid_mobilization_idea
+		}
 	}
 
 	if = {
@@ -1245,6 +1248,52 @@ if = {
 			icon = "GFX_GER_CAS1_medium"
 		}
 	}
+
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+			gwtank = 1
+
+			basic_light_tank = 1
+			improved_light_tank = 1
+
+			basic_medium_tank = 1
+			improved_medium_tank = 1
+			#advanced_medium_tank = 1
+
+			basic_heavy_tank = 1
+			improved_heavy_tank = 1
+			#advanced_heavy_tank = 1
+
+
+			basic_light_art = 1
+			improved_light_art = 1
+
+			basic_medium_art = 1
+			improved_medium_art = 1
+
+			basic_heavy_art = 1
+			improved_heavy_art = 1
+
+			basic_light_spaa = 1
+			improved_light_spaa = 1
+
+			basic_medium_spaa = 1
+			improved_medium_spaa = 1
+
+			basic_heavy_spaa = 1
+			improved_heavy_spaa = 1
+
+			basic_light_td = 1
+			improved_light_td = 1
+
+			basic_medium_td = 1
+			improved_medium_td = 1
+		}
+	}
+
 
 	if = {
 		limit = {

@@ -44,15 +44,37 @@ war_measures = {
 					is_puppet_of = GER
 				}
 
-				GER = { country_event = romania.cancel.switch.side.2 } #did the operation
-				HUN = { country_event = romania.cancel.switch.side.2 }
-				ITA = { country_event = romania.cancel.switch.side.2 }
+				every_country = {
+					limit = {
+							NOT = {original_tag = ROM}
+							has_war = yes
+						OR = {
+							is_in_faction_with = GER
+							tag = GER
+						}
+					}
+				country_event = romania.cancel.switch.side.2
+				#GER = { country_event = romania.cancel.switch.side.2 } #did the operation
+				#HUN = { country_event = romania.cancel.switch.side.2 }
+				#ITA = { country_event = romania.cancel.switch.side.2 }
+				}
 
 			else = {
+				every_country = {
+					limit = {
+							NOT = {original_tag = ROM}
+							has_war = yes
+						OR = {
+							is_in_faction_with = GER
+							tag = GER
+						}
+					}
+				country_event = romania.cancel.switch.side.1
+				}
 
-				GER = { country_event = romania.cancel.switch.side.1 } #did nothing
-				HUN = { country_event = romania.cancel.switch.side.1 }
-				ITA = { country_event = romania.cancel.switch.side.1 }
+				#GER = { country_event = romania.cancel.switch.side.1 } #did nothing
+				#HUN = { country_event = romania.cancel.switch.side.1 }
+				#ITA = { country_event = romania.cancel.switch.side.1 }
 			}
 		}
 	}
@@ -89,10 +111,20 @@ war_measures = {
 
 
 	complete_effect = {
-			GER = { country_event = romania.switch.side.2 } #choice for germany
-			HUN = { country_event = romania.switch.side.1 }
-			ITA = { country_event = romania.switch.side.1 }
+
+		GER = { country_event = romania.switch.side.2 } #choice for germany
+		every_country = {
+			limit = {
+					has_war = yes
+					NOT = {original_tag = ROM}
+				OR = {
+					is_in_faction_with = GER
+					tag = GER
+				}
+			}
+			country_event = romania.switch.side.1
 		}
+	}
 
 		remove_effect = {
 

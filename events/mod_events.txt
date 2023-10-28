@@ -848,6 +848,12 @@ country_event = {
 		
 
 	hidden_effect = {
+
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+			
 		add_equipment_to_stockpile = {
 			type = medium_tank_chassis_2
 			amount = 68 #40
@@ -896,7 +902,35 @@ country_event = {
 			variant_name = "BT-7"
 			producer = SOV
 		}
+		
+	else = {
+
+		add_equipment_to_stockpile = {
+			type = light_tank_equipment_1
+			amount = 50
+			producer = SOV
+		}
+		
+		add_equipment_to_stockpile = {
+			type = medium_tank_destroyer_equipment_2
+			amount = 37
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_equipment_1
+			amount = 110
+			producer = SOV
+		}
+
+		add_equipment_to_stockpile = {
+			type = heavy_tank_equipment_1
+			amount = 32
+			producer = SOV
+		}
 	}
+	}
+}
 	
 	custom_effect_tooltip = german_ryti_ribbentrop_tanks_tt
 

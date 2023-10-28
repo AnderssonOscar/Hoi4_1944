@@ -604,12 +604,12 @@ if = {
 	oob = "GRE_1944"
 
 	#add_political_power = 1000
-	add_command_power = 100
+	#add_command_power = 100
 
-	set_convoys = 6
+	#set_convoys = 6
 	set_stability = 0.54
-	set_war_support = 0.01
-	add_manpower = 20000
+	set_war_support = -0.18
+	add_manpower = 58000
 	
 	if = {
 		limit = {
@@ -865,6 +865,6 @@ if = {
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 26
+        amount = 7
     }
 }

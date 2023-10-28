@@ -67,7 +67,6 @@ on_actions = {
 				date > 1943.12.31
 				
 			}
-			
 				country_event = { id = finland.3 hours = 24 }
 
 				add_tech_bonus = {
@@ -77,6 +76,10 @@ on_actions = {
 					category = support_tech
 				}
 
+		if = {
+			limit = {
+				has_dlc = "No Step Back" 
+			}
 				add_tech_bonus = {
 					name = SWE_armor_boost
 					bonus = 1.0
@@ -87,6 +90,7 @@ on_actions = {
 					technology = mechanised_infantry
 				}
 			}
+		}
 	}
 
 		ITA = {
@@ -251,19 +255,10 @@ GER = {
 ###########################################################################################################################################################
 ###########################################################################################################################################################
 ###########################################################################################################################################################
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-					ROM = { give_resource_rights = { receiver = GER state = 46 } }  #remove_resource_rights
-			}
 
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-					ITA = { remove_resource_rights = 44 } 
-			}
+			ROM = { give_resource_rights = { receiver = GER state = 46 } }  #remove_resource_rights
+			ITA = { remove_resource_rights = 44 } 
+			
 
 			85 = {
 				if = {
@@ -273,6 +268,10 @@ GER = {
 					remove_dynamic_modifier = { modifier = international_city }
 				}
 			}
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
 
 				#TODO add mines for japan & norway
 				JAP = { add_mines = { region = 90 amount = 500 } }
@@ -287,7 +286,8 @@ GER = {
 				FIN = { add_mines = { region = 9 amount = 380 } }
 
 				ITA = { add_mines = { region = 168 amount = 850 } }
-				GER = { add_mines = { region = 202 amount = 750 } }
+				GER = { add_mines = { region = 202 amount = 300 } }
+			}
 	
 
 		}

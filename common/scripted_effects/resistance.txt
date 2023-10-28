@@ -7,10 +7,10 @@ Resistance_start_effects = {
 		}
 
 
-		if = {
-			limit = {
-				has_dlc = "La Resistance"
-			}
+		#if = {
+		#	limit = {
+		#		has_dlc = "La Resistance"
+		#	}
 
 
 
@@ -131,5 +131,5 @@ Resistance_start_effects = {
 		}
 
 
-	}
+	#}
 }

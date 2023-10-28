@@ -1,0 +1,4051 @@
+﻿##### Division Templates #####
+
+division_template = {
+	name = "Infantry-Division"			# Rifle Division
+	division_names_group = SOV_INF_01
+
+	regiments = {
+
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		#infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		#infantry = { x = 1 y = 3 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		#infantry = { x = 2 y = 3 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+		#infantry = { x = 3 y = 3 }
+		artillery_brigade = { x = 4 y = 0 }
+		anti_air_brigade = { x = 4 y = 1 }
+
+		#infantry = { x = 4 y = 0 }
+		#infantry = { x = 4 y = 1 }
+		#infantry = { x = 4 y = 2 }
+		#infantry = { x = 4 y = 3 }		
+	}
+	support = {
+		#recon = { x = 0 y = 0 } 		
+		engineer = { x = 0 y = 0 } 		
+		anti_tank = { x = 0 y = 1 } 
+		logistics_company = { x = 0 y = 2 }
+		artillery = { x = 0 y = 3 }
+		#rocket_artillery = { x = 0 y = 4 }
+	}
+		priority = 1
+}
+
+
+division_template = {
+	name = "Guards-Division"	
+	division_names_group = SOV_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		#infantry = { x = 0 y = 4 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+		#infantry = { x = 1 y = 4 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+		#infantry = { x = 2 y = 4 }
+
+		rocket_artillery_brigade = { x = 3 y = 0 }
+		anti_air_brigade = { x = 3 y = 1 }
+		anti_air_brigade = { x = 3 y = 2 }
+		anti_tank_brigade = { x = 3 y = 3 }
+		#anti_tank_brigade = { x = 3 y = 4 }
+
+		motorized_rocket_brigade  = { x = 4 y = 0 }
+		motorized_rocket_brigade  = { x = 4 y = 1 }	
+		motorized_rocket_brigade  = { x = 4 y = 2 }
+		motorized_rocket_brigade  = { x = 4 y = 3 }	
+	}
+	support = {
+		recon = { x = 0 y = 0 } 		
+		engineer = { x = 0 y = 1 } 		
+		signal_company = { x = 0 y = 2 } 
+		logistics_company = { x = 0 y = 3 }
+		#field_hospital = { x = 0 y = 4 }
+	}
+		priority = 2
+}
+
+division_template = {
+	name = "NKVD Pogranichnaya Diviziya"		# NKVD Border Guard Division
+	division_names_group = SOV_GAR_01
+												# Note: garrison units (all have oldest equipment, low experience)
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+	}
+	support = 	{
+	#	military_police = { x = 0 y = 0 }
+	}
+	priority = 0
+}
+
+
+division_template = {
+	name = "Mechanized Division" 	# Mechanized Division
+	division_names_group = SOV_MEC_01
+
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+	   	mechanized = { x = 0 y = 1 }
+		mechanized = { x = 0 y = 2 }
+		mechanized = { x = 0 y = 3 }
+		mechanized = { x = 1 y = 0 }
+		mechanized = { x = 1 y = 1 }
+		mechanized = { x = 1 y = 2 }
+	    motorized = { x = 1 y = 3 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		#mechanized = { x = 2 y = 2 }
+		#mechanized = { x = 2 y = 3 }
+		motorized_rocket_brigade = { x = 3 y = 0 }
+		motorized_rocket_brigade = { x = 3 y = 1 }
+		motorized_rocket_brigade = { x = 3 y = 2 }
+		motorized_rocket_brigade = { x = 3 y = 3 }
+		medium_tank_destroyer_brigade = { x = 4 y = 0 }
+		medium_armor = { x = 4 y = 1 }
+		medium_armor = { x = 4 y = 2 }
+	}
+	support = {
+       # recon = { x = 0 y = 0 }
+	 	engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		anti_tank = { x = 0 y = 3 }
+	}
+}
+
+division_template = {
+	name = "Motostrelkovaya Diviziya"		# Motor Rifle Division
+	division_names_group = SOV_MOT_01
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }		# BT-7 tanks
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		light_armor = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+		motorized_rocket_brigade = { x = 3 y = 0 }
+
+
+	}
+	support = {
+		recon = { x = 0 y = 0 } 		
+		engineer = { x = 0 y = 1 } 		
+	}
+}
+division_template = {
+	name = "Kavaleriyskaya Diviziya" 			# Cavalry Division
+	division_names_group = SOV_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 12 y = 2 }
+		cavalry = { x = 2 y = 3 }
+	}
+	support = {
+		recon = { x = 0 y = 0 } 				# Recon bn had 16x L tanks, 45 ACs
+	}
+}
+
+division_template = {
+	name = "Vozdushno-Desantnaya"				# Represents a pair of independent airborne brigades
+	division_names_group = SOV_PAR_01
+	regiments = {
+		paratrooper = { x = 0 y = 0 }
+		paratrooper = { x = 0 y = 1 }
+		paratrooper = { x = 0 y = 2 }
+		paratrooper = { x = 1 y = 0 }
+		paratrooper = { x = 1 y = 1 }
+		paratrooper = { x = 1 y = 2 }
+		paratrooper = { x = 2 y = 0 }
+		paratrooper = { x = 2 y = 1 }
+		paratrooper = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Gornostrelkovaya Diviziya"		# Mountain Rifle Division
+	division_names_group = SOV_MNT_01
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }	
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }	
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+		mountaineers = { x = 2 y = 0 }	
+		mountaineers = { x = 2 y = 1 }	
+		mountaineers = { x = 2 y = 2 }	
+		mountaineers = { x = 3 y = 0 }	
+		mountaineers = { x = 3 y = 1 }	
+		mountaineers = { x = 3 y = 2 }	
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 } 	
+	}
+}
+
+
+division_template = {
+	name = "Legko-Tankovaya Diviziya"
+	division_names_group = SOV_ARM_04
+	regiments = {
+		heavy_armor = { x = 0 y = 0 }		# T-35/KV-1 heavy tanks
+		medium_armor = { x = 0 y = 1 }		# T-34 tanks
+		medium_armor = { x = 0 y = 2 }		# T-34 tanks
+		heavy_armor = { x = 1 y = 0 }		# T-35/KV-1 heavy tanks
+		medium_armor = { x = 1 y = 1 }		# T-34 tanks
+		medium_armor = { x = 1 y = 2 }		# T-34 tanks
+		motorized = { x = 2 y = 0 }	
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+		motorized = { x = 2 y = 3 }
+		motorized = { x = 2 y = 4 }
+		motorized_rocket_brigade = { x = 3 y = 0 }
+		motorized_rocket_brigade = { x = 3 y = 1 }
+	    mot_anti_air_brigade = { x = 3 y = 2 }
+		mechanized = { x = 3 y = 3 }
+		mechanized = { x = 3 y = 4 }
+	   # mot_anti_air_brigade = { x = 3 y = 3 }
+	}
+	support = {
+		light_tank_recon = { x = 0 y = 0 }		# BT-7 tanks
+		engineer = { x = 0 y = 1 }
+		#field_hospital = { x = 0 y = 2 }
+		#anti_tank = { x = 0 y = 3 }
+		artillery = { x = 0 y = 2 }
+		#signal_company  = { x = 0 y = 4 }
+	}
+	priority = 2
+}
+
+
+
+
+units = {
+
+
+	#North Finland
+	division= {	
+
+				location = 11183
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.04
+				start_equipment_factor = 0.81
+	}	
+
+	division= {	
+
+				location = 11183
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11183
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 142
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.81
+	}
+
+	division= {	
+
+				location = 9203
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.07
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 74
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.11
+				start_equipment_factor = 0.74
+	}
+
+	division= {	
+
+				location = 15
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.11
+				start_equipment_factor = 0.74
+	}
+
+	division= {	
+
+				location = 9123
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+
+
+
+
+	division= {	
+
+				location = 11181
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 9162
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 176
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 36
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 134
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 170
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.81
+	}
+
+	division= {	
+
+				location = 6021
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.89
+	}
+
+	division= {	
+
+				location = 3078
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.74
+	}
+
+	division= {	
+
+				location = 11212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11094
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+
+
+###########################################################################################################################
+###########################################################################################################################
+###########################################################################################################################
+
+	#South Finland
+
+	division= {	
+
+				location = 11059
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 11059
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 9190
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 9190
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 9082
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 9082
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 11183
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.04
+				start_equipment_factor = 0.81
+	}	
+
+	division= {	
+
+				location = 11183
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11183
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 142
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.81
+	}
+
+	division= {	
+
+				location = 9203
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.07
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 74
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.11
+				start_equipment_factor = 0.74
+	}
+
+	division= {	
+
+				location = 15
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.11
+				start_equipment_factor = 0.74
+	}
+
+	division= {	
+
+				location = 9123
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+
+
+
+
+	division= {	
+
+				location = 11181
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 9162
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 176
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 36
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 134
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 170
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.81
+	}
+
+	division= {	
+
+				location = 6021
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.89
+	}
+
+	division= {	
+
+				location = 3078
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.74
+	}
+
+	division= {	
+
+				location = 11212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11094
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+	division= {	
+
+				location = 11212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.84
+	}
+
+
+
+###########################################################################################################################
+###########################################################################################################################
+###########################################################################################################################
+
+	#South Finland
+
+	division= {	
+
+				location = 11059
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 11059
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 9190
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 9190
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 9082
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 9082
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+
+
+
+###########################################################################################################################
+###########################################################################################################################
+###########################################################################################################################
+
+	#South Finland & Leningrad
+
+	division= {	
+
+				location = 3151
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.31
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 3151
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 3151
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 3151
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 149
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 149
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.3
+				start_equipment_factor = 0.99
+	}
+
+	division= {	
+
+				location = 149
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.3
+				start_equipment_factor = 0.99
+	}
+
+	division= {	
+
+				location = 149
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.3
+				start_equipment_factor = 0.99
+	}
+
+
+
+###########################################################################################################################
+###########################################################################################################################
+###########################################################################################################################
+				#Turkey
+	division= {	
+
+				location = 3653
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 12441
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 12320
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+		#stalingrad
+
+	division= {	
+
+				location = 3529
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 498
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	#Rostov
+	division= {	
+
+				location = 9417
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+		
+			
+###########################################################################################################################
+###########################################################################################################################
+###########################################################################################################################
+
+
+	#Moscow
+	division= {	
+
+				location = 6380
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.35
+				start_equipment_factor = 0.98
+			}	
+
+	#North - leningrad
+	division= {	
+
+				location = 11068
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.35
+				start_equipment_factor = 0.98
+			}	
+
+	division= {	
+
+				location = 9197
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.35
+				start_equipment_factor = 0.98
+			}	
+
+	division= {	
+
+				location = 3151
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.29
+				start_equipment_factor = 0.98
+			}	
+
+	division= {	
+
+				location = 71
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.45
+				start_equipment_factor = 0.98
+			}	
+
+	division= {	
+
+				location = 6154
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.41
+				start_equipment_factor = 0.98
+			}	
+
+	division= {	
+
+				location = 70
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.93
+			}	
+
+
+
+
+
+	#Misc
+	division= {	
+
+				location = 11234
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.37
+				start_equipment_factor = 0.93
+			}	
+
+	division= {	
+
+				location = 11220
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.99
+			}	
+
+	division= {	
+
+				location = 9288
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.42
+				start_equipment_factor = 1
+			}	
+
+	division= {	
+
+				location = 320
+				division_template = "Guards-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.42
+				start_equipment_factor = 0.99
+			}	
+
+
+
+###########################################################################################################################
+##################################################		WEST FRONT		###################################################
+###########################################################################################################################
+
+
+	division= {	
+
+				location = 11068
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11068
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9197
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9197
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 70
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 70
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6095
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6095
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.84
+	}	
+			
+	division= {	
+
+				location = 6035
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6035
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.91
+	}	
+	
+	division= {	
+
+				location = 71
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 71
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6154
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.16
+				start_equipment_factor = 0.91
+	}	
+	
+	division= {	
+
+				location = 6154
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 9234
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9234
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.42
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 320
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 320
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.52
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6225
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 6225
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 9242
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9242
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3344
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 3344
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.84
+	}	
+			
+	division= {	
+
+				location = 9287
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9287
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11234
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 11234
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 387
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 387
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 323
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 323
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6293
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6293
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11353
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11353
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 11220
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11220
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6354
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6354
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 11271
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11271
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6233
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6233
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6344
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6344
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6319
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.16
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6319
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6380
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 9249
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.18
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9249
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6380
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.99
+	}	
+	
+	division= {	
+
+				location = 3507
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 3507
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11453
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11453
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6380
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9568
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.18
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 9568
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 3543
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3543
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 550
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.42
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 550
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11490
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11490
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6497
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6497
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9465
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9465
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3494
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3494
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11454
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11454
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 488
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 488
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 3468
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3468
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 6478
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6478
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 9433
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9433
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 11437
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11437
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 11422
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11422
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 588
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 588
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 3573
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3573
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 737
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 737
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.74
+	}
+
+	division= {	
+
+				location = 721
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 721
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.94
+	}
+
+
+	#Guard Crimea
+	division= {	
+
+				location = 568
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 568
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.85
+	}
+
+	
+			
+		
+###########################################################################################################################
+###########################################################################################################################
+###########################################################################################################################
+	
+	division= {	
+
+				location = 9680
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.91
+	}
+
+	division= {	
+
+				location = 9680
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.91
+	}
+
+
+
+###########################################################################################################################
+###########################################################################################################################
+###########################################################################################################################
+										#TANKS
+###########################################################################################################################
+###########################################################################################################################
+###########################################################################################################################
+				#force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = SOV version_name = "" } }
+				#force_equipment_variants = { medium_tank_artillery_chassis_2 = { owner = SOV version_name = "" } }
+				#force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+
+
+
+	division= {	
+
+				location = 550
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+
+
+				
+				
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.77
+				start_equipment_factor = 0.89
+	}
+
+
+
+		division= {	
+
+				location = 11490
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				
+				
+				
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.97
+	}
+
+	division= {	
+
+				location = 6497
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				
+				
+				
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.31
+				start_equipment_factor = 1
+	}
+
+	
+	division= {	
+
+				location = 6497
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+
+				
+				
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.33
+				start_equipment_factor = 1
+	}
+
+
+	division= {	
+
+				location = 9465
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				
+				
+				
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.61
+				start_equipment_factor = 0.97
+	}
+
+	division= {	
+
+				location = 488
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				
+				
+				
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.49
+				start_equipment_factor = 0.97
+	}
+
+	division= {	
+
+				location = 9433
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				
+				
+				
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.31
+				start_equipment_factor = 0.97
+	}
+
+	division= {	
+
+				location = 418
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+
+				
+				
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.59
+				start_equipment_factor = 1
+	}
+
+
+	division= {	
+
+				location = 418
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+
+				
+				
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.66
+				start_equipment_factor = 1
+	}
+
+
+
+	division= {	
+
+				location = 6122
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+
+				
+				
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.57
+				start_equipment_factor = 1
+	}
+
+
+	
+	division= {	
+
+				location = 9197
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+
+				
+				
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.53
+				start_equipment_factor = 1
+	}
+
+
+	
+	division= {	
+
+				location = 3151
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+
+				
+				
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.33
+				start_equipment_factor = 1
+	}
+
+	
+	division= {	
+
+				location = 6035
+				division_template = "Legko-Tankovaya Diviziya"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+
+				
+				
+				force_equipment_variants = { mechanized_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_air_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.72
+				start_equipment_factor = 1
+	}
+
+
+
+
+
+
+
+
+
+
+
+	division= {	
+
+				location = 11349
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.97
+	}
+
+	division= {	
+
+				location = 525
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.82
+	}
+
+	division= {	
+
+				location = 3734
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 1
+	}
+
+	division= {	
+
+				location = 3140
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				start_experience_factor = 0.29
+				start_equipment_factor = 0.91
+	}
+
+	division= {	
+
+				location = 306
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 1
+	}
+
+	division= {	
+
+				location = 11490
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				start_experience_factor = 0.20
+				start_equipment_factor = 0.92
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	#Mech copy
+
+		division= {	
+
+				location = 11349
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.97
+	}
+
+	division= {	
+
+				location = 525
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.82
+	}
+
+	division= {	
+
+				location = 3734
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 1
+	}
+
+	division= {	
+
+				location = 3140
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				start_experience_factor = 0.29
+				start_equipment_factor = 0.91
+	}
+
+	division= {	
+
+				location = 306
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 1
+	}
+
+	division= {	
+
+				location = 11490
+				division_template = "Mechanized Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { mechanized_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_3 = { owner = "SOV" } }
+				start_experience_factor = 0.20
+				start_equipment_factor = 0.92
+	}
+
+
+###########################################################################################################################
+##################################################		JAPAN BORDER	###########################################
+###########################################################################################################################
+
+
+
+
+
+	division= {	
+
+				location = 11879
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.09
+				start_equipment_factor = 0.81
+	}
+
+
+
+	division= {	
+
+				location = 6684
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.05
+				start_equipment_factor = 0.81
+	}
+
+	
+	division= {	
+
+				location = 12189
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.1
+				start_equipment_factor = 0.91
+	}
+
+	
+	division= {	
+
+				location = 10722
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.05
+				start_equipment_factor = 0.71
+	}
+
+
+	
+	division= {	
+
+				location = 7763
+				division_template = "NKVD Pogranichnaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 4725
+				division_template = "NKVD Pogranichnaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 4725
+				division_template = "NKVD Pogranichnaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 957
+				division_template = "NKVD Pogranichnaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 6686
+				division_template = "NKVD Pogranichnaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+
+
+
+
+
+
+
+
+	division= {	
+
+				location = 10696
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 4705
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 4719
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 12543
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 4725
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 12192
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 9604
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 6684
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 3787
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+
+
+
+
+
+
+
+
+
+	division= {	
+
+				location = 4824
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 10696
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 4333
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+
+
+	division= {	
+
+				location = 12530
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 1684
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 7844
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 12530
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 1684
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 7844
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 12530
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 1684
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+	division= {	
+
+				location = 7844
+				division_template = "Kavaleriyskaya Diviziya"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.01
+				start_equipment_factor = 0.93
+	}
+
+
+
+
+###########################################################################################################################
+##################################################		KURSK	###########################################
+###########################################################################################################################
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 3580
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 3580
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 3580
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 3580
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.33
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 11526
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 11526
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 6304
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 6304
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 457
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+division= {	
+	division_name = { is_name_ordered = no	name_order = 0 }
+			location = 457
+			division_template = "Infantry-Division"
+			force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+			force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+			start_experience_factor = 0.21
+			start_equipment_factor = 0.94
+}
+
+
+
+###########################################################################################################################
+##################################################		WEST FRONT duplicate	###########################################
+###########################################################################################################################
+
+
+
+	
+	division= {	
+
+				location = 11068
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11068
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9197
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9197
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 70
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 70
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6095
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6095
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.84
+	}	
+			
+	division= {	
+
+				location = 6035
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6035
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.91
+	}	
+	
+	division= {	
+
+				location = 71
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 71
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6154
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.16
+				start_equipment_factor = 0.91
+	}	
+	
+	division= {	
+
+				location = 6154
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9212
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 9234
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9234
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.42
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 320
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 320
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.52
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6225
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 6225
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 9242
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9242
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3344
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 3344
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.84
+	}	
+			
+	division= {	
+
+				location = 9287
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9287
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11234
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 11234
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 387
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 387
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 323
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 323
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6293
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6293
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11353
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11353
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 11220
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11220
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6354
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6354
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 11271
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11271
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6380
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6233
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6233
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6344
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_3 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6344
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 6319
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.16
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6319
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6380
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 9249
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.18
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 9249
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6380
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.99
+	}	
+	
+	division= {	
+
+				location = 3507
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 3507
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11453
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 11453
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.22
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 6380
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9568
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.18
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 9568
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+			
+	division= {	
+
+				location = 3543
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3543
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 550
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.42
+				start_equipment_factor = 0.94
+	}	
+	
+	division= {	
+
+				location = 550
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11490
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.32
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11490
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6497
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6497
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9465
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9465
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3494
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3494
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11454
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11454
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 488
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 488
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 3468
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3468
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 6478
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 6478
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 9433
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 9433
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 11437
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11437
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 11422
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 11422
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 588
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 588
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+	division= {	
+
+				location = 3573
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 3573
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 737
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}	
+
+	division= {	
+
+				location = 737
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.74
+	}
+
+	division= {	
+
+				location = 721
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 721
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.19
+				start_equipment_factor = 0.94
+	}
+
+
+	#Guard Crimea
+	division= {	
+
+				location = 568
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.94
+	}
+
+	division= {	
+
+				location = 568
+				division_template = "Infantry-Division"
+				force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+				force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+				start_experience_factor = 0.12
+				start_equipment_factor = 0.85
+	}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_3
+			creator = "SOV"
+		}
+		requested_factories = 15
+		progress = 0.1
+		efficiency = 84
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "SOV"
+		}
+		requested_factories = 8
+		progress = 0.1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "SOV" 
+		}
+		requested_factories = 10
+		progress = 0.3
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_3
+			creator = "SOV" 
+		}
+		requested_factories = 7
+		progress = 0.3
+		efficiency = 75
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = anti_tank_equipment_2
+			creator = "SOV" 
+		}
+		requested_factories = 9
+		progress = 0.3
+		efficiency = 65
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = anti_air_equipment_2
+			creator = "SOV" 
+		}
+		requested_factories = 9
+		progress = 0.3
+		efficiency = 75
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = mechanized_equipment_2
+			creator = "SOV" 
+		}
+		requested_factories = 8
+		progress = 0.4
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = motorized_equipment_1
+			creator = "SOV" 
+		}
+		requested_factories = 7
+		progress = 0.2
+		efficiency = 100
+	}
+
+
+	add_equipment_production = {
+		equipment = {
+			type = train_equipment_2
+			creator = "SOV" 
+		}
+		requested_factories = 2
+		progress = 0.2
+		efficiency = 100
+	}
+
+
+
+}
+
+#####################

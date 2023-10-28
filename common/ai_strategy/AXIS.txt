@@ -96,6 +96,10 @@ axis_dont_invade_when_defensive = {
 				tag = FIN
 				tag = ITA
 				tag = GER
+				tag = GRE
+				tag = CRO
+				tag = ALB
+				tag = HUN
 			}
 	}
 

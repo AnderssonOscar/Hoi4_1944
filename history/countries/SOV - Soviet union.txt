@@ -1834,7 +1834,13 @@ if = {
 	add_opinion_modifier = { target = JAP modifier = large_decrease	}
 	add_opinion_modifier = { target = JAP modifier = large_decrease	}
 
-	oob = "SOV_1944_nsb"
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "SOV_1944_nsb"
+	else = {
+		set_oob = "SOV_1944"
+	}
+}
 
 	if = {
 		limit = { has_dlc = "Man the Guns" }
@@ -2285,6 +2291,50 @@ if = {
 			wartime_train = 1
 			armored_train = 1
 			railway_gun = 1
+		}
+
+		else = {
+			set_technology = {
+				gwtank = 1
+
+				basic_light_tank = 1
+				improved_light_tank = 1
+
+				basic_medium_tank = 1
+				improved_medium_tank = 1
+				advanced_medium_tank = 1
+
+				basic_heavy_tank = 1
+				improved_heavy_tank = 1
+				advanced_heavy_tank = 1
+
+				basic_light_art = 1
+				improved_light_art = 1
+
+				basic_medium_art = 1
+				improved_medium_art = 1
+
+				basic_heavy_art = 1
+				improved_heavy_art = 1
+
+				basic_light_spaa = 1
+				improved_light_spaa = 1
+
+				basic_medium_spaa = 1
+				improved_medium_spaa = 1
+
+				basic_heavy_spaa = 1
+				improved_heavy_spaa = 1
+
+				basic_light_td = 1
+				improved_light_td = 1
+
+				basic_medium_td = 1
+				improved_medium_td = 1
+
+				basic_heavy_td = 1
+				improved_heavy_td = 1
+			}	
 		}
 	}
 

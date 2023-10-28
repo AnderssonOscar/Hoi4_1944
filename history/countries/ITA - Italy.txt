@@ -641,7 +641,7 @@ if = {
 			improved_light_tank_chassis = 1
 	
 		}
-		set_oob = "ITA_1944_nsb"
+		#set_oob = "ITA_1944_nsb"
 	}
 	if = {
 		limit = { not = { has_dlc = "Man the Guns" } }
@@ -1774,6 +1774,22 @@ if = {
 			engine_tech_1 = 1
 			engine_tech_2 = 1
 		}
+		else = {
+			set_technology = {
+				gwtank = 1
+
+				basic_light_tank = 1
+				improved_light_tank = 1
+
+				basic_medium_tank = 1
+				improved_medium_tank = 1
+				#advanced_medium_tank = 1
+
+				basic_heavy_tank = 1
+				improved_heavy_tank = 1
+				#advanced_heavy_tank = 1
+			}
+		}
 	}
 
 
@@ -2162,8 +2178,16 @@ if = {
 			set_air_oob = "ITA_1944_air_bba"
 		else = {
 			set_air_oob = "ITA_1944_air_legacy"
+		}
 	}
-}
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "ITA_1944_nsb"
+	else = {
+		set_oob = "ITA_1944_nsb"
+		}
+	}
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_2

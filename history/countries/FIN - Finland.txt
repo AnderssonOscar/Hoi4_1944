@@ -865,7 +865,13 @@ if = {
 
 	#promote_character = { character = FIN_carl_mannerheim ideology = neutrality }
 
-	oob = "FIN_1944"
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "FIN_1944"
+	else = {
+		set_oob = "FIN_1944"
+		}
+	}
 
 	add_political_power = 2589
 	add_command_power = 200
@@ -1010,7 +1016,31 @@ if = {
 				armor_tech_2 = 1
 
 				engine_tech_1 = 1
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
 
+				basic_light_tank = 1
+				#improved_light_tank = 1
+
+				basic_medium_tank = 1
+				#improved_medium_tank = 1
+				#advanced_medium_tank = 1
+
+				basic_heavy_tank = 1
+				#improved_heavy_tank = 1
+				#advanced_heavy_tank = 1
+
+				basic_light_td = 1
+				improved_light_td = 1
+
+				basic_medium_td = 1
+				improved_medium_td = 1
+
+				basic_heavy_td = 1
+				improved_heavy_td = 1
+			}
 		}
 	}
 

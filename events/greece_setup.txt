@@ -119,6 +119,10 @@ country_event = {
 									target = GRE
 								}
 
+				#if = {
+					#limit = {
+					#	has_dlc = "La Resistance"
+					#}
 						every_state = {
 							limit = {
 								is_core_of = ROOT
@@ -136,8 +140,15 @@ country_event = {
 
 							set_resistance = 34
 							set_compliance = 35
-							add_resistance_target = 31
+							add_resistance_target = 34
+
+							#add_resistance_target = { 
+							#	amount = 34
+							#	occupied = ROOT
+							#	days = 730
+							#}
 						}
+					}
 
 							random_country = {
 								limit= {
@@ -152,7 +163,7 @@ country_event = {
 								}
 							}
 
-							}
+							#}
 						}
 					}
 				}

@@ -512,7 +512,7 @@ if = {
 		basic_train = 1
 	}
 
-		if = {
+	if = {
 		limit = {
 			
 			has_dlc = "No Step Back"
@@ -536,9 +536,22 @@ if = {
 			engine_tech_2 = 1
 
 		}
+		else = {
+			set_technology = {
+				gwtank = 1
 
+				basic_light_tank = 1
+				improved_light_tank = 1
 
+				basic_medium_tank = 1
+				#improved_medium_tank = 1
+				#advanced_medium_tank = 1
 
+				basic_heavy_tank = 1
+				improved_heavy_tank = 1
+				#advanced_heavy_tank = 1
+			}
+		}
 	}
 
 

@@ -1482,11 +1482,12 @@ if = {
 1943.12.30 = {
 
 	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "JAP_1944_nsb"
+	else = {
 		set_oob = "JAP_1944_nsb"
 	}
+}
 
 	if = {
 		limit = {
@@ -1908,6 +1909,43 @@ if = {
 
 				engine_tech_1 = 1
 			}
+			else = {
+				set_technology = {
+					gwtank = 1
+	
+					basic_light_tank = 1
+					improved_light_tank = 1
+	
+					basic_medium_tank = 1
+					improved_medium_tank = 1
+					#advanced_medium_tank = 1
+	
+					basic_heavy_tank = 1
+					improved_heavy_tank = 1
+					#advanced_heavy_tank = 1
+
+					basic_light_art = 1
+					improved_light_art = 1
+	
+					basic_medium_art = 1
+					improved_medium_art = 1
+	
+					basic_light_spaa = 1
+					improved_light_spaa = 1
+	
+					basic_medium_spaa = 1
+					improved_medium_spaa = 1
+	
+					basic_light_td = 1
+					improved_light_td = 1
+	
+					basic_medium_td = 1
+					improved_medium_td = 1
+	
+					basic_heavy_td = 1
+					improved_heavy_td = 1
+				}
+			}
 		}
 		
 			if = {
@@ -2208,14 +2246,9 @@ if = {
 			complete_national_focus = JAP_national_defense_state
 
 
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-			add_equipment_to_stockpile = { 
-				type = train_equipment_1
-				amount = 45
-			}
+		add_equipment_to_stockpile = { 
+			type = train_equipment_1
+			amount = 45
 		}
 
 		add_equipment_to_stockpile = {
