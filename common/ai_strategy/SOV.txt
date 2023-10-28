@@ -2458,9 +2458,9 @@ SOV_take_romania = {
 		}
 
 		AND = {
-			has_full_control_of_state = 197
-			has_full_control_of_state = 203
-			has_full_control_of_state = 202
+			has_full_control_of_state = 197 #mykolaiv
+			has_full_control_of_state = 203 #cherkasy
+			has_full_control_of_state = 202 #kiev
 		}
 		#date > 1944.8.1 #1944.8.14
 	}
@@ -2479,11 +2479,61 @@ SOV_take_romania = {
 	ai_strategy = {
 		type = front_armor_score
 		id = ROM
-		value = 70
+		value = 200
 	}
 }
 
 
+SOV_dont_hurt_hungary_yet = {
+	allowed = {
+		tag = SOV
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = HUN
+		HUN = { is_in_faction_with = GER }
+		date > 1944.1.1
+		date < 1944.12.1
+
+		OR = {
+			ROM = { surrender_progress < 0.18 }
+			ROM = { has_capitulated = no }
+		}
+
+	}
+	abort_when_not_enabled = yes
+
+
+	ai_strategy = {
+		type = front_armor_score
+		id = HUN
+		value = -1000
+	}
+}
+
+SOV_take_hungary = {
+	allowed = { original_tag = SOV }
+	enable = {
+		has_war_with = GER
+		has_war_with = HUN
+
+		OR = {
+			ROM = { has_capitulated = yes }
+			ROM = { surrender_progress > 0.35 }
+			date > 1944.12.1
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = HUN
+		value = 10
+	}
+
+}
 
 SOV_dont_hurt_finland_yet = {
 	allowed = {

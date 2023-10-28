@@ -148,7 +148,7 @@ german.ryti.ribbentrop.1.t:0 "Ryti–Ribbentrop Agreement"
 german.ryti.ribbentrop.1.d:0 "Finland requests our extended support against the bolsheviks\n\nWe can divert part of our industry for a while to supply the finnish."
 german_ryti_ribbentrop_tanks_tt:0 "§Y~300§ §W units of§ §Y Tanks Of Mixed Type & Quality§ §W is added to the national stockpile.§\n"
 
-FIN_request_german_support:0 "Request German Support"
+FIN_request_german_support:0 "Request German Support" ##76561197997503331 
 FIN_request_german_support_desc:0 "Maybe germany will send us equipment to fight the soviets"
 
 finland.ryti.ribbentrop.1:0 "Ryti–Ribbentrop Agreement"
@@ -268,3 +268,25 @@ GRE_occupation_cost_desc:0 "Payment for the troops stationed in our country"
 
 GRE_recent_famine:0 "Recent Famine"
 GRE_recent_famine_desc:0 "We recently recovered from a famine"
+
+major_offensive:0 "Major Offensive"
+major_offensive_desc:0 "Major Offensive is being contucted"
+
+offensive_exhaustion:0 "Offensive Exhaustion"
+offensive_exhaustion_desc:0 "Exhausted from recently contucting a major offensive"
+
+soviet.offensive.germany.start.1:0 "Soviets are starting a new offensive against §RGermany§"
+soviet.offensive.germany.start.1.t:0 "Soviets are starting a new offensive against §RGermany§"
+soviet.offensive.germany.start.1.d:0 "Today the Soviets launched yet another offensive at directed at the German §Wline§"
+
+soviet.offensive.finland.start.1:0 "Soviets are starting a new offensive against §GFinland§"
+soviet.offensive.finland.start.1.t:0 "Soviets are starting a new offensive against §GFinland§"
+soviet.offensive.finland.start.1.d:0 "Today the Soviets launched yet another offensive at directed at the Finnish §Wline§"
+
+soviet.offensive.romania.start.1:0 "Soviets are starting a new offensive against §BRomania§"
+soviet.offensive.romania.start.1.t:0 "Soviets are starting a new offensive against §BRomania§"
+soviet.offensive.romania.start.1.d:0 "Today the Soviets launched yet another offensive at directed at the Romanian  §Wline§"
+
+soviet.offensive.end.1:0 "Soviet Offensive Slows Down"
+soviet.offensive.end.1.t:0 "Soviet Offensive Slows Down"
+soviet.offensive.end.1.d:0 "The offensive that the Soviets launched a coluple weeks ago is slowing down."

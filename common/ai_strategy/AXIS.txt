@@ -13,6 +13,7 @@ scandy_is_not_for_you = {
 			original_tag = SLO
 			original_tag = SER
 			original_tag = BUL
+			original_tag = GRE
 		}
 
 	}

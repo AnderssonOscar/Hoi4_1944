@@ -870,7 +870,7 @@ Stop_guarding_these_borders = {
 
 
 
-
+##76561197997503331 
 ALLIES_take_germany_first = { #ALLIES_take_japan_after_germany
 	allowed = {
 		OR = {
