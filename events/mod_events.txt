@@ -1239,6 +1239,7 @@ country_event = {
 		tag = GER
 		FIN = { has_government = neutrality }
 		FIN = { has_war_with = SOV }
+		FIN = {	is_ai = yes }
 
 		has_war_with = SOV
 		FIN = { is_in_faction_with = GER }

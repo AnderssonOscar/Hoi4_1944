@@ -47,6 +47,7 @@ political_actions = {
 
 			has_capitulated = no
 			has_war = no
+			is_ai = yes
 
 			OR = {
 				NOT = { is_in_faction_with = GER }
@@ -125,6 +126,7 @@ political_actions = {
 
 		visible = {
 			date > 1944.1.1
+			is_ai = yes
 			has_capitulated = no
 
 			check_variable = { global.POR_start_embargo_with_axis = 1 }

@@ -29,7 +29,7 @@ state={
 
 			buildings = {
 				anti_air_building = 1
-				industrial_complex = 2
+				industrial_complex = 1
 			}
 		}
 	}

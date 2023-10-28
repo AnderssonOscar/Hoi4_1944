@@ -61,7 +61,7 @@ air_wings = {
 	123 = { 														# Plymouth
 		### No. 15 Coastal Group (CO: ) ###
 		nav_bomber_equipment_2 = { owner = "ENG" amount = 100 }		# No. 15 Coastal Group -- Sunderlands
-		ac_bomber_equipment_2 = { owner = "ENG" amount = 250 }	
+		tac_bomber_equipment_2 = { owner = "ENG" amount = 250 }	
 		fighter_equipment_2 = { owner = "ENG" amount = 500 }
 	}
 	121 = { 														# Rosyth

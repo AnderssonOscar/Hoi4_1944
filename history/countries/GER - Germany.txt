@@ -1814,34 +1814,7 @@ if = {
 		}
 	}
 
-	
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
 
-		create_equipment_variant = {
-			name = "Ju 86"
-			type = tac_bomber_equipment_0
-			upgrades = {
-				plane_tac_bomb_upgrade = 5
-				plane_range_upgrade = 5
-				plane_engine_upgrade = 5
-				plane_reliability_upgrade = 5
-			}
-			obsolete = yes
-		}
-		
-		create_equipment_variant = {
-			name = "Do 17"
-			type = tac_bomber_equipment_0
-			upgrades = {
-				plane_tac_bomb_upgrade = 5
-				plane_range_upgrade = 1
-				plane_engine_upgrade = 1
-				plane_reliability_upgrade = 5
-			}
-			obsolete = yes
-		}
-	}
 	if = {
 		limit = {
 			has_dlc = "By Blood Alone"
@@ -2082,6 +2055,41 @@ if = {
 			}
 
 			create_equipment_variant = {
+				name = "Ju 86"
+				type = tac_bomber_equipment_0
+				upgrades = {
+					plane_tac_bomb_upgrade = 5
+					plane_range_upgrade = 5
+					plane_engine_upgrade = 5
+					plane_reliability_upgrade = 5
+				}
+				obsolete = yes
+			}
+			
+			create_equipment_variant = {
+				name = "Do 17"
+				type = tac_bomber_equipment_0
+				upgrades = {
+					plane_tac_bomb_upgrade = 5
+					plane_range_upgrade = 1
+					plane_engine_upgrade = 1
+					plane_reliability_upgrade = 5
+				}
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "He 111"
+				type = tac_bomber_equipment_1
+				upgrades = {
+					plane_tac_bomb_upgrade = 1
+					plane_range_upgrade = 2
+					plane_engine_upgrade = 2
+					plane_reliability_upgrade = 1
+				}
+			}
+
+			create_equipment_variant = {
 				name = "Ju 88"
 				type = tac_bomber_equipment_2
 				upgrades = {
@@ -2089,6 +2097,17 @@ if = {
 					plane_range_upgrade = 2
 					plane_engine_upgrade = 3
 					plane_reliability_upgrade = 5
+				}
+			}
+
+			create_equipment_variant = {
+				name = "He 177"
+				type = strat_bomber_equipment_2
+				upgrades = {
+					plane_tac_bomb_upgrade = 0
+					plane_range_upgrade = 1
+					plane_engine_upgrade = 1
+					plane_reliability_upgrade = 1
 				}
 			}
 
@@ -2111,6 +2130,17 @@ if = {
 					plane_range_upgrade = 1  
 					plane_engine_upgrade = 5
 					plane_reliability_upgrade = 5
+				}
+			}
+
+			create_equipment_variant = {
+				name = "Bf 109 G"
+				type = fighter_equipment_2
+				upgrades = {
+					plane_gun_upgrade = 0
+					plane_range_upgrade = 1  
+					plane_engine_upgrade = 1
+					plane_reliability_upgrade = 3
 				}
 			}
 		

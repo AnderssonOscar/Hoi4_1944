@@ -136,58 +136,6 @@ war_measures = {
 	}
 
 
-
-
-
-
-
-
-	FIN_hold_line = { #hold the line at start of the game
-
-		icon = generic_prepare_civil_war
-
-			allowed = {
-				tag = FIN	
-			}
-
-		available = {
-			has_war_with = SOV
-			date > 1943.12.30
-			date < 1944.1.10
-			is_ai = yes
-		}
-
-		visible = {
-			is_ai = yes
-			has_war_with = SOV
-		}
-
-		fire_only_once = yes
-		days_remove = 60
-		cost = 0
-
-		ai_will_do = {
-			factor = 1000
-			modifier = {
-				factor = 10
-			}
-		}
-
-
-		modifier = {
-			army_defence_factor = +10.0
-			dig_in_speed_factor = +5.0
-			army_speed_factor = +0.5
-		}
-			
-		complete_effect = {
-
-		}
-
-	}
-
-
-
 	FIN_request_german_support = {
 
 		icon = generic_prepare_civil_war

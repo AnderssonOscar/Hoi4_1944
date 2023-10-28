@@ -85,6 +85,7 @@ war_measures = {
 			GER = {has_war_with = SOV}
 			has_war_with = SOV
 			is_puppet = no
+			is_ai = yes
 			#surrender_progress > 0.01
 		}
 

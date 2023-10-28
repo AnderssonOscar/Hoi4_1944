@@ -667,9 +667,7 @@ set_technology = { #VANILLA & DLC
 
 	if = {
 		limit = {
-			
 			has_dlc = "No Step Back"
-			
 		}
 		set_technology = {
 				gwtank_chassis = 1
@@ -687,6 +685,7 @@ set_technology = { #VANILLA & DLC
 
 				engine_tech_1 = 1
 				engine_tech_2 = 1
+		}
 		else = {
 			set_technology = {
 				gwtank = 1

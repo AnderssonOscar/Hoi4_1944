@@ -39,6 +39,7 @@ war_measures = {
 			surrender_progress > 0.01
 			is_puppet = no
 			has_capitulated = no
+			is_ai = yes
 		}
 
 		fire_only_once = yes
