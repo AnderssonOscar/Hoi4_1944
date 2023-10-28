@@ -22,6 +22,8 @@ on_actions = {
 				set_country_flag = FIN_aware_about_motti_tactics_flag
 			}
 
+			JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation
+
 		#add_named_threat = { threat = 60 name = generic.15.t }
 
 	every_country = {

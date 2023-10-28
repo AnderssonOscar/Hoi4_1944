@@ -41,10 +41,10 @@ state={
 		}
 		add_core_of = MAL
 
-				1943.12.1 = {
-			owner = JAP
-			controller = JAP
-		}
+		#1943.12.30 = { #this crashed game for uk - 1944
+		#	owner = JAP
+		#	controller = JAP
+		#}
 	}
 
 	provinces={

@@ -2639,7 +2639,7 @@ if = {
 	complete_national_focus = uk_commonwealth_focus
 
 	complete_national_focus = uk_asia_focus
-	complete_national_focus = singapore_focus
+	unlock_national_focus = singapore_focus
 	complete_national_focus = hongkong_focus
 
 	complete_national_focus = uk_new_zealand_focus
