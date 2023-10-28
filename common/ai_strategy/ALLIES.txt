@@ -1245,11 +1245,14 @@ ENG_disallow_invasion_of_GRE = {#greece
 		has_war_with = GER
 
 	OR = {
-		ROM = { is_puppet = no}
-		#BUL = { has_war_with = SOV }
-
+		ROM = { is_puppet = no }
 		16 = {is_fully_controlled_by = GER} #Paris
-		divisions_in_state = { state = 47 size > 3 }
+
+		any_enemy_country = { #if any axis country has more then 25000, dosent work the other way
+			army_manpower_in_state = { amount > 25000 state = 47 }
+			army_manpower_in_state = { amount > 25000 state = 186 }
+			army_manpower_in_state = { amount > 25000 state = 731 }
+		}
 		}
 	}
 
@@ -1289,12 +1292,24 @@ ENG_enable_invasion_of_GRE = {#greece
 			#date > 1944.9.1
 			GER = { surrender_progress > 0.1 }
 			ROM = { is_puppet = yes}
-		}
+		} 
 
 		NOT = { 16 = {is_fully_controlled_by = GER} } #Paris
-		divisions_in_state = { state = 47 size < 3 }
-		divisions_in_state = { state = 186 size < 2 }
-		divisions_in_state = { state = 731 size < 2 }
+
+		AND = {
+			GER = {
+				army_manpower_in_state = { amount < 25000 state = 47 }
+				army_manpower_in_state = { amount < 25000 state = 186 }
+				army_manpower_in_state = { amount < 20000 state = 731 }
+			}
+
+			GRE = {
+				army_manpower_in_state = { amount < 25000 state = 47 }
+				army_manpower_in_state = { amount < 25000 state = 186 }
+				army_manpower_in_state = { amount < 20000 state = 731 }
+			}
+		}
+
 	}
 
 	abort_when_not_enabled = yes
@@ -1305,11 +1320,11 @@ ENG_enable_invasion_of_GRE = {#greece
 		value = 500
 	}
 
-	ai_strategy = {
-		type = invasion_unit_request
-		strategic_region = 25 #greece
-		value = 250
-	}
+#	ai_strategy = {
+#		type = invasion_unit_request
+#		strategic_region = 25 #greece
+#		value = 250
+#	}
 
 	ai_strategy = {
 		type = invasion_unit_request  

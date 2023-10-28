@@ -3304,7 +3304,7 @@ GER_defend_homeland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
-		value = 22 #was 23
+		value = 21 #was 23
 	}
 
 	ai_strategy = {

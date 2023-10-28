@@ -1,0 +1,64 @@
+
+war_measures = {
+
+	ENG_invade_greece = {
+
+		icon = generic_prepare_civil_war
+
+			allowed = {
+				tag = ENG	
+			}
+
+		available = {
+			has_war_with = GRE
+			has_war_with = GER
+
+			OR = {
+				GER = { surrender_progress > 0.1 }
+				ROM = { is_puppet_of = SOV }
+				BUL = { is_puppet_of = SOV }
+				ROM = { has_capitulated = yes}
+			} 
+
+			GRE = { surrender_progress < 0.1 }
+			NOT = { 16 = {is_fully_controlled_by = GER} } #Paris
+
+			AND = {
+				GER = {
+					army_manpower_in_state = { amount < 25000 state = 47 }
+					army_manpower_in_state = { amount < 25000 state = 186 }
+					army_manpower_in_state = { amount < 20000 state = 731 }
+				}
+
+				GRE = {
+					army_manpower_in_state = { amount < 25000 state = 47 }
+					army_manpower_in_state = { amount < 25000 state = 186 }
+					army_manpower_in_state = { amount < 20000 state = 731 }
+				}
+			}
+		}
+
+
+
+		visible = {
+			date > 1944.1.1
+			#is_ai = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 7
+
+		modifier = {
+			naval_invasion_prep_speed = +2.5
+			naval_invasion_penalty = -0.5
+		}
+
+			ai_will_do = {
+				factor = 250
+			}
+		}
+	}
+
+
