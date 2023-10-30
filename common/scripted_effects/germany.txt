@@ -20,8 +20,8 @@ GER_start_effects = {
 		limit = { 
 			tag = GER
 			is_ai = yes
-			date > 1943.12.31
-			check_variable = { global.var_GER_start_effects = 0 }
+			date > 1943.12.30
+			#check_variable = { global.var_GER_start_effects = 0 }
 		}
 
 		set_variable = { global.var_GER_start_effects = 1 }
@@ -63,22 +63,22 @@ GER_start_effects = {
 
 		add_equipment_to_stockpile = { 
 			type = infantry_equipment_1
-			amount = 15000
+			amount = 35000
 		}
 
 		add_equipment_to_stockpile = { 
 			type = motorized_equipment_1
-			amount = 3900
+			amount = 4900
 		}
 
 		add_equipment_to_stockpile = {
 			type = mechanized_equipment_2
-			amount = 1550
+			amount = 2550
 		}
 
 		add_equipment_to_stockpile = {
 			type = anti_air_equipment_2
-			amount = 1950
+			amount = 2950
 		}
 
 		add_equipment_to_stockpile = { 
@@ -88,7 +88,7 @@ GER_start_effects = {
 
 		add_equipment_to_stockpile = {
 			type = anti_tank_equipment_2
-			amount = 1900
+			amount = 2900
 		}
 
 		add_equipment_to_stockpile = {
@@ -103,13 +103,13 @@ GER_start_effects = {
 
 			add_equipment_to_stockpile = {
 				type = medium_tank_chassis_3
-				amount = 950
+				amount = 1550
 				variant_name = "Panther Ausf. G"
 			}
 
 			add_equipment_to_stockpile = {
 				type = medium_tank_destroyer_chassis_2
-				amount = 465
+				amount = 665
 				variant_name = "Sturmgeschutz III"
 			}
 
@@ -120,7 +120,7 @@ GER_start_effects = {
 
 			add_equipment_to_stockpile = { 
 				type = train_equipment_1
-				amount = 96
+				amount = 196
 			}
 		}
 
@@ -148,6 +148,106 @@ GER_start_effects = {
 
 			create_unit = {
 				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.37 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+				owner = GER
+			}
+
+			create_unit = {
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.31 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_tank_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"GER\" } }  force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
 				owner = GER
 			}
 

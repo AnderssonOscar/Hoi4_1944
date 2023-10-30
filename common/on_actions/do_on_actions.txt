@@ -12,16 +12,23 @@ on_actions = {
 				activate_decision = GER_reichskommissariat_norwegen
 			}
 
-			every_country = {
-				limit = {is_ai = no}
-				country_event = {
-					id = mod.start.1
-				}
+		GER = {
+			country_event = {
+				id = mod.start.1
 			}
+		}
+
+			#every_country = {
+			#	limit = {is_ai = no}
+			#	country_event = {
+			#		id = mod.start.1
+			#	}
+			#}
 			every_country = {
 				set_country_flag = FIN_aware_about_motti_tactics_flag
 			}
 
+			SOV = { 195 = {add_dynamic_modifier = { modifier = SOV_leningrad_defence_modifier scope = SOV } } }
 			JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation
 
 		#add_named_threat = { threat = 60 name = generic.15.t }

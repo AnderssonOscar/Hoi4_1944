@@ -104,7 +104,7 @@ country_event = {
 						hidden_effect = {
 							GRE = {
 
-
+								load_focus_tree = greek_focus_hellenic
 								add_ideas = {
 									medium_war_casualties
 									GRE_occupation_cost

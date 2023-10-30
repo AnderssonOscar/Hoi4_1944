@@ -15,11 +15,11 @@ war_measures = {
 			}
 
 		available = {
-			is_faction_leader = no
 			has_war_with = SOV
 			is_in_faction_with = GER
 			surrender_progress > 0.01
-			date > 1944.8.25
+
+			date > 1944.8.1
 			date < 1946.1.1
 
 			#has_government = fascism
@@ -36,7 +36,6 @@ war_measures = {
 
 		visible = {
 			has_war_with = SOV
-			surrender_progress > 0.01
 			is_puppet = no
 			has_capitulated = no
 			is_ai = yes

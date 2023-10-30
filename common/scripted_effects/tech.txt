@@ -2,7 +2,7 @@ tech_start_effects = {
 	
 	if = {
 		limit = {
-			check_variable = { global.var_tech_start_effects = 0 }
+			#check_variable = { global.var_tech_start_effects = 0 }
 		}
 
 		every_country = {

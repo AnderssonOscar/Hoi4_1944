@@ -1,0 +1,69 @@
+
+political_actions = {
+
+	FRA_move_capital_back = {
+
+		icon = generic_political_discourse
+
+		allowed = {
+			original_tag = FRA	
+		}
+
+		available = {
+			#date > 1944.10.1
+
+			16 = {is_fully_controlled_by = ROOT} #paris
+			15 = {is_fully_controlled_by = ROOT} # cherbourg
+			785 = {is_fully_controlled_by = ROOT} #amiens
+			14 = {is_fully_controlled_by = ROOT} #brest
+			29 = {is_fully_controlled_by = ROOT} #calais
+			24 = {is_fully_controlled_by = ROOT} #orleans
+			30 = {is_fully_controlled_by = ROOT} #nantes
+		}
+
+		visible = {
+			16 = { is_capital = no }
+		}
+
+		fire_only_once = no
+		cost = 0
+		days_re_enable = 60
+		days_remove = 60
+		  
+		remove_effect = {
+			set_capital = {
+				state = 16 
+				remember_old_capital = no
+			}
+
+			add_stability = +0.1
+			add_war_support = +0.1
+			add_political_power = +500
+		}
+
+		remove_trigger = {
+        	OR = {
+				NOT = {
+					16 = {is_fully_controlled_by = ROOT} #paris
+					15 = {is_fully_controlled_by = ROOT} # cherbourg
+					785 = {is_fully_controlled_by = ROOT} #amiens
+					14 = {is_fully_controlled_by = ROOT} #brest
+					29 = {is_fully_controlled_by = ROOT} #calais
+					24 = {is_fully_controlled_by = ROOT} #orleans
+					30 = {is_fully_controlled_by = ROOT} #nantes
+				}
+            }
+        }
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					18 = {is_fully_controlled_by = ROOT} #reims
+					23 = {is_fully_controlled_by = ROOT} #la rochelle
+				}
+			}
+		}
+	}
+
+

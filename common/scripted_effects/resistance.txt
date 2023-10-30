@@ -2,8 +2,7 @@ Resistance_start_effects = {
 	
 	if = {
 		limit = { 
-			#date > 1944.1.2
-			check_variable = { global.var_Resistance_start_effects = 0 }
+			#check_variable = { global.var_Resistance_start_effects = 0 }
 		}
 
 

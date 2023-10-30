@@ -15,8 +15,8 @@ scandy_is_not_for_you = {
 			original_tag = BUL
 			original_tag = GRE
 		}
-
 	}
+
 	enable = {
 		date > 1944.1.1
 		date < 1945.1.1
@@ -29,24 +29,22 @@ scandy_is_not_for_you = {
 	ai_strategy = {
 		type = area_priority
 		id = scandinavia
-		value = -100
+		value = -1000
 	}
 
 	ai_strategy = { 
 		type = front_unit_request
 		country_trigger = { always = yes }
 		area = scandinavia
-		value = -200
+		value = -500
 	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = FIN
-		value = 500
+		value = 1000
 	}
 }
-
-
 
 
 

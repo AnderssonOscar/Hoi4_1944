@@ -438,7 +438,7 @@ country_event = {
 			value = 1
 		}
 		ai_chance = {
-			base = 1
+			base = 2
 			modifier = {
 				factor = 25
 				AND = {
@@ -510,7 +510,7 @@ country_event = {
 	id = romania.switch.side.1
 	title = romania.switch.side.1.t
 	desc = romania.switch.side.1.d
-	#picture = GFX_news_event_001
+	picture = GFX_report_event_romania_parliament
 	
 	is_triggered_only = yes
 	
@@ -528,7 +528,7 @@ country_event = {
 	id = romania.cancel.switch.side.1
 	title = romania.cancel.switch.side.1.t
 	desc = romania.cancel.switch.side.1.d
-	#picture = GFX_news_event_001
+	picture = GFX_report_event_romanian_soldiers
 	
 	is_triggered_only = yes
 	
@@ -547,7 +547,7 @@ country_event = {
 	id = romania.cancel.switch.side.2
 	title = romania.cancel.switch.side.2.t
 	desc = romania.cancel.switch.side.2.d
-	picture = GFX_news_event_polish_tanks
+	picture = GFX_report_event_romania_parliament
 	
 	is_triggered_only = yes
 	
@@ -567,7 +567,7 @@ country_event = {
 	id = finland.switch.side.1
 	title = finland.switch.side.1.t
 	desc = finland.switch.side.1.d
-	#picture = GFX_news_event_001
+	picture = GFX_report_event_soviet_finnish_pact
 	
 	is_triggered_only = yes
 	
@@ -587,7 +587,7 @@ country_event = {
 	id = bulgaria.switch.side.1
 	title = bulgaria.switch.side.1.t
 	desc = bulgaria.switch.side.1.d
-	#picture = GFX_news_event_001
+	picture = GFX_report_event_bul_prince_simeon
 	
 	is_triggered_only = yes
 	
@@ -1193,14 +1193,17 @@ news_event = {
 	immediate = {
 		hidden_effect = {
 		if = {
-			limit = { check_variable = { global.var_start_effects = 0 } }
+			limit = { 
+				check_variable = { global.var_start_effects = 0 } 
+			}
 				set_variable = { global.var_start_effects = 1 }
 				industry_start_effects = yes
 				industry_extra_start_effects = yes
-				GER_start_effects = yes
-				tech_start_effects = yes
+				#GER_start_effects = yes
+				#tech_start_effects = yes
 				Resistance_start_effects = yes
-				country_event = { id = greece.setup.0 }
+				GRE = { country_event = { id = greece.setup.0 } }
+				GER = { country_event = { id = germany.setup.0 } }
 			}
 		}
 	}

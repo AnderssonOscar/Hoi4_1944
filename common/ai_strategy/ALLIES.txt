@@ -1300,13 +1300,13 @@ ENG_enable_invasion_of_GRE = {#greece
 			GER = {
 				army_manpower_in_state = { amount < 25000 state = 47 }
 				army_manpower_in_state = { amount < 25000 state = 186 }
-				army_manpower_in_state = { amount < 20000 state = 731 }
+				army_manpower_in_state = { amount < 25000 state = 731 }
 			}
 
 			GRE = {
 				army_manpower_in_state = { amount < 25000 state = 47 }
 				army_manpower_in_state = { amount < 25000 state = 186 }
-				army_manpower_in_state = { amount < 20000 state = 731 }
+				army_manpower_in_state = { amount < 25000 state = 731 }
 			}
 		}
 
@@ -1320,15 +1320,26 @@ ENG_enable_invasion_of_GRE = {#greece
 		value = 500
 	}
 
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = GE
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = rush
+	}
+
 #	ai_strategy = {
 #		type = invasion_unit_request
 #		strategic_region = 25 #greece
 #		value = 250
 #	}
 
-	ai_strategy = {
-		type = invasion_unit_request  
-		country_trigger = { tag = GRE }
-		value = 6
-	}
+	#ai_strategy = {
+	#	type = invasion_unit_request  
+	#	country_trigger = { tag = GRE }
+	#	value = 6
+	#}
 }

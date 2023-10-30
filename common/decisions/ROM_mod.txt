@@ -93,7 +93,7 @@ war_measures = {
 
 		cost = 0
 		days_remove = 12
-		days_re_enable = 8
+		days_re_enable = 14
 
 		ai_will_do = {
 			factor = 1
@@ -118,10 +118,9 @@ war_measures = {
 			limit = {
 					has_war = yes
 					NOT = {original_tag = ROM}
-				OR = {
+					NOT = {original_tag = GER}
 					is_in_faction_with = GER
-					tag = GER
-				}
+
 			}
 			country_event = romania.switch.side.1
 		}
@@ -153,10 +152,35 @@ war_measures = {
 			SOV = { transfer_state = 192 }
 			SOV = { transfer_state = 834 }
 			SOV = { transfer_state = 198 }
+		
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 82 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 82 }
+		}
 
-		if = {
-			limit = { 83 = {is_fully_controlled_by = ROM}  }
-				GER = { transfer_state = 83 }
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 84 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 84 }
+		}
+
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 83 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 83 }
 		}
 
 			set_politics = {
@@ -277,13 +301,9 @@ war_measures = {
 
 
 
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-					GER = { remove_resource_rights = 46 } 
-			}
 
+			GER = { remove_resource_rights = 46 } 
+			
 			SOV = { add_to_faction = ROM }
 
 		#ROM = {

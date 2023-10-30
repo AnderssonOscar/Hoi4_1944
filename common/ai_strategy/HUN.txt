@@ -96,6 +96,55 @@ HUN_unit_production = {
 }
 
 
+HUN_hold_soviet_offensive = {
+
+	allowed = { tag = HUN }
+
+		enable = {
+			has_war_with = SOV
+			NOT = { has_war_with = ROM }
+
+			OR = {
+				SOV = { controls_province = 11479 } #Lwow
+				SOV = { controls_province = 11411 } #stanislawow
+			}
+		}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = { tag = SOV }
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+
+	#ai_strategy = {
+	#	type = front_unit_request
+	#	country_trigger = {tag = SOV}
+	#	value = 200
+  # }
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "ROM"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "FIN"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "GER"
+		value = 1000
+	}
+}
+
 
 
 HUN_build_more_mil = {

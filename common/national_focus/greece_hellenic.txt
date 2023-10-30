@@ -1,5 +1,5 @@
 focus_tree = {
-	id = greek_focus
+	id = greek_focus_hellenic
 
 	country = {
 		factor = 0
@@ -7,6 +7,8 @@ focus_tree = {
 		modifier = {
 			add = 10
 			tag = GRE
+			has_government = fascism
+			date > 1943.12.30
 		}
 	}
 	

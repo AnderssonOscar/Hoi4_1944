@@ -10,19 +10,18 @@ air_wings = {
 		transport_plane_equipment_1 = { owner = "GER" amount = 100 }
 		transport_plane_equipment_1 = { owner = "GER" amount = 100 }			
 
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }		
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
-		small_plane_airframe_1  = { owner = "GER"  amount = 100 version_name = "Bf 109 E" }		
-		small_plane_airframe_1  = { owner = "GER"  amount = 100 version_name = "Bf 109 E" }	
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }		
 		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
-		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }				
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_1  = { owner = "GER"  amount = 100 version_name = "Bf 109 E" }		
+		#small_plane_airframe_1  = { owner = "GER"  amount = 100 version_name = "Bf 109 E" }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
 
 	}
 

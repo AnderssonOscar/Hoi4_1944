@@ -127,7 +127,7 @@ ROM_hold_soviet_offensive = {
 		is_in_faction_with = GER
 
 		date > 1944.1.1
-		date < 1944.9.1
+	#	date < 1944.9.1
 	}
 	abort_when_not_enabled = yes
 
