@@ -702,6 +702,7 @@ if = {
 
 1944.1.1 = {
 
+	retire_character = GER_hans_von_luck 
 
 	set_technology = {
 		tech_trucks = 1

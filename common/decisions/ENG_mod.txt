@@ -56,7 +56,7 @@ war_measures = {
 		modifier = {
 			naval_invasion_prep_speed = +100.0
 			naval_invasion_penalty = -0.5
-			naval_invasion_capacity = +1.00
+			naval_invasion_capacity = +1.50
 		}
 
 			ai_will_do = {

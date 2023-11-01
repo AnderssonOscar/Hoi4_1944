@@ -1,0 +1,39 @@
+﻿###########################
+# 1944 Embargo Events
+###########################
+
+add_namespace = embargo.start
+add_namespace = embargo.end
+
+country_event = {
+	id = embargo.start.1
+	title = "Trade with [From.From.GetNameDef]"
+	picture = GFX_report_event_generic_sign_treaty3
+
+	desc = {
+		text = "With the war taking a turn for the worse [From.From.GetNameDef] announces the decision to cease all trade between our countries"
+	}
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = "OK"
+	}
+}
+
+country_event = {
+	id = embargo.end.1
+	title = "Trade with [From.From.GetNameDef]"
+	picture = GFX_report_event_generic_sign_treaty1
+
+	desc = {
+		text = "Trade with [From.From.GetNameDef] is again restored"
+	}
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = "OK"
+	}
+}
+

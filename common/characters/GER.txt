@@ -1,4 +1,343 @@
 characters={
+	
+	GER_lothar_rendulic={ # NEW GENERALS
+		name="Lothar Rendulic"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Lothar_Rendulic.dds"
+			}
+		}
+		corps_commander={
+			traits={ trait_mountaineer }
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	GER_erich_brandenberger={
+		name="Erich Brandenberger"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Erich_Brandenberger.dds"
+			}
+		}
+		corps_commander={
+			traits={ armor_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+	GER_traugott_herr={
+		name="Traugott Herr"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Traugott_Herr.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	GER_carl_hilpert={
+		name="Carl Hilpert"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Carl_Hilpert.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	GER_dietrich_von_saucken={
+		name="Dietrich von Saucken"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Dietrich_Von_Saucken.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer panzer_leader }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+	GER_erich_straube={
+		name="Erich Straube"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Erich_Straube.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer old_guard }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	GER_franz_böhme={
+		name="Franz Böhme"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Franz_Behme.dds"
+			}
+		}
+		corps_commander={
+			traits={ commando winter_specialist trait_mountaineer }
+			skill=3
+			attack_skill=1
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	GER_heinrich_von_vietinghoff={ #generic photo
+		name="Heinrich von Vietinghoff"
+		portraits={
+			army={
+				large=GFX_Portrait_Germany_Generic_land_2
+			}
+		}
+		corps_commander={
+			traits={ inflexible_strategist armor_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	GER_georg_otto_hermann_balck={
+		name="Georg Otto Hermann Balck"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Georg_Otto_Hermann_Balck.dds"
+			}
+		}
+		corps_commander={
+			traits={ brilliant_strategist armor_officer panzer_leader }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+	GER_joachim_lemelsen={
+		name="Joachim Lemelsen"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Joachim_Lemelsen.dds"
+			}
+		}
+		corps_commander={
+			traits={ armor_officer panzer_leader }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+	GER_Eduard_Dietl={
+		name="Eduard Dietl"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Eduard_Dietl.dds"
+			}
+		}
+		corps_commander={
+			traits={ war_hero politically_connected winter_specialist ranger trait_mountaineer } 
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+
+	GER_kurt_von_tippelskirch={
+		name="Kurt von Tippelskirch"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Kurt_Oskar_Wilhelm_von_Tippelskirch.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	GER_ernst_wilhelm_busch={
+		name="Ernst Wilhelm Busch"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Ernst_Wilhelm_Bernhard_Busch.dds"
+			}
+		}
+		field_marshal={
+			traits={ trait_cautious }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+	GER_walther_nehring={
+		name="Walther Nehring"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Walther_Nehring.dds"
+			}
+		}
+		corps_commander={
+			traits={ armor_officer desert_fox }
+			skill=3
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	GER_walther_wenck={
+		name="Walther Wenck"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Walter_Wenck_B.dds"
+			}
+		}
+		corps_commander={
+			traits={ armor_officer trickster panzer_leader }
+			skill=3
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	GER_helmuth_weidling={
+		name="Helmuth Weidling"
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Helmuth_Weidling.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery }
+			skill=1
+			attack_skill=1
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	GER_hans_von_luck_1944={
+		name="Hans von Luck"
+		portraits={
+			army={
+				large=GFX_portrait_GER_hans_von_luck
+				small=GFX_portrait_GER_hans_von_luck_small
+			}
+		}
+		corps_commander={
+			traits={ armor_officer trickster panzer_leader }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+# END OF NEW GENERALS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	GER_adolf_hitler={
 		name=GER_adolf_hitler
 		portraits={
@@ -180,7 +519,7 @@ characters={
 			}
 		}
 		
-		corps_commander={
+		field_marshal={
 			traits={ trait_reckless media_personality armor_officer war_hero trickster }
 			skill=4
 			attack_skill=4
@@ -212,7 +551,7 @@ characters={
 			}
 		}
 		
-		corps_commander={
+		field_marshal = {
 			traits={ brilliant_strategist armor_officer trickster trait_engineer }
 			skill=4
 			attack_skill=2
@@ -301,7 +640,7 @@ characters={
 				small=GFX_portrait_GER_fedor_von_bock_small
 			}
 		}
-		corps_commander={
+		field_marshal={
 			traits={ trait_cautious harsh_leader }
 			skill=4
 			attack_skill=4
@@ -321,12 +660,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ brilliant_strategist trait_cautious politically_connected defensive_doctrine }
-			skill=3
+			traits={ brilliant_strategist inflexible_strategist trait_cautious politically_connected defensive_doctrine }
+			skill=4
 			attack_skill=2
-			defense_skill=4
-			planning_skill=2
-			logistics_skill=2
+			defense_skill=5
+			planning_skill=3
+			logistics_skill=3
 			legacy_id=10
 		}
 	}
@@ -339,7 +678,7 @@ characters={
 				small=GFX_portrait_GER_maximilian_von_weichs_small
 			}
 		}
-		corps_commander={
+		field_marshal={
 			traits={ cavalry_officer }
 			skill=4
 			attack_skill=4
@@ -358,7 +697,7 @@ characters={
 				small=GFX_portrait_GER_wilhelm_ritter_von_leeb_small
 			}
 		}
-		corps_commander={
+		field_marshal={
 			traits={ old_guard infantry_officer }
 			skill=3
 			attack_skill=4
@@ -378,7 +717,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ trait_cautious armor_officer }
+			traits={ harsh_leader armor_officer }
 			skill=3
 			attack_skill=1
 			defense_skill=2
@@ -547,6 +886,7 @@ characters={
 		}
 		corps_commander={
 			skill=4
+			traits={ old_guard }
 			attack_skill=3
 			defense_skill=2
 			planning_skill=4
@@ -637,12 +977,12 @@ characters={
 			}
 		}
 		
-		corps_commander={
+		field_marshal={
 			traits={ brilliant_strategist trait_cautious war_hero }
 			skill=4
 			attack_skill=2
 			defense_skill=4
-			planning_skill=3
+			planning_skill=4
 			logistics_skill=4
 			legacy_id=32
 		}
@@ -660,7 +1000,7 @@ characters={
 			traits={ trait_cautious infantry_officer trait_engineer }
 			skill=3
 			attack_skill=3
-			defense_skill=1
+			defense_skill=3
 			planning_skill=3
 			logistics_skill=3
 			legacy_id=33
@@ -1234,6 +1574,7 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_ferdinand_schorner"
+				large="gfx/leaders/GER/Portrait_Germany_Ferdinand_Scherner.dds"
 			}
 		}
 		advisor={
@@ -1250,6 +1591,14 @@ characters={
 			ai_will_do = {
 				factor = 2.000
 			}
+		}
+		corps_commander={
+			traits={ inflexible_strategist harsh_leader trait_cautious }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
 		}
 	}
 

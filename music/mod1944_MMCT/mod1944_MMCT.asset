@@ -29,9 +29,4 @@ music = {
     volume = 1.1
 }
 
-music = {
-    name = "We'll Meet Again"
-    file = "we_will_meet_again.ogg"
-    volume = 1.1
-}
 

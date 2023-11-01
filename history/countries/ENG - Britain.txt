@@ -2453,7 +2453,7 @@ if = {
 						fixed_main_weapon_slot = light_mg_4x
 						fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
 						engine_type_slot = engine_2_1x
-						special_type_slot_1 = fuel_tanks_small
+						#special_type_slot_1 = fuel_tanks_small
 						#special_type_slot_2 = armor_plate_small
 						#special_type_slot_3 = self_sealing_fuel_tanks_small
 					}

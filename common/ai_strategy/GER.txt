@@ -2889,12 +2889,7 @@ GER_make_some_radar_1 = {
 		original_tag = GER
 	}
 	enable = {
-		OR = {
-			has_war_with = POL
-			POL = {
-				has_capitulated = yes
-			}
-		}
+		has_war_with_major = yes  # Oy, we need some radar tech!
 	}
 
 	abort = {
@@ -2903,7 +2898,7 @@ GER_make_some_radar_1 = {
 
 	ai_strategy = {
 		type = research_tech
-		id = 288 #Radio Detection
+		id = radio_detection
 		value = 2000
 	}
 }
@@ -2922,7 +2917,7 @@ GER_make_some_radar_2 = {
 
 	ai_strategy = {
 		type = research_tech
-		id = 289 #Decimetric Radar
+		id = decimetric_radar
 		value = 2000
 	}
 }
@@ -2941,10 +2936,10 @@ GER_make_some_radar_3 = {
 
 	ai_strategy = {
 		type = research_tech
-		id = 290 #Improved Decimetric Radar
+		id = improved_decimetric_radar
 		value = 200
 	}
-} #After this, you're on your own chaps
+} # After this, you're on your own chaps
 
 GER_make_some_radar_4 = {
 	allowed = {
@@ -2953,6 +2948,7 @@ GER_make_some_radar_4 = {
 	enable = {
 		has_tech = radio_detection
 		90 = {
+			is_controlled_by = FROM
 			free_building_slots = {
 				building = radar_station
 				size > 0
@@ -2977,6 +2973,7 @@ GER_make_some_radar_5 = {
 	enable = {
 		has_tech = radio_detection
 		763 = {
+			is_controlled_by = FROM
 			free_building_slots = {
 				building = radar_station
 				size > 0
@@ -3001,6 +2998,7 @@ GER_make_some_radar_6 = {
 	enable = {
 		has_tech = radio_detection
 		36 = {
+			is_controlled_by = FROM
 			free_building_slots = {
 				building = radar_station
 				size > 0
@@ -3025,6 +3023,7 @@ GER_make_some_radar_7 = {
 	enable = {
 		has_tech = radio_detection
 		42 = {
+			is_controlled_by = FROM
 			free_building_slots = {
 				building = radar_station
 				size > 0
@@ -3041,8 +3040,6 @@ GER_make_some_radar_7 = {
 		value = 2000
 	}
 }
-
-
 
 
 GER_dont_stack_SPR_border = {
@@ -3373,8 +3370,8 @@ GER_out_of_tungsten = {
 
 	enable = { 
 		date > 1944.6.1
-		num_of_military_factories < 295
-		tungsten < 56
+		num_of_military_factories > 200
+		tungsten < 52
 		NOT = { 16 = {is_fully_controlled_by = GER} } #paris
 		has_war_with = SOV
 	}
@@ -3389,10 +3386,10 @@ GER_out_of_tungsten = {
 	}
 
 
-	ai_strategy = { type = equipment_variant_production_factor id = artillery_equipment value = 25 }
-	ai_strategy = { type = equipment_variant_production_factor id = anti_tank_equipment value = 20 }
+	ai_strategy = { type = equipment_variant_production_factor id = artillery_equipment value = 10 }
+	ai_strategy = { type = equipment_variant_production_factor id = anti_tank_equipment value = -50 }
 
-	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_chassis value = -25 }
+	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_chassis value = -45 }
 	ai_strategy = { type = equipment_variant_production_factor      id = heavy_tank_chassis value = -500 }
 
 	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_artillery_chassis value = -500 }

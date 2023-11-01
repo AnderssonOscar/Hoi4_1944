@@ -60,17 +60,4 @@ music = {
 	}	
 }
 
-music = {
-	song = "We'll Meet Again"
-	
-	chance = {
-		modifier = {
-			factor = 2
-
-			has_war = yes
-			tag = ENG
-		}		
-	}	
-}
-
 

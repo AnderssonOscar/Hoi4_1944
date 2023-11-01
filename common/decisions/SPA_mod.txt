@@ -52,7 +52,7 @@ political_actions = {
 			date > 1944.1.1
 			has_capitulated = no
 			NOT = {has_war_with = GER}
-
+			is_ai = yes
 			GER = { has_capitulated = no }
 			NOT = { is_in_faction_with = GER }
 
@@ -94,7 +94,10 @@ political_actions = {
 					is_in_faction_with = GER
 					is_in_faction_with = JAP
 				}
+				NOT = { is_embargoed_by = SPA }
 			}
+
+				country_event = { id = embargo.start.1 }
 
 				if = {
 					limit = { has_dlc = "By Blood Alone" }
@@ -149,7 +152,7 @@ political_actions = {
 		visible = {
 			date > 1944.1.1
 			has_capitulated = no
-
+			is_ai = yes
 			check_variable = { global.SPA_start_embargo_with_axis = 1 }
 		}
 
@@ -175,7 +178,10 @@ political_actions = {
 					is_in_faction_with = GER
 					is_in_faction_with = JAP
 				} 
+				is_embargoed_by = SPA
 			}
+
+				country_event = { id = embargo.stop.1 }
 
 				if = {
 					limit = { has_dlc = "By Blood Alone" }

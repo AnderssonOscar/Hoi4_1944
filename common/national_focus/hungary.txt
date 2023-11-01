@@ -5035,7 +5035,7 @@ focus_tree = {
 		icon = GFX_focus_secret_rearmament
 		x = 15
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		#prerequisite = { focus = GER_gottedamerung }
 		
@@ -5053,62 +5053,90 @@ focus_tree = {
 
 		available = {
 			has_war = yes
-			date > 1943.12.30
+			#date > 1943.12.30
 		}
 
 	completion_reward = {
 
 			set_temp_variable = { manpower_base = 611 }
 			multiply_temp_variable = { manpower_base = num_of_controlled_factories }
-			add_to_temp_variable = { var = manpower_base value = 2672 }
+			add_to_temp_variable = { var = manpower_base value = 9672 }
 
 			add_manpower =manpower_base
 
-			if = {
-				limit = {
-					not = { has_tech = infantry_at2 }
-				}
-				set_technology = {
-					infantry_at2 = 1
-				}
+			add_tech_bonus = {
+				name = HUN_artillery_effort
+				bonus = 3.0
+				uses = 1
+				category = artillery
 			}
+
+			add_tech_bonus = {
+				name = HUN_artillery_effort
+				bonus = 2.0
+				uses = 3
+				category = artillery
+			}
+
+			add_tech_bonus = {
+				name = HUN_danuvia_submachine_guns
+				bonus = 2.0
+				uses = 3
+				category = infantry_weapons
+			}
+
+			add_tech_bonus = {
+				name = HUN_armored_warfare
+				bonus = 2.0
+				uses = 1
+				category = armor
+			}
+
+			# if = {
+			# 	limit = {
+			# 		not = { has_tech = infantry_at2 }
+			# 	}
+			# 	set_technology = {
+			# 		infantry_at2 = 1
+			# 	}
+			# }
 			
 
-			if = {
-				limit = {
-					not = { has_tech = advanced_infantry_weapons }
-				}
-				set_technology = {
-					advanced_infantry_weapons = 1
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		not = { has_tech = advanced_infantry_weapons }
+			# 	}
+			# 	set_technology = {
+			# 		advanced_infantry_weapons = 1
+			# 	}
+			# }
 
-			if = {
-				limit = {
-					not = { has_tech = artillery4 }
-				}
-				set_technology = {
-					artillery4 = 1
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		not = { has_tech = artillery4 }
+			# 	}
+			# 	set_technology = {
+			# 		artillery4 = 1
+			# 	}
+			# }
 
-			if = {
-				limit = {
-					not = { has_tech = artillery5 }
-				}
-				set_technology = {
-					artillery5 = 1
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		not = { has_tech = artillery5 }
+			# 	}
+			# 	set_technology = {
+			# 		artillery5 = 1
+			# 	}
+			# }
 
-			if = {
-				limit = {
-					not = { has_tech = antiair3 }
-				}
-				set_technology = {
-					antiair3 = 1
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		not = { has_tech = antiair3 }
+			# 	}
+			# 	set_technology = {
+			# 		antiair3 = 1
+			# 	}
+			# }
 
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_2
@@ -5190,13 +5218,6 @@ focus_tree = {
 	}
 
 
-		add_tech_bonus = {
-			name = HUN_armored_warfare
-			bonus = 2.0
-			uses = 1
-			category = armor
-		}
-
 	}
 }
 
@@ -5212,7 +5233,7 @@ focus = {
 	icon = GFX_focus_generic_combined_arms
 	x = 15
 	y = 8
-	cost = 5
+	cost = 10
 	available_if_capitulated = yes
 	prerequisite = { focus = HUN_upgrade_army_equipment }
 	
@@ -5239,9 +5260,16 @@ focus = {
 			#	free_trade#
 			#}
 
+			add_tech_bonus = {
+				name = HUN_announce_the_gyor_program
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+
 			set_temp_variable = { manpower_base = 1471 }
 			multiply_temp_variable = { manpower_base = num_of_controlled_factories }
-			add_to_temp_variable = { var = manpower_base value = 5672 }
+			add_to_temp_variable = { var = manpower_base value = 9672 }
 	
 			add_manpower =manpower_base
 
@@ -5267,7 +5295,7 @@ focus = {
 		icon = GFX_focus_generic_little_entente
 		x = 15
 		y = 9
-		cost = 8
+		cost = 10
 		available_if_capitulated = no
 		prerequisite = { focus = HUN_war_economy_focus }
 		ai_will_do = {
@@ -5278,17 +5306,17 @@ focus = {
 
 				OR = {
 					surrender_progress > 0.05
-					date > 1944.8.1
+					date > 1944.7.1
 				}
 			}
 		} 
 
 	available = {
 			has_war = yes
-		OR = {
-			surrender_progress > 0.05
-			date > 1944.8.1
-			}
+		# OR = {
+		# 	surrender_progress > 0.05
+		# 	date > 1944.8.1
+		# 	}
 		}
 		
 		completion_reward = {

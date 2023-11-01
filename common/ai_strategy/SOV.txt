@@ -2660,6 +2660,36 @@ SOV_take_finland_high = {
 }
 
 
+SOV_defend_leningrad = {
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		is_historical_focus_on = yes
+		date > 1943.12.30
+
+		OR = {
+			has_war_with = FIN
+			GER = { surrender_progress < 0.1 }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.05
+
+		# states to put garrison orders (if no state is friendly, strat is invalid)
+		states = {
+			195 #leningrad
+		}
+
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+}
+
 
 SOV_stop_stupid_garrison = {
 	allowed = {

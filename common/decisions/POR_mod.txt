@@ -83,7 +83,9 @@ political_actions = {
 					is_in_faction_with = ENG
 					is_in_faction_with = SOV
 				}
+				NOT = { is_embargoed_by = POR }
 			}
+				country_event = { id = embargo.start.1 }
 
 				if = {
 					limit = { has_dlc = "By Blood Alone" }
@@ -157,7 +159,10 @@ political_actions = {
 					is_in_faction_with = ENG
 					is_in_faction_with = SOV
 				} 
+				is_embargoed_by = POR
 			}
+
+				country_event = { id = embargo.stop.1 }
 
 				if = {
 					limit = { has_dlc = "By Blood Alone" }

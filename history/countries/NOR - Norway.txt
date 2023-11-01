@@ -399,6 +399,13 @@ if = {
 		#dont_surrender_mod
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_global_flag = NOR_the_norwegian_queen_is_dead 
+	}
+
 	add_political_power = 2489
 	add_command_power = 200
 

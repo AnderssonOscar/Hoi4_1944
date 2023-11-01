@@ -2215,6 +2215,28 @@ if = {
 		exporter = TUR
 	}
 
+		recruit_character = GER_lothar_rendulic
+		recruit_character = GER_erich_brandenberger
+		recruit_character = GER_traugott_herr
+		recruit_character = GER_carl_hilpert
+		recruit_character = GER_dietrich_von_saucken
+		recruit_character = GER_erich_straube
+		recruit_character = GER_franz_böhme
+		recruit_character = GER_heinrich_von_vietinghoff
+		recruit_character = GER_georg_otto_hermann_balck
+		recruit_character = GER_joachim_lemelsen
+		recruit_character = GER_Eduard_Dietl
+		recruit_character = GER_kurt_von_tippelskirch
+		recruit_character = GER_ernst_wilhelm_busch
+		recruit_character = GER_walther_nehring
+		recruit_character = GER_walther_wenck
+		recruit_character = GER_helmuth_weidling
+		recruit_character = GER_hans_von_luck_1944
+
+		retire_character = GER_wilhelm_list
+		retire_character = GER_fedor_von_bock
+		retire_character = GER_wilhelm_ritter_von_leeb
+		#retire_character = GER_georg_von_kuchler #january 1944
 		GER_friedrich_paulus = { retire = yes }
 		#activate_decision = women_in_the_workforce
 		add_named_threat = { threat = 50 name = 1939_bookmark_threat }
