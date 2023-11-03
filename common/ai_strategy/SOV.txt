@@ -2496,6 +2496,8 @@ SOV_dont_hurt_hungary_yet = {
 		date > 1944.1.1
 		date < 1944.12.1
 
+		NOT = { GER = { has_full_control_of_state = 89 } } #test if sov army dont run away at start
+
 		OR = {
 			ROM = { surrender_progress < 0.18 }
 			ROM = { has_capitulated = no }

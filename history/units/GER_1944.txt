@@ -4298,7 +4298,7 @@ instant_effect = {
 			type = infantry_equipment_2
 			creator = "GER"
 		}
-		requested_factories = 10
+		requested_factories = 15
 		progress = 0.1
 		efficiency = 90
 		industrial_manufacturer = mio:GER_mauser_organization
@@ -4320,7 +4320,7 @@ instant_effect = {
 			type = support_equipment_1
 			creator = "GER" 
 		}
-		requested_factories = 12
+		requested_factories = 15
 		progress = 0.3
 		efficiency = 100
 	}
@@ -4341,7 +4341,7 @@ instant_effect = {
 			type = rocket_artillery_equipment_2
 			creator = "GER" 
 		}
-		requested_factories = 1
+		requested_factories = 3
 		progress = 0.64
 		efficiency = 77
 		industrial_manufacturer = mio:GER_rheinmetall_organization
@@ -4352,7 +4352,7 @@ instant_effect = {
 			type = anti_tank_equipment_2
 			creator = "GER" 
 		}
-		requested_factories = 8
+		requested_factories = 9
 		progress = 0.3
 		efficiency = 79
 		industrial_manufacturer = mio:GER_rheinmetall_organization
@@ -4384,7 +4384,7 @@ instant_effect = {
 			type = motorized_equipment_1
 			creator = "GER" 
 		}
-		requested_factories = 11
+		requested_factories = 12
 		progress = 0.2
 		efficiency = 100
 		industrial_manufacturer = mio:GER_opel_organization

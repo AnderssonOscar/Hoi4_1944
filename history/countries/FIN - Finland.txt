@@ -789,9 +789,6 @@ if = {
 
 1943.12.30 = {
 
-	set_variable = { FIN_finnish_army_army_org_factor = 0.05 }
-	set_variable = { FIN_finnish_army_conscription_factor = 0.01 }
-	remove_ideas = FIN_fortification_effort
 	#complete_national_focus = doctrine_effort
 	#complete_national_focus = political_effort
 
@@ -819,7 +816,15 @@ if = {
 
 	complete_national_focus = FIN_tire_factory_at_nokia
 
-	army_experience = 25
+
+	set_variable = { FIN_finnish_army_army_org_factor = 0.0 }
+	set_variable = { FIN_finnish_army_conscription_factor = 0.0 }
+	set_variable = { FIN_finnish_army_army_attack_speed_factor = 0 }
+	set_variable = { FIN_finnish_army_max_dig_in_factor = 0 }
+	remove_ideas = FIN_fortification_effort
+	remove_ideas = FIN_repurposed_small_industries
+
+	army_experience = 0
 	navy_experience = 5	
 	air_experience = 35
 
@@ -838,7 +843,7 @@ if = {
 		id = FIN_power_balance
 		left_side = FIN_bad_side
 		right_side = FIN_good_side
-		set_value = 0.45
+		set_value = 0.25
 	}
 
 	retire_country_leader = yes

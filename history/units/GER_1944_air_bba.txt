@@ -58,8 +58,8 @@ air_wings = {
 	}
 
 	29 = {	
-		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
-		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
 		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
 		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
 		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
@@ -87,8 +87,8 @@ air_wings = {
 		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
 		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
 
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
-		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
 
 		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }		
 		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }
@@ -210,11 +210,11 @@ air_wings = {
 		medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100} 	
 		medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
 		medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
-		medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
-		medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
+		#medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
+		#medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
 
 		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
-		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		#medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
 		#medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
 
 		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }	
@@ -257,7 +257,7 @@ instant_effect = {
 			creator = "GER" 
 			version_name = "Ta 152 A"
 		}
-		requested_factories = 1
+		requested_factories = 3
 		progress = 0.05
 		efficiency = 21
 		industrial_manufacturer = mio:GER_focke_wulf_organization
@@ -293,7 +293,7 @@ instant_effect = {
 			creator = "GER" 
 			version_name = "He 111"
 		}
-		requested_factories = 4
+		requested_factories = 5
 		progress = 0.1
 		efficiency = 100
 		industrial_manufacturer = mio:GER_heinkel_organization

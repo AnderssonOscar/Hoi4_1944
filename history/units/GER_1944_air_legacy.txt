@@ -59,8 +59,8 @@ air_wings = {
 	}
 
 	29 = {
-		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
-		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
 
 		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
 		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
@@ -88,8 +88,8 @@ air_wings = {
 		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
 		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
 
-		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
-		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
 
 		CAS_equipment_1 =  { owner = "GER" amount = 100 }
 		CAS_equipment_1 =  { owner = "GER" amount = 100 }
@@ -208,12 +208,12 @@ air_wings = {
 		tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
 		tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
 		tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
-		tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
-		tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
+		#tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
+		#tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
 
 		CAS_equipment_2 =  { owner = "GER" amount = 100 }
 		CAS_equipment_2 =  { owner = "GER" amount = 100 }
-		CAS_equipment_2 =  { owner = "GER" amount = 100 }			
+		#CAS_equipment_2 =  { owner = "GER" amount = 100 }			
 	}
 
 
