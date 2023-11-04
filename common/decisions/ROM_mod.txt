@@ -135,7 +135,7 @@ war_measures = {
 				
 			every_country = {
 				limit = {
-					 has_war_with = BUL 
+					 has_war_with = ROM 
 				OR = { 
 					is_faction_leader = yes 
 					is_in_faction = no

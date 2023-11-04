@@ -3629,6 +3629,32 @@ GER_guard_greece = { #1944
 	}
 }
 
+GER_leave_greece = { #1944 
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1944.1.1
+		is_historical_focus_on = yes
+		has_war_with = ENG
+		has_war_with = BUL
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			186
+			47
+			731
+		}
+		ratio = 0
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
+
 
 
 

@@ -4,9 +4,6 @@
 draft_children:0 "Child Soldiers"
 draft_children_desc:0 "We are not desperate, the kids simply need to get out and get some fresh air!"
 
-GER_operation_margarethe:0 "Operation Margarethe"
-GER_operation_margarethe_desc:0 "We need to stop the hungarians secretly negotiating a separate peace with the Allies"
-
 siphon_gas:0 "Siphon Gas"
 siphon_gas_desc:0 "Siphon Gas from every available source."
 
@@ -136,15 +133,18 @@ warsaw.uprising.1.t:0 "Polish underground resistance has risen"
 warsaw.uprising.1.d:0 "With our enemies on the outskirts of the Warsaw it's inhabitants are trying to sabotage our military effort."
 warsaw.uprising_tool_tip:0 "Partisans will destroy Warsaws supply hub."
 
+GER_operation_margarethe:0 "Operation Margarethe" # not used
+GER_operation_margarethe_desc:0 "We need to stop the hungarians secretly negotiating a separate peace with the Allies" # not used
+operation.margarethe.decision.1.d:0 "We need to stop the hungarians secretly negotiating a separate peace with the Allies" # not used
+
 operation.margarethe.1:0 "Operation Margarethe"
 operation.margarethe.1.t:0 "Operation Margarethe"
-operation.margarethe.1.d:0 "We have successfully gotten hungary back in line."
+operation.margarethe.1.d:0 "The hungarians secretly negotiating a separate peace with the Allies.\nThe negotiations will most likely not lead anywhere, but we could launch a quick invasion and make sure of it."
 
 operation.margarethe.2:0 "Operation Margarethe II"
 operation.margarethe.2.t:0 "Operation Margarethe II"
 operation.margarethe.2.d:0 "We have successfully gotten romania back in line."
 
-operation.margarethe.decision.1.d:0 "We need to stop the hungarians secretly negotiating a separate peace with the Allies"
 
 german.ryti.ribbentrop.1:0 "Ryti–Ribbentrop Agreement"
 german.ryti.ribbentrop.1.t:0 "Ryti–Ribbentrop Agreement"
@@ -293,3 +293,7 @@ soviet.offensive.romania.start.1.d:0 "Today the Soviets launched yet another off
 soviet.offensive.end.1:0 "Soviet Offensive Slows Down"
 soviet.offensive.end.1.t:0 "Soviet Offensive Slows Down"
 soviet.offensive.end.1.d:0 "The offensive that the Soviets launched a coluple weeks ago is slowing down."
+
+hungary.operation.panzerfaust.1:0 "Operation Panzerfaust"
+hungary.operation.panzerfaust.1.t:0 "Operation Panzerfaust"
+hungary.operation.panzerfaust.1.d:0 "We have recived word that Miklós Horthy again secretly negotiating his country's surrender.\nWe should intervene now or else Hungary might become our enemy."

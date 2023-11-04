@@ -30,10 +30,18 @@ state={
 		}
 
 		
-		1943.12.30 = {
+		1943.12.30 = { #1944
 			buildings = {
 				synthetic_refinery = 3
 				industrial_complex = 2
+
+				6984 = {
+					naval_base = 2
+				}
+
+				3957 = {
+					naval_base = 8
+				}
 			}
 		}
 		add_core_of = USA

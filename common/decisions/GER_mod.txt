@@ -14,6 +14,7 @@ operations = {
 			HUN = {has_war_with = SOV} 
 			NOT = {has_war_with = HUN}
 			HUN = { is_ai = yes }
+			date > 1999.1.1
 		}
 
 		available = {
@@ -23,9 +24,14 @@ operations = {
 		cost = 0
 		days_remove = 3
 		fire_only_once = yes
-
+		days_mission_timeout = 180
 
 		is_good = no
+
+		timeout_effect = {
+			add_political_power = -100
+			add_war_support = -0.1
+		}
 
 		remove_effect = {
 
@@ -39,19 +45,19 @@ operations = {
 
 				
 				set_popularities = {
-					neutrality = 20
+					neutrality = 30
 					democratic = 10
-					fascism = 70
+					fascism = 60
 					communism = 0
 				}
 
 
 				GER = {
 					#puppet = PREV
-					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+					set_autonomy = { target = PREV autonomy_state = autonomy_satellite }
 				}
 
-				GER = { country_event = operation.margarethe.1 }
+				#GER = { country_event = operation.margarethe.1 }
 				#custom_effect_tooltip = operation.margarethe.decision.1.d
 		}
 	}

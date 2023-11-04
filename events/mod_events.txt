@@ -10,18 +10,14 @@ add_namespace = warsaw.uprising
 add_namespace = operation.margarethe
 add_namespace = 20_july.plot
 add_namespace = italy.fascist
-
 add_namespace = german.ryti.ribbentrop
 add_namespace = finland.ryti.ribbentrop
-
 add_namespace = allies.dday.start
-
 add_namespace = mod.start
-
 add_namespace = german.sabotage.ports
-
-
 add_namespace = finland.estonia.lost
+
+add_namespace = hungary.operation.panzerfaust
 
 #Destroy Cherbourg from allies
 country_event = {
@@ -441,10 +437,9 @@ country_event = {
 			base = 2
 			modifier = {
 				factor = 25
-				AND = {
-					HUN =  { is_ai = yes }
-					ITA =  { is_ai = yes }
-				}
+				HUN = { is_ai = yes }
+				ITA = { is_ai = yes }
+				BUL = { is_ai = yes }
 			}
 		}
 
@@ -496,6 +491,7 @@ country_event = {
 				OR = {
 					HUN =  { is_ai = no }
 					ITA =  { is_ai = no }
+					BUL =  { is_ai = no }
 				}
 			}
 		}
@@ -663,26 +659,6 @@ country_event = {
     }
 
 }
-
-
-
-# operation_margarethe
-country_event = {
-	id = operation.margarethe.1
-	title = operation.margarethe.1.t
-	desc = operation.margarethe.1.d 
-
-	#major = yes
-
-	picture = GFX_news_event_polish_tanks
-	is_triggered_only = yes
-	
-	option = {
-		name = "OK"
-	}
-
-}
-
 
 country_event = {
 	#news_event = {
@@ -1221,18 +1197,6 @@ news_event = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 #Finland surrender faster
 country_event = {
 	id = finland.estonia.lost.1
@@ -1282,6 +1246,263 @@ country_event = {
 		}
 
 	}
+}
+
+
+
+# operation_margarethe
+country_event = {
+	id = operation.margarethe.1
+	title = operation.margarethe.1.t
+	desc = operation.margarethe.1.d 
+	picture = GFX_report_event_SOV_negotiations_japan_bukharin
+
+	trigger = {
+		original_tag = GER
+		date > 1944.3.18
+		#HUN = { surrender_progress < 0.01 }
+		HUN = { is_ai = yes } 
+		HUN = { is_in_faction_with = GER }
+
+		has_war_with = SOV 
+	}
+
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+
+	option = {
+		GER = {add_stability = -0.025}
+		HUN = {
+			 add_stability = -0.1
+			 
+	hidden_effect = {
+		
+		HUN = {
+			set_politics = {
+				ruling_party = fascism
+				last_election = "1944.3.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			
+			set_popularities = {
+				neutrality = 30
+				democratic = 10
+				fascism = 60
+				communism = 0
+			}
+		}
+	}
+
+		GER = {
+			set_autonomy = { target = PREV autonomy_state = autonomy_satellite }
+		}
+
+		if = {
+			limit = {73 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 73 }
+		}
+
+		if = {
+			limit = {76 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 76 }
+		}
+
+		if = {
+			limit = {154 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 154 }
+		}
+		if = {
+			limit = {664 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 664 }
+		}
+
+		if = {
+			limit = {155 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 155 }
+		}
+	}
+
+		name = "Start the invasion"
+
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = {
+		GER = { add_political_power = -200 }
+
+		HUN = {
+			 hidden_effect = {
+				add_stability = -0.1
+				add_timed_idea = { idea = HUN_peace_negotiations days = 160 }
+				add_war_support = -0.1 
+
+				every_country = {
+					limit = {
+						 is_in_faction_with = HUN 
+						}
+						 add_opinion_modifier = { target = HUN modifier = large_decrease } 
+						 add_opinion_modifier = { target = HUN modifier = large_decrease } 
+					}
+			 }
+			 add_ideas = {
+				closed_economy
+			 }
+
+			}
+
+		name = "Let the peace talks continue"
+
+		ai_chance = {
+			base = 0
+		}
+	}
+
+}
+
+country_event = {
+		id = hungary.operation.panzerfaust.1
+		title = hungary.operation.panzerfaust.1.t	
+		desc = hungary.operation.panzerfaust.1.d	
+		picture = GFX_report_event_hungary_refused	
+	
+		trigger = {
+			original_tag = GER
+			HUN = { is_subject_of = GER}
+			HUN ={ surrender_progress > 0.0 }
+			HUN = { is_ai = yes } 
+
+			has_war_with = SOV 
+		}
+
+		mean_time_to_happen = {
+			days = 1
+		}
+		fire_only_once = yes
+
+		
+		option = {
+			name = "Launch the operation"
+
+		HUN = {
+
+			if = {
+				limit = { # should be used for oil resource transfer
+					controls_province = 3683
+					controls_province = 701
+					controls_province = 682
+				 }
+			}
+		}
+
+		HUN = {
+
+		hidden_effect = {
+			add_stability = -0.1
+
+			set_popularities = {
+				neutrality = 10
+				democratic = 0
+				fascism = 80
+				communism = 10
+			}
+		
+		set_politics = {
+			ruling_party = fascism
+			last_election = "1944.4.1"
+			election_frequency = 48
+			elections_allowed = no
+		}
+	}
+
+			retire_country_leader = yes
+			create_country_leader = {
+					name = "Ferenc Szálasi"
+					desc = ""
+					picture = GFX_portrait_hun_ferenc_szalasi
+					expire = "1965.1.1"
+					ideology = nazism
+					traits = {
+					}
+				}
+				
+				if = {
+					limit = {73 = { is_fully_controlled_by = SOV}}
+					SOV = { transfer_state = 73 }
+				}
+
+				if = {
+					limit = {76 = { is_fully_controlled_by = SOV}}
+					SOV = { transfer_state = 76 }
+				}
+
+				if = {
+					limit = {154 = { is_fully_controlled_by = SOV}}
+					SOV = { transfer_state = 154 }
+				}
+				if = {
+					limit = {664 = { is_fully_controlled_by = SOV}}
+					SOV = { transfer_state = 664 }
+				}
+
+				if = {
+					limit = {155 = { is_fully_controlled_by = SOV}}
+					SOV = { transfer_state = 155 }
+				}
+			}
+
+		GER = {
+			#HUN = { give_resource_rights = { receiver = GER state = 155 } } #dosent work with puppet
+			set_autonomy = { target = HUN autonomy_state = autonomy_integrated_puppet }
+			add_war_support = -0.05
+			#add_stability = -0.1
+			#add_manpower = -1000
+		}
+
+			ai_chance = {
+				base = 5
+			}
+		}
+
+		option = {
+			name = "We have no need of such allies"
+
+			HUN = {
+				#add_stability = +0.1
+				#add_war_support = -0.25
+			hidden_effect = {
+
+				remove_ideas = {
+					HUN_strengthen_fascists
+					HUN_invite_foreign_investors
+				}
+
+				every_country = {
+					limit = {
+						 has_war_with = HUN 
+					OR = { 
+						is_faction_leader = yes 
+						is_in_faction = no
+					}
+				 }
+					white_peace = HUN 
+				}
+			}
+				GER = { remove_from_faction = HUN }
+				SOV = { add_to_faction = HUN }
+
+				add_to_war = {
+					targeted_alliance = SOV
+					enemy = GER
+				}
+			}
+
+			ai_chance = {
+				base = 0
+			}
+		}
 }
 
 

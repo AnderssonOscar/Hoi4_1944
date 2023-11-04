@@ -10196,7 +10196,30 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+
+				if = {
+					limit = {
+						state_population_k > 1000
+					}
+				}
 			}
+
+			every_controlled_state = {
+				limit = {
+					is_fully_controlled_by = controller
+					is_core_of = ROOT
+					state_population_k > 1000
+				}
+						set_temp_variable = { steel_manpower = state_population_k }
+						divide_temp_variable = { steel_manpower = 1000 }
+						add_to_temp_variable = { var = steel_manpower value = 3 }
+	
+						add_resource = {
+							type = steel
+							amount = steel_manpower
+							show_state_in_tooltip = no
+						}
+					}
 		}
 	}
 
@@ -10324,7 +10347,7 @@ focus_tree = {
 		2 = { 
 				add_building_construction = {
 					type = bunker
-					level = 8
+					level = 5
 					province = 923
 					instant_build = yes
 				}
@@ -10333,14 +10356,14 @@ focus_tree = {
 			157 = { 
 				add_building_construction = {
 					type = bunker
-					level = 8
+					level = 5
 					province = 963
 					instant_build = yes
 				}
 
 				add_building_construction = {
 					type = bunker
-					level = 8
+					level = 5
 					province = 6831
 					instant_build = yes
 				}
@@ -10393,6 +10416,9 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_political_power =+200
+			custom_effect_tooltip ="  "
+
 		custom_effect_tooltip = GER_festung_cities_tooltip
 
 
@@ -10414,48 +10440,48 @@ focus_tree = {
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 6332 }	}
+	if = {	limit = {	GER = { controls_province = 13278 }	}
 		763 = { 
 
 				add_building_construction = { #east
 					type = bunker
 					level = 7
-					province = 6332
+					province = 13278
 					instant_build = yes
 				}
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 6332 }	}
+	if = {	limit = {	GER = { controls_province = 13279 }	}
 		763 = { 
 				add_building_construction = { #south
 					type = bunker
 					level = 7
-					province = 6332
-					instant_build = yes
-				}
-			}
-		}
-
-	if = {	limit = {	GER = { controls_province = 6332 }	}
-		763 = {
-
-				add_building_construction = { #west
-					type = bunker
-					level = 7
-					province = 6332
+					province = 13279
 					instant_build = yes
 				}
 			}
 		}
 
 	if = {	limit = {	GER = { controls_province = 11265 }	}
-		763 = { 
+		763 = {
 
 				add_building_construction = { #north
 					type = bunker
 					level = 7
 					province = 11265
+					instant_build = yes
+				}
+			}
+		}
+
+	if = {	limit = {	GER = { controls_province = 13279 }	}
+		763 = { 
+
+				add_building_construction = { #north
+					type = bunker
+					level = 7
+					province = 13279
 					instant_build = yes
 				}
 			}
@@ -10519,34 +10545,34 @@ focus_tree = {
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 11444 }	}
+		if = {	limit = {	GER = { controls_province = 13273 }	}
 			64 = { #outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 5
-						province = 11444
+						province = 13273
 						instant_build = yes
 					}
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 11505 }	}
+		if = {	limit = {	GER = { controls_province = 13276 }	}
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 5
-						province = 11505
+						province = 13276
 						instant_build = yes
 					}
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 9428 }	}
+		if = {	limit = {	GER = { controls_province = 13275 }	}
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 5
-						province = 9428
+						province = 13275
 						instant_build = yes
 					}
 				}
@@ -10554,12 +10580,12 @@ focus_tree = {
 
 
 
-		if = {	limit = {	GER = { controls_province = 3473 }	}
+		if = {	limit = {	GER = { controls_province = 13274 }	}
 			68 = { #kustrin
 				add_building_construction = {
 						type = bunker
 						level = 8
-						province = 3473
+						province = 13274
 						instant_build = yes
 					}
 				}

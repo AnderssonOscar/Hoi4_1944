@@ -662,6 +662,10 @@ ideas = {
 					}
 					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
 				}
+				if = { #1944
+					limit = { original_tag = HUN }
+					has_idea = HUN_peace_negotiations
+				}
 			}
 
 			cost = 150
@@ -733,6 +737,11 @@ ideas = {
 					}
 					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
 				}
+
+				if = { #1944
+					limit = { original_tag = HUN }
+					has_idea = HUN_peace_negotiations
+				}
 			}
 
 
@@ -803,6 +812,10 @@ ideas = {
 					}
 				}
 
+				if = { #1944
+					limit = { original_tag = HUN }
+					has_idea = HUN_peace_negotiations
+				}
 
 				if = {
 					limit = {

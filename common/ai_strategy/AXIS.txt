@@ -72,7 +72,7 @@ Axis_dont_forget_about_italy = {
 		type = front_unit_request
 		country_trigger = {tag = USA}
 		tag = USA
-		value = 65
+		value = 20 #65
 	}
 
 	ai_strategy = {
@@ -83,6 +83,29 @@ Axis_dont_forget_about_italy = {
 		ordertype = front
 		execute_order = no
 		execution_type = careful
+	}
+}
+
+
+Axis_allies_dont_help_italy = {
+
+	allowed = {
+		is_in_faction_with = ITA
+		has_war_with = USA
+		NOT = {tag = GER}
+		NOT = {tag = ITA}
+	}
+
+	enable = {
+		date > 1943.12.30
+		ITA = { surrender_progress < 0.4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "ITA"
+		value = 500
 	}
 }
 
