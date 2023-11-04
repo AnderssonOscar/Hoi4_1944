@@ -1109,7 +1109,13 @@ democratic_on_the_rise = {
 				has_country_flag = open_up_political_discourse_democratic
 			}
 			check_has_focus_tree_to_switch_to_democratic = yes
-			NOR_AAT = no 
+			if = {
+				limit = {
+					NOR_AAT = yes 
+				}
+				original_tag = NOR 
+				has_country_flag = NOR_included_in_generic_political
+			}
 		}
 		
 		remove_trigger = {
@@ -1702,6 +1708,12 @@ communism_on_the_rise = {
 			modifier = {
 				communism > 0.6
 				factor = 10
+			}
+			modifier = {
+				factor = 0
+				original_tag = DEN
+				has_dlc = "Arms Against Tyranny"
+				is_subject = yes
 			}
 		}
 	}

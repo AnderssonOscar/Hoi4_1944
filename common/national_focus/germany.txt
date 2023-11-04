@@ -3084,6 +3084,7 @@ focus_tree = {
 						OR = {
 							original_tag = DEN
 							original_tag = NOR
+							original_tag = LUX
 							AND = {
 								original_tag = HOL
 								FRA = {

@@ -147,6 +147,8 @@ set_variable = { var = ger_gateway_to_europe_influence value = 0 }
 
 set_variable = { var = wehrmacht_anger value = 0 }
 set_variable = { var = ss_anger value = 0 }
+set_variable = { GER_narvik_shipments = 0 }
+set_variable = { GER_narvik_civs = 0 }
 set_research_slots = 4
 set_convoys = 200
 set_stability = 0.75 
@@ -821,6 +823,8 @@ recruit_character = GER_wilhelm_iii
 recruit_character = GER_victoria
 recruit_character = GER_august_von_mackensen
 
+recruit_character = GER_alexander_von_falkenhausen #Not visible unless recalled from China
+
 
 if = {
 	limit = {
@@ -840,6 +844,7 @@ if = {
 		bypass_recruitment = no
 		available_to_spy_master = yes
 		nationalities = { GER }
+		gender = male
 	}
 
 	create_operative_leader = {
@@ -849,6 +854,7 @@ if = {
 		bypass_recruitment = no
 		available_to_spy_master = yes
 		nationalities = { GER }
+		gender = male
 	}
 	create_operative_leader = {
 		name = "Eleysa Bazna"
@@ -857,6 +863,7 @@ if = {
 		bypass_recruitment = no
 		available_to_spy_master = yes
 		nationalities = { GER TUR }
+		gender = male
 	}
 }
 

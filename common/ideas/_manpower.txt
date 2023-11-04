@@ -34,7 +34,21 @@ ideas = {
 						original_tag = HUN
 						has_dlc = "Death or Dishonor"
 					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
+					}
+					else = {
+						NOT = { has_idea = HUN_treaty_of_triannon }
+					}
+				}
+				if = {
+					limit = {
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_had_volunteer_only_flag }
 				}
 				NOT = { has_idea = undisturbed_isolation }
 				NOT = { has_idea = isolation }
@@ -96,7 +110,15 @@ ideas = {
 						original_tag = HUN
 						has_dlc = "Death or Dishonor"
 					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
+					}
+					else = {
+						NOT = { has_idea = HUN_treaty_of_triannon }
+					}
 				}
 				if = {
 					limit = {
@@ -118,7 +140,25 @@ ideas = {
 						original_tag = BUL
 						has_dlc = "Battle for the Bosporus"
 					}
-					NOT = { has_idea = BUL_army_restrictions }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = {
+							has_idea = BUL_army_restrictions_aat
+						}
+					}
+					else = {
+						NOT = {
+							has_idea = BUL_army_restrictions
+						}
+					}
+				}
+				if = {
+					limit = {
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
 				}
 			}
 
@@ -136,12 +176,17 @@ ideas = {
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
-					manpower_per_military_factory < 1000
+					manpower_per_military_factory < 2000
 				}
 				modifier = {
 					tag = ENG
 					has_idea_with_trait = military_theorist
 					factor = 20
+				}
+				modifier = {
+					tag = SOV
+					threat > 0.8
+					factor = 3
 				}
 				modifier = {
 					factor = 0
@@ -159,6 +204,20 @@ ideas = {
 				OR = {
 					has_government = fascism
 					has_government = communism
+					SWE_rapid_mob_manpower_law_trigger = yes 
+					if = {
+						limit = {
+							original_tag = DEN
+							has_dlc = "Arms Against Tyranny"
+						}
+						has_country_leader = {
+							ruling_only = yes
+							character = DEN_christian_x
+						}
+					}
+					else = {
+						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+					}
 					AND = {
 						has_war = yes
 						enemies_strength_ratio > 0.5
@@ -168,6 +227,17 @@ ideas = {
 						#		ratio > 0.5
 						#	}
 						#}
+					}
+
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+							has_autonomy_state = autonomy_aat_defense_council_member
+							is_subject_of = SWE
+						}
+					}
+					else = {
+						hidden_trigger = { always = no }  #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
 					}
 				}
 				has_war_support > 0.2
@@ -201,7 +271,15 @@ ideas = {
 						original_tag = HUN
 						has_dlc = "Death or Dishonor"
 					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
+					}
+					else = {
+						NOT = { has_idea = HUN_treaty_of_triannon }
+					}
 				}
 				if = {
 					limit = {
@@ -223,8 +301,27 @@ ideas = {
 						original_tag = BUL
 						has_dlc = "Battle for the Bosporus"
 					}
-					NOT = { has_idea = BUL_army_restrictions }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = {
+							has_idea = BUL_army_restrictions_aat
+						}
+					}
+					else = {
+						NOT = {
+							has_idea = BUL_army_restrictions
+						}
+					}
 				}
+				if = {
+					limit = {
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
+				}
+				
 			}
 			ai_will_do = {
    				factor = 1
@@ -300,6 +397,7 @@ ideas = {
 				OR = {
 					has_government = fascism
 					has_government = communism
+					SWE_rapid_mob_manpower_law_trigger = yes
 					AND = {
 						has_war = yes
 						enemies_strength_ratio > 0.6
@@ -358,7 +456,15 @@ ideas = {
 						original_tag = HUN
 						has_dlc = "Death or Dishonor"
 					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
+					}
+					else = {
+						NOT = { has_idea = HUN_treaty_of_triannon }
+					}
 				}
 				if = {
 					limit = {
@@ -380,7 +486,25 @@ ideas = {
 						original_tag = BUL
 						has_dlc = "Battle for the Bosporus"
 					}
-					NOT = { has_idea = BUL_army_restrictions }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = {
+							has_idea = BUL_army_restrictions_aat
+						}
+					}
+					else = {
+						NOT = {
+							has_idea = BUL_army_restrictions
+						}
+					}
+				}
+				if = {
+					limit = {
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
 				}
 			}
 
@@ -464,22 +588,16 @@ ideas = {
 				#		ratio > 0.75
 				#	}
 				#}
-
+				
 				if = {
 					limit = {
 						is_ai = yes
 						#is_major = no
 					}
 
-					#set_temp_variable = { days = global.num_days }
-					#modulo_temp_variable = { days = 30 }
-					#check_variable = { days > 20 }
 					conscription_ratio > 0.85
 					has_idea = service_by_requirement
-					#has_manpower < 75000
 				}
-			
-
 
 				if = {
 					limit = {
@@ -513,7 +631,15 @@ ideas = {
 						original_tag = HUN
 						has_dlc = "Death or Dishonor"
 					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
+					}
+					else = {
+						NOT = { has_idea = HUN_treaty_of_triannon }
+					}
 				}
 				if = {
 					limit = {
@@ -535,7 +661,25 @@ ideas = {
 						original_tag = BUL
 						has_dlc = "Battle for the Bosporus"
 					}
-					NOT = { has_idea = BUL_army_restrictions }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = {
+							has_idea = BUL_army_restrictions_aat
+						}
+					}
+					else = {
+						NOT = {
+							has_idea = BUL_army_restrictions
+						}
+					}
+				}
+				if = {
+					limit = {
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
 				}
 			}
 
@@ -578,6 +722,18 @@ ideas = {
 
 			}
 
+			on_add = {
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+						original_tag = FIN
+						has_completed_focus = FIN_militarized_society
+						NOT = { has_idea = FIN_militarized_society }
+					}
+					add_ideas = FIN_militarized_society
+				}
+			}
+
 			cost = 150
 			removal_cost = -1
 			level = 2
@@ -601,7 +757,7 @@ ideas = {
 				has_war = yes
 				OR = {
 					has_war_support > 0.85
-					surrender_progress > 0.15
+					surrender_progress > 0.1
 				}
 				enemies_strength_ratio > 1
 				#any_enemy_country = {
@@ -610,24 +766,16 @@ ideas = {
 				#		ratio > 1
 				#	}
 				#}
-
-				
-
 				if = {
 					limit = {
 						is_ai = yes
 					}
 
-					#set_temp_variable = { days = global.num_days }
-					#modulo_temp_variable = { days = 30 }
-					#check_variable = { days > 20 }
 
 					has_manpower < 50000
 					conscription_ratio > 0.85
 					has_idea = all_adults_serve
 				}
-			
-
 				if = {
 					limit = {
 						original_tag = AST
@@ -660,7 +808,15 @@ ideas = {
 						original_tag = HUN
 						has_dlc = "Death or Dishonor"
 					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
+					}
+					else = {
+						NOT = { has_idea = HUN_treaty_of_triannon }
+					}
 				}
 				if = {
 					limit = {
@@ -682,7 +838,25 @@ ideas = {
 						original_tag = BUL
 						has_dlc = "Battle for the Bosporus"
 					}
-					NOT = { has_idea = BUL_army_restrictions }
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = {
+							has_idea = BUL_army_restrictions_aat
+						}
+					}
+					else = {
+						NOT = {
+							has_idea = BUL_army_restrictions
+						}
+					}
+				}
+				if = {
+					limit = {
+						DEN_aat_is_subject = yes
+					}
+					NOT = { has_country_flag = DEN_cannot_increase_conscription_law }
 				}
 			}
 
@@ -708,7 +882,6 @@ ideas = {
 					factor = 0
 					NOT = { has_idea = all_adults_serve }
 				}
-
 				modifier = {
 					factor = -10
 					original_tag = GER
@@ -722,6 +895,18 @@ ideas = {
 					date < 1945.4.1
 				}
 
+			}
+
+			on_add = {
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+						original_tag = FIN
+						has_completed_focus = FIN_militarized_society
+						NOT = { has_idea = FIN_militarized_society }
+					}
+					add_ideas = FIN_militarized_society
+				}
 			}
 
 			cost = 150
