@@ -288,10 +288,12 @@ GER = {
 				JAP = { add_mines = { region = 79 amount = 500 } }
 				JAP = { add_mines = { region = 76 amount = 500 } }
 
-				GER = { add_mines = { region = 173 amount = 980 } }
+				GER = { add_mines = { region = 173 amount = 480 } }
 				GER = { add_mines = { region = 207 amount = 410 } }
 				GER = { add_mines = { region = 174 amount = 150 } }
 				GER = { add_mines = { region = 42 amount = 250 } }
+
+				GER = { add_mines = { region = 206 amount = 300 } }
 
 				FIN = { add_mines = { region = 9 amount = 380 } }
 

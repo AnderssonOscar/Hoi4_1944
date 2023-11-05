@@ -12,7 +12,7 @@ ideas = {
 	GER_fanatical_defense = {
 		picture = hol_liberation
 		modifier = {
-			army_core_defence_factor = 0.2
+			army_core_defence_factor = 0.15
 			}
 		}
 

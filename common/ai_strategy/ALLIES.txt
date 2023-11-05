@@ -1249,9 +1249,9 @@ ENG_disallow_invasion_of_GRE = {#greece
 		16 = {is_fully_controlled_by = GER} #Paris
 
 		any_enemy_country = { #if any axis country has more then 25000, dosent work the other way
-			army_manpower_in_state = { amount > 25000 state = 47 }
-			army_manpower_in_state = { amount > 25000 state = 186 }
-			army_manpower_in_state = { amount > 25000 state = 731 }
+			army_manpower_in_state = { amount > 30000 state = 47 }
+			army_manpower_in_state = { amount > 30000 state = 186 }
+			#army_manpower_in_state = { amount > 30000 state = 731 }
 		}
 		}
 	}
@@ -1280,7 +1280,7 @@ ENG_disallow_invasion_of_GRE = {#greece
 
 ENG_enable_invasion_of_GRE = {#greece
 	allowed = {
-		tag = ENG
+		original_tag = ENG
 	}
 
 	enable = {
@@ -1291,22 +1291,24 @@ ENG_enable_invasion_of_GRE = {#greece
 			#NOT = { ROM = {has_government = fascism} }
 			#date > 1944.9.1
 			GER = { surrender_progress > 0.1 }
+			ROM = { surrender_progress > 0.35 }
 			ROM = { is_puppet = yes}
+			ROM = { has_capitulated = yes}
 		} 
 
 		NOT = { 16 = {is_fully_controlled_by = GER} } #Paris
 
 		AND = {
 			GER = {
-				army_manpower_in_state = { amount < 25000 state = 47 }
-				army_manpower_in_state = { amount < 25000 state = 186 }
-				army_manpower_in_state = { amount < 25000 state = 731 }
+				army_manpower_in_state = { amount < 30000 state = 47 }
+				army_manpower_in_state = { amount < 30000 state = 186 }
+				#army_manpower_in_state = { amount < 30000 state = 731 }
 			}
 
 			GRE = {
-				army_manpower_in_state = { amount < 25000 state = 47 }
-				army_manpower_in_state = { amount < 25000 state = 186 }
-				army_manpower_in_state = { amount < 25000 state = 731 }
+				army_manpower_in_state = { amount < 30000 state = 47 }
+				army_manpower_in_state = { amount < 30000 state = 186 }
+				#army_manpower_in_state = { amount < 30000 state = 731 }
 			}
 		}
 
@@ -1321,9 +1323,15 @@ ENG_enable_invasion_of_GRE = {#greece
 	}
 
 	ai_strategy = {
+		type = invasion_unit_request
+		strategic_region = 25 #greece
+		value = 10
+	}
+
+	ai_strategy = {
 		type = front_control
 		country_trigger = {
-			tag = GE
+			tag = GRE
 		}
 
 		ordertype = front

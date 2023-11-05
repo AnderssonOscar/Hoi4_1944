@@ -41,7 +41,8 @@ state={
 		1943.12.1 = {
 			buildings = {
 					
-					fuel_silo = 3
+					fuel_silo = 1
+					synthetic_refinery = 3
 			}
 		}
 	}

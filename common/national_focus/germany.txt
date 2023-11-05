@@ -9838,7 +9838,7 @@ focus_tree = {
 	available = {
 			has_war = yes
 		OR = {
-			surrender_progress > 0.20
+			surrender_progress > 0.1
 			date > 1944.10.1
 			}
 		}
@@ -10390,9 +10390,7 @@ focus_tree = {
 		y = 10
 		cost = 5 #5
 		available_if_capitulated = no
-		prerequisite = { 
-			focus = GER_gustav_line 
-		}
+		prerequisite = { focus = GER_gustav_line }
 		ai_will_do = {
 			factor = 7
 
@@ -10427,14 +10425,22 @@ focus_tree = {
  
 				add_building_construction = { #city
 					type = bunker
-					level = 10
+					level = 8
 					province = 6332
 					instant_build = yes
 				}
 
-				add_state_modifier = {
-					modifier = {
-						local_supplies = 1.0
+				hidden_effect = {
+					#GER = { 763 = {add_dynamic_modifier = { modifier = GER_festung_konigsberg_modifier scope = GER } } }
+					add_province_modifier = {
+						static_modifiers = {GER_festung_static_modifier}
+						#add_dynamic_modifier = { modifier = GER_festung_konigsberg_modifier scope = GER } 
+						province = {
+							id = 13278
+							id = 13279
+							id = 6332
+							id = 11265
+						}
 					}
 				}
 			}
@@ -10445,7 +10451,7 @@ focus_tree = {
 
 				add_building_construction = { #east
 					type = bunker
-					level = 7
+					level = 6
 					province = 13278
 					instant_build = yes
 				}
@@ -10456,7 +10462,7 @@ focus_tree = {
 		763 = { 
 				add_building_construction = { #south
 					type = bunker
-					level = 7
+					level = 6
 					province = 13279
 					instant_build = yes
 				}
@@ -10468,7 +10474,7 @@ focus_tree = {
 
 				add_building_construction = { #north
 					type = bunker
-					level = 7
+					level = 6
 					province = 11265
 					instant_build = yes
 				}
@@ -10480,7 +10486,7 @@ focus_tree = {
 
 				add_building_construction = { #north
 					type = bunker
-					level = 7
+					level = 6
 					province = 13279
 					instant_build = yes
 				}
@@ -10517,10 +10523,19 @@ focus_tree = {
 
 	if = {	limit = {	GER = { controls_province = 9570 }	}
 
-			66 = { #breslau
+	66 = { #breslau
+		hidden_effect = {
+			add_province_modifier = {
+				static_modifiers = {GER_festung_static_modifier}
+				province = {
+					id = 9570
+				}
+			}
+		}
+
 				add_building_construction = {
 						type = bunker
-						level = 9
+						level = 7
 						province = 9570
 						instant_build = yes
 					}
@@ -10530,6 +10545,20 @@ focus_tree = {
 
 		if = {	limit = {	GER = { controls_province = 6521 }	}
 			64 = { #berlin
+
+		hidden_effect = {
+			add_province_modifier = {
+				static_modifiers = {GER_festung_static_modifier}
+				province = {
+					id = 6521
+					id = 13273
+					id = 13274
+					id = 13275
+					id = 13276
+				}
+			}
+		}
+
 				add_building_construction = {
 						type = bunker
 						level = 8
@@ -10537,11 +10566,7 @@ focus_tree = {
 						instant_build = yes
 					}
 
-				add_state_modifier = {
-					modifier = {
-						local_supplies = 0.25
-					}
-				}
+
 				}
 			}
 
@@ -10549,7 +10574,7 @@ focus_tree = {
 			64 = { #outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 5
+						level = 4
 						province = 13273
 						instant_build = yes
 					}
@@ -10560,7 +10585,7 @@ focus_tree = {
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 5
+						level = 4
 						province = 13276
 						instant_build = yes
 					}
@@ -10571,7 +10596,7 @@ focus_tree = {
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 5
+						level = 4
 						province = 13275
 						instant_build = yes
 					}
@@ -10594,6 +10619,15 @@ focus_tree = {
 
 		if = {	limit = {	GER = { controls_province = 6558 }	}
 			86 = { #poznan
+			hidden_effect = {
+				add_province_modifier = {
+					static_modifiers = {GER_festung_static_modifier}
+					province = {
+						id = 6558
+					}
+				}
+			}
+
 				add_building_construction = {
 						type = bunker
 						level = 8
@@ -10617,13 +10651,23 @@ focus_tree = {
 
 
 
-				if = {
-					limit = {
-						HUN = {
-							controls_province = 9660
-						}
-					}
+	if = {
+		limit = {
+			HUN = {
+				is_in_faction_with = GER
+				controls_province = 9660
+			}
+		}
 			43 = { #budapest
+
+			hidden_effect = {
+				add_province_modifier = {
+					static_modifiers = {GER_festung_static_modifier}
+					province = {
+						id = 9660
+					}
+				}
+			}
 				add_building_construction = {
 						type = bunker
 						level = 10
@@ -10631,20 +10675,15 @@ focus_tree = {
 						instant_build = yes
 					}
 
-				add_state_modifier = {
-					modifier = {
-						local_supplies = 1.0
-					}
-				}
 				}
 			}
-
 	
-
-			add_timed_idea ={
+	hidden_effect = {
+		add_timed_idea ={
 			idea = GER_festung_supply
-			days = 720
+			days = 365
 		}
+	}
 
 		}
 	}
@@ -10699,7 +10738,7 @@ focus_tree = {
 		add_war_support = +0.1
 		add_timed_idea ={
 			idea = GER_fanatical_defense
-			days = 150
+			days = 120
 		} 
 		}
 	}

@@ -1,94 +1,78 @@
 
-operations = {
+# operations = {
 
-	GER_operation_margarethe = {
+# 	GER_operation_margarethe = {
 
-		icon = generic_operation
+# 		icon = generic_operation
 
-		allowed = {
-			tag = GER
-		}
+# 		allowed = {
+# 			tag = GER
+# 		}
 
-		visible = { 
-			HUN = { has_government = neutrality }
-			HUN = {has_war_with = SOV} 
-			NOT = {has_war_with = HUN}
-			HUN = { is_ai = yes }
-			date > 1999.1.1
-		}
+# 		visible = { 
+# 			HUN = { has_government = neutrality }
+# 			HUN = {has_war_with = SOV} 
+# 			NOT = {has_war_with = HUN}
+# 			HUN = { is_ai = yes }
+# 			date > 1999.1.1
+# 		}
 
-		available = {
-			43 = {is_fully_controlled_by = HUN}
-			date > 1944.3.15
-		}
-		cost = 0
-		days_remove = 3
-		fire_only_once = yes
-		days_mission_timeout = 180
+# 		available = {
+# 			43 = {is_fully_controlled_by = HUN}
+# 			date > 1944.3.15
+# 		}
+# 		cost = 0
+# 		days_remove = 3
+# 		fire_only_once = yes
+# 		days_mission_timeout = 180
 
-		is_good = no
+# 		is_good = no
 
-		timeout_effect = {
-			add_political_power = -100
-			add_war_support = -0.1
-		}
+# 		timeout_effect = {
+# 			add_political_power = -100
+# 			add_war_support = -0.1
+# 		}
 
-		remove_effect = {
+# 		remove_effect = {
 
-			HUN = {
-				set_politics = {
-					ruling_party = fascism
-					last_election = "1944.3.1"
-					election_frequency = 48
-					elections_allowed = no
-				}
+# 			HUN = {
+# 				set_politics = {
+# 					ruling_party = fascism
+# 					last_election = "1944.3.1"
+# 					election_frequency = 48
+# 					elections_allowed = no
+# 				}
 
 				
-				set_popularities = {
-					neutrality = 30
-					democratic = 10
-					fascism = 60
-					communism = 0
-				}
+# 				set_popularities = {
+# 					neutrality = 30
+# 					democratic = 10
+# 					fascism = 60
+# 					communism = 0
+# 				}
 
 
-				GER = {
-					#puppet = PREV
-					set_autonomy = { target = PREV autonomy_state = autonomy_satellite }
-				}
+# 				GER = {
+# 					#puppet = PREV
+# 					set_autonomy = { target = PREV autonomy_state = autonomy_satellite }
+# 				}
 
-				#GER = { country_event = operation.margarethe.1 }
-				#custom_effect_tooltip = operation.margarethe.decision.1.d
-		}
-	}
+# 				#GER = { country_event = operation.margarethe.1 }
+# 				#custom_effect_tooltip = operation.margarethe.decision.1.d
+# 		}
+# 	}
 
-		ai_will_do = {
-			factor = 3
+# 		ai_will_do = {
+# 			factor = 3
 
-			modifier = {
-				date > 1944.3.16
-				factor = 100
-			}
-		}
-	}
+# 			modifier = {
+# 				date > 1944.3.16
+# 				factor = 100
+# 			}
+# 		}
+# 	}
 	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# }
 
 	
 special_projects = {

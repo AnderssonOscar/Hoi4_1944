@@ -1807,6 +1807,9 @@ if = {
 				iw_large_airframe = 1
 				basic_large_airframe = 1
 				improved_large_airframe = 1
+
+				armor_piercing_bombs = 1
+				heavy_bombs = 1
 			}
 		else = {
 			set_technology = {

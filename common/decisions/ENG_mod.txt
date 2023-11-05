@@ -23,20 +23,20 @@ war_measures = {
 				ROM = { has_capitulated = yes}
 			} 
 
-			GRE = { surrender_progress < 0.25 }
+			GRE = { surrender_progress < 0.3 }
 			NOT = { 16 = {is_fully_controlled_by = GER} } #Paris
 
 			AND = {
 				GER = {
-					army_manpower_in_state = { amount < 25000 state = 47 }
-					army_manpower_in_state = { amount < 25000 state = 186 }
-					army_manpower_in_state = { amount < 25000 state = 731 }
+					army_manpower_in_state = { amount < 30000 state = 47 }
+					army_manpower_in_state = { amount < 30000 state = 186 }
+					#army_manpower_in_state = { amount < 25000 state = 731 }
 				}
 
 				GRE = {
-					army_manpower_in_state = { amount < 25000 state = 47 }
-					army_manpower_in_state = { amount < 25000 state = 186 }
-					army_manpower_in_state = { amount < 25000 state = 731 }
+					army_manpower_in_state = { amount < 30000 state = 47 }
+					army_manpower_in_state = { amount < 30000 state = 186 }
+					#army_manpower_in_state = { amount < 25000 state = 731 }
 				}
 			}
 		}
@@ -54,7 +54,7 @@ war_measures = {
 		days_remove = 14
 
 		modifier = {
-			naval_invasion_prep_speed = +100.0
+			naval_invasion_prep_speed = +10.0
 			naval_invasion_penalty = -0.5
 			naval_invasion_capacity = +1.50
 		}

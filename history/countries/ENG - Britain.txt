@@ -1676,8 +1676,9 @@ if = {
 				fixed_main_weapon_slot = bomb_locks
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				engine_type_slot = engine_2_1x
-				special_type_slot_1 = dive_brakes_small
-				special_type_slot_2 = fuel_tanks_small
+				special_type_slot_1 = fuel_tanks_small
+				#special_type_slot_1 = dive_brakes_small
+				#special_type_slot_2 = fuel_tanks_small
 			}
 			icon = "GFX_ENG_CAS1_medium"
 		}
@@ -1806,6 +1807,18 @@ if = {
 
 1943.12.30 = {
 
+	create_import = {
+		resource = rubber
+		factories = 8
+		exporter = USA
+	}
+
+	create_import = {
+		resource = aluminium
+		factories = 6
+		exporter = USA
+	}
+
 	if = {
 		limit = {
 			has_dlc = "Man the Guns"
@@ -1863,6 +1876,7 @@ if = {
 	set_convoys = 2590
 	add_manpower = 700000
 	set_stability = 0.8
+	set_fuel_ratio = 0.9
 	#set_war_support = 0.1
 	
 	#adding ministers
@@ -2033,6 +2047,7 @@ if = {
 
 		rubber_processing = 1
 		improved_rubber_processing = 1
+		advanced_rubber_processing = 1
 
 		fuel_refining2 = 1
 		fuel_refining3 = 1
@@ -2055,6 +2070,8 @@ if = {
 		dispersed_industry3 = 1
 		dispersed_industry4 = 1
 		dispersed_industry5 = 1
+
+		wartime_train = 1
 	}
 
 
@@ -2213,6 +2230,9 @@ if = {
 				basic_large_airframe = 1
 				improved_large_airframe = 1
 				advanced_large_airframe = 1
+
+				armor_piercing_bombs = 1
+				heavy_bombs = 1
 			}
 		else = {
 			set_technology = {

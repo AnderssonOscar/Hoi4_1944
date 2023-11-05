@@ -2154,6 +2154,9 @@ if = {
 				iw_large_airframe = 1
 				basic_large_airframe = 1
 				#improved_large_airframe = 1
+
+				armor_piercing_bombs = 1
+				heavy_bombs = 1
 			}
 		else = {
 			set_technology = {
@@ -2773,10 +2776,13 @@ if = {
 			amount = 4326
 	}
 
-	add_equipment_to_stockpile = {
-        type = light_tank_chassis_1
-        amount = 986
-		variant_name  = "T-26TU"
-		producer = SOV
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		add_equipment_to_stockpile = {
+			type = light_tank_chassis_1
+			amount = 986
+			variant_name  = "T-26TU"
+			producer = SOV
+		}
     }
 }

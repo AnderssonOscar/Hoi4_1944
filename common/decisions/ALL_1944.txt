@@ -430,8 +430,8 @@ operations = {
 			is_ai = yes
 		}
 
-		fire_only_once = no
-		days_re_enable = 87
+		fire_only_once = yes
+		days_re_enable = 87 
 		cost = 0
 
 		ai_will_do = {
@@ -439,6 +439,7 @@ operations = {
 		}
 
 		complete_effect = {
+			#news_event = { id = mod.news.1 } # D-DAY dday 1944
 			GER = { 
 			15 = {
 				set_resistance = 62
@@ -619,6 +620,9 @@ operations = {
 				check_variable = { days < 87 }
 
 				16 = {is_fully_controlled_by = GER}
+
+				ENG = { surrender_progress < 0.01 }
+				USA = { surrender_progress < 0.01 }
 
 			GER = {
 

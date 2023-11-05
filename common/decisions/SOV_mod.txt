@@ -1,8 +1,4 @@
 
-
-
-
-
 SOV_great_patriotic_war = {
 
 	SOV_launch_major_offensive_ger = {
@@ -178,9 +174,42 @@ SOV_great_patriotic_war = {
 
 		if = {
 			 limit = {
-					date < 1945.1.1
+					date < 1945.4.1
 					date > 1944.1.1
 				 }
+				 
+			 if = {
+				limit = { has_dlc = "No Step Back" }
+
+				add_equipment_to_stockpile = {
+					type = medium_tank_chassis_2
+					amount = 500
+					variant_name = "T-34-85"
+					producer = SOV
+				}
+
+				add_equipment_to_stockpile = {
+					type = heavy_tank_chassis_3
+					amount = 250
+					variant_name = "IS-2"
+					producer = SOV
+				}
+
+			else = {
+
+				add_equipment_to_stockpile = {
+					type = medium_tank_equipment_2
+					amount = 500
+					producer = SOV
+				}
+		
+				add_equipment_to_stockpile = {
+					type = heavy_tank_equipment_2
+					amount = 250
+					producer = SOV
+				}
+			}
+		}
 
 
 
@@ -195,25 +224,25 @@ SOV_great_patriotic_war = {
 		
 					add_equipment_to_stockpile = {
 						type = small_plane_cas_airframe_1
-						amount = 450
+						amount = 500
 						variant_name = "MBR-2"
 						producer = SOV
 					}
 
 				else = {
 
-						add_equipment_to_stockpile = {
-							type = fighter_equipment_2
-							amount = 200
-							variant_name = "La-5 A"
-							producer = SOV
-						}
-			
-						add_equipment_to_stockpile = {
-							type = CAS_equipment_2
-							amount = 450
-							producer = SOV
-						}	
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_2
+						amount = 200
+						variant_name = "La-5 A"
+						producer = SOV
+					}
+		
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_2
+						amount = 500
+						producer = SOV
+					}	
 				}
 			}
 		}
@@ -231,6 +260,16 @@ SOV_great_patriotic_war = {
 			219 = {
 				create_unit = {
 					division = "name = \"Legko-Tankovaya Diviziya\" division_template = \"Legko-Tankovaya Diviziya\" start_experience_factor = 0.62 " 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Legko-Tankovaya Diviziya\" division_template = \"Legko-Tankovaya Diviziya\" start_experience_factor = 0.52 " 
+					owner = SOV
+				}
+
+				create_unit = {
+					division = "name = \"Legko-Tankovaya Diviziya\" division_template = \"Legko-Tankovaya Diviziya\" start_experience_factor = 0.52 " 
 					owner = SOV
 				}
 

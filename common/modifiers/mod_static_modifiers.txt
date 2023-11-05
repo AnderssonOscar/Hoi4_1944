@@ -1,0 +1,5 @@
+GER_festung_static_modifier = {
+	army_defence_factor = 0.2
+	max_dig_in_factor = 0.75
+	supply_consumption_factor = -0.25
+}

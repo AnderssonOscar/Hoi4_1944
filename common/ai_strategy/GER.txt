@@ -3387,10 +3387,10 @@ GER_out_of_tungsten = {
 
 
 	ai_strategy = { type = equipment_variant_production_factor id = artillery_equipment value = 10 }
-	ai_strategy = { type = equipment_variant_production_factor id = anti_tank_equipment value = -50 }
+	ai_strategy = { type = equipment_variant_production_factor id = anti_tank_equipment value = -60 }
 
 	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_chassis value = -45 }
-	ai_strategy = { type = equipment_variant_production_factor      id = heavy_tank_chassis value = -500 }
+	ai_strategy = { type = equipment_variant_production_factor      id = heavy_tank_chassis value = -1000 }
 
 	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_artillery_chassis value = -500 }
 	ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_artillery_chassis value = -500 }
@@ -3399,6 +3399,7 @@ GER_out_of_tungsten = {
 	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -1000 }
 
 	ai_strategy = { type = equipment_variant_production_factor id = armored_car_equipment value = -1000 }
+	ai_strategy = { type = equipment_variant_production_factor id = armored_car_at_equipment value = -1000 }
 
 	#ai_strategy = { type = equipment_variant_production_factor id = medium_tank_destroyer_equipment value = -1000 }
 	#ai_strategy = { type = equipment_variant_production_factor id = light_tank_destroyer_equipment value = -1000 }

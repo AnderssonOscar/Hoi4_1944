@@ -3,9 +3,28 @@ spriteTypes = {
 		name = "GFX_select_date_1944"
 		texturefile = "gfx/interface/select_date_1944.dds"
 	}
+	spriteType = {
+		name = "GFX_dday_news"
+		texturefile = "gfx/news/dday_news.dds"
+	}
+	spriteType = {
+		name = "GFX_operation_panzerfaust"
+		texturefile = "gfx/news/panzerfaust_news.dds"
+	}
+	spriteType = {
+		name = "GFX_operation_margarethe"
+		texturefile = "gfx/news/operation_margarethe_news.dds"
+	}
+	spriteType = {
+		name = "GFX_konigsberg_defence"
+		texturefile = "gfx/news/konigsberg_defence_news.dds"
+	}
+	spriteType = {
+		name = "GFX_konigsberg_ruins"
+		texturefile = "gfx/news/konigsberg_ruins_news.dds"
+	}
 
 
-	
 
 	SpriteType = {
 		name = "GFX_GER_artillery4_medium"

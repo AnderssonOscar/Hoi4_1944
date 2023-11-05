@@ -1,0 +1,24 @@
+on_actions = {
+	on_startup = {
+		effect = {
+
+		}
+	}
+
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = { # Execute if SOV captures konigsberg GER
+					tag = SOV
+                    FROM = { tag = GER }
+					FROM.FROM = { state = 763 }
+				}
+				FROM = {
+					
+				}
+			}
+		}
+	}
+
+}
