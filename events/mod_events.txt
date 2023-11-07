@@ -450,9 +450,9 @@ country_event = {
 		name = "Launch Operation Margarethe II"
 
 		GER = {
-			add_manpower = -25000 
-			add_political_power = -200
-			add_war_support = -0.05
+			add_manpower = -50000 
+			add_political_power = -250
+			add_war_support = -0.1
 		}
 
 		ROM = {
@@ -769,6 +769,14 @@ country_event = {
 	option = {
 		name = "Send a large military aid package"
 		
+		FIN = {
+			add_to_variable = {
+				var = FIN_surrender_limit
+				value = 0.02
+				tooltip = "will be less likely to sue for peace with the Soviets."
+			}
+		}
+
 
 			#FIN = { add_manpower = +25000 }
 			#GER = { add_manpower = -25000 }
@@ -934,7 +942,7 @@ country_event = {
 
 
 
-		add_timed_idea = { idea = GER_ryt_ribbentrop_agreement days = 60 } 
+		GER = { add_timed_idea = { idea = GER_ryt_ribbentrop_agreement days = 60 } }
 		hidden_effect = { FIN = { country_event = finland.ryti.ribbentrop.1} }
 		ai_chance = {
 			base = 1
@@ -1011,7 +1019,7 @@ country_event = {
 		}
 	}
 
-		add_timed_idea = { idea = GER_ryt_ribbentrop_agreement days = 30 } 
+	GER = { add_timed_idea = { idea = GER_ryt_ribbentrop_agreement days = 30 } }
 
 		hidden_effect = {
 			FIN = { country_event = finland.ryti.ribbentrop.2}
@@ -1232,11 +1240,18 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
-		hidden_effect = {
-			FIN = {
-				set_variable = { FIN_surrender_limit = 0 }
-			}
+	FIN = {
+		subtract_from_variable = {
+			var = FIN_surrender_limit
+			value = 0.07
 		}
+	}
+
+		# hidden_effect = {
+		# 	FIN = {
+		# 		set_variable = { FIN_surrender_limit = 0 }
+		# 	}
+		# }
 	}
 
 	option = {

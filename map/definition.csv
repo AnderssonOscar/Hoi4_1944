@@ -13271,12 +13271,10 @@
 13270;11;143;125;land;true;plains;1
 13271;239;45;233;land;true;mountain;1
 13272;26;125;215;land;true;mountain;1
-
 13273;64;3;255;land;false;urban;1
 13274;255;255;105;land;false;urban;1
 13275;199;232;179;land;false;urban;1
 13276;76;228;240;land;false;urban;1
-
 13277;150;140;182;land;true;urban;1
 13278;95;193;206;land;false;urban;1
 13279;141;197;240;land;true;urban;1

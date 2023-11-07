@@ -168,6 +168,9 @@ finland.ryti.ribbentrop.3:0 "Ryti–Ribbentrop Agreement"
 finland.ryti.ribbentrop.3.t:0 "Ryti–Ribbentrop Agreement"
 finland.ryti.ribbentrop.3.d:0 "Germany has declined to support us."
 
+GER_ryt_ribbentrop_agreement:0 "Ryti-Ribbentrop Agreement"
+GER_ryt_ribbentrop_agreement_desc:0 "We sent Finland some shipments of our much needed supplies."
+
 collaborationist_formation:0 "Collaboration Decisions"
 collaborationist_formation_desc:1 "To help the war effort we need to allow collaboration with the previously undesirable."
 Recruit_Andrey_Vlasov:0 "Recruit Andrey Vlasov"
@@ -293,6 +296,9 @@ soviet.offensive.romania.start.1.d:0 "Today the Soviets launched yet another off
 soviet.offensive.end.1:0 "Soviet Offensive Slows Down"
 soviet.offensive.end.1.t:0 "Soviet Offensive Slows Down"
 soviet.offensive.end.1.d:0 "The offensive that the Soviets launched a coluple weeks ago is slowing down."
+
+mod_boost:0 "World War"
+mod_boost_desc:0 "The war seems soon to be reaching an end"
 
 hungary.operation.panzerfaust.1:0 "Operation Panzerfaust"
 hungary.operation.panzerfaust.1.t:0 "Operation Panzerfaust"

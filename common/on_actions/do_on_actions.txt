@@ -186,10 +186,18 @@ on_actions = {
 			}
 		}
 
+	VEN = {
+		add_ai_strategy  = {
+			type = alliance	
+			id = GER
+			value = -5000
+			}
+		}
+
 		VEN = {
 			add_ai_strategy  = {
 				type = alliance	
-				id = GER
+				id = JAP
 				value = -5000
 				}
 			}

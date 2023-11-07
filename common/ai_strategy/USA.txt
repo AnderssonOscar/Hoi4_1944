@@ -739,7 +739,7 @@ USA_template_design_2 = {
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = 10
+		value = -10
 	}
 
 	ai_strategy = {
@@ -1603,7 +1603,34 @@ USA_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 25
+		value = 30
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = armor
+		value = 30
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 100
+	}
+
+	ai_strategy = { type = equipment_variant_production_factor id = medium_tank_chassis value = 30 }
+
+
+	ai_strategy = {
+		type = template_prio
+		id = modern_armor
+		value = 60
 	}
 
 	ai_strategy = {

@@ -92,7 +92,10 @@ political_actions = {
 
 			if = {
 				limit = {
-					check_variable = { global.TUR_start_embargo_with_axis = 0 }
+					OR = {
+						check_variable = { global.TUR_start_embargo_with_axis = 0 }
+						GER = { surrender_progress < 0.06 }
+					}
 				}
 				country_event = { id = embargo.start.1 }
 			}

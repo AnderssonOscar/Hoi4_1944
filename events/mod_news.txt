@@ -91,6 +91,70 @@ news_event = {
 
 	immediate = {
 		set_global_flag = konigsberg_battle
+
+
+hidden_effect = {
+		GER = {
+
+			if = {
+				limit = {
+					NOT = { GER = { has_template = "Ersatz-division" } }
+				}
+			
+
+			division_template = {
+				name = "Ersatz-division"
+				division_names_group = GER_ERSATZ_01
+			
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					anti_air = { x = 0 y = 1 }
+				}
+			}
+		}
+
+			763 = {
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.61 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.53 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.53 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+			}
+
+		}
+	}
 	}
 	
 	trigger = {
@@ -102,7 +166,7 @@ news_event = {
 		date > 1944.1.1
 
 		GER = {
-			army_manpower_in_state = { amount > 20000 state = 763 }
+			#army_manpower_in_state = { amount > 20000 state = 763 }
 			has_war_with = SOV
 			OR = {
 				NOT = {	controls_province = 11265 } 

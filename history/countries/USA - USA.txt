@@ -1133,6 +1133,7 @@ if = {
 	set_stability = 1.0
 	set_war_support = 1.0
 
+	army_experience = 200
 	add_political_power = 1597
 	add_command_power = 180
 	

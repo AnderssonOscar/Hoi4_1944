@@ -378,8 +378,8 @@ SOV_great_patriotic_war = {
 		
 		targeted_modifier = {
 			tag = GER
-			attack_bonus_against = 1.35
-			breakthrough_bonus_against = 1.35
+			attack_bonus_against = 1.20
+			breakthrough_bonus_against = 1.20
 		}
 
 		targeted_modifier = {

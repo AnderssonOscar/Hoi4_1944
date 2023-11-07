@@ -290,13 +290,13 @@ JAP_care_less_about_making_friends = {
 	ai_strategy = {
 		type = ignore
 		id = "VEN"
-		value = 100
+		value = 1000
 	}
 
 	ai_strategy = {
 		type = alliance
 		id = "VEN"
-		value = -800
+		value = -1000
 	}
 }
 
