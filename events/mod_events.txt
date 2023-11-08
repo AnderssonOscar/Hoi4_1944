@@ -26,14 +26,7 @@ country_event = {
 	desc = german.sabotage.ports.1.d
 	picture = GFX_report_event_hol_polderen
 	
-	trigger = {
-		tag = GER
-		has_war_with = USA
-		date > 1944.5.1
-		GER = { NOT = {	controls_province = 6449 } }
-	}
-
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {
@@ -77,14 +70,7 @@ country_event = {
 	desc = german.sabotage.ports.2.d
 	picture = GFX_report_event_hol_polderen
 	
-	trigger = {
-		tag = GER
-		has_war_with = USA
-		date > 1944.5.1
-		GER = { NOT = {	controls_province = 3552 } }
-	}
-
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {
@@ -128,13 +114,7 @@ country_event = {
 	desc = german.sabotage.ports.3.d
 	picture = GFX_report_event_hol_polderen
 	
-	trigger = {
-		tag = GER
-		has_war_with = USA
-		date > 1944.5.1
-		GER = { NOT = {	controls_province = 6536 } }
-	}
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {
@@ -177,13 +157,7 @@ country_event = {
 	desc = german.sabotage.ports.4.d
 	picture = GFX_report_event_hol_polderen
 	
-	trigger = {
-		tag = GER
-		has_war_with = USA
-		date > 1944.5.1
-		GER = { NOT = {	controls_province = 9510 } }
-	}
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {
@@ -227,13 +201,7 @@ country_event = {
 	desc = german.sabotage.ports.5.d
 	picture = GFX_report_event_hol_polderen
 	
-	trigger = {
-		tag = GER
-		has_war_with = USA
-		date > 1944.5.1
-		GER = { NOT = {	controls_province = 6657 } }
-	}
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {
@@ -277,13 +245,7 @@ country_event = {
 	desc = german.sabotage.ports.6.d
 	picture = GFX_report_event_hol_polderen
 	
-	trigger = {
-		tag = GER
-		has_war_with = USA
-		date > 1944.5.1
-		GER = { NOT = {	controls_province = 9434 } }
-	}
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {
@@ -326,13 +288,7 @@ country_event = {
 	desc = german.sabotage.ports.7.d
 	picture = GFX_report_event_hol_polderen
 	
-	trigger = {
-		tag = GER
-		has_war_with = USA
-		date > 1944.5.1
-		GER = { NOT = {	controls_province = 575 } }
-	}
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {
@@ -375,13 +331,7 @@ country_event = {
 	desc = german.sabotage.ports.8.d
 	picture = GFX_report_event_hol_polderen
 	
-	trigger = {
-		tag = GER
-		has_war_with = USA
-		date > 1944.5.1
-		GER = { NOT = {	controls_province = 6598 } }
-	}
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {
