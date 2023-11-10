@@ -733,6 +733,14 @@ activate_mission = GER_mefo_bills_mission
 	}
 
 	every_country = {
+		limit = { is_in_faction_with = GER }
+		add_to_war = {
+			targeted_alliance = GER
+			enemy = USA
+		}
+	}
+
+	every_country = {
 		limit = { is_in_faction_with = SOV }
 		add_to_war = {
 			targeted_alliance = SOV
@@ -2302,6 +2310,7 @@ if = {
 		recruit_character = GER_helmuth_weidling
 		recruit_character = GER_hans_von_luck_1944
 
+		retire_character = GER_erich_raeder
 		retire_character = GER_wilhelm_list
 		retire_character = GER_fedor_von_bock
 		retire_character = GER_wilhelm_ritter_von_leeb

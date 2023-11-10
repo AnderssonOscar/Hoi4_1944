@@ -2,10 +2,12 @@ tech_start_effects = {
 	
 	if = {
 		limit = {
-			#check_variable = { global.var_tech_start_effects = 0 }
+			NOT = { has_global_flag = mod_tech_start_effects }
 		}
+			set_global_flag = mod_tech_start_effects
 
 		every_country = {
+			limit = { is_ai = yes }
 
 			set_technology = {
 				radio = 1
@@ -45,13 +47,11 @@ tech_start_effects = {
 
 				tech_recon = 1
 
+				tech_trucks = 1
 				motorised_infantry = 1
 
 				basic_train = 1
 			}
 		}
-
-
-		set_variable = { global.var_tech_start_effects = 1 }
 	}
 }

@@ -1,4 +1,4 @@
-﻿###########################
+###########################
 # 1944 Events
 ###########################
 
@@ -1092,12 +1092,12 @@ country_event = {
 		hidden_effect = {
 		if = {
 			limit = { USA = {is_ai = yes} }
-			add_timed_idea = { idea = dday_bonus days = 14 } 
+			add_timed_idea = { idea = dday_bonus days = 11 } 
 		}
 
 		if = {
 			limit = { ENG = {is_ai = yes} }
-			add_timed_idea = { idea = dday_bonus days = 14 } 
+			add_timed_idea = { idea = dday_bonus days = 11 } 
 		}
 	}
 	 }
@@ -1131,23 +1131,24 @@ country_event = {
 		hidden_effect = {
 		if = {
 			limit = { 
-				check_variable = { global.var_start_effects = 0 } 
+				NOT = { has_global_flag = mod_start_effects }
 			}
-				set_variable = { global.var_start_effects = 1 }
+				set_global_flag = mod_start_effects
 				industry_start_effects = yes
-				industry_extra_start_effects = yes
-				#GER_start_effects = yes
-				#tech_start_effects = yes
+				tech_start_effects = yes
+				GER_start_effects = yes
+				GRE_setup_puppet = yes
 				Resistance_start_effects = yes
-				GRE = { country_event = { id = greece.setup.0 } }
-				GER = { country_event = { id = germany.setup.0 } }
+				war_start_effects = yes
+
+				random_country = {
+					limit = { is_ai = no }
+						country_event = { id = mod.start.options.1 }
+				}
 			}
 		}
 	}
-
 }
-
-
 
 
 
@@ -1160,11 +1161,6 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	immediate = {
-		hidden_effect = {
-		}
-	}
-
 	desc = {
 		text = mod.start.1.d
 		trigger = {
@@ -1176,7 +1172,7 @@ country_event = {
 	}
 
 	desc = {
-		text = modstart_allies_desc
+		text = mod.start.1.d_allies
 		trigger = {
 			OR = {
 				original_tag = ENG
@@ -1188,7 +1184,7 @@ country_event = {
 	}
 
 	desc = {
-		text = modstart_jap_desc
+		text = mod.start.1.d_jap
 		trigger = {
 			OR = {
 				original_tag = JAP
@@ -1332,18 +1328,19 @@ country_event = {
 	desc = operation.margarethe.1.d 
 	picture = GFX_report_event_SOV_negotiations_japan_bukharin
 
-	trigger = {
-		original_tag = GER
-		date > 1944.3.13
-		#HUN = { surrender_progress < 0.01 }
-		HUN = { is_ai = yes } 
-		HUN = { is_in_faction_with = GER }
-
-		has_war_with = SOV 
-	}
-
-	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
 	fire_only_once = yes
+	# trigger = {
+	# 	original_tag = GER
+	# 	date > 1944.3.13
+	# 	HUN = { is_ai = yes } 
+	# 	HUN = { is_in_faction_with = GER }
+
+	# 	has_war_with = SOV 
+	# }
+
+	# mean_time_to_happen = { days = 1 }
+	# fire_only_once = yes
 
 	option = {
 		every_country = {

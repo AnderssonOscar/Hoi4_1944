@@ -1,204 +1,44 @@
-on_actions = {
-	on_startup = {
-		effect = {
+# on_actions = {
+# 	on_startup = {
+# 		effect = {
 
-		}
-	}
+# 		}
+# 	}
 
-	# #ROOT is new controller #FROM is old controller #FROM.FROM is state ID
-	# on_state_control_changed = {
-	# 	effect = {
-	# 		if = {
-	# 			limit = { # Execute if SOV captures konigsberg GER
-	# 				original_tag = SOV
-    #                 FROM = { original_tag = GER }
-	# 				FROM.FROM = { state = 763 }
-	# 			}
-	# 			FROM = {
-	# 				FROM = { country_event = romania.switch.side.2 }
-	# 			}
-	# 		}
-	# 	}
-	# }
+# 	# #ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+# 	# on_state_control_changed = {
+# 	# 	effect = {
+# 	# 		if = {
+# 	# 			limit = { # Execute if SOV captures konigsberg GER
+# 	# 				original_tag = SOV
+#     #                 FROM = { original_tag = GER }
+# 	# 				FROM.FROM = { state = 763 }
+# 	# 			}
+# 	# 			FROM = {
+# 	# 				FROM = { country_event = romania.switch.side.2 }
+# 	# 			}
+# 	# 		}
+# 	# 	}
+# 	# }
 
 
-	# on_state_control_changed = {
-	# 	effect = {
-	# 		if = {
-	# 			limit = {
-	# 				FROM = { original_tag = GER }
-	# 				ROOT = { original_tag = SOV } 
-	# 				FROM.FROM = { state = 197 }
-	# 			}
-	# 			FROM = { country_event = german.sabotage.ports.1 }
+# 	# on_state_control_changed = {
+# 	# 	effect = {
+# 	# 		if = {
+# 	# 			limit = {
+# 	# 				FROM = { original_tag = GER }
+# 	# 				ROOT = { original_tag = SOV } 
+# 	# 				FROM.FROM = { state = 197 }
+# 	# 			}
+# 	# 			FROM = { country_event = german.sabotage.ports.1 }
 
-	# 		}
-	# 	}
-	# }
+# 	# 		}
+# 	# 	}
+# 	# }
 	
 
-	on_daily = {
-		effect = {
-
-			if = {
-				limit = {
-					GER = { has_war_with = USA }
-				}
-			
-			if = {
-				limit = {
-						GER = { NOT = { controls_province = 6449 } } #11422
-						NOT = { has_global_flag = sabotage_ports_1 }
-					}
-				set_global_flag = sabotage_ports_1
-				GER = { country_event = german.sabotage.ports.1 }
-
-			} else_if = {
-				limit = { 
-						GER = { NOT = { controls_province = 3552 } }
-						NOT = { has_global_flag = sabotage_ports_2 }
-					}
-				set_global_flag = sabotage_ports_2
-				GER = { country_event = german.sabotage.ports.2 }
-			
-			} else_if = {
-				limit = { 
-					GER = { NOT = { controls_province = 6536 } }
-					NOT = { has_global_flag = sabotage_ports_3 }
-				}
-				set_global_flag = sabotage_ports_3
-				GER = { country_event = german.sabotage.ports.3 }
-			
-			} else_if = {
-				limit = {
-					GER = { NOT = { controls_province = 9510 } }
-					NOT = { has_global_flag = sabotage_ports_4 }
-					}
-				set_global_flag = sabotage_ports_4
-				GER = { country_event = german.sabotage.ports.4 }
-			
-			} else_if = {
-				limit = {
-					GER = { NOT = { controls_province = 6657 } }
-					NOT = { has_global_flag = sabotage_ports_5 }
-					}
-				set_global_flag = sabotage_ports_5
-				GER = { country_event = german.sabotage.ports.5 }
-			
-			} else_if = {
-				limit = {
-					GER = { NOT = { controls_province = 9434 } }
-					NOT = { has_global_flag = sabotage_ports_6 }
-					}
-				set_global_flag = sabotage_ports_6
-				GER = { country_event = german.sabotage.ports.6 }
-		
-			} else_if = {
-				limit = { 
-					GER = { NOT = { controls_province = 575 } }
-					NOT = { has_global_flag = sabotage_ports_7 }
-				}
-				set_global_flag = sabotage_ports_7
-				GER = { country_event = german.sabotage.ports.7 }
-			
-			} else_if = {
-				limit = { 
-					GER = { NOT = { controls_province = 6598 } } #6598
-					NOT = { has_global_flag = sabotage_ports_8 }
-				} 
-				set_global_flag = sabotage_ports_8
-				GER = { country_event = german.sabotage.ports.8 }
-			}
-			}
-		}
-	}
+# 	on_daily = {
+# 		effect = {}
 
 
-	# on_state_control_changed = {
-	# #ROOT is new controller #FROM is old controller #FROM.FROM is state ID
-	# 	effect = {
-	# 		if = {
-	# 			limit = {
-	# 				OR = {
-	# 					FROM.FROM = { state = 14 }
-	# 					FROM.FROM = { state = 15 }
-	# 					FROM.FROM = { state = 30 }
-	# 					FROM.FROM = { state = 23 }
-	# 					FROM.FROM = { state = 19 }
-	# 					FROM.FROM = { state = 785 }
-	# 					FROM.FROM = { state = 29 }
-	# 					FROM.FROM = { state = 6 }
-	# 				}
-	# 				date > 1944.1.1
-	# 				FROM = { original_tag = GER }
-	# 				FROM = { has_war_with = USA }
-	# 				ROOT = { original_tag = FRA } # maybe use any allies country
-	# 			}
-
-	# 			if = { #change to case -- add flags between
-	# 				limit = {
-	# 						GER = { NOT = { controls_province = 6449 } } #11422
-	# 						NOT = { has_global_flag = sabotage_ports_1 }
-	# 					  }
-	# 				set_global_flag = sabotage_ports_1
-	# 				FROM = { country_event = german.sabotage.ports.1 }
-	# 			} else_if = {
-	# 				limit = { 
-	# 						GER = { NOT = { controls_province = 3552 } }
-	# 						NOT = { has_global_flag = sabotage_ports_2 }
-	# 					 }
-	# 				set_global_flag = sabotage_ports_2
-	# 				FROM = { country_event = german.sabotage.ports.2 }
-				
-	# 			} else_if = {
-	# 				limit = { 
-	# 					GER = { NOT = { controls_province = 6536 } }
-	# 					NOT = { has_global_flag = sabotage_ports_3 }
-	# 				 }
-	# 				set_global_flag = sabotage_ports_3
-	# 				FROM = { country_event = german.sabotage.ports.3 }
-				
-	# 			} else_if = {
-	# 				limit = {
-	# 					 GER = { NOT = { controls_province = 9510 } }
-	# 					 NOT = { has_global_flag = sabotage_ports_4 }
-	# 					 }
-	# 				set_global_flag = sabotage_ports_4
-	# 				FROM = { country_event = german.sabotage.ports.4 }
-				
-	# 			} else_if = {
-	# 				limit = {
-	# 					 GER = { NOT = { controls_province = 6657 } }
-	# 					 NOT = { has_global_flag = sabotage_ports_5 }
-	# 					 }
-	# 				set_global_flag = sabotage_ports_5
-	# 				FROM = { country_event = german.sabotage.ports.5 }
-				
-	# 			} else_if = {
-	# 				limit = {
-	# 					 GER = { NOT = { controls_province = 9434 } }
-	# 					 NOT = { has_global_flag = sabotage_ports_6 }
-	# 					 }
-	# 				set_global_flag = sabotage_ports_6
-	# 				FROM = { country_event = german.sabotage.ports.6 }
-			
-	# 			} else_if = {
-	# 				limit = { 
-	# 					GER = { NOT = { controls_province = 575 } }
-	# 					NOT = { has_global_flag = sabotage_ports_7 }
-	# 				 }
-	# 				set_global_flag = sabotage_ports_7
-	# 				FROM = { country_event = german.sabotage.ports.7 }
-				
-	# 			} else_if = {
-	# 				limit = { 
-	# 					GER = { NOT = { controls_province = 6598 } } #6598
-	# 					NOT = { has_global_flag = sabotage_ports_8 }
-	# 				 } 
-	# 				set_global_flag = sabotage_ports_8
-	# 				FROM = { country_event = german.sabotage.ports.8 }
-	# 			} 
-	# 	}
-	# }
-
-}
+# }

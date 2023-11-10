@@ -42,5 +42,51 @@ ideas = {
 			}
 		}
 
+		low_war_casualties = {
+			
+			allowed = {
+				always = yes # yes means not Triggered via event
+			}
+
+			removal_cost = -1
+			picture = prc_low_popular_support
+			
+			modifier = {
+				#stability_factor = -0.05
+				conscription = -0.025
+				#recruitable_population_factor = -0.99
+			}
+		}
+
+		medium_war_casualties = {
+			
+			allowed = {
+				always = yes # yes means not Triggered via event
+			}
+
+			removal_cost = -1
+			picture = prc_low_popular_support2 #tur_disorganised_armed_forces
+			
+			modifier = {
+				#stability_factor = -0.05
+				conscription = -0.06
+			}
+		}
+
+		high_war_casualties = {
+			
+			allowed = {
+				always = yes # yes means not Triggered via event
+			}
+
+			removal_cost = -1
+			picture = prc_low_popular_support3 #tur_disorganised_armed_forces
+			
+			modifier = {
+				#stability_factor = -0.05
+				conscription = -0.11
+			}
+		}
+
 	}
 }

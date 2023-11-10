@@ -1,36 +1,9 @@
-############################################################################################################
-#update
-############################################################################################################
-
 MOD_start_update = {
-	#war_start_effects = yes
-	#tech_start_effects = yes
-	GRE_setup_puppet = yes
+	#GRE_setup_puppet = yes
 }
 
 MOD_daily_update = {
-
-	#################################################
-	### 	Country daily update
-	#################################################
-
-
 	GER_calculate_casualities_inflicted_on_SOV = yes
-	
-	#industry_start_effects = yes
-	#industry_extra_start_effects = yes
-	#Resistance_start_effects = yes
-	#GER_start_effects = yes
-	war_start_effects = yes
-	#GRE_setup_puppet = yes
-	if = { limit = { is_ai = yes } 
-		#Add names stuff to be updated every day here
-		#Declare them in seperate file under scriped_effects
-
-		#MOD_SOV_offensives = yes
-		#MOD_FIN_SURRENDER = yes
-		#TUR_stop_selling_chromium = yes
-		#POR_stop_selling_tungsten_to_all = yes
-		#SWE_stop_selling_to_germany = yes
-	}
+	GER_dday_events = yes
+	GER_operation_margarethe = yes
 }

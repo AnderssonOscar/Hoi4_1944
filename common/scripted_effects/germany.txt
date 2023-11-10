@@ -12,8 +12,6 @@ GER_calculate_casualities_inflicted_on_SOV = {
 	}
 }
 
-
-
 GER_start_effects = {
 	
 	if = {
@@ -21,10 +19,10 @@ GER_start_effects = {
 			tag = GER
 			is_ai = yes
 			date > 1943.12.30
-			#check_variable = { global.var_GER_start_effects = 0 }
+			NOT = { has_global_flag = mod_GER_start_effects }
 		}
 
-		set_variable = { global.var_GER_start_effects = 1 }
+		set_global_flag = mod_GER_start_effects
 
 		set_fuel = 1190000
 		add_political_power = 1250

@@ -2,7 +2,6 @@
 #	1944
 ############################################################################################################
 
-
 on_actions = {
 	on_startup = {
 		effect = {
@@ -16,14 +15,7 @@ on_actions = {
 				country_event = {
 					id = mod.start.1
 				}
-			}
-			
-			random_country = {
-				limit = {is_ai = no}
-				country_event = {
-					id = mod.start.options.1
-				}
-			}
+			}	
 			
 			every_country = {
 				set_country_flag = FIN_aware_about_motti_tactics_flag
@@ -315,7 +307,6 @@ GER = {
 	}
 	on_daily = {
 		effect = {
-
 			MOD_daily_update = yes
 		}
 	}

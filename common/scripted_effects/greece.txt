@@ -5,56 +5,66 @@ GRE_setup_puppet = {
 		if = {
 			limit = {
 				date > 1943.12.30
-				check_variable = { global.var_gre_puppet_startup = 0 }
+				NOT = { has_global_flag = mod_gre_puppet_startup }
 			}
-
-				set_variable = { global.var_gre_puppet_startup = 1 }
-
-
-				hidden_effect = {
-					GRE = {
-						set_state_controller = 47
-						set_state_controller = 186
-						set_state_controller = 185
-						set_state_controller = 731
-						set_state_controller = 187
-						set_state_controller = 182
-						set_state_controller = 164
-					}
-				}
+				set_global_flag = mod_gre_puppet_startup
 
 				GRE = {
 					start_civil_war = {
-						ideology = fascism
-						size = 1
-						transfer_state = 47
-						transfer_state = 186
-						transfer_state = 185
-						transfer_state = 731
-						transfer_state = 187
-						transfer_state = 182
-						transfer_state = 164
+						ideology = neutrality
+						size = 0
+						#transfer_state = 47
+						#transfer_state = 186
+						#transfer_state = 185
+						#transfer_state = 731
+						#transfer_state = 187
+						#transfer_state = 182
+						#transfer_state = 164
 
-						GER = {
-							puppet = PREV
-							set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
-						}
+						#GER = {
+						#	puppet = PREV
+						#	set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						#}
+
+						ENG = {add_to_faction = PREV}
+
+						#add_to_war = {
+						#	targeted_alliance = ENG
+						#	enemy = GRE 
+						#	hostility_reason = asked_to_join 
+						#}
 
 						set_popularities = {
-							democratic = 2
-							fascism = 68
+							democratic = 10
+							fascism = 0
 							communism = 10
-							neutrality = 20
+							neutrality = 80
 						}
 
-						add_ideas = {
-							#laws
-							tot_economic_mobilisation
-							extensive_conscription
-							low_war_casualties
-							dont_surrender_mod
+						transfer_units_fraction = {
+							target = GRE
+							size = 1
+							stockpile_ratio = 1
+							army_ratio = 1
+							navy_ratio = 1.0
+							air_ratio = 1.0
 						}
 
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = 8050
+						}
+
+						add_equipment_to_stockpile = {
+							type = artillery_equipment_1
+							amount = 270
+						}
+					
+						add_equipment_to_stockpile = {
+							type = support_equipment_1
+							amount = 250
+						}
+				
 						add_equipment_to_stockpile = {
 							type = motorized_equipment_1
 							amount = 156
@@ -71,41 +81,74 @@ GRE_setup_puppet = {
 							amount = 10
 						}
 
-						add_command_power = 1000
-
-						
-				if = {
-					limit = { has_dlc = "Battle for the Bosporus" }
-						set_variable = { var = GRE_monarchist_loyalty value = 0 }
-						set_variable = { var = GRE_republican_loyalty value = -10 }
-						set_variable = { var = GRE_communist_loyalty value = -10 }
-						set_variable = { var = GRE_fascist_loyalty value = 10 }
-
-						#set_variable = { var = GRE_debt_to_the_ifc_britain_var value = 5 }
-						#set_variable = { var = GRE_debt_to_the_ifc_france_var value = 5 }
-						#set_variable = { var = GRE_debt_to_the_ifc_italy_var value = 5 }
-						#set_variable = { var = GRE_debt_to_the_ifc_paid_var value = 15 }
+						add_manpower = +40000
+						add_political_power = 1500	
 				}
 
+				hidden_effect = {
+					GRE = {
+
+						load_focus_tree = greek_focus_hellenic
+						add_ideas = {
+							medium_war_casualties
+							GRE_occupation_cost
+							GRE_recent_famine
+						}
+					
+						set_state_controller = 47
+						set_state_controller = 186
+						set_state_controller = 185
+						set_state_controller = 731
+						set_state_controller = 187
+						set_state_controller = 182
+						set_state_controller = 164
+
+					#	set_cosmetic_tag = GRE_hellenic_state	
 						set_cosmetic_tag = GRE_fascism
-						create_country_leader = {
-							name = "Hermann Neubacher"
-							desc = ""
-							picture = GRE_hermann_neubacher
-							expire = "1965.1.1"
-							ideology = nazism
-							traits = {
+						transfer_navy = {
+							target = GRE
+						}
+
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+						controller = {
+							has_government = fascism
+							original_tag = GRE
+						}
+					}
+
+					force_enable_resistance = {
+						occupier = THIS.controller
+						occupied = ROOT
+					}
+
+					start_resistance = ROOT
+					set_resistance = 34
+					set_compliance = 35
+					add_resistance_target = 34
+				}
+			}
+
+					random_country = {
+						limit= {
+							original_tag = GRE
+							has_government = neutrality
+						}
+		
+						GRE = {
+							transfer_navy = {
+								target = PREV
 							}
 						}
+					}
 
 
 				}
 			}
 		}
 	}
-
-
-
-	}
+	
+}
 
 

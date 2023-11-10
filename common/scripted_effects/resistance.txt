@@ -2,16 +2,9 @@ Resistance_start_effects = {
 	
 	if = {
 		limit = { 
-			#check_variable = { global.var_Resistance_start_effects = 0 }
+			NOT = { has_global_flag = mod_resistance_start_effects }
 		}
-
-
-		#if = {
-		#	limit = {
-		#		has_dlc = "La Resistance"
-		#	}
-
-
+			set_global_flag = mod_resistance_start_effects
 
 			every_state = { # lower resistance here no resources otherwise
 				limit = {
@@ -112,7 +105,6 @@ Resistance_start_effects = {
 					set_resistance = 16
 				}
 
-
 				#CRO
 				104 = {
 					set_compliance = 19
@@ -125,10 +117,6 @@ Resistance_start_effects = {
 					start_resistance = no
 					set_resistance = 14
 				}
+			}
 
-				set_variable = { global.var_Resistance_start_effects = 1 }
-		}
-
-
-	#}
 }

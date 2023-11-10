@@ -1,0 +1,119 @@
+GER_scripted_events_start_effects = {
+	
+	if = {
+		limit = { 
+			date > 1943.12.30
+			NOT = { has_global_flag = GER_scripted_events_start_effects }
+		}
+		set_global_flag = GER_scripted_events_start_effects
+	}
+}
+
+GER_calculate_casualities_inflicted_on_SOV = {
+	
+	if = {
+		limit = { 
+			tag = GER
+			has_war_with = SOV
+		}
+
+		SOV = { set_temp_variable = { SOV_casualties = casualties_k } }
+		set_variable = { global.SOV_casualties_g = SOV_casualties }
+	}
+}
+
+GER_operation_margarethe = {
+	if = {
+		limit = { 
+			original_tag = GER
+			date > 1944.3.18
+			HUN = { is_ai = yes } 
+			HUN = { is_in_faction_with = GER }
+
+			has_war_with = SOV
+			NOT = { has_global_flag = GER_operation_margarethe } 
+		}
+
+		GER = {
+			country_event = {
+				id = operation.margarethe.1
+			}
+		}
+		set_global_flag = GER_operation_margarethe
+	}
+}
+
+
+GER_dday_events = {
+	
+	if = {
+		limit = {
+			GER = { has_war_with = USA }
+		}
+	
+		if = {
+			limit = {
+					GER = { NOT = { controls_province = 6449 } } #11422
+					NOT = { has_global_flag = sabotage_ports_1 }
+				}
+			set_global_flag = sabotage_ports_1
+			GER = { country_event = german.sabotage.ports.1 }
+
+		} else_if = {
+			limit = { 
+					GER = { NOT = { controls_province = 3552 } }
+					NOT = { has_global_flag = sabotage_ports_2 }
+				}
+			set_global_flag = sabotage_ports_2
+			GER = { country_event = german.sabotage.ports.2 }
+		
+		} else_if = {
+			limit = { 
+				GER = { NOT = { controls_province = 6536 } }
+				NOT = { has_global_flag = sabotage_ports_3 }
+			}
+			set_global_flag = sabotage_ports_3
+			GER = { country_event = german.sabotage.ports.3 }
+		
+		} else_if = {
+			limit = {
+				GER = { NOT = { controls_province = 9510 } }
+				NOT = { has_global_flag = sabotage_ports_4 }
+				}
+			set_global_flag = sabotage_ports_4
+			GER = { country_event = german.sabotage.ports.4 }
+		
+		} else_if = {
+			limit = {
+				GER = { NOT = { controls_province = 6657 } }
+				NOT = { has_global_flag = sabotage_ports_5 }
+				}
+			set_global_flag = sabotage_ports_5
+			GER = { country_event = german.sabotage.ports.5 }
+		
+		} else_if = {
+			limit = {
+				GER = { NOT = { controls_province = 9434 } }
+				NOT = { has_global_flag = sabotage_ports_6 }
+				}
+			set_global_flag = sabotage_ports_6
+			GER = { country_event = german.sabotage.ports.6 }
+
+		} else_if = {
+			limit = { 
+				GER = { NOT = { controls_province = 575 } }
+				NOT = { has_global_flag = sabotage_ports_7 }
+			}
+			set_global_flag = sabotage_ports_7
+			GER = { country_event = german.sabotage.ports.7 }
+		
+		} else_if = {
+			limit = { 
+				GER = { NOT = { controls_province = 6598 } } #6598
+				NOT = { has_global_flag = sabotage_ports_8 }
+			} 
+			set_global_flag = sabotage_ports_8
+			GER = { country_event = german.sabotage.ports.8 }
+		}
+	}
+}

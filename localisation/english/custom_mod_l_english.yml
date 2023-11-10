@@ -220,8 +220,8 @@ mod.start.1.t:0 "1944 - Downfall"
 
 mod.start.1.d:0 "The war has taken a turn for the worse. We and our allies still have europe under control, but for how long?\nIn the east the Soviets launches new offensives in intervals targeting diffrent fronts. In England the allies are preparing an invansion force."
 
-modstart_allies_desc:0 "January 1 1944\n\nThis war has dragged on for too long... \nWith our combined forces the Axis powers will soon crumble."
-modstart_jap_desc:0 "The war in the pacific might not be going our way at the moment, but we can still achieve victory in the mainland.\nAlthough the allies might overwhelm us if the Axis powers in europe would fall."
+mod.start.1.d_allies:0 "January 1 1944\n\nThis war has dragged on for too long... \nWith our combined forces the Axis powers will soon crumble."
+mod.start.1.d_jap:0 "The war in the pacific might not be going our way at the moment, but we can still achieve victory in the mainland.\nAlthough the allies might overwhelm us if the Axis powers in europe would fall"
 
 #Greece
 GRE_Secure_The_Hellenic_State:0 "Secure The Hellenic State"

@@ -34,7 +34,7 @@ war_measures = {
 
 
 		cancel_trigger = {
-			surrender_progress < 0.09
+			surrender_progress < 0.08
 		}
 
 		cancel_effect = {
