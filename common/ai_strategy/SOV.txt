@@ -2317,6 +2317,7 @@ SOV_take_it_easy = {
 		has_war_with = GER
 		NOT = { has_war_with = JAP } # dont get rekt by japan
 		NOT = { has_idea = major_offensive }
+		NOT = { has_global_flag = disable_offensives_1944 }
 
 		OR = {
 			has_idea = offensive_exhaustion
@@ -2351,11 +2352,16 @@ SOV_back_to_normal = {
 		has_war_with = GER
 		country_exists = GER
 		NOT = { has_war_with = JAP } # dont get rekt by japan
-		
-		NOT = { has_idea = major_offensive } # dont go normal under offensive
-		NOT = { has_idea = offensive_exhaustion } #dont go normal under offensive_exhaustion
 
-		date > 1944.8.19 # end of bagration / start of romanian offensive
+		OR = {
+			AND = {
+				NOT = { has_idea = major_offensive } # dont go normal under offensive
+				NOT = { has_idea = offensive_exhaustion } #dont go normal under offensive_exhaustion
+				date > 1944.8.19 # end of bagration / start of romanian offensive
+			}
+
+		has_global_flag = disable_offensives_1944
+		}
 	}
 
 	abort_when_not_enabled = yes
@@ -2382,6 +2388,7 @@ SOV_take_germany = {
 		NOT = { has_war_with = JAP } # dont get rekt by japan
 		has_war_with = GER
 
+		NOT = { has_global_flag = disable_offensives_1944 }
 		has_idea = major_offensive
 
 		date > 1944.1.1
@@ -2452,6 +2459,8 @@ SOV_take_romania = {
  
 		date > 1944.8.19
 
+		NOT = { has_global_flag = disable_offensives_1944 }
+		
 		OR = {
 			has_idea = major_offensive
 			NOT = { has_idea = offensive_exhaustion }

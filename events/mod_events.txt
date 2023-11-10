@@ -14,6 +14,7 @@ add_namespace = german.ryti.ribbentrop
 add_namespace = finland.ryti.ribbentrop
 add_namespace = allies.dday.start
 add_namespace = mod.start
+add_namespace = mod.start.options
 add_namespace = german.sabotage.ports
 add_namespace = finland.estonia.lost
 
@@ -1116,15 +1117,15 @@ country_event = {
 }
 
 
-news_event = {
+country_event = {
 	id = mod.start.1
 	title = mod.start.1.t
-	desc = mod.start.1.d
-	picture = GFX_news_event_german_reichstag_ruins
+	desc = "."
+	picture = GFX_report_event_fascist_speech
 	
+	hidden = yes
 	is_triggered_only = yes
 	fire_only_once = yes
-	hidden = yes
 
 	immediate = {
 		hidden_effect = {
@@ -1144,11 +1145,120 @@ news_event = {
 		}
 	}
 
+}
+
+
+
+
+
+country_event = {
+	id = mod.start.options.1
+	title = mod.start.1.t
+	desc = "its 1944 and the war rages on.."
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+		}
+	}
+
+	desc = {
+		text = mod.start.1.d
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+
+	desc = {
+		text = modstart_allies_desc
+		trigger = {
+			OR = {
+				original_tag = ENG
+				original_tag = SOV
+				is_in_faction_with = SOV
+				is_in_faction_with = ENG
+			}
+		}
+	}
+
+	desc = {
+		text = modstart_jap_desc
+		trigger = {
+			OR = {
+				original_tag = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+
 	option = {
 		name = "Start"
 
-		#custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
+		trigger = {
+			NOT = { 
+				OR = {
+					original_tag = GER
+					is_in_faction_with = GER
+				}
+			}
+		}
+	}
 
+	option = {
+		name = "Normal Mode"
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+
+	option = {
+		name = "Easy Mode"
+		set_global_flag = easy_mode_1944
+		custom_effect_tooltip = "Soviets and allies AI weaker"
+
+		hidden_effect = {
+			SOV = {
+				remove_ideas = {
+					SOV_soviet_industry
+				}
+			}
+		}
+
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+
+	option = {
+		name = "Disable Soviet Offensives"
+		set_global_flag = disable_offensives_1944
+		custom_effect_tooltip = "The Soviets wont launch any special offensives"
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_in_faction_with = GER
+			}
+		}
 	}
 }
 

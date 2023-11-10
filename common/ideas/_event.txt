@@ -277,7 +277,7 @@ ideas = {
 				#army_attack_factor = +1.25
 				#breakthrough_factor = +1.0
 				#out_of_supply_factor = +0.25
-				supply_consumption_factor = -0.75
+				supply_consumption_factor = -0.5
 				land_reinforce_rate = +0.5
 				army_org_factor = +0.40
 
@@ -288,7 +288,7 @@ ideas = {
 
 				ground_attack_factor = +0.5
 
-				command_power_gain_mult = +10.0
+				command_power_gain_mult = +1.0
 			}
 				#add_command_power = 200
 		}

@@ -10,7 +10,6 @@ siphon_gas_desc:0 "Siphon Gas from every available source."
 old_weapon_caches:0 "Old Weapon Caches"
 old_weapon_caches_desc:0 ""
 
-
 GER_rocket_bases_1:0 "Develop the V1 rocket & build launch site"
 GER_rocket_bases_1_desc:0 ""
 
@@ -87,10 +86,8 @@ GER_endsieg:0 "Endsieg"
 GER_endsieg_desc:0 "Endsieg"
 GER_endsieg_tooltip:0 ""
 
-
 GER_festung_supply:0 "Festung rationing"
 GER_endsieg_attack:0 "Endsieg is here"
-
 
 SOV_launch_major_offensive_ger:0 "Launch Major Offensive"
 
@@ -105,8 +102,6 @@ HUN_war_economy_focus_tooltip:0 ""
 HUN_reform_army:0 "Reform The Armed Forces"
 HUN_reform_army_desc:0 "Reform The Armed Forces"
 HUN_reform_army_tooltip:0 "Receive 8 Infantry divisons and 2 armored divisions"
-
-
 
 romania.switch.side.1:0 "Romania is negotiating"
 romania.switch.side.1.t:0 "Romania is negotiating with the soviets."
@@ -145,7 +140,6 @@ operation.margarethe.2:0 "Operation Margarethe II"
 operation.margarethe.2.t:0 "Operation Margarethe II"
 operation.margarethe.2.d:0 "We have successfully gotten romania back in line."
 
-
 german.ryti.ribbentrop.1:0 "Ryti–Ribbentrop Agreement"
 german.ryti.ribbentrop.1.t:0 "Ryti–Ribbentrop Agreement"
 german.ryti.ribbentrop.1.d:0 "Finland requests our extended support against the bolsheviks\n\nWe can divert part of our industry for a while to supply the finnish."
@@ -179,7 +173,6 @@ Recruit_POWS:0 "Recruit POWs"
 
 GER_oder_neisse_defence:0"Prepare defences along the oder-neisse river"
 GER_oder_neisse_defence_desc:0"Construct defensive fortifications from Stettin to outside of Dresden."
-
 
 german.sabotage.ports.1:0 "Cherbourg port is lost"
 german.sabotage.ports.1.t:0 "Cherbourg port is lost"
@@ -216,25 +209,19 @@ german.sabotage.ports.8.d:0 "Should we order the last remaining troops to destro
 german.sabotage.ports.1.a:0 "Render the port facilities useless."
 german.sabotage.ports.1.b:0 "We will be back soon"
 
-
-
 finland.estonia.lost.1:0 "Estonia is lost"
 finland.estonia.lost.1.t:0 "Estonia is lost"
 finland.estonia.lost.1.d:0 "Finland will now be more willing to negotiate a seperate peace with the soviets."
 
 finland.estonia.lost.1.a:0 "Traitors"
 
+mod.start.1:0 "1944 - Downfall"
+mod.start.1.t:0 "1944 - Downfall"
 
-mod.start.1:0 "1944: Downfall"
-mod.start.1.t:0 "1944: Downfall"
-mod.start.1.d:0 "\n\tWelcome to 1944: Downfall.\n\n"
+mod.start.1.d:0 "The war has taken a turn for the worse. We and our allies still have europe under control, but for how long?\nIn the east the Soviets launches new offensives in intervals targeting diffrent fronts. In England the allies are preparing an invansion force."
 
-
-
-
-
-
-
+modstart_allies_desc:0 "January 1 1944\n\nThis war has dragged on for too long... \nWith our combined forces the Axis powers will soon crumble."
+modstart_jap_desc:0 "The war in the pacific might not be going our way at the moment, but we can still achieve victory in the mainland.\nAlthough the allies might overwhelm us if the Axis powers in europe would fall."
 
 #Greece
 GRE_Secure_The_Hellenic_State:0 "Secure The Hellenic State"

@@ -12,10 +12,11 @@ SOV_great_patriotic_war = {
 			has_war_with = GER
 			surrender_progress < 0.2
 			date > 1944.2.15
-			date < 1946.1.1 
+			date < 1945.5.8 
 			
 			NOT = { has_idea = major_offensive }
 			NOT = { has_idea = offensive_exhaustion }
+			NOT = { has_global_flag = disable_offensives_1944 }
 		}
 
 		visible = {
@@ -74,6 +75,10 @@ SOV_great_patriotic_war = {
 
 			set_temp_variable = { equipment_base_num = daysdivde }
 			
+			if = { 
+				limit = {
+					NOT = { has_global_flag = easy_mode_1944 }
+				}
 
 		if = { limit = {
 			has_equipment = {
@@ -170,12 +175,14 @@ SOV_great_patriotic_war = {
 				amount = anti_tank_eq
 			}
 		}
+	}
 
 
 		if = {
 			 limit = {
-					date < 1945.4.1
+					date < 1945.5.8
 					date > 1944.1.1
+					NOT = { has_global_flag = easy_mode_1944 }
 				 }
 				 
 			 if = {
@@ -183,14 +190,14 @@ SOV_great_patriotic_war = {
 
 				add_equipment_to_stockpile = {
 					type = medium_tank_chassis_2
-					amount = 500
+					amount = 400
 					variant_name = "T-34-85"
 					producer = SOV
 				}
 
 				add_equipment_to_stockpile = {
 					type = heavy_tank_chassis_3
-					amount = 250
+					amount = 150
 					variant_name = "IS-2"
 					producer = SOV
 				}
@@ -250,6 +257,7 @@ SOV_great_patriotic_war = {
 
 	if = { limit = {
 					date < 1945.3.1
+					NOT = { has_global_flag = easy_mode_1944 }
 					OR = {
 						num_divisions < 421
 						GER = {is_ai = no}
@@ -351,7 +359,8 @@ SOV_great_patriotic_war = {
 
 		available = {
 			date > 1944.1.1
-
+			date < 1945.5.8
+			NOT = { has_global_flag = disable_offensives_1944 }
 			NOT = { has_idea = offensive_exhaustion }
 			has_idea = major_offensive	
 
@@ -378,8 +387,8 @@ SOV_great_patriotic_war = {
 		
 		targeted_modifier = {
 			tag = GER
-			attack_bonus_against = 1.20
-			breakthrough_bonus_against = 1.20
+			attack_bonus_against = 1.10
+			breakthrough_bonus_against = 1.10
 		}
 
 		targeted_modifier = {
@@ -437,7 +446,9 @@ SOV_great_patriotic_war = {
 	
 			available = {
 				date > 1944.8.20
+				date < 1945.5.8
 				NOT = { has_idea = offensive_exhaustion }
+				NOT = { has_global_flag = disable_offensives_1944 }
 				#has_idea = major_offensive
 
 				AND = {
@@ -515,6 +526,8 @@ SOV_great_patriotic_war = {
 
 		available = {
 			date > 1944.8.1
+			date < 1945.5.8
+			NOT = { has_global_flag = disable_offensives_1944 }
 			NOT = { has_idea = offensive_exhaustion }
 			#has_idea = major_offensive
 			FIN =  {surrender_progress < 0.2 }		

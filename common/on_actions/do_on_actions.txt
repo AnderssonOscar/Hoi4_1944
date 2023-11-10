@@ -12,18 +12,19 @@ on_actions = {
 				activate_decision = GER_reichskommissariat_norwegen
 			}
 
-		GER = {
-			country_event = {
-				id = mod.start.1
+			GER = {
+				country_event = {
+					id = mod.start.1
+				}
 			}
-		}
-
-			#every_country = {
-			#	limit = {is_ai = no}
-			#	country_event = {
-			#		id = mod.start.1
-			#	}
-			#}
+			
+			random_country = {
+				limit = {is_ai = no}
+				country_event = {
+					id = mod.start.options.1
+				}
+			}
+			
 			every_country = {
 				set_country_flag = FIN_aware_about_motti_tactics_flag
 			}

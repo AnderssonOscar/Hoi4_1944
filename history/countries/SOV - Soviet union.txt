@@ -1915,7 +1915,7 @@ if = {
 		tot_economic_mobilisation
 		service_by_requirement
 		limited_exports
-
+		SOV_soviet_industry
 		low_war_casualties
 	}
 
@@ -1925,10 +1925,10 @@ if = {
 	}
 
 
-	add_timed_idea = {
-		idea = SOV_soviet_industry
-		days = 360
-	}
+#	add_timed_idea = {
+#		idea = SOV_soviet_industry
+#		days = 360
+#	}
 
 
 
