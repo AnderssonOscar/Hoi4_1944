@@ -2614,6 +2614,19 @@ if = {
 		}
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_technology = {
+			special_forces_marines = 1
+			marines_shore_parties = 1
+			marines_recon = 1
+			marines_commandoes = 1
+			marines_commandos_demolition = 1
+		}
+	}
+
 	promote_character = ENG_neville_chamberlain
 	
 	promote_character = ENG_winston_churchill

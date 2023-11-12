@@ -71,7 +71,7 @@ GER_everyting_for_war_effort_desc:0 "Convert existing civilian factories into pr
 GER_everyting_for_war_effort_tooltip:0 "Converts existing civilian factories into producing military goods:"
 
 GER_gustav_line:0 "Gustav Line"
-GER_gustav_line_desc:0 "Build series of denfensive works to stop the allies in italy."
+GER_gustav_line_desc:0 "Build series of denfensive works to stop the Allies in italy."
 GER_gustav_line_tooltip:0 "Lower Italy gets:"
 
 GER_festung_cities:0 "Declare festung cities"
@@ -218,10 +218,10 @@ finland.estonia.lost.1.a:0 "Traitors"
 mod.start.1:0 "1944 - Downfall"
 mod.start.1.t:0 "1944 - Downfall"
 
-mod.start.1.d:0 "The war has taken a turn for the worse. We and our allies still have europe under control, but for how long?\nIn the east the Soviets launches new offensives in intervals targeting diffrent fronts. In England the allies are preparing an invansion force."
+mod.start.1.d:0 "The war has taken a turn for the worse. We and our Allies still have europe under control, but for how long?\nIn the east the Soviets launches new offensives in intervals targeting diffrent fronts. In England the Allies are preparing an invansion force."
 
 mod.start.1.d_allies:0 "January 1 1944\n\nThis war has dragged on for too long... \nWith our combined forces the Axis powers will soon crumble."
-mod.start.1.d_jap:0 "The war in the pacific might not be going our way at the moment, but we can still achieve victory in the mainland.\nAlthough the allies might overwhelm us if the Axis powers in europe would fall"
+mod.start.1.d_jap:0 "The war in the pacific might not be going our way at the moment, but we can still achieve victory in the mainland.\nAlthough the Allies might overwhelm us if the Axis powers in europe would fall"
 
 #Greece
 GRE_Secure_The_Hellenic_State:0 "Secure The Hellenic State"
@@ -303,3 +303,21 @@ GER_festung_konigsberg_modifier:0 "Festung Königsberg"
 mod.news.4.d:0 "With the advancing Soviet Red Army Königsberg has been well-fortified, with a combination of old and modern defenses. The city has medieval fortifications and a network of forts and bunkers built during these last years. These fortifications will make it a formidable stronghold."
 
 mod.news.5.d:0 "Königsberg has finally succumbed to the Red Army earlier this day.\n\nOriginally founded in the 13th century by the Teutonic Knights, with a long and eventfull history finally put to rest, there are only ruins left behind from this once well known historical city."
+
+rhine.defence.0:0 "Defence Of The Rhine"
+rhine.defence.0.t:0 "Defence Of The Rhine"
+rhine.defence.0.d:0 "As The Allies seek to advance into Germany from the west the Rhine River serves as the last natural barrier in front of the german interior.\n\nShould we destroy the bridges to stop the invader?"
+rhine.defence.0.tt:0 "§YBridges & railways around the Rhine will be destroyed and improvised fortifications will be constructed.\n§ §W§"
+
+mod.news.7:0 "Rhine Crossing"
+mod.news.7.t:0 "Rhine Crossing"
+mod.news.7.d:0 "The Allies has successfully established bridgeheads on the eastern bank of the Rhine. Once these bridgeheads are secured, additional troops and equipment will be rapidly brought across the river."
+
+mod.news.6:0 "Paris Liberated"
+mod.news.6.t:0 "Paris Liberated"
+mod.news.6.d:0 "Today marks the end of German occupation in the French capital. \nThe liberation of Paris was met with widespread jubilation. Parisians poured into the streets to celebrate their freedom after years of German occupation.\n\nThe occupation of Paris is finally over."
+
+netherlands.flooding.start.0:0 "Fortress Holland"
+netherlands.flooding.start.0.t:0 "Fortress Holland"
+netherlands.flooding.start.0.d:0 "To impede the advance of enemy forces and to protect strategic positions we can flood certian areas of Holland"
+netherlands.flooding.start.0.tt:0 "§YWalcheren has already been flooded by the allies§ §W§"

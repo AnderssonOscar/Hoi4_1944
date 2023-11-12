@@ -1816,7 +1816,30 @@ ENG_USA_d_day = {
 
 
 
+ENG_unit_production_mod = {
 
+	allowed = {	original_tag = ENG }
+	enable = {
+		has_war_with = GER
+		date > 1943.1.1
+		date < 1945.5.8
+		surrender_progress < 0.01
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = strategic_bomber
+		value = 30
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = motorized
+		value = 10
+	}
+}
 
 
 

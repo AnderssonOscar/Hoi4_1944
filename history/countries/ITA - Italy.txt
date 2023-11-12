@@ -1443,7 +1443,7 @@ if = {
 1943.12.30 = {
 
 		annex_country = { target = ETH transfer_troops = no }
-		set_fuel = 111812
+		set_fuel = 31812
 
 		set_research_slots = 3
 
@@ -1468,6 +1468,14 @@ if = {
 	}
 
 	retire_character = ITA_italo_balbo
+	retire_character = ITA_pietro_badoglio
+	retire_character = ITA_emilio_de_bono
+	retire_character = ITA_prince_adalberto
+	retire_character = ITA_prince_umberto
+	retire_character = ITA_giovanni_messe 
+	retire_character = ITA_ugo_cavallero
+	retire_character = ITA_alfredo_guzzoni
+
 	
 	remove_ideas = {
 		ITA_stockpiling_fuel
@@ -1741,17 +1749,27 @@ if = {
 
 
 
-if = {
-	limit = {
-		has_dlc = "La Resistance"
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		set_technology = {
+			armored_car1 = 1
+			armored_car2 = 1
+		}
 	}
-	set_technology = {
-		armored_car1 = 1
-		armored_car2 = 1
+
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_technology = {
+			special_forces_mountaineers = 1
+			rangers = 1
+			special_forces_recon = 1
+			mountaineers_combat_2 = 1
+		}
 	}
-}
-
-
 
 	if = {
 		limit = {

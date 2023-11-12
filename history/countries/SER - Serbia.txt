@@ -240,12 +240,37 @@ create_country_leader = {
 		communism = 12
 		democratic = 8
 	}
+
+	108 = {
+		start_resistance = yes
+		set_compliance = 51
+		set_resistance = 37
+		set_garrison_strength = 1.0
+	}
+
+	107 = {
+		start_resistance = yes
+		set_compliance = 47
+		set_resistance = 41
+		set_garrison_strength = 1.0
+	}
+
+	764 = {
+		start_resistance = yes
+		set_compliance = 54
+		set_resistance = 43
+		set_garrison_strength = 1.0
+	}
 	
 	add_ideas = {
 		#laws
 		tot_economic_mobilisation
 		service_by_requirement
-		limited_exports
+		#limited_exports
+	}
+
+	remove_ideas = {
+		anti_german_military
 	}
 
 	set_technology = {
@@ -269,10 +294,12 @@ create_country_leader = {
 		construction1 = 1
 		construction2 = 1
 		construction3 = 1
+		construction4 = 1
 
 		concentrated_industry = 1
 		concentrated_industry2 = 1
 		concentrated_industry3 = 1
+		concentrated_industry4 = 1
 
 		support_weapons = 1
 
@@ -307,17 +334,13 @@ create_country_leader = {
 		basic_train = 1
 	}
 
-		if = {
+	if = {
 		limit = {
-			
 			has_dlc = "No Step Back"
-			
 		}
 		set_technology = {
 				gwtank_chassis = 1
-
 				basic_light_tank_chassis = 1 
-
 		}
 	}
 
@@ -336,7 +359,6 @@ create_country_leader = {
         amount = 250
 		producer = GER
     }
-
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1

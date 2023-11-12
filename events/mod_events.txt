@@ -1,4 +1,4 @@
-###########################
+﻿###########################
 # 1944 Events
 ###########################
 
@@ -17,8 +17,10 @@ add_namespace = mod.start
 add_namespace = mod.start.options
 add_namespace = german.sabotage.ports
 add_namespace = finland.estonia.lost
-
 add_namespace = hungary.operation.panzerfaust
+
+add_namespace = netherlands.flooding.start
+add_namespace = rhine.defence
 
 #Destroy Cherbourg from allies
 country_event = {
@@ -1120,8 +1122,6 @@ country_event = {
 country_event = {
 	id = mod.start.1
 	title = mod.start.1.t
-	desc = "."
-	picture = GFX_report_event_fascist_speech
 	
 	hidden = yes
 	is_triggered_only = yes
@@ -1140,7 +1140,8 @@ country_event = {
 				GRE_setup_puppet = yes
 				Resistance_start_effects = yes
 				war_start_effects = yes
-
+				MOD_start_update = yes
+				country_event = { id = greece.start.event.0 }
 				random_country = {
 					limit = { is_ai = no }
 						country_event = { id = mod.start.options.1 }
@@ -1155,7 +1156,7 @@ country_event = {
 country_event = {
 	id = mod.start.options.1
 	title = mod.start.1.t
-	desc = "its 1944 and the war rages on.."
+	desc = "Its 1944 and the war rages on.."
 	picture = GFX_report_event_fascist_speech
 	
 	is_triggered_only = yes
@@ -1603,13 +1604,180 @@ country_event = {
 }
 
 
+country_event = {
+	id = rhine.defence.0
+	title = rhine.defence.0.t
+	desc = rhine.defence.0.d
+	picture = GFX_rhine_defence
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {}
+
+	option = {
+		name = "Yes"
+
+		custom_effect_tooltip = rhine.defence.0.tt
+
+		#add_manpower = -25000§
+		add_political_power = -100
+		add_war_support = -0.05
+
+		hidden_effect = {
+
+		42 = {
+			damage_building = {
+				type = rail_way
+				damage = 5
+			}
+		}
+
+		51 = {
+			damage_building = {
+				type = rail_way
+				damage = 5
+			}
+		}
 
 
+		51 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 3512
+					id = 6469
+					id = 6570
+					id = 529
+				}
+			}
+		}
 
 
+		55 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 6444
+					id = 6488
+					id = 589
+				}
+			}
+		}
+
+		50 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 6568
+					id = 3530
+					id = 6542
+					id = 6712
+					id = 11640
+				}
+			}
+		}
+	}
+
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = {
+		name = "No"
+
+		add_war_support = +0.05
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
 
 
+country_event = {
+	id = netherlands.flooding.start.0
+	title = netherlands.flooding.start.0.t
+	desc = netherlands.flooding.start.0.d
+	picture = GFX_festung_holland
+	
+	is_triggered_only = yes
+	fire_only_once = yes
 
+	immediate = {
+
+		hidden_effect = {
+			35 = {
+			add_province_modifier = {
+				static_modifiers = { GER_flooded_area_static_modifier }
+				province = {
+					id = 9431
+				}
+			}
+		}
+		}
+	}
+
+	option = {
+		name = "Create Fortress Holland"
+	#	custom_effect_tooltip = netherlands.flooding.start.0.tt
+	35 = {
+		if = {
+			limit = {
+				industrial_complex > 2
+				arms_factory > 2
+			}
+			remove_building = { type = industrial_complex level = 3 }
+			remove_building = { type = arms_factory level = 3 }
+		}
+	}
+
+	hidden_effect = {
+
+	36 = {
+			add_province_modifier = {
+				static_modifiers = { GER_flooded_area_static_modifier }
+				province = {
+					id = 6241
+			}
+		}
+	}
+
+	7 = {
+			add_province_modifier = {
+				static_modifiers = { GER_flooded_area_static_modifier }
+				province = {
+					id = 3314
+			}
+		}
+	}
+
+	35 = {
+			add_province_modifier = {
+				static_modifiers = { GER_flooded_area_static_modifier }
+				province = {
+					id = 3262
+					id = 6496
+					id = 11456
+				}
+			}
+		}
+	}
+
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = {
+		name = "No"
+		custom_effect_tooltip = netherlands.flooding.start.0.tt
+		ai_chance = {
+			base = 1
+		}
+	}
+}
 
 
 

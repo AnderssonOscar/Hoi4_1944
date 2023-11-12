@@ -822,6 +822,15 @@ if = {
 		}
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_technology = {
+			special_forces_mountaineers = 1
+		}
+	}
+
 
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
@@ -884,6 +893,21 @@ if = {
 		
 				tactical_bomber1 = 1
 				tactical_bomber2 = 1
+			}
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		create_equipment_variant = {
+			name = "Rechinul Class"				
+			type = ship_hull_submarine_3
+			name_group = ROM_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_3
+				fixed_ship_engine_slot = sub_ship_engine_3
+				rear_1_custom_slot = ship_torpedo_sub_3
 			}
 		}
 	}

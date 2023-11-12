@@ -2568,14 +2568,14 @@ SOV_dont_hurt_finland_yet = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = front_unit_request
-			country_trigger = {
-			tag = FIN
-		}
-		tag = FIN
-		value = -30
-	}
+	# ai_strategy = {
+	# 	type = front_unit_request
+	# 		country_trigger = {
+	# 		tag = FIN
+	# 	}
+	# 	tag = FIN
+	# 	value = -30
+	# }
 
 	ai_strategy = {
 		type = front_control
@@ -2620,16 +2620,16 @@ SOV_take_finland_medium = {
 		execute_order = yes
 		execution_type = balanced
 	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = FIN
-		value = 55
-	}
-	ai_strategy = {
-		type = front_armor_score
-		id = FIN
-		value = -100
-	}
+	# ai_strategy = {
+	# 	type = front_unit_request
+	# 	tag = FIN
+	# 	value = 55
+	# }
+	# ai_strategy = {
+	# 	type = front_armor_score
+	# 	id = FIN
+	# 	value = -100
+	# }
 }
 
 SOV_take_finland_high = {
@@ -2657,17 +2657,17 @@ SOV_take_finland_high = {
 		execute_order = yes
 		execution_type = rush
 	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = FIN
-		value = 55
-	}
+	# ai_strategy = {
+	# 	type = front_unit_request
+	# 	tag = FIN
+	# 	value = 55
+	# }
 
-	ai_strategy = {
-		type = front_armor_score
-		id = FIN
-		value = 50
-	}
+	# ai_strategy = {
+	# 	type = front_armor_score
+	# 	id = FIN
+	# 	value = 50
+	# }
 }
 
 

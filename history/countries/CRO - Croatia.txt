@@ -177,6 +177,28 @@ add_country_leader_role = { #This replaces the commented script below - fixing a
 
 	}
 
+	104 = {
+		start_resistance = yes
+		set_compliance = 18
+		set_resistance = 83
+		set_garrison_strength = 1.0
+	}
+
+	804 = {
+		start_resistance = yes
+		set_compliance = 23
+		set_resistance = 62
+		set_garrison_strength = 1.0
+	}
+
+	853 = {
+		start_resistance = yes
+		set_compliance = 23
+		set_resistance = 52
+		set_garrison_strength = 1.0
+	}
+
+
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
 			set_technology = {

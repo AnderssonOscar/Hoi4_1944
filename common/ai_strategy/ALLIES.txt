@@ -1,4 +1,4 @@
-
+	
 
 # 	country_trigger works only on 	 front_control 		front_unit_request 		 invasion_unit_request
 
@@ -1034,6 +1034,37 @@ ALLIES_take_japan_after_germany = { #ALLIES_take_germany_first
 }
 
 
+ALLIES_bomb_romanian_oil = {
+	allowed = {
+		OR = {
+			original_tag = ENG
+			original_tag = USA
+		}
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = GER
+		has_war_with = ROM
+		date > 1943.5.11 #oil bomb start date 1943.5.12
+		date < 1944.11.1 # give up and bomb germany instead
+
+		OR = {
+			has_equipment = { large_plane_airframe > 400 }
+			has_deployed_air_force_size = { size > 400 type = strategic_bomber }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 26 
+		value = 35000 #value of stocked main front in active combat is usually around 35,000
+	}
+}
+
+
 ALLIES_bomb_normandy = {
 	allowed = {
 		OR = {
@@ -1046,9 +1077,7 @@ ALLIES_bomb_normandy = {
 		is_historical_focus_on = yes
 		has_war_with = GER
 		date > 1944.5.20
-		date < 1944.6.25
-
-		surrender_progress < 0.025
+		date < 1944.6.20
 
 		#france coast
 		OR = {
@@ -1058,6 +1087,11 @@ ALLIES_bomb_normandy = {
 			NOT = { 23 = {is_fully_controlled_by = GER} }
 			NOT = { 19 = {is_fully_controlled_by = GER} }
 			NOT = { 21 = {is_fully_controlled_by = GER} }
+		}
+
+		OR = {
+			has_equipment = { large_plane_airframe > 400 }
+			has_deployed_air_force_size = { size > 400 type = strategic_bomber }
 		}
 
 	}
@@ -1089,18 +1123,25 @@ ALLIES_bomb_germany = {
 	enable = {
 		is_historical_focus_on = yes
 		has_war_with = GER
-		date > 1944.1.1
-		date < 1945.6.1
+		date > 1943.2.20
+		date < 1945.5.8
 
-		64 = {is_fully_controlled_by = GER}
-		59 = {is_fully_controlled_by = GER}
-		60 = {is_fully_controlled_by = GER}
-		65 = {is_fully_controlled_by = GER}
+		GER = { surrender_progress < 0.5 }
+
+		OR = {
+			has_equipment = { large_plane_airframe > 400 }
+			has_deployed_air_force_size = { size > 400 type = strategic_bomber }
+		}
+
+		# 64 = {is_fully_controlled_by = GER}
+		# 59 = {is_fully_controlled_by = GER}
+		# 60 = {is_fully_controlled_by = GER}
+		# 65 = {is_fully_controlled_by = GER}
 
 
-		set_temp_variable = { days = global.num_days }
-		modulo_temp_variable = { days = 60 }
-		check_variable = { days > 20 }
+	#	set_temp_variable = { days = global.num_days }
+	#	modulo_temp_variable = { days = 60 }
+	#	check_variable = { days > 20 }
 
 	}
 
@@ -1109,27 +1150,48 @@ ALLIES_bomb_germany = {
 	ai_strategy = {
 		type = strategic_air_importance
 		id = 6 
-		value = 30000 #value of stocked main front in active combat is usually around 35,000
+		value = 35000 #value of stocked main front in active combat is usually around 35,000
 	}
 	ai_strategy = {
 		type = strategic_air_importance
 		id = 7 
-		value = 30001 #value of stocked main front in active combat is usually around 35,000
+		value = 35000 #value of stocked main front in active combat is usually around 35,000
 	}
 	ai_strategy = {
 		type = strategic_air_importance
 		id = 8 
-		value = 30000 #value of stocked main front in active combat is usually around 35,000
-	}
-	ai_strategy = {
-		type = strategic_air_importance
-		id = 5 
-		value = 2000 #value of stocked main front in active combat is usually around 35,000
+		value = 35000 #value of stocked main front in active combat is usually around 35,000
 	}
 	ai_strategy = {
 		type = strategic_air_importance
 		id = 38 
-		value = 30000 #value of stocked main front in active combat is usually around 35,000
+		value = 35000 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 5  #benelux
+		value = -2000 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 24  #yugo
+		value = -2000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 208 
+		value = -35000 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 19 
+		value = -35000 #value of stocked main front in active combat is usually around 35,000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 20 
+		value = -35000 #value of stocked main front in active combat is usually around 35,000
 	}
 }
 

@@ -1372,17 +1372,30 @@ if = {
 
 
 
-if = {
-	limit = {
-		has_dlc = "La Resistance"
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		set_technology = {
+			armored_car1 = 1
+			armored_car2 = 1
+			armored_car3 = 1
+		}
 	}
-	set_technology = {
-		armored_car1 = 1
-		armored_car2 = 1
-		armored_car3 = 1
-	}
-}
 
+
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_technology = {
+			special_forces_marines = 1
+			marines_jungle_troops = 1
+			marines_recon = 1
+			marines_expeditionary = 1
+
+		}
+	}
 
 
 	if = {

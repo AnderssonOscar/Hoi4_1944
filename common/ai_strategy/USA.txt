@@ -1579,14 +1579,21 @@ USA_unit_production = {
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = strategic_bomber
-		value = 25
+		value = 35
 	}
 	
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = large_plane_airframe
-		value = 5
+		value = 25
 	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = anti_tank
+		value = -25
+	}
+
 
 	ai_strategy = {
 		type = equipment_production_min_factories

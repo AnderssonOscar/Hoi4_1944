@@ -3,3 +3,19 @@ GER_festung_static_modifier = {
 	max_dig_in_factor = 0.75
 	supply_consumption_factor = -0.25
 }
+
+GER_flooded_area_static_modifier = {
+	army_defence_factor = 0.25
+	max_dig_in_factor = 0.5
+	truck_attrition_factor = 0.25
+	army_speed_factor = -0.25
+}
+
+GER_defence_rhine_defence_static_modifier = {
+	max_dig_in_factor = 0.25
+	river_crossing_factor = 0.25
+}
+
+MOD_defence_naval_invasion_static_modifier = {
+	naval_invasion_penalty = 2.5
+}

@@ -635,6 +635,55 @@ if = {
 		GRE_foreign_monopolies
 	}
 
+	185 = {
+		start_resistance = yes
+		set_compliance = 38
+		set_resistance = 42
+		set_garrison_strength = 1.0
+	}
+
+	731 = {
+		start_resistance = yes
+		set_compliance = 38
+		set_resistance = 52
+		set_garrison_strength = 1.0
+	}
+
+	47 = {
+		start_resistance = yes
+		set_compliance = 48
+		set_resistance = 31
+		set_garrison_strength = 1.0
+	}
+
+	186 = {
+		start_resistance = yes
+		set_compliance = 38
+		set_resistance = 42
+		set_garrison_strength = 1.0
+	}
+
+	187 = {
+		start_resistance = yes
+		set_compliance = 38
+		set_resistance = 22
+		set_garrison_strength = 1.0
+	}
+
+	164 = {
+		start_resistance = yes
+		set_compliance = 38
+		set_resistance = 22
+		set_garrison_strength = 1.0
+	}
+
+	182 = {
+		start_resistance = yes
+		set_compliance = 40
+		set_resistance = 22
+		set_garrison_strength = 1.0
+	}
+
 	set_technology = {
 
 		#electronics

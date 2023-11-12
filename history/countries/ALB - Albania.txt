@@ -63,6 +63,13 @@ set_convoys = 15
 		fascism = 80
 	}
 
+	802 = {
+		start_resistance = yes
+		set_compliance = 21
+		set_resistance = 61
+		set_garrison_strength = 1.0
+	}
+
 	set_technology = {
 
 		#electronics

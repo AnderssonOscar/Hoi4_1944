@@ -1,12 +1,22 @@
 ﻿l_english:
- artillery4:0 "Improved Artillery Upgrade III"
- artillery4_desc:0 "Developing heavy artillery capable of motor transport will make it possible to bring artillery support fast moving units."
 
- artillery6:0 "Artillery Upgrade V"
+ artillery6:0 "Modern Artillery Upgrade"
  artillery6_desc:0 ""
 
+ antiair6:0 "Anti-Air Upgrade III"
+ antiair6_desc:0 ""
 
+ antitank6:0 "Anti-Tank Upgrade III"
+ antitank6_desc:0 ""
 
+ rocket_artillery5:0 "Rocket Artillery Upgrade III"
+ antitank6_desc:0 ""
+
+ antiair_home:0 "Static Anti-Air Defences"
+ antiair_home_desc:0 "Fit analog gunnery computers to our existing anti-aircraft guns"
+
+ antiair_home2:0 "Static Anti-Air Defences II"
+ antiair_home2_desc:0 "Combine our anti-aircraft guns with radar aiming systems"
 
 
 

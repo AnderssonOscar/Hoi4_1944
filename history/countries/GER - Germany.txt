@@ -502,6 +502,19 @@ set_war_support = 0.3
 		}
 		set_oob = "GER_1939"
 	}
+
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_technology = {
+			special_forces_paratroopers = 1
+			paras_combat_drop = 1
+			paras_airborne_light_armor = 1
+		}
+	}
+
+
 	if = {
 		limit = {
 			has_dlc = "No Step Back"
@@ -2244,53 +2257,112 @@ if = {
 
 1943.12.30 = {
 
-	#create_import = {
-	#	resource = steel
-	#	factories = 6
-	#	exporter = SWE
-	#}
+		#create_import = {
+		#	resource = steel
+		#	factories = 6
+		#	exporter = SWE
+		#}
 
-	create_import = {
-		resource = tungsten
-		factories = 10
-		exporter = POR
-	}
+		create_import = {
+			resource = tungsten
+			factories = 10
+			exporter = POR
+		}
 
-	create_import = {
-		resource = tungsten
-		factories = 2
-		exporter = SWE
-	}
+		create_import = {
+			resource = tungsten
+			factories = 2
+			exporter = SWE
+		}
 
-	create_import = {
-		resource = tungsten
-		factories = 2
-		exporter = SPA
-	}
+		create_import = {
+			resource = tungsten
+			factories = 2
+			exporter = SPA
+		}
 
-	create_import = {
-		resource = chromium
-		factories = 1
-		exporter = GRE
-	}
+		create_import = {
+			resource = chromium
+			factories = 1
+			exporter = GRE
+		}
 
-	create_import = {
-		resource = chromium
-		factories = 4
-		exporter = TUR
-	}
+		create_import = {
+			resource = chromium
+			factories = 4
+			exporter = TUR
+		}
 
-	create_import = {
-		resource = oil
-		factories = 1
-		exporter = HUN
-	}
+		create_import = {
+			resource = oil
+			factories = 1
+			exporter = HUN
+		}
 
-	create_import = {
-		resource = oil
-		factories = 1
-		exporter = ALB
-	}
+		create_import = {
+			resource = oil
+			factories = 1
+			exporter = ALB
+		}
+
+		#CZE
+		9 = {
+			start_resistance = yes
+			set_compliance = 72
+			set_resistance = 13
+			set_garrison_strength = 1.0
+		}
+
+		74 = {
+			start_resistance = yes
+			set_compliance = 67
+			set_resistance = 16
+			set_garrison_strength = 1.0
+		}
+
+		75 = {
+			start_resistance = yes
+			set_compliance = 63
+			set_resistance = 12
+			set_garrison_strength = 1.0
+		}
+
+		72 = {
+			start_resistance = yes
+			set_compliance = 43
+			set_resistance = 19
+			set_garrison_strength = 1.0
+		}
+
+		#ITALY
+		852 = {
+			start_resistance = yes
+			set_compliance = 43
+			set_resistance = 19
+			set_garrison_strength = 1.0
+		}
+
+		852 = {
+			start_resistance = yes
+			set_compliance = 41
+			set_resistance = 27
+			set_garrison_strength = 1.0
+		}
+
+		736 = {
+			start_resistance = yes
+			set_compliance = 41
+			set_resistance = 27
+			set_garrison_strength = 1.0
+		}
+
+		#montenegro
+		105 = {
+			start_resistance = yes
+			set_compliance = 21
+			set_resistance = 71
+			set_garrison_strength = 1.0
+		}
 
 		recruit_character = GER_lothar_rendulic
 		recruit_character = GER_erich_brandenberger

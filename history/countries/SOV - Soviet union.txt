@@ -2118,6 +2118,18 @@ if = {
 		#elite_forces = 1
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_technology = {
+			special_forces_mountaineers = 1
+			rangers = 1
+			special_forces_recon = 1
+			mountaineers_combat_1 = 1
+		}
+	}
+
 
 	if = {
 		limit = { has_dlc = "By Blood Alone" }

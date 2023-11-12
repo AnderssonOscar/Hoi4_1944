@@ -114,6 +114,7 @@ operations = {
 		available = {
 			has_war_with = GER
 			date > 1944.5.1
+			date < 1945.5.8
 
 			16 = {is_fully_controlled_by = GER}
 
@@ -181,6 +182,7 @@ operations = {
 			available = {
 				has_war_with = GER
 				date > 1944.6.2
+				date < 1944.12.1
 
 				set_temp_variable = { days = global.num_days }
 				modulo_temp_variable = { days = 90 }

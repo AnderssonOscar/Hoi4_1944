@@ -1,9 +1,15 @@
 MOD_start_update = {
 	#GRE_setup_puppet = yes
+	GER_scripted_events_start_effects = yes
+	resistance_scripted_events_start_effects = yes
 }
 
 MOD_daily_update = {
 	GER_calculate_casualities_inflicted_on_SOV = yes
 	GER_dday_events = yes
 	GER_operation_margarethe = yes
+	GER_flood_benelux = yes
+	GER_rhine_crossing = yes
+	GER_rhine_defence = yes
+	GER_paris_lost = yes
 }

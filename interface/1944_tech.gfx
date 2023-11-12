@@ -1,0 +1,69 @@
+spriteTypes = {
+
+	SpriteType = {
+		name = "GFX_antitank6_medium"
+		texturefile = "gfx/interface/technologies/antitank3.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_rocket_artillery5_medium"
+		texturefile = "gfx/interface/technologies/rocket_artillery4.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_antiair6_medium"
+		texturefile = "gfx/interface/technologies/antiair1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_antiair_home_medium"
+		texturefile = "gfx/interface/technologies_mod/antiair_home1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_antiair_home2_medium"
+		texturefile = "gfx/interface/technologies/antiair4.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_artillery6_medium"
+		texturefile = "gfx/interface/technologies/artillery1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_dispersed_industry6_medium"
+		texturefile = "gfx/interface/technologies/dispersed_industry5.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_concentrated_industry6_medium"
+		texturefile = "gfx/interface/technologies/concentrated_industry5.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_construction6_medium"
+		texturefile = "gfx/interface/technologies/advanced_conversion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_excavation6_medium"
+		texturefile = "gfx/interface/technologies/excavation5.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_modern_rubber_processing2_medium"
+		texturefile = "gfx/interface/technologies/modern_rubber_processing.dds"
+	}
+
+
+	SpriteType = {
+		name = "GFX_modern_oil_processing2_medium"
+		texturefile = "gfx/interface/technologies/advanced_oil_processing.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_fuel_refining6_medium"
+		texturefile = "gfx/interface/technologies/fuel_refining5.dds"
+	}
+
+}

@@ -671,6 +671,9 @@ GER_reichskommissariats = {
 		visible = {
 			has_completed_focus = GER_form_the_reichskommissariats
 			has_government = fascism
+			controls_state = 7
+			controls_state = 35
+			controls_state = 36
 		}
 
 		complete_effect = {
@@ -685,10 +688,11 @@ GER_reichskommissariats = {
 						set_state_controller = 35
 						set_state_controller = 36
 					}
-				}
+				
 				HOL = {
 					start_civil_war = { ideology = fascism size = 1 states = { 7 36 35 } } # fix
 				}
+			}
 				random_country = {
 					limit= {
 						original_tag = HOL
@@ -846,8 +850,8 @@ GER_reichskommissariats = {
 			controls_state = 194
 			controls_state = 204
 			controls_state = 206
-			controls_state = 207
-			controls_state = 241
+			#controls_state = 207
+			#controls_state = 241
 			controls_state = 11
 			controls_state = 784
 			controls_state = 189
@@ -941,8 +945,8 @@ GER_reichskommissariats = {
 				set_state_controller = 194
 				set_state_controller = 204
 				set_state_controller = 206
-				set_state_controller = 207
-				set_state_controller = 241
+				#set_state_controller = 207
+				#set_state_controller = 241
 				set_state_controller = 784
 				set_state_controller = 814
 				set_state_controller = 815

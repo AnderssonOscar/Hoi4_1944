@@ -1,0 +1,22 @@
+resistance_scripted_events_start_effects = {
+	if = {
+		limit = { 
+			date > 1943.12.30
+			NOT = { has_global_flag = resistance_scripted_events_start_effects }
+		}
+		set_global_flag = resistance_scripted_events_start_effects
+	}
+}
+
+CRO_partisans_event_1 = {
+	if = {
+		limit = { 
+			tag = CRO
+			date > 1944.3.18
+			has_war_with = SOV
+			NOT = { has_global_flag = CRO_partisans_event_1 } 
+		}
+		set_global_flag = CRO_partisans_event_1
+	}
+}
+

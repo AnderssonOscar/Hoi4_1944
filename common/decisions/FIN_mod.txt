@@ -57,7 +57,11 @@ war_measures = {
 
 			modifier = {
 				date > 1944.9.4
-				surrender_progress > 0.07
+
+				OR = {
+					surrender_progress > 0.07
+					GER = { surrender_progress > 0.025 }
+				}
 				factor = 100
 			}
 			modifier = {
