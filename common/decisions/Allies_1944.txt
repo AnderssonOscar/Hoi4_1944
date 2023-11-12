@@ -181,7 +181,7 @@ operations = {
 			
 			available = {
 				has_war_with = GER
-				date > 1944.6.2
+				date > 1944.6.1
 				date < 1944.12.1
 
 				set_temp_variable = { days = global.num_days }
@@ -223,7 +223,7 @@ operations = {
 			}
 
 			modifier = {
-					naval_invasion_prep_speed = +100.0
+					naval_invasion_prep_speed = +1000.0
 					#amphibious_invasion #speed
 					#naval_invasion_capacity = +10.00
 					#naval_invasion_penalty = -0.25

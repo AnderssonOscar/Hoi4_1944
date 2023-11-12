@@ -12,4 +12,5 @@ MOD_daily_update = {
 	GER_rhine_crossing = yes
 	GER_rhine_defence = yes
 	GER_paris_lost = yes
+	GER_konigsberg_battle = yes
 }

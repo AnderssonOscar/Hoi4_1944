@@ -307,7 +307,7 @@ mod.news.5.d:0 "Königsberg has finally succumbed to the Red Army earlier this d
 rhine.defence.0:0 "Defence Of The Rhine"
 rhine.defence.0.t:0 "Defence Of The Rhine"
 rhine.defence.0.d:0 "As The Allies seek to advance into Germany from the west the Rhine River serves as the last natural barrier in front of the german interior.\n\nShould we destroy the bridges to stop the invader?"
-rhine.defence.0.tt:0 "§YBridges & railways around the Rhine will be destroyed and improvised fortifications will be constructed.\n§ §W§"
+rhine.defence.0.tt:0 "§YRailways left side of the Rhine will be destroyed.\n\nImprovised fortifications will be constructed on the right bank.\n§ §W§"
 
 mod.news.7:0 "Rhine Crossing"
 mod.news.7.t:0 "Rhine Crossing"
@@ -321,3 +321,4 @@ netherlands.flooding.start.0:0 "Fortress Holland"
 netherlands.flooding.start.0.t:0 "Fortress Holland"
 netherlands.flooding.start.0.d:0 "To impede the advance of enemy forces and to protect strategic positions we can flood certian areas of Holland"
 netherlands.flooding.start.0.tt:0 "§YWalcheren has already been flooded by the allies§ §W§"
+netherlands.flooding.start.0.tt_1:0 "§YFlood the areas surrounding Amsterdam§ §W\n\n§"

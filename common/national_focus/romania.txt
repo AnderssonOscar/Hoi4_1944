@@ -4751,35 +4751,35 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ROM_king_michaels_coupd
-		icon = GFX_focus_rom_coup
-		#prerequisite = { focus = ROM_force_abdication }
-		x = -8
-		y = 1
-		relative_position_id = ROM_force_abdication
+	# focus = {
+	# 	id = ROM_king_michaels_coup
+	# 	icon = GFX_focus_rom_coup
+	# 	#prerequisite = { focus = ROM_force_abdication }
+	# 	x = -8
+	# 	y = 1
+	# 	relative_position_id = ROM_force_abdication
 
-		cost = 10
+	# 	cost = 10
 
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_completed_focus = ROM_iron_guard
-			}
-		}
+	# 	ai_will_do = {
+	# 		factor = 1
+	# 		modifier = {
+	# 			factor = 0
+	# 			has_completed_focus = ROM_iron_guard
+	# 		}
+	# 	}
 
-		available = {
-			is_subject = no
-		}
+	# 	available = {
+	# 		is_subject = no
+	# 	}
 
-		bypass = {}
+	# 	bypass = {}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+	# 	cancel_if_invalid = yes
+	# 	continue_if_invalid = no
+	# 	available_if_capitulated = no
 
-		completion_reward = {
-		}
-	}
+	# 	completion_reward = {
+	# 	}
+	# }
 }

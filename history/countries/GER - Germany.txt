@@ -2262,6 +2262,10 @@ if = {
 		#	factories = 6
 		#	exporter = SWE
 		#}
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
 
 		create_import = {
 			resource = tungsten
@@ -2304,6 +2308,7 @@ if = {
 			factories = 1
 			exporter = ALB
 		}
+	}
 
 		#CZE
 		9 = {

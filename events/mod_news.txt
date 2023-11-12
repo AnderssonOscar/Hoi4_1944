@@ -89,9 +89,11 @@ news_event = {
 	desc = mod.news.4.d
 	picture = GFX_konigsberg_defence
 
+	fire_only_once = yes
+	is_triggered_only = yes
+
 	immediate = {
 		set_global_flag = konigsberg_battle
-
 
 hidden_effect = {
 		GER = {
@@ -151,32 +153,10 @@ hidden_effect = {
 					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
 					owner = GER
 				}
-			}
-
-		}
-	}
-	}
-	
-	trigger = {
-		NOT = { has_global_flag = konigsberg_battle }
-		is_in_faction_with = GER
-
-		GER = { has_completed_focus = GER_festung_cities }
-		is_in_faction_with = GER 
-		date > 1944.1.1
-
-		GER = {
-			#army_manpower_in_state = { amount > 20000 state = 763 }
-			has_war_with = SOV
-			OR = {
-				NOT = {	controls_province = 11265 } 
-				NOT = {	controls_province = 395 } 
-				NOT = {	controls_province = 6402 } 
-				NOT = {	controls_province = 11245 } 
+				}
 			}
 		}
 	}
-	major = yes  
 	
 	option = {
 		name = "OK"

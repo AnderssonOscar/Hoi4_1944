@@ -19,3 +19,8 @@ GER_defence_rhine_defence_static_modifier = {
 MOD_defence_naval_invasion_static_modifier = {
 	naval_invasion_penalty = 2.5
 }
+
+MOD_good_defence_posistion_static_modifier = {
+	max_dig_in_factor = 0.5
+	army_defence_factor = 0.25
+}

@@ -2625,11 +2625,11 @@ SOV_take_finland_medium = {
 	# 	tag = FIN
 	# 	value = 55
 	# }
-	# ai_strategy = {
-	# 	type = front_armor_score
-	# 	id = FIN
-	# 	value = -100
-	# }
+	ai_strategy = {
+		type = front_armor_score
+		id = FIN
+		value = -100
+	}
 }
 
 SOV_take_finland_high = {
@@ -2663,11 +2663,11 @@ SOV_take_finland_high = {
 	# 	value = 55
 	# }
 
-	# ai_strategy = {
-	# 	type = front_armor_score
-	# 	id = FIN
-	# 	value = 50
-	# }
+	ai_strategy = {
+		type = front_armor_score
+		id = FIN
+		value = 50
+	}
 }
 
 

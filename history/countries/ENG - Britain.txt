@@ -1806,17 +1806,21 @@ if = {
 
 
 1943.12.30 = {
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_import = {
+			resource = rubber
+			factories = 8
+			exporter = USA
+		}
 
-	create_import = {
-		resource = rubber
-		factories = 8
-		exporter = USA
-	}
-
-	create_import = {
-		resource = aluminium
-		factories = 6
-		exporter = USA
+		create_import = {
+			resource = aluminium
+			factories = 6
+			exporter = USA
+		}
 	}
 
 	if = {

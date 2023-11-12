@@ -27,7 +27,7 @@ state={
 		1943.12.1 = {
 			buildings = {
 				11153 = {
-					bunker = 1
+					bunker = 2
 				}
 
 				6057 = {

@@ -4497,40 +4497,6 @@ instant_effect = {
 		progress = 0.2
 		efficiency = 100
 	}
-
-	add_equipment_production = {
-		equipment = {
-			type = railway_gun_equipment_1
-			creator = "GER" 
-		}
-		requested_factories = 1
-		progress = 1
-		amount = 1
-		efficiency = 100
-	}
-
-		add_equipment_production = {
-		equipment = {
-			type = railway_gun_equipment_1
-			creator = "GER" 
-		}
-		requested_factories = 1
-		progress = 1
-		amount = 1
-		efficiency = 100
-	}
-
-		add_equipment_production = {
-		equipment = {
-			type = railway_gun_equipment_1
-			creator = "GER" 
-		}
-		requested_factories = 1
-		progress = 1
-		amount = 1
-		efficiency = 100
-	}
-
 	
 }
 
