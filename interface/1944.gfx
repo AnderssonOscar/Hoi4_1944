@@ -31,7 +31,10 @@ spriteTypes = {
 		name = "GFX_rhine_crossing"
 		texturefile = "gfx/news/rhine_crossing_news.dds"
 	}
-
+	spriteType = {
+		name = "GFX_soviet_invasion_manchuria"
+		texturefile = "gfx/news/soviet_invasion_manchuria_news.dds"
+	}
 	spriteType = {
 		name = "GFX_festung_holland"
 		texturefile = "gfx/events/report_event_festung_holland.dds"

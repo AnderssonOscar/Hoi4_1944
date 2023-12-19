@@ -27,7 +27,13 @@ state={
 				set_province_controller = 13141
 
 			}
+		}
 
+		1944.1.1 = {
+			buildings = {
+				industrial_complex = 2
+				arms_factory = 2
+			}
 		}
 
 	}

@@ -317,8 +317,17 @@ mod.news.6:0 "Paris Liberated"
 mod.news.6.t:0 "Paris Liberated"
 mod.news.6.d:0 "Today marks the end of German occupation in the French capital. \nThe liberation of Paris was met with widespread jubilation. Parisians poured into the streets to celebrate their freedom after years of German occupation.\n\nThe occupation of Paris is finally over."
 
+mod.news.9:0 "Soviet invasion of Manchuria"
+mod.news.9.t:0 "Soviet invasion of Manchuria"
+mod.news.9.d:0 "Today the Soviets declared war on Japan and launched an invasion of Manchuria.\n\nThe primary objective of the invasion is to swiftly defeat Japanese forces in Manchuria and Korea, as well as to secure territory and influence in the post-war order in Asia."
+
 netherlands.flooding.start.0:0 "Fortress Holland"
 netherlands.flooding.start.0.t:0 "Fortress Holland"
 netherlands.flooding.start.0.d:0 "To impede the advance of enemy forces and to protect strategic positions we can flood certian areas of Holland"
 netherlands.flooding.start.0.tt:0 "§YWalcheren has already been flooded by the allies§ §W§"
 netherlands.flooding.start.0.tt_1:0 "§YFlood the areas surrounding Amsterdam§ §W\n\n§"
+
+CHI_request_supply_usa:0 "Request Lend-Lease from USA"
+CHI_request_supply_usa_desc:0 "Fly in supplies from india to Kunming"
+
+SIA_THAI_fascism: "Thailand"

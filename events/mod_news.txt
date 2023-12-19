@@ -266,7 +266,7 @@ news_event = {
 	desc = mod.news.7.d
 	picture = GFX_rhine_crossing
 
-	fire_only_once = yes
+	#fire_only_once = yes
 	is_triggered_only = yes
 	
 	immediate = {
@@ -289,6 +289,29 @@ news_event = {
 	picture = GFX_rhine_crossing
 
 	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+		}
+	}
+
+	major = yes
+	
+	option = {
+		name = "OK"
+	}
+}
+
+
+#soviet invasion of manchuria
+news_event = {
+	id = mod.news.9
+	title = mod.news.9.t
+	desc = mod.news.9.d
+	picture = GFX_soviet_invasion_manchuria
+
+	#fire_only_once = yes
 	is_triggered_only = yes
 	
 	immediate = {

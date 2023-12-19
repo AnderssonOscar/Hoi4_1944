@@ -1,0 +1,54 @@
+JAP_scripted_events_start_effects = {
+	
+	if = {
+		limit = { 
+			date > 1943.12.30
+			NOT = { has_global_flag = JAP_scripted_events_start_effects }
+		}
+		set_global_flag = JAP_scripted_events_start_effects
+
+		728 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 11981
+
+				}
+			}
+		}
+
+		593 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 10062
+					id = 7108
+					id = 1047
+					id = 9938
+				}
+			}
+		}
+
+		595 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 7071
+					id = 4196
+				}
+			}
+		}
+
+		596 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 1055
+					id = 9974
+					id = 7191
+				}
+			}
+		}
+	}
+
+}

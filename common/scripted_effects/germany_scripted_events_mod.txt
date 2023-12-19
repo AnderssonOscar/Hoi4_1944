@@ -202,7 +202,7 @@ GER_paris_lost = {
 			NOT = { controls_province = 9523 } 
 		}
 
-		news_event = { id = mod.news.6 }
+		GER = { news_event = { id = mod.news.6 } }
 		set_global_flag = GER_paris_lost
 	}
 }
@@ -211,7 +211,7 @@ GER_paris_lost = {
 GER_rhine_defence = {
 	if = {
 		limit = { 
-			original_tag = GER
+			tag = GER
 
 			OR = {
 				has_war_with = FRA
@@ -236,15 +236,15 @@ GER_rhine_defence = {
 		}
 	}
 
-		news_event = { id = rhine.defence.0 }
+		country_event = { id = rhine.defence.0 }
 		set_global_flag = GER_rhine_defence
 	}
 }
 
-GER_rhine_crossing= {
+GER_rhine_crossing = {
 	if = {
 		limit = { 
-			original_tag = GER
+			tag = GER
 
 			OR = {
 				has_war_with = FRA
@@ -276,7 +276,7 @@ GER_rhine_crossing= {
 		}
 	}
 
-		news_event = { id = mod.news.7 }
+		GER = { news_event = mod.news.7 }
 		set_global_flag = GER_rhine_crossing
 	}
 }

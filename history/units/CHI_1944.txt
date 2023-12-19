@@ -1996,14 +1996,59 @@ units = {
 		}
 
 		division = { 
-			division_name = {
-				is_name_ordered = no
-				name_order = 0
-			}
-			location = 4656
+			location = 1647
 			division_template = "Juntuán"
-			start_experience_factor = 0.18
-			start_equipment_factor = 0.92
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.71
+		}
+
+		division = { 
+			location = 1647
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.71
+		}
+
+		division = { 
+			location = 1933
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.71
+		}
+
+		division = { 
+			location = 1933
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.71
+		}
+
+		division = { 
+			location = 2006
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.71
+		}
+
+		division = { 
+			location = 2006
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.71
+		}
+
+		division = { 
+			location = 1976
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.71
+		}
+
+		division = { 
+			location = 1976
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.71
 		}
 
 	#################################################################################################################################################################

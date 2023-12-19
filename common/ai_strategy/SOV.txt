@@ -2841,6 +2841,17 @@ SOV_dont_do_naval_invasion_nor = {
 		id = "NOR"
 		value = -500
 	}
+	ai_strategy = {
+		type = invade
+		id = "D06"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "D05"
+		value = -500
+	}
 
 	ai_strategy = {
 		type = invade
@@ -2850,7 +2861,19 @@ SOV_dont_do_naval_invasion_nor = {
 
 	ai_strategy = {
 		type = invade
-		id = "D05"
+		id = "D03"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "D02"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "D01"
 		value = -500
 	}
 

@@ -1,0 +1,58 @@
+
+RAJ_defend_the_front = {
+
+	allowed = { tag = RAJ }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = JAP 
+		NOT = { has_war_with = CHI }
+		is_in_faction_with = ENG
+
+		date > 1944.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "USA"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "FRA"
+		value = 100
+	}
+
+	ai_strategy = {
+	 	type = front_unit_request
+		 country_trigger = { tag = JAP }
+		value = 25
+	}
+
+	}
+
+RAJ_more_infrastructure = {
+	allowed = { tag = RAJ }
+	enable = {
+		date > 1943.12.30
+		date < 1945.1.1
+		has_war_with = JAP
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = fuel_silo
+		value = -500
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = infrastructure
+		value = 100
+	}
+}

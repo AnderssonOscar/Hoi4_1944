@@ -1,14 +1,15 @@
 version="1"
 tags={
-	"Balance"
 	"Events"
+	"Balance"
 	"Gameplay"
 	"Historical"
+	"Technologies"
 	"National Focuses"
 	"Military"
 	"Sound"
-	"Technologies"
 }
 name="1944 - Downfall"
 picture="thumbnail.png"
-supported_version="1.13.5"
+supported_version="1.13.6"
+remote_file_id="3070639276"

@@ -1,12 +1,10 @@
 ﻿capital = 282
 
-
-
-set_stability = 0.2 #baseline, THE EMPEROR PROTECTS
-set_war_support = 0.8
+set_stability = 0.1 #baseline, THE EMPEROR PROTECTS
+set_war_support = 0.75
 
 set_research_slots = 1
-set_fuel_ratio = 1.0
+set_fuel_ratio = 0.6
 add_ideas = {
 	state_shintoism
 	limited_exports
@@ -1504,6 +1502,7 @@ if = {
 		}
 	}
 
+		set_global_flag = JAP_kalkin_gol
 		add_political_power = 1198
 		add_command_power = 100
 	

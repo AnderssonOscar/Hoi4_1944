@@ -2,6 +2,7 @@ MOD_start_update = {
 	#GRE_setup_puppet = yes
 	GER_scripted_events_start_effects = yes
 	resistance_scripted_events_start_effects = yes
+	JAP_scripted_events_start_effects = yes
 }
 
 MOD_daily_update = {
