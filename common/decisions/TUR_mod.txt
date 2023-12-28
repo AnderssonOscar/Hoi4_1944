@@ -207,7 +207,7 @@ political_actions = {
 		}
 
 		available = {
-			GER = { surrender_progress > 0.2 }
+			GER = { surrender_progress > 0.15 }
 			OR = {
 				AND = {
 					ROM = { is_puppet_of = SOV }
@@ -215,6 +215,7 @@ political_actions = {
 				}
 				ROM = { has_capitulated = yes}
 			} 
+
 		}
 
 		visible = {
@@ -222,21 +223,40 @@ political_actions = {
 			is_ai = yes
 			has_war = no
 			is_in_faction = no
+
+			USA = { has_war_with = GER }
+			ENG = { has_war_with = GER }
 		}
 
 		complete_effect = {
-			ENG = { add_to_faction = TUR }
 
-			#add_to_war = {
-			#	targeted_alliance = ENG
-			#	enemy = GER
-			#}
+			random_country = {
+				limit = {
+					OR = {
+						tag = ENG
+						tag = USA
+					}
+					is_faction_leader = yes
+				}
+				add_to_faction = TUR
+				# TUR = { 
+				# 	add_to_war = {
+				# 	targeted_alliance = PREV
+				# 	enemy = GER
+				# 	}
+				# }
+			 }
+			 
 		}
 
 		fire_only_once = yes
 
 			ai_will_do = {
-				factor = 250
+				factor = 1
+				modifier = {
+					date > 1945.1.1
+					factor = 100
+				}
 			}
 		}
 	}

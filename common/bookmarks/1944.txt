@@ -8,28 +8,27 @@ bookmarks = {
 		default_country = "GER"
 	
 		GER = {
-			history = GER_BLITZKRIEG_DESC
+			history = GER_1944_DESC
 			ideology = fascism
 			ideas = {
 				sour_loser
 				general_staff
-				GER_autarky_idea
+				medium_war_casualties
 			}
 			focuses = {
-				GER_weserubung
-				GER_plan_z
-				GER_ussr_war_goal
+				GER_gottedamerung
+				GER_form_volksturm
+				GER_festung_cities
 			}
 		}
 
 		ENG = {
-			history = ENG_BLITZKRIEG_DESC
+			history = ENG_1944_DESC
 			ideology = democratic
 			ideas = {
 				stiff_upper_lip
-				ENG_the_war_to_end_all_wars
+				low_war_casualties
 				ENG_george_vi
-				british_austerity_idea
 				ENG_colonial_elite
 			}
 			focuses = {
@@ -41,12 +40,12 @@ bookmarks = {
 		}
 
 		SOV = {
-			history = SOV_BLITZKRIEG_DESC
+			history = SOV_1944_DESC
 			ideology = communism
 			ideas = {
-				SOV_anti_soviet_military_thinking_banned_navy
 				SOV_second_five_year_plan_fake_1939_ns
-				SOV_purged_junior_army_officers_2
+				low_war_casualties
+				SOV_soviet_industry
 			}
 			focuses = {
 				SOV_found_the_comecon
@@ -56,7 +55,7 @@ bookmarks = {
 		}
 
 		USA = {
-			history = USA_BLITZKRIEG_DESC
+			history = USA_1944_DESC
 			ideology = democratic
 			ideas = {
 				home_of_the_free
@@ -72,14 +71,14 @@ bookmarks = {
 		}
 
 		"ROM"={
-			history = "ROM_BLITZKRIEG_DESC"
+			history = ROM_1944_DESC
 			ideology = neutrality
 			ideas = {
 				ROM_preserve_greater_romania
 			}
 			focuses = {
-				ROM_balkans_dominance
-				ROM_institute_royal_dictatorship
+				#ROM_balkans_dominance
+				#ROM_institute_royal_dictatorship
 				ROM_preserve_greater_romania
 			}
 		}
@@ -99,7 +98,7 @@ bookmarks = {
 		}
 
 		ITA = {
-			history = ITA_BLITZKRIEG_DESC
+			history = ITA_1944_DESC
 			ideology = fascism
 			ideas={
 				vittoria_mutilata
@@ -135,7 +134,7 @@ bookmarks = {
 
 		"JAP" = {
 			minor = yes
-			history = JAP_BLITZKRIEG_DESC
+			history = JAP_1944_DESC
 			ideology = fascism
 			ideas={
 				state_shintoism
@@ -147,6 +146,22 @@ bookmarks = {
 				JAP_warrior_spirit
 				JAP_strike_on_the_southern_resource_area
 			}		
+		}
+
+		"MAN"={
+			minor = yes
+			history = "MAN_BLITZKRIEG_DESC"
+			ideology = fascism
+			ideas = {
+				MAN_kwantung_veto
+				MAN_five_year_plan_industry
+				MAN_low_legitimacy_4
+			}
+			focuses = {
+				MAN_alliance_with_the_kwantung_army
+				MAN_develop_aluminum_sources
+				MAN_the_two_emperors
+			}
 		}
 
 		"CHI"={
@@ -164,6 +179,72 @@ bookmarks = {
 				CHI_war_of_resistance
 			}
 		}
+
+		"FIN"={
+			minor = yes
+			history = FIN_1944_DESC
+			ideology = neutrality
+			ideas = {
+				FIN_sisu_3
+				FIN_fortification_effort
+				FIN_repurposed_small_industries
+			}
+			focuses = {
+				FIN_winter_warfare
+				FIN_the_lone_wolf
+				FIN_long_range_patrols
+			}
+		}
+
+		"GRE"={
+			minor = yes
+			history = "GRE_1944_DESC"
+			ideology = neutrality
+			ideas = {
+				GRE_recent_famine
+				GRE_occupation_cost
+				GRE_farmer_culture
+			}
+			focuses = {
+				GRE_Raise_New_Security_Battalions
+				GRE_Raw_Resources_Focus
+				GRE_Raise_Hellenic_Divisions
+			}
+		}
+
+		SWE={
+			minor = yes
+			history = "SWE_1944_DESC"
+			ideology = democratic
+			available = { has_dlc = "Arms Against Tyranny" } 
+			ideas = {
+				SWE_radiotjanst_democratic
+				SWE_saltsjobaden_agreement
+				SWE_paid_holidays_idea
+			}
+			focuses = {
+				SWE_as_the_barometer_falls
+				SWE_the_old_enemy_stirs
+				SWE_coalition_war_cabinet
+			}
+		}
+
+		"TUR"={
+			minor = yes
+			history = "TUR_BLITZKRIEG_DESC"
+			ideology = neutrality
+			ideas = {
+				TUR_kemalist_army_officers_extended_power_neutral
+				TUR_sectarian_woes
+				TUR_disorganised_armed_forces_3
+			}
+			focuses = {
+				TUR_taking_over_defense_of_the_gulf
+				TUR_the_mediterranean_entente
+				TUR_misak_i_milli
+			}
+		}
+
 
 		effect = {
 			randomize_weather = 12345 # <- Obligatory in every bookmark !

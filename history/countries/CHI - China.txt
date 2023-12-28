@@ -455,7 +455,7 @@ if = {
 				#improved_medium_airframe = 1
 
 				iw_large_airframe = 1
-				basic_large_airframe = 1
+				#basic_large_airframe = 1
 				#improved_large_airframe = 1
 				#advanced_large_airframe = 1
 			}
@@ -558,6 +558,7 @@ if = {
 		#doctrine
 
 		#industry
+		fuel_refining = 1
 		
 		construction1 = 1
 		construction2 = 1
@@ -580,7 +581,7 @@ if = {
 
 		infantry_weapons = 1
 		infantry_weapons1 = 1
-		infantry_weapons2 = 1
+		#infantry_weapons2 = 1
 
 		interwar_antitank = 1
 		antitank1 = 1

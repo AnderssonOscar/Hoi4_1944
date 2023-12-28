@@ -447,7 +447,7 @@ Allies_careful_GER = {  #intrconnected with - Allies_rush_GER
 
 	enable = {
 
-		date < 1945.6.1
+		date < 1945.2.1
 
 		GER = {
 			NOT = { has_full_control_of_state = 18 }#champange

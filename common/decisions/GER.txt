@@ -534,6 +534,8 @@ GER_reichskommissariats = {
 						unlock_national_focus = NOR_quislings_coup
 						set_global_flag =  NOR_quislings_coup_happened
 
+						 set_cosmetic_tag = NOR_REICH_fascism
+
 						add_manpower = 60000
 						add_political_power = 1500
 
@@ -610,7 +612,7 @@ GER_reichskommissariats = {
 					unlock_national_focus = NOR_bring_back_quisling
 					NOR_apply_resistance_to_fascists = yes 
 					set_global_flag =  NOR_quislings_coup_happened
-
+					set_cosmetic_tag = NOR_REICH_fascism
 					add_political_power = 1500
 
 					add_equipment_to_stockpile = {
@@ -710,6 +712,25 @@ GER_reichskommissariats = {
 						puppet = PREV
 						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
 					}
+
+					add_timed_idea = { idea = GRE_occupation_cost days = 210 }
+					add_ideas = {
+						service_by_requirement
+					}
+
+					if = {
+						limit = {
+							has_dlc = "La Resistance"
+						}
+						create_intelligence_agency = yes
+					}
+
+					complete_national_focus = industrial_effort
+					complete_national_focus = political_effort
+					complete_national_focus = collectivist_focus
+					complete_national_focus = nationalism_focus
+					
+					add_political_power = 1750
 
 					set_cosmetic_tag = HOL_reichskommissariat
 					create_country_leader = {
@@ -979,6 +1000,86 @@ GER_reichskommissariats = {
 					traits = {
 					}
 				}
+
+				add_ideas = {
+					tot_economic_mobilisation
+					service_by_requirement
+				}
+
+				add_political_power = 1500
+
+				add_equipment_to_stockpile = {
+					type = convoy_1
+					amount = 45
+					producer = GER
+				}
+
+				add_equipment_to_stockpile = { 
+					type = train_equipment_1
+					amount = 25
+					producer = GER
+				}
+
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 10000
+					producer = GER
+				}
+
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 700
+					producer = GER
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 500
+					producer = GER
+				}
+
+				country_event = {
+					id = reichskommissariat.start.1
+				}
+
+
+				206 = {
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.47 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.13 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.33 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.28 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.28 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+				}
+
 			}
 		}
 	}

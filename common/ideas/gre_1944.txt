@@ -4,7 +4,7 @@ ideas = {
 	GRE_occupation_cost = {
 		picture = chi_hyper_inflation5
 		modifier = {
-			consumer_goods_factor = 0.2
+			consumer_goods_factor = 0.15
 			} 
 		}
 

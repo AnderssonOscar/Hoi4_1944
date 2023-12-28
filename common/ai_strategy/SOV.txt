@@ -2753,6 +2753,12 @@ SOV_dont_do_naval_invasion_ger = {
 		country_trigger = { tag = GER }
 		value = -500
 	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = BLR } #ostland
+		value = -500
+	}
 }
 
 

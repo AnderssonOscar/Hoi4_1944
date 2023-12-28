@@ -239,6 +239,67 @@ units = {
 
 	}
 
+#########################################################################################################################################################
+															#ITALY
+#########################################################################################################################################################
+
+	division= {	
+		location = 819
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.34
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_2 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }	
+	}
+
+	division= {	
+		location = 819
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.27
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_2 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }	
+	}
+
+	division= {	
+		location = 883
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.31
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_2 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "ENG" } }	
+	}
+
+	division= {	
+		location = 9826
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.37
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_3 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "ENG" } }	
+	}
+
+	division= {	
+		location = 4159
+		division_template = "Infantry Division"	
+		start_experience_factor = 0.31
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_2 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "ENG" } }	
+	}
+
+	division= {
+		location = 6939
+		division_template = "Armour Division"
+		start_experience_factor = 0.38
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_3 = { owner = "ENG" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "ENG" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "ENG" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = USA version_name = "M4A2" } }
+	}
+
+
 
 #########################################################################################################################################################
 															#INDIA

@@ -224,14 +224,14 @@ SOV_great_patriotic_war = {
 					limit = { has_dlc = "By Blood Alone" }
 					add_equipment_to_stockpile = {
 						type = small_plane_airframe_2
-						amount = 200
+						amount = 150
 						variant_name = "La-5 A"
 						producer = SOV
 					}
 		
 					add_equipment_to_stockpile = {
 						type = small_plane_cas_airframe_1
-						amount = 500
+						amount = 400
 						variant_name = "MBR-2"
 						producer = SOV
 					}
@@ -240,14 +240,14 @@ SOV_great_patriotic_war = {
 
 					add_equipment_to_stockpile = {
 						type = fighter_equipment_2
-						amount = 200
+						amount = 150
 						variant_name = "La-5 A"
 						producer = SOV
 					}
 		
 					add_equipment_to_stockpile = {
 						type = CAS_equipment_2
-						amount = 500
+						amount = 400
 						producer = SOV
 					}	
 				}
@@ -326,15 +326,6 @@ SOV_great_patriotic_war = {
 					owner = SOV
 				}
 
-				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.28  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }" 
-					owner = SOV
-				}
-
-				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.58  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"SOV\" } }" 
-					owner = SOV
-				}
 
 			}
 
@@ -608,7 +599,7 @@ SOV_diplomacy_asia_decision_category = {
 		}
 
 		 fire_only_once = yes
-		 days_remove = 40
+		 days_remove = 90
 
 		#cost = 10
 

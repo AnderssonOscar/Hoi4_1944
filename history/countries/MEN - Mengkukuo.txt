@@ -80,3 +80,8 @@ set_popularities = {
 	fascism = 80
 	neutrality = 20
 }
+
+1943.12.30 = {
+	oob = "MEN_1944"
+}
+

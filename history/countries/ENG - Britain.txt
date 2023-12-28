@@ -1893,8 +1893,10 @@ if = {
 		english_electric		
 
 		#laws
-		war_economy
-		extensive_conscription
+		#war_economy
+		tot_economic_mobilisation
+		service_by_requirement
+		#extensive_conscription
 
 		ENG_Air_industry
 		ENG_george_vi

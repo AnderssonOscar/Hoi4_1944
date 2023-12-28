@@ -21,7 +21,11 @@ state={
 		}
 		add_core_of = EST
 
-				1943.12.1 = {
+		1943.12.1 = {
+			buildings = {
+				arms_factory = 3
+				fuel_silo = 1
+			}
 			owner = GER
 			controller = GER
 		}

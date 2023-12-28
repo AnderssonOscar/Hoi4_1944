@@ -8,8 +8,8 @@ USA_stop_camping_america = {
 	}
 
 	enable = {
-		tag = USA
 		date > 1943.12.1
+		surrender_progress < 0.0
 	}
 	abort_when_not_enabled = yes
 
@@ -19,9 +19,15 @@ USA_stop_camping_america = {
 		value = -500
 	}
 
+	ai_strategy = {
+		type = front_unit_request
+		area = north_america
+		value = -600
+	}
+
 		ai_strategy = {
 			type = garrison
-			value = -50
+			value = -500
 	}
 }
 
@@ -39,7 +45,7 @@ USA_garrison_ITALY = {
 
 	ai_strategy = {
 		type = put_unit_buffers
-		ratio = 0.15
+		ratio = 0.1
 		states = { 
 			117
 			156
@@ -49,7 +55,7 @@ USA_garrison_ITALY = {
 
 		}
 		subtract_invasions_from_need = no
-		subtract_fronts_from_need = no
+		subtract_fronts_from_need = yes
 	}
 }
 
@@ -67,7 +73,7 @@ USA_dont_forget_about_italy = {
 		has_war_with = GER
 
 		GER = {
-			has_full_control_of_state = 16 
+			has_full_control_of_state = 16  #france
 			has_full_control_of_state = 15 
 			has_full_control_of_state = 14 
 			has_full_control_of_state = 30 

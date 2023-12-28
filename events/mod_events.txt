@@ -22,6 +22,8 @@ add_namespace = hungary.operation.panzerfaust
 add_namespace = netherlands.flooding.start
 add_namespace = rhine.defence
 
+add_namespace = reichskommissariat.start
+
 #Destroy Cherbourg from allies
 country_event = {
 	id = german.sabotage.ports.1
@@ -1254,12 +1256,324 @@ country_event = {
 			OR = {
 				original_tag = GER
 				is_in_faction_with = GER
+				has_war = no
 			}
 		}
 	}
 }
 
 
+#reichskommissariat start
+country_event = {
+	id = reichskommissariat.start.1
+	title = "Reichskommissariat start"
+	desc = ""
+	picture = GFX_report_event_FIN_mannerheim_president
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+		if = {
+			limit = { has_dlc = "By Blood Alone" }
+				set_technology = {
+					photo_reconnaisance = 1
+	
+					survivability_studies = 1
+	
+					aa_lmg = 1
+					aa_hmg = 1
+	
+					aa_cannon_1 = 1
+					aa_cannon_2 = 1
+					
+					engines_1 = 1
+					engines_2 = 1
+					engines_3 = 1
+	
+					range_improvements = 1
+	
+					early_bombs = 1
+	
+					aircraft_construction = 1
+	
+	
+					iw_small_airframe = 1
+					basic_small_airframe = 1
+					improved_small_airframe = 1
+					advanced_small_airframe = 1
+	
+					iw_medium_airframe = 1
+					basic_medium_airframe = 1
+					improved_medium_airframe = 1
+	
+					iw_large_airframe = 1
+					basic_large_airframe = 1
+					improved_large_airframe = 1
+	
+					armor_piercing_bombs = 1
+					heavy_bombs = 1
+				}
+			else = {
+				set_technology = {
+					
+					naval_bomber1 = 1
+					naval_bomber2 = 1
+			
+					CAS1 = 1
+					CAS2 = 1
+			
+					fighter1 = 1
+					fighter2 = 1
+					fighter3 = 1
+			
+					heavy_fighter1 = 1
+					heavy_fighter2 = 1
+			
+					strategic_bomber1 = 1
+					strategic_bomber2 = 1
+			
+					tactical_bomber1 = 1
+					tactical_bomber2 = 1
+					
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "La Resistance"
+			}
+			set_technology = {
+				armored_car1 = 1
+				armored_car2 = 1
+				armored_car3 = 1
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			set_technology = {
+					basic_medium_tank_chassis = 1 
+					improved_medium_tank_chassis = 1 
+					advanced_medium_tank_chassis = 1 
+	
+					basic_light_tank_chassis = 1 
+					improved_light_tank_chassis = 1 
+					#advanced_light_tank_chassis = 1 
+	
+					basic_heavy_tank_chassis = 1 
+					improved_heavy_tank_chassis = 1 
+					advanced_heavy_tank_chassis = 1 
+	
+					armor_tech_1 = 1
+					armor_tech_2 = 1
+					armor_tech_3 = 1
+	
+					engine_tech_1 = 1
+					engine_tech_2 = 1
+					engine_tech_3 = 1
+	
+					railway_gun = 1
+			}
+			 else = {
+				set_technology = {
+					gwtank = 1
+	
+					basic_light_tank = 1
+					improved_light_tank = 1
+	
+					basic_medium_tank = 1
+					improved_medium_tank = 1
+					advanced_medium_tank = 1
+	
+					basic_heavy_tank = 1
+					improved_heavy_tank = 1
+					advanced_heavy_tank = 1
+	
+					basic_light_art = 1
+					improved_light_art = 1
+	
+					basic_medium_art = 1
+					improved_medium_art = 1
+	
+					basic_heavy_art = 1
+					improved_heavy_art = 1
+	
+					basic_light_spaa = 1
+					improved_light_spaa = 1
+	
+					basic_medium_spaa = 1
+					improved_medium_spaa = 1
+	
+					basic_heavy_spaa = 1
+					improved_heavy_spaa = 1
+	
+					basic_light_td = 1
+					improved_light_td = 1
+	
+					basic_medium_td = 1
+					improved_medium_td = 1
+	
+					basic_heavy_td = 1
+					improved_heavy_td = 1
+				}
+			}
+		}
+
+		set_technology = {
+			basic_train = 1
+			#wartime_train = 1
+			#armored_train = 1
+
+			basic_medium_art = 1
+			interwar_artillery = 1
+			interwar_antitank = 1
+			infantry_weapons2 = 1
+			improved_infantry_weapons = 1
+			support_weapons = 1
+			support_weapons2 = 1
+			paratroopers = 1
+			improved_infantry_weapons_2 = 1
+			support_weapons3 = 1
+			support_weapons4 = 1
+			mechanised_infantry = 1
+			mechanised_infantry2 = 1
+			tech_mountaineers2 = 1
+			tech_engineers2 = 1
+			tech_recon2 = 1
+			paratroopers2 = 1
+			marines = 1
+
+			tech_special_forces = 1
+			improved_special_forces = 1 #expanded
+
+			tech_field_hospital = 1
+			tech_field_hospital2 = 1		
+			tech_signal_company = 1
+			tech_signal_company2 = 1
+			tech_logistics_company = 1
+			tech_logistics_company2 = 1
+			artillery1 = 1
+			artillery2 = 1
+			artillery3 = 1
+			artillery4 = 1
+			artillery5 = 1
+			antiair1 = 1
+			antiair2 = 1
+			antitank1 = 1
+			antitank2 = 1
+			antitank3 = 1
+			antitank4 = 1
+
+			#doctrines
+			delay = 1
+			elastic_defence = 1
+			armored_spearhead = 1
+			schwerpunk = 1
+			blitzkrieg = 1
+			kampfgruppe = 1 #MOBILE WARFARE
+			convoy_interdiction_ti = 1
+			unrestricted_submarine_warfare = 1
+			raider_patrols = 1
+			wolfpacks = 1
+			capital_ship_raiders = 1
+			#air
+			formation_flying = 1		
+			dive_bombing = 1
+			direct_ground_support = 1
+			formation_fighting = 1
+			hunt_and_destroy = 1
+			combat_unit_destruction = 1
+
+			#electronics
+			electronic_mechanical_engineering = 1
+			mechanical_computing = 1
+			computing_machine = 1
+
+			radio = 1
+			radio_detection = 1
+			decimetric_radar = 1
+			improved_decimetric_radar = 1
+			centimetric_radar = 1
+			improved_centimetric_radar = 1
+
+			#industry
+			excavation1 = 1
+			excavation2 = 1
+			excavation3 = 1
+			basic_machine_tools = 1
+			improved_machine_tools = 1
+			advanced_machine_tools = 1
+			assembly_line_production = 1
+			synth_oil_experiments = 1
+			oil_processing = 1
+			rubber_processing = 1
+			improved_rubber_processing = 1
+			advanced_rubber_processing = 1
+			fuel_silos = 1
+			fuel_refining = 1
+			fuel_refining2 = 1
+			fuel_refining3 = 1
+			fuel_refining4 = 1
+			improved_oil_processing = 1
+			advanced_oil_processing = 1
+			construction1 = 1
+			construction2 = 1
+			construction3 = 1
+			construction4 = 1
+			#construction5 = 1
+			dispersed_industry = 1
+			dispersed_industry2 = 1
+			dispersed_industry3 = 1
+			dispersed_industry4 = 1
+			dispersed_industry5 = 1
+			improved_equipment_conversion = 1
+
+			#1944
+			experimental_rockets = 1
+			rocket_engines = 1
+			jet_engines = 1
+			atomic_research = 1
+			advanced_infantry_weapons = 1
+			#advanced_infantry_weapons2 = 1
+			infantry_at = 1
+			#infantry_at2 = 1
+			tech_engineers3 = 1
+			tech_recon3 = 1
+			tech_military_police = 1
+			tech_military_police2 = 1
+			tech_military_police3 = 1
+			tech_maintenance_company = 1
+			tech_maintenance_company2 = 1
+			#tech_maintenance_company3 = 1
+			#tech_field_hospital3 = 1
+			tech_logistics_company3 = 1
+			#tech_signal_company3 = 1
+			rocket_artillery = 1
+			rocket_artillery2 = 1
+			rocket_artillery3 = 1
+			rocket_artillery4 = 1
+			antiair1 = 1
+			antiair2 = 1
+			antiair3 = 1
+			antiair4 = 1
+			antiair5 = 1
+		}
+	}
+}
+
+	option = {
+		name = "Start"
+		ai_chance = {
+			base = 10
+		}
+
+	}
+}
 
 
 #Finland surrender faster

@@ -701,6 +701,134 @@ if = {
 
 
 1944.1.1 = {
+	set_oob = "TUR_1944"
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "TUR_1939_air_bba"
+		else = {
+			set_air_oob = "TUR_1939_air_legacy"
+	}
+}
+	every_owned_state = {
+		limit = {
+			OR = {
+				state = 49
+				state = 342
+				state = 343
+				state = 346
+				state = 347
+			}
+		}
+		clr_state_flag = TUR_ideological_battleground_state
+		add_dynamic_modifier = { modifier = kemalist_loyalties }
+	}
+
+	every_owned_state = {
+		limit = {
+			OR = {
+				has_dynamic_modifier = { modifier = islamist_opposition }
+
+			}
+		}
+		remove_dynamic_modifier = { modifier = islamist_opposition }
+		add_dynamic_modifier = { modifier = islamists_placated }
+	}
+
+	every_owned_state = {
+		limit = {
+			OR = {
+				has_dynamic_modifier = { modifier = islamist_sedition }
+			}
+		}
+		remove_dynamic_modifier = { modifier = islamist_sedition }
+		add_dynamic_modifier = { modifier = islamists_placated }
+	}
+
+	every_owned_state = {
+		limit = {
+			OR = {
+				has_dynamic_modifier = { modifier = islamist_insurgency }
+			}
+		}
+		remove_dynamic_modifier = { modifier = islamist_insurgency }
+		add_dynamic_modifier = { modifier = islamists_placated }
+	}
+
+
+	353 = {
+		start_resistance = yes
+		set_compliance = 50
+		set_resistance = 10
+		set_garrison_strength = 1.0
+	}
+	
+	350 = {
+		start_resistance = yes
+		set_compliance = 65
+		set_resistance = 15
+		set_garrison_strength = 1.0
+	}
+	
+	352 = {
+		start_resistance = yes
+		set_compliance = 50
+		set_resistance = 15
+		set_garrison_strength = 1
+	}
+	
+	800 = {
+		start_resistance = yes
+		set_compliance = 50
+		set_resistance = 15
+		set_garrison_strength = 1
+	}
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1943.2.28"
+		election_frequency = 40
+		elections_allowed = yes
+	}
+
+	add_political_power = 500
+	add_command_power = 200
+
+	army_experience = 50
+	navy_experience = 40	
+	air_experience = 75
+
+	set_convoys = 50
+	set_stability = 0.41
+	add_manpower = 56500
+
+	set_variable = { var = TUR_kemalist_power_variable value = 10 }
+
+	remove_ideas = {
+		TUR_kemalist_army_officers_powerful_disloyal
+	}
+
+	add_ideas = {
+		extensive_conscription
+		TUR_kemalist_army_officers_powerful_loyal
+	}
+	unlock_national_focus = TUR_variant_turkish_tax_focus
+	unlock_national_focus = TUR_renew_the_turkish_soviet_non_aggression_pact
+	unlock_national_focus = TUR_purchase_italian_light_tanks
+	unlock_national_focus = TUR_the_italo_turkish_naval_academy
+	unlock_national_focus = TUR_the_chester_concession
+	complete_national_focus = TUR_the_anglo_turkish_agreement
+	complete_national_focus = TUR_peace_in_the_world
+	complete_national_focus = TUR_abuse_the_office_of_soil_products
+	complete_national_focus = TUR_reconfigure_our_foreign_policy
+	complete_national_focus = TUR_the_german_turkish_friendship_treaty
+	complete_national_focus = TUR_the_clodius_agreement
+	complete_national_focus = TUR_expand_the_golcuk_naval_base
+	complete_national_focus = TUR_relocate_from_yildiz_palace
+	complete_national_focus = TUR_accelerate_native_fighter_designs
+	complete_national_focus = TUR_the_batumi_accord
+	complete_national_focus = TUR_host_exiled_scientists
+	complete_national_focus = TUR_the_pontic_redoubt
 
 	retire_character = GER_hans_von_luck 
 
@@ -711,6 +839,7 @@ if = {
 		radio_detection = 1
 		decimetric_radar = 1
 		improved_decimetric_radar = 1
+		centimetric_radar = 1
 
 		#industry
 		excavation1 = 1
@@ -728,6 +857,7 @@ if = {
 		construction1 = 1
 		construction2 = 1
 		construction3 = 1
+		construction4 = 1
 
 		dispersed_industry = 1
 		dispersed_industry2 = 1
@@ -736,6 +866,7 @@ if = {
 		support_weapons = 1
 		support_weapons2 = 1
 		support_weapons3 = 1
+		support_weapons4 = 1
 
 		infantry_weapons = 1
 		infantry_weapons1 = 1
@@ -778,12 +909,111 @@ if = {
 	}
 
 	if = {
+		limit = { has_dlc = "Man the Guns" } 
+		set_technology = {
+
+			basic_heavy_armor_scheme = 1
+
+			sonar = 1
+			smoke_generator = 1
+
+			damage_control_1 = 1
+
+			fire_control_methods_1 = 1
+			#fire_control_methods_2 = 1
+
+			basic_light_battery = 1
+			basic_light_shell = 1
+			#improved_light_battery = 1
+			improved_light_shell = 1
+	
+			basic_medium_battery = 1
+			basic_medium_shell = 1
+			#improved_medium_battery = 1
+			#improved_medium_shell = 1
+	
+			basic_heavy_battery = 1
+			basic_heavy_shell = 1
+
+			#improved_ship_hull_submarine = 1
+			#improved_ship_hull_light = 1
+
+			improved_ship_torpedo_launcher = 1
+			#improved_ship_hull_cruiser = 1
+
+			#improved_airplane_launcher = 1
+			#magnetic_detonator = 1
+
+			basic_fire_control_system = 1
+
+			improved_depth_charges = 1
+			#advanced_depth_charges = 1
+
+			#basic_dp_light_battery = 1
+			#improved_dp_light_battery = 1
+		}
+	}
+
+	if = {
 		limit = {
 			has_dlc = "La Resistance"
 		}
 		set_technology = {
 			armored_car1 = 1
 			#armored_car2 = 1
+		}
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_technology = {
+			special_forces_mountaineers = 1
+		}
+	}
+
+	if = {
+		limit = {
+			
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+				gwtank_chassis = 1
+
+				basic_light_tank_chassis = 1 
+				basic_medium_tank_chassis = 1 
+				basic_heavy_tank_chassis = 1 
+
+				armor_tech_1 = 1
+				armor_tech_2 = 1
+
+				engine_tech_1 = 1
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
+
+				basic_light_tank = 1
+				#improved_light_tank = 1
+
+				basic_medium_tank = 1
+				#improved_medium_tank = 1
+				#advanced_medium_tank = 1
+
+				basic_heavy_tank = 1
+				#improved_heavy_tank = 1
+				#advanced_heavy_tank = 1
+
+				basic_light_td = 1
+				improved_light_td = 1
+
+				basic_medium_td = 1
+				improved_medium_td = 1
+
+				basic_heavy_td = 1
+				improved_heavy_td = 1
+			}
 		}
 	}
 
@@ -849,6 +1079,112 @@ if = {
 				naval_bomber1 = 1
 				#naval_bomber2 = 1
 			}
+		}
+	}
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 5150
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_1
+        amount = 4150
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_2
+        amount = 1150
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_2
+        amount = 1150
+		producer = ITA
+	}
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 720
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_tank_equipment_1
+        amount = 90
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_1
+        amount = 90
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_0
+        amount = 116
+		producer = TUR
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 116
+		producer = GER
+    }
+	
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_0
+        amount = 70
+		producer = SOV
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 145
+		producer = USA
+    }
+
+	add_equipment_to_stockpile = { 
+        type = train_equipment_1
+        amount = 18
+    }
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis_1
+				amount = 22
+				variant_name  = "T-26TU mod. 1933"
+				producer = SOV
+			}
+			
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis_1
+				amount = 30
+				variant_name  = "Panzer III Ausf. F"
+				producer = GER
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis_1
+				amount = 22
+				variant_name  = "Panzer IV Ausf. C"
+				producer = GER
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis_2
+				amount = 32
+				variant_name  = "M4A2"
+				producer = USA
+			}
+			
+
+		else = {
+			
 		}
 	}
 }

@@ -70,5 +70,26 @@
  TUR_GATHERING_STORM_DESC:0 "From the ashes of the Ottoman Empire, the Republic of Turkey was born. Turkish independence was won with blood and bullets in the National Campaign of 1923, and while the struggle was righteous the cost continues to weigh heavily upon the Turkish people. \n\nReligious conservatives plague the hinterlands and resist nation-wide modernization efforts in the strongest terms, while Kurdish nationalists wreak havoc in the east of the country. Lionized president Mustafa Kemal Atatürk must unite the country or pass the torch to a leader who can, and they must do it soon as trouble stirs in Europe..."
  TUR_BLITZKRIEG_DESC:0 "The Father of the Turks, Mustafa Kemal Atatürk, has passed away. Turkey is a nation in mourning, led now by esteemed statesman İsmet İnönü. İnönü inherits a fractured country whose divisions have been made all the more apparent by the death of its guiding light. \n\nDomestic concerns aside, İnönü also faces the prospect of a war in Europe that threatens to surpass even the Great War in terms of devastation. Atatürk often touted the mantra, “Peace at Home, Peace in the World.” Can İnönü hope to keep the peace during these turbulent times?"
 
+
 1944_NAME:0 "Reverse Blitzkrieg"
 1944_DESC:0 "The war in europe enters its 5th year..."
+
+GER_1944_DESC:0 "By the start of 1944, Germany is facing significant challenges on multiple fronts\nThe Eastern Front has been a focal point of heavy fighting since the invasion of the Soviet Union in 1941. By 1944, the German Army is in retreat, gradually losing ground to the advancing Red Army.\nThe Allies have secured much of southern Italy. Meanwhile, preparations are underway for a massive Allied invasion of Western Europe"
+
+ENG_1944_DESC:0 "The United Kingdom has for years endured the Axis forces, with the The Battle of the Atlantic effectivly won the focus has shifted to the strategic bombing against Germany.\nThe United Kingdom has also become a vital hub for Allied operations, and preparations for the liberation of Western Europe."
+
+USA_1944_DESC:0 "United States is now a major driving force in the Allied war effort. The nation is fully committed to defeating the Axis powers, \nand preparations are underway for major offensives in both the Pacific and European theaters."
+
+ITA_1944_DESC:0 "Mussolini, the dictator of Italy, has fallen to new lows, nothing more then a German puppet\n\nAll territory gained the previous years lost, southern Italy under Allied control.\nHow can much worse can things get?"
+
+JAP_1944_DESC:0 "War is raging in the Southeast. Big portions of Chinese territory is under Japanese control. The Soviet Union is focusing their attention on the european war, they shouldn't interfere in the war in Asia for a while. \n\nThe forces of the Allies are becoming a serious threat as the Japanese navy has sufferd some serious defeats."
+
+SWE_1944_DESC:0 "During the early years of the war, Sweden adopted a policy of neutrality and managed to avoid direct involvement in the conflict.\nAs of the start of 1944, Sweden has continued to maintain its neutral stance and trade relations with Germany. But pressure from both sides may change that."
+
+FIN_1944_DESC:0 "The Finnish front has been at an stalemate for since the successful advance in 1941.\nEfforts have been made to strengthen Finnish position, but the army is still poorly equipped, and the air force and navy are virtually non-existent.\nThere are diplomatic efforts within the goverment to distance Finland from Nazi Germany as the tide of war has turned, \nnegotiations with the Soviet Union have broken down several timesn\nthe government now faces difficult decisions about how to protect their country's sovereignty.."
+
+SOV_1944_DESC:0 "The Soviet Union has been making significant strides in its efforts against the Axis forces on the Eastern Front.\n\nRed Army is now on the offensive, steadily advancing towards German territory but there is still a long way to go."
+
+GRE_1944_DESC:0 "Greece has been under Axis occupation since 1941.\nSince then a Collaborationist regime has been established, with its own security Battalions to suppress the growing Greek resistance\n\nDuring these long years the Greek population has faced hardships, including food shortages, economic difficulties"
+
+ROM_1944_DESC:0 "Ion Antonescu has expanded the territories of Romania in the previous years, but now the war is soon coming to Romania\nWithin Romania there is high inflation and political unrest, but with a large army and important resources that the Axis depend on there is no easy way out."

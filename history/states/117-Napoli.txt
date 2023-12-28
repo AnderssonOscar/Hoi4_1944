@@ -36,6 +36,10 @@ state={
 			owner = USA
 			controller = USA
 
+			buildings = {
+				819 = { bunker = 2 }
+			}
+
 			ITA = {
 				#set_province_controller = 9826
 			}

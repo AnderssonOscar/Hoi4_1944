@@ -991,6 +991,8 @@ if = {
 
 		rubber_processing = 1
 
+		advanced_oil_processing = 1
+
 		construction1 = 1
 		construction2 = 1
 		construction3 = 1
