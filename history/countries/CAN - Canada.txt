@@ -396,11 +396,17 @@ if = {
 	set_war_support = 0.75
 	#add_manpower = 20000
 	
+	remove_ideas = {
+		CAN_great_depression_1
+		CAN_conscription_crisis
+	}
+
+
 	add_ideas = {
 		#laws
 		extensive_conscription
 		export_focus
-		partial_economic_mobilisation
+		war_economy
 	}
 
 	set_technology = {

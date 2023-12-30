@@ -12,7 +12,7 @@ SOV_great_patriotic_war = {
 			has_war_with = GER
 			surrender_progress < 0.2
 			date > 1944.2.15
-			date < 1945.5.8 
+			date < 1945.9.8 
 			
 			NOT = { has_idea = major_offensive }
 			NOT = { has_idea = offensive_exhaustion }
@@ -350,7 +350,7 @@ SOV_great_patriotic_war = {
 
 		available = {
 			date > 1944.1.1
-			date < 1945.5.8
+			date < 1945.9.8
 			NOT = { has_global_flag = disable_offensives_1944 }
 			NOT = { has_idea = offensive_exhaustion }
 			has_idea = major_offensive	
@@ -379,7 +379,7 @@ SOV_great_patriotic_war = {
 		targeted_modifier = {
 			tag = GER
 			attack_bonus_against = 1.15
-			breakthrough_bonus_against = 1.15
+			breakthrough_bonus_against = 1.2
 		}
 
 		targeted_modifier = {
@@ -440,6 +440,7 @@ SOV_great_patriotic_war = {
 				date < 1945.5.8
 				NOT = { has_idea = offensive_exhaustion }
 				NOT = { has_global_flag = disable_offensives_1944 }
+				ROM = { is_puppet = no}
 				#has_idea = major_offensive
 
 				AND = {
@@ -537,8 +538,8 @@ SOV_great_patriotic_war = {
 		
 		targeted_modifier = {
 			tag = FIN
-			attack_bonus_against = 1.15
-			breakthrough_bonus_against = 1.0
+			attack_bonus_against = 1.25
+			breakthrough_bonus_against = 1.25
 		}
 
 		complete_effect = { 

@@ -209,6 +209,7 @@ if = {
 		battlefleet_concentration = 1
 		subsidiary_carrier_role = 1
 		convoy_sailing = 1
+		convoy_escorts = 1
 		submarine_operations = 1
 
 		#electronics
@@ -1062,6 +1063,8 @@ if = {
 
 1943.12.30 = {
 
+	set_fuel_ratio = 1.0
+
 	if = {
 		limit = { has_dlc = "No Step Back" }
 			set_oob = "FRA_1944_nsb"
@@ -1078,6 +1081,14 @@ if = {
 		}
 	}
 
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "FRA_1944_air_bba"
+		else = {
+			#set_air_oob = "FRA_1944_air_legacy"
+		}
+	}
+
 	capital = 459
 	add_political_power = 2589
 	add_command_power = 200
@@ -1086,7 +1097,7 @@ if = {
 	set_stability = 0.9 
 	set_war_support = 0.9
 	add_manpower = 63600
-
+	navy_experience = 150
 	add_ideas = {
 		#laws
 		tot_economic_mobilisation
@@ -1312,7 +1323,11 @@ if = {
 			basic_ship_hull_heavy = 1
 			early_ship_hull_carrier = 1
 			basic_ship_hull_carrier = 1
+			
 			mtg_transport = 1
+			mtg_landing_craft = 1
+			mtg_tank_landing_craft = 1	
+
 			coastal_defense_ships = 1
 			basic_depth_charges = 1
 			cruiser_submarines = 1

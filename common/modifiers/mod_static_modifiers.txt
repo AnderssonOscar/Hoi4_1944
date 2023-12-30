@@ -24,3 +24,8 @@ MOD_good_defence_posistion_static_modifier = {
 	max_dig_in_factor = 0.5
 	army_defence_factor = 0.25
 }
+
+MOD_prepared_naval_invasion_static_modifier = {
+	supply_consumption_factor = -0.75
+	army_defence_factor = 0.25
+}

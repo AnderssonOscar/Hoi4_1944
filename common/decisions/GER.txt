@@ -727,10 +727,45 @@ GER_reichskommissariats = {
 
 					complete_national_focus = industrial_effort
 					complete_national_focus = political_effort
-					complete_national_focus = collectivist_focus
+					complete_national_focus = collectivist_ethos
 					complete_national_focus = nationalism_focus
 					
 					add_political_power = 1750
+
+					add_ideas = {
+						tot_economic_mobilisation
+						service_by_requirement
+					}
+	
+					add_equipment_to_stockpile = {
+						type = convoy_1
+						amount = 5
+						producer = GER
+					}
+	
+					add_equipment_to_stockpile = { 
+						type = train_equipment_1
+						amount = 15
+						producer = GER
+					}
+	
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 5000
+						producer = GER
+					}
+	
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 200
+						producer = GER
+					}
+	
+					add_equipment_to_stockpile = {
+						type = motorized_equipment_1
+						amount = 250
+						producer = GER
+					}
 
 					set_cosmetic_tag = HOL_reichskommissariat
 					create_country_leader = {

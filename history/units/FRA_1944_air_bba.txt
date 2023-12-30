@@ -1,0 +1,11 @@
+﻿
+
+air_wings = {
+	458 = { # Tunis
+		small_plane_airframe_2 = { owner = "FRA" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		small_plane_airframe_2 = { owner = "FRA" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		medium_plane_airframe_0 = { owner = "FRA" creator = "USA" version_name = "P2Y" amount = 100}
+		small_plane_airframe_0 = { owner = "FRA" amount = 30 version_name = "D.510" }
+		medium_plane_airframe_1 =  { owner = "FRA" amount = 30 version_name = "M.B. 210" }
+	}
+}

@@ -47,6 +47,24 @@ units= {
 			ship = { name = "Le Centaure" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = FRA version_name = "Redoutable Class" } } }
 			ship = { name = "Henri Poincaré" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = FRA version_name = "Redoutable Class" } } }
 		}
+		task_force = {				
+			name = "Tunis"			
+			location = 9994	 #borrowed from eng
+			ship = { name = "Roselys" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }		
+			ship = { name = "Aconit" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Lobelia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Commandant Détroyat" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Commandant d'Estienne d'Orves" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Renoncule" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Commandant Drogou" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }		
+			#borrowed from USA
+			ship = { name = "Sénégalais " definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Algérien" definition = destroyer start_experience_factor = 0.11 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Tunisien" definition = destroyer start_experience_factor = 0.21 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Marocain" definition = destroyer start_experience_factor = 0.23 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Hova" definition = destroyer start_experience_factor = 0.29 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Somali" definition = destroyer start_experience_factor = 0.21 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+		}
 	}
 }
 

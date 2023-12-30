@@ -1689,6 +1689,26 @@ if = {
 		}
 		obsolete = no
 	}
+
+	create_equipment_variant = {
+		name = "Cannon Class"
+		type = ship_hull_light_4
+		name_group = USA_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_3
+			fixed_ship_anti_air_slot = ship_anti_air_3
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+			fixed_ship_radar_slot = ship_sonar_2
+			fixed_ship_engine_slot = light_ship_engine_4
+			fixed_ship_torpedo_slot = ship_torpedo_2
+			front_1_custom_slot = ship_anti_air_3
+			mid_1_custom_slot = ship_depth_charge_3
+			mid_2_custom_slot = ship_depth_charge_3
+			rear_1_custom_slot = ship_depth_charge_3
+		}
+		obsolete = no
+	}
 }
 
 

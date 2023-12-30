@@ -40,18 +40,18 @@ country_event = {
 			base = 8
 		}
 		GER = {
-			add_manpower = -2000 
-			add_political_power = -25
+			add_manpower = -10000 
+			add_political_power = -50
 		}
 		15 = { 
 			remove_building = {
 				type = naval_base
 				province = 6449
-				level = 3
+				level = 1
 			}
 			damage_building = {
 				type = naval_base
-				damage = 3
+				damage = 2
 				province = 6449 
 			}
 		}
@@ -266,11 +266,11 @@ country_event = {
 			remove_building = {
 				type = naval_base
 				province = 9434
-				level = 4
+				level = 2
 			}
 			damage_building = {
 				type = naval_base
-				damage = 4
+				damage = 3
 				province = 9434 
 			}
 		}

@@ -10641,7 +10641,7 @@ focus_tree = {
 			15 = { #dieppe
 				add_building_construction = {
 						type = bunker
-						level = 7
+						level = 4
 						province = 485
 						instant_build = yes
 					}

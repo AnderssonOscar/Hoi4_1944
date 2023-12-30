@@ -8,7 +8,7 @@ allies_dont_spam_invasion = {
 					tag = USA
 					tag = ENG
 					tag = CAN
-					tag = FRA
+					#tag = FRA
 					#tag = RAJ
 					tag = NZL
 					tag = AST
@@ -237,6 +237,12 @@ allies_enable_invasion_of_GER = {
 		type = invasion_unit_request
 		state = 15
 		value = 50
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 851
+		value = 20
 	}
 
 	ai_strategy = {
@@ -485,7 +491,7 @@ allies_landed_in_france = {
 				tag = USA
 				tag = ENG
 				tag = CAN
-				tag = FRA
+				#tag = FRA
 				#tag = RAJ
 				tag = NZL
 				tag = AST
@@ -644,7 +650,7 @@ Allies_garrison_invasion = {
 		OR = {
 			#original_tag = USA
 			original_tag = ENG
-			original_tag = FRA
+			#original_tag = FRA
 			original_tag = CAN
 			}
 		 }
@@ -689,7 +695,7 @@ minor_allies_dont_invade_GER = {
 	allowed = { 
 		OR = {
 				tag = CAN
-				tag = FRA
+				#tag = FRA
 				tag = RAJ
 				tag = NZL
 				tag = AST
@@ -1119,6 +1125,46 @@ ALLIES_bomb_romanian_oil = {
 }
 
 
+ALLIES_dont_bomb_normandy = {
+	allowed = {
+		OR = {
+			tag = ENG
+			tag = USA
+		}
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = GER
+		date > 1943.12.31
+		date < 1945.1.1
+
+		#france coast
+			15 = {is_fully_controlled_by = GER} 
+			16 = {is_fully_controlled_by = GER} 
+			14 = {is_fully_controlled_by = GER} 
+			23 = {is_fully_controlled_by = GER} 
+			19 = {is_fully_controlled_by = GER} 
+			21 = {is_fully_controlled_by = GER} 
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 208 
+		value = -35000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 19 
+		value = -35000 #value of stocked main front in active combat is usually around 35,000
+	}
+}
+
+
+
 ALLIES_bomb_normandy = {
 	allowed = {
 		OR = {
@@ -1130,8 +1176,8 @@ ALLIES_bomb_normandy = {
 	enable = {
 		is_historical_focus_on = yes
 		has_war_with = GER
-		date > 1944.5.20
-		date < 1944.6.20
+		date > 1944.6.1
+		date < 1945.1.1
 
 		#france coast
 		OR = {
@@ -1143,10 +1189,10 @@ ALLIES_bomb_normandy = {
 			NOT = { 21 = {is_fully_controlled_by = GER} }
 		}
 
-		OR = {
-			has_equipment = { large_plane_airframe > 400 }
-			has_deployed_air_force_size = { size > 400 type = strategic_bomber }
-		}
+		# OR = {
+		# 	has_equipment = { large_plane_airframe > 400 }
+		# 	has_deployed_air_force_size = { size > 400 type = strategic_bomber }
+		# }
 
 	}
 
@@ -1232,21 +1278,6 @@ ALLIES_bomb_germany = {
 		value = -2000 #value of stocked main front in active combat is usually around 35,000
 	}
 
-	ai_strategy = {
-		type = strategic_air_importance
-		id = 208 
-		value = -35000 #value of stocked main front in active combat is usually around 35,000
-	}
-	ai_strategy = {
-		type = strategic_air_importance
-		id = 19 
-		value = -35000 #value of stocked main front in active combat is usually around 35,000
-	}
-	ai_strategy = {
-		type = strategic_air_importance
-		id = 20 
-		value = -35000 #value of stocked main front in active combat is usually around 35,000
-	}
 }
 
 
@@ -1281,21 +1312,27 @@ USA_small_nation_help_in_italy = {
 
 	ai_strategy = {
 		type = force_defend_ally_borders
-		id = USA
-		value = 20
+		value = 50
+		target = italy
 	}
 
+	# ai_strategy = {
+	# 	type = force_defend_ally_borders
+	# 	id = USA
+	# 	value = 20
+	# }
 
-	ai_strategy = {
-		type = front_control
-		country_trigger = {
-			tag = ITA
-		}
 
-		ordertype = front
-		execute_order = yes
-		execution_type = careful
-	}
+	# ai_strategy = {
+	# 	type = front_control
+	# 	country_trigger = {
+	# 		tag = ITA
+	# 	}
+
+	# 	ordertype = front
+	# 	execute_order = yes
+	# 	execution_type = careful
+	# }
 }
 
 

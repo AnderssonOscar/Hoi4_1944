@@ -262,6 +262,21 @@ operations = {
 						type = transport_plane_equipment_1
 						amount = 200
 					}
+					
+				15 = {
+					damage_building = {
+						type = coastal_bunker
+						damage = 5
+						province = 6449 
+					}
+
+					damage_building = {
+						type = coastal_bunker
+						damage = 5
+						province = 9434 
+					}
+				}
+					
 				}
 			}
 
