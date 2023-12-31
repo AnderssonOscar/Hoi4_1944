@@ -327,7 +327,7 @@ allies_prepare_in_UK = { #stack troops here until we land in germany
 		OR = {
 			tag = ENG
 			tag = USA
-			tag = CAN
+			#tag = CAN
 		}
 	}
 
@@ -650,8 +650,8 @@ Allies_garrison_invasion = {
 		OR = {
 			#original_tag = USA
 			original_tag = ENG
-			#original_tag = FRA
-			original_tag = CAN
+			original_tag = FRA
+			#original_tag = CAN
 			}
 		 }
 	
@@ -1293,7 +1293,7 @@ USA_small_nation_help_in_italy = {
 			original_tag = BRA
 			original_tag = MEX
 			original_tag = SAF
-			original_tag = CAN
+			#original_tag = CAN
 		}
 	}
 

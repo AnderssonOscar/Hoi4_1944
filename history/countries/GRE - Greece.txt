@@ -713,6 +713,7 @@ if = {
 		construction1 = 1
 		construction2 = 1
 		construction3 = 1
+		construction4 = 1
 
 		dispersed_industry = 1
 		dispersed_industry2 = 1
@@ -792,6 +793,15 @@ if = {
 		}
 	}
 
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		set_technology = {
+			armored_car1 = 1
+			armored_car2 = 1
+		}
+	}
 
 	if = {
 		limit = { has_dlc = "Man the Guns" }

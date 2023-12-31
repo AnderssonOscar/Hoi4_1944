@@ -1960,6 +1960,16 @@ country_event = {
 			}
 		}
 
+		36 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 6241
+					id = 9363
+				}
+			}
+		}
+
 
 		51 = {
 			add_province_modifier = {

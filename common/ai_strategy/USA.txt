@@ -54,7 +54,7 @@ USA_garrison_ITALY = {
 			#1
 
 		}
-		subtract_invasions_from_need = no
+		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
 	}
 }

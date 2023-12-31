@@ -5,7 +5,7 @@ ROM_defend_the_front = {
 	allowed = { tag = ROM }
 
 	enable = {
-		is_historical_focus_on = yes
+	#	is_historical_focus_on = yes
 
 		has_war_with = SOV 
 		

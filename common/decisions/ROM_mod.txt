@@ -15,7 +15,7 @@ war_measures = {
 			has_capitulated = no
 			has_war_with = SOV
 			surrender_progress > 0.09
-			date > 1944.7.25
+			date > 1944.7.30
 			is_in_faction_with = GER
 
 			has_government = fascism
@@ -197,6 +197,8 @@ war_measures = {
 				communism = 40
 			}
 
+			add_timed_idea = { idea = mod_switched_side days = 60 }
+
 			if = {
 				limit = {
 					has_dlc = "Together for Victory"
@@ -305,6 +307,7 @@ war_measures = {
 			GER = { remove_resource_rights = 46 } 
 			
 			SOV = { add_to_faction = ROM }
+			
 
 		#ROM = {
 		#	add_to_war = {

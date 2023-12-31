@@ -35,7 +35,7 @@ state={
 				naval_base = 5
 				coastal_bunker = 1
 			}
-			485= {
+			485 = {
 				naval_base = 1
 			}
 		}
@@ -52,6 +52,10 @@ state={
 			}
 			9434 = {
 				naval_base = 8
+			}
+
+			485 = {
+				coastal_bunker = 4
 			}
 
 				radar_station = 2

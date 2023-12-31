@@ -27,6 +27,16 @@ ideas = {
 			}
 		}
 
+	mod_switched_side = {
+		picture = great_depression
+		modifier = {
+			army_org_factor = -0.5
+			dig_in_speed_factor = -0.5
+			army_speed_factor = -0.5
+			}
+		}
+
+
 		dday_bonus = {
 			picture = eng_preparing_the_second_front
 			modifier = {

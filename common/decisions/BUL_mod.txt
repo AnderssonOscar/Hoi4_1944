@@ -112,6 +112,8 @@ war_measures = {
 				communism = 40
 			}
 
+			add_timed_idea = { idea = mod_switched_side days = 60 }
+
 			SOV = { add_to_faction = BUL }
 
 		BUL = {

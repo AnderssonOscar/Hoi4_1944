@@ -426,7 +426,7 @@ if = {
 
 1943.12.30 = {
 
-	army_experience = 125 #245
+	army_experience = 155 #245
 	navy_experience = 25	
 	air_experience = 175
 
@@ -437,9 +437,10 @@ if = {
 	add_command_power = 200
 
 	set_convoys = 46
-	set_stability = 0.81 
-	set_war_support = 0.51
-	add_manpower = 144500
+	set_stability = 0.88 
+	set_war_support = 0.53
+	add_manpower = 154500
+	set_fuel_ratio = 1.0
 
 	remove_ideas = {
 		ROM_king_carol_ii_hedonist
@@ -533,6 +534,17 @@ if = {
 
 			basic_fire_control_system = 1
 			improved_depth_charges = 1
+		}
+	}
+
+	
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		set_technology = {
+			armored_car1 = 1
+			armored_car2 = 1
 		}
 	}
 
@@ -670,6 +682,7 @@ if = {
 		prepared_defense = 1
 		grand_assault = 1
 		infantry_offensive = 1
+		
 
 		#industry
 		
@@ -696,6 +709,8 @@ if = {
 		fuel_refining3 = 1
 		fuel_refining4 = 1
 		fuel_refining5 = 1
+
+		rubber_processing = 1
 
 		#weapons
 		support_weapons = 1
@@ -750,6 +765,8 @@ if = {
 		tech_maintenance_company2 = 1
 
 		tech_signal_company = 1
+
+		tech_logistics_company = 1
 		
 	}
 

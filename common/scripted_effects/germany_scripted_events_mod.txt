@@ -25,6 +25,15 @@ GER_scripted_events_start_effects = {
 			}
 		}
 	}
+
+	15 = {
+		add_province_modifier = {
+			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+			province = {
+				id = 485
+			}
+		}
+	}
 		
 	GER = {
 			create_railway_gun = {

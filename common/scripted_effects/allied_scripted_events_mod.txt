@@ -5,7 +5,14 @@ ALLIED_normandy_port = {
 			is_in_faction_with = USA
 			has_war_with = GER
 			date > 1944.6.1
+
 			NOT = { has_global_flag = ALLIED_normandy_port } 
+
+			#dont build if we already have:
+			16 = { is_fully_controlled_by = GER } #paris
+			34 = { is_fully_controlled_by = GER } #liege
+			24 = { is_fully_controlled_by = GER } #tours
+			
 			GER = { NOT = { controls_province = 3579 } }
 			GER = { NOT = { controls_province = 11535 } }
 			USA = { is_ai = yes }

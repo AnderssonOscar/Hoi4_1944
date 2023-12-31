@@ -386,27 +386,63 @@ if = {
 1943.12.30 = {
 
 
-	#oob = "CAN_1944"
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			set_oob = "CAN_1944_nsb"
+		else = {
+			set_oob = "CAN_1944"
+			}
+		}
 
-	add_political_power = 2589
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "CAN_1944_air_bba"
+		else = {
+			set_air_oob = "CAN_1944_air_legacy"
+		}
+	}
+
+	unlock_national_focus = CAN_the_walkie_talkie
+	unlock_national_focus = CAN_royal_regiment_of_canadian_artillery
+	unlock_national_focus = CAN_a_motorized_army
+	unlock_national_focus = CAN_strengthen_the_commonwealth_ties
+	unlock_national_focus = CAN_shadow_factories
+	unlock_national_focus = CAN_we_have_the_hurricane
+	unlock_national_focus = CAN_montreal_laboratory_collaboration
+	complete_national_focus = CAN_war_bonds
+	complete_national_focus = CAN_dollar_a_year_men
+	complete_national_focus = CAN_the_plan
+	complete_national_focus = CAN_the_pacific_coast_air_defence_radar_system
+	complete_national_focus = CAN_commonwealth_air_training_plan
+	complete_national_focus = CAN_light_cruiser_effort
+	complete_national_focus = CAN_escort_fleet
+	complete_national_focus = CAN_camp_x
+	complete_national_focus = CAN_defence_of_canada_regulations
+	complete_national_focus = CAN_national_resources_mobilization_act
+	complete_national_focus = CAN_fund_the_national_research_council
+	complete_national_focus = CAN_department_of_munitions_and_supply
+	complete_national_focus = CAN_wartime_prices_and_trade_board
+	complete_national_focus = CAN_bits_and_pieces_program
+
+	set_fuel_ratio = 1.0
+	add_political_power = 1700
 	add_command_power = 200
 
-	set_convoys = 50
-	set_stability = 0.8
-	set_war_support = 0.75
-	#add_manpower = 20000
+	set_convoys = 215
+	set_stability = 0.85
+	set_war_support = 0.41
+	add_manpower = 166000
 	
 	remove_ideas = {
 		CAN_great_depression_1
 		CAN_conscription_crisis
 	}
 
-
 	add_ideas = {
 		#laws
 		extensive_conscription
 		export_focus
-		war_economy
+		tot_economic_mobilisation
 	}
 
 	set_technology = {
@@ -433,14 +469,46 @@ if = {
 		grand_battle_plan = 1
 		prepared_defense = 1
 		grand_assault = 1
+		grand_mechanized_offensive = 1
+		assault_concentration = 1
+		branch_interoperation = 1
+		assault_breakthrough  = 1
+
+		battlefleet_concentration = 1
+		subsidiary_carrier_role = 1
+		convoy_sailing = 1
+		convoy_escorts = 1
+		submarine_operations = 1
+		hunter_killer_groups = 1
+		floating_fortress = 1
+		escort_carriers = 1
+		integrated_convoy_defence = 1
+
+		#Air
+		air_superiority = 1
+		home_defence = 1
+		infrastructure_destruction = 1
+		naval_strike_tactics = 1
+		dogfighting_experience = 1
+		multialtitude_flying = 1
+		logistical_bombing = 1
+		night_bombing = 1
+		massed_bomber_formations = 1
+		flying_fortress = 1
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1
 		advanced_machine_tools = 1
+		assembly_line_production = 1
 
 		fuel_silos = 1
 		fuel_refining = 1
 		fuel_refining2 = 1
+		fuel_refining3 = 1
+		fuel_refining4 = 1
+
+		rubber_processing = 1
+		improved_rubber_processing = 1
 
 		construction1 = 1
 		construction2 = 1
@@ -451,6 +519,8 @@ if = {
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
 		dispersed_industry4 = 1
+
+		improved_centimetric_radar = 1
 
 		naval_bomber1 = 1
 		naval_bomber2 = 1
@@ -484,21 +554,39 @@ if = {
 		artillery1 = 1
 		artillery2 = 1
 		artillery3 = 1
+		artillery4 = 1
 
 		interwar_antiair = 1
 		antiair1 = 1
 		antiair2 = 1
 		antiair3 = 1
-		#antiair4 = 1
+		antiair4 = 1
 
 		interwar_antitank = 1
 		antitank1 = 1
 		antitank2 = 1
 		antitank3 = 1
 
+		rocket_artillery = 1
+		rocket_artillery2 = 1
+
 		motorised_infantry = 1
+		mechanised_infantry = 1
+		mechanised_infantry2 = 1
+		amphibious_mechanized_infantry = 1
 
 		tech_mountaineers = 1
+		paratroopers = 1
+		paratroopers2 = 1
+		paratroopers3 = 1
+
+		marines = 1
+		marines2 = 1
+		marines3 = 1
+
+		tech_logistics_company = 1
+		tech_logistics_company2 = 1
+
 		tech_support = 1
 
 		tech_engineers = 1
@@ -510,10 +598,16 @@ if = {
 
 		tech_field_hospital = 1
 		tech_field_hospital2 = 1
+		tech_field_hospital3 = 1
 
 		tech_military_police = 1
+		tech_military_police2 = 1
 
 		tech_maintenance_company = 1
+		tech_maintenance_company2 = 1
+
+		tech_signal_company = 1
+		tech_signal_company2 = 1
 		
 		basic_train = 1
 	}
@@ -537,9 +631,11 @@ if = {
 			improved_heavy_tank_chassis = 1 
 
 			armor_tech_1 = 1
+			armor_tech_2 = 1
 
 			engine_tech_1 = 1
 			engine_tech_2 = 1
+			engine_tech_3 = 1
 
 		}
 		else = {
@@ -577,17 +673,17 @@ if = {
 		set_technology = {
 			photo_reconnaisance = 1
 
-			#survivability_studies = 1
+			survivability_studies = 1
 
 			aa_lmg = 1
-			#aa_hmg = 1
+			aa_hmg = 1
 
 			aa_cannon_1 = 1
-			#aa_cannon_2 = 1
+			aa_cannon_2 = 1
 			
 			engines_1 = 1
 			engines_2 = 1
-			#engines_3 = 1
+			engines_3 = 1
 
 			range_improvements = 1
 
@@ -602,41 +698,160 @@ if = {
 
 			iw_medium_airframe = 1
 			basic_medium_airframe = 1
-			#improved_medium_airframe = 1
+			improved_medium_airframe = 1
 
 			iw_large_airframe = 1
 			basic_large_airframe = 1
-			improved_large_airframe = 1
-			#advanced_large_airframe = 1
+			#improved_large_airframe = 1
+
+			armor_piercing_bombs = 1
+			heavy_bombs = 1
 		}
 	else = {
 		set_technology = {
-
+			
 			naval_bomber1 = 1
-
-			CAS1 = 1
-			#CAS2 = 1
+			naval_bomber2 = 1
 	
-			early_fighter = 1
+			CAS1 = 1
+			CAS2 = 1
+	
 			fighter1 = 1
 			fighter2 = 1
-			#fighter3 = 1
+			fighter3 = 1
 	
 			heavy_fighter1 = 1
-			#heavy_fighter2 = 1
+			heavy_fighter2 = 1
 	
 			strategic_bomber1 = 1
-			#strategic_bomber2 = 1
+			strategic_bomber2 = 1
 	
 			tactical_bomber1 = 1
-			#tactical_bomber2 = 1
+			tactical_bomber2 = 1
+			
 		}
 	}
 }
 
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		improved_submarine = 1
+		basic_destroyer = 1
+		early_destroyer = 1
+		improved_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		basic_battleship = 1
+		heavy_battleship = 1
+		early_battlecruiser = 1
+		basic_battlecruiser = 1
+		early_carrier = 1
+		basic_carrier = 1
+		improved_carrier = 1
+		transport = 1
+
+		improved_heavy_cruiser = 1
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+	#midget_submarines = 1 
+	basic_naval_mines = 1
+	submarine_mine_laying = 1
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+
+	early_ship_hull_submarine = 1
+	basic_ship_hull_submarine = 1
+	improved_ship_hull_submarine = 1
+	#advanced_ship_hull_submarine = 1
+	basic_torpedo = 1
+	magnetic_detonator = 1
+	improved_ship_torpedo_launcher = 1
+	advanced_ship_torpedo_launcher = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	basic_medium_battery = 1
+	basic_heavy_battery = 1
+	  
+	basic_depth_charges = 1
+	improved_depth_charges = 1
+	advanced_depth_charges = 1
+	
+	basic_submarine_snorkel = 1
+	sonar = 1
+	improved_ship_hull_heavy = 1
+
+	improved_airplane_launcher = 1
+
+	mtg_transport = 1
+	mtg_landing_craft = 1
+	mtg_tank_landing_craft = 1
+
+	improved_sonar = 1
+	smoke_generator = 1
+
+	basic_fire_control_system = 1
+	improved_fire_control_system = 1
+
+	improved_naval_mines = 1
+
+	damage_control_1 = 1
+	damage_control_2 = 1
+
+	basic_cruiser_armor_scheme = 1
+	basic_heavy_armor_scheme = 1
+
+	basic_heavy_armor_scheme = 1
+	improved_heavy_armor_scheme = 1
+	improved_heavy_armor_scheme = 1
+
+	basic_dp_medium_battery = 1
+
+	basic_medium_battery = 1
+
+	basic_light_shell = 1
+	improved_light_battery = 1
+	improved_light_shell = 1
+
+	basic_medium_shell = 1
+	improved_medium_battery = 1
+	improved_medium_shell = 1
+
+	basic_heavy_shell = 1
+	improved_heavy_shell = 1
+	improved_heavy_battery = 1
+
+	basic_dp_light_battery = 1
+	improved_dp_light_battery = 1
+
+	basic_dp_medium_battery = 1
+
+	fire_control_methods_1 = 1
+	fire_control_methods_2 = 1
+	fire_control_methods_3 = 1
+	
+	}
+}
+
 	add_equipment_to_stockpile = {
-        type = infantry_equipment_1
-        amount = 2123
+        type = infantry_equipment_2
+        amount = 6623
     }
 
 	add_equipment_to_stockpile = {
@@ -646,7 +861,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = anti_air_equipment_1
-        amount = 180
+        amount = 280
     }
 
 	add_equipment_to_stockpile = {
@@ -656,12 +871,30 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 526
+        amount = 826
+		producer = USA
+    }
+
+	add_equipment_to_stockpile = {
+        type = mechanized_equipment_1
+        amount = 300
 		producer = USA
     }
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 22
+        amount = 59
     }
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 750
+			variant_name = "M4A2"
+			producer = USA
+		}
+	}
 }

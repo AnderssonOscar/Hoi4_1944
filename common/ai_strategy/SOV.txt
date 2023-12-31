@@ -2926,6 +2926,81 @@ SOV_dont_do_naval_invasion_fin = {
 	}
 }
 
+SOV_dont_rush_gre = {
+	allowed = {
+		tag = SOV
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1945.3.1
+		GRE = { is_ai = yes }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = GRE
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
+
+SOV_dont_rush_cro = {
+	allowed = {
+		tag = SOV
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1945.3.1
+		CRO = { is_ai = yes }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = CRO
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
+
+SOV_dont_rush_bul = {
+	allowed = {
+		tag = SOV
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1945.1.1
+		BUL = { is_ai = yes }
+		ROM = { is_ai = yes }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = BUL
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
 
 
 SOV_Stop_guarding_these_borders = {

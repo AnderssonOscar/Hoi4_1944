@@ -91,6 +91,8 @@ GER_endsieg_attack:0 "Endsieg is here"
 
 SOV_launch_major_offensive_ger:0 "Launch Major Offensive"
 
+mod_switched_side:0 "Disorganized forces"
+
 HUN_upgrade_army_equipment:0 "Refit Our Forces"
 HUN_upgrade_army_equipment_desc:0 "Our army is in need of new equipment"
 HUN_upgrade_army_equipment_tooltip:0 ""
