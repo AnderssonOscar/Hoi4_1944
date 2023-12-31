@@ -31,9 +31,10 @@ collaborationist_formation = {
 			SOV = {
 				SOV_andrey_vlasov = {
 					set_nationality = GER
+					remove_unit_leader_trait = trait_SOV_cowed_by_stalin_army
 				}
 			}
-
+			
 			division_template = {
 				name = "Russische Befreiungsarmee"
 				is_locked = yes

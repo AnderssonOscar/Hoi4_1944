@@ -984,7 +984,7 @@ GER_reichskommissariats = {
 					812 = { add_core_of = BLR }
 					811 = { add_core_of = BLR }
 					784 = { add_core_of = BLR }
-			}
+			
 			release_on_controlled = BLR
 			BLR = {
 				set_state_controller = 11
@@ -1036,12 +1036,122 @@ GER_reichskommissariats = {
 					}
 				}
 
+				set_popularities = {
+					democratic = 0
+					fascism = 90
+					communism = 10
+				}
+
+
+				every_state = {
+					limit = {
+						controller = { has_war = yes }
+						is_fully_controlled_by = PREV
+					}	
+
+					set_resistance = 20
+					set_compliance = 51
+					add_resistance_target = 27
+					
+					force_enable_resistance = {
+						clear = no
+						occupier = controller
+						occupied = is_core_of
+					}
+				}
+
+				204 = {
+					start_resistance = yes
+					set_compliance = 24
+					set_resistance = 67
+					set_garrison_strength = 1.0
+				}
+
+				206 = {
+					start_resistance = yes
+					set_compliance = 29
+					set_resistance = 47
+					set_garrison_strength = 1.0
+				}
+
+				207 = {
+					start_resistance = yes
+					set_compliance = 24
+					set_resistance = 54
+					set_garrison_strength = 1.0
+				}
+
+				#on creating of ostland all factories become 1939 levels
+				#give some extra then
+				808 = {
+					if = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 6
+								include_locked = yes
+							}
+						}
+
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 7
+						instant_build = yes
+					}
+				}
+			}
+
+			812 = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 6
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 7
+						instant_build = yes
+					}
+				}
+			}
+			#######################################
+
 				add_ideas = {
 					tot_economic_mobilisation
 					service_by_requirement
+					dont_surrender_mod
+					#low_war_casualties
 				}
 
+				add_manpower = -150000
+
+				recruit_character = BLR_albert_speer
+				recruit_character = BLR_alfred_rosenberg
+				recruit_character = BLR_fritz_sauckel
+				recruit_character = BLR_werner_kempf
+				recruit_character = BLR_walter_braemer
+				
+
+				set_capital = {
+					state = 808 
+					remember_old_capital = no
+				}
+
+				recruit_character = GER_heinrich_himmler
+
+				complete_national_focus = political_effort
+				complete_national_focus = collectivist_ethos
+				complete_national_focus = industrial_effort
+
+				army_experience = 40
+				add_command_power = 200
 				add_political_power = 1500
+				add_stability = 0.20
 
 				add_equipment_to_stockpile = {
 					type = convoy_1
@@ -1114,7 +1224,7 @@ GER_reichskommissariats = {
 						owner = PREV
 					}
 				}
-
+			}
 			}
 		}
 	}

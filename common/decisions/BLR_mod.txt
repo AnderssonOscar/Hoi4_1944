@@ -1,0 +1,130 @@
+
+political_actions = { #ostland
+
+BLR_expand_ostland_east = {
+
+	icon = generic_political_discourse
+
+	allowed = {
+		tag = BLR	
+	}
+
+	available = {
+		OR = {
+			209 = {is_fully_controlled_by = GER}
+			208 = {is_fully_controlled_by = GER}
+		}
+	}
+
+	visible = {
+		surrender_progress < 0.5
+		date > 1943.12.30
+		is_ai = no
+
+		GER = { has_war_with = SOV }
+		has_war_with = SOV
+		is_puppet_of = GER
+		is_in_faction_with = GER
+	}
+
+	fire_only_once = yes
+	cost = 150
+	complete_effect = {
+		
+		add_autonomy_ratio = {
+			value = 0.15
+		}
+
+		if = {
+			limit = {
+				209 = {is_fully_controlled_by = GER}
+			}
+			transfer_state = 209 
+		}
+
+		if = {
+			limit = {
+				208 = {is_fully_controlled_by = GER}
+			}
+			transfer_state = 208 
+		}
+	}
+}
+
+	BLR_expand_ostland_south = {
+
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = BLR	
+		}
+
+		available = {
+			OR = {
+				93 = {is_fully_controlled_by = GER}
+				92 = {is_fully_controlled_by = GER}
+				91 = {is_fully_controlled_by = GER}
+				199 = {is_fully_controlled_by = GER}
+			}
+
+		}
+
+		visible = {
+			surrender_progress < 0.5
+			date > 1943.12.30
+			is_ai = no
+	
+			GER = { has_war_with = SOV }
+			has_war_with = SOV
+			is_puppet_of = GER
+			is_in_faction_with = GER
+		}
+ 
+		fire_only_once = yes
+		cost = 250
+		complete_effect = {
+
+			add_autonomy_ratio = {
+				value = 0.25
+			}
+
+			if = {
+				limit = {
+					93 = {is_fully_controlled_by = GER}
+				}
+				transfer_state = 93 
+			}
+
+			if = {
+				limit = {
+					92 = {is_fully_controlled_by = GER}
+				}
+				transfer_state = 92 
+			}
+
+			if = {
+				limit = {
+					91 = {is_fully_controlled_by = GER}
+				}
+				transfer_state = 91
+			}
+
+			if = {
+				limit = {
+					199 = {is_fully_controlled_by = GER}
+				}
+				transfer_state = 199
+			}
+	}
+ 
+			ai_will_do = {
+				base = -1
+				modifier = {
+					add = -10
+					date > 1944.1.1
+				}
+			}
+		}
+	}
+
+

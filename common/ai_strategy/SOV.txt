@@ -2405,7 +2405,6 @@ SOV_take_germany = {
 		ordertype = front
 		execute_order = yes
 		execution_type = rush
-		
 	}
 
 	ai_strategy = {

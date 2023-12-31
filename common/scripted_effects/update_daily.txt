@@ -16,4 +16,6 @@ MOD_daily_update = {
 	GER_konigsberg_battle = yes
 	ALLIED_normandy_port = yes
 	ALLIED_remove_normandy_port = yes
+
+	GER_start_effects = yes
 }

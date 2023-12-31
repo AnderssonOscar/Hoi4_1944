@@ -23,10 +23,15 @@ state={
 		}
 		add_core_of = LAT
 
-				1943.12.1 = {
+		1943.12.1 = {
+			buildings = {
+				arms_factory = 4
+				industrial_complex = 2
+			}
 			owner = GER
 			controller = GER
 		}
+
 
 	}
 

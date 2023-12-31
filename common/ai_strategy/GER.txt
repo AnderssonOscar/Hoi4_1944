@@ -3773,11 +3773,22 @@ GER_guard_estonia = { #1944
 		is_historical_focus_on = yes
 		NOT = { has_war_with = FIN }
 
-		OR = {
-			NOT = { controls_province = 104} 
-			NOT = { controls_province = 126} 
-			NOT = { controls_province = 9120} 
-			NOT = { controls_province = 11202} 
+
+		if = {
+			limit = {
+				any_country = {
+					OR = {
+						tag = SOV
+						is_in_faction_with = SOV
+					}
+				}
+			}
+			OR = {
+				controls_province = 104
+				controls_province = 126
+				controls_province = 9120
+				controls_province = 11202
+			}
 		}
 
 	}

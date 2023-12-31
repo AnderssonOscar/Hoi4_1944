@@ -1138,7 +1138,7 @@ country_event = {
 				set_global_flag = mod_start_effects
 				industry_start_effects = yes
 				tech_start_effects = yes
-				GER_start_effects = yes
+				#GER_start_effects = yes
 				GRE_setup_puppet = yes
 				Resistance_start_effects = yes
 				war_start_effects = yes
@@ -1593,18 +1593,31 @@ country_event = {
 		FIN = { is_in_faction_with = GER }
 		date > 1944.1.1
 
-		NOT = {	controls_province = 3152 } #tallin
+
+	if = {
+		limit = {
+			any_country = {
+				OR = {
+					tag = SOV
+					is_in_faction_with = SOV
+					has_war_with = GER
+				}
+			}
+		}
+
+		controls_province = 3152  #tallin
 		#NOT = {	controls_province = 567 }  
 		#NOT = {	controls_province = 83 } 
 
-		NOT = {	controls_province = 3074 } 
-		NOT = {	controls_province = 496 } 
-		NOT = {	controls_province = 11426 } 
+		controls_province = 3074  
+		controls_province = 496  
+		controls_province = 11426  
 
-		NOT = {	controls_province = 4640 } #narva
-		NOT = {	controls_province = 11127 } #rakvere
+		controls_province = 4640  #narva
+		controls_province = 11127  #rakvere
 
 		#NOT = {	controls_province = 3174 } #pärnu
+		}
 	}
 
 	mean_time_to_happen = { days = 1}

@@ -383,6 +383,12 @@ SOV_great_patriotic_war = {
 		}
 
 		targeted_modifier = {
+			tag = BLR #ostland
+			attack_bonus_against = 1.2
+			breakthrough_bonus_against = 1.2
+		}
+
+		targeted_modifier = {
 			tag = HUN
 			attack_bonus_against =  0.25
 			breakthrough_bonus_against =  0.2

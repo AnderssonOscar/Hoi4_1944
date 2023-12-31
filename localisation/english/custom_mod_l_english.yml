@@ -28,6 +28,15 @@ seize_some_trucks_desc:0 ""
 dig_in_and_hold:0 "Dig in and hold"
 dig_in_and_hold_desc:0 "Dig deeper!"
 
+seize_some_trucks:0 "Seize civilian trucks"
+seize_some_trucks_desc:0 ""
+
+BLR_expand_ostland_east:0 "Expand Reichskommissariat Ostland eastwards"
+BLR_expand_ostland_east_desc:0 "Place the occupied territory eastwards of Reichskommissariat Ostland into our adminitration."
+
+BLR_expand_ostland_south:0 "Expand Reichskommissariat Ostland southwards"
+BLR_expand_ostland_south_desc:0 "Place the occupied territory southwards of Reichskommissariat Ostland into our adminitration."
+
 low_war_casualties:0 "Low War Casualties"
 low_war_casualties_desc:0 ""
 medium_war_casualties:0 "Medium War Casualties"
@@ -92,6 +101,8 @@ GER_endsieg_attack:0 "Endsieg is here"
 SOV_launch_major_offensive_ger:0 "Launch Major Offensive"
 
 mod_switched_side:0 "Disorganized forces"
+
+dont_surrender_mod:0 "No surrender!"
 
 HUN_upgrade_army_equipment:0 "Refit Our Forces"
 HUN_upgrade_army_equipment_desc:0 "Our army is in need of new equipment"

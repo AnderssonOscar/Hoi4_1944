@@ -12,13 +12,13 @@ GER_calculate_casualities_inflicted_on_SOV = {
 	}
 }
 
-GER_start_effects = {
+GER_start_effects = { # run in update daily
 	
 	if = {
 		limit = { 
 			tag = GER
 			is_ai = yes
-			date > 1943.12.30
+			date > 1944.1.2 # give after 3 days if player leaves germany
 			NOT = { has_global_flag = mod_GER_start_effects }
 		}
 
