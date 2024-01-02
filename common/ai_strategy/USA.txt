@@ -1898,25 +1898,25 @@ USA_dont_help_china_boder_too_much = {
 		GER = { has_capitulated = no }
 
 		date > 1944.1.1
-		date < 1945.4.1
+		date < 1946.1.1
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "CHI"
-		value = 100
+		value = 150
 	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "YUN"
-		value = 100
+		value = 150
 	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "GXC"
-		value = 100
+		value = 150
 	}
 }

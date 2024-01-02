@@ -34,6 +34,33 @@ GER_scripted_events_start_effects = {
 			}
 		}
 	}
+
+	56 = { #wilhelmshaven
+		add_province_modifier = {
+			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+			province = {
+				id = 241
+			}
+		}
+	}
+
+	59 = { #hamburg
+		add_province_modifier = {
+			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+			province = {
+				id = 6325
+			}
+		}
+	}
+
+	99 = { #denmark
+		add_province_modifier = {
+			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+			province = {
+				id = 399
+			}
+		}
+	}
 		
 	GER = {
 			create_railway_gun = {

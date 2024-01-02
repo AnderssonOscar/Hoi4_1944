@@ -3131,7 +3131,6 @@ GER_Finland_is_about_to_surrender = {
 			date > 1944.1.1
 			FIN = { has_war_with = SOV}
 			GER = { has_war_with = SOV}
-			#check_variable = { fin_switch = true }
 
 			check_variable = {
 				var = fin_switch
@@ -3144,8 +3143,14 @@ GER_Finland_is_about_to_surrender = {
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "FIN"
-		value = 100
+		id = FIN
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = FIN
+		value = -1000
 	}
 }
 
@@ -3364,6 +3369,15 @@ GER_stop_making_rocket_artillery = {
 	}
 }
 
+
+
+
+
+
+
+
+
+
 GER_out_of_tungsten = {
 
 	allowed = {	original_tag = GER }
@@ -3389,43 +3403,25 @@ GER_out_of_tungsten = {
 	ai_strategy = { type = equipment_variant_production_factor id = artillery_equipment value = 10 }
 	ai_strategy = { type = equipment_variant_production_factor id = anti_tank_equipment value = -60 }
 
-	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_chassis value = -40 }
-	ai_strategy = { type = equipment_variant_production_factor      id = heavy_tank_chassis value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_chassis value = -45 }
+	ai_strategy = { type = equipment_variant_production_factor      id = heavy_tank_chassis value = -1000 }
 
 	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_artillery_chassis value = -500 }
 	ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_artillery_chassis value = -500 }
 
-	ai_strategy = { type = equipment_variant_production_factor id = railway_gun_equipment      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = railway_gun_equipment      value = -1000 }
 	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -100 }
 
-	ai_strategy = { type = equipment_variant_production_factor id = armored_car_equipment value = -100 }
-	ai_strategy = { type = equipment_variant_production_factor id = armored_car_at_equipment value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = armored_car_equipment value = -1000 }
+	ai_strategy = { type = equipment_variant_production_factor id = armored_car_at_equipment value = -1000 }
 
 	#ai_strategy = { type = equipment_variant_production_factor id = medium_tank_destroyer_equipment value = -1000 }
 	#ai_strategy = { type = equipment_variant_production_factor id = light_tank_destroyer_equipment value = -1000 }
 	#ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_destroyer_equipment value = -1000 }
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = anti_air
-		value = 35
-	}
-
-	# ai_strategy = {
-	# 	type = equipment_production_factor
-	# 	id = anti_tank
-	# 	value = -200
-	# }
-
-	ai_strategy = {
 		type = equipment_production_surplus_management
 		id = armored_car_equipment
-		value = -100
-	}
-
-	ai_strategy = {  # Potentially move into a "specialization" strategy
-		type = equipment_production_surplus_management
-		id = anti_tank_equipment
 		value = -100
 	}
 
@@ -3436,9 +3432,28 @@ GER_out_of_tungsten = {
 	}
 
 	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = rocket_artillery_equipment
+		value = -100
+	}
+
+
+	ai_strategy = {
 		type = equipment_production_min_factories
 		id = artillery
-		value = 20
+		value = 10
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = anti_air
+		value = 40
 	}
 
 	ai_strategy = {
@@ -3453,6 +3468,7 @@ GER_out_of_tungsten = {
 		value = 10
 	}
 
+
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
@@ -3465,13 +3481,6 @@ GER_out_of_tungsten = {
 		value = -10
 	}
 }
-
-
-
-
-
-
-
 
 
 

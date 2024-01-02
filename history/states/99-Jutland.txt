@@ -32,16 +32,22 @@ state = {
 				naval_base = 3
 			}
 			399 = {
-				naval_base = 2
+				naval_base = 1 #1944 was 2
 			}
 			6364 = {
 				naval_base = 1
 			}
 		}
+
 		1943.12.1 = {
-			owner = GER
-			controller = GER
-		}
+			buildings = {
+				399 = {
+					coastal_bunker = 4
+				}
+			}
+				owner = GER
+				controller = GER
+			}
 	}
 
 	provinces={
