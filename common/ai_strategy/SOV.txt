@@ -2889,6 +2889,12 @@ SOV_dont_do_naval_invasion_nor = {
 	}
 
 	ai_strategy = {
+		type = invade
+		id = "BLR"
+		value = -500
+	}
+
+	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = NOR }
 		value = -500

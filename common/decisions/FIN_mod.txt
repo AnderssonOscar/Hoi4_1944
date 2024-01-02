@@ -160,7 +160,7 @@ war_measures = {
 		available = {
 			OR = {
 				date > 1944.6.27 # 1944.6.27
-				surrender_progress > 0.00
+				surrender_progress > 0.01
 			}
 		}
 

@@ -4,10 +4,96 @@ tech_start_effects = {
 		limit = {
 			NOT = { has_global_flag = mod_tech_start_effects }
 		}
-			set_global_flag = mod_tech_start_effects
+		set_global_flag = mod_tech_start_effects
 
 		every_country = {
-			limit = { is_ai = yes }
+			limit = {
+				OR = {
+				 is_ai = yes
+				 tag = PRC
+				 tag = GXC
+				 tag = YUN
+				 tag = XSM
+				 tag = MON
+				 tag = SIK
+				}
+
+				 }
+
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				set_technology = {
+					gwtank_chassis = 1
+					armor_tech_1 = 1
+					engine_tech_1 = 1
+				}
+				else = {
+					set_technology = {
+						gwtank = 1
+						basic_light_tank = 1
+					}
+				}
+			}
+
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+					set_technology = {
+						basic_naval_mines = 1
+						basic_torpedo = 1
+						basic_battery = 1
+						early_ship_hull_submarine = 1
+						early_ship_hull_light = 1
+						early_ship_hull_cruiser = 1
+						mtg_transport = 1
+						coastal_defense_ships = 1
+					}
+				else = {
+					set_technology = {
+						early_submarine = 1
+						basic_submarine = 1
+						early_destroyer = 1
+						early_light_cruiser = 1
+						early_heavy_cruiser = 1
+						early_battleship = 1
+						early_battlecruiser = 1
+						transport = 1
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				set_technology = {
+					armored_car1 = 1
+				}
+			}
+
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+					set_technology = {
+						photo_reconnaisance = 1
+						aa_lmg = 1
+						engines_1 = 1
+						early_bombs = 1
+						aircraft_construction = 1
+						iw_small_airframe = 1
+						basic_small_airframe = 1
+						iw_medium_airframe = 1
+						iw_large_airframe = 1
+					}
+				else = {
+					set_technology = {
+						naval_bomber1 = 1
+						CAS1 = 1	
+						early_fighter = 1
+						fighter1 = 1
+					}
+				}
+			}
 
 			set_technology = {
 				radio = 1
@@ -27,10 +113,12 @@ tech_start_effects = {
 
 				infantry_weapons = 1
 				infantry_weapons1 = 1
+				infantry_weapons2 = 1
 				improved_infantry_weapons = 1
 				improved_infantry_weapons_2 = 1
 
 				gw_artillery = 1
+				interwar_artillery = 1
 				artillery1 = 1
 				artillery2 = 1
 

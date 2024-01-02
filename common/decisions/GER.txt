@@ -1045,20 +1045,25 @@ GER_reichskommissariats = {
 
 				every_state = {
 					limit = {
-						controller = { has_war = yes }
-						is_fully_controlled_by = PREV
-					}	
-
-					set_resistance = 20
-					set_compliance = 51
-					add_resistance_target = 27
-					
-					force_enable_resistance = {
-						clear = no
-						occupier = controller
-						occupied = is_core_of
+						is_core_of = THIS
+						controller = {
+							has_government = fascism
+							tag = BLR
+						}
 					}
+	
+					force_enable_resistance = {
+						occupier = THIS.controller
+						occupied = THIS
+					}
+	
+					start_resistance = THIS
+					set_resistance = 24
+					set_compliance = 39
+					add_resistance_target = 33
 				}
+
+				
 
 				204 = {
 					start_resistance = yes
@@ -1124,11 +1129,11 @@ GER_reichskommissariats = {
 				add_ideas = {
 					tot_economic_mobilisation
 					service_by_requirement
-					dont_surrender_mod
+					dont_surrender_mod 
 					#low_war_casualties
 				}
 
-				add_manpower = -150000
+				add_manpower = -90000
 
 				recruit_character = BLR_albert_speer
 				recruit_character = BLR_alfred_rosenberg
@@ -1151,7 +1156,7 @@ GER_reichskommissariats = {
 				army_experience = 40
 				add_command_power = 200
 				add_political_power = 1500
-				add_stability = 0.20
+				add_stability = 0.23
 
 				add_equipment_to_stockpile = {
 					type = convoy_1
@@ -1167,7 +1172,7 @@ GER_reichskommissariats = {
 
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 10000
+					amount = 29200
 					producer = GER
 				}
 
@@ -1179,8 +1184,38 @@ GER_reichskommissariats = {
 
 				add_equipment_to_stockpile = {
 					type = motorized_equipment_1
-					amount = 500
+					amount = 170
 					producer = GER
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_0
+					amount = 210
+					producer = SOV
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_0
+					amount = 120
+					producer = USA
+				}
+
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 525
+					producer = GER
+				}
+			
+				add_equipment_to_stockpile = {
+					type = anti_air_equipment_1
+					amount = 479
+					producer = GER
+				}
+			
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment_1
+					amount = 350
+					producer = SOV
 				}
 
 				country_event = {
