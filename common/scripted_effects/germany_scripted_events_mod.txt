@@ -291,6 +291,46 @@ GER_rhine_crossing = {
 }
 
 
+GER_estonia_lost = {
+	if = {
+		limit = { 
+			NOT = { has_global_flag = GER_estonia_lost } 
+			tag = GER
+			FIN = { has_government = neutrality }
+			FIN = { has_war_with = SOV }
+			FIN = {	is_ai = yes }
+	
+			has_war_with = SOV
+			FIN = { is_in_faction_with = GER }
+			date > 1944.1.1
+	
+			any_country = {
+				OR = {
+					tag = SOV
+					is_in_faction_with = SOV
+					has_war_with = GER
+				}
+				controls_province = 3152  #tallin
+				#NOT = {	controls_province = 567 }  
+				#NOT = {	controls_province = 83 } 
+		
+				controls_province = 3074  
+				controls_province = 496  
+				controls_province = 11426  
+		
+				controls_province = 4640  #narva
+				controls_province = 11127  #rakvere
+		
+				#NOT = {	controls_province = 3174 } #pärnu
+			}
+		}
+			
+		country_event = { id = finland.estonia.lost.1 }
+		set_global_flag = GER_estonia_lost
+	}
+}
+
+
 GER_flood_benelux = {
 	if = {
 		limit = { 

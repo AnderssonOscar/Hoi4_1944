@@ -390,7 +390,7 @@ set_stability = 0.85
 		complete_national_focus = SWI_national_redoubt
 		complete_national_focus = SWI_expedite_mobilization
 		complete_national_focus = SWI_fortify_austrian_border
-		complete_national_focus = GFX_focus_SWI_spirit_of_saint_bernard
+		complete_national_focus = SWI_spirit_of_saint_bernard
 		complete_national_focus = SWI_allied_gold
 		unlock_national_focus = SWI_purchase_american_planes
 		unlock_national_focus = SWI_seek_trade_agreement_with_germany
@@ -401,6 +401,11 @@ set_stability = 0.85
 		complete_national_focus = SWI_support_allied_espionage
 		complete_national_focus = SWI_expand_spy_networks
 		complete_national_focus = SWI_aktion_nationaler_widerstand
+
+		GER = {
+			set_country_flag = SWI_rejected_investment
+			set_country_flag = SWI_waiting_for_answer_timeout
+		}
 	}
 	add_ideas = {
 		#laws

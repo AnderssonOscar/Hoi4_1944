@@ -1583,44 +1583,7 @@ country_event = {
 	desc = finland.estonia.lost.1.d
 	picture = GFX_report_event_FIN_mannerheim_president
 	
-	trigger = {
-		tag = GER
-		FIN = { has_government = neutrality }
-		FIN = { has_war_with = SOV }
-		FIN = {	is_ai = yes }
-
-		has_war_with = SOV
-		FIN = { is_in_faction_with = GER }
-		date > 1944.1.1
-
-
-	if = {
-		limit = {
-			any_country = {
-				OR = {
-					tag = SOV
-					is_in_faction_with = SOV
-					has_war_with = GER
-				}
-			}
-		}
-
-		controls_province = 3152  #tallin
-		#NOT = {	controls_province = 567 }  
-		#NOT = {	controls_province = 83 } 
-
-		controls_province = 3074  
-		controls_province = 496  
-		controls_province = 11426  
-
-		controls_province = 4640  #narva
-		controls_province = 11127  #rakvere
-
-		#NOT = {	controls_province = 3174 } #pärnu
-		}
-	}
-
-	mean_time_to_happen = { days = 1}
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	immediate = {

@@ -12,6 +12,7 @@ MOD_daily_update = {
 	GER_flood_benelux = yes
 	GER_rhine_crossing = yes
 	GER_rhine_defence = yes
+	GER_estonia_lost = yes
 	GER_paris_lost = yes
 	GER_konigsberg_battle = yes
 	ALLIED_normandy_port = yes

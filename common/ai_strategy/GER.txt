@@ -3772,25 +3772,21 @@ GER_guard_estonia = { #1944
 		date > 1944.1.1
 		is_historical_focus_on = yes
 		NOT = { has_war_with = FIN }
+		NOT = { has_global_flag = GER_estonia_lost }
 
-
-		if = {
-			limit = {
-				any_country = {
-					OR = {
-						tag = SOV
-						is_in_faction_with = SOV
-					}
+			any_country = {
+				OR = {
+					tag = SOV
+					is_in_faction_with = SOV
+					has_war_with = GER
 				}
-			}
-			OR = {
-				controls_province = 104
-				controls_province = 126
-				controls_province = 9120
-				controls_province = 11202
+				OR = {
+					controls_province = 104
+					controls_province = 126
+					controls_province = 9120
+					controls_province = 11202
 			}
 		}
-
 	}
 	abort_when_not_enabled = yes
 
