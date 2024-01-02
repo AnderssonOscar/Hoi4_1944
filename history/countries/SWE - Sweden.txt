@@ -126,6 +126,7 @@ if = {
 	limit = { has_dlc = "La Resistance" }
 	set_technology = {
 		armored_car1 = 1
+		#armored_car2 = 1
 	}
 }
 
@@ -806,7 +807,10 @@ if = {
 	#unlock_national_focus = political_effort
 	#complete_national_focus = fighter_focus
 
-
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
 
 	every_owned_state = {
 		limit = {
@@ -815,8 +819,6 @@ if = {
 		add_to_variable = { SWE_has_added_home_guard = 1 }
 		add_to_variable = { SWE_shooting_movement_var = 1 }
 	}
-
-
 
 
 	unlock_national_focus = SWE_continue_the_second_industrial_revolution
@@ -838,12 +840,14 @@ if = {
 	complete_national_focus = SWE_ring_a_ding_ding
 
 	complete_national_focus = SWE_kockums
+	complete_national_focus = SWE_lynx_winter_armored_cars
 
 	complete_national_focus = SWE_allow_landsverk_to_operate
 	unlock_national_focus = SWE_as_the_barometer_falls
 	unlock_national_focus = SWE_italian_destroyers
 
 	complete_national_focus = SWE_work_projects_for_the_unemployed
+}
 
 	set_politics = {
 		ruling_party = democratic

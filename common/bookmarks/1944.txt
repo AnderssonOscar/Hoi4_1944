@@ -223,9 +223,9 @@ bookmarks = {
 				SWE_paid_holidays_idea
 			}
 			focuses = {
-				SWE_as_the_barometer_falls
-				SWE_the_old_enemy_stirs
-				SWE_coalition_war_cabinet
+				SWE_defense_in_depth
+				SWE_finlands_cause_is_ours
+				SWE_aquire_modern_panzers
 			}
 		}
 

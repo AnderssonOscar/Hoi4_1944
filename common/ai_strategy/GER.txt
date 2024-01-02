@@ -3389,21 +3389,69 @@ GER_out_of_tungsten = {
 	ai_strategy = { type = equipment_variant_production_factor id = artillery_equipment value = 10 }
 	ai_strategy = { type = equipment_variant_production_factor id = anti_tank_equipment value = -60 }
 
-	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_chassis value = -45 }
-	ai_strategy = { type = equipment_variant_production_factor      id = heavy_tank_chassis value = -1000 }
+	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_chassis value = -40 }
+	ai_strategy = { type = equipment_variant_production_factor      id = heavy_tank_chassis value = -100 }
 
 	ai_strategy = { type = equipment_variant_production_factor      id = medium_tank_artillery_chassis value = -500 }
 	ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_artillery_chassis value = -500 }
 
-	ai_strategy = { type = equipment_variant_production_factor id = railway_gun_equipment      value = -1000 }
-	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -1000 }
+	ai_strategy = { type = equipment_variant_production_factor id = railway_gun_equipment      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -100 }
 
-	ai_strategy = { type = equipment_variant_production_factor id = armored_car_equipment value = -1000 }
-	ai_strategy = { type = equipment_variant_production_factor id = armored_car_at_equipment value = -1000 }
+	ai_strategy = { type = equipment_variant_production_factor id = armored_car_equipment value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = armored_car_at_equipment value = -100 }
 
 	#ai_strategy = { type = equipment_variant_production_factor id = medium_tank_destroyer_equipment value = -1000 }
 	#ai_strategy = { type = equipment_variant_production_factor id = light_tank_destroyer_equipment value = -1000 }
 	#ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_destroyer_equipment value = -1000 }
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = anti_air
+		value = 35
+	}
+
+	# ai_strategy = {
+	# 	type = equipment_production_factor
+	# 	id = anti_tank
+	# 	value = -200
+	# }
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = armored_car_equipment
+		value = -100
+	}
+
+	ai_strategy = {  # Potentially move into a "specialization" strategy
+		type = equipment_production_surplus_management
+		id = anti_tank_equipment
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = armored_car_at_equipment
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 20
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = motorized
+		value = 10
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = mechanized
+		value = 10
+	}
 
 	ai_strategy = {
 		type = role_ratio

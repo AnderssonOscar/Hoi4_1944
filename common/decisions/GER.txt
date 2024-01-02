@@ -520,6 +520,11 @@ GER_reichskommissariats = {
 						#set_cosmetic_tag = NOR_GER_fascism
 						#set_country_flag = NOR_switched_to_fasc_hist
 
+						if = {
+							limit = {
+								has_dlc = "Arms Against Tyranny"
+							}
+
 						NOR_fcw_big_fascist_support = yes
 						complete_national_focus = NOR_fascist_invasion_of_norway
 						complete_national_focus = NOR_quislings_regime
@@ -533,6 +538,7 @@ GER_reichskommissariats = {
 						#NOR_apply_resistance_to_fascists = yes 
 						unlock_national_focus = NOR_quislings_coup
 						set_global_flag =  NOR_quislings_coup_happened
+						}
 
 						 set_cosmetic_tag = NOR_REICH_fascism
 
@@ -599,6 +605,10 @@ GER_reichskommissariats = {
 					transfer_state = 925
 					#set_cosmetic_tag = NOR_GER_fascism
 					#set_country_flag = NOR_switched_to_fasc_hist
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
 					NOR_fcw_big_fascist_support = yes
 					complete_national_focus = NOR_fascist_invasion_of_norway
 					complete_national_focus = NOR_quislings_regime
@@ -612,6 +622,7 @@ GER_reichskommissariats = {
 					unlock_national_focus = NOR_bring_back_quisling
 					NOR_apply_resistance_to_fascists = yes 
 					set_global_flag =  NOR_quislings_coup_happened
+					}
 					set_cosmetic_tag = NOR_REICH_fascism
 					add_political_power = 1500
 
