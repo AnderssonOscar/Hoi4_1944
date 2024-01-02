@@ -2047,6 +2047,16 @@ if = {
 				}
 			}
 
+			if = {
+				limit = {
+					has_dlc = "Death or Dishonor"
+				}
+				set_technology = {
+					improved_equipment_conversion = 1
+					advanced_equipment_conversion = 1
+				}
+			}
+
 
 
 			if = {

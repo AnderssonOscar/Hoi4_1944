@@ -706,6 +706,9 @@ if = {
 
 			armor_piercing_bombs = 1
 			heavy_bombs = 1
+
+			air_torpedoe_1 = 1
+			air_torpedoe_2 = 1
 		}
 	else = {
 		set_technology = {

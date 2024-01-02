@@ -1168,7 +1168,7 @@ GER_reichskommissariats = {
 					type = train_equipment_1
 					amount = 25
 					producer = GER
-				}
+				} 
 
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
@@ -1178,7 +1178,7 @@ GER_reichskommissariats = {
 
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
-					amount = 700
+					amount = 900
 					producer = GER
 				}
 

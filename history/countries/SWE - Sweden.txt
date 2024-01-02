@@ -806,6 +806,19 @@ if = {
 	#unlock_national_focus = political_effort
 	#complete_national_focus = fighter_focus
 
+
+
+	every_owned_state = {
+		limit = {
+			is_fully_controlled_by = PREV
+		}
+		add_to_variable = { SWE_has_added_home_guard = 1 }
+		add_to_variable = { SWE_shooting_movement_var = 1 }
+	}
+
+
+
+
 	unlock_national_focus = SWE_continue_the_second_industrial_revolution
 	complete_national_focus = SWE_coalition_war_cabinet
 	complete_national_focus = SWE_winter_drill
@@ -828,6 +841,7 @@ if = {
 
 	complete_national_focus = SWE_allow_landsverk_to_operate
 	unlock_national_focus = SWE_as_the_barometer_falls
+	unlock_national_focus = SWE_italian_destroyers
 
 	complete_national_focus = SWE_work_projects_for_the_unemployed
 
@@ -908,8 +922,11 @@ if = {
 				engines_3 = 1
 
 				#range_improvements = 1
+				air_torpedoe_1 = 1
+				air_torpedoe_2 = 1
 
 				early_bombs = 1
+				armor_piercing_bombs = 1
 
 				aircraft_construction = 1
 
@@ -1038,6 +1055,7 @@ if = {
 		motorised_infantry = 1
 
 		tech_mountaineers = 1
+		tech_mountaineers2 = 1
 		tech_support = 1
 
 		tech_engineers = 1
@@ -1061,6 +1079,15 @@ if = {
 		tech_logistics_company2 = 1
 		
 		basic_train = 1
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		set_technology = {
+			improved_equipment_conversion = 1
+		}
 	}
 
 	if = {

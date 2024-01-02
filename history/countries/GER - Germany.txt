@@ -459,7 +459,6 @@ set_war_support = 0.3
 			dispersed_industry3 = 1
 			dispersed_industry4 = 1
 			dispersed_industry5 = 1
-			improved_equipment_conversion = 1
 
 			#1944
 			experimental_rockets = 1
@@ -488,20 +487,18 @@ set_war_support = 0.3
 			antiair3 = 1
 			antiair4 = 1
 			antiair5 = 1
-
 	}
 
 	if = {
 		limit = {
-			NOT = {
-				has_dlc = "No Step Back"
-			}
+			has_dlc = "Death or Dishonor"
 		}
 		set_technology = {
-			basic_medium_tank = 1 
+			improved_equipment_conversion = 1
+			advanced_equipment_conversion = 1
 		}
-		set_oob = "GER_1939"
 	}
+
 
 	if = {
 		limit = {
@@ -1831,6 +1828,9 @@ if = {
 
 				armor_piercing_bombs = 1
 				heavy_bombs = 1
+
+				air_torpedoe_1 = 1
+				air_torpedoe_2 = 1
 			}
 		else = {
 			set_technology = {

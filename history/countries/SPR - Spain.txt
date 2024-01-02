@@ -1000,6 +1000,9 @@ if = {
 				basic_large_airframe = 1
 				#improved_large_airframe = 1
 				#advanced_large_airframe = 1
+
+				air_torpedoe_1 = 1
+				air_torpedoe_2 = 1
 			}
 		else = {
 			set_technology = {

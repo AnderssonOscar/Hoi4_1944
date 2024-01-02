@@ -1567,6 +1567,9 @@ if = {
 				iw_large_airframe = 1
 				basic_large_airframe = 1
 				improved_large_airframe = 1
+
+				air_torpedoe_1 = 1
+				air_torpedoe_2 = 1
 			}
 		else = {
 			#set_air_oob = "ITA_1936_air_legacy"
@@ -1590,6 +1593,16 @@ if = {
 				tactical_bomber1 = 1
 				tactical_bomber2 = 1
 			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		set_technology = {
+			improved_equipment_conversion = 1
+			advanced_equipment_conversion = 1
 		}
 	}
 

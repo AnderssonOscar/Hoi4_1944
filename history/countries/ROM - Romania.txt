@@ -848,6 +848,16 @@ if = {
 		}
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		set_technology = {
+			improved_equipment_conversion = 1
+			advanced_equipment_conversion = 1
+		}
+	}
+
 
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
@@ -888,6 +898,9 @@ if = {
 				basic_large_airframe = 1
 				#improved_large_airframe = 1
 				#advanced_large_airframe = 1
+
+				air_torpedoe_1 = 1
+				air_torpedoe_2 = 1
 			}
 		else = {
 			set_technology = {

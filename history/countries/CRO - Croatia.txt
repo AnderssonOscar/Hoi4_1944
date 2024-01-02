@@ -235,6 +235,9 @@ add_country_leader_role = { #This replaces the commented script below - fixing a
 				basic_large_airframe = 1
 				#improved_large_airframe = 1
 				#advanced_large_airframe = 1
+
+				air_torpedoe_1 = 1
+				#air_torpedoe_2 = 1
 			}
 		else = {
 			set_technology = {
