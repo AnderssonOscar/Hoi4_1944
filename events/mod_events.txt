@@ -1470,6 +1470,7 @@ country_event = {
 			antitank4 = 1
 
 			#doctrines
+			mobile_warfare = 1
 			delay = 1
 			elastic_defence = 1
 			armored_spearhead = 1

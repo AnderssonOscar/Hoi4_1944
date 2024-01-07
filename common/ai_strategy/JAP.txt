@@ -29,7 +29,7 @@ JAP_unit_buffer_home = {
 		type = put_unit_buffers
 
 		# ratio of total armeis in country to be buffered
-		ratio = 0.33
+		ratio = 0.25
 
 		# you can specify an order id. ratio of same orders ids will be share same ratio
 		#order_id = 2
@@ -159,33 +159,6 @@ JAP_unit_production = {
 	ai_strategy = { type = equipment_variant_production_factor id = large_plane_airframe      value = -100 }
 	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
 }
-
-
-
-JAP_just_hold_china = {
-	allowed = { original_tag = JAP }
-	enable = {
-		country_exists = CHI
-		has_war_with = CHI
-		has_war_with = USA
-		has_war_with = ENG
-		date > 1944.1.1
-		date < 1944.10.15
-	}
-
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = front_control
-		country_trigger = {
-			tag = CHI
-		}
-
-		ordertype = front
-		execute_order = yes
-		execution_type = careful
-	}
-}
-
 
 
 
@@ -336,6 +309,143 @@ JAP_build_more_mil = {
 
 
 
+JAP_just_hold_china = {
+	allowed = { original_tag = JAP }
+	enable = {
+		country_exists = CHI
+		has_war_with = CHI
+		has_war_with = USA
+		has_war_with = ENG
+		NOT = { has_war_with = SOV }
+		date > 1944.1.1
+		date < 1944.4.18
+	}
+
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = CHI
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = GXC
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = PRC
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = XSM
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
+
+
+JAP_ichi_Go = {
+	allowed = { original_tag = JAP }
+	enable = {
+
+		has_war_with = CHI
+		NOT = { has_war_with = SOV }
+		has_war_with = USA
+		has_war_with = ENG
+
+		has_idea = JAP_ichi_go
+
+		JAP = { surrender_progress < 0.1 }
+
+		JAP = {	controls_province = 1069 } #jinan
+		#597 = { is_fully_controlled_by = JAP }
+		613 = { is_fully_controlled_by = JAP }
+
+
+		670 = { is_fully_controlled_by = JAP } #laos
+
+		JAP = {	controls_province = 10062 } #hongkong
+
+		date > 1944.4.18
+		date < 1944.12.1
+
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = CHI
+		}
+		ordertype = front
+		execute_order = yes
+		execution_type = rush
+	}
+}
+
+
+JAP_stop_ichi_Go = {
+	allowed = { original_tag = JAP }
+	enable = {
+
+		has_war_with = CHI
+		NOT = { has_war_with = SOV }
+		has_war_with = USA
+		has_war_with = ENG
+
+		OR = {
+			JAP = { surrender_progress > 0.1 }
+
+			NOT = { JAP = {	controls_province = 1069 } }#jinan
+			#NOT = { 597 = { is_fully_controlled_by = JAP } }
+			NOT = { 613 = { is_fully_controlled_by = JAP } }
+
+			NOT = { 286 = { is_fully_controlled_by = JAP } }#south indochina
+
+			NOT = { JAP = {	controls_province = 10062 } }#hongkong
+
+			date > 1944.12.30
+		}
+
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = CHI
+		}
+		ordertype = front
+		execute_order = yes
+		execution_type = balanced
+	}
+}
 
 
 

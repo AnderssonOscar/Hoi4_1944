@@ -64,9 +64,9 @@ air_wings = {
 			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 	}
 
 	529 = {															
@@ -78,11 +78,11 @@ air_wings = {
 			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			# small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			# small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			# small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			# small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			# small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 	}
 
 	524 = {															# Taiwan

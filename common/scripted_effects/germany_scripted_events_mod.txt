@@ -358,6 +358,76 @@ GER_estonia_lost = {
 }
 
 
+GER_fix_ukr_border = {
+	if = {
+		limit = { 
+			NOT = { has_global_flag = GER_fix_ukr_border } 
+			tag = GER
+			has_war_with = SOV
+			UKR = { is_puppet_of = GER }
+			UKR = { has_war_with = SOV }
+	
+			date > 1943.12.31
+			date < 1944.1.8
+	
+			197 = { is_fully_controlled_by = UKR }
+			198 = { is_fully_controlled_by = UKR }
+			199 = { is_fully_controlled_by = UKR }
+		}
+
+		SOV = {
+			if = {
+				limit = {
+					NOT = { controls_province = 11715 }
+					NOT = { controls_province = 11561 }
+					NOT = { controls_province = 6423 }
+					NOT = { controls_province = 9419 }
+				}
+				UKR = {
+					set_province_controller = 11715
+					set_province_controller = 11561
+					set_province_controller = 6423
+					set_province_controller = 9419 
+					}
+				}
+			}
+
+	SOV = {
+		if = {
+			limit = {
+				NOT = { controls_province = 11530 }
+				NOT = { controls_province = 9491 }
+				NOT = { controls_province = 11454 }
+				NOT = { controls_province = 488 }
+				NOT = { controls_province = 3468 }
+				NOT = { controls_province = 6478 }
+			}
+			set_province_controller = 11530
+			set_province_controller = 9491
+			set_province_controller = 11454
+			set_province_controller = 488
+			set_province_controller = 3468
+			set_province_controller = 6478
+			}
+		}
+
+
+		SOV = {
+			if = {
+				limit = {
+					NOT = { controls_province = 550 }
+					NOT = { controls_province = 11490 }
+				}
+				set_province_controller = 550
+				set_province_controller = 11490
+				}
+			}
+	
+		set_global_flag = GER_fix_ukr_border
+	}
+}
+
+
 GER_flood_benelux = {
 	if = {
 		limit = { 

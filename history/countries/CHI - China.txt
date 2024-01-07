@@ -370,9 +370,9 @@ if = {
 	add_political_power = 2589
 	add_command_power = 200
 
-	set_convoys = 875
+	set_convoys = 175
 
-	set_stability = 0.21 
+	set_stability = 0.17 
 	set_war_support = 0.24
 
 	add_ideas = {
@@ -380,7 +380,16 @@ if = {
 	#	war_economy
 		tot_economic_mobilisation
 		#service_by_requirement
-		extensive_conscription
+		service_by_requirement
+		low_war_casualties
+		mod_boost
+	}
+
+	set_popularities = {
+		neutrality = 80
+		democratic = 0
+		fascism = 0
+		communism = 20
 	}
 
 	remove_ideas = {
@@ -625,19 +634,24 @@ if = {
     }
 
 	add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 50000
+    }
+
+	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 2000
+        amount = 3100
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 1500
+        amount = 1200
 		producer = USA
     }
 
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 25
+        amount = 29
     }
 }

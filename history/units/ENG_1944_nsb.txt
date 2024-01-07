@@ -1374,7 +1374,7 @@ units = {
 		division_template = "Armour Division"			# Under-strength, still mobilizing
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.3
-		force_equipment_variants = { light_tank_chassis_1 = { owner = ENG version_name = "Light Tank Mk. VI" } }
+		#force_equipment_variants = { light_tank_chassis_1 = { owner = ENG version_name = "Light Tank Mk. VI" } }
 		force_equipment_variants = { medium_tank_chassis_1 = { owner = ENG version_name = "Cruiser Mk. I" } }
 	}
 	division= {	

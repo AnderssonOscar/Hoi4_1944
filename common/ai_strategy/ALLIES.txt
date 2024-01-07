@@ -430,6 +430,18 @@ Allies_rush_GER = { #intrconnected with - Allies_careful_GER
 		execute_order = yes
 		execution_type = rush
 	}
+
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = ITA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = rush
+	}
 }
 
 
@@ -1478,7 +1490,13 @@ ENG_enable_invasion_of_GRE = {#greece
 	ai_strategy = {
 		type = invasion_unit_request
 		strategic_region = 25 #greece
-		value = 10
+		value = 5
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 47
+		value = 6
 	}
 
 	ai_strategy = {

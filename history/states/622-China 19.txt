@@ -19,18 +19,26 @@ state={
 			arms_factory = 3
 			industrial_complex = 3
 			10733 = {
-				bunker = 2
+				bunker = 4
 
 			}
 			12156 = {
-				bunker = 2
+				bunker = 4
 
 			}
 			5007 = {
-				bunker = 2
+				bunker = 4
 
 			}
 
+		}
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 3
+				fuel_silo = 1
+				anti_air_building = 1
+			}
 		}
 
 	}

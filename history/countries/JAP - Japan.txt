@@ -374,7 +374,7 @@ create_import = {
 	}
 }
 
-set_convoys = 400
+set_convoys = 379
 
 if = {
 	limit = {
@@ -1479,6 +1479,69 @@ if = {
 
 1943.12.30 = {
 
+
+
+
+
+
+
+	609 = {
+		#start_resistance = yes
+		set_compliance = 50
+		set_resistance = 5
+		set_garrison_strength = 1.0
+	}
+	
+	527 = {
+		#start_resistance = yes
+		set_compliance = 72
+		set_resistance = 5
+		set_garrison_strength = 1.0
+	}
+	
+	525 = {
+		#start_resistance = yes
+		set_compliance = 71
+		set_resistance = 5
+		set_garrison_strength = 1.0
+	}
+	
+	745 = {
+		#start_resistance = yes
+		set_compliance = 69
+		set_resistance = 4
+		set_garrison_strength = 1.0
+	}
+	
+	524 = {
+		#start_resistance = yes
+		set_compliance = 54
+		set_resistance = 5
+		set_garrison_strength = 1.0
+	}
+	
+	647 = {
+		#start_resistance = yes
+		set_compliance = 60
+		set_resistance = 0
+		set_garrison_strength = 1.0
+	}
+	
+	684 = {
+		#start_resistance = yes
+		set_compliance = 70
+		set_resistance = 0
+		set_garrison_strength = 1.0
+	}
+	
+	633 = {
+		#start_resistance = yes
+		set_compliance = 60
+		set_resistance = 0
+		set_garrison_strength = 1.0
+	}
+
+
 	if = {
 		limit = { has_dlc = "No Step Back" }
 		set_oob = "JAP_1944_nsb"
@@ -1519,6 +1582,13 @@ if = {
 			tot_economic_mobilisation
 			service_by_requirement
 			closed_economy
+
+			low_war_casualties
+		}
+
+		remove_ideas = {
+			JAP_tora_tora_tora_idea
+			JAP_first_air_fleet
 		}
 
 		
@@ -1534,11 +1604,8 @@ if = {
 	
 		add_opinion_modifier = { target = GER modifier = ger_jap_diplomacy_focus }
 		add_named_threat = { threat = 40 name = 1939_bookmark_threat }
-		add_to_faction = SIA
 	
-		add_ideas = {
-				low_war_casualties
-			}
+
 	
 		if = {
 			limit = {
@@ -1574,6 +1641,13 @@ if = {
 				target = USA
 				type = annex_everything
 			}
+			SIA = {
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = USA
+				}
+			}
+
 			MAN = {
 					add_to_war = {
 						targeted_alliance = JAP
@@ -1681,7 +1755,7 @@ if = {
 						aa_hmg = 1
 		
 						aa_cannon_1 = 1
-						aa_cannon_2 = 1
+						#aa_cannon_2 = 1
 		
 						range_improvements = 1
 		
@@ -1692,6 +1766,9 @@ if = {
 						engines_1 = 1
 						engines_2 = 1
 						engines_3 = 1
+
+						air_torpedoe_1 = 1
+						air_torpedoe_2 = 1
 		
 						iw_small_airframe = 1
 						basic_small_airframe = 1
@@ -1772,7 +1849,7 @@ if = {
 				artillery1 = 1
 				artillery2 = 1
 				artillery3 = 1
-				artillery4 = 1
+				#artillery4 = 1
 		
 				interwar_antiair = 1
 				antiair1 = 1
@@ -1829,6 +1906,8 @@ if = {
 				dispersed_industry5 = 1
 		
 				#1944
+				infantry_offensive = 1
+
 				experimental_rockets = 1
 				rocket_engines = 1
 		
@@ -1838,7 +1917,7 @@ if = {
 				support_weapons = 1
 				support_weapons2 = 1
 				support_weapons3 = 1
-				support_weapons4 = 1
+				#support_weapons4 = 1
 		
 				improved_infantry_weapons = 1
 				improved_infantry_weapons_2 = 1
@@ -1847,7 +1926,7 @@ if = {
 				#advanced_infantry_weapons2 = 1
 		
 				infantry_at = 1
-				infantry_at2 = 1
+				#infantry_at2 = 1
 				
 			}
 
@@ -1909,18 +1988,16 @@ if = {
 				improved_medium_tank_chassis = 1 
 	
 				basic_light_tank_chassis = 1 
-				improved_light_tank_chassis = 1 
+				#improved_light_tank_chassis = 1 
 	
 				basic_heavy_tank_chassis = 1 
-				improved_heavy_tank_chassis = 1 
+				#improved_heavy_tank_chassis = 1 
 	
 				armor_tech_1 = 1
 				armor_tech_2 = 1
 
 				engine_tech_1 = 1
 				engine_tech_2 = 1
-
-				engine_tech_1 = 1
 			}
 			else = {
 				set_technology = {
@@ -1934,29 +2011,29 @@ if = {
 					#advanced_medium_tank = 1
 	
 					basic_heavy_tank = 1
-					improved_heavy_tank = 1
+					#improved_heavy_tank = 1
 					#advanced_heavy_tank = 1
 
 					basic_light_art = 1
 					improved_light_art = 1
 	
 					basic_medium_art = 1
-					improved_medium_art = 1
+					#improved_medium_art = 1
 	
 					basic_light_spaa = 1
-					improved_light_spaa = 1
+					#improved_light_spaa = 1
 	
 					basic_medium_spaa = 1
-					improved_medium_spaa = 1
+					#improved_medium_spaa = 1
 	
 					basic_light_td = 1
-					improved_light_td = 1
+					#improved_light_td = 1
 	
 					basic_medium_td = 1
-					improved_medium_td = 1
+					#improved_medium_td = 1
 	
 					basic_heavy_td = 1
-					improved_heavy_td = 1
+					#improved_heavy_td = 1
 				}
 			}
 		}
@@ -2267,11 +2344,12 @@ if = {
 			unlock_national_focus = JAP_the_ultimate_battleship
 
 			complete_national_focus = JAP_national_defense_state
-
+			unlock_national_focus = JAP_non_aggression_pact_with_the_soviet_union
+			unlock_national_focus = JAP_strike_on_the_southern_resource_area
 
 		add_equipment_to_stockpile = { 
 			type = train_equipment_1
-			amount = 45
+			amount = 5
 		}
 
 		add_equipment_to_stockpile = {
@@ -2280,8 +2358,47 @@ if = {
 		}
 
 		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 25000
+		}
+
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = 635
+		}
+
+		add_equipment_to_stockpile = {
+			type = artillery_equipment_2
+			amount = 270
+		}
+
+		add_equipment_to_stockpile = {
+			type = artillery_equipment_1
+			amount = 670
+		}
+
+		add_equipment_to_stockpile = {
 			type = motorized_equipment_1
 			amount = 710
+		}
+
+		add_equipment_to_stockpile = {
+			type = motorized_equipment_0
+			amount = 210
+		}
+
+
+		if = {
+			limit = {
+				has_dlc = "No Step Back" 
+			}
+	
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis_1
+				amount = 325
+				variant_name = "Type 95 Ha-Go"
+				producer = JAP
+			}
 		}
 
 }	

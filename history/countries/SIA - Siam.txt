@@ -284,6 +284,9 @@ if = {
 
 1943.12.30 = {
 	SIA = { set_cosmetic_tag = SIA_THAI_fascism }
+	dismantle_faction = yes
+	JAP = { add_to_faction = SIA }
+
 
 	army_experience = 20
 	navy_experience = 5	

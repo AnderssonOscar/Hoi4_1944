@@ -1,0 +1,486 @@
+﻿capital = 622
+
+oob = "PRC_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_trucks = 1
+	mass_assault = 1
+}
+set_stability = 0.6
+set_war_support = 0.7
+
+recruit_character = PRC_mao_zedong
+recruit_character = PRC_zhu_de
+recruit_character = PRC_chen_yi
+recruit_character = PRC_peng_dehuai
+recruit_character = PRC_lin_biao
+recruit_character = PRC_kwong_hu
+recruit_character = PRC_luo_zhao
+recruit_character = PRC_liang_ma
+recruit_character = PRC_ma_jin
+recruit_character = PRC_ziao_jingguang
+recruit_character = PRC_nie_rongzhen
+recruit_character = PRC_su_yu
+recruit_character = PRC_liu_bocheng
+recruit_character = PRC_chen_geng
+recruit_character = PRC_gao_qiu
+recruit_character = PRC_liang_shen
+recruit_character = PRC_otto_braun
+recruit_character = PRC_gao_gang
+recruit_character = PRC_fang_zeyi
+recruit_character = PRC_xu_xiangqian
+recruit_character = PRC_deng_ye_peng
+recruit_character = PRC_ye_jianying
+recruit_character = PRC_hsia_tian
+recruit_character = PRC_zhang_wei
+recruit_character = PRC_zhou_enlai
+recruit_character = PRC_liu_shaoqi
+recruit_character = PRC_lin_bojiu
+recruit_character = PRC_dong_biwu
+recruit_character = PRC_he_yuandang
+
+
+save_global_event_target_as = WTT_communist_china
+
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	oob = "PRC_1939"
+
+	if = {
+		limit = {
+			has_dlc = "Waking the Tiger"
+		}
+		complete_national_focus = PRC_strengthen_the_central_secretariat
+		complete_national_focus = PRC_land_redistribution
+		complete_national_focus = PRC_enforce_the_three_rules
+		complete_national_focus = PRC_agrarian_socialism
+		complete_national_focus = PRC_the_yanan_base_area
+		complete_national_focus = PRC_focus_on_china
+		complete_national_focus = PRC_infiltration
+		complete_national_focus = PRC_revolutionary_military_commission
+		complete_national_focus = PRC_literacy_programs
+		complete_national_focus = CHI_mission_to_the_soviet_union
+		complete_national_focus = PRC_ban_the_opium_trade
+		complete_national_focus = PRC_military_intelligence_department
+		complete_national_focus = PRC_prepare_for_war_with_japan
+		complete_national_focus = PRC_anti_japanese_expedition
+		complete_national_focus = PRC_provoke_japan
+		complete_national_focus = PRC_mobile_warfare
+
+		set_research_slots = 3
+
+		add_ideas = {
+			PRC_revolutionary_military_commission
+			PRC_low_popular_support_3
+			PRC_the_long_march_2
+			PRC_mobile_warfare
+			PRC_focus_on_china
+		}
+		remove_ideas = {
+			PRC_low_popular_support_1
+			PRC_the_long_march_1
+		}
+		else = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = flexible_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+	
+	# Chinese Popular Front effects
+	add_to_war = {
+		targeted_alliance = CHI
+		enemy = JAP
+		hostility_reason = asked_to_join
+	}
+	set_country_flag = PRC_joined_CHI_against_JAP
+	remove_opinion_modifier = { target = CHI modifier = hostile_status }
+	add_state_claim = 612
+	add_state_claim = 611
+	add_state_claim = 714
+	add_state_claim = 717
+	add_state_claim = 328
+	add_state_claim = 716
+	add_state_claim = 715
+	add_state_claim = 610
+	add_state_claim = 609
+	add_state_claim = 597
+	add_state_claim = 614
+	add_state_claim = 525
+	add_state_claim = 608
+	add_state_claim = 615
+	add_state_claim = 527
+
+	add_ideas = {
+		#laws
+		partial_economic_mobilisation
+		service_by_requirement
+		closed_economy
+	}
+	
+	set_technology = {
+		tech_mountaineers = 1
+		#doctrines
+		air_superiority = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		basic_encryption = 1
+		basic_decryption = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		fuel_refining = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+		concentrated_industry3 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	communism = 100
+}
+
+add_ideas = {
+	closed_economy
+	service_by_requirement
+	partial_economic_mobilisation
+}
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	add_ideas = {
+		PRC_the_long_march_1
+		PRC_low_popular_support_3
+		PRC_power_struggles
+		PRC_red_army_weakened
+	}
+}
+
+add_opinion_modifier = { target = CHI modifier = hostile_status }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1943.12.30 = {
+
+	oob = "PRC_1944"
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+		upgrade_intelligence_agency = upgrade_army_department
+
+		upgrade_intelligence_agency = upgrade_invisible_ink
+		upgrade_intelligence_agency = upgrade_suicide_pills
+
+		upgrade_intelligence_agency = upgrade_training_centers
+		upgrade_intelligence_agency = upgrade_commando_training
+		upgrade_intelligence_agency = upgrade_interrogation_techniques
+
+		upgrade_intelligence_agency = upgrade_form_department
+	}
+
+	if = {
+		limit = { has_dlc = "Waking the Tiger" }
+
+		complete_national_focus = PRC_rectification_campaign
+		complete_national_focus = PRC_maoism
+		complete_national_focus = PRC_100_regiments_campaign
+		complete_national_focus = PRC_central_security_bureau
+		complete_national_focus = PRC_abolish_the_land_rent
+		complete_national_focus = PRC_socialism_with_chinese_characteristics
+		complete_national_focus = PRC_peoples_liberation_army
+	}
+
+	army_experience = 115
+	navy_experience = 0	
+	air_experience = 0
+
+	#set_stability = 0.99
+	#set_war_support = -0.18
+	add_manpower = 98000
+	
+	add_ideas = {
+		#laws
+		tot_economic_mobilisation
+		#war_economy
+		service_by_requirement
+		mod_boost
+	}
+
+	set_technology = {
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		#decimetric_radar = 1
+		#improved_decimetric_radar = 1
+		#centimetric_radar = 1
+		#improved_centimetric_radar = 1
+
+		#industry
+		excavation1 = 1
+		excavation2 = 1
+		#excavation3 = 1
+
+		#doctrine
+		peoples_army = 1
+		human_infantry_offensive = 1
+		large_front_offensive = 1
+		
+
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+
+		fuel_silos = 1
+		fuel_refining = 1
+		#fuel_refining2 = 1
+
+		oil_processing = 1
+
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+		concentrated_industry3 = 1
+		concentrated_industry4 = 1
+
+		support_weapons = 1
+		support_weapons2 = 1
+		#support_weapons3 = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+
+		#improved_infantry_weapons = 1
+
+		#advanced_infantry_weapons = 1
+
+		#infantry_at = 1
+		#infantry_at2 = 1
+
+		gw_artillery = 1
+		artillery1 = 1
+		#artillery2 = 1
+
+		interwar_antiair = 1
+		antiair1 = 1
+		#antiair2 = 1
+
+		interwar_antitank = 1
+		antitank1 = 1
+		#antitank2 = 1
+
+		motorised_infantry = 1
+		tech_support = 1
+
+		tech_engineers = 1
+		tech_engineers2 = 1
+
+		tech_recon = 1
+		tech_recon2 = 1
+
+		tech_field_hospital = 1
+		#tech_field_hospital2 = 1
+
+		tech_military_police = 1
+
+		tech_maintenance_company = 1
+		#tech_maintenance_company2 = 1
+
+		tech_logistics_company = 1
+		#tech_logistics_company2 = 1
+		
+		basic_train = 1
+	}
+
+	if = {
+		limit = {
+			
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+				gwtank_chassis = 1
+
+				basic_light_tank_chassis = 1 
+				#basic_medium_tank_chassis = 1 
+				#basic_heavy_tank_chassis = 1 
+
+				armor_tech_1 = 1
+				#armor_tech_2 = 1
+				engine_tech_1 = 1
+		}
+	}
+
+
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			basic_naval_mines = 1
+			submarine_mine_laying = 1
+			early_ship_hull_light = 1
+			early_ship_hull_submarine = 1
+			basic_ship_hull_submarine = 1
+			early_ship_hull_cruiser = 1
+			basic_battery = 1
+	
+			basic_torpedo = 1
+			#magnetic_detonator = 1
+			#electric_torpedo = 1
+			 
+			coastal_defense_ships = 1
+		}
+	}
+
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				#survivability_studies = 1
+
+				aa_lmg = 1
+				#aa_hmg = 1
+
+				#aa_cannon_1 = 1
+				#aa_cannon_2 = 1
+				
+				engines_1 = 1
+				#engines_2 = 1
+				#engines_3 = 1
+
+				#range_improvements = 1
+
+				early_bombs = 1
+
+				aircraft_construction = 1
+				
+				iw_small_airframe = 1
+				#basic_small_airframe = 1
+				#improved_small_airframe = 1
+				#advanced_small_airframe = 1
+
+				iw_medium_airframe = 1
+				#basic_medium_airframe = 1
+				#improved_medium_airframe = 1
+
+				iw_large_airframe = 1
+				#basic_large_airframe = 1
+				#improved_large_airframe = 1
+				#advanced_large_airframe = 1
+
+				air_torpedoe_1 = 1
+				#air_torpedoe_2 = 1
+			}
+		else = {
+			set_technology = {
+
+				#naval_bomber1 = 1
+
+				CAS1 = 1
+				#CAS2 = 1
+		
+				early_fighter = 1
+				#fighter1 = 1
+				#fighter2 = 1
+				#fighter3 = 1
+				heavy_fighter1 = 1
+				#heavy_fighter2 = 1
+		
+				#strategic_bomber1 = 1
+				#strategic_bomber2 = 1
+				#tactical_bomber1 = 1
+				#tactical_bomber2 = 1
+			}
+		}
+	}
+
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 1950
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_1
+        amount = 3150
+		producer = JAP
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 170
+    }
+
+	add_equipment_to_stockpile = { 
+        type = train_equipment_1
+        amount = 7
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_1
+        amount = 42
+		producer = SOV
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_1
+        amount = 55
+		producer = JAP
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_0
+        amount = 230
+		producer = SOV
+    }
+}

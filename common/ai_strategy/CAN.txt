@@ -24,8 +24,15 @@ CAN_help_in_italy = {
 	}
 
 	enable = {
+		
 		date > 1943.12.31
-		date < 1945.1.1
+
+			#rhine area
+			42 = { is_fully_controlled_by = GER }
+			51 = { is_fully_controlled_by = GER }
+			28 = { is_fully_controlled_by = GER } #metz
+
+		
 		has_war_with = ITA
 	}
 

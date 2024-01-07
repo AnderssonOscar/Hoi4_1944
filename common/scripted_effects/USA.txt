@@ -1,0 +1,26 @@
+USA_give_nukes = {
+
+	USA = {
+		if = {
+			limit = {
+				date > 1945.8.5
+				has_war_with = JAP
+				has_tech = nukes
+				USA = { surrender_progress < 0.01 }
+				USA = { is_ai = yes }
+				JAP = { surrender_progress < 0.2 }
+
+				OR = {
+					645 = { is_fully_controlled_by = USA }
+					526 = { is_fully_controlled_by = USA }
+					646 = { is_fully_controlled_by = USA } #saipan
+			   }
+
+				NOT = { has_global_flag = USA_give_nukes }
+			}
+
+				add_nuclear_bombs = 3
+				set_global_flag = USA_give_nukes
+		}
+	}
+}

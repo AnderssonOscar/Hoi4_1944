@@ -1056,7 +1056,7 @@ GER_reichskommissariats = {
 
 				every_state = {
 					limit = {
-						is_core_of = THIS
+						#is_core_of = THIS
 						controller = {
 							has_government = fascism
 							tag = BLR
@@ -1070,7 +1070,7 @@ GER_reichskommissariats = {
 	
 					start_resistance = THIS
 					set_resistance = 24
-					set_compliance = 39
+					set_compliance = 41
 					add_resistance_target = 33
 				}
 
@@ -1236,22 +1236,7 @@ GER_reichskommissariats = {
 
 				206 = {
 					create_unit = {
-						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.47 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"GER\" } }" 
-						owner = PREV
-					}
-
-					create_unit = {
-						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
-						owner = PREV
-					}
-
-					create_unit = {
-						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.13 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
-						owner = PREV
-					}
-
-					create_unit = {
-						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.33 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.27 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
 						owner = PREV
 					}
 
@@ -1261,12 +1246,27 @@ GER_reichskommissariats = {
 					}
 
 					create_unit = {
-						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.28 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.13 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
 						owner = PREV
 					}
 
 					create_unit = {
-						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.28 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.13 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.18 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.21 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
 						owner = PREV
 					}
 				}
@@ -1287,20 +1287,24 @@ GER_reichskommissariats = {
 			controls_state = 89
 			controls_state = 199
 			controls_state = 201
-			controls_state = 198
-			controls_state = 202
-			controls_state = 193
-			controls_state = 192
+
+			OR = {
+				ROM = { controls_state = 198 }
+				controls_state = 198
+			}
+			#controls_state = 202
+			#controls_state = 193
+			#controls_state = 192
 			controls_state = 203
 			controls_state = 197
-			controls_state = 225
-			controls_state = 259
-			controls_state = 226
-			controls_state = 196
-			controls_state = 200
-			controls_state = 221
-			controls_state = 228
-			controls_state = 227
+			#controls_state = 225
+			#controls_state = 259
+			#controls_state = 226
+			#controls_state = 196
+			#controls_state = 200
+			#controls_state = 221
+			#controls_state = 228
+			#controls_state = 227
 		}
 
 		cost = 0
@@ -1318,32 +1322,255 @@ GER_reichskommissariats = {
 			has_government = fascism
 		}
 
+		days_remove = 1
+
+ 	remove_effect = {
+		hidden_effect = {
+			
+		every_state = { 
+			limit = {
+				controller = { has_war = yes }
+				is_controlled_by = UKR
+				is_core_of = UKR
+			}
+
+			force_enable_resistance = {
+				occupier = THIS.controller
+				occupied = THIS
+			}
+
+			start_resistance = THIS
+			set_resistance = 19
+			set_compliance = 46
+			add_resistance_target = 29
+			}
+		}
+	}
+
 		complete_effect = {
 			release_on_controlled = UKR
 			UKR = {
-				set_state_controller = 93
-				set_state_controller = 91
-				set_state_controller = 89
-				set_state_controller = 199
-				set_state_controller = 201
-				set_state_controller = 198
-				set_state_controller = 202
-				set_state_controller = 193
-				set_state_controller = 192
-				set_state_controller = 203
-				set_state_controller = 197
-				set_state_controller = 225
-				set_state_controller = 259
-				set_state_controller = 226
-				set_state_controller = 196
-				set_state_controller = 200
-				set_state_controller = 221
-				set_state_controller = 228
-				set_state_controller = 227
-				GER = {
-					puppet = PREV
-					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+
+				# set_state_controller = 93
+				# set_state_controller = 91
+				# set_state_controller = 89
+				# set_state_controller = 199
+				# set_state_controller = 201
+				# set_state_controller = 198
+
+		hidden_effect = {
+
+		every_state = { 
+			limit = {
+				controller = { has_war = yes }
+				OR = {
+					controller = { is_in_faction_with = GER }
+					is_controlled_by = GER
 				}
+				NOT = { is_controlled_by = ROM}
+				is_core_of = UKR
+				is_fully_controlled_by = controller
+			}
+			set_state_controller_to = UKR
+			add_core_of = UKR
+		}
+
+		if = {
+			limit = {
+				198 = {is_fully_controlled_by = ROM}
+				ROM = { is_ai = yes }
+			}
+			transfer_state = 198 
+		}
+
+
+
+				#on creating of ukriane all factories become 1939 levels
+				#give some extra then
+				91 = {
+					if = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 3
+								include_locked = yes
+							}
+						}
+
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+
+			93 = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 3
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			#######################################
+
+				add_ideas = {
+					tot_economic_mobilisation
+					service_by_requirement
+					dont_surrender_mod 
+					#low_war_casualties
+				}
+
+				add_manpower = -90000
+
+				recruit_character = BLR_albert_speer
+				recruit_character = BLR_alfred_rosenberg
+				
+
+				set_capital = {
+					state = 93 
+					remember_old_capital = no
+				}
+
+				recruit_character = GER_heinrich_himmler
+
+				complete_national_focus = political_effort
+				complete_national_focus = collectivist_ethos
+				complete_national_focus = industrial_effort
+
+				army_experience = 40
+				add_command_power = 200
+				add_political_power = 1500
+				add_stability = 0.25
+
+				add_equipment_to_stockpile = {
+					type = convoy_1
+					amount = 15
+					producer = GER
+				}
+
+				add_equipment_to_stockpile = { 
+					type = train_equipment_1
+					amount = 18
+					producer = GER
+				} 
+
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 14200
+					producer = GER
+				}
+
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 500
+					producer = GER
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 170
+					producer = GER
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_0
+					amount = 210
+					producer = SOV
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_0
+					amount = 120
+					producer = USA
+				}
+
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 425
+					producer = GER
+				} 
+			
+				add_equipment_to_stockpile = {
+					type = anti_air_equipment_1
+					amount = 379
+					producer = GER
+				}
+			
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment_1
+					amount = 250
+					producer = SOV
+				}
+
+
+				93 = {
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.37 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.21 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.11 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_21 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.18 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+
+					create_unit = {
+						division = "name = \"Sicherungs-Division\" division_template = \"Sicherungs-Division\" start_experience_factor = 0.18 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = PREV
+					}
+				}
+			}
+			
+
+			GER = {
+				puppet = PREV
+				if = {
+					limit = {
+						NOT = { has_dlc = "Death or Dishonor" }
+					}
+					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet end_wars = no end_civil_wars = no }
+				}
+				else = {
+					set_autonomy = { target = PREV autonomy_state = autonomy_reichskommissariat  end_wars = no end_civil_wars = no }
+				}
+			}
+
+				country_event = {
+					id = reichskommissariat.start.1
+				}
+
 				set_cosmetic_tag = UKR_reichskommissariat
 				create_country_leader = {
 					name = "Erich Koch"
@@ -1353,6 +1580,7 @@ GER_reichskommissariats = {
 					ideology = nazism
 					traits = {
 					}
+				}
 				}
 			}
 		}

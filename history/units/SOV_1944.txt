@@ -3681,7 +3681,7 @@ division= {
 
 	division= {	
 
-				location = 11454
+				location = 3494
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -3701,7 +3701,7 @@ division= {
 
 	division= {	
 
-				location = 488
+				location = 9543
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -3720,7 +3720,7 @@ division= {
 	}	
 	division= {	
 
-				location = 3468
+				location = 9519
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }

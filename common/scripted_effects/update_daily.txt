@@ -17,6 +17,10 @@ MOD_daily_update = {
 	GER_konigsberg_battle = yes
 	ALLIED_normandy_port = yes
 	ALLIED_remove_normandy_port = yes
+	GER_fix_ukr_border = yes
 
 	GER_start_effects = yes
+
+
+	USA_give_nukes = yes
 }

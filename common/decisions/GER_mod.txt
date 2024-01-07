@@ -312,27 +312,18 @@ war_measures = {
 		available = {
 
 			64 = {is_fully_controlled_by = GER}
-			surrender_progress > 0.03
 
-			OR = {
-				has_war_with = ROM
-				ROM = { has_capitulated = yes }
-			}
-
-			OR = {
-				has_war_with = BUL
-				BUL = { has_capitulated = yes }
-			}
 		}
 	
 
 		visible = {
 			has_war_with = ENG
 			has_war_with = SOV
+
+			surrender_progress > 0.2
 		}
 
 		fire_only_once = yes
-
 
 		cost = 100
 		ai_will_do = {

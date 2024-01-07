@@ -35,13 +35,25 @@ ALLIED_normandy_port = {
 			# 	instant_build = yes
 			# }
 
-				add_province_modifier = {
-					static_modifiers = { MOD_prepared_naval_invasion_static_modifier }
-					province = {
-						id = 11535
-						id = 3579
-					}
-				}
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = USA 
+				days = 30
+			}
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = ENG
+				days = 30
+			}
+
+				# add_province_modifier = {
+				# 	static_modifiers = { MOD_prepared_naval_invasion_static_modifier }
+				# 	province = {
+				# 		id = 11535
+				# 		id = 3579
+				# 	}
+				# }
 		}
 
 		set_global_flag = ALLIED_normandy_port

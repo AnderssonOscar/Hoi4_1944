@@ -300,14 +300,14 @@ CHI_hunker_down_now  = {
 	}
 
 	enable = {
-		date < 1945.1.1 #We accept our fate after this point
+		date < 1945.9.1 #We accept our fate after this point
 		has_war_with = JAP
 		is_historical_focus_on = yes
-		surrender_progress > 0.5
+		surrender_progress > 0.45
 	}
 
 	abort = {
-		date > 1945.1.1 #We accept our fate after this point
+		date > 1945.9.1 #We accept our fate after this point
 	}
 
 	ai_strategy = {

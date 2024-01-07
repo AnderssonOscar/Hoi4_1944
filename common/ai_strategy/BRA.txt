@@ -1,0 +1,58 @@
+BRA_help_in_italy = {
+
+	allowed = {
+		original_tag = BRA
+	}
+
+	enable = {
+		date > 1943.12.31
+		surrender_progress < 0.01
+		is_in_faction_with = USA
+		has_war_with = GER
+		has_war_with = ITA
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = ITA}
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = italy
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = USA
+		value = 100
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GER }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = ITA }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = CRO }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GRE }
+		value = -500
+	}
+}

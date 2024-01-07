@@ -18247,6 +18247,7 @@ focus_tree = {
 			add_to_variable = { ITA_re_army_core_defence_factor = 0.05 }
 			custom_effect_tooltip = ITA_the_social_republic_prevails_re_tt
 
+			add_research_slot = 1 #1944
 			add_stability = 0.15
 			add_war_support = 0.1
 		}

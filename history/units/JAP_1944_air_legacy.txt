@@ -39,15 +39,15 @@ air_wings = {
 		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		#fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 	}
 
 	529 = {															
 		# 4 hiroshima
 		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		#fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		#fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 	}
 
 	524 = {															# Taiwan

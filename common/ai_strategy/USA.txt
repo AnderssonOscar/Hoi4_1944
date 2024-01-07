@@ -1398,7 +1398,7 @@ USA_go_time = {
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 646
-		value = 4
+		value = 7
 	}
 
 	ai_strategy = {
@@ -1426,8 +1426,18 @@ USA_allow_invasion_of_japan = {
 		has_war_with = JAP
 		OR = {
 			NOT = { has_war_with = GER }
-			date > 1945.6.1
+
+			AND = {
+				NOT = { 645 = { is_fully_controlled_by = JAP } }
+				NOT = { 526 = { is_fully_controlled_by = JAP } }
+				NOT = { 646 = { is_fully_controlled_by = JAP } } #saipan
+
+				date > 1945.1.1
+		   }
+
+			date > 1945.8.1
 		}
+
 	}
 	abort_when_not_enabled = yes
 
@@ -1762,10 +1772,6 @@ USA_lend_lease_CHI = {
 
 
 
-
-
-
-
 USA_Dont_lend_lease_FIN = {
 	allowed = { original_tag = USA }
 	enable = {
@@ -1798,18 +1804,6 @@ USA_Dont_lend_lease_FIN = {
 		value = -500
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1852,11 +1846,6 @@ USA_build_more_mil = {
 }
 
 
-
-
-
-
-
 USA_help_out_in_france= {
 	allowed = {
 		original_tag = USA
@@ -1879,10 +1868,7 @@ USA_help_out_in_france= {
 		id = "FRA"
 		value = 85
 	}
-
 }
-
-
 
 USA_dont_help_china_boder_too_much = {
 	allowed = {
@@ -1918,5 +1904,54 @@ USA_dont_help_china_boder_too_much = {
 		type = dont_defend_ally_borders
 		id = "GXC"
 		value = 150
+	}
+}
+
+
+
+
+
+
+
+
+USA_bomb_japan = {
+	allowed = {
+		tag = USA
+	}
+
+	enable = {
+		#is_historical_focus_on = yes
+		has_war_with = JAP
+		NOT = { has_war_with = SOV }
+		date > 1944.7.1
+		date < 1946.3.1
+
+		OR = {
+			NOT = { has_war_with = GER }
+			OR = {
+				GER = { surrender_progress > 0.6 }
+				GER = { is_ai = yes }
+			}
+		}
+
+		OR = {
+			has_equipment = { large_plane_airframe > 400 }
+			has_deployed_air_force_size = { size > 400 type = strategic_bomber }
+		}
+
+		OR = {
+		 	645 = {is_fully_controlled_by = USA}
+			526 = {is_fully_controlled_by = USA}
+
+			646 = {is_fully_controlled_by = USA} #saipan
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 154 
+		value = 34000 #value of stocked main front in active combat is usually around 35,000
 	}
 }

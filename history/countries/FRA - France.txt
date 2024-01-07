@@ -1184,6 +1184,7 @@ if = {
 		#weapons
 		support_weapons = 1
 		support_weapons2 = 1
+		support_weapons3 = 1
 
 		infantry_weapons = 1
 		infantry_weapons1 = 1
@@ -1232,6 +1233,8 @@ if = {
 		tech_maintenance_company2 = 1
 
 		tech_signal_company = 1
+
+		tech_logistics_company = 1
 		
 	}
 

@@ -43,10 +43,10 @@ state= {
 				arms_factory = 2
 
 				7071 = {
-					bunker = 4
+					bunker = 6
 				}
 				4196 = {
-					bunker = 4
+					bunker = 6
 				}
 			}
 		}

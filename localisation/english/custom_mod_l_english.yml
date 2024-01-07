@@ -312,6 +312,7 @@ mod.news.1.d:0 "Today the liberation of Europe has begun with allied troops land
 
 SOV_leningrad_defence_modifier:0 "Leningrad Defence"
 GER_festung_konigsberg_modifier:0 "Festung Königsberg"
+ALLIED_prepared_invasion_modifier:0 "Prepared Invasion"
 
 mod.news.4.d:0 "With the advancing Soviet Red Army Königsberg has been well-fortified, with a combination of old and modern defenses. The city has medieval fortifications and a network of forts and bunkers built during these last years. These fortifications will make it a formidable stronghold."
 

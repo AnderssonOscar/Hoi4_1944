@@ -29,6 +29,15 @@ JAP_scripted_events_start_effects = {
 			}
 		}
 
+		593 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 9938
+				}
+			}
+		}
+
 		595 = {
 			add_province_modifier = {
 				static_modifiers = { MOD_good_defence_posistion_static_modifier }
