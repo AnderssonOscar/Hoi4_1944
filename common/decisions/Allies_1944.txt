@@ -292,13 +292,13 @@ operations = {
 
 					FRA = {	set_province_controller = 3549 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.39 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.49 start_equipment_factor = 1" 
 						owner = USA
 					}
 
 					FRA = {	set_province_controller = 553 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.33 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
 						owner = USA
 					}
 
@@ -310,7 +310,7 @@ operations = {
 
 					FRA = {	set_province_controller = 6569 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.35 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.45 start_equipment_factor = 1" 
 						owner = USA
 						#prioritize_location = 11535
 					}

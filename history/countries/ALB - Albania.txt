@@ -119,6 +119,7 @@ set_convoys = 15
 		tot_economic_mobilisation
 		service_by_requirement
 		limited_exports
+		dont_surrender_mod
 	}
 
 	add_equipment_to_stockpile = {

@@ -34,8 +34,8 @@ ideas = {
 	GER_endsieg_attack = {
 		picture = generic_victors_of_ww1
 		modifier = {
-			army_attack_factor = 0.5
-			breakthrough_factor = 0.5
+			army_attack_factor = 0.25
+			breakthrough_factor = 0.25
 			}
 		}
 
@@ -109,7 +109,7 @@ ideas = {
 	GER_synthetic_oil_production = {
 		picture = generic_stockpile_fuel
 		modifier = {
-			fuel_gain_factor_from_states = 0.75
+			fuel_gain_factor_from_states = 0.5
 			}
 		}
 
@@ -131,6 +131,28 @@ ideas = {
 			consumer_goods_factor = 0.075
 			} 
 		}
+
+	GER_lack_of_airforce_instructors = { 
+		picture = generic_army_war_college 
+		modifier = {
+			#air_ace_generation_chance_factor = -0.25
+			#air_mission_efficiency = -0.15
+			#air_maximum_speed_factor = -0.1
+			experience_gain_air_factor = -0.25
+			air_mission_xp_gain_factor = -0.25
+			air_accidents_factor = 0.25
+		}
+	}
+
+	GER_lack_of_army_NCOs = {
+		picture = hol_caved_to_the_germans
+		modifier = {
+			#army_org_factor = -0.05
+			army_org_regain = -0.1
+			training_time_factor = 0.25
+			experience_gain_army_factor = -0.25
+		}
+	}
 
 	}
 }

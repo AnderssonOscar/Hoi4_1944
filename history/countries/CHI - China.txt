@@ -587,9 +587,7 @@ if = {
 
 		excavation1 = 1
 
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		dispersed_industry3 = 1
+
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1
@@ -634,8 +632,8 @@ if = {
     }
 
 	add_equipment_to_stockpile = {
-        type = infantry_equipment
-        amount = 50000
+        type = infantry_equipment_0
+        amount = 91000
     }
 
 	add_equipment_to_stockpile = {

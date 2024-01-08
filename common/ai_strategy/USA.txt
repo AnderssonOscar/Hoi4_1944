@@ -96,6 +96,12 @@ USA_dont_forget_about_italy = {
 	}
 
 	ai_strategy = {
+		type = front_armor_score
+		id = ITA
+		value = -14
+	}
+
+	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			tag = ITA

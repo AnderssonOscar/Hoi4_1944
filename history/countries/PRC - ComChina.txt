@@ -446,8 +446,8 @@ add_opinion_modifier = { target = CHI modifier = hostile_status }
 
 
 	add_equipment_to_stockpile = {
-        type = infantry_equipment
-        amount = 1950
+        type = infantry_equipment_0
+        amount = 8950
     }
 
 	add_equipment_to_stockpile = {

@@ -1154,7 +1154,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 487
 		}
-		location = 6999
+		location = 1010
 		division_template = "Juntuán"		# German-trained division (frontline infantry, better equipment and experience)
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
@@ -1165,7 +1165,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 488
 		}
-		location = 6999
+		location = 1010
 		division_template = "Juntuán"		# German-trained division (frontline infantry, better equipment and experience)
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
@@ -1176,7 +1176,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 1
 		}
-		location = 6999
+		location = 12141
 		division_template = "Juntuán"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
@@ -1187,7 +1187,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 2
 		}
-		location = 6999
+		location = 12141
 		division_template = "Juntuán"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
@@ -1261,6 +1261,113 @@ units = {
 
 
 
+
+
+	division = { 
+		location = 4559
+		division_template = "Juntuán"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.73
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 4559
+		division_template = "Juntuán"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.73
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 4559
+		division_template = "Juntuán"
+		start_experience_factor = 0.11
+		start_equipment_factor = 0.79
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 7294
+		division_template = "Juntuán"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.73
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 7294
+		division_template = "Juntuán"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.63
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 7294
+		division_template = "Juntuán"
+		start_experience_factor = 0.13
+		start_equipment_factor = 0.73
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 12841
+		division_template = "Juntuán"
+		start_experience_factor = 0.12
+		start_equipment_factor = 0.73
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 12841
+		division_template = "Juntuán"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.93
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 7521
+		division_template = "Juntuán"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.83
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 7521
+		division_template = "Juntuán"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.83
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	division = { 
+		location = 7521
+		division_template = "Juntuán"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.83
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+
+
+
+
+
+
+
+
+
+	division = { 
+		location = 7174
+		division_template = "Juntuán"
+		start_experience_factor = 0.11
+		start_equipment_factor = 0.68
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
 	division = { 
 		division_name = { is_name_ordered = no name_order = 0 }
 		location = 7039
@@ -1308,11 +1415,75 @@ units = {
 
 	division = { 
 		division_name = { is_name_ordered = no name_order = 0 }
-		location = 4504
+		location = 1172
 		division_template = "Sanjiao Jun"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
 		start_experience_factor = 0.26
 		start_equipment_factor = 1
+	}
+
+	division = { 
+		location = 1172
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.71
+	}
+
+	division = { 
+		location = 1196
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.71
+	}
+
+	division = { 
+		location = 1196
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.71
+	}
+
+	division = { 
+		location = 1114
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.71
+	}
+
+	division = { 
+		location = 1522
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.71
+	}
+
+	division = { 
+		location = 10776
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.71
+	}
+
+	division = { 
+		location = 10413
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.71
+	}
+
+	division = { 
+		location = 5009
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.71
 	}
 
 
@@ -2084,6 +2255,27 @@ units = {
 			division_template = "Juntuán"
 			start_experience_factor = 0.11
 			start_equipment_factor = 0.81
+		}
+
+		division = { 
+			location = 5080
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.91
+		}
+
+		division = { 
+			location = 5080
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.91
+		}
+
+		division = { 
+			location = 10741
+			division_template = "Juntuán"
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.91
 		}
 
 	#################################################################################################################################################################

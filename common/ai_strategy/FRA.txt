@@ -347,17 +347,22 @@ FRA_focus_europe = {
 		id = USA
 		value = 100
 	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = { tag = JAP }
+		value = -100
+	}
 }
 
 
 
 FRA_invade_south_france = { #dragoon
 
+	allowed = { original_tag = FRA }
+	
 	enable = {
-		tag = FRA
-
-		date > 1944.1.1
-		is_in_faction_with = CAN
+		is_in_faction_with = ENG
 		has_war_with = GER
 		date > 1944.5.20
 		date < 1946.1.1

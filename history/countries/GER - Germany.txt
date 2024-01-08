@@ -2436,9 +2436,9 @@ if = {
 		set_fuel = 311812
 
 
-		set_convoys = 180
-		set_stability = 0.96
-		set_war_support = 0.52
+		set_convoys = 110
+		set_stability = 0.93
+		set_war_support = 0.4
 		add_command_power = 200
 		army_experience = 95
 		navy_experience = 125	
@@ -2455,6 +2455,9 @@ if = {
 			joseph_goebbels
 			walther_funk
 			medium_war_casualties
+
+			GER_lack_of_airforce_instructors
+			GER_lack_of_army_NCOs
 		}
 
 		if = {
@@ -2486,24 +2489,24 @@ if = {
 	
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 15000
+		amount = 12000
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 9100
+		amount = 7100
 		producer = SOV
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 16100
+		amount = 12100
 		producer = ITA
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 18000
+		amount = 14000
 		producer = FRA
 	}
 
@@ -2515,13 +2518,13 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 12000
+		amount = 11000
 		producer = CZE
 	}
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 1350
+        amount = 1150
     }
 
 	add_equipment_to_stockpile = {
@@ -2546,17 +2549,17 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = mechanized_equipment_1
-        amount = 560
+        amount = 510
     }
 
 	add_equipment_to_stockpile = {
         type = mechanized_equipment_2
-        amount = 650
+        amount = 550
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 6100
+        amount = 4100
     }
 
 	if = {
@@ -2612,7 +2615,7 @@ add_equipment_to_stockpile = {
 
 	add_equipment_to_stockpile = {
         type = train_equipment_3
-        amount = 100
+        amount = 75
     }
 
 

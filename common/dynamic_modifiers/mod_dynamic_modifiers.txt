@@ -22,8 +22,9 @@ ALLIED_prepared_invasion_modifier = {
 	enable = { always = yes }
 	icon = GFX_modifiers_generic_supply
 		enemy_army_speed_factor = -0.2
-		pocket_penalty = -0.25
+		pocket_penalty = -0.5
 		supply_consumption_factor = -0.75
-		army_defence_factor = 0.25
-		dig_in_speed_factor = 0.25
+		army_defence_factor = 0.5
+		dig_in_speed_factor = 0.5
+		army_org_regain = 0.5
 }

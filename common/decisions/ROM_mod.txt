@@ -14,7 +14,7 @@ war_measures = {
 			is_faction_leader = no
 			has_capitulated = no
 			has_war_with = SOV
-			surrender_progress > 0.09
+			surrender_progress > 0.04
 			date > 1944.7.30
 			is_in_faction_with = GER
 
@@ -34,7 +34,7 @@ war_measures = {
 
 
 		cancel_trigger = {
-			surrender_progress < 0.08
+			surrender_progress < 0.02
 		}
 
 		cancel_effect = {
@@ -86,7 +86,6 @@ war_measures = {
 			has_war_with = SOV
 			is_puppet = no
 			is_ai = yes
-			#surrender_progress > 0.01
 		}
 
 		fire_only_once = no
@@ -104,7 +103,6 @@ war_measures = {
 					 78 = {is_fully_controlled_by = ROM} 
 					766 = {is_fully_controlled_by = ROM}
 				}
-				surrender_progress > 0.09
 			}
 				factor = 100
 			}

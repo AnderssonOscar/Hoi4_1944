@@ -37,6 +37,23 @@ on_actions = {
 		}
 	}
 
+
+	every_country = {
+		limit = { 
+			OR = {
+				tag = YUN
+				tag = GXC
+				tag = XSM
+				tag = CHI
+				tag = PRC
+			}
+		 }
+		 
+		add_ideas = { 
+			dont_surrender_mod
+		}
+	}
+
 	FRA = {
 		if = {
 			limit = {

@@ -52,8 +52,8 @@ air_wings = {
 		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
 
 		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
-		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
-		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		#small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		#small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
 		#small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }						
 	}
 

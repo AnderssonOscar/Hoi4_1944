@@ -401,6 +401,11 @@ Allies_rush_GER = { #intrconnected with - Allies_careful_GER
 
 		GER = {
 			OR = {
+				AND = {
+					FRA = { has_full_control_of_state = 16 }
+					date > 1945.2.1
+				}
+
 				AND = { #if germany loses control of any of these stop rushing
 					has_full_control_of_state = 18 #champange
 					has_full_control_of_state = 17 #france-comte
@@ -1119,7 +1124,7 @@ ALLIES_bomb_romanian_oil = {
 		has_war_with = GER
 		has_war_with = ROM
 		date > 1943.5.11 #oil bomb start date 1943.5.12
-		date < 1944.11.1 # give up and bomb germany instead
+		date < 1944.9.1 # give up and bomb germany instead
 
 		OR = {
 			has_equipment = { large_plane_airframe > 400 }

@@ -43,6 +43,22 @@ GER_start_effects = { # run in update daily
 			excavation4 = 1
 		}
 
+		813 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 4640
+				}
+			}
+
+			# add_province_modifier = {
+			# 	static_modifiers = { MOD_good_defence_posistion_static_modifier }
+			# 	province = {
+			# 		id = 4640
+			# 	}
+			# }
+		}
+
 		if = {
 			limit = { has_dlc = "By Blood Alone" }
 				set_technology = {
@@ -60,6 +76,11 @@ GER_start_effects = { # run in update daily
 				GER_synthetic_oil_production
 			}
 
+			remove_ideas = {
+				GER_lack_of_airforce_instructors
+				GER_lack_of_army_NCOs
+			}
+
 			add_equipment_to_stockpile = { 
 				type = infantry_equipment_2
 				amount = 31000
@@ -67,12 +88,12 @@ GER_start_effects = { # run in update daily
 
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
-				amount = 2000
+				amount = 1600
 			}
 
 			add_equipment_to_stockpile = { 
 				type = artillery_equipment_2
-				amount = 1300
+				amount = 1100
 			}
 
 			add_equipment_to_stockpile = { 
@@ -88,17 +109,17 @@ GER_start_effects = { # run in update daily
 
 		add_equipment_to_stockpile = {
 			type = support_equipment_1
-			amount = 2650
+			amount = 2550
 		}
 
 		add_equipment_to_stockpile = { 
 			type = artillery_equipment_2
-			amount = 1400
+			amount = 1700
 		}
 
 		add_equipment_to_stockpile = { 
 			type = infantry_equipment_1
-			amount = 15000
+			amount = 12000
 		}
 
 		add_equipment_to_stockpile = { 
@@ -108,18 +129,18 @@ GER_start_effects = { # run in update daily
 
 		add_equipment_to_stockpile = {
 			type = mechanized_equipment_2
-			amount = 2550
+			amount = 2150
 		}
 
 		add_equipment_to_stockpile = {
 			type = anti_air_equipment_2
-			amount = 2950
+			amount = 2350
 		}
 
 
 		add_equipment_to_stockpile = {
 			type = anti_tank_equipment_2
-			amount = 2800
+			amount = 2700
 		}
 
 

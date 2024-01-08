@@ -44,12 +44,26 @@ medium_casualties_desc:0 ""
 overlord_prep:0 "D-Day"
 overlord_prep_desc:0 "D-Day preperations..."
 
+GER_lack_of_airforce_instructors:0 "Shortage of Airforce Instructor"
+GER_lack_of_airforce_instructors_desc:0 ""
+
+GER_lack_of_army_NCOs:0 "Shortage of NCOs"
+GER_lack_of_army_NCOs_desc:0 "The losses of our experienced Non-Commissioned Officers is not being replaced."
+
 FRA_move_capital_back:0 "Move our capital back to Paris"
 FRA_move_capital_back_desc:0 "We can finally come home."
 
 GER_gottedamerung:0 "Gottedamerung"
 GER_gottedamerung_desc:0 "Gottedamerung"
 GER_gottedamerung_tooltip:0 ""
+
+GER_train_more_ncos:0 "New NCO Training Schools"
+GER_train_more_ncos_desc:0 "Establish new Non-Commissioned Officers Training Schools"
+GER_train_more_ncos_tooltip:0 ""
+
+GER_train_more_pilots:0 "Reform Pilot Training"
+GER_train_more_pilots_desc:0 "Reform Pilot Training"
+GER_train_more_pilots_tooltip:0 ""
 
 GER_hand_out_panzerfausts:0 "Mass produce the Panzerfaust"
 GER_hand_out_panzerfausts_desc:0 "Supply our troops with weapons to deal with the tanks."

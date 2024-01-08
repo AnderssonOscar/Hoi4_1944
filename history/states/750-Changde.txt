@@ -28,7 +28,18 @@ state={
 				arms_factory = 1
 
 			}
+		}
 
+		1944.1.1 = {
+			buildings = {
+				fuel_silo = 1
+				anti_air_building = 1
+
+				7101 = {
+					bunker = 3
+				}
+
+			}
 		}
 
 	}

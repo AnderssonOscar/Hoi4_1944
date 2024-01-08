@@ -9599,34 +9599,100 @@ focus_tree = {
 
 		available = {
 			has_war = yes
-			date > 1944.1.1
+		
 		}
 
-	completion_reward = {
+		completion_reward = {
 
-			if = {
-				limit = {
-					not = { has_tech = infantry_at2 }
+				if = {
+					limit = {
+						not = { has_tech = infantry_at2 }
+					}
+					set_technology = {
+						infantry_at2 = 1
+					}
 				}
-				set_technology = {
-					infantry_at2 = 1
-				}
+
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_2
+				amount = 2000
+				producer = GER
 			}
 
-		add_equipment_to_stockpile = {
-			type = anti_tank_equipment_2
-			amount = 2000
-			producer = GER
-		}
-
-		add_equipment_to_stockpile = {
-			type = infantry_equipment_3
-			amount = 15000
-			producer = GER
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_3
+				amount = 15000
+				producer = GER
+			}
 		}
 	}
-}
 
+	focus = {
+		id = GER_train_more_ncos
+		icon = GFX_focus_generic_fascist_troops
+		x = 12
+		y = 9
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = { focus = GER_gottedamerung }
+		
+		ai_will_do = {
+			factor = 5
+
+			modifier = {
+				factor = 100
+				surrender_progress < 0.01
+			}
+		}
+		available = {
+			#has_war = yes
+		}
+
+		bypass = {
+			NOT = { has_idea = GER_lack_of_army_NCOs }
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+			remove_ideas = {
+				GER_lack_of_army_NCOs
+			}
+		}
+	}
+
+
+	focus = {
+		id = GER_train_more_pilots
+		icon = GFX_focus_generic_cas_aircraft
+		x = 20
+		y = 9
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = { focus = GER_gottedamerung }
+		
+		ai_will_do = {
+			factor = 5
+
+			modifier = {
+				factor = 100
+				surrender_progress < 0.01
+			}
+		}
+		available = {
+			#has_war = yes
+		}
+
+		bypass = {
+			NOT = { has_idea = GER_lack_of_airforce_instructors }
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+			remove_ideas = {
+				GER_lack_of_airforce_instructors
+			}
+		}
+	}
 
 
 
@@ -9839,7 +9905,7 @@ focus_tree = {
 			has_war = yes
 		OR = {
 			surrender_progress > 0.1
-			date > 1944.10.1
+			date > 1944.11.1
 			}
 		}
 		
@@ -10347,7 +10413,7 @@ focus_tree = {
 		2 = { 
 				add_building_construction = {
 					type = bunker
-					level = 5
+					level = 4
 					province = 923
 					instant_build = yes
 				}
@@ -10356,14 +10422,14 @@ focus_tree = {
 			157 = { 
 				add_building_construction = {
 					type = bunker
-					level = 5
+					level = 4
 					province = 963
 					instant_build = yes
 				}
 
 				add_building_construction = {
 					type = bunker
-					level = 5
+					level = 4
 					province = 6831
 					instant_build = yes
 				}

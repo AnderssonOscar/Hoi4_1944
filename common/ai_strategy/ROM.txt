@@ -1,5 +1,3 @@
-
-
 ROM_defend_the_front = {
 
 	allowed = { tag = ROM }
@@ -12,6 +10,13 @@ ROM_defend_the_front = {
 		NOT = { has_war_with = BUL }
 		NOT = { has_war_with = GER }
 		is_in_faction_with = GER
+
+
+		OR = {
+			NOT = { 78 = { is_fully_controlled_by = ROM } }
+			NOT = { 766 = { is_fully_controlled_by = ROM } }
+			NOT = { 79 = { is_fully_controlled_by = ROM } }
+		}
 
 		date > 1944.1.1
 	}
@@ -39,8 +44,8 @@ ROM_defend_the_front = {
 
 	ai_strategy = {
 	 	type = front_unit_request
-		 country_trigger = {tag = SOV}
-		value = 115
+		country_trigger = { tag = SOV }
+		value = 425
 	}
 
 	ai_strategy = {

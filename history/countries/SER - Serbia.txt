@@ -266,6 +266,7 @@ create_country_leader = {
 		#laws
 		tot_economic_mobilisation
 		service_by_requirement
+		dont_surrender_mod
 		#limited_exports
 	}
 

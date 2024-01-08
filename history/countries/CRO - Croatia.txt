@@ -173,6 +173,7 @@ add_country_leader_role = { #This replaces the commented script below - fixing a
 		tot_economic_mobilisation
 		service_by_requirement
 		low_war_casualties
+		dont_surrender_mod
 		#limited_exports
 
 	}

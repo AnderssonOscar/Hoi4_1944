@@ -27,5 +27,6 @@ MOD_good_defence_posistion_static_modifier = {
 
 MOD_prepared_naval_invasion_static_modifier = {
 	supply_consumption_factor = -0.75
+	out_of_supply_factor = -0.5
 	army_defence_factor = 0.25
 }

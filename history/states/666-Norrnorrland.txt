@@ -5,9 +5,9 @@ state = {
 	manpower = 100222
 	state_category = rural
 	resources = {
-		tungsten = 44
+		tungsten = 41
 		steel = 50
-		chromium = 25
+		chromium = 22
 	}
 
 	history={
@@ -40,7 +40,7 @@ state = {
 		1943.12.30 = {
 			buildings = {
 				industrial_complex = 1
-				infrastructure = 3
+				infrastructure = 2
 			}
 		}
 		add_core_of = SWE

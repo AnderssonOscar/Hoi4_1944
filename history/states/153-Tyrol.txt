@@ -27,7 +27,7 @@ state={
 		1943.12.30 = {
 			buildings = {
 				industrial_complex = 4
-				anti_air_building = 3
+				anti_air_building = 1
 			}
 		}
 		

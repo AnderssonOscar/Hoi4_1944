@@ -8,13 +8,15 @@ GER_scripted_events_start_effects = {
 		set_global_flag = GER_scripted_events_start_effects
 
 	813 = {
+
 		add_province_modifier = {
-			static_modifiers = { MOD_good_defence_posistion_static_modifier }
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
 			province = {
 				id = 4640
 			}
 		}
 	}
+
 
 	6 = {
 		add_province_modifier = {
