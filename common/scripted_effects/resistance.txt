@@ -89,9 +89,42 @@ Resistance_start_effects = {
 						start_resistance = is_core_of
 					}
 
-					set_resistance = 19
-					set_compliance = 33
-					add_resistance_target = 25
+					set_resistance = 21
+					set_compliance = 32
+					add_resistance_target = 26
+					
+					force_enable_resistance = {
+						clear = no
+						occupier = controller
+						occupied = is_core_of
+					}
+				}
+
+
+
+				#more resistance in east
+				every_state = {
+					limit = {
+						controller = {has_war = yes}
+						NOT = {is_core_of = controller}
+						is_controlled_by = controller
+						controller = { is_in_faction_with = GER }
+
+						OR = {
+							is_core_of = BLR
+							is_core_of = POL
+							is_core_of = SOV
+						}
+					}
+					
+					if = {
+						limit = { has_resistance = no }
+						start_resistance = is_core_of
+					}
+
+					set_resistance = 29
+					set_compliance = 26
+					add_resistance_target = 47
 					
 					force_enable_resistance = {
 						clear = no

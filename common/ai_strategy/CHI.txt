@@ -359,3 +359,34 @@ CHI_make_more_troops = {
         value = 500
     }
 }
+
+
+CHI_dont_do_naval_invasion = {
+	allowed = { 
+		tag = CHI
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1946.1.1
+		has_war_with = JAP
+		NOT = {has_war_with = SOV}
+
+		is_in_faction_with = ENG
+		is_in_faction_with = USA
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = JAP }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = MAN }
+		value = -500
+	}
+}

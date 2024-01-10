@@ -298,7 +298,7 @@ GER_rhine_crossing = {
 			57 = { is_fully_controlled_by = GER } #munster
 
 			OR = {
-				#NOT = { controls_province = 3512 } 
+				NOT = { controls_province = 3512 } 
 				NOT = { controls_province = 6469 } 
 				NOT = { controls_province = 6570 } 
 				NOT = { controls_province = 529 } 

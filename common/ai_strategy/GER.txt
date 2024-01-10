@@ -2730,7 +2730,7 @@ GER_normandy_buffer = { #1944 changed
 	}
 	enable = {
 		date > 1944.1.10
-		is_historical_focus_on = yes
+		#is_historical_focus_on = yes
 		AND = {
 			16 = {is_fully_controlled_by = GER} #paris
 			24 = {is_fully_controlled_by = GER} #centre

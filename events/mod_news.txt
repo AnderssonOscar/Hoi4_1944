@@ -171,6 +171,7 @@ news_event = {
 	
 	immediate = {
 		set_global_flag = konigsberg_ruins
+		GER = { add_war_support = -0.05 }
 
 	hidden_effect = {
 
@@ -237,7 +238,7 @@ news_event = {
 
 
 
-
+#paris liberated
 news_event = {
 	id = mod.news.6
 	title = mod.news.6.t
@@ -248,6 +249,7 @@ news_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		GER = { add_war_support = -0.05 }
 		hidden_effect = {
 		}
 	}

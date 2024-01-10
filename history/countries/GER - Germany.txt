@@ -2310,6 +2310,21 @@ if = {
 		}
 	}
 
+		#POL
+		762 = { #katowice
+			start_resistance = yes
+			set_compliance = 61
+			set_resistance = 12
+			set_garrison_strength = 1.0
+		}
+
+		762 = {#lodz
+			start_resistance = yes
+			set_compliance = 53
+			set_resistance = 18
+			set_garrison_strength = 1.0
+	}
+
 		#CZE
 		9 = {
 			start_resistance = yes
@@ -2433,7 +2448,7 @@ if = {
 		add_named_threat = { threat = 50 name = 1939_bookmark_threat }
 
 		#set_fuel_ratio = 0.35 # 1944 was 0.8 dosent seems to work
-		set_fuel = 311812
+		set_fuel = 271812
 
 
 		set_convoys = 110
@@ -2494,13 +2509,13 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 7100
+		amount = 5100
 		producer = SOV
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 12100
+		amount = 2100
 		producer = ITA
 	}
 
@@ -2512,7 +2527,7 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 8000
+		amount = 7000
 		producer = POL
 	}
 
@@ -2576,25 +2591,25 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = medium_tank_chassis_3
-			amount = 150
+			amount = 110
 			variant_name = "Panther Ausf. G"
 		}
 
 		add_equipment_to_stockpile = {
 			type = medium_tank_chassis_2
-			amount = 75
+			amount = 45
 			variant_name = "Panzer IV Ausf. H"
 		}
 
 		add_equipment_to_stockpile = {
 			type = medium_tank_chassis_1
-			amount = 125
+			amount = 115
 			variant_name = "Panzer III Ausf. F"
 		}
 
 		add_equipment_to_stockpile = {
 			type = medium_tank_destroyer_chassis_2
-			amount = 215
+			amount = 135
 			variant_name = "Sturmgeschutz III"
 		}
 
@@ -2610,7 +2625,7 @@ if = {
 
 add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 5
+        amount = 20
     }
 
 	add_equipment_to_stockpile = {

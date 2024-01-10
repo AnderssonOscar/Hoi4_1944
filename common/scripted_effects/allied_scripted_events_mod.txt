@@ -128,13 +128,29 @@ ALLIED_normandy_invasion = {
 			add_dynamic_modifier = {
 				modifier = ALLIED_prepared_invasion_modifier
 				scope = USA 
-				days = 60
+				days = 70
 			}
 
 			add_dynamic_modifier = {
 				modifier = ALLIED_prepared_invasion_modifier
 				scope = ENG
-				days = 60
+				days = 70
+			}
+		}
+
+
+		30 = {
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = USA 
+				days = 70
+			}
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = ENG
+				days = 70
 			}
 		}
 
@@ -167,18 +183,18 @@ ALLIED_brittany_invasion = {
 			NOT = { has_global_flag = easy_mode_1944 }
 		}
 
-		15 = {
+		14 = {
 
 			add_dynamic_modifier = {
 				modifier = ALLIED_prepared_invasion_modifier
 				scope = USA 
-				days = 60
+				days = 70
 			}
 
 			add_dynamic_modifier = {
 				modifier = ALLIED_prepared_invasion_modifier
 				scope = ENG
-				days = 60
+				days = 70
 			}
 		}
 

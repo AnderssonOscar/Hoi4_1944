@@ -108,6 +108,7 @@ war_measures = {
 			SOV = { transfer_state = 146 }
 			SOV = { transfer_state = 216 }
 			SOV = { transfer_state = 147 }
+			SOV = { transfer_state = 722 }
 
 			GER = { remove_from_faction = FIN }
 			FIN = {give_military_access = ENG}

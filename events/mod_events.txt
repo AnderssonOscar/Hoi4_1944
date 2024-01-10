@@ -421,7 +421,7 @@ country_event = {
 				stockpile_ratio = 0.0
 				army_ratio = 0.25
 				navy_ratio = 1.0
-				air_ratio = 1.0
+				air_ratio = 0.75
 		}
 
 		add_timed_idea = { idea = dont_surrender_mod days = 365 }
@@ -443,6 +443,7 @@ country_event = {
 			base = 1
 			modifier = {
 				factor = 25
+				date > 1945.1.1
 				OR = {
 					HUN =  { is_ai = no }
 					ITA =  { is_ai = no }
@@ -1230,7 +1231,7 @@ country_event = {
 	option = {
 		name = "Easy Mode"
 		set_global_flag = easy_mode_1944
-		custom_effect_tooltip = "Soviets and allies AI weaker"
+		custom_effect_tooltip = "Soviets and allies AI weaker, but Soviet offensives will continue"
 
 		hidden_effect = {
 			SOV = {

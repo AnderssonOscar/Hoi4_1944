@@ -168,6 +168,126 @@ operations = {
 
 
 
+	
+operation_cross_the_rhine= {
+
+		icon = generic_operation
+		available = {
+
+				50 = { is_fully_controlled_by = GER } 
+				54 = { is_fully_controlled_by = GER } 
+				57 = { is_fully_controlled_by = GER } 
+				153 = { is_fully_controlled_by = GER } 
+				56 = { is_fully_controlled_by = GER } 
+
+				NOT = { 42 = { is_fully_controlled_by = GER } }
+				NOT = { 34 = { is_fully_controlled_by = GER } }
+				NOT = { 28 = { is_fully_controlled_by = GER } }
+
+			
+			any_enemy_country = {
+				OR = {
+					army_manpower_in_state = { amount > 100000 state = 50 }
+					army_manpower_in_state = { amount > 100000 state = 55 }
+					army_manpower_in_state = { amount > 100000 state = 51 }
+				}
+			}
+		}
+
+		fire_only_once = yes
+		days_remove = 10
+		ai_will_do = {
+			factor = 250
+		}
+		
+		visible = {
+			has_global_flag = GER_rhine_defence
+			NOT = { has_global_flag = GER_rhine_crossing } 
+			is_ai = yes
+			date > 1945.3.20
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+			NOT = { has_global_flag = easy_mode_1944 }
+			
+			has_war_with = GER
+			has_war_with = ITA
+			GER = { has_war_with = SOV }
+			GER = { surrender_progress < 0.5 }
+		}
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 1.0
+			breakthrough_bonus_against = 1.0
+		}
+		
+		complete_effect = {}
+		remove_effect = {}
+	}
+
+
+	operation_overlord_breakout = {
+
+		icon = generic_operation
+		
+		available = {
+			date > 1944.7.1
+
+			GER = { controls_province = 9523 }
+			GER = { controls_province = 11506 }
+			OR = {
+				NOT = { 15 = { is_fully_controlled_by = GER } }
+				NOT = { 14 = { is_fully_controlled_by = GER } }
+			}
+
+			any_enemy_country = {
+				OR = {
+					army_manpower_in_state = { amount > 110000 state = 15 }
+					army_manpower_in_state = { amount > 110000 state = 14 }
+					army_manpower_in_state = { amount > 110000 state = 30 }
+					army_manpower_in_state = { amount > 110000 state = 16 }
+				}
+			}
+		}
+
+		#fire_only_once = yes
+		days_re_enable = 30
+		days_remove = 14
+		ai_will_do = {
+			factor = 250
+		}
+		
+		visible = {
+			date < 1945.1.1
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+			NOT = { has_global_flag = easy_mode_1944 }
+			is_ai = yes
+			has_war_with = GER
+			has_war_with = ITA
+			GER = { has_war_with = SOV }
+			GER = { surrender_progress < 0.1 }
+
+			158 = { is_fully_controlled_by = ITA }
+			160 = { is_fully_controlled_by = ITA }
+		}
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 1.0
+			breakthrough_bonus_against = 1.0
+		}
+		
+		complete_effect = {}
+		remove_effect = {}
+	}
+
+
+
 	operation_overlord = {
 
 			icon = generic_operation
@@ -234,18 +354,18 @@ operations = {
 					#breakthrough_factor = +1.25
 					army_org_regain = +2.0
 					army_org_factor = +1.0
-					naval_invasion_penalty = -2.35
+					naval_invasion_penalty = -2.45
 					supply_consumption_factor = -1.0
 					#max_commander_army_group_size = +1.0
 			}
 
 			targeted_modifier = {
 				tag = GER
-				attack_bonus_against = 1.5
+				attack_bonus_against = 1.6
 				breakthrough_bonus_against = 1.75
 			}
 
-			days_remove = 11
+			days_remove = 16
 			
 			
 			complete_effect = {
