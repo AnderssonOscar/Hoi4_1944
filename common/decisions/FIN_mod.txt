@@ -17,7 +17,10 @@ war_measures = {
 		available = {
 
 			has_war_with = SOV
-			surrender_progress > FIN_surrender_limit
+			OR = {
+				surrender_progress > FIN_surrender_limit
+				GER = { surrender_progress > 0.05 }
+			}
 			date > 1944.7.25
 
 			any_country = {
@@ -50,17 +53,11 @@ war_measures = {
 			factor = 1
 
 			modifier = {
-				date < 1944.9.4
-				surrender_progress > 0.1
-				factor = 10
-			}
-
-			modifier = {
 				date > 1944.9.4
 
 				OR = {
-					surrender_progress > 0.07
-					GER = { surrender_progress > 0.025 }
+					surrender_progress > FIN_surrender_limit
+					GER = { surrender_progress > 0.01 }
 				}
 				factor = 100
 			}

@@ -56,3 +56,29 @@ CAN_help_in_italy = {
 		value = 100
 	}
 }
+
+
+CAN_dont_rush_yet = {
+
+	allowed = {
+		original_tag = CAN
+	}
+
+	enable = {
+		date < 1944.5.30
+		has_war_with = ITA
+		has_war_with = GER
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = ITA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}

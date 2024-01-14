@@ -504,7 +504,7 @@ GER_template_design = {
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = 30
+		value = -30
 	}
 
 	ai_strategy = {

@@ -1,0 +1,25 @@
+AST_focus_JAP = {
+
+	allowed = {
+		original_tag = AST
+	}
+
+	enable = {
+		date > 1943.12.31
+		surrender_progress < 0.01
+		is_in_faction_with = USA
+		has_war_with = JAP
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = JAP}
+		value = 10000
+	}
+}
+
+
+
+

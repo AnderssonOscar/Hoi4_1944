@@ -35,6 +35,10 @@ state={
 			industrial_complex = 2
 			arms_factory = 2
 			synthetic_refinery = 1
+			9363 = {
+				bunker = 1
+			}
+
 			}
 		}
 

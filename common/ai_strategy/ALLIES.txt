@@ -397,7 +397,8 @@ Allies_rush_GER = { #intrconnected with - Allies_careful_GER
 
 	enable = {
 
-		date < 1945.6.1
+		has_war_with = GER
+		date < 1945.7.1
 
 		GER = {
 			OR = {
@@ -424,6 +425,18 @@ Allies_rush_GER = { #intrconnected with - Allies_careful_GER
 	}
 
 	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = GER
+		value = 250
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = JAP
+		value = -250
+	}
 
 	ai_strategy = {
 		type = front_control
@@ -646,6 +659,12 @@ allies_landed_in_france = {
 	}
 
 	ai_strategy = {
+		type = front_armor_score
+		id = GER
+		value = 90
+	}
+
+	ai_strategy = {
 		type = dont_defend_ally_borders 
 		id = BUL
 		value = 80
@@ -732,6 +751,7 @@ minor_allies_dont_invade_GER = {
 				tag = BOL
 				tag = CHL
 				tag = HAI
+				tag = TUR
 			}
 	}
 
@@ -756,6 +776,61 @@ minor_allies_dont_invade_GER = {
 	}
 }
 
+
+minor_allies_dont_invade_JAP = {
+	allowed = { 
+		OR = {
+				tag = CAN
+				tag = FRA
+				tag = RAJ
+				tag = NZL
+				tag = AST
+				tag = BRA
+				tag = SAF
+				tag = MEX
+				tag = HON
+				tag = COL
+				tag = ELS
+				tag = NIC
+				tag = COS
+				tag = CUB
+				tag = DOM
+				tag = PAN
+				tag = ECU
+				tag = PRU
+				tag = BOL
+				tag = CHL
+				tag = HAI
+				tag = TUR
+			}
+	}
+
+	enable = {
+		date > 1943.12.30
+		date < 1946.1.1
+		has_war_with = GER
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = JAP }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = MAN }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = SIA }
+		value = -500
+	}
+}
 
 
 
@@ -1190,7 +1265,7 @@ ALLIES_bomb_normandy = {
 		#is_historical_focus_on = yes
 		has_war_with = GER
 		date > 1944.5.30
-		date < 1944.10.1
+		date < 1944.9.5
 
 		18 = {is_fully_controlled_by = GER}
 		27 = {is_fully_controlled_by = GER}

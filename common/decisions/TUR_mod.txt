@@ -125,26 +125,26 @@ political_actions = {
 		available = {
 
 		OR = {
-			if = {
-				limit = {
-					any_country = {
-						OR = {
-							tag = GER
-							is_in_faction_with = GER
-							is_in_faction_with = JAP
-						}
+
+			AND = {
+				GER = { surrender_progress < 0.02 }
+				OR = {
+					AND = {
+						ROM = { is_in_faction_with = GER }
+						766 = { is_fully_controlled_by = ROM } #south bessarabia
+						78 = { is_fully_controlled_by = ROM } #bessarabia
+					}
+
+					AND = {
+						766 = { is_fully_controlled_by = GER } #south bessarabia
+						78 = { is_fully_controlled_by = GER } #bessarabia
 					}
 				}
-
-				GER = { surrender_progress < 0.02 }
-				766 = { is_fully_controlled_by = THIS } #south bessarabia
-				78 = { is_fully_controlled_by = THIS } #bessarabia
 			}
 
-				AND = {
-					NOT = { GER = { has_war_with = USA } }
-					NOT = { GER = { has_war_with = ENG } }
-				}
+				TUR = { has_war_with = USA } 
+				TUR = { has_war_with = ENG } 
+				TUR = { has_war_with = SOV } 
 				is_in_faction_with = GER
 		}
 	}

@@ -25,4 +25,7 @@ MOD_daily_update = {
 
 
 	USA_give_nukes = yes
+
+
+	JAP_start_effects = yes
 }

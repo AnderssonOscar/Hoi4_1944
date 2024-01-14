@@ -325,32 +325,34 @@ armor_ENG = { #1944
 
 	medium_armor_2_ENG = {
 	
-		
 		upgrade_prio = {
-			factor = 2
+			factor = 4
 
 			modifier = {
-				factor = 10
-				has_tech = armored_car1
-			}
-			modifier = {
-				NOT = {
-					has_dlc = "La Resistance"
+				factor = 20
+				OR = {
+					has_tech = improved_medium_tank
+					has_tech = improved_medium_tank_chassis
 				}
-				factor = 0
+				NOT = {
+					has_tech = main_battle_tank
+				}
+				NOT = {
+					has_tech = main_battle_tank_chassis
+				}
 			}
 		}
 		
-		target_width = 19.9
+		target_width = 29.9
 		width_weight = 3.0
 		column_swap_factor = 0.1
 		
 		stat_weights = {
 			0.00 #-- default_morale
 			1.10 #-- defense
-			1.10 #-- breakthrough
+			2.10 #-- breakthrough
 			1.60 #-- hardness
-			1.00 #-- soft_attack
+			1.90 #-- soft_attack
 			2.00 #-- hard_attack
 			0.10 #-- recon
 			0.01 #-- entrenchment
@@ -390,14 +392,17 @@ armor_ENG = { #1944
 			
 			support = {
 				engineer = 1
-				armored_car_recon = 1
-				maintenance_company = 1
+				light_tank_recon = 1
+				signal_company = 1
 				logistics_company = 1
+				anti_air = 1
 			}
 			
 			regiments = {
-				medium_armor = 6
-				motorized = 5
+				medium_armor = 7
+				mechanized = 3
+				motorized = 2
+				mot_artillery_brigade = 2
 			}
 		}
 
@@ -409,6 +414,7 @@ armor_ENG = { #1944
 			infantry
 
 			motorized_rocket_brigade 
+			mot_artillery_brigade
 
 			engineer
 			mot_recon

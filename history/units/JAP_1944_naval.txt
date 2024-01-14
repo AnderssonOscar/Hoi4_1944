@@ -13,7 +13,7 @@ units = {
 			name = "Honbu Kantai"
 			location = 1092  # Hiroshima
 			ship = { name = "Musashi" definition = battleship start_experience_factor = 0.6 equipment = { ship_hull_super_heavy_1 = {amount = 1 owner = JAP version_name = "Yamato Class" } } }
-			ship = { name = "Yamato" definition = battleship start_experience_factor = 0.8 equipment = { ship_hull_super_heavy_1 = {amount = 1 owner = JAP version_name = "Yamato Class" } } }
+			ship = { name = "Yamato" pride_of_the_fleet = yes definition = battleship start_experience_factor = 0.61 equipment = { ship_hull_super_heavy_1 = {amount = 1 owner = JAP version_name = "Yamato Class" } } }
 			ship = { name = "Nagato" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_1 = {amount = 1 owner = JAP version_name = "Nagato Class" } } }
 			ship = { name = "Tone" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = {amount = 1 owner = JAP version_name = "Tone Class"} } }
 			ship = { name = "Chikuma" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = {amount = 1 owner = JAP version_name = "Tone Class"} } }
@@ -104,6 +104,17 @@ units = {
 			ship = { name = "Suzukaze" definition = destroyer start_experience_factor = 0.5 equipment = { ship_hull_light_1 = {amount = 1 owner = JAP version_name = "Fubuki Class" } } }
 			ship = { name = "Umikaze" definition = destroyer start_experience_factor = 0.5 equipment = { ship_hull_light_1 = {amount = 1 owner = JAP version_name = "Fubuki Class" } } }
 			ship = { name = "Yamakaze" definition = destroyer start_experience_factor = 0.5 equipment = { ship_hull_light_1 = {amount = 1 owner = JAP version_name = "Fubuki Class" } } }
+			#1944
+			ship = { name = "Okinami" definition = destroyer start_experience_factor = 0.28 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "Hayanami" definition = destroyer start_experience_factor = 0.28 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "Kazagumo" definition = destroyer start_experience_factor = 0.28 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "Tamanami" definition = destroyer start_experience_factor = 0.28 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "Hayashimo" definition = destroyer start_experience_factor = 0.28 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "Fujinami" definition = destroyer start_experience_factor = 0.28 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "Hamanami" definition = destroyer start_experience_factor = 0.21 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "Naganami" definition = destroyer start_experience_factor = 0.28 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "Kishinami" definition = destroyer start_experience_factor = 0.12 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
+			ship = { name = "" definition = destroyer start_experience_factor = 0.28 equipment = { ship_hull_light_3 = {amount = 1 owner = JAP version_name = "Yugumo Class" } } }
 		}
 		# Submarine Squadrons #
 		task_force = {
@@ -433,27 +444,28 @@ instant_effect = {
 			progress = 0.79
 			amount = 1
 		}		
-		# DD(CM) (x2): "Hatsutaka" "Aotaka"
+		
 		add_equipment_production = {
 			equipment = {
-				type = ship_hull_light_2
+				type = ship_hull_carrier_2
 				creator = "JAP" 
-				version_name = "Hatsutaka Class"
+				version_name = "Taihō Class"
 			}
-			name = "Hatsutaka" 
+			name = "Taihō" 
 			requested_factories = 1
-			progress = 0.95
+			progress = 0.93
 			amount = 1
-		}		
+		}
+
 		add_equipment_production = {
 			equipment = {
-				type = ship_hull_light_2
+				type = ship_hull_light_3
 				creator = "JAP" 
-				version_name = "Hatsutaka Class"
+				version_name = "Yugumo Class"
 			}
-			name = "Aotaka" 
+			name = "Kiyoshimo" 
 			requested_factories = 1
-			progress = 0.85
+			progress = 0.84
 			amount = 1
 		}		
 

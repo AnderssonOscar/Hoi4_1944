@@ -389,9 +389,9 @@ country_event = {
 			value = 1
 		}
 		ai_chance = {
-			base = 2
+			base = 4
 			modifier = {
-				factor = 25
+				factor = 35
 				HUN = { is_ai = yes }
 				ITA = { is_ai = yes }
 				BUL = { is_ai = yes }
@@ -1592,7 +1592,7 @@ country_event = {
 	FIN = {
 		subtract_from_variable = {
 			var = FIN_surrender_limit
-			value = 0.07
+			value = 0.04
 		}
 	}
 

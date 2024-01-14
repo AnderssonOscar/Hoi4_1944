@@ -476,8 +476,8 @@ if = {
 	add_command_power = 200
 
 	set_convoys = 210
-	set_stability = 0.76 
-	add_manpower = 24000
+	set_stability = 0.96 
+	add_manpower = 29000
 
 
 	add_ideas = {
@@ -700,7 +700,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_2
-        amount = 4550
+        amount = 6550
     }
 
 	add_equipment_to_stockpile = {

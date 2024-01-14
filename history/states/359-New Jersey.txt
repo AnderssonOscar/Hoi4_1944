@@ -22,11 +22,11 @@ state={
 			buildings = {
 				synthetic_refinery = 3
 				industrial_complex = 2
+				dockyard = 3
 			}
 		}
 		add_core_of = USA
 	}
-
 	provinces={
 		3693 3863 6882 9801 9864 11740 11782 11900 
 	}

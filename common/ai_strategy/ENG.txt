@@ -699,13 +699,13 @@ ENG_template_design_2 = {
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = -10
+		value = -50
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = medium_armor
-		value = 40
+		value = 45
 	}
 
 	ai_strategy = {
@@ -2085,14 +2085,38 @@ ENG_lend_lease = {
 
 
 
+ENG_finish_germany_first = {
 
+	allowed = {
+		original_tag = ENG
+	}
 
+	enable = {
+		date < 1946.1.1
+		date > 1944.6.1
+		surrender_progress < 0.01
+		is_in_faction_with = USA
+		has_war_with = GER
+		has_war_with = ITA
+	}
 
+	abort_when_not_enabled = yes
 
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = JAP }
+		value = -500
+	}
 
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = SIA }
+		value = -500
+	}
 
-
-
-
-
-
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = MAN }
+		value = -500
+	}
+}

@@ -240,6 +240,12 @@ jap_dont_invade_when_defensive = {
 		value = -500
 	}
 
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = NZL }
+		value = -500
+	}
+
 }
 
 

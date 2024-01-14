@@ -30,6 +30,7 @@ state={
 			buildings = {
 				4640 = {
 					bunker = 4
+					naval_base = 3
 				}
 			}
 

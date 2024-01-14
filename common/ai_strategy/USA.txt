@@ -119,9 +119,9 @@ USA_dont_forget_about_italy_after_dday = {
 	allowed = {
 		OR = {
 			original_tag = USA
-			original_tag = CAN
-			original_tag = BRA
-			original_tag = SAF
+			#original_tag = CAN
+			#original_tag = BRA
+			#original_tag = SAF
 			original_tag = MEX
 		}
 	}
@@ -580,6 +580,7 @@ USA_save_india = { # in the case where japan has beaten china and is moving on i
 USA_stop_soviet_from_falling = {
 	allowed = { original_tag = USA }
 	enable = {
+		date < 1944.1.1
 		has_war = no
 		num_divisions > 85 # we must have some divisions ourselves
 
@@ -701,13 +702,13 @@ USA_template_design_1 = {
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = 50
+		value = -50
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = medium_armor
-		value = -10
+		value = 50
 	}
 
 	ai_strategy = {
@@ -1414,6 +1415,96 @@ USA_go_time = {
 	}
 
 	ai_strategy = {
+		type = invasion_unit_request
+		state = 525
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 527
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 745
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 609
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 597
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 613
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 592
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 594
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 593
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 595
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 596
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 613
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 597
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 728
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = MAN }
+		value = -1000
+	}
+
+	ai_strategy = {
 		type = consider_weak
 		id = "JAP"
 		value = 10
@@ -1653,6 +1744,12 @@ USA_unit_production = {
 		value = 100
 	}
 
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 11 #1944 was 5
+	}
+
 	ai_strategy = { type = equipment_variant_production_factor id = medium_tank_chassis value = 30 }
 
 
@@ -1864,15 +1961,20 @@ USA_help_out_in_france= {
 		date > 1944.6.1
 		date < 1946.1.1
 
-
 		NOT = {16 = {is_fully_controlled_by = GER}}
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = force_defend_ally_borders
-		id = "FRA"
-		value = 85
+		id = FRA
+		value = 90
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = GER
+		value = 500
 	}
 }
 

@@ -17,7 +17,7 @@ SAF_help_in_italy = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = {tag = ITA}
-		value = 1000
+		value = 700
 	}
 
 	ai_strategy = {
@@ -54,5 +54,34 @@ SAF_help_in_italy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GRE }
 		value = -500
+	}
+}
+
+
+
+
+
+SAF_dont_rush_yet = {
+
+	allowed = {
+		original_tag = SAF
+	}
+
+	enable = {
+		date < 1944.5.30
+		has_war_with = ITA
+		has_war_with = GER
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = ITA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
 	}
 }

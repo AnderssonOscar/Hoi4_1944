@@ -32,6 +32,7 @@ state={
 			buildings = {
 				synthetic_refinery = 3
 				industrial_complex = 2
+				dockyard = 2
 			}
 		}
 

@@ -15,6 +15,13 @@ GER_scripted_events_start_effects = {
 				id = 4640
 			}
 		}
+
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 4640
+			}
+		}
 	}
 
 

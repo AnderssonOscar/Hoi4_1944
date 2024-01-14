@@ -25,6 +25,12 @@ state={
 		victory_points = {
 			7315 10 
 		}
+
+		1943.12.30 = {
+			buildings = {
+				dockyard = 2
+			}
+		}
 	}
 
 	provinces={

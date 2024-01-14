@@ -374,7 +374,7 @@ create_import = {
 	}
 }
 
-set_convoys = 469
+set_convoys = 499
 
 if = {
 	limit = {
@@ -1568,6 +1568,11 @@ if = {
 		set_global_flag = JAP_kalkin_gol
 		add_political_power = 1198
 		add_command_power = 100
+		army_experience = 45
+		navy_experience = 155	
+		air_experience = 165
+
+		retire_character = JAP_isoroku_yamamoto
 	
 		#adding ministers
 		add_ideas = {
@@ -1855,7 +1860,11 @@ if = {
 				antiair1 = 1
 				antiair2 = 1
 				antiair3 = 1
+
+				rocket_artillery = 1
+				rocket_artillery2 = 1
 		
+				interwar_antitank = 1
 				antitank1 = 1
 				antitank2 = 1
 		
@@ -1897,13 +1906,12 @@ if = {
 				construction2 = 1
 				construction3 = 1
 				construction4 = 1
-				construction5 = 1
+				#construction5 = 1
 		
-				dispersed_industry = 1
-				dispersed_industry2 = 1
-				dispersed_industry3 = 1
-				dispersed_industry4 = 1
-				dispersed_industry5 = 1
+				concentrated_industry = 1
+				concentrated_industry2 = 1
+				concentrated_industry3 = 1
+				concentrated_industry4 = 1
 		
 				#1944
 				infantry_offensive = 1
@@ -1985,10 +1993,10 @@ if = {
 			}
 			set_technology = {
 				basic_medium_tank_chassis = 1 
-				improved_medium_tank_chassis = 1 
+				#improved_medium_tank_chassis = 1 
 	
 				basic_light_tank_chassis = 1 
-				#improved_light_tank_chassis = 1 
+				improved_light_tank_chassis = 1 
 	
 				basic_heavy_tank_chassis = 1 
 				#improved_heavy_tank_chassis = 1 
@@ -2055,7 +2063,7 @@ if = {
 		
 				early_ship_hull_submarine = 1
 				basic_ship_hull_submarine = 1
-				advanced_ship_hull_submarine = 1
+				#advanced_ship_hull_submarine = 1
 				improved_ship_hull_submarine = 1
 				basic_torpedo = 1
 				magnetic_detonator = 1
@@ -2073,7 +2081,7 @@ if = {
 		
 				mtg_transport = 1
 				mtg_landing_craft = 1
-				mtg_tank_landing_craft = 1
+				#mtg_tank_landing_craft = 1
 		
 				improved_sonar = 1
 				smoke_generator = 1
@@ -2095,7 +2103,7 @@ if = {
 				improved_heavy_armor_scheme = 1
 				improved_heavy_armor_scheme = 1
 		
-				basic_dp_medium_battery = 1
+				#basic_dp_medium_battery = 1
 		
 				basic_medium_battery = 1
 		
@@ -2120,7 +2128,7 @@ if = {
 				fire_control_methods_2 = 1
 				fire_control_methods_3 = 1
 				
-		
+				improved_depth_charges = 1
 				}
 			}
 
@@ -2209,6 +2217,48 @@ if = {
 				}
 			}
 
+
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				create_equipment_variant = {
+					name = "Yugumo Class"
+					type = ship_hull_light_3
+					name_group = ENG_DD_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_battery_3
+						fixed_ship_anti_air_slot = ship_anti_air_3
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+						fixed_ship_radar_slot = ship_radar_2
+						fixed_ship_engine_slot = light_ship_engine_3
+						fixed_ship_torpedo_slot = ship_torpedo_2
+						mid_1_custom_slot = ship_torpedo_2
+						rear_1_custom_slot = ship_depth_charge_3
+					}
+					obsolete = no
+				}
+
+				create_equipment_variant = {
+					name = "Taihō Class"
+					type = ship_hull_carrier_2
+					name_group = JAP_CV_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_deck_slot_1 = ship_deck_space
+						fixed_ship_deck_slot_2 = ship_deck_space
+						fixed_ship_anti_air_slot = ship_anti_air_3
+						fixed_ship_radar_slot = ship_radar_1
+						fixed_ship_engine_slot = carrier_ship_engine_3
+						fixed_ship_secondaries_slot = dp_ship_secondaries_2
+						fixed_ship_armor_slot = ship_armor_cruiser_3
+						front_1_custom_slot = ship_deck_space
+						mid_1_custom_slot = ship_deck_space
+						mid_2_custom_slot = ship_armor_carrier_deck
+					}
+				}
+			}
 
 
 
@@ -2347,9 +2397,11 @@ if = {
 			unlock_national_focus = JAP_non_aggression_pact_with_the_soviet_union
 			unlock_national_focus = JAP_strike_on_the_southern_resource_area
 
+			complete_national_focus = JAP_warrior_spirit
+
 		add_equipment_to_stockpile = { 
 			type = train_equipment_1
-			amount = 5
+			amount = 14
 		}
 
 		add_equipment_to_stockpile = {
@@ -2359,12 +2411,12 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_0
-			amount = 25000
+			amount = 44000
 		}
 
 		add_equipment_to_stockpile = {
 			type = support_equipment_1
-			amount = 635
+			amount = 735
 		}
 
 		add_equipment_to_stockpile = {
@@ -2375,6 +2427,11 @@ if = {
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_1
 			amount = 670
+		}
+
+		add_equipment_to_stockpile = {
+			type = artillery_equipment_1
+			amount = 470
 		}
 
 		add_equipment_to_stockpile = {
