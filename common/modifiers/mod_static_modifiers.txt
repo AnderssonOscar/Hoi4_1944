@@ -12,7 +12,7 @@ GER_flooded_area_static_modifier = {
 }
 
 GER_defence_rhine_defence_static_modifier = {
-	max_dig_in_factor = 0.25
+	#max_dig_in_factor = 0.25
 	river_crossing_factor = 0.25
 }
 

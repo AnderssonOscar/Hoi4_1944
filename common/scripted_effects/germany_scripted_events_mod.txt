@@ -10,24 +10,44 @@ GER_scripted_events_start_effects = {
 	813 = {
 
 		add_province_modifier = {
-			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			static_modifiers = { GER_festung_static_modifier }
 			province = {
 				id = 4640
 			}
 		}
 
 		add_province_modifier = {
-			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			static_modifiers = { GER_flooded_area_static_modifier }
 			province = {
 				id = 4640
+			}
+		}
+
+	}
+
+	7 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 9498
+				id = 3211
+				id = 391
 			}
 		}
 	}
 
+	35 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 11456
+			}
+		}
+	}
 
 	6 = {
 		add_province_modifier = {
-			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+			static_modifiers = { GER_flooded_area_static_modifier }
 			province = {
 				id = 6598
 				id = 6560
@@ -35,41 +55,77 @@ GER_scripted_events_start_effects = {
 		}
 	}
 
-	15 = {
+	36 = {
 		add_province_modifier = {
-			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
 			province = {
-				id = 485
+				id = 6241
+				id = 9363
+			}
+		}
+
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 6241
+				id = 9363
 			}
 		}
 	}
 
-	56 = { #wilhelmshaven
+	51 = {
 		add_province_modifier = {
-			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
 			province = {
-				id = 241
+				id = 3444
 			}
 		}
 	}
 
-	59 = { #hamburg
+	28 = {
 		add_province_modifier = {
 			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
 			province = {
-				id = 6325
+				id = 678
 			}
 		}
 	}
 
-	99 = { #denmark
-		add_province_modifier = {
-			static_modifiers = { MOD_defence_naval_invasion_static_modifier }
-			province = {
-				id = 399
-			}
-		}
-	}
+	# 15 = {
+	# 	add_province_modifier = {
+	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+	# 		province = {
+	# 			id = 485
+	# 		}
+	# 	}
+	# }
+
+	# 56 = { #wilhelmshaven
+	# 	add_province_modifier = {
+	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+	# 		province = {
+	# 			id = 241
+	# 		}
+	# 	}
+	# }
+
+	# 59 = { #hamburg
+	# 	add_province_modifier = {
+	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+	# 		province = {
+	# 			id = 6325
+	# 		}
+	# 	}
+	# }
+
+	# 99 = { #denmark
+	# 	add_province_modifier = {
+	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+	# 		province = {
+	# 			id = 399
+	# 		}
+	# 	}
+	# }
 		
 	GER = {
 			create_railway_gun = {

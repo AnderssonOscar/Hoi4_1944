@@ -828,7 +828,7 @@ if = {
 	navy_experience = 5	
 	air_experience = 35
 
-	set_variable = { FIN_surrender_limit = 0.05 } #dont change this without changing german.ryti.ribbentrop.1 and finland.estonia.lost
+	set_variable = { FIN_surrender_limit = 0.03 } #dont change this without changing german.ryti.ribbentrop.1 and finland.estonia.lost
 
 	set_politics = {
 		ruling_party = neutrality

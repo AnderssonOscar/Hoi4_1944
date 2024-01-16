@@ -2729,7 +2729,7 @@ GER_normandy_buffer = { #1944 changed
 		original_tag = GER
 	}
 	enable = {
-		date > 1944.1.10
+		date > 1944.4.1
 		#is_historical_focus_on = yes
 		AND = {
 			16 = {is_fully_controlled_by = GER} #paris
@@ -2784,7 +2784,35 @@ GER_normandy_buffer = { #1944 changed
 		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
 	}
-	
+}
+
+
+GER_defend_normandy = {  
+	allowed = {
+		original_tag = GER
+	}
+	enable = { #not same areas as GER_defend_homeland
+		date > 1944.6.1
+		date < 1944.8.1
+		GER = { controls_province = 11506 }
+		GER = { controls_province = 9725 }
+
+		23 = { is_fully_controlled_by = GER }
+		24 = { is_fully_controlled_by = GER }
+		29 = { is_fully_controlled_by = GER }
+
+		OR = {
+			NOT = { 15 = { is_fully_controlled_by = GER } }
+			NOT = { 14 = { is_fully_controlled_by = GER } }
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = 11 #was 23 lower then GER_defend_homeland
+	}
 }
 
 GER_build_more_cas_to_invade_russia = {

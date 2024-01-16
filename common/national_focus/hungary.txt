@@ -2096,6 +2096,7 @@ focus_tree = {
 				SLO = {
 					exists = yes
 					NOT = { is_puppet_of = HUN }
+					NOT = { is_puppet_of = GER }
 				}
 				any_other_country = {
 					owns_state = 70

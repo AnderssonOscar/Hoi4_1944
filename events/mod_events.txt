@@ -728,7 +728,7 @@ country_event = {
 		FIN = {
 			add_to_variable = {
 				var = FIN_surrender_limit
-				value = 0.02
+				value = 0.01
 				tooltip = "will be less likely to sue for peace with the Soviets."
 			}
 		}
@@ -1592,7 +1592,7 @@ country_event = {
 	FIN = {
 		subtract_from_variable = {
 			var = FIN_surrender_limit
-			value = 0.04
+			value = 0.03
 		}
 	}
 
@@ -1938,12 +1938,11 @@ country_event = {
 			}
 		}
 
-		36 = {
+		35 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
 				province = {
-					id = 6241
-					id = 9363
+					id = 11456
 				}
 			}
 		}
@@ -1953,12 +1952,25 @@ country_event = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
 				province = {
-					id = 3512
-					id = 6469
-					id = 6570
+					id = 3547
+					id = 587
+					id = 3444
 					id = 529
 				}
 			}
+			add_building_construction = {
+					type = bunker
+					level = 1
+					province = 3512
+					instant_build = yes
+				}
+
+			add_building_construction = {
+					type = bunker
+					level = 1
+					province = 6469
+					instant_build = yes
+				}
 		}
 
 
@@ -1966,22 +1978,30 @@ country_event = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
 				province = {
-					id = 6444
-					id = 6488
-					id = 589
+					id = 11560
 				}
 			}
 		}
 
-		50 = {
+		42 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
 				province = {
-					id = 6568
-					id = 3530
-					id = 6542
-					id = 6712
-					id = 11640
+					id = 3558
+					id = 3423
+					id = 11494
+				}
+			}
+		}
+
+		28 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 549
+					id = 9503
+					id = 6529
+					id = 678
 				}
 			}
 		}

@@ -44,7 +44,7 @@ operations = {
 			#news_event = { id = mod.news.1 } # D-DAY dday 1944
 			GER = { 
 			15 = {
-				set_resistance = 62
+				set_resistance = 52
 			#	set_compliance = 47
 
 				damage_building = {
@@ -54,17 +54,17 @@ operations = {
 			}
 
 			14 = {
-				set_resistance = 64
+				set_resistance = 54
 				#set_compliance = 44
 			}
 
 			30 = {
-				set_resistance = 61
+				set_resistance = 51
 				#set_compliance = 41
 			}
 
 			16 = {
-				set_resistance = 47
+				set_resistance = 41
 			}
 
 
@@ -90,7 +90,7 @@ operations = {
 				
 				damage_building = {
 					type = rail_way
-					damage = 2
+					damage = 1
 				}
 
 			}
@@ -180,6 +180,8 @@ operations = {
 				#ITA = { controls_province = 6606 } #bologna
 				ITA = { controls_province = 6946 }
 				ITA = { controls_province = 9907 }
+				ITA = { controls_province = 11833 }
+				ITA = { controls_province = 3885 }
 
 				156 = { is_fully_controlled_by = USA }
 				115 = { is_fully_controlled_by = USA }
@@ -214,8 +216,8 @@ operations = {
 
 		targeted_modifier = {
 			tag = ITA
-			attack_bonus_against = 0.75
-			breakthrough_bonus_against = 0.75
+			attack_bonus_against = 0.65
+			breakthrough_bonus_against = 0.65
 		}
 		
 		complete_effect = {}
@@ -273,8 +275,8 @@ operation_cross_the_rhine= {
 
 		targeted_modifier = {
 			tag = GER
-			attack_bonus_against = 1.0
-			breakthrough_bonus_against = 1.0
+			attack_bonus_against = 0.75
+			breakthrough_bonus_against = 0.75
 		}
 		
 		complete_effect = {}
@@ -406,9 +408,9 @@ operation_cross_the_rhine= {
 					army_speed_factor = +0.2
 					#army_attack_factor = +1.25
 					#breakthrough_factor = +1.25
-					army_org_regain = +2.0
+					army_org_regain = +1.0
 					army_org_factor = +1.0
-					naval_invasion_penalty = -2.45
+					naval_invasion_penalty = -2.25
 					supply_consumption_factor = -1.0
 					#max_commander_army_group_size = +1.0
 			}
@@ -416,11 +418,21 @@ operation_cross_the_rhine= {
 			targeted_modifier = {
 				tag = GER
 				attack_bonus_against = 1.6
-				breakthrough_bonus_against = 1.75
+				breakthrough_bonus_against = 1.5
 			}
 
 			days_remove = 16
 			
+			cancel_trigger = {
+				OR = {
+					NOT = { GER = { controls_province = 9478 } }
+					NOT = { GER = { controls_province = 503 } }
+					NOT = { 16 = { is_fully_controlled_by = GER } }
+					NOT = { 29 = { is_fully_controlled_by = GER } }
+					NOT = { 24 = { is_fully_controlled_by = GER } }
+					NOT = { 33 = { is_fully_controlled_by = GER } }
+				}
+			}
 			
 			complete_effect = {
 				#set_state_province_controller = {controller = USA province = 11399} 

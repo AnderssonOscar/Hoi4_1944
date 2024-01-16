@@ -378,26 +378,32 @@ SOV_great_patriotic_war = {
 		
 		targeted_modifier = {
 			tag = GER
-			attack_bonus_against = 1.2
-			breakthrough_bonus_against = 1.1
+			attack_bonus_against = 1.1
+			breakthrough_bonus_against = 1.05
+		}
+
+		targeted_modifier = {
+			tag = CRO
+			attack_bonus_against = -0.25
+			breakthrough_bonus_against = -0.25
 		}
 
 		targeted_modifier = {
 			tag = BLR #ostland
-			attack_bonus_against = 1.2
-			breakthrough_bonus_against = 1.1
+			attack_bonus_against = 1.1
+			breakthrough_bonus_against = 1.0
 		}
 
 		targeted_modifier = {
 			tag = UKR #ukraine
-			attack_bonus_against = 1.2
-			breakthrough_bonus_against = 1.1
+			attack_bonus_against = 1.1
+			breakthrough_bonus_against = 1.0
 		}
 
 		targeted_modifier = {
 			tag = HUN
-			attack_bonus_against =  0.25
-			breakthrough_bonus_against =  0.2
+			attack_bonus_against =  0.35
+			breakthrough_bonus_against =  0.25
 		}
 
 		modifier = {

@@ -275,6 +275,30 @@ allies_enable_invasion_of_GER = {
 		value = -1000
 	}
 
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 241
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 59
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 99
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 58
+		value = -1000
+	}
+
 
 	ai_strategy = {
 		type = front_unit_request
@@ -956,6 +980,11 @@ allies_dont_invade_axis_allies = {
 		value = -500
 	}
 
+	ai_strategy = { #maybe
+		type = invade
+		id = "SWE"
+		value = -500
+	}
 }
 
 
