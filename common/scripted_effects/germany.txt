@@ -42,6 +42,45 @@ GER_start_effects = { # run in update daily
 			construction5 = 1
 			excavation4 = 1
 		}
+		
+		51 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 3444
+				}
+			}
+		}
+
+		35 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 11456
+				}
+			}
+		}
+
+		7 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 9498
+					id = 3211
+					id = 391
+				}
+			}
+		}
+
+		36 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 6241
+					id = 9363
+				}
+			}
+		}
 
 		813 = {
 			add_province_modifier = {
