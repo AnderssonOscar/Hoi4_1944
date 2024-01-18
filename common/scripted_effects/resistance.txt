@@ -76,6 +76,10 @@ Resistance_start_effects = {
 						NOT = { is_core_of = KOR }
 						NOT = { is_core_of = MAN }
 
+						NOT = { is_core_of = BLR }
+						#NOT = { is_core_of = POL }
+						NOT = { is_core_of = SOV }
+
 						OR = {
 							controller = { is_in_faction_with = JAP }
 							controller = { is_in_faction_with = GER }
@@ -112,7 +116,7 @@ Resistance_start_effects = {
 
 						OR = {
 							is_core_of = BLR
-							is_core_of = POL
+							#is_core_of = POL
 							is_core_of = SOV
 						}
 					}
@@ -124,7 +128,7 @@ Resistance_start_effects = {
 
 					set_resistance = 29
 					set_compliance = 26
-					add_resistance_target = 47
+					add_resistance_target = 44
 					
 					force_enable_resistance = {
 						clear = no
