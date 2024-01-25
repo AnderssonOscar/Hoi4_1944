@@ -13,7 +13,7 @@ HOL_setup_puppet = {
 					start_civil_war = {
 						ideology = democratic
 						#size = 0
-						states = { 309 }
+						states = { 309 695 }
 
 						ENG = {add_to_faction = PREV}
 						

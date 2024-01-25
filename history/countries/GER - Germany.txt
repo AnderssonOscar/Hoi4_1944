@@ -465,6 +465,7 @@ set_war_support = 0.3
 			dispersed_industry5 = 1
 
 			#1944
+			motorized_rocket_unit = 1
 			experimental_rockets = 1
 			rocket_engines = 1
 			jet_engines = 1
@@ -2460,9 +2461,9 @@ if = {
 		set_stability = 0.93
 		set_war_support = 0.4
 		add_command_power = 200
-		army_experience = 95
-		navy_experience = 125	
-		air_experience = 65
+		army_experience = 135
+		navy_experience = 145	
+		air_experience = 95
 
 		add_political_power = 650
 
@@ -2509,12 +2510,17 @@ if = {
 	
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 11000
+		amount = 12000
+	}
+
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_0
+		amount = 10000
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 5100
+		amount = 9100
 		producer = SOV
 	}
 
@@ -2526,35 +2532,45 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 11000
+		amount = 19000
 		producer = FRA
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 7000
+		amount = 9000
 		producer = POL
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 11000
+		amount = 14000
 		producer = CZE
 	}
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 1110
+        amount = 1910
     }
 
 	add_equipment_to_stockpile = {
         type = artillery_equipment_2
-        amount = 210
+        amount = 280
     }
 
 	add_equipment_to_stockpile = {
         type = artillery_equipment_3
         amount = 315
+    }
+
+	add_equipment_to_stockpile = {
+        type = rocket_artillery_equipment_1
+        amount = 90
+    }
+
+	add_equipment_to_stockpile = {
+        type = rocket_artillery_equipment_2
+        amount = 110
     }
 
 	add_equipment_to_stockpile = {
@@ -2565,6 +2581,11 @@ if = {
 	add_equipment_to_stockpile = {
         type = anti_tank_equipment_2
         amount = 330
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_tank_equipment_1
+        amount = 230
     }
 
 	add_equipment_to_stockpile = {
@@ -2579,8 +2600,29 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 4100
+        amount = 4300
     }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_0
+        amount = 1490
+    }
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+
+		add_equipment_to_stockpile = {
+			type = armored_car_equipment_1
+			amount = 86
+		}
+
+		add_equipment_to_stockpile = {
+			type = armored_car_equipment_2
+			amount = 50
+		}
+	}
 
 	if = {
 		limit = {
@@ -2630,7 +2672,7 @@ if = {
 
 add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 20
+        amount = 50
     }
 
 	add_equipment_to_stockpile = {
