@@ -208,6 +208,10 @@ set_war_support = 0.3
 			target = GRE
 			autonomous_state = autonomy_integrated_puppet
 		}
+		set_autonomy = {
+			target = HOL
+			autonomous_state = autonomy_integrated_puppet
+		}
 		
 		#set_autonomy = {
 		#	target = HOL
@@ -715,6 +719,7 @@ set_popularities = {
 	add_to_faction = FIN
 	add_to_faction = SER
 	add_to_faction = ALB
+	add_to_faction = HOL
 
 		declare_war_on = { target = SOV type = annex_everything }
 		declare_war_on = {
@@ -1523,6 +1528,7 @@ if = {
 		create_equipment_variant = {
 			name = "Jagdpanzer 38"
 			type = light_tank_destroyer_chassis_2
+			design_team = mio:GER_daimler_benz_organization
 			parent_version = 0
 			modules = {
 				main_armament_slot = tank_high_velocity_cannon_2
@@ -1537,7 +1543,7 @@ if = {
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 9
-				tank_nsb_armor_upgrade = 10
+				tank_nsb_armor_upgrade = 8
 			}
 			
 			icon = "GFX_CZE_basic_main_tank"
@@ -1665,7 +1671,7 @@ if = {
 			create_equipment_variant = {
 				name = "Wespe"
 				type = light_tank_artillery_chassis_2
-				design_team = mio:GER_daimler_benz_organization
+				design_team = mio:GER_henschel_organization
 				parent_version = 0
 				modules = {
 					main_armament_slot = tank_medium_howitzer
@@ -1679,10 +1685,9 @@ if = {
 					special_type_slot_4 = empty
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 4
+					tank_nsb_engine_upgrade = 7
 					tank_nsb_armor_upgrade = 0
 				}
-			#	icon = "GFX_GER_light_CBB"
 			}
 
 			create_equipment_variant = {
@@ -2504,7 +2509,7 @@ if = {
 	
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 12000
+		amount = 11000
 	}
 
 	add_equipment_to_stockpile = {
@@ -2521,7 +2526,7 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 14000
+		amount = 11000
 		producer = FRA
 	}
 
@@ -2539,7 +2544,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 1150
+        amount = 1110
     }
 
 	add_equipment_to_stockpile = {
@@ -2549,22 +2554,22 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = artillery_equipment_3
-        amount = 325
+        amount = 315
     }
 
 	add_equipment_to_stockpile = {
         type = anti_air_equipment_1
-        amount = 410
+        amount = 440
     }
 
 	add_equipment_to_stockpile = {
         type = anti_tank_equipment_2
-        amount = 200
+        amount = 330
     }
 
 	add_equipment_to_stockpile = {
         type = mechanized_equipment_1
-        amount = 510
+        amount = 610
     }
 
 	add_equipment_to_stockpile = {

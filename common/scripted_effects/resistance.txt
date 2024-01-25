@@ -21,8 +21,8 @@ Resistance_start_effects = {
 				start_resistance = is_core_of
 			}
 
-			set_resistance = 9
-			set_compliance = 57
+			set_resistance = 6
+			set_compliance = 94
 			set_garrison_strength = 1.0
 		}
 

@@ -765,8 +765,43 @@ if = {
 
 1943.12.30 = {
 
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+		#upgrade_intelligence_agency = upgrade_army_department
+		#upgrade_intelligence_agency = upgrade_airforce_department
+			
+		upgrade_intelligence_agency = upgrade_passive_defense
+		upgrade_intelligence_agency = upgrade_passive_defense
+		#upgrade_intelligence_agency = upgrade_passive_defense
+		#upgrade_intelligence_agency = upgrade_anti_partisan
+
+		upgrade_intelligence_agency = upgrade_invisible_ink
+		upgrade_intelligence_agency = upgrade_suicide_pills
+
+		upgrade_intelligence_agency = upgrade_training_centers
+		upgrade_intelligence_agency = upgrade_commando_training
+		upgrade_intelligence_agency = upgrade_interrogation_techniques
+
+		upgrade_intelligence_agency = upgrade_form_department
+		upgrade_intelligence_agency = upgrade_decryption_boost #radio
+		#upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		#upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		#upgrade_intelligence_agency = upgrade_decryption_boost_2 #machine decryption
+		upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		#upgrade_intelligence_agency = upgrade_crypto_strength #cypher school
+		#upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+		#upgrade_intelligence_agency = upgrade_crypto_strength_2 #machine encryption
+	}
+
+	army_experience = 80
+	navy_experience = 20	
+	air_experience = 25
+
 	#set_stability = 0.97 
-	set_war_support = 0.44
+	set_war_support = 0.40
 
 	complete_national_focus = SPA_national_recovery
 	complete_national_focus = SPA_fascist_economic_aid
@@ -846,10 +881,10 @@ if = {
 
 	
 	set_popularities = {
-		neutrality = 20
-		fascism = 55
+		neutrality = 10
+		fascism = 75
 		communism = 10
-		democratic = 15
+		democratic = 5
 	}
 
 
@@ -874,6 +909,8 @@ if = {
 		electronic_mechanical_engineering = 1
 		radio = 1
 		radio_detection = 1
+		decimetric_radar = 1
+		improved_decimetric_radar = 1
 
 		#industry
 		excavation1 = 1
@@ -896,13 +933,12 @@ if = {
 		construction1 = 1
 		construction2 = 1
 		construction3 = 1
+		construction4 = 1
 
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
-
-		early_fighter = 1
-		fighter1 = 1
+		dispersed_industry4 = 1
 
 		support_weapons = 1
 		support_weapons2 = 1
@@ -917,10 +953,12 @@ if = {
 		gw_artillery = 1
 		artillery1 = 1
 		artillery2 = 1
+		artillery3 = 1
 
 		interwar_antiair = 1
 		antiair1 = 1
 		antiair2 = 1
+		antiair3 = 1
 
 		interwar_antitank = 1
 		antitank1 = 1
@@ -962,6 +1000,42 @@ if = {
 		}
 	}
 
+
+	if = {
+		limit = { has_dlc = "Man the Guns" } 
+		set_technology = {
+
+			basic_cruiser_armor_scheme = 1
+			basic_heavy_armor_scheme = 1
+
+			sonar = 1
+			smoke_generator = 1
+			damage_control_1 = 1
+			fire_control_methods_1 = 1
+
+			basic_light_battery = 1
+			basic_light_shell = 1
+	
+			basic_medium_battery = 1
+			basic_medium_shell = 1
+	
+			basic_heavy_battery = 1
+			basic_heavy_shell = 1
+
+			#improved_ship_hull_submarine = 1
+			improved_ship_hull_light = 1
+
+			improved_ship_torpedo_launcher = 1
+			improved_ship_hull_cruiser = 1
+
+			improved_airplane_launcher = 1
+			magnetic_detonator = 1
+
+			basic_fire_control_system = 1
+
+			improved_depth_charges = 1
+		}
+	}
 
 	
 	if = {

@@ -858,6 +858,97 @@ minor_allies_dont_invade_JAP = {
 
 
 
+dday_failed_take_norway = {
+	allowed = { 
+		OR = {
+			tag = ENG
+			tag = CAN
+			tag = FRA
+			tag = RAJ
+			tag = NZL
+			tag = BRA
+			tag = SAF
+			tag = MEX
+			tag = HON
+			tag = COL
+			tag = ELS
+			tag = NIC
+			tag = COS
+			tag = CUB
+			tag = DOM
+			tag = PAN
+			tag = ECU
+			tag = PRU
+			tag = BOL
+			tag = CHL
+			tag = HAI
+			tag = TUR
+		}
+	}
+
+	enable = {
+		date > 1944.6.25
+		date < 1945.3.1
+		has_war_with = GER
+		has_global_flag = ALL_DDAY_FAILED
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "D01"
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "D02"
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "D03"
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "D04"
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "D05"
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "D06"
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 142
+		value = 10
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 110
+		value = 15
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 922
+		value = 10
+	}
+}
 
 
 allies_dont_invade_axis_allies = {
@@ -892,18 +983,13 @@ allies_dont_invade_axis_allies = {
 	}
 
 	enable = {
-		date > 1943.12.30
 		has_war_with = GER
+		date > 1943.12.30
 		date < 1945.7.1
+		NOT = { has_global_flag = ALL_DDAY_FAILED }
 	}
 
 	abort_when_not_enabled = yes
-
-	#ai_strategy = { #2022-12-03
-	#	type = invade
-	#	id = "ITA"
-	#	value = -500
-	#}
 
 	ai_strategy = {
 		type = invasion_unit_request  

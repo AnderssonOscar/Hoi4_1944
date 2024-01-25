@@ -524,6 +524,15 @@ recruit_character = HUN_franz_friedrich
 		}
 	}
 
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		set_technology = {
+			armored_car1 = 1
+			armored_car2 = 1
+		}
+	}
 
 
 	if = {

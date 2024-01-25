@@ -56,7 +56,8 @@ state={
 		1943.12.30 = {
 			buildings = {
 				4109 = {
-					coastal_bunker = 6
+					coastal_bunker = 4
+					fuel_silo = 1
 				}
 			}
 		}

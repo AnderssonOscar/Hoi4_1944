@@ -30,6 +30,12 @@ state={
 			controller = SLO
 			add_core_of = SLO
 		}
+
+		1943.12.30 = {
+			buildings = {
+				fuel_silo = 1
+			}
+		}
 	}
 
 	provinces={

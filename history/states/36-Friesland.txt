@@ -28,11 +28,11 @@ state={
 		}
 
 		1943.12.1 = {
-			owner = GER
+			#owner = GER
 			#controller = GER
 
 		buildings = {
-			industrial_complex = 2
+			industrial_complex = 3
 			arms_factory = 2
 			synthetic_refinery = 1
 			9363 = {

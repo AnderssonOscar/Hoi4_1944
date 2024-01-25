@@ -53,8 +53,8 @@ GER_lack_of_army_NCOs_desc:0 "The losses of our experienced Non-Commissioned Off
 FRA_move_capital_back:0 "Move our capital back to Paris"
 FRA_move_capital_back_desc:0 "We can finally come home."
 
-GER_gottedamerung:0 "Gottedamerung"
-GER_gottedamerung_desc:0 "Gottedamerung"
+GER_gottedamerung:0 "Götterdämmerung"
+GER_gottedamerung_desc:0 "Götterdämmerung"
 GER_gottedamerung_tooltip:0 ""
 
 GER_train_more_ncos:0 "New NCO Training Schools"

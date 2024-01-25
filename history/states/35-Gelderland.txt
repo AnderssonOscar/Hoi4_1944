@@ -19,7 +19,7 @@ state={
 			11562 1 
 		}
 		1943.12.1 = {
-			owner = GER
+			#owner = GER
 			#controller = GER
 
 			buildings = {

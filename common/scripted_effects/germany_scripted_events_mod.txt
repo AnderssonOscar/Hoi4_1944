@@ -35,6 +35,33 @@ GER_scripted_events_start_effects = {
 		}
 	}
 
+	35 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 11456
+			}
+		}
+	}
+
+	7 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 9498
+			}
+		}
+	}
+
+	51 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 3444
+			}
+		}
+	}
+
 	# 15 = {
 	# 	add_province_modifier = {
 	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
@@ -441,6 +468,7 @@ GER_flood_benelux = {
 	if = {
 		limit = { 
 			original_tag = GER
+			HOL = { is_ai = yes }
 
 			OR = {
 				has_war_with = FRA

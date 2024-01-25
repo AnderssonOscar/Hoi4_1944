@@ -1692,12 +1692,7 @@ if = {
 						enemy = JAP
 					}
 				}
-			HOL = {
-					add_to_war = {
-						targeted_alliance = USA
-						enemy = JAP
-					}
-				}
+
 			FRA = {
 					add_to_war = {
 						targeted_alliance = USA

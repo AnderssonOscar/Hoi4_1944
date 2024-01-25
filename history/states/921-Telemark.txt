@@ -18,6 +18,9 @@ state = {
 		1943.12.30 = {
 			owner = GER
 			controller = GER
+			buildings = {
+				fuel_silo = 1
+			}
 		}
 	}
 	provinces={

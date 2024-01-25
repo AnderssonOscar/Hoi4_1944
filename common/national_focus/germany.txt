@@ -9632,7 +9632,7 @@ focus_tree = {
 		icon = GFX_focus_generic_fascist_troops
 		x = 12
 		y = 9
-		cost = 10
+		cost = 8
 		available_if_capitulated = no
 		prerequisite = { focus = GER_gottedamerung }
 		
@@ -9666,7 +9666,7 @@ focus_tree = {
 		icon = GFX_focus_generic_cas_aircraft
 		x = 20
 		y = 9
-		cost = 10
+		cost = 8
 		available_if_capitulated = no
 		prerequisite = { focus = GER_gottedamerung }
 		
@@ -10613,6 +10613,11 @@ focus_tree = {
 			64 = { #berlin
 
 		hidden_effect = {
+
+			if = {
+				limit = {
+					 GER = { is_ai = no }
+				 }
 			add_province_modifier = {
 				static_modifiers = {GER_festung_static_modifier}
 				province = {
@@ -10621,18 +10626,17 @@ focus_tree = {
 					id = 13274
 					id = 13275
 					id = 13276
+					}
 				}
 			}
 		}
 
 				add_building_construction = {
 						type = bunker
-						level = 8
+						level = 7
 						province = 6521
 						instant_build = yes
 					}
-
-
 				}
 			}
 
@@ -10676,7 +10680,7 @@ focus_tree = {
 				add_building_construction = {
 						type = bunker
 						level = 8
-						province = 13274
+						province = 3473
 						instant_build = yes
 					}
 				}

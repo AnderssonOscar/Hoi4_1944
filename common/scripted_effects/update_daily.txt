@@ -3,6 +3,8 @@ MOD_start_update = {
 	GER_scripted_events_start_effects = yes
 	resistance_scripted_events_start_effects = yes
 	JAP_scripted_events_start_effects = yes
+	HOL_setup_puppet = yes
+	HOL_setup_resistance = YES
 }
 
 MOD_daily_update = {
@@ -28,4 +30,6 @@ MOD_daily_update = {
 
 
 	JAP_start_effects = yes
+
+	ALL_DDAY_FAILED = yes
 }

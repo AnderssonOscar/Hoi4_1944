@@ -287,13 +287,13 @@ if = {
 	dismantle_faction = yes
 	JAP = { add_to_faction = SIA }
 
-
+	add_political_power = 800
 	army_experience = 20
 	navy_experience = 5	
 	air_experience = 0
 
-	set_stability = 0.54
-	set_war_support = -0.18
+	set_stability = 0.58
+	set_war_support = -0.16
 	#add_manpower = 58000
 	
 	if = {
@@ -354,7 +354,7 @@ if = {
 		infantry_weapons = 1
 		infantry_weapons1 = 1
 
-		#improved_infantry_weapons = 1
+		improved_infantry_weapons = 1
 
 		#advanced_infantry_weapons = 1
 
@@ -394,6 +394,7 @@ if = {
 		#tech_logistics_company2 = 1
 		
 		basic_train = 1
+		tech_trucks = 1
 	}
 
 	if = {

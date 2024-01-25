@@ -1824,7 +1824,11 @@ if = {
 
 
 1943.12.30 = {
-	
+
+	set_global_flag = flag_trotsky_dead
+	MEX = {
+		retire_character = MEX_leon_trotsky
+	}
 	SOV_andrey_vlasov = { retire = yes }
 
 	set_variable = { SOV_offensive_start_day = global.num_days }

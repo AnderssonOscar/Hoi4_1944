@@ -14,6 +14,8 @@ scandy_is_not_for_you = {
 			original_tag = SER
 			original_tag = BUL
 			original_tag = GRE
+			tag = BLR
+			tag = UKR
 		}
 	}
 
@@ -128,6 +130,9 @@ axis_dont_invade_when_defensive = {
 				tag = CRO
 				tag = ALB
 				tag = HUN
+				tag = HOL
+				tag = BLR
+				tag = UKR
 			}
 	}
 
@@ -187,5 +192,48 @@ axis_dont_invade_when_defensive = {
 		type = invasion_unit_request  
 		country_trigger = { tag = SOV }
 		value = -500
+	}
+}
+
+AXIS_block_VEN_alliance = {
+	allowed = { 
+		OR = {
+			tag = BUL
+			tag = ROM
+			tag = FIN
+			tag = ITA
+			tag = GER
+			tag = GRE
+			tag = CRO
+			tag = ALB
+			tag = SER
+			tag = HUN
+			tag = HOL
+			tag = MAN
+			tag = JAP
+			tag = SIA
+			tag = MEN
+			tag = SLO
+			tag = BLR
+			tag = UKR
+			tag = D01
+			tag = D02
+			tag = D03
+			tag = D04
+			tag = D05
+			tag = D06
+			tag = D07
+		}
+	 }
+	 
+	enable = {
+		date > 1944.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "VEN"
+		value = -1000
 	}
 }

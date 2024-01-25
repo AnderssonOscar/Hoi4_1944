@@ -29,6 +29,9 @@ state={
 		1943.12.30 = {
 			owner = GER
 			controller = GER
+			buildings = {
+				radar_station = 2
+			}
 		}
 		
 		victory_points = {
