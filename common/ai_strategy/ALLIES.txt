@@ -64,6 +64,7 @@ allies_dont_just_focus_jap = { #if dday fails, - this needs - allies_dont_spam_i
 			}
 		enable = {
 				date > 1944.6.6
+				date < 1944.7.1
 				has_war_with = GER
 				16 = {is_fully_controlled_by = GER} #paris
 

@@ -2520,7 +2520,7 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 9100
+		amount = 7100
 		producer = SOV
 	}
 
@@ -2532,7 +2532,7 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 19000
+		amount = 18000
 		producer = FRA
 	}
 
@@ -2600,7 +2600,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 4300
+        amount = 3300
     }
 
 	add_equipment_to_stockpile = {

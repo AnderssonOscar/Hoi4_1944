@@ -2411,7 +2411,7 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = support_equipment_1
-			amount = 735
+			amount = 935
 		}
 
 		add_equipment_to_stockpile = {
@@ -2421,12 +2421,12 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_1
-			amount = 670
+			amount = 70
 		}
 
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_1
-			amount = 470
+			amount = 430
 		}
 
 		add_equipment_to_stockpile = {

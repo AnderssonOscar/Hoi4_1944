@@ -21,11 +21,11 @@ air_wings = {
 			medium_plane_airframe_1 =  { owner = "JAP" version_name = "G3M2" amount = 100 } 
 
 			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
-			small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
+			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 	}
 	597 = {															#  Jinan
 			# 4 Hikodan

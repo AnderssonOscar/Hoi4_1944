@@ -216,7 +216,7 @@ operations = {
 
 		targeted_modifier = {
 			tag = ITA
-			attack_bonus_against = 0.40
+			attack_bonus_against = 0.5
 			breakthrough_bonus_against = 0.40
 		}
 		
@@ -410,7 +410,7 @@ operation_cross_the_rhine= {
 					#breakthrough_factor = +1.25
 					army_org_regain = +1.0
 					army_org_factor = +1.0
-					naval_invasion_penalty = -2.25
+					naval_invasion_penalty = -2.5
 					supply_consumption_factor = -1.0
 					#max_commander_army_group_size = +1.0
 			}
@@ -418,7 +418,7 @@ operation_cross_the_rhine= {
 			targeted_modifier = {
 				tag = GER
 				attack_bonus_against = 1.6
-				breakthrough_bonus_against = 1.5
+				breakthrough_bonus_against = 1.6
 			}
 
 			days_remove = 16

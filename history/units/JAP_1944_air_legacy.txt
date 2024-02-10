@@ -15,8 +15,8 @@ air_wings = {
 		fighter_equipment_1 = { owner = "JAP" amount = 72 }			# 3 Hiko Rentai -- Nakajima Ki-27
 		CAS_equipment_1 =  { owner = "JAP" amount = 54 }			# 5 Hiko Rentai -- Ki-30/Ki-32
 		tac_bomber_equipment_1 =  { owner = "JAP" amount = 54 }		# 9 Hiko Rentai -- Mitsubishi Ki-21
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
-		fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		#fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
+		#fighter_equipment_2 = { owner = "JAP"  version_name = "Mitsubishi A6M Zero" amount = 250 }
 	}
 	597 = {															#  Jinan
 		# 4 Hikodan

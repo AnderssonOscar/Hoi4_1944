@@ -49,6 +49,7 @@ political_actions = {
 		}
 
 		visible = {
+			date < 1947.1.1
 			date > 1944.10.1 #1944.11.15
 			has_capitulated = no
 
@@ -177,6 +178,7 @@ political_actions = {
 	}
 
 		visible = {
+			date < 1947.1.1
 			date > 1944.1.1
 			NOT = {has_war_with = GER}
 			has_capitulated = no
