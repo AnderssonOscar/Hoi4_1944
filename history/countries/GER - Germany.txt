@@ -2454,7 +2454,7 @@ if = {
 		add_named_threat = { threat = 50 name = 1939_bookmark_threat }
 
 		#set_fuel_ratio = 0.35 # 1944 was 0.8 dosent seems to work
-		set_fuel = 271812
+		set_fuel = 231812
 
 
 		set_convoys = 110

@@ -21,8 +21,8 @@ state={
 			buildings = {
 				radar_station = 1
 				anti_air_building = 1
-				industrial_complex = 5
-				arms_factory = 6
+				industrial_complex = 3
+				arms_factory = 4
 			}
 		}
 	}
