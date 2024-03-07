@@ -10502,8 +10502,8 @@ focus_tree = {
 						static_modifiers = {GER_festung_static_modifier}
 						#add_dynamic_modifier = { modifier = GER_festung_konigsberg_modifier scope = GER } 
 						province = {
-							id = 13278
-							id = 13279
+							id = 13367
+							id = 13366
 							id = 6332
 							id = 11265
 						}
@@ -10512,48 +10512,48 @@ focus_tree = {
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 13278 }	}
+	if = {	limit = {	GER = { controls_province = 13368 }	}
 		763 = { 
 
 				add_building_construction = { #east
 					type = bunker
 					level = 6
-					province = 13278
+					province = 13368
 					instant_build = yes
 				}
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 13279 }	}
+	if = {	limit = {	GER = { controls_province = 13367 }	}
 		763 = { 
 				add_building_construction = { #south
 					type = bunker
 					level = 6
-					province = 13279
+					province = 13367
+					instant_build = yes
+				}
+			}
+		}
+
+	if = {	limit = {	GER = { controls_province = 13366 }	}
+		763 = {
+
+				add_building_construction = { #north
+					type = bunker
+					level = 6
+					province = 13366
 					instant_build = yes
 				}
 			}
 		}
 
 	if = {	limit = {	GER = { controls_province = 11265 }	}
-		763 = {
-
-				add_building_construction = { #north
-					type = bunker
-					level = 6
-					province = 11265
-					instant_build = yes
-				}
-			}
-		}
-
-	if = {	limit = {	GER = { controls_province = 13279 }	}
 		763 = { 
 
 				add_building_construction = { #north
 					type = bunker
 					level = 6
-					province = 13279
+					province = 11265
 					instant_build = yes
 				}
 			}
@@ -10622,10 +10622,10 @@ focus_tree = {
 				static_modifiers = {GER_festung_static_modifier}
 				province = {
 					id = 6521
-					id = 13273
-					id = 13274
-					id = 13275
-					id = 13276
+					id = 13365
+					id = 13364
+					id = 13363
+					id = 13369
 					}
 				}
 			}
@@ -10640,34 +10640,34 @@ focus_tree = {
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13273 }	}
+		if = {	limit = {	GER = { controls_province = 13365 }	}
 			64 = { #outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 4
-						province = 13273
+						province = 13365
 						instant_build = yes
 					}
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13276 }	}
+		if = {	limit = {	GER = { controls_province = 13364 }	}
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 4
-						province = 13276
+						province = 13364
 						instant_build = yes
 					}
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13275 }	}
+		if = {	limit = {	GER = { controls_province = 13369 }	}
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 4
-						province = 13275
+						province = 13369
 						instant_build = yes
 					}
 				}

@@ -206,11 +206,11 @@ news_event = {
 		remove_province_modifier = {
 			static_modifiers = {GER_festung_static_modifier}
 			province = {
-				id = 13278
-				id = 13279
+				id = 13367
+				id = 13366
 				id = 6332
 				id = 11265
-			}
+				}
 			}
 		}
 	}
