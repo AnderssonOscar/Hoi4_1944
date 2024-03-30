@@ -484,7 +484,7 @@ set_technology = { #VANILLA & DLC
 
 
 1943.12.30 = {
-
+	set_cosmetic_tag = BUL_axis_1944
 	oob = "BUL_1944_nsb"
 
 	add_political_power = 2389

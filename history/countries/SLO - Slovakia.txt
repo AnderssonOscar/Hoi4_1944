@@ -136,6 +136,8 @@ set_popularities = {
 
 
 1943.12.30 = {
+	set_cosmetic_tag = SLO_fascism_1944
+
 	add_political_power = 2289
 	add_command_power = 200
 

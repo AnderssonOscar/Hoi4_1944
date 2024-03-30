@@ -426,6 +426,8 @@ if = {
 
 1943.12.30 = {
 
+	set_cosmetic_tag = ROM_fascism_1944
+
 	army_experience = 155 #245
 	navy_experience = 25	
 	air_experience = 175

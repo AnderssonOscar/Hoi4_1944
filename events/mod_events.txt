@@ -1650,6 +1650,7 @@ country_event = {
 	hidden_effect = {
 
 		HUN = {
+			set_cosmetic_tag = HUN_axis_puppet_1_1944
 			set_politics = {
 				ruling_party = fascism
 				last_election = "1944.3.1"
@@ -1773,6 +1774,7 @@ country_event = {
 			}
 
 		HUN = {
+				set_cosmetic_tag = HUN_axis_puppet_2_1944
 
 			if = {
 				limit = { # should be used for oil resource transfer

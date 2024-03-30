@@ -1824,6 +1824,7 @@ if = {
 
 
 1943.12.30 = {
+	set_cosmetic_tag = SOV_1944
 
 	set_global_flag = flag_trotsky_dead
 	MEX = {

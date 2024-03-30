@@ -803,6 +803,8 @@ if = {
 
 1943.12.30 = {
 
+	set_cosmetic_tag = SWE_1944
+
 	#complete_national_focus = doctrine_effort
 	#unlock_national_focus = political_effort
 	#complete_national_focus = fighter_focus

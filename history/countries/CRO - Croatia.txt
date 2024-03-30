@@ -149,7 +149,7 @@ add_country_leader_role = { #This replaces the commented script below - fixing a
 
 
 1943.12.30 = {
-
+	set_cosmetic_tag = CRO_fascism_1944
 	
 	oob = "CRO_1944"
 

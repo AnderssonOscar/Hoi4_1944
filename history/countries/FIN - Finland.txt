@@ -789,6 +789,8 @@ if = {
 
 1943.12.30 = {
 
+	set_cosmetic_tag = FIN_axis_1944
+
 	#complete_national_focus = doctrine_effort
 	#complete_national_focus = political_effort
 
