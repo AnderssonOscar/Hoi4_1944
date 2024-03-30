@@ -435,6 +435,8 @@ country_event = {
 			 #SOV = { transfer_state = PREV }
 		#}
 
+		ROM = { set_cosmetic_tag = ROM_fascism_puppet_1944 }
+
 		GER = {
 			set_autonomy = { target = ROM autonomy_state = autonomy_integrated_puppet end_wars = no }
 		}

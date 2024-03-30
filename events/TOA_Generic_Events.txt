@@ -100,11 +100,11 @@ country_event = {
 
 		drop_cosmetic_tag = yes
 		complete_national_focus = URG_colorado_victory
-		news_event = { 
-			id = south_american_news.2 
-			days = 2
-			random_days = 5
-		}
+		# news_event = { 
+		# 	id = south_american_news.2 
+		# 	days = 2
+		# 	random_days = 5
+		# }
 		set_politics = {
 			ruling_party = democratic
 		    elections_allowed = yes
@@ -1012,7 +1012,7 @@ country_event = {
 		has_dlc = "Trial of Allegiance"
 	}
 
-	#mean_time_to_happen = { days = 2 }
+	mean_time_to_happen = { days = 2 }
 
 	hidden = no
 
@@ -1044,11 +1044,11 @@ country_event = {
 			CHL_anarchic_society_level_up = yes
 		}
 
-		news_event = { 
-			id = south_american_news.13 
-			days = 3
-			random_days = 6
-		}
+		# news_event = { 
+		# 	id = south_american_news.13 
+		# 	days = 3
+		# 	random_days = 6
+		# }
 	}
 
 	option = {
@@ -1076,11 +1076,11 @@ country_event = {
 			CHL_anarchic_society_level_up = yes
 		}
 
-		news_event = { 
-			id = south_american_news.13 
-			days = 3
-			random_days = 6
-		}
+		# news_event = { 
+		# 	id = south_american_news.13 
+		# 	days = 3
+		# 	random_days = 6
+		# }
 
 	}
 
@@ -1766,11 +1766,11 @@ country_event = {
 			retire_character = PAR_rafael_franco
 		}
 
-		news_event = { 
-			id = south_american_news.14 
-			days = 3
-			random_days = 6
-		}
+		# news_event = { 
+		# 	id = south_american_news.14 
+		# 	days = 3
+		# 	random_days = 6
+		# }
 	}
 
 	# Crush their revolt! CM: Triggered via focus now

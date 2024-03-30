@@ -118,6 +118,9 @@ war_measures = {
 			FIN = { delete_units = { division_template = "Erillinen Prikaati" disband = yes } }
 
 		FIN = {
+
+			drop_cosmetic_tag = yes
+
 			add_to_war = {
 				targeted_alliance = ENG
 				enemy = GER

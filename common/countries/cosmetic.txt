@@ -7,8 +7,19 @@ GRE_fascism = {
 	color = rgb { 65 130 185 }
 	color_ui = rgb { 122 145 93 }
 }
+
 ROM_fascism_1944 = {
 	color = rgb { 183 171 76 }
+	color_ui = rgb { 122 145 93 }
+}
+
+ROM_fascism_puppet_1944 = {
+	color = rgb { 120 120 90 }
+	color_ui = rgb { 122 145 93 }
+}
+
+ROM_communism_1944 = {
+	color = rgb { 130 32 17 }
 	color_ui = rgb { 122 145 93 }
 }
 
@@ -23,12 +34,12 @@ HUN_axis_1944 = {
 }
 
 HUN_axis_puppet_1_1944 = {
-	color = rgb { 190 100 80 }
+	color = rgb { 160 115 105 }
 	color_ui = rgb { 122 145 93 }
 }
 
 HUN_axis_puppet_2_1944 = {
-	color = rgb { 175 90 75 }
+	color = rgb { 120 90 85 }
 	color_ui = rgb { 122 145 93 }
 }
 
@@ -47,6 +58,11 @@ BUL_axis_1944 = {
 	color_ui = rgb { 122 145 93 }
 }
 
+BUL_communism = {
+	color = rgb { 105 50 50 }
+	color_ui = rgb { 122 145 93 }
+}
+
 ITA_rsi = {
 	color = rgb { 10 65 20 }
 	color_ui = rgb { 10 80 20 }
@@ -58,7 +74,7 @@ SWE_1944 = {
 }
 
 SER_fascism_1944 = {
-	color = rgb { 85 74 100 }
+	color = rgb { 70 65 100 }
 	color_ui = rgb { 122 145 93 }
 }
 

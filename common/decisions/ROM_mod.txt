@@ -28,7 +28,7 @@ war_measures = {
 					original_tag = SOV
 				}
 			}
-		}
+		} 
 
 		cancel_if_not_visible = yes
 
@@ -194,6 +194,8 @@ war_measures = {
 				fascism = 20
 				communism = 40
 			}
+
+			set_cosmetic_tag = ROM_communism_1944
 
 			add_timed_idea = { idea = mod_switched_side days = 60 }
 
