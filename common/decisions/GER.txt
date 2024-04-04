@@ -542,7 +542,7 @@ GER_reichskommissariats = {
 
 						 set_cosmetic_tag = NOR_REICH_fascism
 
-						add_manpower = 60000
+						add_manpower = 93000
 						add_political_power = 1500
 
 						add_equipment_to_stockpile = {
@@ -558,13 +558,19 @@ GER_reichskommissariats = {
 	
 						add_equipment_to_stockpile = {
 							type = infantry_equipment_1
-							amount = 8000
+							amount = 14000
 							producer = NOR
 						}
 
 						add_equipment_to_stockpile = {
+							type = motorized_equipment_0
+							amount = 196
+							producer = USA
+						}
+
+						add_equipment_to_stockpile = {
 							type = support_equipment_1
-							amount = 120
+							amount = 170
 						}
 			
 						add_equipment_to_stockpile = {
@@ -638,8 +644,13 @@ GER_reichskommissariats = {
 					}
 
 					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 135
+					}
+
+					add_equipment_to_stockpile = {
 						type = infantry_equipment_1
-						amount = 8000
+						amount = 18000
 						producer = NOR
 					}
 

@@ -4,7 +4,7 @@ state={
 	name="STATE_59"
 	manpower = 2438286
 	resources={
-		oil=2 # was: 4
+		oil=3 # was: 4
 	}
 	
 	state_category = large_city
@@ -41,7 +41,7 @@ state={
 		1943.12.30 = {
 			buildings = {
 				anti_air_building = 2
-				synthetic_refinery = 1
+				synthetic_refinery = 2
 				6325 = {
 					naval_base = 4
 					coastal_bunker = 4

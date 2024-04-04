@@ -123,8 +123,8 @@ set_convoys = 15
 	}
 
 	add_equipment_to_stockpile = {
-        type = infantry_equipment
-        amount = 250
+        type = infantry_equipment_0
+        amount = 1850
     }
 
 	add_equipment_to_stockpile = {

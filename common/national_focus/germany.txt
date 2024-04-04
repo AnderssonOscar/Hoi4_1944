@@ -9632,7 +9632,7 @@ focus_tree = {
 		icon = GFX_focus_generic_fascist_troops
 		x = 12
 		y = 9
-		cost = 8
+		cost = 7
 		available_if_capitulated = no
 		prerequisite = { focus = GER_gottedamerung }
 		
@@ -9666,7 +9666,7 @@ focus_tree = {
 		icon = GFX_focus_generic_cas_aircraft
 		x = 20
 		y = 9
-		cost = 8
+		cost = 7
 		available_if_capitulated = no
 		prerequisite = { focus = GER_gottedamerung }
 		

@@ -1087,7 +1087,7 @@ technologies = {
 
 		}
 
-		research_cost = 2
+		research_cost = 1
 		start_year = 1944
 
 		folder = {

@@ -2455,15 +2455,15 @@ if = {
 		add_named_threat = { threat = 50 name = 1939_bookmark_threat }
 
 		#set_fuel_ratio = 0.35 # 1944 was 0.8 dosent seems to work
-		set_fuel = 231812
+		set_fuel = 291812
 
 
-		set_convoys = 110
+		set_convoys = 120
 		set_stability = 0.93
 		set_war_support = 0.4
 		add_command_power = 200
-		army_experience = 135
-		navy_experience = 145	
+		army_experience = 145
+		navy_experience = 165	
 		air_experience = 95
 
 		add_political_power = 650
@@ -2511,12 +2511,12 @@ if = {
 	
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 12000
+		amount = 15000
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_0
-		amount = 10000
+		amount = 17000
 	}
 
 	add_equipment_to_stockpile = {

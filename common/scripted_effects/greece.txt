@@ -35,6 +35,7 @@ GRE_setup_puppet = {
 						#	hostility_reason = asked_to_join 
 						#}
 
+
 						set_popularities = {
 							democratic = 10
 							fascism = 0
@@ -52,8 +53,8 @@ GRE_setup_puppet = {
 						}
 
 						add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = 8050
+							type = infantry_equipment_0
+							amount = 8950
 						}
 
 						add_equipment_to_stockpile = {
@@ -82,14 +83,14 @@ GRE_setup_puppet = {
 							amount = 10
 						}
 
-						add_manpower = +40000
+						add_manpower = +63000
 						add_political_power = 1500	
 				}
 			}
 
 				hidden_effect = {
 					GRE = {
-
+						add_stability = 1.0
 						load_focus_tree = greek_focus_hellenic
 						add_ideas = {
 							medium_war_casualties
@@ -161,7 +162,7 @@ GRE_setup_resistance = {
 				}
 
 				start_resistance = THIS
-				set_resistance = 34
+				set_resistance = 30
 				set_compliance = 35
 				add_resistance_target = 34
 			}
