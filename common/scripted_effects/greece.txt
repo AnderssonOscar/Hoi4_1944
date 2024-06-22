@@ -54,7 +54,7 @@ GRE_setup_puppet = {
 
 						add_equipment_to_stockpile = {
 							type = infantry_equipment_0
-							amount = 8950
+							amount = 9950
 						}
 
 						add_equipment_to_stockpile = {
@@ -64,7 +64,7 @@ GRE_setup_puppet = {
 					
 						add_equipment_to_stockpile = {
 							type = support_equipment_1
-							amount = 250
+							amount = 350
 						}
 				
 						add_equipment_to_stockpile = {
@@ -80,17 +80,17 @@ GRE_setup_puppet = {
 
 						add_equipment_to_stockpile = { 
 							type = convoy_1
-							amount = 10
+							amount = 20
 						}
 
-						add_manpower = +63000
+						add_manpower = +73000
 						add_political_power = 1500	
 				}
 			}
 
 				hidden_effect = {
 					GRE = {
-						add_stability = 1.0
+						add_stability = 2.0
 						load_focus_tree = greek_focus_hellenic
 						add_ideas = {
 							medium_war_casualties
@@ -162,8 +162,8 @@ GRE_setup_resistance = {
 				}
 
 				start_resistance = THIS
-				set_resistance = 30
-				set_compliance = 35
+				set_resistance = 27
+				set_compliance = 38
 				add_resistance_target = 34
 			}
 		}

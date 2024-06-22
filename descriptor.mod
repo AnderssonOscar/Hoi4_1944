@@ -11,5 +11,5 @@ tags={
 }
 name="1944 - Downfall"
 picture="thumbnail.png"
-supported_version="1.14.3"
+supported_version="1.14.5"
 remote_file_id="3070639276"

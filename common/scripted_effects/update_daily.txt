@@ -4,7 +4,7 @@ MOD_start_update = {
 	resistance_scripted_events_start_effects = yes
 	JAP_scripted_events_start_effects = yes
 	HOL_setup_puppet = yes
-	HOL_setup_resistance = YES
+	HOL_setup_resistance = yes
 }
 
 MOD_daily_update = {
