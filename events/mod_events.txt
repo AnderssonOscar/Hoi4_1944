@@ -384,6 +384,7 @@ country_event = {
 	option = {
 		name = "Our offensive will sort this out."
 
+		add_war_support = 0.025
 		set_variable = { 
 			var = rom_switch
 			value = 1
@@ -425,6 +426,36 @@ country_event = {
 		}
 
 		add_timed_idea = { idea = dont_surrender_mod days = 365 }
+
+		46 = {
+			if = {
+				limit = { controller = { tag = ROM }}
+
+				damage_building = {
+					type = supply_node
+					damage = 0.21
+				}
+
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				
+				damage_building = {
+					type = rail_way
+					damage = 2
+				}
+
+				damage_building = {
+					type = air_base
+					damage = 4
+				}
+
+				add_dynamic_modifier = {
+					modifier = ROM_blown_up_oil_fields days = 90
+				}
+			}
+		}
 	}
 
 		#every_state = {

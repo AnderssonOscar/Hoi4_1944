@@ -259,6 +259,44 @@ division_template = {
 
 units = {
 
+	#ITA
+	division= {	
+		location = 955
+		division_template = "Infantry Division"	
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		start_experience_factor = 0.36
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division= {	
+		location = 6939
+		division_template = "Infantry Division"	
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		start_experience_factor = 0.44
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 11803
+		division_template = "Motorised Division"	
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		start_experience_factor = 0.51
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 955
+		division_template = "Motorised Division"	
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		start_experience_factor = 0.51
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	####
 	division= {	
 		location = 1145
 		division_template = "Infantry Division"	

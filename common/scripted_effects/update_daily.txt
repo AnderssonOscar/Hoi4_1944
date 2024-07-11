@@ -30,6 +30,7 @@ MOD_daily_update = {
 
 
 	JAP_start_effects = yes
+	SOV_start_effects = yes
 
 	ALL_DDAY_FAILED = yes
 }

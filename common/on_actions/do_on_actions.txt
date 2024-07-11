@@ -22,6 +22,8 @@ on_actions = {
 			}
 
 			SOV = { 195 = {add_dynamic_modifier = { modifier = SOV_leningrad_defence_modifier scope = SOV } } }
+			USA = { 117 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 24} } }
+			USA = { 849 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 24} } }
 			JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation
 
 		#add_named_threat = { threat = 60 name = generic.15.t }

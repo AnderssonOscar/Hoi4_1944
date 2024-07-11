@@ -37,7 +37,7 @@ state={
 			controller = USA
 
 			buildings = {
-				819 = { bunker = 2 }
+				819 = { bunker = 3 }
 			}
 
 			ITA = {

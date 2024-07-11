@@ -355,7 +355,46 @@ FRA_focus_europe = {
 	}
 }
 
+FRA_help_in_italy = {
 
+	allowed = {
+		original_tag = FRA
+	}
+
+	enable = {
+		
+		date > 1943.12.31
+		date < 1944.2.1
+
+			#rhine area
+			42 = { is_fully_controlled_by = GER }
+			51 = { is_fully_controlled_by = GER }
+			28 = { is_fully_controlled_by = GER } #metz
+
+		
+		has_war_with = ITA
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = ITA}
+		value = 150
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = italy
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = USA
+		value = 200
+	}
+}
 
 FRA_invade_south_france = { #dragoon
 

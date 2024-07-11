@@ -29,3 +29,16 @@ ALLIED_prepared_invasion_modifier = {
 		army_org_regain = 0.75
 		army_org_factor = 0.25
 }
+
+MOD_transportation_difficulties_modifier = { 
+	enable = { always = yes }
+	icon = GFX_idea_SOV_the_road_of_life
+	army_speed_factor = -0.75
+}
+
+ROM_blown_up_oil_fields = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource
+
+	state_resources_factor = -1
+}

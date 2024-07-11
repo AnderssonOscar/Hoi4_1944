@@ -363,6 +363,8 @@ allies_prepare_in_UK = { #stack troops here until we land in germany
 			is_in_faction_with = ENG
 			has_war_with = GER
 		
+			ENG = { surrender_progress < 0.05 }
+
 			AND = {
 				16 = {is_fully_controlled_by = GER}
 				15 = {is_fully_controlled_by = GER}

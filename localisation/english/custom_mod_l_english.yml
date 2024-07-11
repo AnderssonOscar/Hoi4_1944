@@ -358,5 +358,8 @@ netherlands.flooding.start.0.tt_1:0 "§YFlood the areas surrounding Amsterdam§ 
 CHI_request_supply_usa:0 "Request Lend-Lease from USA"
 CHI_request_supply_usa_desc:0 "Fly in supplies from india to Kunming"
 
+MOD_transportation_difficulties_modifier:0 "Transportation difficulties"
+ROM_blown_up_oil_fields:0 "Oil fields destroyed"
+
 SIA_THAI_fascism: "Thailand"
 NOR_REICH_fascism: "Reichskommissariat Norwegen"

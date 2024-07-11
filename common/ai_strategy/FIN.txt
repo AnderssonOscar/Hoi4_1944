@@ -304,17 +304,6 @@ FIN_dont_leave_finland  = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 FIN_unit_buffer_leningrad = { #so soviet dont rush in
 	allowed = {
 		original_tag = FIN
@@ -342,14 +331,6 @@ FIN_unit_buffer_leningrad = { #so soviet dont rush in
 		subtract_fronts_from_need = yes
 	}
 }
-
-
-
-
-
-
-
-
 
 
 
