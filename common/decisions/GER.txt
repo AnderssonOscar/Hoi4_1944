@@ -526,7 +526,7 @@ GER_reichskommissariats = {
 							}
 
 						NOR_fcw_big_fascist_support = yes
-						complete_national_focus = NOR_fascist_invasion_of_norway
+						#complete_national_focus = NOR_fascist_invasion_of_norway
 						complete_national_focus = NOR_quislings_regime
 						complete_national_focus = NOR_crackdown_on_civilian_life
 						complete_national_focus = NOR_elevate_hirden
@@ -544,6 +544,10 @@ GER_reichskommissariats = {
 
 						add_manpower = 99000
 						add_political_power = 1800
+						add_stability = 0.2
+					add_ideas = {
+						service_by_requirement
+					}
 
 						if = {
 							limit = {
@@ -639,7 +643,8 @@ GER_reichskommissariats = {
 							has_dlc = "Arms Against Tyranny"
 						}
 					NOR_fcw_big_fascist_support = yes
-					complete_national_focus = NOR_fascist_invasion_of_norway
+					set_global_flag =  NOR_quislings_coup_happened
+					#complete_national_focus = NOR_fascist_invasion_of_norway
 					complete_national_focus = NOR_quislings_regime
 					unlock_national_focus = NOR_quislings_coup
 					complete_national_focus = NOR_crackdown_on_civilian_life
@@ -650,10 +655,14 @@ GER_reichskommissariats = {
 					complete_national_focus = NOR_secret_police
 					unlock_national_focus = NOR_bring_back_quisling
 					NOR_apply_resistance_to_fascists = yes 
-					set_global_flag =  NOR_quislings_coup_happened
 					}
 					set_cosmetic_tag = NOR_REICH_fascism
 					add_political_power = 1500
+					add_stability = 0.2
+					
+					add_ideas = {
+						service_by_requirement
+					}
 
 					add_equipment_to_stockpile = {
 						type = convoy_1

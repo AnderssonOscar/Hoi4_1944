@@ -525,6 +525,87 @@ units = {
 		start_equipment_factor = 0.8
 		start_manpower_factor = 1.0
 	}
+
+	division = {	
+		location = 4948
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 4948
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 4948
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 4948
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 4948
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 7132
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 7132
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 7132
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
+
+	division = {	
+		location = 7132
+		division_template = "Brigade Coloniale"	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "FRA" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 1
+		start_manpower_factor = 1.0
+	}
 }
 
 

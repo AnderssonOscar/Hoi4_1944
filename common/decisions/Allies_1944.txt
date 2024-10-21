@@ -216,8 +216,8 @@ operations = {
 
 		targeted_modifier = {
 			tag = ITA
-			attack_bonus_against = 0.5
-			breakthrough_bonus_against = 0.40
+			attack_bonus_against = 0.55
+			breakthrough_bonus_against = 0.50
 		}
 		
 		complete_effect = {}

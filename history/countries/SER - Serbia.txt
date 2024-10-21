@@ -223,7 +223,7 @@ create_country_leader = {
 	
 
 1943.12.30 = {
-	set_cosmetic_tag = SER_fascism_1944
+	set_cosmetic_tag = SER_REICH_fascism
 
 	oob = "SER_1944"
 

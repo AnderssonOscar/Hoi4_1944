@@ -348,6 +348,69 @@ GER_rhine_crossing = {
 		}
 	}
 
+		35 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 11456
+				}
+			}
+		}
+
+		51 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 3547
+					id = 587
+					id = 3444
+					id = 529
+				}
+			}
+		}
+
+		55 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 11560
+				}
+			}
+		}
+
+		42 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 3558
+					id = 3423
+					id = 11494
+				}
+			}
+		}
+
+		36 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 9363
+					id = 6241
+				}
+			}
+		}
+
+		28 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 549
+					id = 9503
+					id = 6529
+					id = 678
+				}
+			}
+		}
+
 		GER = { news_event = mod.news.7 }
 		set_global_flag = GER_rhine_crossing
 	}
@@ -507,3 +570,162 @@ GER_flood_benelux = {
 	}
 }
 
+
+GER_courland_pocket = {
+	if = {
+		limit = { 
+			tag = GER
+
+			OR = {
+				has_war_with = SOV
+				has_war_with = ENG
+			}
+			#ROM = { NOT = { is_in_faction_with = GER } }
+
+			NOT = { 766 = { is_fully_controlled_by = ROM } } #bessarabia romania ceded after surrender
+			NOT = { 78 = { is_fully_controlled_by = ROM } } #bessarabia romania ceded after surrender
+
+			NOT = { has_global_flag = GER_courland_pocket } 
+			is_ai = yes
+			
+		GER = {
+			190 = { is_fully_controlled_by = GER } 
+
+			OR = {
+				NOT = { controls_province = 6222 } 
+				NOT = { controls_province = 6342 } 
+				NOT = { controls_province = 6376 } 
+				NOT = { controls_province = 9731 } 
+				NOT = { controls_province = 9499 } 
+			}
+		}
+	}
+
+			add_equipment_to_stockpile = { 
+				type = convoy_1
+				amount = 100
+			}
+
+		190 = {
+			add_dynamic_modifier = {
+				modifier = GER_courland_pocket_modifier
+				scope = GER 
+				days = 120
+			}
+		}
+
+		809 = {
+			add_building_construction = {
+				type = bunker
+				level = 8
+				province = 3525
+				instant_build = yes
+			}
+
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 3525
+				}
+			}
+
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 3525
+				}
+			}
+		}
+
+		190 = {
+			add_building_construction = {
+				type = bunker
+				level = 8
+				province = 9262
+				instant_build = yes
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 7
+				province = 11246
+				instant_build = yes
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 7
+				province = 3194
+				instant_build = yes
+			}
+		}
+
+
+
+
+		GER = {
+
+			if = {
+				limit = {
+					NOT = { GER = { has_template = "Ersatz-division" } }
+				}
+			
+
+			division_template = {
+				name = "Ersatz-division"
+				division_names_group = GER_ERSATZ_01
+			
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					anti_air = { x = 0 y = 1 }
+				}
+			}
+		}
+
+			190 = {
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.61 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.53 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.53 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+			}
+		}
+
+
+
+
+		set_global_flag = GER_courland_pocket
+	}
+}

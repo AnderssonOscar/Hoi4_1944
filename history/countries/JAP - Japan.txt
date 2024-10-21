@@ -2236,6 +2236,25 @@ if = {
 				}
 
 				create_equipment_variant = {
+					name = "Unryū Class"
+					type = ship_hull_carrier_2
+					name_group = JAP_CV_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_deck_slot_1 = ship_deck_space
+						fixed_ship_deck_slot_2 = ship_deck_space
+						fixed_ship_anti_air_slot = ship_anti_air_2
+						fixed_ship_radar_slot = ship_radar_1
+						fixed_ship_engine_slot = carrier_ship_engine_3
+						fixed_ship_secondaries_slot = dp_ship_secondaries_2
+						fixed_ship_armor_slot = ship_armor_cruiser_1
+						front_1_custom_slot = ship_deck_space
+						mid_1_custom_slot = ship_deck_space
+						mid_2_custom_slot = empty
+					}
+				}
+
+				create_equipment_variant = {
 					name = "Taihō Class"
 					type = ship_hull_carrier_2
 					name_group = JAP_CV_HISTORICAL

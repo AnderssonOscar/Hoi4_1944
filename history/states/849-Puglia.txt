@@ -30,10 +30,10 @@ state = {
 				naval_base = 10
 			}
 			9784 = { #Bari
-				naval_base = 3
+				naval_base = 5
 			}
 			11998 = {
-				naval_base = 2
+				naval_base = 3
 			}
 		}
 		add_core_of = ITA
@@ -50,7 +50,9 @@ state = {
 			controller = USA
 			buildings = {
 				air_base = 10
-			}
+				anti_air_building = 4
+				radar_station = 4
+			}	
 		}
 		
 	}

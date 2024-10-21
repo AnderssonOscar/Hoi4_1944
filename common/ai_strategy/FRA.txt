@@ -351,7 +351,7 @@ FRA_focus_europe = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = JAP }
-		value = -100
+		value = -1000
 	}
 }
 
@@ -396,15 +396,58 @@ FRA_help_in_italy = {
 	}
 }
 
+
+FRA_stop_invasions = {
+
+	allowed = { 
+		tag = FRA
+		}
+	
+	enable = {
+		is_in_faction_with = ENG
+		has_war_with = GER
+
+		#south france
+		OR = {
+			date < 1944.6.1
+			AND = {
+				NOT = { 851 = { is_fully_controlled_by = GER } }
+				NOT = { 21 = { is_fully_controlled_by = GER } }
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GER"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GER }
+		value = -500
+	}
+}
+
+
 FRA_invade_south_france = { #dragoon
 
-	allowed = { original_tag = FRA }
+	allowed = { 
+		OR = {
+			tag = FRA
+			# tag = ENG
+			# tag = USA
+			}
+		}
 	
 	enable = {
 		is_in_faction_with = ENG
 		has_war_with = GER
 		date > 1944.5.20
-		date < 1946.1.1
+		date < 1944.10.1
 		OR = {
 			NOT = { 15 = { is_fully_controlled_by = GER } }
 			NOT = { 6 = { is_fully_controlled_by = GER } }
@@ -421,22 +464,67 @@ FRA_invade_south_france = { #dragoon
 		value = 10000
 	}
 
+		ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = GER
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = rush
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 68
+	}
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 100
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = mainland_europe
+		value = 500
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = GER}
+		value = -10
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = ITA}
+		value = -10
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = JAP}
+		value = -100
+	}
+
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 851
-		value = 10000
+		value = 200
 	}
 
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 21
-		value = 10000
+		value = 200
 	}
 
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 735
-		value = 10000
+		value = 200
 	}
 
 	###NOT THESE!
@@ -491,6 +579,24 @@ FRA_invade_south_france = { #dragoon
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 735
+		value = -10000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 99
+		value = -10000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 59
+		value = -10000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 56
 		value = -10000
 	}
 

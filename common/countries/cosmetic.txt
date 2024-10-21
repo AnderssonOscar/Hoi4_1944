@@ -73,7 +73,7 @@ SWE_1944 = {
 	color_ui = rgb { 122 145 93 }
 }
 
-SER_fascism_1944 = {
+SER_REICH_fascism = {
 	color = rgb { 70 65 100 }
 	color_ui = rgb { 122 145 93 }
 }

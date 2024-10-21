@@ -17,6 +17,18 @@ GER_festung_konigsberg_modifier = {
 		supply_consumption_factor = -0.1
 }
 
+GER_courland_pocket_modifier = { 
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_supply
+		army_org_factor = 1.5
+		army_org_regain = 1.25
+		army_defence_factor = 2.25
+		dig_in_speed_factor = 1.75
+		max_dig_in_factor = 1.5
+		supply_consumption_factor = -1.25
+		pocket_penalty = -0.5
+		army_attack_factor = 0.5
+}
 
 ALLIED_prepared_invasion_modifier = { 
 	enable = { always = yes }
@@ -34,6 +46,7 @@ MOD_transportation_difficulties_modifier = {
 	enable = { always = yes }
 	icon = GFX_idea_SOV_the_road_of_life
 	army_speed_factor = -0.75
+	dig_in_speed_factor = 0.25
 }
 
 ROM_blown_up_oil_fields = {

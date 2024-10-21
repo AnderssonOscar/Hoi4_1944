@@ -38,6 +38,7 @@ state={
 
 			buildings = {
 				819 = { bunker = 3 }
+				anti_air_building = 2
 			}
 
 			ITA = {

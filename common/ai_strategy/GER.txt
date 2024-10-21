@@ -3891,7 +3891,33 @@ GER_guard_estonia = { #1944
 	}
 }
 
+GER_guard_courland = { #1944 
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1944.6.1
+		date < 1945.5.1
+		is_historical_focus_on = yes
 
+		OR = {
+			NOT = { 815 = {is_fully_controlled_by = GER} }
+			NOT = { 809 = {is_fully_controlled_by = GER} }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			190
+		}
+		ratio = 0.15
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+}
 
 GER_stop_wasting_pp = { #
 	allowed = {

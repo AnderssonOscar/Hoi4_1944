@@ -1753,7 +1753,7 @@ if = {
 
 		submarine_operations = 1
 		hunter_killer_groups = 1
-		integrated_convoy_defence = 1
+		#integrated_convoy_defence = 1
 		
 		#Air
 		force_rotation = 1

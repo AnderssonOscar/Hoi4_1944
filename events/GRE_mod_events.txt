@@ -12,7 +12,6 @@ country_event = {
 	hidden = yes
 
 	immediate = {
-		ITA_start_setup = yes
 		GRE_setup_resistance = yes
 	}
 }

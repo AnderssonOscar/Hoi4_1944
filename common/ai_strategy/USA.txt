@@ -34,12 +34,18 @@ USA_stop_camping_america = {
 
 
 USA_garrison_ITALY = {
-	allowed = { original_tag = USA }
+	allowed = {
+		OR = {
+		 original_tag = USA
+		 #original_tag = CAN
+		}
+	 }
 	
 	enable = {
 
 		has_war_with = ITA
 		always = yes
+		date > 1944.2.1
 	}
 	abort_when_not_enabled = yes
 
@@ -50,7 +56,7 @@ USA_garrison_ITALY = {
 			117
 			156
 			115
-			#114
+			849
 			#1
 
 		}
@@ -86,7 +92,7 @@ USA_dont_forget_about_italy = {
 		type = front_unit_request
 		country_trigger = {tag = ITA}
 		#tag = ITA
-		value = 82
+		value = 79
 	}
 
 	ai_strategy = {
@@ -2014,11 +2020,6 @@ USA_dont_help_china_boder_too_much = {
 		value = 150
 	}
 }
-
-
-
-
-
 
 
 

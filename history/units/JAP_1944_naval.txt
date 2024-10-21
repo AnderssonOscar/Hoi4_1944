@@ -153,9 +153,7 @@ units = {
 		task_force = {
 			name = "Kure Kantai"
 			location = 1092  # Hiroshima
-			ship = { name = "Hosho" definition = carrier equipment = { ship_hull_carrier_conversion_ca = {amount = 1 owner = JAP version_name = "Hosho Class"} } 				
-				
-			}
+			ship = { name = "Hosho" definition = carrier equipment = { ship_hull_carrier_conversion_ca = {amount = 1 owner = JAP version_name = "Hosho Class"} } }
 			ship = { name = "Sawakaze" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = JAP version_name = "Mutsuki Class"} } }
 			ship = { name = "Yakaze" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = JAP version_name = "Mutsuki Class"} } }
 			# 13 Kuchiku Sentai
@@ -168,9 +166,8 @@ units = {
 			# Submarine detachment
 			ship = { name = "Ro-56" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = JAP version_name = "Ro-26 Class" } } }
 
-			ship = { name = "Shokaku" definition = carrier equipment = { ship_hull_carrier_2 = {amount = 1 owner = JAP version_name = "Shokaku Class"} } 				
-				
-			}
+			ship = { name = "Shokaku" definition = carrier equipment = { ship_hull_carrier_2 = {amount = 1 owner = JAP version_name = "Shokaku Class"} } } 	
+			ship = { name = "Zuikaku" definition = carrier equipment = { ship_hull_carrier_2 = {amount = 1 owner = JAP version_name = "Shokaku Class"} } }		
 		}
 		task_force = {
 			name = "Chinkai Kantai"
@@ -454,6 +451,42 @@ instant_effect = {
 			name = "Taihō" 
 			requested_factories = 1
 			progress = 0.93
+			amount = 1
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_carrier_2
+				creator = "JAP" 
+				version_name = "Unryū Class"
+			}
+			name = "Unryū" 
+			requested_factories = 1
+			progress = 0.83
+			amount = 1
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_carrier_2
+				creator = "JAP" 
+				version_name = "Unryū Class"
+			}
+			name = "Amagi" 
+			requested_factories = 1
+			progress = 0.72
+			amount = 1
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_carrier_2
+				creator = "JAP" 
+				version_name = "Unryū Class"
+			}
+			name = "Katsuragi" 
+			requested_factories = 1
+			progress = 0.61
 			amount = 1
 		}
 

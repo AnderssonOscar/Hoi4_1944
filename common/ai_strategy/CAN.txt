@@ -53,7 +53,7 @@ CAN_help_in_italy = {
 	ai_strategy = {
 		type = force_defend_ally_borders
 		id = USA
-		value = 100
+		value = 1000
 	}
 }
 

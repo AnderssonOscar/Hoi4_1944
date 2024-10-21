@@ -1,10 +1,47 @@
 ITA_start_setup = {
 	if = {
 		limit = { 
-			original_tag = ITA
-			is_in_faction_with = GER
-			NOT = { has_global_flag = ITA_start_setup } 
+			date > 1943.12.30
+			NOT = { has_global_flag = ITA_start_setup }
 		}
+
+	ITA = {
+		every_controlled_state = {
+			limit = {
+				OR ={
+					state = 2
+					state = 157
+					state = 162
+				}
+			}
+			damage_building = {
+				type = supply_node
+				damage = 0.61
+			}
+
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			
+			damage_building = {
+				type = rail_way
+				damage = 1
+			}
+		}
+	}
+
+	117 = {
+		add_province_modifier = {
+			static_modifiers = { MOD_good_defence_posistion_static_modifier }
+			province = {
+				id = 11803
+				id = 819
+			}
+		}
+	}
+
+
 
 		if = {
 			limit = { has_dlc = "By Blood Alone" }
@@ -14,19 +51,25 @@ ITA_start_setup = {
 		#ITA_cw_manage_states_split_effect = yes
 		#ITA_start_civil_war_effect = yes
 
-		every_character = {
-			limit = {
-				#NOT = { has_character_flag = ITA_cw_character_fascist_side_flag }
-				OR = {
-					has_character_flag = ITA_cw_character_monarchist_side_flag
-					has_unit_leader_flag = ITA_cw_unit_leader_monarchist_side_flag
-					has_character_flag = ITA_cw_character_antifascist_side_flag
-					has_unit_leader_flag = ITA_cw_unit_leader_antifascist_side_flag
-				}
-			}
-			#log = "[THIS.GetName] shouldn't be in [RSI.GetName]"
-			THIS = { retire = yes }
-		}
+
+
+
+
+
+
+		# every_character = {
+		# 	limit = {
+		# 		#NOT = { has_character_flag = ITA_cw_character_fascist_side_flag }
+		# 		OR = {
+		# 			has_character_flag = ITA_cw_character_monarchist_side_flag
+		# 			has_unit_leader_flag = ITA_cw_unit_leader_monarchist_side_flag
+		# 			has_character_flag = ITA_cw_character_antifascist_side_flag
+		# 			has_unit_leader_flag = ITA_cw_unit_leader_antifascist_side_flag
+		# 		}
+		# 	}
+		# 	#log = "[THIS.GetName] shouldn't be in [RSI.GetName]"
+		# 	THIS = { retire = yes }
+		# }
 	}
 
 		set_global_flag = ITA_start_setup

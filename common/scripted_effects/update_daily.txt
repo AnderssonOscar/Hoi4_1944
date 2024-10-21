@@ -5,6 +5,7 @@ MOD_start_update = {
 	JAP_scripted_events_start_effects = yes
 	HOL_setup_puppet = yes
 	HOL_setup_resistance = yes
+	ITA_start_setup = yes
 }
 
 MOD_daily_update = {
@@ -22,7 +23,7 @@ MOD_daily_update = {
 	ALLIED_normandy_port = yes
 	ALLIED_remove_normandy_port = yes
 	GER_fix_ukr_border = yes
-
+	GER_courland_pocket = yes
 	GER_start_effects = yes
 
 

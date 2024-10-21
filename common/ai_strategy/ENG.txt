@@ -2120,3 +2120,46 @@ ENG_finish_germany_first = {
 		value = -500
 	}
 }
+
+
+
+ENG_dont_forget_about_italy = {
+
+	allowed = {
+		original_tag = ENG
+	}
+
+	enable = {
+		date > 1943.12.30
+		date < 1944.3.1
+		has_war_with = ITA
+		has_war_with = GER
+
+		GER = {
+			has_full_control_of_state = 16  #france
+			has_full_control_of_state = 15 
+			has_full_control_of_state = 14 
+			has_full_control_of_state = 30 
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = ITA}
+		#tag = ITA
+		value = 79
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = ITA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}

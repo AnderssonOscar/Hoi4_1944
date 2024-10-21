@@ -2029,6 +2029,16 @@ country_event = {
 			}
 		}
 
+		36 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 9363
+					id = 6241
+				}
+			}
+		}
+
 		28 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
@@ -2089,8 +2099,17 @@ country_event = {
 	36 = {
 		add_building_construction = {
 			type = bunker
-			level = 1
+			level = 3
 			province = 6241
+			instant_build = yes
+		}
+	}
+
+		36 = {
+		add_building_construction = {
+			type = bunker
+			level = 3
+			province = 9363
 			instant_build = yes
 		}
 	}
@@ -2155,6 +2174,7 @@ country_event = {
 				static_modifiers = { GER_flooded_area_static_modifier }
 				province = {
 					id = 6241
+					id = 9363
 			}
 		}
 	}

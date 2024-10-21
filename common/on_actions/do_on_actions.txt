@@ -22,8 +22,8 @@ on_actions = {
 			}
 
 			SOV = { 195 = {add_dynamic_modifier = { modifier = SOV_leningrad_defence_modifier scope = SOV } } }
-			USA = { 117 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 24} } }
-			USA = { 849 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 24} } }
+			USA = { 117 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
+			USA = { 849 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
 			JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation
 
 		#add_named_threat = { threat = 60 name = generic.15.t }
@@ -318,7 +318,7 @@ GER = {
 
 				FIN = { add_mines = { region = 9 amount = 380 } }
 
-				ITA = { add_mines = { region = 168 amount = 850 } }
+				ITA = { add_mines = { region = 168 amount = 450 } }
 				GER = { add_mines = { region = 202 amount = 300 } }
 
 				ENG = { add_mines = { region = 68 amount = 250 } }
