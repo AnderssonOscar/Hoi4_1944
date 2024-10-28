@@ -19,19 +19,28 @@ JAP_scripted_events_start_effects = {
 
 		593 = {
 			add_province_modifier = {
-				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				static_modifiers = { JAP_good_defence_posistion_static_modifier }
 				province = {
 					#id = 10062
 					id = 7108
-					id = 1047
+					#id = 1047
 					id = 9938
+				}
+			}
+		}
+
+		592 = {
+			add_province_modifier = {
+				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				province = {
+					id = 1047
 				}
 			}
 		}
 
 		593 = {
 			add_province_modifier = {
-				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				static_modifiers = { JAP_good_defence_posistion_static_modifier }
 				province = {
 					id = 9938
 				}
@@ -40,7 +49,7 @@ JAP_scripted_events_start_effects = {
 
 		595 = {
 			add_province_modifier = {
-				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				static_modifiers = { JAP_good_defence_posistion_static_modifier }
 				province = {
 					id = 7071
 					id = 4196
@@ -50,7 +59,7 @@ JAP_scripted_events_start_effects = {
 
 		596 = {
 			add_province_modifier = {
-				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				static_modifiers = { JAP_good_defence_posistion_static_modifier }
 				province = {
 					id = 1055
 					id = 9974
@@ -58,6 +67,324 @@ JAP_scripted_events_start_effects = {
 				}
 			}
 		}
+		if = {
+			limit = { 
+				is_ai = yes
+			}
+			add_equipment_to_stockpile = { 
+				type = convoy_1
+				amount = 100
+			}
+		}
 	}
-
 }
+
+
+
+JAP_ichi_go_1_start_script = {
+	if = {
+		limit = { 
+			has_country_flag = JAP_ichi_go_mod_1
+			NOT = { has_global_flag = JAP_ichi_go_1_start_script }
+			tag = JAP
+			has_war_with = CHI
+			CHI = {	is_ai = yes }
+			date > 1944.1.1
+	
+			any_country = {
+				OR = {
+					tag = CHI
+					is_in_faction_with = CHI
+					has_war_with = JAP
+				}
+
+				OR = {
+					controls_province = 1139
+					controls_province = 9958
+					controls_province = 10364
+					controls_province = 12012
+					controls_province = 7568
+					controls_province = 7580
+					controls_province = 9934
+					controls_province = 7167
+					controls_province = 4619
+				}
+			}
+		}
+
+		607 = {
+			add_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 1139
+					id = 9958
+					id = 10364
+					id = 12012
+					id = 7568
+				}
+			}
+		}
+
+		620 = {
+			add_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 7580
+					id = 9934
+					id = 7167
+					#id = 4619
+				}
+			}
+		}
+		set_global_flag = JAP_ichi_go_1_start_script
+	}
+}
+
+
+JAP_ichi_go_2_start_script = {
+	if = {
+		limit = { 
+			has_country_flag = JAP_ichi_go_mod_2
+			NOT = { has_global_flag = JAP_ichi_go_2_start_script }
+			tag = JAP
+			has_war_with = CHI
+			CHI = {	is_ai = yes }
+			date > 1944.1.1
+	
+			any_country = {
+				OR = {
+					tag = CHI
+					is_in_faction_with = CHI
+					has_war_with = JAP
+				}
+
+				OR = {
+					controls_province = 4631
+					controls_province = 9999
+					controls_province = 7097
+					controls_province = 13143
+					controls_province = 7502
+					controls_province = 7159
+				}
+			}
+		}
+
+		607 = {
+			remove_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 1139
+					id = 9958
+					id = 10364
+					id = 12012
+					id = 7568
+				}
+			}
+		}
+
+		620 = {
+			remove_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 7580
+					id = 9934
+					id = 7167
+					#id = 4619
+				}
+			}
+		}
+
+		602 = {
+			add_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 9999
+					id = 7097
+					id = 13143
+					id = 7502
+					id = 7159
+				}
+			}
+		}
+
+		set_global_flag = JAP_ichi_go_2_start_script
+	}
+}
+
+
+JAP_ichi_go_3_start_script = {
+	if = {
+		limit = { 
+			has_country_flag = JAP_ichi_go_mod_3
+			NOT = { has_global_flag = JAP_ichi_go_3_start_script }
+			tag = JAP
+			has_war_with = CHI
+			CHI = {	is_ai = yes }
+			date > 1944.1.1
+	
+			any_country = {
+				OR = {
+					tag = CHI
+					is_in_faction_with = CHI
+					has_war_with = JAP
+				}
+
+				OR = {
+					controls_province = 11918
+					controls_province = 12378
+					controls_province = 1023
+					controls_province = 7168
+					controls_province = 7095
+					controls_province = 1597
+
+					controls_province = 11918
+					controls_province = 9982
+					controls_province = 9970
+					controls_province = 1120
+					controls_province = 12095
+					controls_province = 1047
+				}
+			}
+		}
+		
+
+		602 = {
+			remove_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 9999
+					id = 7097
+					id = 13143
+					id = 7502
+					id = 7159
+				}
+			}
+		}
+
+
+		602 = {
+			add_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 11918
+					id = 12378
+					id = 13143
+					id = 7159
+				}
+			}
+		}
+
+		593 = {
+			add_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 9970
+					id = 1120
+					id = 7097
+					id = 12095
+				}
+			}
+		}
+
+		599 = {
+			add_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 1023
+					id = 7095
+					id = 1597
+					id = 4028
+				}
+			}
+		}
+
+		set_global_flag = JAP_ichi_go_3_start_script
+	}
+}
+
+JAP_ichi_go_failed_modifiers = {
+	if = {
+		limit = { 
+
+			OR = {
+				has_country_flag = JAP_ichi_go_mod_done
+				has_country_flag = JAP_ichi_go_failed
+			}
+			NOT = { has_global_flag = JAP_ichi_go_failed_modifiers }
+			tag = JAP
+			has_war_with = CHI
+			CHI = {	is_ai = yes }
+			date > 1944.1.1
+		}
+
+		607 = {
+			remove_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 1139
+					id = 9958
+					id = 10364
+					id = 12012
+					id = 7568
+				}
+			}
+		}
+
+		620 = {
+			remove_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 7580
+					id = 9934
+					id = 7167
+					id = 4619
+					id = 4631
+				}
+			}
+		}
+
+		602 = {
+			remove_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 9999
+					id = 7097
+					id = 13143
+					id = 7502
+					id = 7159
+					id = 11918
+					id = 12378
+					id = 9982
+				}
+			}
+		}
+
+		593 = {
+			remove_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 9970
+					id = 1120
+					id = 7097
+					id = 12095
+				}
+			}
+		}
+
+		599 = {
+			remove_province_modifier = {
+				static_modifiers = { JAP_offensive_static_modifier }
+				province = {
+					id = 1023
+					id = 7095
+					id = 1597
+					id = 4028
+				}
+			}
+		}
+
+		set_global_flag = JAP_ichi_go_failed_modifiers
+	}
+}
+
+

@@ -153,7 +153,9 @@ units = {
 		}
 		location = 12421 #Asahigawa
 		division_template = "Hohei Shidan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.35
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "Karafuto Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -162,7 +164,9 @@ units = {
 		}
 		location = 12446 #Toyohara
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.2
+		start_experience_factor = 0.21
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = {
 		name = "Ominato Kichi Kaiheidan"
@@ -170,6 +174,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Ominato Kichi Shubitai"
@@ -177,15 +182,16 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.4
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	division = {
 		division_name = { is_name_ordered = no name_order = 0 }
 		location = 4196
 		division_template = "Rikusentai"
-		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.9
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
+		start_experience_factor = 0.73
+		start_equipment_factor = 0.91
 	}
 
 	division = {
@@ -194,6 +200,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	division = {
@@ -201,7 +208,7 @@ units = {
 		location = 1055 
 		division_template = "Rikusentai"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-		start_experience_factor = 0.3
+		start_experience_factor = 0.81
 		start_equipment_factor = 0.8
 	}
 	
@@ -213,7 +220,8 @@ units = {
 		}
 		location = 1182 #Tokyo
 		division_template = "Jidousha Shidan"			# Imperial Guards, elite division (later split into mixed and infantry brigades)
-		start_experience_factor = 0.5
+		start_experience_factor = 0.55
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
 	division = { # "2 'Yu' Hohei Shidan"
 		division_name = {
@@ -223,6 +231,7 @@ units = {
 		location = 7087 #Shizuoka
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Yokosuka Kichi Kaiheidan"
@@ -230,7 +239,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	### Roppou Homengun (West Japan Army) (CO: ) ###
@@ -242,6 +251,7 @@ units = {
 		location = 9950 #Nagasaki
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "9 'Take' Hohei Shidan"
 		division_name = {
@@ -251,6 +261,7 @@ units = {
 		location = 1092 #Hiroshima
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "16 'Kaki' Hohei Shidan"
 		division_name = {
@@ -260,6 +271,7 @@ units = {
 		location = 4102	# Kagoshima
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Kure Kichi Kaiheidan"
@@ -267,7 +279,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Sasebo Kichi Kaiheidan"
@@ -275,7 +287,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	
 	### Taiwan Homengun (Taiwan Army) (CO: ) ###
@@ -285,7 +297,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	
 	### Chosen Gun (Korea Army) (CO: Nakamura) ###
@@ -297,6 +309,7 @@ units = {
 		location = 4052 #Pyongyang
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "20 'Asa' Hohei Shidan"
 		division_name = {
@@ -306,6 +319,7 @@ units = {
 		location = 7125 #Seoul
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Chinkai Kichi Kaiheidan"
@@ -313,7 +327,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	##### Pacific Island Defense Forces #####
@@ -323,7 +337,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	### Konkyochi Shiatagun ###
@@ -334,6 +348,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.8
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	division = {
@@ -342,6 +357,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.9
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	division = {
@@ -350,6 +366,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.9
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	division = {
@@ -358,7 +375,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	# 2 Konkyochi Ichigun -- Palau and Caroline Islands #
@@ -368,7 +385,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Truk Kichi Shubitai"
@@ -376,7 +393,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Yappu Kichi Shubitai"
@@ -384,7 +401,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Satawan Kichi Shubitai"
@@ -392,7 +409,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	# 3 Konkyochi Ichigun -- Marshall Islands #
@@ -402,7 +419,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Eniwetok Kichi Shubitai"
@@ -410,7 +427,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Ponape Kichi Shubitai"
@@ -418,7 +435,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Mili Kichi Shubitai"
@@ -426,7 +443,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	
@@ -439,6 +456,7 @@ units = {
 		location = 11771 # Mukden
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "15 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -448,6 +466,7 @@ units = {
 		location = 10433 # Harbin
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Ryojun Kichi Shubitai"
@@ -455,7 +474,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	### Kwantung Defense Force (groups of independent garrisons) (CO: ) ###
 	division = {
@@ -464,7 +483,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Kantogun Shureibu Keibitai"
@@ -472,7 +491,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	### 3 Homengun (CO: Suetaka) ###
 	division = { # "8 'Sugi' Hohei Shidan"
@@ -483,6 +502,7 @@ units = {
 		location = 10368
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "12 'Ken' Hohei Shidan"
 		division_name = {
@@ -492,6 +512,7 @@ units = {
 		location = 10698
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "1 Senshadan"
@@ -499,7 +520,7 @@ units = {
 		division_template = "Senshadan"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
-		start_experience_factor = 0.3
+		start_experience_factor = 0.59
 		start_equipment_factor = 0.74
 	}
 	division = {
@@ -508,6 +529,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 
 	}
 
@@ -520,6 +542,7 @@ units = {
 		location = 10541
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "2 Senshadan"
@@ -527,7 +550,7 @@ units = {
 		division_template = "Senshadan"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
-		start_experience_factor = 0.2
+		start_experience_factor = 0.64
 		start_equipment_factor = 0.97
 	}
 	division = {
@@ -536,7 +559,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "6 Kokkyou Keibitai"
@@ -544,7 +567,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "7 Kokkyou Keibitai"
@@ -552,7 +575,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "8 Kokkyou Keibitai"
@@ -560,7 +583,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "13 Kokkyou Keibitai"
@@ -568,7 +591,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	### 5 Homengun (CO: Doihara) ###	
@@ -580,6 +603,7 @@ units = {
 		location = 3944
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "3 Senshadan"
@@ -587,7 +611,7 @@ units = {
 		division_template = "Senshadan"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
-		start_experience_factor = 0.2
+		start_experience_factor = 0.27
 		start_equipment_factor = 0.84
 	}
 	division = {
@@ -596,7 +620,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "3 Kokkyou Keibitai"
@@ -604,7 +628,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "4 Kokkyou Keibitai"
@@ -612,7 +636,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "9 Kokkyou Keibitai"
@@ -620,7 +644,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "10 Kokkyou Keibitai"
@@ -628,6 +652,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 
 	}
 	division = {
@@ -636,7 +661,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "12 Kokkyou Keibitai"
@@ -644,7 +669,7 @@ units = {
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 	### 6 Homengun (CO: Yasui) ###	
@@ -656,6 +681,7 @@ units = {
 		location = 10612
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "23 'Kyoku' Hohei Shidan"
 		division_name = {
@@ -665,6 +691,7 @@ units = {
 		location = 7697
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 
@@ -678,6 +705,7 @@ units = {
 		location = 7129
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "41 'Kawa' Hohei Shidan"
 		division_name = {
@@ -687,6 +715,7 @@ units = {
 		location = 9937
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "110 Hohei Shidan"
 		division_name = {
@@ -696,6 +725,7 @@ units = {
 		location = 7571
 		division_template = "Hohei Shidan"			# Garrison division (lower experience, older equipment)
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "7 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -704,7 +734,9 @@ units = {
 		}
 		location = 1519
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.63
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "8 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -713,7 +745,9 @@ units = {
 		}
 		location = 4634
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.66
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "9 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -722,7 +756,9 @@ units = {
 		}
 		location = 1575
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.41
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "11 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -731,7 +767,9 @@ units = {
 		}
 		location = 10098
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.54
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "1 Kiheishidan"
 		division_name = {
@@ -741,6 +779,7 @@ units = {
 		location = 10079
 		division_template = "Kihei Shidan"				# represents both 3rd and 4th independent cavalry brigades
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Hankow Kichi Shubitai"
@@ -748,7 +787,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
-
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	### 1 Homengun (CO: Shinozuka) ###
 	division = { # "36 'Yuki' Hohei Shidan"
@@ -759,6 +798,7 @@ units = {
 		location = 4619 # Wuhan
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "37 'Fuyu' Hohei Shidan"
 		division_name = {
@@ -767,7 +807,8 @@ units = {
 		}
 		location = 7167
 		division_template = "Chugata Hohei Shidan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.89
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	} 
 	division = { # "40 'Kujira' Hohei Shidan"
 		division_name = {
@@ -776,7 +817,8 @@ units = {
 		}
 		location = 4631
 		division_template = "Chugata Hohei Shidan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.98
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "1 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -785,7 +827,9 @@ units = {
 		}
 		location = 4158
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.4
+		start_experience_factor = 0.48
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "3 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -794,7 +838,9 @@ units = {
 		}
 		location = 10462
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.86
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "4 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -803,7 +849,9 @@ units = {
 		}
 		location = 4619 # Wuhan
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.81
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 
 	### 12 Homengun (CO: Iida) ###
@@ -812,9 +860,10 @@ units = {
 			is_name_ordered = yes
 			name_order = 21
 		}
-		location = 9958
+		location = 1139
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "27 Hohei Shidan"
 		division_name = {
@@ -824,6 +873,7 @@ units = {
 		location = 6932
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "32 'Kaede' Hohei Shidan"
 		division_name = {
@@ -833,6 +883,7 @@ units = {
 		location = 11931
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "114 Hohei Shidan"
 		division_name = {
@@ -842,6 +893,7 @@ units = {
 		location = 4114
 		division_template = "Hohei Shidan"			# Garrison division (lower experience, older equipment)
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "5 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -850,25 +902,31 @@ units = {
 		}
 		location = 1575
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.41
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "6 Dokuritsu Konsei Ryodan"
 		division_name = {
 			is_name_ordered = yes
 			name_order = 6
 		}
-		location = 1004
+		location = 4606
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.38
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "10 Dokuritsu Konsei Ryodan"
 		division_name = {
 			is_name_ordered = yes
 			name_order = 10
 		}
-		location = 9958
+		location = 1139
 		division_template = "Dokuritsu Konsei Ryodan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.66
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 
 	### Mouko Homengun (CO: Okabe) ###
@@ -879,7 +937,8 @@ units = {
 		}
 		location = 4186
 		division_template = "Chugata Hohei Shidan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.31
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "2 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -889,6 +948,8 @@ units = {
 		location = 10507
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "1 Mouko Kiheishidan"
 		division_name = {
@@ -898,6 +959,7 @@ units = {
 		location = 12300
 		division_template = "Kihei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "2 Mouko Kiheishidan"
 		division_name = {
@@ -907,6 +969,7 @@ units = {
 		location = 4174
 		division_template = "Kihei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "3 Mouko Kiheishidan"
 		division_name = {
@@ -916,6 +979,7 @@ units = {
 		location = 10451
 		division_template = "Kihei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "4 Mouko Kiheishidan"
 		division_name = {
@@ -925,6 +989,7 @@ units = {
 		location = 3427
 		division_template = "Kihei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "5 Mouko Kiheishidan"
 		division_name = {
@@ -934,6 +999,7 @@ units = {
 		location = 10854
 		division_template = "Kihei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "6 Mouko Kiheishidan"
 		division_name = {
@@ -943,6 +1009,7 @@ units = {
 		location = 1959
 		division_template = "Kihei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "7 Mouko Kiheishidan"
 		division_name = {
@@ -952,6 +1019,7 @@ units = {
 		location = 10629
 		division_template = "Kihei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "8 Mouko Kiheishidan"
 		division_name = {
@@ -961,6 +1029,7 @@ units = {
 		location = 12880
 		division_template = "Kihei Shidan"
 		start_experience_factor = 0.2
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
 
@@ -973,6 +1042,7 @@ units = {
 		location = 4173
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "39 Hohei Shidan"
 		division_name = {
@@ -981,7 +1051,8 @@ units = {
 		}
 		location = 11937
 		division_template = "Chugata Hohei Shidan"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.95
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = {
 		name = "Shanghai Kichi Shubitai"
@@ -989,6 +1060,7 @@ units = {
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 
 	}
 	division = { # "1 Sasebo Rikustentai"
@@ -998,13 +1070,15 @@ units = {
 		}
 		location = 7014 # Shanghai
 		division_template = "Rikusentai"
-		start_experience_factor = 0.5
+		start_experience_factor = 0.63
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
 	division = {
 		name = "1 Yokosuka Rikustentai"
 		location = 4023 # Hainan
 		division_template = "Rikusentai"
-		start_experience_factor = 0.5
+		start_experience_factor = 0.72
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
 	division = { # "1 Kure Rikustentai"
 		division_name = {
@@ -1013,7 +1087,8 @@ units = {
 		}
 		location = 7071 # Hainan
 		division_template = "Rikusentai"
-		start_experience_factor = 0.5
+		start_experience_factor = 0.57
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
 
 	division = {
@@ -1021,7 +1096,7 @@ units = {
 		location = 7071 #xiamen
 		division_template = "Rikusentai"
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		start_experience_factor = 0.2
+		start_experience_factor = 0.68
 		start_equipment_factor = 0.9
 	}
 
@@ -1033,7 +1108,8 @@ units = {
 		}
 		location = 11988
 		division_template = "Hohei Shidan"
-		start_experience_factor = 0.4
+		start_experience_factor = 0.78
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "6 'Mei' Hohei Shidan"
 		division_name = {
@@ -1042,7 +1118,8 @@ units = {
 		}
 		location = 7653
 		division_template = "Hohei Shidan"
-		start_experience_factor = 0.4
+		start_experience_factor = 0.99
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
 	division = { # "13 'Kyo' Hohei Shidan"
 		division_name = {
@@ -1052,6 +1129,7 @@ units = {
 		location = 4185
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "33 'Yumi' Hohei Shidan"
 		division_name = {
@@ -1061,6 +1139,7 @@ units = {
 		location = 4038
 		division_template = "Chugata Hohei Shidan"
 		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 	division = { # "101 Hohei Shidan"
 		division_name = {
@@ -1079,8 +1158,8 @@ units = {
 		}
 		location = 3992
 		division_template = "Hohei Shidan"			# Garrison division (lower experience, older equipment)
-		start_experience_factor = 0.2
-		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		start_experience_factor = 0.86
+		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 	}
 
 	### 13 Homengun (CO: Fujita) ###
@@ -1114,6 +1193,14 @@ units = {
 		start_experience_factor = 0.3
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
+
+	division = {
+		location = 1096
+		division_template = "Chugata Hohei Shidan"
+		start_experience_factor = 0.13
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+	}
+
 	division = { # "116 Hohei Shidan"
 		division_name = {
 			is_name_ordered = yes
@@ -1121,7 +1208,7 @@ units = {
 		}
 		location = 9974
 		division_template = "Hohei Shidan"			# Garrison division (lower experience, older equipment)
-		start_experience_factor = 0.2
+		start_experience_factor = 0.94
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 	}
 
@@ -1300,7 +1387,7 @@ units = {
 	}
 
 	division = {
-		location = 1004
+		location = 4606
 		division_template = "Hohei Shidan"	
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
@@ -1340,7 +1427,7 @@ units = {
 		division_template = "Hohei Shidan"	
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-		start_experience_factor = 0.33
+		start_experience_factor = 0.87
 		start_equipment_factor = 1
 	}
 
@@ -1349,7 +1436,7 @@ units = {
 		division_template = "Hohei Shidan"	
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-		start_experience_factor = 0.33
+		start_experience_factor = 0.83
 		start_equipment_factor = 1
 	}
 
@@ -1358,7 +1445,7 @@ units = {
 		division_template = "Hohei Shidan"	
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-		start_experience_factor = 0.33
+		start_experience_factor = 0.88
 		start_equipment_factor = 1
 	}
 
@@ -1367,7 +1454,7 @@ units = {
 		division_template = "Hohei Shidan"	
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-		start_experience_factor = 0.13
+		start_experience_factor = 0.63
 		start_equipment_factor = 0.7
 	}
 
@@ -1376,8 +1463,8 @@ units = {
 		division_template = "Hohei Shidan"	
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-		start_experience_factor = 0.11
-		start_equipment_factor = 0.71
+		start_experience_factor = 0.89
+		start_equipment_factor = 0.87
 	}
 
 	division = {
@@ -1385,7 +1472,7 @@ units = {
 		division_template = "Hohei Shidan"	
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-		start_experience_factor = 0.11
+		start_experience_factor = 0.74
 		start_equipment_factor = 0.71
 	}
 
@@ -1414,7 +1501,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.45
 			start_equipment_factor = 0.91
 		}
 
@@ -1424,7 +1511,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.45
 			start_equipment_factor = 0.91
 		}
 
@@ -1434,7 +1521,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.36
 			start_equipment_factor = 0.91
 		}
 
@@ -1444,7 +1531,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.28
 			start_equipment_factor = 0.91
 		}
 
@@ -1454,7 +1541,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.37
 			start_equipment_factor = 0.91
 		}
 
@@ -1464,7 +1551,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.73
 			start_equipment_factor = 0.91
 		}
 
@@ -1474,7 +1561,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.35
 			start_equipment_factor = 0.91
 		}
 
@@ -1484,7 +1571,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.33
 			start_equipment_factor = 0.91
 		}
 
@@ -1494,7 +1581,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.28
 			start_equipment_factor = 0.91
 		}
 
@@ -1505,7 +1592,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.27
 			start_equipment_factor = 0.91
 		}
 
@@ -1515,7 +1602,7 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.57
 			start_equipment_factor = 0.91
 		}
 
@@ -1524,7 +1611,7 @@ units = {
 			location = 12190
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.36
 			start_equipment_factor = 0.91
 		}
 
@@ -1532,7 +1619,7 @@ units = {
 			location = 4579
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.2
+			start_experience_factor = 0.27
 			start_equipment_factor = 0.91
 		}
 
@@ -1572,7 +1659,7 @@ units = {
 			location = 10222
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.24
+			start_experience_factor = 0.54
 			start_equipment_factor = 0.94
 		}
 
@@ -1588,7 +1675,7 @@ units = {
 			location = 4352
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.24
+			start_experience_factor = 0.74
 			start_equipment_factor = 0.94
 		}
 
@@ -1612,7 +1699,7 @@ units = {
 			location = 13023
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.24
+			start_experience_factor = 0.44
 			start_equipment_factor = 0.94
 		}
 
@@ -1620,7 +1707,7 @@ units = {
 			location = 13047
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.24
+			start_experience_factor = 0.74
 			start_equipment_factor = 0.94
 		}
 
@@ -1636,7 +1723,7 @@ units = {
 			location = 13043
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.24
+			start_experience_factor = 0.29
 			start_equipment_factor = 0.94
 		}
 
@@ -1652,8 +1739,8 @@ units = {
 			location = 1002
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.24
-			start_equipment_factor = 0.94
+			start_experience_factor = 0.37
+			start_equipment_factor = 0.99
 		}
 
 		division = {
@@ -1685,7 +1772,7 @@ units = {
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			start_experience_factor = 0.24
-			start_equipment_factor = 0.94
+			start_equipment_factor = 0.99
 		}
 
 		division = {
@@ -1869,7 +1956,7 @@ units = {
 			division_template = "Senshadan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
-			start_experience_factor = 0.27
+			start_experience_factor = 0.67
 			start_equipment_factor = 0.73
 		}
 
@@ -1880,7 +1967,7 @@ units = {
 			division_template = "Senshadan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
-			start_experience_factor = 0.35
+			start_experience_factor = 0.71
 			start_equipment_factor = 0.84
 		}
 
@@ -2299,45 +2386,6 @@ units = {
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
-			location = 7072
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
-		}
-
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 7072
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.32
-			start_equipment_factor = 0.93
-		}
-
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10125
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
-			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
-		}
-
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10125
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.43
-			start_equipment_factor = 0.88
-		}
-
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
 			location = 7197
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
@@ -2366,24 +2414,6 @@ units = {
 			start_equipment_factor = 0.93
 		}
 
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10125
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_3 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 0.88
-		}
-
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10125
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.13
-			start_equipment_factor = 0.88
-		}
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
@@ -2488,23 +2518,6 @@ units = {
 		}
 
 		#####
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 7072
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-			start_experience_factor = 0.22
-			start_equipment_factor = 1
-		}
-
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 7072
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.32
-			start_equipment_factor = 0.93
-		}
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
@@ -2515,15 +2528,6 @@ units = {
 			start_equipment_factor = 1
 		}
 
-		division = {
-			division_name = { is_name_ordered = no name_order = 0 }
-			location = 10125
-			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.43
-			start_equipment_factor = 0.88
-		}
 
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
@@ -2654,9 +2658,9 @@ units = {
 		division = {
 			location = 1069
 			division_template = "Hohei Shidan"	
-			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.29
+			start_experience_factor = 0.79
 			start_equipment_factor = 0.99
 		}
 
@@ -2749,6 +2753,14 @@ units = {
 
 		division = {
 			location = 7909
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_0 = { owner = "JAP" } }
+			start_experience_factor = 0.15
+			start_equipment_factor = 0.71
+		}
+
+		division = {
+			location = 7400
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_0 = { owner = "JAP" } }
 			start_experience_factor = 0.15
@@ -2902,8 +2914,8 @@ units = {
 			division_template = "Hohei Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
 			force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
-			start_experience_factor = 0.11
-			start_equipment_factor = 0.64
+			start_experience_factor = 0.99
+			start_equipment_factor = 0.97
 		}
 
 		division = {
@@ -2915,11 +2927,27 @@ units = {
 			start_equipment_factor = 0.94
 		}
 
-
-
 		division = {
 			division_name = { is_name_ordered = no name_order = 0 }
 			location = 7518
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.73
+		}
+		
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 7518
+			division_template = "Chuton-chi Shidan"	
+			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+			start_experience_factor = 0.11
+			start_equipment_factor = 0.73
+		}
+		
+		division = {
+			division_name = { is_name_ordered = no name_order = 0 }
+			location = 12008
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
 			start_experience_factor = 0.11
@@ -2960,8 +2988,8 @@ units = {
 			location = 10004
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-			start_experience_factor = 0.26
-			start_equipment_factor = 0.93
+			start_experience_factor = 0.87
+			start_equipment_factor = 0.98
 		}
 
 
@@ -2970,8 +2998,8 @@ units = {
 			location = 1018
 			division_template = "Chuton-chi Shidan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-			start_experience_factor = 0.32
-			start_equipment_factor = 0.93
+			start_experience_factor = 0.92
+			start_equipment_factor = 1.0
 		}
 
 

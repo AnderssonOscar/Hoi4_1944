@@ -365,3 +365,35 @@ SIA_THAI_fascism: "Thailand"
 NOR_REICH_fascism: "Reichskommissariat Norwegen"
 
 SER_REICH_fascism: "National Salvation"
+
+JAP_mod_operations_cat:0 "Operation Ichi-Go"
+JAP_mod_operations_cat_desc:0 "Operation Ichi-Go Will be a complex military campaign that will be conducted in three major stages.\n\nThe success of this offensive will secure the land route for troop and resource transportation."
+
+JAP_ichi_go_mod_1:0 "Ichi-Go Stage 1"
+JAP_ichi_go_mod_1_desc:0 "The goal of this phase is to break through Chinese defensive lines in northern China and secure the Ping-Han Railway to connect Beijing to Wuhan"
+
+JAP_ichi_go_mod_1_timer:0 "Ichi-Go Stage 1"
+JAP_ichi_go_mod_1_timer_desc:0 "The goal of this phase is to break through Chinese defensive lines in northern China and secure the Ping-Han Railway to connect Beijing to Wuhan"
+
+JAP_ichi_go_mod_2:0 "Ichi-Go Stage 2"
+JAP_ichi_go_mod_2_desc:0 "The goal of this phase move southward into Hunan Province to seize key areas, particularly the city of Changsha and airbases"
+
+JAP_ichi_go_mod_2_timer:0 "Ichi-Go Stage 2"
+JAP_ichi_go_mod_2_timer_desc:0 "The goal of this phase move southward into Hunan Province to seize key areas, particularly the city of Changsha and airbases"
+
+JAP_ichi_go_mod_3:0 "Ichi-Go Stage 3"
+JAP_ichi_go_mod_3_desc:0 "The goal of this phase is to push into southern China, particularly Guangxi Province, to secure the railway link to Indochina"
+
+JAP_ichi_go_mod_timer_3:0 "Ichi-Go Stage 3"
+JAP_ichi_go_mod_timer_3_desc:0 "The goal of this phase is to push into southern China, particularly Guangxi Province, to secure the railway link to Indochina"
+
+JAP_mod_homefront_cat:0 "Food Situation"
+JAP_mod_homefront_cat_desc:0 "Enemy submarines are devastating our shipply lines, which we depend on to bring food and resources from its our oversea territories"
+
+JAP_food_shortage:0 "Food shortage"
+JAP_food_shortage_desc:0 "We must keep our agricultural terriorties & maintain a sizeable fleet of convoys."
+
+CHI_hold_modifier:0 "Well-fortified positions"
+
+JAP_home_famine:0 "Famine"
+JAP_home_famine_desc:0 "Our country is suffering from a Widespread scarcity of food."

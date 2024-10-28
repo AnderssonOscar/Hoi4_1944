@@ -23,6 +23,20 @@
 		logistics_company = { x = 0 y = 2 }
 	}
 }
+
+division_template = {
+	name = "Garrison"			
+	division_names_group = AST_GAR_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
 division_template = {
 	name = "Cavalry Division"  			# Reserve divisions (reserve-level, older equipment, low experience)
 
@@ -156,9 +170,77 @@ units = {
 		start_equipment_factor = 0.3
 
 	}
+	#######HOME
 
+	division= {	
+		location = 12910
+		division_template = "Garrison"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.96
+		start_manpower_factor = 1.0
+	}
 
+	division= {	
+		location = 12910
+		division_template = "Garrison"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.96
+		start_manpower_factor = 1.0
+	}
 
+	division= {	
+		location = 12910
+		division_template = "Garrison"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.96
+		start_manpower_factor = 1.0
+	}
+
+	division= {	
+		location = 2130
+		division_template = "Garrison"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.96
+		start_manpower_factor = 1.0
+	}
+
+	division= {	
+		location = 2189
+		division_template = "Garrison"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.96
+		start_manpower_factor = 1.0
+	}
+
+	division= {	
+		location = 7669
+		division_template = "Garrison"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }
+		start_experience_factor = 0.23
+		start_equipment_factor = 0.96
+		start_manpower_factor = 1.0
+	}
+
+	division= {	
+		location = 7566
+		division_template = "Garrison"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }
+		start_experience_factor = 0.13
+		start_equipment_factor = 0.96
+		start_manpower_factor = 1.0
+	}
 
 	###################PAPUA##################
 	division= {	
@@ -220,6 +302,48 @@ units = {
 		start_equipment_factor = 1.0
 		start_manpower_factor = 1.0
 	}
+
+	division= {	
+		location = 2129
+		division_template = "Infantry Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "ENG" } }
+		start_experience_factor = 0.53
+		start_equipment_factor = 1.0
+		start_manpower_factor = 1.0
+	}
+
+	division= {	
+		location = 1617
+		division_template = "Infantry Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "USA" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "USA" } }
+		start_experience_factor = 0.56
+		start_equipment_factor = 1.0
+		start_manpower_factor = 1.0
+	}
+
+	division= {	
+		location = 7627
+		division_template = "Infantry Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "ENG" } }
+		start_experience_factor = 0.43
+		start_equipment_factor = 1.0
+		start_manpower_factor = 1.0
+	}
+
+	division= {	
+		location = 7365
+		division_template = "Infantry Division"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "AST" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "ENG" } }
+		start_experience_factor = 0.63
+		start_equipment_factor = 1.0
+		start_manpower_factor = 1.0
+	}
+
+	
 
 
 ###########################################################

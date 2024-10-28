@@ -43,4 +43,12 @@ spriteTypes = {
 		name = "GFX_rhine_defence"
 		texturefile = "gfx/events/report_event_rhine_defence.dds"
 	}
+	spriteType = {
+		name = "GFX_decision_cat_picture_JAP_mod"
+		texturefile = "gfx/interface/decisions/decision_cat_picture_JAP_mod.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_transport_cat_picture_JAP_mod"
+		texturefile = "gfx/interface/decisions/decision_transport_cat_picture_JAP_mod.dds"
+	}
 }

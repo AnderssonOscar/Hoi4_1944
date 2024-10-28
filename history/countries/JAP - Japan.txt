@@ -1479,11 +1479,8 @@ if = {
 
 1943.12.30 = {
 
-
-
-
-
-
+	set_fuel = 261753
+	set_convoys = 50
 
 	609 = {
 		#start_resistance = yes
@@ -1494,14 +1491,14 @@ if = {
 	
 	527 = {
 		#start_resistance = yes
-		set_compliance = 72
+		set_compliance = 82
 		set_resistance = 5
 		set_garrison_strength = 1.0
 	}
 	
 	525 = {
 		#start_resistance = yes
-		set_compliance = 71
+		set_compliance = 84
 		set_resistance = 5
 		set_garrison_strength = 1.0
 	}
@@ -1515,7 +1512,7 @@ if = {
 	
 	524 = {
 		#start_resistance = yes
-		set_compliance = 54
+		set_compliance = 74
 		set_resistance = 5
 		set_garrison_strength = 1.0
 	}
@@ -1587,7 +1584,7 @@ if = {
 			tot_economic_mobilisation
 			service_by_requirement
 			closed_economy
-
+			dont_surrender_mod
 			low_war_casualties
 		}
 
@@ -2420,17 +2417,17 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_1
-			amount = 30000
+			amount = 10000
 		}
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_0
-			amount = 44000
+			amount = 41000
 		}
 
 		add_equipment_to_stockpile = {
 			type = support_equipment_1
-			amount = 935
+			amount = 335
 		}
 
 		add_equipment_to_stockpile = {
@@ -2445,17 +2442,17 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_1
-			amount = 430
+			amount = 410
 		}
 
 		add_equipment_to_stockpile = {
 			type = motorized_equipment_1
-			amount = 710
+			amount = 210
 		}
 
 		add_equipment_to_stockpile = {
 			type = motorized_equipment_0
-			amount = 210
+			amount = 410
 		}
 
 

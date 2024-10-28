@@ -1,6 +1,6 @@
 ﻿capital = 285
 
-oob = "AST_1936"
+#oob = "AST_1936"
 set_stability = 0.8
 set_war_support = 0.3
 # Starting tech
@@ -468,6 +468,8 @@ if = {
 
 1943.12.30 = {
 
+	oob = "AST_1944"
+
 	army_experience = 110
 	navy_experience = 0	
 	air_experience = 75
@@ -720,5 +722,4 @@ if = {
 		
    		 }
 	
-	oob = "AST_1944"
 }

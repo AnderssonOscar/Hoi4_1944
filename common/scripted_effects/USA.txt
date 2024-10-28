@@ -3,9 +3,9 @@ USA_give_nukes = {
 	USA = {
 		if = {
 			limit = {
-				date > 1945.8.5
+				date > 1945.9.1
 				has_war_with = JAP
-				has_tech = nukes
+				#has_tech = nukes
 				USA = { surrender_progress < 0.01 }
 				USA = { is_ai = yes }
 				JAP = { surrender_progress < 0.2 }
@@ -18,6 +18,15 @@ USA_give_nukes = {
 
 				NOT = { has_global_flag = USA_give_nukes }
 			}
+
+				if = {
+					limit = {
+						not = { has_tech = nukes }
+					}
+					set_technology = {
+						nukes = 1
+					}
+				}
 
 				add_nuclear_bombs = 3
 				set_global_flag = USA_give_nukes

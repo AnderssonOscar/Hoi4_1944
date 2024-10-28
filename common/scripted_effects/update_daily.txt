@@ -6,6 +6,7 @@ MOD_start_update = {
 	HOL_setup_puppet = yes
 	HOL_setup_resistance = yes
 	ITA_start_setup = yes
+	CHI_scripted_events_start_effects = yes
 }
 
 MOD_daily_update = {
@@ -26,6 +27,10 @@ MOD_daily_update = {
 	GER_courland_pocket = yes
 	GER_start_effects = yes
 
+	JAP_ichi_go_1_start_script = yes
+	JAP_ichi_go_2_start_script = yes
+	JAP_ichi_go_3_start_script = yes
+	JAP_ichi_go_failed_modifiers = yes
 
 	USA_give_nukes = yes
 

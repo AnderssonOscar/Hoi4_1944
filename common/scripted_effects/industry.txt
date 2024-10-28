@@ -17,7 +17,10 @@ industry_start_effects = {
 
 				controller = { num_of_factories > 15}
 				NOT = { has_state_flag = war_building_slot_flag }
-				NOT = { is_controlled_by = GER } #Germany already got to civs added to states 
+				OR = {
+					NOT = { is_controlled_by = GER } #Germany already got to civs added to states 
+					NOT = { is_controlled_by = JAP }
+				}
 
 				OR = {
 					arms_factory  > 1

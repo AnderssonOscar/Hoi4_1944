@@ -1,0 +1,283 @@
+﻿capital = 594
+
+oob = "GXC_1936"
+
+set_stability = 0.6
+set_war_support = 0.4
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	mass_assault = 1
+}
+
+recruit_character = GXC_li_zongren
+recruit_character = GXC_chen_jitang
+recruit_character = GXC_liu_peng
+recruit_character = GXC_zhang_lu
+recruit_character = GXC_li_ting
+recruit_character = GXC_bai_yeung
+recruit_character = GXC_heng_lo
+recruit_character = GXC_yu_hanmou
+recruit_character = GXC_zha_zemin
+recruit_character = GXC_huo_duyi
+recruit_character = GXC_niu_keung
+recruit_character = GXC_bai_chongxi
+recruit_character = GXC_teng_qingshan
+recruit_character = GXC_do_liang
+recruit_character = GXC_huang_shaohong
+recruit_character = GXC_yang_hulin
+recruit_character = GXC_wang_shuming
+recruit_character = GXC_li_jishen
+recruit_character = GXC_lei_zhong
+
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	add_ideas = {
+		PRC_government_corruption
+		CHI_ineffective_bureaucracy_warlord
+		CHI_warlord_state_idea
+	}
+}
+
+1939.1.1 = {
+	
+	oob = "GXC_1939"
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	if = {
+		limit = {
+			has_dlc = "Waking the Tiger"
+		}
+
+		CHI = { add_to_faction = PREV }
+		add_to_war = {
+			targeted_alliance = CHI
+			enemy = JAP
+			hostility_reason = asked_to_join
+		}
+
+		complete_national_focus = CHI_secure_internal_politics
+		complete_national_focus = CHI_cooperation_with_the_nationalists
+		complete_national_focus = CHI_industrial_investment
+		complete_national_focus = CHI_public_education_reform
+		complete_national_focus = CHI_long_term_economic_planning
+		complete_national_focus = CHI_technological_cooperation
+		complete_national_focus = CHI_local_arms_production
+		complete_national_focus = CHI_new_model_province
+		complete_national_focus = CHI_root_out_corruption
+		complete_national_focus = CHI_land_reform
+		complete_national_focus = CHI_reform_the_administration
+		complete_national_focus = CHI_heavy_weapons_development
+		else = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = flexible_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+
+}
+
+
+
+set_convoys = 5
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
+}
+
+
+
+
+1943.12.30 = {
+
+	oob = "GXC_1944"
+
+	if = {
+		limit = { has_dlc = "Waking the Tiger" }
+		complete_national_focus = CHI_local_arms_production
+	}
+
+	army_experience = 50
+	navy_experience = 5	
+	air_experience = 0
+	
+	add_ideas = {
+		#laws
+		#tot_economic_mobilisation
+		war_economy
+		limited_conscription
+	}
+
+	set_technology = {
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		#decimetric_radar = 1
+		#improved_decimetric_radar = 1
+		#centimetric_radar = 1
+		#improved_centimetric_radar = 1
+
+		#industry
+		excavation1 = 1
+		excavation2 = 1
+		#excavation3 = 1
+
+		#doctrine
+		trench_warfare = 1
+
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+
+		fuel_silos = 1
+		fuel_refining = 1
+		#fuel_refining2 = 1
+
+		oil_processing = 1
+
+		construction1 = 1
+		construction2 = 1
+		#construction3 = 1
+
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+
+		support_weapons = 1
+		support_weapons2 = 1
+		#support_weapons3 = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+
+		#improved_infantry_weapons = 1
+
+		#advanced_infantry_weapons = 1
+
+		#infantry_at = 1
+		#infantry_at2 = 1
+
+		gw_artillery = 1
+		artillery1 = 1
+		#artillery2 = 1
+
+		interwar_antiair = 1
+		antiair1 = 1
+		#antiair2 = 1
+
+		interwar_antitank = 1
+		antitank1 = 1
+		#antitank2 = 1
+
+		motorised_infantry = 1
+		tech_support = 1
+
+		tech_engineers = 1
+		tech_engineers2 = 1
+
+		tech_recon = 1
+		tech_recon2 = 1
+
+		tech_field_hospital = 1
+		#tech_field_hospital2 = 1
+
+		tech_military_police = 1
+
+		tech_maintenance_company = 1
+		#tech_maintenance_company2 = 1
+
+		tech_logistics_company = 1
+		#tech_logistics_company2 = 1
+		
+		basic_train = 1
+	}
+
+	if = {
+		limit = {
+			
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+				gwtank_chassis = 1
+				armor_tech_1 = 1
+				engine_tech_1 = 1
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			basic_naval_mines = 1
+			submarine_mine_laying = 1
+			early_ship_hull_light = 1
+			early_ship_hull_submarine = 1
+			basic_ship_hull_submarine = 1
+			early_ship_hull_cruiser = 1
+			basic_battery = 1
+			basic_torpedo = 1
+			coastal_defense_ships = 1
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				aa_lmg = 1
+				engines_1 = 1
+				early_bombs = 1
+
+				aircraft_construction = 1
+				
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				iw_medium_airframe = 1
+				iw_large_airframe = 1
+				air_torpedoe_1 = 1
+			}
+		else = {
+			set_technology = {
+
+				naval_bomber1 = 1
+
+				CAS1 = 1
+
+				early_fighter = 1
+				fighter1 = 1
+				heavy_fighter1 = 1
+			}
+		}
+	}
+
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 4950
+    }
+
+	add_equipment_to_stockpile = { 
+        type = train_equipment_1
+        amount = 7
+    }
+}

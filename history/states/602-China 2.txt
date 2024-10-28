@@ -30,9 +30,9 @@ state={
 				fuel_silo = 1
 				anti_air_building = 1
 
-				7097 = {
-					bunker = 3
-				}
+				# 7097 = {
+				# 	bunker = 3
+				# }
 
 			}
 		}

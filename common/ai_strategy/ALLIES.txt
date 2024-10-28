@@ -847,7 +847,11 @@ minor_allies_dont_invade_JAP = {
 	enable = {
 		date > 1943.12.30
 		date < 1946.1.1
-		has_war_with = GER
+		NOT = { has_war_with = SOV }
+		OR = {
+			has_war_with = GER
+			has_war_with = JAP
+		}
 	}
 
 	abort_when_not_enabled = yes
@@ -1740,3 +1744,68 @@ ENG_enable_invasion_of_GRE = {#greece
 }
 
 
+ALLIES_dont_help_CHI_land = {
+	allowed = { 
+		OR = {
+			tag = FRA
+			tag = USA
+			tag = ENG
+		}
+	}
+
+	enable = {
+		NOT = { has_war_with = SOV }
+		has_war_with = JAP
+		date < 1946.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders 
+		id = "CHI"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders 
+		id = "YUN"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders 
+		id = "GXC"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders 
+		id = "XSM"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "CHI"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "YUN"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "GXC"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "XSM"
+		value = -1000
+	}
+}

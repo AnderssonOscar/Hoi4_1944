@@ -7,7 +7,7 @@ state = {
 	
 	resources = {
 		rubber = 150 # was: 268
-		oil = 12 # was: 24
+		oil = 8 # was: 24 #1944 from 12
 		aluminium = 28 # was: 50
 	}
 

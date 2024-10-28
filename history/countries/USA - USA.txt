@@ -2077,6 +2077,21 @@ if = {
 		icon = "GFX_USA_fighter2_medium"
 	}
 
+
+	create_equipment_variant = {
+		name = "Curtiss P-40 Warhawk" 
+		type = small_plane_airframe_2
+		modules = {
+			fixed_main_weapon_slot = heavy_mg_4x
+			fixed_auxiliary_weapon_slot_1 = heavy_mg_2x
+			engine_type_slot = engine_2_1x
+			special_type_slot_1 = armor_plate_small
+			special_type_slot_2 = self_sealing_fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+		}
+		icon = "GFX_USA_fighter3_medium"
+	}
+
 else = {
 		create_equipment_variant = {
 			name = "B-17 Flying Fortress A"

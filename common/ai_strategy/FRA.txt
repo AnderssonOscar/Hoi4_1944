@@ -327,25 +327,25 @@ FRA_focus_europe = {
 	ai_strategy = {
 		type = dont_defend_ally_borders 
 		id = AST
-		value = 100
+		value = 1000
 	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders 
 		id = RAJ
-		value = 100
+		value = 1000
 	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders 
 		id = ENG
-		value = 100
+		value = 1000
 	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders 
 		id = USA
-		value = 100
+		value = 1000
 	}
 
 	ai_strategy = {
@@ -409,6 +409,7 @@ FRA_stop_invasions = {
 
 		#south france
 		OR = {
+			date > 1944.10.1
 			date < 1944.6.1
 			AND = {
 				NOT = { 851 = { is_fully_controlled_by = GER } }
@@ -436,12 +437,8 @@ FRA_stop_invasions = {
 FRA_invade_south_france = { #dragoon
 
 	allowed = { 
-		OR = {
-			tag = FRA
-			# tag = ENG
-			# tag = USA
-			}
-		}
+		tag = FRA
+	}
 	
 	enable = {
 		is_in_faction_with = ENG
@@ -482,12 +479,12 @@ FRA_invade_south_france = { #dragoon
 
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 100
+		value = 1000
 	}
 
 	ai_strategy = {
 		type = area_priority
-		id = mainland_europe
+		id = normandy_landing_zone
 		value = 500
 	}
 
@@ -510,27 +507,45 @@ FRA_invade_south_france = { #dragoon
 	}
 
 	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GER }
+		value = 80
+	}
+
+	ai_strategy = {
 		type = invasion_unit_request
 		state = 851
-		value = 200
+		value = 100
 	}
 
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 21
-		value = 200
+		value = 100
 	}
 
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 735
-		value = 200
+		value = 100
 	}
 
 	###NOT THESE!
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 6
+		value = -10000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 736
+		value = -10000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 852
 		value = -10000
 	}
 
@@ -599,5 +614,4 @@ FRA_invade_south_france = { #dragoon
 		state = 56
 		value = -10000
 	}
-
 }

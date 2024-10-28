@@ -81,3 +81,28 @@ RAJ_more_infrastructure = {
 		value = 100
 	}
 }
+
+
+RAJ_hunker_down_now  = {
+	allowed = {
+		original_tag = RAJ
+	}
+
+	enable = {
+		date < 1945.6.1
+		has_war_with = JAP
+		is_historical_focus_on = yes
+		surrender_progress < 0.01
+	}
+		abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		tag = JAP
+		ratio = 0.6
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+	}
+}

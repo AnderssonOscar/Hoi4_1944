@@ -24,6 +24,15 @@ on_actions = {
 			SOV = { 195 = {add_dynamic_modifier = { modifier = SOV_leningrad_defence_modifier scope = SOV } } }
 			USA = { 117 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
 			USA = { 849 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
+
+		if = {
+			limit = {
+				JAP = { is_ai = yes }
+			}
+				CHI = { 595 = {add_dynamic_modifier = { modifier = CHI_hold_modifier scope = CHI days = 325} } }
+				CHI = { 593 = {add_dynamic_modifier = { modifier = CHI_hold_modifier scope = CHI days = 225} } }
+				CHI = { 600 = {add_dynamic_modifier = { modifier = CHI_hold_modifier scope = CHI days = 325} } }
+		}
 			JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation
 
 		#add_named_threat = { threat = 60 name = generic.15.t }
@@ -45,8 +54,8 @@ on_actions = {
 			OR = {
 				tag = YUN
 				tag = GXC
-				tag = XSM
-				tag = CHI
+				#tag = XSM
+				#tag = CHI
 				tag = PRC
 			}
 		 }

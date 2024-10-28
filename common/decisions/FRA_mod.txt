@@ -93,7 +93,7 @@ war_measures = {
 		}
 
 		visible = {
-			date > 1944.8.1
+			date > 1944.8.10
 			is_ai = yes
 		}
 

@@ -1,7 +1,7 @@
 AST_focus_JAP = {
 
 	allowed = {
-		original_tag = AST
+		tag = AST
 	}
 
 	enable = {
@@ -15,8 +15,14 @@ AST_focus_JAP = {
 	
 	ai_strategy = {
 		type = front_unit_request
-		country_trigger = {tag = JAP}
-		value = 10000
+		country_trigger = { tag = JAP }
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = asia
+		value = 100
 	}
 }
 

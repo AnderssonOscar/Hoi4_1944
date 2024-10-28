@@ -11,7 +11,7 @@
 # influence
 
 CHI_unit_production = {
-	allowed = { original_tag = CHI }
+	allowed = { tag = CHI }
 	enable = {
 		always = yes
 	}
@@ -144,7 +144,7 @@ CHI_unit_production = {
 }
 
 CHI_dont_waste_on_offensive_air_early = {
-	allowed = { original_tag = CHI }
+	allowed = { tag = CHI }
 	enable = {
 		date < 1940.1.1
 	}
@@ -166,7 +166,7 @@ CHI_dont_waste_on_offensive_air_early = {
 }
 
 CHI_armored_production = {
-	allowed = { original_tag = CHI }
+	allowed = { tag = CHI }
 	enable = {
 		ai_wants_divisions > 0 #Decreasing the amount of tanks the AI wants
 	}
@@ -182,7 +182,7 @@ CHI_armored_production = {
 }
 
 CHI_highered_armored_production = {
-	allowed = { original_tag = CHI }
+	allowed = { tag = CHI }
 	enable = {
 		num_of_military_factories > 109
 	}
@@ -198,7 +198,7 @@ CHI_highered_armored_production = {
 }
 
 CHI_prio_military_even_at_peace = {
-	allowed = { original_tag = CHI }
+	allowed = { tag = CHI }
 	enable = {
 		always = yes
 	}
@@ -213,7 +213,7 @@ CHI_prio_military_even_at_peace = {
 	
 CHI_dont_mess_with_the_soviets = {
 
-	allowed = { original_tag = CHI }
+	allowed = {tag = CHI }
 	enable = {	
 		NOT = { has_war_with = SOV }
 	}
@@ -230,7 +230,7 @@ CHI_dont_mess_with_the_soviets = {
 }
 
 CHI_some_safer_places_to_build = {
-	allowed = { original_tag = CHI }
+	allowed = { tag = CHI }
 	enable = {
 		always = yes
 	}
@@ -296,38 +296,31 @@ CHI_buffer_in_mainland = {
 
 CHI_hunker_down_now  = {
 	allowed = {
-		original_tag = CHI
+		tag = CHI
 	}
 
 	enable = {
-		date < 1945.9.1 #We accept our fate after this point
+		date < 1945.10.1 
 		has_war_with = JAP
 		is_historical_focus_on = yes
-		surrender_progress > 0.45
+		surrender_progress > 0.3
 	}
 
-	abort = {
-		date > 1945.9.1 #We accept our fate after this point
-	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = front_control
-
 		tag = JAP
 
-		ratio = 0.6
-
-		priority = 100
 		ordertype = front
 		execution_type = careful
 	}
-
 }
 
 
 CHI_stockpile_less_make_more_troops = {
 	allowed = {
-		original_tag = CHI
+		tag = CHI
 	}
 
 	enable = {
@@ -348,7 +341,6 @@ CHI_make_more_troops = {
 		is_literally_china = yes
 	}
 	enable = {
-		always = yes
 		date > 1944.1.1
 		date < 1945.6.1
 	}
@@ -371,9 +363,6 @@ CHI_dont_do_naval_invasion = {
 		date < 1946.1.1
 		has_war_with = JAP
 		NOT = {has_war_with = SOV}
-
-		is_in_faction_with = ENG
-		is_in_faction_with = USA
 	}
 
 	abort_when_not_enabled = yes
@@ -388,5 +377,38 @@ CHI_dont_do_naval_invasion = {
 		type = invasion_unit_request  
 		country_trigger = { tag = MAN }
 		value = -500
+	}
+}
+
+
+CHI_guard_eastern_china = { #1944 
+	allowed = {
+		is_literally_china = yes
+	}
+	enable = {
+		date > 1944.1.1
+		date < 1945.3.1
+		is_historical_focus_on = yes
+
+		controls_province = 10012
+		NOT = { 595 = {is_fully_controlled_by = CHI} }
+		#inner china
+		605 = {is_fully_controlled_by = CHI} 
+		748 = {is_fully_controlled_by = CHI} 
+		603 = {is_fully_controlled_by = CHI} 
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			595
+			600
+		}
+		ratio = 0.05
+		area = asia
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
 	}
 }

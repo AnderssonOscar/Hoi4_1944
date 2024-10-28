@@ -1775,19 +1775,6 @@ USA_unit_production = {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 USA_lend_lease_SOV = {
 	allowed = { original_tag = USA }
 	enable = {
@@ -2062,5 +2049,106 @@ USA_bomb_japan = {
 		type = strategic_air_importance
 		id = 154 
 		value = 34000 #value of stocked main front in active combat is usually around 35,000
+	}
+}
+
+
+
+USA_intense_bomb_japan = {
+	allowed = {
+		tag = USA
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = JAP
+		NOT = { has_war_with = SOV }
+		NOT = { has_war_with = GER }
+		date < 1946.6.1
+
+		OR = {
+			has_equipment = { large_plane_airframe > 400 }
+			has_deployed_air_force_size = { size > 400 type = strategic_bomber }
+		}
+
+		OR = {
+		 	645 = {is_fully_controlled_by = USA}
+			526 = {is_fully_controlled_by = USA}
+
+			646 = {is_fully_controlled_by = USA} #saipan
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 154 
+		value = 35000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 247 
+		value = -2000 
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 143 
+		value = -2000 
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 155 
+		value = -2000 
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 243 
+		value = -2000 
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 244 
+		value = -2000 
+	}
+}
+
+
+
+USA_dont_help_raj_yet = {
+
+	allowed = {
+		original_tag = USA
+	}
+
+	enable = {
+		date > 1944.1.1
+		has_war_with = JAP
+		has_war_with = GER
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "RAJ"
+		value = 250
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = -1000
+		target = burma
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = burma
+		value = -1000
 	}
 }

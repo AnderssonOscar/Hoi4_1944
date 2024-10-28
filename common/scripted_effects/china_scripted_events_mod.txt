@@ -1,0 +1,21 @@
+CHI_scripted_events_start_effects = {
+	
+	if = {
+		limit = { 
+			date > 1943.12.30
+			JAP = { is_ai = no}
+			NOT = { has_global_flag = CHI_scripted_events_start_effects }
+		}
+		set_global_flag = CHI_scripted_events_start_effects
+
+		602 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 7097
+					id = 7159
+				}
+			}
+		}
+	}
+}

@@ -367,6 +367,14 @@ if = {
 
 	oob = "CHI_1944"
 
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "CHI_1944_air_bba"
+		else = {
+			#set_air_oob = "CHI_1939_air_legacy"
+		}
+	}
+
 	add_political_power = 2589
 	add_command_power = 200
 
@@ -626,24 +634,24 @@ if = {
 	}
 
 
-	add_equipment_to_stockpile = {
-        type = infantry_equipment_1
-        amount = 30000
-    }
+	# add_equipment_to_stockpile = {
+    #     type = infantry_equipment_1
+    #     amount = 30000
+    # }
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_0
-        amount = 91000
+        amount = 71000
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 3100
+        amount = 2500
     }
 
 	add_equipment_to_stockpile = {
-        type = motorized_equipment_1
-        amount = 1200
+        type = motorized_equipment_0
+        amount = 500
 		producer = USA
     }
 

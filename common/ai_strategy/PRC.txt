@@ -1,0 +1,46 @@
+PRC_hunker_down_now  = {
+	allowed = {
+		tag = PRC
+	}
+
+	enable = {
+		date < 1945.5.1
+		NOT = { has_war_with = CHI }
+		has_war_with = JAP
+		is_historical_focus_on = yes
+	}
+		abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		tag = JAP
+
+		ordertype = front
+		execution_type = careful
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "CHI"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "GXC"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "YUN"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "XSM"
+		value = 100
+	}
+}
+

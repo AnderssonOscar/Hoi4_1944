@@ -5,7 +5,7 @@ state={
 	manpower = 11015000
 	state_category = metropolis
 	resources={
-		aluminium=3 # was: 6
+		aluminium=6 # was: 6
 	}
 
 	history={
@@ -33,6 +33,14 @@ state={
 			buildings = {
 				arms_factory = 3
 				industrial_complex = 5
+			}
+		}
+
+		1943.12.30 = {
+			buildings = {
+				fuel_silo = 1
+				arms_factory = 2
+				anti_air_building = 1
 			}
 		}
 
