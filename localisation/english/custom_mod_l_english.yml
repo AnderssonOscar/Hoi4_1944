@@ -384,11 +384,18 @@ JAP_ichi_go_mod_2_timer_desc:0 "The goal of this phase move southward into Hunan
 JAP_ichi_go_mod_3:0 "Ichi-Go Stage 3"
 JAP_ichi_go_mod_3_desc:0 "The goal of this phase is to push into southern China, particularly Guangxi Province, to secure the railway link to Indochina"
 
-JAP_ichi_go_mod_timer_3:0 "Ichi-Go Stage 3"
-JAP_ichi_go_mod_timer_3_desc:0 "The goal of this phase is to push into southern China, particularly Guangxi Province, to secure the railway link to Indochina"
+JAP_ichi_go_mod_3_timer:0 "Ichi-Go Stage 3"
+JAP_ichi_go_mod_3_timer_desc:0 "The goal of this phase is to push into southern China, particularly Guangxi Province, to secure the railway link to Indochina"
 
 JAP_mod_homefront_cat:0 "Food Situation"
-JAP_mod_homefront_cat_desc:0 "Enemy submarines are devastating our shipply lines, which we depend on to bring food and resources from its our oversea territories"
+JAP_mod_homefront_cat_desc:0 "§WEnemy submarines are devastating our shipply lines, which we depend on to bring food and resources from its our oversea territories.§ \n\n Maintain a fleet of atleast §Y500§  convoys§W§"
+
+JAP_efficient_convoys:0 "Efficient convoys"
+JAP_efficient_convoys_desc:0 "We must make an effort to make the best use of our remaining convoys."
+
+decision_cost_pp_50_NavXP_25:0 "£pol_power  §Y50§! £navy_experience  §Y25§!"
+decision_cost_pp_50_NavXP_25_blocked:0 "£pol_power  §R50§! £navy_experience  §R25§!"
+decision_cost_pp_50_NavXP_25_tooltip:0 "It costs £pol_power  §Y50§! £navy_experience  §Y25§! to take the decision"
 
 JAP_food_shortage:0 "Food shortage"
 JAP_food_shortage_desc:0 "We must keep our agricultural terriorties & maintain a sizeable fleet of convoys."

@@ -180,7 +180,7 @@ JAP_mod_operations_cat = {
         complete_effect = {
             set_country_flag = JAP_ichi_go_mod_2
             activate_mission = JAP_ichi_go_mod_2_timer
-            add_timed_idea = { idea = JAP_ichi_go days = 75 }
+            add_timed_idea = { idea = JAP_ichi_go days = 80 }
 
 
         if = {
@@ -285,7 +285,7 @@ JAP_mod_operations_cat = {
             }
 
             custom_trigger_tooltip = {
-                tooltip = "Take control the railway leaing to Nanning and Guangzhou"
+                tooltip = "Control the railway leading from beijing to the Changsha airfield"
 
                 JAP = { controls_province = 4144}
                 JAP = { controls_province = 1139}
@@ -368,7 +368,7 @@ JAP_mod_operations_cat = {
             has_war_with = CHI
 
             custom_trigger_tooltip = {
-                tooltip = "Controls the railway between whuan and Changsha"
+                tooltip = "Take control the railway leaing to Nanning and Guangzhou"
 
                 JAP = { controls_province = 4144}
                 JAP = { controls_province = 1139}
@@ -447,6 +447,46 @@ JAP_mod_operations_cat = {
 
 JAP_mod_homefront_cat = {
 
+    JAP_efficient_convoys = {
+        icon = generic_naval
+
+        visible = { 
+            has_war = yes
+
+            has_equipment = {
+                convoy > 10
+            }
+        }
+        
+        available = {
+            has_equipment = {
+                convoy < 501
+            }
+        }
+
+        fire_only_once = no
+        days_remove = 30
+        days_re_enable = 0
+        #cost = 100
+		custom_cost_text = decision_cost_pp_50_NavXP_25
+        custom_cost_trigger = {
+			has_political_power > 49
+			has_navy_experience > 29
+		}
+
+        complete_effect = {
+			hidden_effect = {
+				add_political_power = -50
+				navy_experience = -25
+			}
+		}
+        
+        modifier = {
+            transport_capacity = -0.25
+            convoy_retreat_speed = 0.25
+        }
+    }
+
     JAP_food_shortage = {
         icon = generic_operation
 
@@ -486,7 +526,7 @@ JAP_mod_homefront_cat = {
             NOT = {has_global_flag = JAP_food_shortage}
 
             hidden_trigger = {
-                date > 1944.2.1
+                date > 1944.1.1
                 OR = {
                     NOT = { 525 = { is_controlled_by_ROOT_or_ally = yes } }
                     has_equipment = {
@@ -503,7 +543,7 @@ JAP_mod_homefront_cat = {
             add_stability = -0.25
             add_manpower = -500000
 
-            add_timed_idea ={ idea = JAP_home_famine days = 90 }
+            add_timed_idea ={ idea = JAP_home_famine days = 120 }
         }
 
         #failure

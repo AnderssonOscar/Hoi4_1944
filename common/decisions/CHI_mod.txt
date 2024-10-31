@@ -60,7 +60,7 @@ war_measures = {
 				max = 330
 			}
 
-			set_temp_variable = { inf_eq = 44.7 }
+			set_temp_variable = { inf_eq = 53.7 }
 			multiply_temp_variable = { inf_eq = days }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_2
@@ -68,7 +68,7 @@ war_measures = {
 				producer = USA
 			}
 
-			set_temp_variable = { support_eq = 1.1 }
+			set_temp_variable = { support_eq = 2.1 }
 			multiply_temp_variable = { support_eq = days }
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
@@ -76,7 +76,7 @@ war_measures = {
 				producer = USA
 			}
 
-			set_temp_variable = { art_eq = 0.31 }
+			set_temp_variable = { art_eq = 0.51 }
 			multiply_temp_variable = { art_eq = days }
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_2

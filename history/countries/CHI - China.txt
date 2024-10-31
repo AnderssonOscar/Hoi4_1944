@@ -378,7 +378,7 @@ if = {
 	add_political_power = 2589
 	add_command_power = 200
 
-	set_convoys = 175
+	#set_convoys = 175
 
 	set_stability = 0.17 
 	set_war_support = 0.24

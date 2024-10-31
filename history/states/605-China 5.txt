@@ -36,6 +36,14 @@ state={
 			buildings = {
 				anti_air_building = 1
 				fuel_silo = 1
+
+				6999 = {
+					bunker = 3
+				}
+
+				12705 = {
+					bunker = 2
+				}
 			}
 		}
 

@@ -32,14 +32,14 @@ state={
 		1939.1.1 = {
 			buildings = {
 				arms_factory = 3
-				industrial_complex = 5
+				industrial_complex = 2
 			}
 		}
 
 		1943.12.30 = {
 			buildings = {
 				fuel_silo = 1
-				arms_factory = 2
+				arms_factory = 1
 				anti_air_building = 1
 			}
 		}

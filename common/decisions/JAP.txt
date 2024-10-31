@@ -1489,6 +1489,7 @@ operations = {
 	
 		activation = {
 			has_completed_focus = JAP_strike_on_the_southern_resource_area
+			date < 1944.1.1
 		}
 		
 		visible = {

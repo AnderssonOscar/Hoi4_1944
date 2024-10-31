@@ -201,6 +201,7 @@ JAP_ichi_go_2_start_script = {
 					id = 9999
 					id = 7097
 					id = 13143
+					id = 12483
 					id = 7502
 					id = 7159
 				}
@@ -255,6 +256,7 @@ JAP_ichi_go_3_start_script = {
 					id = 9999
 					id = 7097
 					id = 13143
+					id = 12483
 					id = 7502
 					id = 7159
 				}
@@ -350,6 +352,7 @@ JAP_ichi_go_failed_modifiers = {
 					id = 9999
 					id = 7097
 					id = 13143
+					id = 12483
 					id = 7502
 					id = 7159
 					id = 11918

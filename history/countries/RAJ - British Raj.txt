@@ -252,14 +252,14 @@ if = {
 
 
 1943.12.30 = {
-
+	set_research_slots = 3
 	oob = "RAJ_1944"
 
 	add_political_power = 2589
 	add_command_power = 200
 
-	set_convoys = 10
-	set_stability = 0.5 
+	set_convoys = 200
+	set_stability = 0.96 
 	set_war_support = 0.6
 
 	add_ideas = {

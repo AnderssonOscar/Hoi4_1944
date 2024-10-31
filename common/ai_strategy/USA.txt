@@ -2127,6 +2127,12 @@ USA_dont_help_raj_yet = {
 	}
 
 	enable = {
+		CHI = {
+			OR = {
+				exists = yes
+				has_capitulated = no
+			}
+		}
 		date > 1944.1.1
 		has_war_with = JAP
 		has_war_with = GER
