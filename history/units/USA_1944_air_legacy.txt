@@ -8,7 +8,7 @@ air_wings = {
 
 		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 500 }
 	}
-	156 = {
+	849 = {
 		tac_bomber_equipment_2 = {
 			owner = "USA"
 			amount = 250

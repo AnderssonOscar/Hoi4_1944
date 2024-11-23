@@ -122,15 +122,13 @@ ENG_unit_production = {
 
 }
 
-bba_air_prod_1 = {
+ENG_bba_air_prod_1 = {
 	# TODO BFW:
 	allowed = { original_tag = ENG }
 	enable = {
 		date < 1943.1.1
 	}
-
 	abort_when_not_enabled = yes
-
 
 	#Air unit factors
 	ai_strategy = {
@@ -236,7 +234,7 @@ bba_air_prod_1 = {
 	}
 }
 
-bba_air_prod_2 = {
+ENG_bba_air_prod_2 = {
 	# TODO BFW:
 	allowed = { original_tag = ENG }
 	enable = {
@@ -408,10 +406,9 @@ eng_fighter_enhanced_production = {
 		id = upgrade_xp_cutoff
 		value = 100
 	}
-
 }
 
-eng_the_home_fleet  = {
+ENG_the_home_fleet  = {
 	allowed = { original_tag = ENG }
 
 	enable = {
@@ -425,7 +422,7 @@ eng_the_home_fleet  = {
 	}
 }
 
-eng_the_med_fleet  = {
+ENG_the_med_fleet  = {
 	allowed = { original_tag = ENG }
 
 	enable = {
@@ -439,7 +436,7 @@ eng_the_med_fleet  = {
 	}
 }
 
-eng_build_kgv_battleships = {
+ENG_build_kgv_battleships = {
 	allowed = { original_tag = ENG }
 
 	enable = {
@@ -464,7 +461,7 @@ protect_poland_against_germany = {
 	allowed = { original_tag = ENG }
 
 	enable = {
-		GER = { has_completed_focus = GER_end_of_czechoslovakia }
+		GER = { has_completed_focus = GER_fate_of_czechoslovakia }
 		GER = { NOT = { has_war_with = POL } }
 		country_exists = POL
 	}
@@ -550,10 +547,10 @@ ENG_fewer_factories_for_purchases_please = {
 	}
 }
 
-protect_poland_against_germany_even_more = {
+ENG_protect_poland_against_germany_even_more = {
 	allowed = { original_tag = ENG }
 	enable = {
-		GER = { has_completed_focus = GER_end_of_czechoslovakia }
+		GER = { has_completed_focus = GER_fate_of_czechoslovakia }
 		GER = { NOT = { has_war_with = POL } }
 		country_exists = POL
 	}
@@ -573,7 +570,7 @@ protect_poland_against_germany_even_more = {
 	}
 }
 
-defend_poland_against_germany = {
+ENG_defend_poland_against_germany = {
 	allowed = { original_tag = ENG }
 	enable = {
 		GER = { has_war_with = POL }
@@ -598,7 +595,7 @@ defend_poland_against_germany = {
 	}
 }
 
-royal_air_force = {
+ENG_royal_air_force = {
 	allowed = { original_tag = ENG }
 	enable = {
 		date > 1939.4.1
@@ -611,7 +608,6 @@ royal_air_force = {
 		type = air_factory_balance
 		value = 50
 	}
-
 }
 
 ENG_template_design_1 = {
@@ -734,7 +730,7 @@ ENG_template_design_2 = {
 }
 
 # lets make sure the allies dont overcommit to invasions early on
-careful_with_early_invasions = {
+ENG_ALLIES_careful_with_early_invasions = {
 	enable = {
 		date < 1943.1.1
 
@@ -774,19 +770,19 @@ careful_with_early_invasions = {
 
 	ai_strategy = {
 		type = invade
-		id = "ITA"
+		id = ITA
 		value = -500
 	}
 
 	ai_strategy = {
 		type = invade
-		id = "GER"
+		id = GER
 		value = -500
 	}
 
 	ai_strategy = {
 		type = invade
-		id = "VIC"
+		id = VIC
 		value = -500
 	}
 
@@ -797,7 +793,7 @@ careful_with_early_invasions = {
 	}
 }
 
-east_prussia_invasion_is_death_trap = {
+ENG_ALLIES_east_prussia_invasion_is_death_trap = {
 	enable = {
 
 		OR = {
@@ -831,12 +827,12 @@ east_prussia_invasion_is_death_trap = {
 
 	ai_strategy = {
 		type = invade
-		id = "GER"
+		id = GER
 		value = -2000
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "POL"
+		id = POL
 		value = 100
 	}
 }
@@ -867,17 +863,17 @@ ENG_trying_to_save_benelux_is_deathtrap = {
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "HOL"
+		id = HOL
 		value = 70
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "BEL"
+		id = BEL
 		value = 50
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "LUX"
+		id = LUX
 		value = 50
 	}
 	ai_strategy = {
@@ -906,7 +902,7 @@ ENG_naval_role_ratios_historical = {
 	ai_strategy = {
 		type = role_ratio
 		id = naval_capital_bb
-		value = -90
+		value = 20
 	}
 	ai_strategy = {
 		type = dockyard_to_military_factory_ratio
@@ -1699,7 +1695,7 @@ ENG_super_boost_armor_div_med = { #lets make sure the uk upgrades armor divs to 
 	}
 }
 
-ENG_onto_the_beaches = {
+ENG_USA_take_italys_spaghetti = {
 	allowed = {
 		original_tag = ENG
 		is_historical_focus_on = yes

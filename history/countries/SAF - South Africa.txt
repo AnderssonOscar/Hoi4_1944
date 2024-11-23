@@ -293,11 +293,12 @@ recruit_character = SAF_abram_fischer
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
+		improved_radio = 1
+		advanced_radio = 1
 		radio_detection = 1
-		decimetric_radar = 1
-		improved_decimetric_radar = 1
+		cavity_magnatron = 1
 		centimetric_radar = 1
-		improved_centimetric_radar = 1
+		
 
 		#doctrine
 		trench_warfare = 1

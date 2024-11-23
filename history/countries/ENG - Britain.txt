@@ -41,6 +41,8 @@ if = {
 			iw_large_airframe = 1
 			basic_medium_airframe = 1
 			basic_small_airframe = 1
+			air_torpedoe_1 = 1
+			bba_early_transport_plane = 1
 		}
 	else = {
 		set_air_oob = "ENG_1936_air_legacy"
@@ -51,8 +53,15 @@ if = {
 			naval_bomber1 = 1
 			early_bomber = 1
 			CAS1 = 1
+			early_transport_plane = 1
 		}
 	}
+}
+if = {
+	limit = {
+		has_dlc = "Gotterdammerung"
+	}
+	give_guarantee = BEL
 }
 
 load_oob = "ENG_Motorized"
@@ -70,6 +79,7 @@ set_technology = {
 	tech_support = 1
 	tech_engineers = 1
 	tech_recon = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
@@ -78,9 +88,22 @@ set_technology = {
 	fleet_in_being = 1
 	electronic_mechanical_engineering = 1
 	radio = 1
-	radio_detection = 1
 	fuel_silos = 1
 	fuel_refining = 1
+}
+
+complete_special_project = {
+	project = sp:sp_air_radar
+	scientist = ENG_robert_watson_watt
+}
+
+add_breakthrough_progress = {
+	specialization = specialization_naval
+	value = 0.6
+}
+add_breakthrough_progress = {
+	specialization = specialization_air
+	value = 0.5
 }
 
 if = {
@@ -177,7 +200,7 @@ add_ideas = {
 }
 	
 
-set_convoys = 800
+set_convoys = 1000
 
 # DIPLOMACY
 if = {
@@ -265,8 +288,12 @@ if = {
 	complete_national_focus = uk_mediterranean_focus
 	complete_national_focus = uk_asia_focus
 	complete_national_focus = uk_commonwealth_focus
+	complete_national_focus = uk_industrial_focus
+	complete_national_focus = ENG_vickers_experimental_facility_focus
+	complete_national_focus = ENG_steady_as_she_goes
 
 	give_guarantee = POL
+
 	if = {
 		limit = {
 			NOT = {
@@ -320,6 +347,23 @@ if = {
 			}
 		}
 }
+	if = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+			has_guaranteed = BEL
+		}
+		diplomatic_relation = { 
+			country = BEL
+			relation = guarantee 
+			active = no
+		}
+	}
+
+	complete_special_project = {
+		project = sp:sp_naval_torpedo_cruiser
+		scientist = ENG_charles_goodeve
+		state = 127
+	}
 
 	set_technology = {
 		
@@ -348,8 +392,8 @@ if = {
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
-		decimetric_radar = 1
+		cavity_magnatron = 1
+		centimetric_radar = 1
 		mechanical_computing = 1
 		computing_machine = 1
 		basic_encryption = 1
@@ -455,14 +499,17 @@ add_to_faction = FRA
 add_to_faction = CAN
 add_to_faction = AST
 add_to_faction = NZL
+
 add_to_faction = SAF
-add_to_faction = BEL
+#add_to_faction = BEL #crashes
 #add_to_faction = HOL
 add_to_faction = INS
 add_to_faction = ETH
 add_to_faction = USA
 add_to_faction = PHI
 add_to_faction = MEX
+
+
 give_military_access = RAJ
 add_to_faction = RAJ		# Must be after puppet
 add_to_faction = MAL
@@ -585,6 +632,11 @@ recruit_character = ENG_sylvia_pankhurst
 recruit_character = ENG_stewart_menzies
 recruit_character = ENG_maxwell_aitken
 recruit_character = ENG_thomas_moore
+
+recruit_character = ENG_john_cockcroft
+recruit_character = ENG_charles_goodeve
+recruit_character = ENG_nevil_shute
+recruit_character = ENG_robert_watson_watt
 
 
 
@@ -749,10 +801,11 @@ if = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
-	create_equipment_variant = {
+	create_equipment_variant = { #Note: There is a copy of this variant in Finnish National Focus file (FIN_bring_foreign_armor_experts). Any changes here should also be applied there
 		name = "Light Tank Mk. IV"
 		type = light_tank_chassis_1
 		parent_version = 0
+		show_position = no
 		modules = {
 			main_armament_slot = tank_heavy_machine_gun
 			turret_type_slot = tank_light_one_man_tank_turret
@@ -771,6 +824,7 @@ if = {
 		name = "Light Tank Mk. VI"
 		type = light_tank_chassis_1
 		parent_version = 1
+		show_position = no
 		modules = {
 			main_armament_slot = tank_heavy_machine_gun
 			turret_type_slot = tank_light_two_man_tank_turret
@@ -792,6 +846,7 @@ if = {
 		type = medium_tank_chassis_0
 		design_team = mio:ENG_vickers_armstrong_eng_organization
 		parent_version = 0
+		show_position = no
 		modules = {
 			main_armament_slot = tank_small_cannon
 			turret_type_slot = tank_medium_three_man_tank_turret
@@ -1638,6 +1693,7 @@ if = {
 			name = "Cruiser Mk. IV"
 			type = medium_tank_chassis_1
 			parent_version = 1
+			show_position = no
 			modules = {
 				main_armament_slot = tank_small_cannon_2
 				turret_type_slot = tank_medium_three_man_tank_turret
@@ -1676,9 +1732,8 @@ if = {
 				fixed_main_weapon_slot = bomb_locks
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				engine_type_slot = engine_2_1x
-				special_type_slot_1 = fuel_tanks_small
-				#special_type_slot_1 = dive_brakes_small
-				#special_type_slot_2 = fuel_tanks_small
+				special_type_slot_1 = dive_brakes_small
+				special_type_slot_2 = fuel_tanks_small
 			}
 			icon = "GFX_ENG_CAS1_medium"
 		}
@@ -1780,7 +1835,7 @@ if = {
 			modules = {
 				fixed_main_weapon_slot = large_bomb_bay
 				fixed_auxiliary_weapon_slot_1 = large_bomb_bay
-				engine_type_slot = engine_3_4x
+				engine_type_slot = engine_3_4x #Increased tier due to thrust/weight issues
 				special_type_slot_1 = lmg_defense_turret_2x
 				special_type_slot_2 = lmg_defense_turret
 				special_type_slot_3 = empty
@@ -1825,9 +1880,12 @@ if = {
 
 	if = {
 		limit = {
-			has_dlc = "Man the Guns"
+			 has_dlc = "Man the Guns" 
 		}
-			set_naval_oob = "ENG_1944_Naval"
+		set_naval_oob = "ENG_1944_Naval"
+	else = {
+		set_naval_oob = "ENG_1944_Naval_Legacy"
+		}
 	}
 
 	if = {
@@ -1912,8 +1970,33 @@ if = {
 		}
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+		}
+			set_technology = {
+				sp_armored_motorized_military_police_tech = 1
+			}
+		}
+	
+
+	add_breakthrough_progress = {
+		specialization = specialization_naval
+		value = 4
+	}
+	add_breakthrough_progress = {
+		specialization = specialization_air
+		value = 3
+	}
+	add_breakthrough_progress = {
+		specialization = specialization_land
+		value = 2
+	}
+
+
 	set_technology = {
-		
+		sp_armored_engineer_tech = 1
+		sp_armored_maintenance_tech = 1
 		tech_trucks = 1
 
 		interwar_artillery = 1
@@ -2030,12 +2113,16 @@ if = {
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
+		improved_radio = 1
+		advanced_radio = 1
 		radio_detection = 1
-		decimetric_radar = 1
-		improved_decimetric_radar = 1
+		cavity_magnatron = 1
 		centimetric_radar = 1
-		improved_centimetric_radar = 1
-		advanced_centimetric_radar = 1
+		phased_array = 1
+		monopulse_radar = 1
+		
+		
+		
 
 		mechanical_computing = 1
 		computing_machine = 1
@@ -2210,6 +2297,9 @@ if = {
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
 			set_technology = {
+				bba_early_transport_plane = 1 
+				bba_improved_transport_plane = 1
+				bba_strategic_airlifter = 1
 				photo_reconnaisance = 1
 
 				survivability_studies = 1
@@ -2255,6 +2345,9 @@ if = {
 			}
 		else = {
 			set_technology = {
+				early_transport_plane = 1
+				improved_transport_plane = 1
+				strategic_airlifter = 1
 				naval_bomber1 = 1
 				naval_bomber2 = 1
 				

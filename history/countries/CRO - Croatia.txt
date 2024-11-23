@@ -88,6 +88,9 @@ set_convoys = 5
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 }
 set_politics = {
 	ruling_party = fascism
@@ -101,50 +104,13 @@ set_popularities = {
 	communism = 10
 }
 
-create_country_leader = {
-	name = "Ante Pavelic"
-	desc = "ANTE_PAVELIC_DESC"
-	picture = GFX_portrait_Ante_Pavelic
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Vladko Maček"
-	picture = GFX_portrait_Vladko_Macek
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-add_country_leader_role = { #This replaces the commented script below - fixing a character duplicate error on launch
-	character = "CRO_vladko_maček"
-	country_leader = {
-	  ideology=socialism
-	  traits = {
-	  	#
-	  }
-	  expire = "1965.1.1"
-	}
-	promote_leader = yes
-}
-
-#create_country_leader = { 
-#	name = "Vladko Maček"
-#	picture = "portrait_CRO_vladko_macek.dds"
-#	expire = "1965.1.1"
-#	ideology = socialism
-#	traits = {
-#		#
-#	}
-#}
-
-
+recruit_character = CRO_ante_pavelic
+recruit_character = CRO_vladko_macek
+recruit_character = CRO_nikola_mandic
+recruit_character = CRO_joseph_francis
+recruit_character = CRO_duro_jakcin
+recruit_character = CRO_slavko_kvaternik
+recruit_character = CRO_miroslav_navratil
 
 
 

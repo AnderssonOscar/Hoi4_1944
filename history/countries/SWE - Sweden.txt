@@ -119,6 +119,7 @@ if = {
 		coastal_defense_ships = 1
 		mtg_transport = 1
 		early_ship_hull_carrier = 1
+		early_ship_hull_heavy = 1
 	}
 }
 
@@ -219,7 +220,6 @@ if = {
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
 		mechanical_computing = 1
 		computing_machine = 1
 
@@ -235,6 +235,9 @@ if = {
 		construction2 = 1
 		dispersed_industry = 1
 		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 	if = {
 		limit = {
@@ -345,7 +348,21 @@ if = {
 		}
 	}
 }
-
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	create_equipment_variant = {
+		name = "Svenska Jaktfalken" 
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+		}
+		obsolete = yes
+	}
+}
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -383,6 +400,7 @@ if = {
 			tank_nsb_armor_upgrade = 2
 			tank_nsb_engine_upgrade = 3
 		}
+		icon = "GFX_generic_light_AAB"
 	}
 }
 
@@ -650,7 +668,7 @@ if = {
 	}
 
 	add_ideas = neutrality_idea
-	set_variable = { hungershield_stability_threshold_1 = 0.65 } 
+	set_variable = { hungershield_stability_threshold_1 = 0.68 } 
 	set_variable = { hungershield_stability_risk_1 = 0.12 }  #monthly risk if under _1 stability threshold 0.12
 	set_variable = { hungershield_stability_threshold_2 = 0.3 } 
 	set_variable = { hungershield_stability_risk_2 = 0.18 }   #monthly risk if under _2 stability threshold #0.2
@@ -659,10 +677,10 @@ if = {
 
 	set_variable = { folkhemmet_war_support = -0.25 }
 	set_variable = { folkhemmet_stability = 0.25 }
-	set_variable = { folkhemmet_civ = 0.25 }
-	set_variable = { folkhemmet_infra = 0.25 }
-	set_variable = { folkhemmet_mil = -0.25 }
-	set_variable = { folkhemmet_dockyard = -0.25 }
+	set_variable = { folkhemmet_civ = 0.2 }
+	set_variable = { folkhemmet_infra = 0.2 }
+	set_variable = { folkhemmet_mil = -0.2 }
+	set_variable = { folkhemmet_dockyard = -0.2 }
 
 	#CUT
 	#Value for when Folkhemmet is at its max intactness, ei at its full power, the max value is assumed to be what the player starts with so is derived from the values above
@@ -985,11 +1003,12 @@ if = {
 		computing_machine = 1
 
 		radio = 1
+		improved_radio = 1
 		radio_detection = 1
-		decimetric_radar = 1
-		improved_decimetric_radar = 1
+		cavity_magnatron = 1
 		centimetric_radar = 1
-		#improved_centimetric_radar = 1
+
+		#
 
 		#industry
 		excavation1 = 1

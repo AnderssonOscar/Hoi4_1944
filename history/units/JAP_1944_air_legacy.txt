@@ -70,16 +70,16 @@ air_wings = {
 				# 15/II Kokutai -- Mitsubishi B2M2
 	}
 
-	"Hosho"  = { 
-		cv_fighter_equipment_1 =  { owner = "JAP" amount = 18 }
-		cv_CAS_equipment_1 = { owner = "JAP" amount = 20 }
-		cv_nav_bomber_equipment_1 =  { owner = "JAP" amount = 20 }
-	}
-	"Shokaku"  = { 
-		cv_fighter_equipment_1 =  { owner = "JAP" amount = 18 }
-		cv_CAS_equipment_1 = { owner = "JAP" amount = 20 }
-		cv_nav_bomber_equipment_1 =  { owner = "JAP" amount = 20 }
-	}
+	# "Hosho"  = { 
+	# 	cv_fighter_equipment_1 =  { owner = "JAP" amount = 18 }
+	# 	cv_CAS_equipment_1 = { owner = "JAP" amount = 20 }
+	# 	cv_nav_bomber_equipment_1 =  { owner = "JAP" amount = 20 }
+	# }
+	# "Shokaku"  = { 
+	# 	cv_fighter_equipment_1 =  { owner = "JAP" amount = 18 }
+	# 	cv_CAS_equipment_1 = { owner = "JAP" amount = 20 }
+	# 	cv_nav_bomber_equipment_1 =  { owner = "JAP" amount = 20 }
+	# }
 }
 
 

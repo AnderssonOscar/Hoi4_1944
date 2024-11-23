@@ -95,7 +95,7 @@ special_projects = {
 		ai_will_do = {
 		factor = 1
 			modifier = {
-				date > 1944.3.1
+				date > 1944.1.1
 				factor = 100
 			}
 		}
@@ -107,11 +107,22 @@ special_projects = {
 		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
+
+	
+			if = {
+				limit = {
+					not = { has_tech = sp_rockets_rocket_bomber }
+				}
+				set_technology = {
+					sp_rockets_rocket_bomber = 1
+				}
+			}
+
 			29 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = rocket_site 
-					level = 4
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -154,12 +165,18 @@ special_projects = {
 		days_remove = 30
 		remove_effect = {
 
+				complete_special_project = {
+					project = sp:sp_rockets_ballistic_missile
+					scientist = GER_von_braun
+					state = 62
+				}
+
 			if = {
 				limit = {
-					not = { has_tech = improved_rocket_engines }
+					not = { has_tech = sp_rockets_improved_rocket_bomber }
 				}
 				set_technology = {
-					improved_rocket_engines = 1
+					sp_rockets_improved_rocket_bomber = 1
 				}
 			}
 

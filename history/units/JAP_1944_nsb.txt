@@ -166,7 +166,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.21
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = {
 		name = "Ominato Kichi Kaiheidan"

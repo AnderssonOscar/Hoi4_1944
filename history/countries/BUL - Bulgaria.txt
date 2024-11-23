@@ -40,9 +40,20 @@ if = { #DLC
 	set_cosmetic_tag = BUL_neutrality
 
 	#IDEAS SETUP
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		add_ideas = BUL_army_restrictions_aat
+	}
+	if = {
+		limit = {
+			NOT = {	has_dlc = "Arms Against Tyranny" }
+		}
+		add_ideas = BUL_army_restrictions
+	}
 	add_ideas = { #DLC
 		BUL_second_national_catastrophe
-		BUL_army_restrictions
 		BUL_imro_01
 		volunteer_only
 	}
@@ -121,7 +132,7 @@ if = { #DLC
 	#Plot Against Boris
 	set_variable = { BUL_regicide_execution_time = 90 }
 	#Free Balkan States dynamic modifier (NS)
-	set_variable = { BUL_our_duty_in_the_balkans_consumer_goods_modifier = -0.01 }
+	set_variable = { BUL_our_duty_in_the_balkans_consumer_goods_modifier = -0.03 }
 	set_variable = { BUL_our_duty_in_the_balkans_stability_modifier = 0.05 }
 	#Monthly extra chance of Boris dieing of "natural causes" (increased by 5 each month from 1943.1.1)
 	set_variable = { BUL_tsar_boris_death_monthly_probability_factor = 0 }
@@ -149,6 +160,7 @@ if = { #DLC
 	106 = { set_state_flag = BUL_historical_bulgarian_claim_flag }
 	731 = { set_state_flag = BUL_historical_bulgarian_claim_flag }
 	184 = { set_state_flag = BUL_historical_bulgarian_claim_flag }
+	971 = { set_state_flag = BUL_historical_bulgarian_claim_flag }
 
 	#International Relations
 	add_opinion_modifier = { 
@@ -310,11 +322,20 @@ set_technology = { #VANILLA & DLC
 	tech_support = 1		
 	tech_engineers = 1
 	motorised_infantry = 1
-	early_fighter = 1
 	fuel_silos = 1
 	basic_train = 1
+	tech_mountaineers = 1
 }
-
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "By Blood Alone"
+		}
+	}
+	set_technology = {
+		early_fighter = 1
+	}
+}
 
 
 ##############
@@ -323,7 +344,7 @@ set_technology = { #VANILLA & DLC
 1939.1.1 = {
 	
 	#POLIICS
-	set_popularities = { #VANILLA & DLC
+	set_popularities = { #VANILLA & DLC //  # Will get +7 from Italian focus: Potential Allies in the Balkans
 		democratic = 5
 		fascism = 35
 		neutrality = 60
@@ -373,7 +394,18 @@ set_technology = { #VANILLA & DLC
 		complete_national_focus = BUL_illusions_of_a_non_partisan_system
 
 		#Remove Army Restrictions NS and all limitations 								Negotiate Bulgarian Rearmament
+		if = {
+			limit = {
+				has_dlc = "Arms Against Tyranny"
+			}
+			remove_ideas = BUL_army_restrictions_aat
+		}
+		if = {
+			limit = {
+				NOT = {	has_dlc = "Arms Against Tyranny" }
+			}
 		remove_ideas = BUL_army_restrictions
+		}
 		remove_ideas = BUL_zveno_ns
 		#Destroy Zveno 																 	Dissolve the Military Union
 		set_country_flag = BUL_disposed_of_zveno_generals_flag
@@ -412,9 +444,6 @@ set_technology = { #VANILLA & DLC
 
 	#TECHNOLOGY
 	set_technology = {
-		fighter1 = 1
-		early_bomber = 1
-		tactical_bomber1 = 1
 		gw_artillery = 1
 		interwar_artillery = 1
 		tech_recon = 1
@@ -435,7 +464,6 @@ set_technology = { #VANILLA & DLC
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
 		mechanical_computing = 1
 		computing_machine = 1
 
@@ -448,6 +476,9 @@ set_technology = { #VANILLA & DLC
 		construction2 = 1
 		dispersed_industry = 1
 		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 
 	if = {
@@ -584,10 +615,12 @@ set_technology = { #VANILLA & DLC
 		electronic_mechanical_engineering = 1
 		mechanical_computing = 1
 		radio = 1
+		improved_radio = 1
 		radio_detection = 1
-		decimetric_radar = 1
-		improved_decimetric_radar = 1
-		#centimetric_radar = 1
+		cavity_magnatron = 1
+		centimetric_radar = 1
+		
+		#
 
 		#doctrine
 		trench_warfare = 1
@@ -749,7 +782,7 @@ set_technology = { #VANILLA & DLC
 		limit = { has_dlc = "By Blood Alone" }
 			set_technology = {
 				photo_reconnaisance = 1
-
+				bba_early_transport_plane = 1
 				#survivability_studies = 1
 
 				aa_lmg = 1
@@ -787,7 +820,7 @@ set_technology = { #VANILLA & DLC
 			}
 		else = {
 			set_technology = {
-
+				early_transport_plane = 1
 				naval_bomber1 = 1
 
 				CAS1 = 1

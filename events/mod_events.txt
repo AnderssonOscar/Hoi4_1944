@@ -1531,10 +1531,6 @@ country_event = {
 
 			radio = 1
 			radio_detection = 1
-			decimetric_radar = 1
-			improved_decimetric_radar = 1
-			centimetric_radar = 1
-			improved_centimetric_radar = 1
 
 			#industry
 			excavation1 = 1
@@ -1653,7 +1649,7 @@ country_event = {
 	title = operation.margarethe.1.t
 	desc = operation.margarethe.1.d 
 	picture = GFX_report_event_SOV_negotiations_japan_bukharin
-
+ 
 	is_triggered_only = yes
 	fire_only_once = yes
 	# trigger = {
@@ -1677,29 +1673,10 @@ country_event = {
 			}
 
 		GER = {add_stability = -0.025}
-		HUN = {
-			 add_stability = -0.1
-			 
-	hidden_effect = {
+		HUN = { add_stability = -0.1}
+			  
 
-		HUN = {
-			set_cosmetic_tag = HUN_axis_puppet_1_1944
-			set_politics = {
-				ruling_party = fascism
-				last_election = "1944.3.1"
-				election_frequency = 48
-				elections_allowed = no
-			}
-			
-			set_popularities = {
-				neutrality = 30
-				democratic = 10
-				fascism = 60
-				communism = 0
-			}
-		}
-	}
-
+HUN = {
 		GER = {
 			set_autonomy = { target = PREV autonomy_state = autonomy_satellite }
 		}
@@ -1728,6 +1705,32 @@ country_event = {
 			SOV = { transfer_state = 155 }
 		}
 	}
+
+		hidden_effect = {
+
+		HUN = {
+			set_cosmetic_tag = HUN_axis_puppet_1_1944
+
+			set_politics = {
+				ruling_party = neutrality
+				last_election = "1944.3.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			
+			set_popularities = {
+				neutrality = 25
+				democratic = 10
+				fascism = 65
+				communism = 0
+			}
+
+			#retire_country_leader = yes
+			#recruit_character = HUN_miklos_horthy
+			#promote_character = HUN_miklos_horthy
+		}
+	}
+
 
 		name = "Start the invasion"
 
@@ -1839,15 +1842,15 @@ country_event = {
 	}
 
 			retire_country_leader = yes
-			create_country_leader = {
-					name = "Ferenc Szálasi"
-					desc = ""
-					picture = GFX_portrait_hun_ferenc_szalasi
-					expire = "1965.1.1"
-					ideology = nazism
-					traits = {
-					}
-				}
+			# create_country_leader = {
+			# 		name = "Ferenc Szálasi"
+			# 		desc = ""
+			# 		picture = GFX_portrait_hun_ferenc_szalasi
+			# 		expire = "1965.1.1"
+			# 		ideology = nazism
+			# 		traits = {
+			# 		}
+			# 	}
 				
 				if = {
 					limit = {NOT = { 73 = { is_fully_controlled_by = HUN}}}

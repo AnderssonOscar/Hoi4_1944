@@ -84,6 +84,7 @@ if = {
 		has_dlc = "Arms Against Tyranny"
 	}
 	recruit_character = DEN_paul_ipsen
+	recruit_character = DEN_prince_frederik
 	recruit_character = DEN_frederik_ix
 	recruit_character = DEN_christian_forslev
 	recruit_character = DEN_asger_grandjean
@@ -521,6 +522,9 @@ if = {
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 	if = {
 		limit = { not = { has_dlc = "Man the Guns" } }

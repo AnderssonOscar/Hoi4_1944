@@ -1,25 +1,25 @@
 
-state={
-	id=156
-	name="STATE_156"
-	manpower = 2966315
+state = {
+	id = 156
+	name = "STATE_156"
+	manpower = 1772000 # was 2966315 before Puglia was added
 	
-	state_category = city
-	history={
+	state_category = town
+	history = {
 		owner = ITA
-
-		buildings = {
-			infrastructure = 3 #was: 5
-			dockyard = 4
-			fuel_silo = 1
-			air_base = 1 #1944 5
+		victory_points = {
+			9990 1 
 		}
-		add_core_of = ITA
-		1939.1.1 = {
-			buildings = {
-				dockyard = 5
+		buildings = {
+			infrastructure = 2 #was: 5
+			dockyard = 1
+			fuel_silo = 1
+			9990 = {
+				naval_base = 2
 			}
 		}
+		add_core_of = ITA
+		add_core_of = TTS
 
 		1943.12.1 = {
 			owner = USA
@@ -27,9 +27,9 @@ state={
 		}
 	}
 
-	provinces={
+	provinces = {
 		3901 9990 10027 12066 12098  
 	}
 
-	local_supplies=0.0 
+	local_supplies = 0.0 
 }

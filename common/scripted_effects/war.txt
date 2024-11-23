@@ -6,6 +6,8 @@ war_start_effects = {
 			NOT = { has_global_flag = mod_war_start_effects }
 		}
 		set_global_flag = mod_war_start_effects
+		ENG = { add_to_faction = BEL }
+
 
 		every_country = {
 			limit = { is_in_faction_with = GER }

@@ -16,7 +16,7 @@ bookmarks = {
 				medium_war_casualties
 			}
 			focuses = {
-				GER_gottedamerung
+				GER_gottedamerung_1944
 				GER_form_volksturm
 				GER_festung_cities
 			}

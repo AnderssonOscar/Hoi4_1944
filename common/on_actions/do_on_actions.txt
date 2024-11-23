@@ -7,14 +7,14 @@ on_actions = {
 		effect = {
 			
 			GER = {
-				#activate_decision = GER_reichskommissariat_niederlande
-				activate_decision = GER_reichskommissariat_norwegen
-			}
-
-			GER = {
 				country_event = {
 					id = mod.start.1
 				}
+			}
+			
+			GER = {
+				#activate_decision = GER_reichskommissariat_niederlande
+				activate_decision = GER_reichskommissariat_norwegen
 			}	
 			
 			every_country = {
@@ -34,8 +34,6 @@ on_actions = {
 				CHI = { 600 = {add_dynamic_modifier = { modifier = CHI_hold_modifier scope = CHI days = 325} } }
 		}
 			JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation
-
-		#add_named_threat = { threat = 60 name = generic.15.t }
 
 	every_country = {
 		limit = { 
@@ -97,8 +95,6 @@ on_actions = {
 				date > 1943.12.31
 				
 			}
-				#country_event = { id = finland.3 hours = 24 }
-				#country_event = { id = finland.3 }
 
 				add_tech_bonus = {
 					name = SWE_support_boost
@@ -196,9 +192,6 @@ on_actions = {
 		add_command_power = 50
 	}
 
-	#GER = { activate_decision = GER_reichskommissariat_niederlande }
-
-
 
 	AFG = {
 		add_ai_strategy  = {
@@ -276,15 +269,13 @@ on_actions = {
 				value = -5000
 			}
 		}
-
-
-		}
+	}
 
 GER = {
 	add_ideas = {
-		tot_economic_mobilisation
-		#add_manpower = -3500000
+		totaler_krieg_economy
 	}
+	add_manpower = -1200000
 }
 
 

@@ -20,8 +20,16 @@ GER_scripted_events_start_effects = {
 		add_province_modifier = {
 			static_modifiers = { GER_flooded_area_static_modifier }
 			province = {
-				id = 6598
 				id = 6560
+			}
+		}
+	}
+
+	977 = {
+		add_province_modifier = {
+			static_modifiers = { GER_flooded_area_static_modifier }
+			province = {
+				id = 6598
 			}
 		}
 	}
@@ -463,15 +471,15 @@ GER_fix_ukr_border = {
 			NOT = { has_global_flag = GER_fix_ukr_border } 
 			tag = GER
 			has_war_with = SOV
-			UKR = { is_puppet_of = GER }
-			UKR = { has_war_with = SOV }
+			RKU = { is_puppet_of = GER }
+			RKU = { has_war_with = SOV }
 	
 			date > 1943.12.31
 			date < 1944.1.8
 	
-			197 = { is_fully_controlled_by = UKR }
-			198 = { is_fully_controlled_by = UKR }
-			199 = { is_fully_controlled_by = UKR }
+			197 = { is_fully_controlled_by = RKU }
+			198 = { is_fully_controlled_by = RKU }
+			199 = { is_fully_controlled_by = RKU }
 		}
 
 		SOV = {
@@ -482,7 +490,7 @@ GER_fix_ukr_border = {
 					NOT = { controls_province = 6423 }
 					NOT = { controls_province = 9419 }
 				}
-				UKR = {
+				RKU = {
 					set_province_controller = 11715
 					set_province_controller = 11561
 					set_province_controller = 6423

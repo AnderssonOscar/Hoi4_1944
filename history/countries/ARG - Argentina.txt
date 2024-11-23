@@ -1,12 +1,83 @@
 ﻿capital = 278
 
 oob = "ARG_1936"
-if = {
+
+IF = {
 	limit = { has_dlc = "Man the Guns" }
 		set_naval_oob = "ARG_1936_naval_mtg"
-	else = {
+	ELSE = {
 		set_naval_oob = "ARG_1936_naval_legacy"
 	}
+}
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "ARG_1936_air_bba"
+		set_technology = {
+			iw_small_airframe = 1
+			aa_lmg = 1
+			engines_1 = 1
+			early_bombs = 1
+		}
+	ELSE = {
+		set_air_oob = "ARG_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			CAS1 = 1
+		}
+	}
+}
+
+every_core_state = {
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
+	}
+}
+
+# Corruption Modifier
+set_variable = { ARG_corruption_political_power_factor = 0.1 }
+set_variable = { ARG_corruption_production_factory_max_efficiency_factor = -0.1 }
+set_variable = { ARG_corruption_production_speed_buildings_factor = -0.1 }
+set_variable = { ARG_corruption_war_support_factor = -0.2 }
+
+# Crackdown on Corruption Modifier
+set_variable = { ARG_corruption_crackdown_stability_factor = 0.1 }
+set_variable = { ARG_corruption_crackdown_production_factory_max_efficiency_factor = 0.1 }
+set_variable = { ARG_corruption_crackdown_neutrality_factor = 0.02 }
+set_variable = { ARG_corruption_crackdown_fascism_factor = 0.02 }
+set_variable = { ARG_corruption_crackdown_war_support_factor = -0.1 }
+
+# Anti Corruption Modifier
+set_variable = { ARG_anti_corruption_stability_factor = 0.15 }
+set_variable = { ARG_anti_corruption_production_factory_max_efficiency_factor = 0.1 }
+set_variable = { ARG_anti_corruption_neutrality_factor = 0.02 }
+set_variable = { ARG_anti_corruption_democratic_factor = 0.03 }
+set_variable = { ARG_anti_corruption_war_support_factor = -0.2 }
+
+# Growing Nationalism Modifier
+set_variable = { ARG_growing_nationalism_fascism_drift = 0.05 } 
+set_variable = { ARG_growing_nationalism_recruitable_population_factor = 0.02 }
+set_variable = { ARG_growing_nationalism_stability_factor = 0.05 }
+set_variable = { ARG_growing_nationalism_war_support_factor = 0 }
+set_variable = { ARG_growing_nationalism_democratic_drift = -0.02 }
+set_variable = { ARG_growing_nationalism_political_power_factor = 0 }
+
+IF = {
+	# TODO JA, set this to the correct dlc!
+	limit = { has_dlc = "Trial of Allegiance" }
+
+	# Army modifier
+	JUNO_set_shared_military_branch_defaults = yes
+
+	add_ideas = {
+		SMB_MTG_naval_arms_race_legacy
+		ARG_infamous_decade_idea
+		ARG_roca_runciman_treaty_idea
+	}
+
+	add_dynamic_modifier = {
+		modifier = ARG_political_corruption_modifier
+	}
+
 }
 
 # Starting tech
@@ -14,13 +85,14 @@ set_technology = {
 	tech_trucks = 1
 	infantry_weapons = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	early_fighter = 1
-	CAS1 = 1
 	basic_train = 1
 }
-if = {
+
+IF = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
 		early_submarine = 1
@@ -31,7 +103,7 @@ if = {
 		transport = 1
 	}
 }
-if = {
+IF = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
 		basic_naval_mines = 1
@@ -42,7 +114,6 @@ if = {
 		early_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		 
 		basic_cruiser_armor_scheme = 1
 		basic_torpedo = 1
 		basic_depth_charges = 1
@@ -51,30 +122,87 @@ if = {
 	}
 }
 
-recruit_character = ARG_agustín_pedro_justo
-recruit_character = ARG_nimo_de_anquín
+IF = {
+	limit = {
+		NOT = {
+			has_dlc = "Trial of Allegiance" 
+		}
+	}
+	recruit_character = ARG_agustin_pedro_justo
+	recruit_character = ARG_roberto_maria_ortiz
+	recruit_character = ARG_ramon_castillo
+	recruit_character = ARG_nimio_de_anquin
 recruit_character = ARG_marcelo_t_de_alvear
 recruit_character = ARG_fanny_edelman
 recruit_character = ARG_arturo_rawson
 recruit_character = ARG_juan_pistarini
-recruit_character = ARG_alberto_teisaire
 recruit_character = ARG_uribaldi_diaz_brittenberg
-recruit_character = ARG_agustin_pedro_justo
-recruit_character = ARG_edelmiro_farrell
+	recruit_character = ARG_edelmiro_julian_farrell
 recruit_character = ARG_francisco_m_velez
 recruit_character = ARG_jose_tamborni
-recruit_character = ARG_manuel_a_rodriguez
 recruit_character = ARG_hortensio_quijano
-recruit_character = ARG_pedro_s_casal
-recruit_character = ARG_antonio_parodi
-recruit_character = ARG_pedro_pablo_ramirez
-recruit_character = ARG_heriberto_la_galine
-recruit_character = ARG_thomas_martinez
-recruit_character = ARG_eleazar_videla
-recruit_character = ARG_manuel_maria_de_iriondo
-recruit_character = ARG_ramon_castillo
-recruit_character = ARG_luis_podesta_costa
-recruit_character = ARG_senor_hitler
+	recruit_character = ARG_antonio_parodi
+	recruit_character = ARG_heriberto_la_galine
+	recruit_character = ARG_thomas_martinez
+	recruit_character = ARG_luis_podesta_costa
+	recruit_character = ARG_senor_hitler
+	recruit_character = ARG_manuel_a_rodriguez
+
+	ELSE_IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance" 
+		}
+		recruit_character = ARG_agustin_pedro_justo
+		recruit_character = ARG_roberto_maria_ortiz
+		recruit_character = ARG_ramon_castillo
+		recruit_character = ARG_nimio_de_anquin
+		recruit_character = ARG_enrique_mosca
+		recruit_character = ARG_marcelo_t_de_alvear
+		recruit_character = ARG_victorio_codovilla
+		recruit_character = ARG_fanny_edelman
+		recruit_character = ARG_rodolfo_ghioldi
+		recruit_character = ARG_antonio_soto
+		recruit_character = ARG_arturo_rawson
+		recruit_character = ARG_juan_pistarini
+		recruit_character = ARG_alberto_teisaire
+		recruit_character = ARG_juan_peron
+		recruit_character = ARG_edelmiro_julian_farrell
+		recruit_character = ARG_manuel_a_rodriguez
+		recruit_character = ARG_pedro_s_casal
+		recruit_character = ARG_antonio_parodi
+		recruit_character = ARG_pedro_pablo_ramirez
+		recruit_character = ARG_eleazar_videla
+		recruit_character = ARG_manuel_maria_de_iriondo
+		recruit_character = ARG_senor_hitler
+		recruit_character = ARG_carlos_marquez
+		recruit_character = ARG_eduardo_avalos
+		recruit_character = ARG_juan_tonazzi
+		recruit_character = ARG_alberto_gilbert
+		recruit_character = ARG_diego_mason
+		recruit_character = ARG_benito_sueyro
+		recruit_character = ARG_leon_scasso
+		recruit_character = ARG_oscar_muratorio
+		recruit_character = ARG_edmundo_sustaita
+		recruit_character = ARG_basilio_pertine
+		recruit_character = ARG_bartolome_de_la_colina
+		recruit_character = ARG_segundo_storni
+		recruit_character = ARG_hugo_wast
+		recruit_character = ARG_raul_prebisch
+		#recruit_character = ARG_ezequiel_pedro_paz
+		recruit_character = ARG_julio_roca
+		recruit_character = ARG_honorio_pueyrredon
+		recruit_character = ARG_diogenes_taboada
+		recruit_character = ARG_guillermo_rothe
+		recruit_character = ARG_frederick_pinedo
+		recruit_character = ARG_jose_cantilo
+		recruit_character = ARG_enrique_ruiz_guinazu
+		recruit_character = ARG_vincente_gallo
+		recruit_character = ARG_carlos_lamas
+		recruit_character = ARG_osmar_hellmuth
+		recruit_character = ARG_eva_peron
+	}
+}
+
 
 
 set_country_flag = monroe_doctrine
@@ -83,7 +211,30 @@ set_country_flag = monroe_doctrine
 
 	add_political_power = 1198
 	add_command_power = 100
-	
+	IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance"
+		}
+
+		complete_national_focus = SMB_army #35
+		complete_national_focus = SMB_navy #35
+		complete_national_focus = ARG_roberto_maria_ortiz
+		complete_national_focus = ARG_defense_and_democracy
+		complete_national_focus = ARG_banco_central_de_la_republica_argentina
+		complete_national_focus = ARG_crack_down_on_corruption #35
+		complete_national_focus = ARG_industrial_expansion
+		complete_national_focus = ARG_british_cooperation
+		complete_national_focus = ARG_rapid_urbanization
+		complete_national_focus = ARG_import_substitution #35
+		complete_national_focus = ARG_agricultural_improvements
+		complete_national_focus = ARG_military_production_lines
+		complete_national_focus = ARG_emphasis_on_public_works #35
+		complete_national_focus = ARG_economic_reactivation_act #35
+		complete_national_focus = ARG_towards_a_greater_argentina
+		complete_national_focus = ARG_universidad_de_buenos_aires
+		complete_national_focus = SMB_air_force #35
+
+		ELSE = {
 	#generic focuses
 	complete_national_focus = army_effort
 	complete_national_focus = equipment_effort
@@ -94,23 +245,41 @@ set_country_flag = monroe_doctrine
 	complete_national_focus = industrial_effort
 	complete_national_focus = construction_effort
 	complete_national_focus = production_effort
+		}
+	}
 	
 	oob = "ARG_1939"
-	if = {
+	IF = {
 		limit = { has_dlc = "Man the Guns" }
 			set_naval_oob = "ARG_1939_naval_mtg"
-		else = {
+		ELSE = {
 			set_naval_oob = "ARG_1939_naval_legacy"
+		}
+	}
+	IF = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "ARG_1939_air_bba"
+			set_technology = {
+				iw_medium_airframe = 1
+				bba_early_transport_plane = 1
+			}
+		ELSE = {
+			set_air_oob = "ARG_1939_air_legacy"
+	set_technology = {
+		early_bomber = 1
+		naval_bomber1 = 1
+				early_transport_plane = 1
+			}
 		}
 	}
 
 	set_technology = {
-		early_bomber = 1
-		naval_bomber1 = 1
 		interwar_artillery = 1
 		infantry_weapons1 = 1
 		infantry_weapons2 = 1
 		support_weapons = 1
+		tech_support = 1
+		tech_engineers = 1
 
 		#doctrines
 		air_superiority = 1
@@ -124,7 +293,6 @@ set_country_flag = monroe_doctrine
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
 		mechanical_computing = 1
 		computing_machine = 1
 
@@ -141,14 +309,17 @@ set_country_flag = monroe_doctrine
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	IF = {
+		limit = { NOT = { has_dlc = "Man the Guns" } }
 		set_technology = {
 			basic_destroyer = 1
 			basic_light_cruiser = 1
 		}
 	}
-	if = {
+	IF = {
 		limit = { has_dlc = "Man the Guns" }
 		set_technology = {
 			basic_light_battery = 1
@@ -158,6 +329,7 @@ set_country_flag = monroe_doctrine
 }
 
 set_convoys = 120
+
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1931.11.8"
@@ -165,10 +337,10 @@ set_politics = {
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 5
-	fascism = 5
-	communism = 12
-	neutrality = 78
+	democratic = 25
+	fascism = 20
+	communism = 25
+	neutrality = 30
 }
 
 1939.1.1 = {
@@ -180,10 +352,10 @@ set_popularities = {
 	}
 
 	set_popularities = {
-		democratic = 5
-		fascism = 5
-		communism = 12
-		neutrality = 78
+		democratic = 15
+		fascism = 20
+		communism = 15
+		neutrality = 50
 	}
 
 	recruit_character = ARG_roberto_maria_ortiz
@@ -194,8 +366,23 @@ set_popularities = {
 
 ### VARIANTS ###
 # 1936 Start #
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
+IF = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	create_equipment_variant = {
+		name = "FMA D.21" #
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+		}
+		obsolete = no
+	}
+}
+IF = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
 	### Ship Variants ###
 	create_equipment_variant = {
 		name = "Cervantes Class"
@@ -219,7 +406,7 @@ if = {
 	}
 
 }
-if = {
+IF = {
 	limit = { has_dlc = "Man the Guns" }
 	# Submarines #
 	create_equipment_variant = {
@@ -364,11 +551,11 @@ if = {
 
 # 1939 Start #
 1939.1.1 = {
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
+	IF = {
+		limit = { NOT = { has_dlc = "Man the Guns" } }
 		# Ship variants #
 	}
-	if = {
+	IF = {
 		limit = { has_dlc = "Man the Guns" }
 		# Destroyers #
 		create_equipment_variant = {

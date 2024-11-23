@@ -1742,6 +1742,7 @@ news_event = {
 			NOT = { has_war_with = SOV }
 			has_government = fascism
 			has_country_leader = { ruling_only = yes character = GER_adolf_hitler }
+			NOT = { has_completed_focus = GER_rally_the_industrialists }  # WW (GOT) content - inner circle - If Hess has being improved, this event is prevented.
 		}
 		has_global_flag = fall_of_france
 		NOT = { has_global_flag = hindenburg_survives }
@@ -1757,6 +1758,7 @@ news_event = {
 			controls_state = 132
 			controls_state = 130
 			controls_state = 131
+			controls_state = 931
 			controls_state = 121
 			controls_state = 133
 			controls_state = 136
@@ -1801,6 +1803,7 @@ news_event = {
 			has_war_with = ENG 
 			NOT = { has_war_with = SOV }
 			has_government = fascism
+			NOT = { has_completed_focus = GER_rally_the_industrialists }  # WW (GOT) content - inner circle - If Hess has being improved, this event is prevented.
 		}
 		has_global_flag = fall_of_france
 		has_global_flag = hindenburg_survives
@@ -1903,8 +1906,8 @@ news_event = {
 			date < 1942.1.1
 		}
 		GER = {
-			has_completed_focus = GER_demand_memel
-			NOT = { has_completed_focus = GER_poland_friend }
+			has_completed_focus = GER_reassert_eastern_claims
+			NOT = { has_completed_focus = GER_befriend_poland }
 			date < 1942.1.1
 		}
 	}
@@ -2723,6 +2726,80 @@ news_event = {
 	option = {
 		name = news.100.c
 		trigger = { TAG = ENG }
+	}
+}
+
+# The Fall of Budapest (Generic)
+news_event = {
+	id = news.400
+	title = news.400.t
+	desc = news.400.desc
+	picture = GFX_news_event_generic_fall_of_budapest
+	
+	major = yes
+
+	is_triggered_only = yes
+
+	fire_only_once = no
+	
+	immediate = {
+		set_global_flag = fall_of_budapest_generic_flag
+	}
+	
+	option = {
+		name = news.400.a
+		trigger = {
+			NOT = {
+				TAG = HUN
+			}
+		}
+	}
+	option = {
+		name = news.400.b
+		trigger = { TAG = HUN }
+	}
+}
+
+# The Fall of Budapest (Soviets)
+news_event = {
+	id = news.401
+	title = news.401.t
+	desc = news.401.desc
+	picture = GFX_news_event_generic_soviet_occupation_of_budapest
+	
+	major = yes
+	
+	trigger = {
+		43 = { is_controlled_by = SOV }
+		43 = { is_owned_by = HUN }
+		SOV = { has_war_with = HUN }
+		NOT = { has_global_flag = fall_of_budapest_sov }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_budapest_sov
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = news.401.a
+		trigger = {
+			NOT = {
+				TAG = SOV
+				TAG = HUN
+			}
+		}
+	}
+	option = {
+		name = news.401.b
+		trigger = { TAG = SOV }
+	}
+	option = {
+		name = news.401.c
+		trigger = { TAG = HUN }
 	}
 }
 
@@ -5089,9 +5166,14 @@ news_event = {
 		GER = {
 			OR = {
 				has_country_flag = GER_rhineland_backed_down
-				NOT = { has_completed_focus = GER_rhineland }
+				NOT = { 
+					has_completed_focus = GER_remilitarize_the_rhineland 
+				}
 			}
 			has_offensive_war = yes
+			NOT = {
+				has_war_with = SIL
+			}
 		}
 		42 = {
 			is_demilitarized_zone = no
@@ -5131,7 +5213,7 @@ news_event = {
 
 	trigger = {
 		tag = GER
-		has_tech = rocket_engines
+		is_special_project_completed = sp:sp_rocket_interceptor
 	}
 
 	mean_time_to_happen = {
@@ -5265,7 +5347,7 @@ news_event = {
 		GER = {
 			OR = {
 				has_country_flag = GER_rhineland_backed_down
-				NOT = { has_completed_focus = GER_rhineland }
+				NOT = { has_completed_focus = GER_remilitarize_the_rhineland }
 			}
 			has_defensive_war = yes
 			NOT = { has_civil_war = yes }
@@ -8614,6 +8696,7 @@ news_event = {
 		OR = {
 			has_idea = war_economy
 			has_idea = tot_economic_mobilisation
+			has_idea = totaler_krieg_economy
 		}
 		any_other_country = {
 			is_major = yes
@@ -9531,7 +9614,11 @@ news_event = {
 		name = news.234.c
 		trigger = {
 			NOT = {
+				tag = BEL
+				tag = LUX
+			}
 				OR = {
+				NOT = {
 					tag = HOL
 					tag = BEL
 					tag = LUX
@@ -9539,6 +9626,7 @@ news_event = {
 					is_in_faction_with = LUX
 					is_in_faction_with = BEL
 				}
+				NOT = { has_war_with = GER }
 			}
 		}
 	}
@@ -11492,7 +11580,10 @@ news_event = {
 		name = news.296.c
 		trigger = { 
 			NOT = { TAG = HUN }
+			OR = {
 			has_government = democratic
+				has_government = neutrality
+			}
 		}
 	}
 }
@@ -11528,7 +11619,10 @@ news_event = {
 		name = news.297.c
 		trigger = { 
 			NOT = { TAG = HUN }
+			OR = {
 			has_government = fascism
+				has_government = neutrality
+			}
 		}
 	}
 }
@@ -12093,7 +12187,7 @@ news_event = {
 			NOT = { country_exists = AUS }
 		}
 	}
-	picture = GFX_news_event_generic_sign_treaty3
+	picture = GFX_news_event_HUN_alliance_with_italy
 	
 	major = yes
 	
@@ -12144,7 +12238,7 @@ news_event = {
 			NOT = { country_exists = AUS }
 		}
 	}
-	picture = GFX_news_event_generic_sign_treaty3
+	picture = GFX_news_event_HUN_alliance_with_italy
 	
 	major = yes
 	
@@ -12507,7 +12601,7 @@ news_event = {
 		}
 	}
 	option = {
-		name = news.320.e
+		name = news.320.f
 		trigger = { 
 			OR = {
 				NOT = {
@@ -13241,6 +13335,34 @@ news_event = {
 		name = news.337.d
 		trigger = {
 			tag = ETH
+		}
+	}
+}
+
+news_event = { #Nuclear Reactor Tested
+	id = news.338
+	title = news.338.t
+	desc = news.338.desc
+	picture = GFX_news_event_journalists_speech
+
+	trigger = {
+		
+	}
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.338.a
+		trigger = {
+			NOT = {	TAG = FROM }
+		}
+	}
+	option = {
+		name = news.338.b
+		trigger = { 
+			TAG = FROM 
 		}
 	}
 }

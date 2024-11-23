@@ -18,6 +18,12 @@ state={
 			9450 30.0
 		}
 
+		1943.12.30 = {
+			buildings = {
+				nuclear_reactor = 1 
+			}
+		}
+
 	}
 
 	provinces={

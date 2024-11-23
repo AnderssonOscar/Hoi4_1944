@@ -12,15 +12,15 @@ state={
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
-			air_base = 1 #1944
+			air_base = 1
 			3838 = {
-				naval_base = 1
+				naval_base = 3
 			}
 		}
 		add_core_of = COR
 		add_core_of = FRA
 
-			1943.12.30 = {
+		1943.12.30 = {
 			owner = USA
 			controller = USA
      	}	

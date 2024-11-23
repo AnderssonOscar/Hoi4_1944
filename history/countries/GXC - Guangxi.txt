@@ -133,10 +133,10 @@ set_popularities = {
 		electronic_mechanical_engineering = 1
 		radio = 1
 		radio_detection = 1
-		#decimetric_radar = 1
-		#improved_decimetric_radar = 1
-		#centimetric_radar = 1
-		#improved_centimetric_radar = 1
+		#
+		#
+		#
+		#
 
 		#industry
 		excavation1 = 1

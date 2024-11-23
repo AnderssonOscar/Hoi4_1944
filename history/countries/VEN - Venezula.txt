@@ -6,9 +6,17 @@ oob = "VEN_1936"
 set_technology = {
 	infantry_weapons = 1
 	gw_artillery = 1
-	early_fighter = 1
 	fuel_silos = 1
 	fuel_refining = 1
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = {
+		early_fighter = 1
+	}
 }
 
 recruit_character = VEN_eleazar_lópez_contreras
@@ -34,6 +42,8 @@ recruit_character = VEN_isidoro_ruiz_tuerro
 
 
 set_country_flag = monroe_doctrine
+
+add_ideas = idea_VEN_blockade_inactive
 
 1939.1.1 = {
 
@@ -83,6 +93,9 @@ set_country_flag = monroe_doctrine
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 }
 
 set_convoys = 10
@@ -91,10 +104,7 @@ set_politics = {
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
-
 }
-
-
 set_popularities = {
 	democratic = 5
 	fascism = 80

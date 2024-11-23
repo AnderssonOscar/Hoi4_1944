@@ -19,8 +19,8 @@ state={
 			11562 1 
 		}
 		1943.12.1 = {
-			#owner = GER
-			#controller = GER
+			owner = RKN
+			controller = RKN
 
 			buildings = {
 				anti_air_building = 1

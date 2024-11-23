@@ -68,6 +68,9 @@ recruit_character = MEN_megata_toshiro
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 }
 
 set_politics = {

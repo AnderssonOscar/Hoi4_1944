@@ -1,19 +1,3 @@
-# befriend
-# conquer
-# antagonize
-# build_ship
-# build_army
-# unit_ratio
-# build_building
-# research_tech
-# garrison
-# protect
-# influence
-# contain
-# area_priority
-# building_target
-
-
 GER_unit_production = {
 	allowed = {
 		original_tag = GER
@@ -30,13 +14,6 @@ GER_unit_production = {
 		id = garrison
 		value = 4
 	}
-
-	# Old garrison system against resistance
-	# ai_strategy = {
-	# 	type = role_ratio
-	# 	id = suppression
-	# 	value = 6
-	# }
 
 	ai_strategy = {
 		type = role_ratio
@@ -65,7 +42,13 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = motorized
-		value = 0 #because doctrine this = 2
+		value = -1 #because doctrine this = 1
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = anti_armor
+		value = 1
 	}
 
 	ai_strategy = {
@@ -272,11 +255,13 @@ GER_armored_production = {
 		original_tag = GER
 	}
 	enable = {
-		date > 1939.1.1
-		ai_wants_divisions > 24 #Decreasing the amount of tanks the AI wants
+		date > 1938.8.1
+		ai_wants_divisions > 10 #Decreasing the amount of tanks the AI wants
 	}
 	abort = {
-		ai_wants_divisions < 25 #Decreasing the amount of tanks the AI wants
+		OR = {
+			ai_wants_divisions < 25 #Decreasing the amount of tanks the AI wants
+		}
 	}
 
 	ai_strategy = {
@@ -294,7 +279,7 @@ GER_halt_light_armor_production_in_transitioning = {
 		has_template_majority_unit = medium_armor
 		OR = {
 			has_equipment = { light_tank_chassis > 600 }
-			date > 1939.1.1
+			date > 1938.8.1
 		}
 	}
 	abort_when_not_enabled = yes
@@ -325,6 +310,45 @@ GER_stockpile_less_early_game = {
 	}
 }
 
+GER_raids_store_some_equipment = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1938.4.1
+		date < 1941.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = save_equipment
+		id = transport_plane_equipment
+		value = 10
+	}
+	ai_strategy = {
+		type = save_equipment
+		id = support_equipment
+		value = 100
+	}
+}
+GER_raids_get_some_paras_for_eben_emael = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1937.5.1
+	}
+
+	abort = {
+		has_tech = paratroopers
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = paratroopers
+		value = 100
+	}
+}
 
 GER_highered_armored_production = {
 	allowed = {
@@ -465,7 +489,6 @@ GER_how_about_some_more_transport_planes = {
 	}
 }
 
-
 GER_template_design = {
 	allowed = {
 		original_tag = GER
@@ -520,26 +543,26 @@ GER_template_design = {
 	}
 }
 
-war_with_poland = {
+GER_war_with_poland = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_demand_memel
+		has_completed_focus = GER_reassert_eastern_claims
 		country_exists = POL
 	}
 	abort = {
-		NOT = { country_exists = POL }
+		POL = { has_capitulated = yes }
 	}
 
 	ai_strategy = {
 		type = antagonize
-		id = "POL"
+		id = POL
 		value = 200
 	}
 }
 
-danzig_of_war_preparation = {
+GER_danzig_of_war_preparation = {
 	allowed = {
 		original_tag = GER
 	}
@@ -558,24 +581,67 @@ danzig_of_war_preparation = {
 	abort = {
 		OR = {
 			NOT = { country_exists = POL }
-
 			AND = {
 				has_completed_focus = GER_danzig_or_war
 				GER = { has_war_with = POL }
 			}
-
 			owns_state = 85
 		}
 	}
 
 	ai_strategy = {
 		type = conquer
-		id = "POL"
+		id = POL
 		value = 100
 	}
 }
 
-dont_die_in_mountains = {
+# Make sure we deploy our breakthrough units against Poland
+GER_blitzkrieg_poland = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		#is_historical_focus_on = yes
+		OR = {
+			focus_progress = {
+				focus = GER_danzig_or_war
+				progress > 0.01
+			}
+			has_war_with = POL
+		}
+	}
+	abort = {
+		OR = {
+			POL = {
+				has_capitulated = yes
+			}
+			has_war_with = HOL
+		}
+	}
+	ai_strategy = {
+		type = front_armor_score
+		id = POL
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		state = 87 # Lodz
+		state = 10 # Warsaw
+
+		value = 25 # +25%
+	}
+
+	ai_strategy = {
+		# Still need to defend at the maginot...
+		type = front_unit_request
+		state = 28  # Alsace-Lorraine
+		value = 30  # +30 %
+	}
+}
+
+GER_dont_die_in_mountains = {
 	allowed = {
 		original_tag = GER
 	}
@@ -598,17 +664,17 @@ dont_die_in_mountains = {
 
 	ai_strategy = {
 		type = ignore
-		id = "SWI"
+		id = SWI
 		value = 1000
 	}
 }
 
-war_with_soviets = {
+GER_war_with_soviets = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_ussr_war_goal
+		has_completed_focus = GER_war_with_the_ussr
 		country_exists = SOV
 	}
 	abort = {
@@ -618,17 +684,17 @@ war_with_soviets = {
 
 	ai_strategy = {
 		type = antagonize
-		id = "SOU" # Yes, SOU is deliberate
+		id = SOU # Yes, SOU is deliberate
 		value = 200
 	}
 }
 
-soviet_ally = {
+GER_soviet_ally = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_soviet_ally
+		has_completed_focus = GER_alliance_with_the_ussr
 		country_exists = SOV
 	}
 	abort = {
@@ -637,23 +703,22 @@ soviet_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "SOV"
+		id = SOV
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "SOV"
+		id = SOV
 		value = 200
 	}
 }
 
-
-italy_ally = {
+GER_italy_ally = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_italy_ally
+		has_completed_focus = GER_form_rome_berlin_axis
 		country_exists = ITA
 	}
 	abort = {
@@ -703,7 +768,7 @@ japan_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_japan_friend
+		has_completed_focus = GER_befriend_japan
 		country_exists = JAP
 	}
 	abort = {
@@ -727,7 +792,7 @@ china_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_china_friend
+		has_completed_focus = GER_befriend_china
 		country_exists = CHI
 	}
 	abort = {
@@ -736,22 +801,22 @@ china_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "CHI"
+		id = CHI
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "CHI"
+		id = CHI
 		value = 200
 	}
 }
 
-turkey_ally = {
+GER_turkey_ally = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_turkey_friend
+		has_completed_focus = GER_befriend_turkey
 		country_exists = TUR
 	}
 	abort = {
@@ -760,23 +825,23 @@ turkey_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "TUR"
+		id = TUR
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "TUR"
+		id = TUR
 		value = 100
 	}
 }
 
-spain_ally = {
+GER_spain_ally = {
 	allowed = {
 		NOT = { has_dlc = "La Resistance" }
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_nationalist_spain_ally
+		has_completed_focus = GER_alliance_with_spain
 		country_exists = SPR
 		SPR = { has_government = fascism } # TODO Find way to detect dynamic revolter tag
 	}
@@ -786,23 +851,23 @@ spain_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "SPR"
+		id = SPR
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "SPR"
+		id = SPR
 		value = 100
 	}
 }
 
-spain_ally_resistance = {
+GER_spain_ally_la_resistance = {
 	allowed = {
 		original_tag = GER
 		has_dlc = "La Resistance"
 	}
 	enable = {
-		has_completed_focus = GER_nationalist_spain_ally
+		has_completed_focus = GER_alliance_with_spain
 		country_exists = SPA
 	}
 	abort = {
@@ -814,22 +879,22 @@ spain_ally_resistance = {
 
 	ai_strategy = {
 		type = befriend
-		id = "SPA"
+		id = SPA
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "SPA"
+		id = SPA
 		value = 100
 	}
 }
 
-denmark_ally = {
+GER_denmark_ally = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_denmark_friend
+		has_completed_focus = GER_utilize_the_nordliche_gesellschaft
 		country_exists = DEN
 	}
 	abort = {
@@ -838,22 +903,22 @@ denmark_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "DEN"
+		id = DEN
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "DEN"
+		id = DEN
 		value = 100
 	}
 }
 
-sweden_ally = {
+GER_sweden_ally = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_sweden_friend
+		has_completed_focus = GER_utilize_the_nordliche_gesellschaft
 		country_exists = SWE
 	}
 	abort = {
@@ -862,22 +927,22 @@ sweden_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "SWE"
+		id = SWE
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "SWE"
+		id = SWE
 		value = 100
 	}
 }
 
-dutch_ally = {
+GER_dutch_ally = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_dutch_friend
+		has_completed_focus = GER_influence_the_benelux
 		country_exists = HOL
 	}
 	abort = {
@@ -886,22 +951,22 @@ dutch_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "HOL"
+		id = HOL
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "HOL"
+		id = HOL
 		value = 100
 	}
 }
 
-norway_ally = {
+GER_norway_ally = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_norway_friend
+		has_completed_focus = GER_utilize_the_nordliche_gesellschaft
 		country_exists = NOR
 	}
 	abort = {
@@ -910,22 +975,25 @@ norway_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "NOR"
+		id = NOR
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "NOR"
+		id = NOR
 		value = 100
 	}
 }
 
-anschluss_rejected = {
+GER_anschluss_rejected = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_anschluss
+		OR = {
+			has_completed_focus = GER_anschluss
+			has_completed_focus = GER_anschluss
+		}
 		country_exists = AUS
 	}
 	abort = {
@@ -936,12 +1004,103 @@ anschluss_rejected = {
 
 	ai_strategy = {
 		type = antagonize
-		id = "AUS"
+		id = AUS
 		value = 300
 	}
 }
 
-CZE_is_idiot = {
+GER_force_concentration_through_maginot_hurts_too_much = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date < 1941.1.1  # Deactivate after some time
+		28 = { # Alsace-Lorraine
+			NOT = { is_controlled_by = GER }
+
+			any_province_building_level = {  # Only if Maginot is actually fortified
+				province = {
+					all_provinces = yes
+					limit_to_border = yes
+				}
+				building = bunker
+				level > 5
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_concentration_front_factor
+		state = 28  # Alsace-Lorraine
+		ratio = 0.50     # Only if > 50 % of the front consists of Alsace-Lorraine. This should make it deactivate if the frontline extends around the maginot
+		value = -100
+	}
+	ai_strategy = {
+		type = force_concentration_target_weight
+		state = 28 # Alsace-Lorraine
+		value = -100 # -100 % / Don't even consider targets here. Infantry and Artillery are better at dealing with the Maginot than tank formations are
+	}
+}
+
+GER_prepare_against_czechoslovakia = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date < 1940.1.1
+		focus_progress = {
+			focus = GER_demand_sudetenland
+			progress > 0.01
+		}
+		country_exists = CZE
+		NOT = { has_country_flag = sudetenland_acquired }
+
+		# TODO This enable trigger should be made a bit more robust. Right now, if CZE is puppeted by Germany or just half-conquered by them, this strat would still be active.
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = CZE
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_concentration_front_factor
+		tag = CZE
+		value = 200
+	}
+}
+
+GER_prepare_against_czechoslovakia_again = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date < 1940.6.1
+		focus_progress = {
+			focus = GER_fate_of_czechoslovakia
+			progress > 0.01
+		}
+		country_exists = CZE
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = CZE
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_concentration_front_factor
+		tag = CZE
+		value = 200
+	}
+}
+
+GER_czechoslovakia_is_idiot = {
 	allowed = {
 		original_tag = GER
 	}
@@ -957,12 +1116,12 @@ CZE_is_idiot = {
 
 	ai_strategy = {
 		type = antagonize
-		id = "CZE"
+		id = CZE
 		value = 300
 	}
 }
 
-play_nice_with_ribbentrop_pact = {
+GER_play_nice_with_ribbentrop_pact = {
 	allowed = {
 		original_tag = GER
 	}
@@ -984,22 +1143,22 @@ play_nice_with_ribbentrop_pact = {
 	# leave britney alone!
 	ai_strategy = {
 		type = ignore
-		id = "LIT"
+		id = LIT
 		value = 100
 	}
 	ai_strategy = {
 		type = ignore
-		id = "LAT"
+		id = LAT
 		value = 100
 	}
 	ai_strategy = {
 		type = ignore
-		id = "EST"
+		id = EST
 		value = 100
 	}
 }
 
-tfv_protect_fascist_south_africa = {
+GER_tfv_protect_fascist_south_africa = {
 	allowed = {
 		original_tag = GER
 	}
@@ -1013,27 +1172,27 @@ tfv_protect_fascist_south_africa = {
 
 	ai_strategy = {
 		type = protect
-		id = "SAF"
+		id = SAF
 		value = 200
 	}
 	ai_strategy = {
 		type = send_volunteers_desire
-		id = "SAF"
+		id = SAF
 		value = 200
 	}
 	ai_strategy = {
 		type = support
-		id = "SAF"
+		id = SAF
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "SAF"
+		id = SAF
 		value = 200
 	}
 }
 
-less_naval_focused_nation = {
+GER_less_naval_focused_nation = {
 	allowed = {
 		original_tag = GER
 		not = {
@@ -1041,10 +1200,10 @@ less_naval_focused_nation = {
 		}
 	}
 	enable = {
-		date > "1936.1.1" #Don't Germany, just dont
+		date > 1936.1.1 #Don't Germany, just dont
 	}
 	abort = {
-		date > "1943.1.1" #Don't Germany, just dont, if you haven't already won
+		date > 1943.1.1 #Don't Germany, just dont, if you haven't already won
 	}
 
 	ai_strategy = {
@@ -1366,19 +1525,19 @@ invading_france_is_pointless_because_we_go_through_benelux_soon = {
 
 	ai_strategy = {
 		type = invade
-		id = "FRA"
+		id = FRA
 		value = -2000 # that low means not going for islands either
 	}
 
 	# danzig corridor is too small to be worth opening extra invasion front
 	ai_strategy = {
 		type = invade
-		id = "POL"
+		id = POL
 		value = -500
 	}
 }
 
-worry_about_barbarossa_before_africa = {
+GER_worry_about_barbarossa_before_africa = {
 	allowed = {
 		original_tag = GER
 	}
@@ -1386,7 +1545,7 @@ worry_about_barbarossa_before_africa = {
 		country_exists = SOV
 		NOT = {	is_in_faction_with = SOV }
 		has_war_with = ENG
-		ENG = { is_ai = yes }
+		is_historical_focus_on = yes
 	}
 
 	abort_when_not_enabled = yes
@@ -1404,13 +1563,13 @@ worry_about_barbarossa_before_africa = {
 	
 	ai_strategy = {
 		type = area_priority
-		id = horn_of_africa
+		id = east_africa
 		value = -200
 	}
 	ai_strategy = {
 		type = front_unit_request
-		area = horn_of_africa
-		value = -50
+		area = east_africa
+		value = -100
 	}
 	ai_strategy = {
 		type = area_priority
@@ -1424,7 +1583,7 @@ worry_about_barbarossa_before_africa = {
 	}
 }
 
-make_sure_poland_is_ganked_before_we_move = {
+GER_make_sure_poland_is_ganked_before_we_move = {
 	allowed = {
 		original_tag = GER
 	}
@@ -1445,7 +1604,7 @@ make_sure_poland_is_ganked_before_we_move = {
 
 	ai_strategy = {
 		type = declare_war
-		id = "HOL"
+		id = HOL
 		value = -2000
 	}
 	#ai_strategy = {
@@ -1455,7 +1614,7 @@ make_sure_poland_is_ganked_before_we_move = {
 	#}
 	ai_strategy = {
 		type = declare_war
-		id = "LUX"
+		id = BEL
 		value = -2000
 	}
 }
@@ -1520,7 +1679,7 @@ GER_want_to_invade_FRA_without_ITA = {
 	}
 }
 
-axis_stay_away_from_the_royal_navy = {
+AXIS_stay_away_from_the_royal_navy = {
 	enable = {
 		has_war_with = ENG
 		date < 1942.1.1
@@ -1568,14 +1727,14 @@ axis_stay_away_from_the_royal_navy = {
 	}
 }
 
-dont_take_claims_on_POL_we_got_focus = {
+GER_dont_take_claims_on_POL_we_got_focus = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
 		country_exists = POL
 		has_war = no
-		has_completed_focus = GER_demand_memel
+		has_completed_focus = GER_reassert_eastern_claims
 	}
 
 	abort = {
@@ -1588,12 +1747,12 @@ dont_take_claims_on_POL_we_got_focus = {
 
 	ai_strategy = {
 		type = ignore_claim
-		id = "POL"
+		id = POL
 		value = 1
 	}
 }
 
-axis_dont_mess_with_volunteers = {
+AXIS_dont_mess_with_volunteers = {
 	allowed = {
 		OR = {
 			original_tag = GER
@@ -1684,7 +1843,7 @@ GER_industry_we_are_the_baddies_but_not_yet = {
 	}
 }
 
-Axis_care_less_about_making_friends = {
+AXIS_care_less_about_making_friends = {
 
 	enable = {
 		has_government = fascism
@@ -1724,6 +1883,7 @@ GER_wants_civ = {
 		value = 59
 	}
 }
+
 GER_wants_synth = {
 	allowed = {
 		original_tag = GER
@@ -1732,12 +1892,13 @@ GER_wants_synth = {
 		has_government = fascism
 		date > 1937.10.20
 		has_war = no
+		synthetic_refinery < 20
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = building_target
 		id = synthetic_refinery
-		value = 8
+		value = 20
 	}
 }
 
@@ -1761,27 +1922,27 @@ GER_share_borders_with_ITA_against_SOV = {
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "CRO"
+		id = CRO
 		value = 100
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "ROM"
+		id = ROM
 		value = 100
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "HUN"
+		id = HUN
 		value = 100
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "SLO"
+		id = SLO
 		value = 100
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "ITA"
+		id = ITA
 		value = 100
 	}
 }
@@ -1799,7 +1960,11 @@ GER_we_dont_fight_pathetic_sweden = { # :O
 	}
 	abort = {
 		SWE = {
-			not = { has_idea = neutrality_idea }
+			NOT = { has_idea = neutrality_idea }
+			OR = {
+				is_in_faction = yes
+				has_war = yes 
+			}
 		}
 	}
 	ai_strategy = {
@@ -1827,7 +1992,11 @@ GER_we_dont_fight_pathetic_sweden_on_historical = { # :O
 	}
 	abort = {
 		SWE = {
-			not = { has_idea = neutrality_idea }
+			NOT = { has_idea = neutrality_idea }
+			OR = {
+				is_in_faction = yes
+				has_war = yes 
+			}
 		}
 	}
 	ai_strategy = {
@@ -1883,7 +2052,10 @@ GER_market_management_after_anschluss = {
 	}
 	enable = {
 		has_government = fascism
+		OR = {
+			has_completed_focus = GER_anschluss
 		has_completed_focus = GER_anschluss
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -1963,7 +2135,7 @@ GER_market_management_after_sudetenland = {
 	}
 }
 
-spain_scw_support_GER_resistance = {
+GER_spain_scw_support_la_resistance = {
 	allowed = {
 		original_tag = GER
 		has_dlc = "La Resistance"
@@ -2092,11 +2264,10 @@ GER_let_italy_handle_french_front_alone = {
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "ITA"
+		id = ITA
 		value = 100
 	}
 }
-
 
 GER_ITA_close_up_maginot_line_after_FRA_falls  = {
 	allowed = {
@@ -2141,14 +2312,11 @@ GER_ITA_close_up_maginot_line_after_FRA_falls  = {
 	}
 }
 
-
-# AI are not willing to invade if it is at war at its home against another country's home location
-# lets force invade NOR for GER & ITA
+# AI are not willing to invade if it is at war at its home against another country's home location (france...), unless it has a positive "invade" value
 GER_enable_invasion_of_NOR = {
 	allowed = {
 		OR = {
 			original_tag = GER
-			original_tag = ITA
 		}
 	}
 	enable = {
@@ -2162,14 +2330,79 @@ GER_enable_invasion_of_NOR = {
 
 	ai_strategy = {
 		type = invade
-		id = "NOR"
+		id = NOR
 		value = 10
 	}
 }
 
+GER_prepare_for_weserubung = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		focus_progress = {
+			focus = GER_operation_weserubung
+			progress > 0
+		}
+	}
+	abort = {
+		has_completed_focus = GER_operation_weserubung
+		# Norway and Denmark are either defeated or have joined us (or at least not our enemies anymore)
+		NOR = {
+			OR = {
+				has_capitulated = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		DEN = {
+			OR = {
+				has_capitulated = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	}
 
-# focus armor units on low countries
-# and ignore mighty lux until they fall
+	ai_strategy = {
+		type = invade
+		id = NOR
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = NOR
+		value = 100
+	}
+	ai_strategy = {
+		type = area_priority
+		id = just_norway
+		value = 50
+	}
+}
+
+GER_no_no_definitely_not_planning_to_invade_norway = {
+	# This strategy is only to make the AI understand that it needs to prepare naval invasion of Norway before starting the Weserubung focus, because invasion takes longer time to prepare than the focus takes to complete.
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_completed_focus = GER_danzig_or_war
+		POL = { has_capitulated = yes }
+	}
+	abort = {
+		OR = {
+			has_completed_focus = GER_operation_weserubung  # already at war so no need to prepare anymore
+			has_completed_focus = GER_utilize_the_nordliche_gesellschaft  # decided to befriend them instead
+			date > 1940.9.1  # just for safety, if things really go south
+		}
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = NOR
+		value = 100
+	}
+}
+
+# focus armor units on HOL and LUX
 GER_around_the_maginot = {
 	allowed = {
 		original_tag = GER
@@ -2186,7 +2419,7 @@ GER_around_the_maginot = {
 		42 = {
 			is_controlled_by = GER
 		}
-		50 = {
+		978 = {
 			is_controlled_by = GER
 		}
 
@@ -2195,17 +2428,17 @@ GER_around_the_maginot = {
 			HOL = {
 				has_capitulated = no
 			}
-			BEL = {
+			LUX = {
 				has_capitulated = no
 			}
 		}
 
 		# lux somehow joined the fun
-		NOT = { has_war_with = LUX }
-		LUX = {
-			has_capitulated = no
-			NOT = { is_in_faction_with = FRA }
-		}
+		#NOT = { has_war_with = LUX }
+		#LUX = {
+		#	has_capitulated = no
+		#	NOT = { is_in_faction_with = FRA }
+		#}
 
 		# we are ready to declare war on low countries
 		OR = {
@@ -2215,7 +2448,7 @@ GER_around_the_maginot = {
 			}
 			AND = {
 				is_in_array = { potential_and_current_enemies = HOL }
-				is_in_array = { potential_and_current_enemies = BEL }
+				is_in_array = { potential_and_current_enemies = LUX }
 			}
 		}
 		is_in_array = { potential_and_current_enemies = FRA }
@@ -2224,45 +2457,105 @@ GER_around_the_maginot = {
 	abort_when_not_enabled = yes
 
 	# leave LUX for later
-	ai_strategy = {
-		type = declare_war
-		id = "LUX"
-		value = -2000
-	}
-
-	ai_strategy = {
-		type = diplo_action_desire
-		id = "LUX"
-		target = declare_war
-		value = -50000
-	}
+	#ai_strategy = {
+	#	type = declare_war
+	#	id = LUX
+	#	value = -2000
+	#}
+	#ai_strategy = {
+	#	type = diplo_action_desire
+	#	id = LUX
+	#	target = declare_war
+	#	value = -50000
+	#}
 
 	ai_strategy = {
 		type = front_armor_score
-		id = "FRA"
+		id = FRA
 		value = -100
 	}
 
 	ai_strategy = {
 		type = front_armor_score
-		id = "HOL"
+		id = HOL
 		value = 100
 	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = HOL
+		value = 1000
+	}
+	ai_strategy = {
+		type = force_concentration_front_factor
+		tag = HOL
+		value = 200
+	}
+
+	#ai_strategy = {
+	#	type = front_armor_score
+	#	id = BEL
+	#	value = 100
+	#}
+	#ai_strategy = {
+	#	type = prepare_for_war
+	#	id = BEL
+	#	value = 1000
+	#}
+	#ai_strategy = {
+	#	type = force_concentration_front_factor
+	#	tag = BEL
+	#	value = 200
+	#}
 
 	ai_strategy = {
 		type = front_armor_score
-		id = "BEL"
+		id = LUX
 		value = 100
 	}
-
 	ai_strategy = {
-		type = front_armor_score
-		id = "POL"
-		value = 100
+		type = prepare_for_war
+		id = LUX
+		value = 1000
 	}
-
+	ai_strategy = {
+		type = force_concentration_front_factor
+		tag = LUX
+		value = 200
+	}
 }
 
+#Pounce on BEL once the rest of the Low Countries are secured
+GER_tanks_against_belgium = {
+	allowed = {
+		original_tag = GER
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		HOL = { has_capitulated = yes }
+		#LUX = { has_capitulated = yes }
+	}
+
+	abort = {
+		surrender_progress > 0.15 #Bring our metal bawkses home
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = BEL
+		value = 100
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = BEL
+		value = 1000
+	}
+	ai_strategy = {
+		type = force_concentration_front_factor
+		tag = BEL
+		value = 200
+}
+}
 
 # lets not invade until we have europe
 GER_dont_invade_until_FRA_falls = {
@@ -2282,24 +2575,13 @@ GER_dont_invade_until_FRA_falls = {
 
 	ai_strategy = {
 		type = invasion_unit_request
-		country_trigger = { always = yes }
-
-		value = -100
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-
-		# norway
-		state = 110
-		state = 142
-		state = 143
-		state = 144
+		country_trigger = {
+			NOT = { original_tag = NOR }  # We do want to allow invasion against norway
+		}
 
 		value = -100
 	}
 }
-
 
 GER_have_some_train_production = {
 	allowed = {
@@ -2376,7 +2658,7 @@ GER_ignore_vichy_we_will_annex_them_later = {
 
 	ai_strategy = {
 		type = ignore
-		id = "VIC"
+		id = VIC
 		value = 100
 	}
 }
@@ -2438,7 +2720,7 @@ GER_blitzkrieg_benelux  = {
 	}
 
 	enable = {
-		date < 1940.3.1 #Don't keep pushing wildly if we haven't capitulated benelux in 4 months - we lost anyway
+		date < 1940.9.15 #Don't keep pushing wildly if we haven't capitulated benelux in 4 months - we lost anyway
 		OR = {
 			AND = {
 				focus_progress = {
@@ -2448,12 +2730,30 @@ GER_blitzkrieg_benelux  = {
 				NOT = { has_war_with = HOL  }
 			}
 			AND = {
+				focus_progress = {
+					focus = GER_around_maginot
+					progress > 0.01
+				}
+				NOT = { has_war_with = BEL  }
+			}
+			AND = {
+				focus_progress = {
+					focus = GER_around_maginot
+					progress > 0.01
+				}
+				NOT = { has_war_with = LUX  }
+			}
+			AND = {
 				has_war_with = HOL
 				HOL = { has_capitulated = no }
 			}
 			AND = {
 				has_war_with = BEL
 				BEL = { has_capitulated = no }
+			}
+			AND = {
+				has_war_with = LUX
+				LUX = { has_capitulated = no }
 			}
 		}
 	}
@@ -2487,6 +2787,19 @@ GER_blitzkrieg_benelux  = {
 	}
 
 	ai_strategy = {
+		type = front_control
+
+		tag = LUX
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+	ai_strategy = {
 		type = front_unit_request
 
 		tag = BEL
@@ -2499,9 +2812,18 @@ GER_blitzkrieg_benelux  = {
 
 		tag = HOL
 
+		value = 60 # lets put more units, should be safe
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = LUX
+
 		value = 50 # lets put more units, should be safe
 	}
 }
+
 GER_blitz_france = {
 
 	allowed = {
@@ -2509,7 +2831,7 @@ GER_blitz_france = {
 	}
 
 	enable = {
-		date < 1940.6.1
+		date < 1940.9.1
 		HOL = { has_capitulated = yes }
 		is_historical_focus_on = yes
 	}
@@ -2518,7 +2840,7 @@ GER_blitz_france = {
 
 	ai_strategy = {
 		type = consider_weak
-		id = "FRA"
+		id = FRA
 		value = 25
 	}
 
@@ -2535,6 +2857,30 @@ GER_blitz_france = {
 		execute_order = yes
 	}
 
+	ai_strategy = {
+		type = force_concentration_target_weight
+		state = 29 # Nord-Pas_de_Calais
+		state = 785 # Picardy
+		state = 16 # Ile de France
+		state = 15 # Normandy
+		# include Belgium as well even though we hopefully have already taken it
+		state = 6 # Vlaanderen
+		state = 34 # Wallonie
+		state = 977 # Antwerpen
+
+		value = 80 # +80%
+	}
+
+	ai_strategy = {
+		# Avoid the areas behind the Maginot line
+		type = force_concentration_target_weight
+		state = 18 # Champagne
+		state = 17 # Franche-Comte
+		state = 28 # Alsace-Lorraine
+		state = 27 # Bourgogne
+
+		value = -60 # -60%
+	}
 }
 
 GER_tanks_in_the_snow = {
@@ -2546,10 +2892,10 @@ GER_tanks_in_the_snow = {
 		date < 1944.1.1
 		OR = {
 			focus_progress = {
-				focus = GER_ussr_war_goal
+				focus = GER_war_with_the_ussr
 				progress > 0.01
 			}
-			has_completed_focus = GER_ussr_war_goal
+			has_completed_focus = GER_war_with_the_ussr
 		}
 	}
 
@@ -2559,7 +2905,7 @@ GER_tanks_in_the_snow = {
 
 	ai_strategy = {
 		type = front_armor_score
-		id = "SOV"
+		id = SOV
 		value = 200
 	}
 
@@ -2571,6 +2917,11 @@ GER_tanks_in_the_snow = {
 		value = 40
 	}
 
+	ai_strategy = { #GER might be fighting GRE when Barbarossa needs to take place; prioritize SOV
+		type = prepare_for_war
+		id = SOV
+		value = 100
+	}
 }
 
 GER_tanks_against_france = {
@@ -2592,15 +2943,13 @@ GER_tanks_against_france = {
 
 	ai_strategy = {
 		type = front_armor_score
-		id = "FRA"
+		id = FRA
 		value = 100
 	}
 
 	ai_strategy = {
 		type = front_unit_request
-
 		tag = FRA
-
 		value = 10
 	}
 
@@ -2627,7 +2976,6 @@ GER_abandon_ship = {
 
 		value = -40
 	}
-
 }
 
 GER_blitzkrieg_russia_hard  = { #STEINER, IT IS NOT TIME YET
@@ -2672,7 +3020,6 @@ GER_blitzkrieg_russia_hard  = { #STEINER, IT IS NOT TIME YET
 		id = 130 #Strategic Region ID - Ukraine
 		value = 20000 #value of stocked main front in active combat is usually around 35,000
 	}
-
 }
 
 GER_blitzkrieg_russia_soft  = { #Rolling incursions
@@ -2841,6 +3188,7 @@ GER_push_back_our_coasts_until_overlord  = {
 	}
 
 	enable = {
+		always = no #No longer necessary, leaving for reference
 		date < 1943.6.6
 		is_historical_focus_on = yes
 		FRA = { has_capitulated = yes }
@@ -2912,22 +3260,55 @@ GER_push_back_our_coasts_until_overlord  = {
 	}
 }
 
-GER_make_some_radar_1 = {
+GER_pause_in_SOV = { #We got this far but our home is under siege
 	allowed = {
 		original_tag = GER
 	}
+
 	enable = {
-		has_war_with_major = yes  # Oy, we need some radar tech!
+		is_historical_focus_on = yes
+		has_war_with = SOV
+		SOV = { has_capitulated = no }
+		OR = {
+			surrender_progress > 0.25
+			16 = {
+				controller = {
+					has_war_with = GER
+				}
+			}
+		}
+		date > 1942.1.1
 	}
 
-	abort = {
-		has_tech = radio_detection
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		tag = SOV
+
+		ratio = 0.60
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no
 	}
 
 	ai_strategy = {
-		type = research_tech
-		id = radio_detection
-		value = 2000
+		type = front_unit_request
+
+		tag = FRA
+
+		value = 20 # omg no, the french
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = SOV
+
+		value = -20 # FLEE
 	}
 }
 
@@ -2940,34 +3321,15 @@ GER_make_some_radar_2 = {
 	}
 
 	abort = {
-		has_tech = decimetric_radar
+		has_tech = cavity_magnatron
 	}
 
 	ai_strategy = {
-		type = research_tech
-		id = decimetric_radar
+		type = research_weight_factor
+		id = cavity_magnatron
 		value = 2000
 	}
 }
-
-GER_make_some_radar_3 = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		has_tech = decimetric_radar
-	}
-
-	abort = {
-		has_tech = improved_decimetric_radar
-	}
-
-	ai_strategy = {
-		type = research_tech
-		id = improved_decimetric_radar
-		value = 200
-	}
-} # After this, you're on your own chaps
 
 GER_make_some_radar_4 = {
 	allowed = {
@@ -2980,7 +3342,6 @@ GER_make_some_radar_4 = {
 			free_building_slots = {
 				building = radar_station
 				size > 0
-				include_locked = yes
 			}
 		}
 	}
@@ -3005,7 +3366,6 @@ GER_make_some_radar_5 = {
 			free_building_slots = {
 				building = radar_station
 				size > 0
-				include_locked = yes
 			}
 		}
 	}
@@ -3030,7 +3390,6 @@ GER_make_some_radar_6 = {
 			free_building_slots = {
 				building = radar_station
 				size > 0
-				include_locked = yes
 			}
 		}
 	}
@@ -3055,7 +3414,6 @@ GER_make_some_radar_7 = {
 			free_building_slots = {
 				building = radar_station
 				size > 0
-				include_locked = yes
 			}
 		}
 	}
@@ -3969,7 +4327,7 @@ GER_be_nice_to_sweden = { #1944
 		original_tag = GER
 	}
 	enable = {
-		NOT = { has_completed_focus = GER_sweden_friend } #diffrent ai_strategy if true
+		#NOT = { has_completed_focus = GER_sweden_friend } #diffrent ai_strategy if true
 
 		country_exists = SWE
 		NOT = { has_war_with = SWE }

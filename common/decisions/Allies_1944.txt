@@ -197,6 +197,7 @@ operations = {
 		}
 		
 		visible = {
+			GER = { is_ai = no }
 			is_ai = yes
 			date > 1944.5.29
 			date < 1946.1.1
@@ -216,8 +217,8 @@ operations = {
 
 		targeted_modifier = {
 			tag = ITA
-			attack_bonus_against = 0.55
-			breakthrough_bonus_against = 0.50
+			attack_bonus_against = 0.45
+			breakthrough_bonus_against = 0.40
 		}
 		
 		complete_effect = {}
@@ -357,7 +358,7 @@ operation_cross_the_rhine= {
 			
 			available = {
 				has_war_with = GER
-				date > 1944.6.1
+				date > 1944.5.28
 				date < 1944.12.1
 
 				set_temp_variable = { days = global.num_days }

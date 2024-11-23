@@ -18,21 +18,15 @@ state = {
 		victory_points = { #Foggia
 			883 3
 		}
-		victory_points = {
-			11837 15 
-		}
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
 			dockyard = 4
-			air_base = 2
+			air_base = 5
 			11837 = { #Taranto
 				naval_base = 10
 			}
 			9784 = { #Bari
-				naval_base = 5
-			}
-			11998 = {
 				naval_base = 3
 			}
 		}

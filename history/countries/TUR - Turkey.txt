@@ -41,6 +41,7 @@ set_technology = {
 	tech_mountaineers = 1
 	tech_recon = 1
 	tech_support = 1
+	tech_trucks = 1
 	gw_artillery = 1
 	interwar_antiair = 1
 	early_fighter = 1
@@ -90,7 +91,6 @@ if = {
 		early_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		 
 		basic_torpedo = 1
 		coastal_defense_ships = 1
 		mtg_transport = 1
@@ -381,6 +381,9 @@ if = {
 		construction2 = 1
 		dispersed_industry = 1
 		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 	if = {
 		limit = { not = { has_dlc = "Man the Guns" } }
@@ -837,9 +840,9 @@ if = {
 		#electronics
 		radio = 1
 		radio_detection = 1
-		decimetric_radar = 1
-		improved_decimetric_radar = 1
-		centimetric_radar = 1
+		
+		
+		
 
 		#industry
 		excavation1 = 1

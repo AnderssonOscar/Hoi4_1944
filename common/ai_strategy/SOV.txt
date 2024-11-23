@@ -1,16 +1,4 @@
-# befriend
-# conquer
-# antagonize
-# build_ship
-# build_army
-# unit_ratio
-# build_building
-# research_tech
-# garrison
-# protect
-# influence
-
-SOV_unit_production = { #1944
+SOV_unit_production = {
 	allowed = {
 		original_tag = SOV
 	}
@@ -26,13 +14,6 @@ SOV_unit_production = { #1944
 		id = garrison
 		value = 1
 	}
-
-	# Old garrison system against resistance
-	# ai_strategy = {
-	# 	type = role_ratio
-	# 	id = suppression
-	# 	value = 3
-	# }
 
 	ai_strategy = {
 		type = role_ratio
@@ -358,7 +339,7 @@ germany_ally = {
 	enable = {
 		OR = {
 			has_completed_focus = SOV_anti_capitalist_policies
-			GER = { has_completed_focus = GER_soviet_ally }
+			GER = { has_completed_focus = GER_alliance_with_the_ussr }
 		}
 		country_exists = GER
 	}
@@ -1020,6 +1001,15 @@ SOV_scorched_earth_german_front_baltics = {
 		NOT = {
 			has_country_flag = SOV_barbarossa_scorched_earth_delay #a 45 day delay at the start of the war before Soviets start doing this
 		}
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+				has_idea = extensive_conscription
+			}
+		}
 		count_triggers = {
 			amount = 4 #if 4 baltic states are owned by an enemy, burn the rest of the Baltics
 			814 = { CONTROLLER = { has_war_with = SOV } }
@@ -1075,6 +1065,15 @@ SOV_scorched_earth_german_front_Poland = {
 		NOT = {
 			has_country_flag = SOV_barbarossa_scorched_earth_delay #a 45 day delay at the start of the war before Soviets start doing this
 		}
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+				has_idea = extensive_conscription
+			}
+		}
 		count_triggers = {
 			amount = 2 #if 2 states are owned by an enemy, burn the rest of the area
 			784 = { CONTROLLER = { has_war_with = SOV } }
@@ -1119,6 +1118,15 @@ SOV_scorched_earth_german_front_north = {
 		NOT = {
 			has_country_flag = SOV_barbarossa_scorched_earth_delay #a 45 day delay at the start of the war before Soviets start doing this
 		}
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+				has_idea = extensive_conscription
+			}
+		}
 		count_triggers = {
 			amount = 2 #if 2 states are owned by an enemy, burn the rest of the area
 			208 = { CONTROLLER = { has_war_with = SOV } }
@@ -1161,6 +1169,15 @@ SOV_scorched_earth_german_front_center = {
 		has_war_with = GER
 		NOT = {
 			has_country_flag = SOV_barbarossa_scorched_earth_delay #a 45 day delay at the start of the war before Soviets start doing this
+		}
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+				has_idea = extensive_conscription
+			}
 		}
 		count_triggers = {
 			amount = 4 #if 4 states are owned by an enemy, burn the rest of the area
@@ -1215,6 +1232,15 @@ SOV_scorched_earth_german_front_moscow = {
 		NOT = {
 			has_country_flag = SOV_barbarossa_scorched_earth_delay #a 45 day delay at the start of the war before Soviets start doing this
 		}
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+				has_idea = extensive_conscription
+			}
+		}
 		count_triggers = {
 			amount = 1 #if 1 states are owned by an enemy, burn the rest of the area
 			219 = { CONTROLLER = { has_war_with = SOV } }
@@ -1260,6 +1286,15 @@ SOV_scorched_earth_german_front_stalingrad = {
 		NOT = {
 			has_country_flag = SOV_barbarossa_scorched_earth_delay #a 45 day delay at the start of the war before Soviets start doing this
 		}
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+				has_idea = extensive_conscription
+			}
+		}
 		count_triggers = {
 			amount = 1 #if 1 states are owned by an enemy, burn the rest of the area
 			217 = { CONTROLLER = { has_war_with = SOV } }
@@ -1297,14 +1332,21 @@ SOV_scorched_earth_german_front_stalingrad = {
 }
 
 SOV_dont_do_so_many_naval_invasions_please = {
-
 	allowed = { original_tag = SOV }
-	enable = { always = yes }
+
+	enable = {
+		always = yes
+	}
 	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = invasion_unit_request
 		tag = GER
+		value = -50
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = FIN
 		value = -50
 	}
 }
@@ -1807,7 +1849,7 @@ SOV_defend_blitzkrieg  = {#Only perform careful attacks, we want to defend while
 
 		tag = GER
 
-		ratio = 0.5
+		ratio = 0.4
 
 		priority = 100
 		ordertype = front
@@ -1836,7 +1878,7 @@ SOV_defend_blitzkrieg_2  = {#Only perform careful attacks, we want to defend for
 
 		tag = GER
 
-		ratio = 0.5
+		ratio = 0.4
 
 		priority = 100
 		ordertype = front
@@ -1957,36 +1999,36 @@ SOV_ultimatum_EST = {
 	}
 }
 
-SOV_nothing_bad_could_possibly_happen_now = {
-	allowed = {
-		original_tag = SOV
-	}
-	enable = {
-		always = no #No longer necessary
-		is_historical_focus_on = yes
-		NOT = { has_war_with = GER }
-		date < 1942.2.1
-	}
-
-	abort_when_not_enabled = yes
-	
-	ai_strategy = {
-		type = front_unit_request
-
-		tag = GER
-
-		value = -30 # we have a lovely non-aggression pact, so there's no reason to be worried. At all.
-	}
-	
-	ai_strategy = {
-		type = front_unit_request
-
-		tag = ROM
-
-		value = -20 # we have a lovely non-aggression pact, so there's no reason to be worried. At all.
-	}
-	
-}
+#No longer necessary
+#SOV_nothing_bad_could_possibly_happen_now = {
+#	allowed = {
+#		original_tag = SOV
+#	}
+#	enable = {
+#		is_historical_focus_on = yes
+#		NOT = { has_war_with = GER }
+#		date < 1942.2.1
+#	}
+#
+#	abort_when_not_enabled = yes
+#
+#	ai_strategy = {
+#		type = front_unit_request
+#
+#		tag = GER
+#
+#		value = -30 # we have a lovely non-aggression pact, so there's no reason to be worried. At all.
+#	}
+#
+#	ai_strategy = {
+#		type = front_unit_request
+#
+#		tag = ROM
+#
+#		value = -20 # we have a lovely non-aggression pact, so there's no reason to be worried. At all.
+#	}
+#
+#}
 
 SOV_defense_in_depth = {
 	allowed = {
@@ -2041,6 +2083,13 @@ SOV_ultimatum_ROM = {
 	}
 	enable = {
 		is_historical_focus_on = yes
+		OR = {
+			AND = {
+				NOT = { has_government = communism } #Non-commies don't have access to focus Claim in Bessarabia
+				date < 1940.1.31 #Do not do it too early buddy
+			}
+			NOT = { has_completed_focus = SOV_claim_on_bessarabia }
+		}
 		ROM = {
 			NOT = { has_country_flag = SOV_added_claimed_bessarabia } #Added via focus Claim Bessarabia
 		}
@@ -2093,13 +2142,19 @@ SOV_ultimatum_ROM = {
 	}
 
 	ai_strategy = {
+		type = ignore
+		id = "ROM"
+		value = 100
+	}
+
+	ai_strategy = {
 		type = antagonize
-		id = ROM
-		value = -30
+		id = "ROM"
+		value = -10
 	}
 	ai_strategy = {
 		type = conquer
-		id = ROM
+		id = "ROM"
 		value = -200
 	}
 }
@@ -2755,7 +2810,7 @@ SOV_dont_do_naval_invasion_ger = {
 
 	ai_strategy = {
 		type = invasion_unit_request  
-		country_trigger = { tag = BLR } #ostland
+		country_trigger = { tag = RKO } #ostland
 		value = -500
 	}
 }
@@ -2866,6 +2921,24 @@ SOV_dont_do_naval_invasion_nor = {
 
 	ai_strategy = {
 		type = invade
+		id = "RKN"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "RKG"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "RKB"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
 		id = "D03"
 		value = -500
 	}
@@ -2890,7 +2963,7 @@ SOV_dont_do_naval_invasion_nor = {
 
 	ai_strategy = {
 		type = invade
-		id = "BLR"
+		id = "RKO"
 		value = -500
 	}
 

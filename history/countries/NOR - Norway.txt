@@ -27,6 +27,7 @@ recruit_character = NOR_edgar_otto
 recruit_character = NOR_adolf_indrebo
 recruit_character = NOR_halvdan_koht
 recruit_character = NOR_trygve_halvdan_lie
+recruit_character = NOR_carsten_tank_nielsen 
 
 set_global_flag = NOR_trotsky_in_norway 
 
@@ -34,6 +35,7 @@ if = {
 	limit = {
 		has_aat = yes 
 	}
+	recruit_character = NOR_queen_mathilde_i
 	recruit_character = NOR_martin_tranmael
 	recruit_character = NOR_johan_h_andresen
 	recruit_character = NOR_olav_scheflo
@@ -56,6 +58,12 @@ if = {
 	recruit_character = NOR_oscar_torp
 	recruit_character = NOR_hans_ystgaard 
 	recruit_character = NOR_birger_eriksen
+	recruit_character = NOR_edvard_christian_danielsen
+	recruit_character = NOR_rolf_fuglesang
+	recruit_character = NOR_eivind_blehr
+	recruit_character = NOR_eivind_heiberg
+	recruit_character = NOR_christopher_hornsrud
+	recruit_character = NOR_kirsten_hansteen
 	random_list = {
 		1 = { # this campaign has been blessed by Bamse 
 			set_country_flag = NOR_bamse_activated	
@@ -64,6 +72,7 @@ if = {
 			#Do nothing 
 		}
 	}
+	NOR_character_flag_setup_for_cw = yes 
 }
 
 set_research_slots = 3
@@ -147,6 +156,7 @@ if = {
 
 	add_political_power = 1198
 	add_command_power = 100
+
 	if = {
 		limit = {
 			has_aat = yes 
@@ -172,6 +182,10 @@ if = {
 		complete_national_focus = NOR_start_rearmament
 		complete_national_focus = NOR_drobak_coastal_fort
 		complete_national_focus = NOR_kickstart_military_industry
+
+		add_ideas = {
+			NOR_aat_norsk_hydro
+		}
 	}
 	if = {
 		limit = {
@@ -209,7 +223,6 @@ if = {
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
 		mechanical_computing = 1
 		computing_machine = 1
 
@@ -226,6 +239,9 @@ if = {
 		construction3 = 1
 		dispersed_industry = 1
 		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 	if = {
 		limit = { not = { has_dlc = "Man the Guns" } }
@@ -427,9 +443,9 @@ if = {
 
 	set_technology = {
 		prepared_defense = 1
-		decimetric_radar = 1
-		improved_decimetric_radar = 1
-		centimetric_radar = 1
+		
+		
+		
 
 		construction3 = 1
 		construction4 = 1

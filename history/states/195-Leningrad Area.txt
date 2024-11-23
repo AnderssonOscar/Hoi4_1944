@@ -31,9 +31,6 @@ state={
 
 		buildings = {
 			arms_factory = 2
-			3151 = {
-				bunker = 7
-			}
 
 			149 = {
 				bunker = 3
@@ -44,7 +41,6 @@ state={
 				bunker = 1
 			}
 		}
-
 
 		1943.12.30 = {
 			controller = SOV

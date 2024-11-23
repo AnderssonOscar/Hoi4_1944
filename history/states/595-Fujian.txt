@@ -35,19 +35,10 @@ state= {
 				set_province_controller = 7071
 			} 			
 		}
-
-
 		1943.12.30 = {
 			buildings = {
 				industrial_complex = 2
 				arms_factory = 2
-
-				7071 = {
-					bunker = 6
-				}
-				4196 = {
-					bunker = 6
-				}
 
 				10012 = {
 					bunker = 4
@@ -58,8 +49,6 @@ state= {
 				}
 			}
 		}
-
-
 	}
 	provinces={
 		1006 1094 1138 1166 1193 4053 4070 4113 4169 4196 7027 7071 7099 7131 10010 10012 10042 10054 10069 10084 10093 11986 12057 12084 
