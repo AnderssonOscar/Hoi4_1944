@@ -2,6 +2,7 @@
 # 1944 Events
 ###########################
 
+add_namespace = sweden.join.germany
 add_namespace = romania.switch.side
 add_namespace = romania.cancel.switch.side
 add_namespace = finland.switch.side
@@ -23,6 +24,50 @@ add_namespace = netherlands.flooding.start
 add_namespace = rhine.defence
 
 add_namespace = reichskommissariat.start
+
+# Romania switch side
+country_event = {
+	id = sweden.join.germany.1
+	title = sweden.join.germany.1.t
+	desc = sweden.join.germany.1.d
+	picture = GFX_report_event_romania_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Join the axis"
+
+		add_to_war = {
+			targeted_alliance = GER
+			enemy = ENG
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = -100
+				date < 1945.1.1
+			}
+		}
+
+		custom_effect_tooltip = "Join the Axis and declare war on the allies"
+	}
+
+	option = {
+		name = "No"
+
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1943.12.31
+			}
+		}
+		custom_effect_tooltip = "Stay neutral"
+	}
+}
+
 
 #Destroy Cherbourg from allies
 country_event = {

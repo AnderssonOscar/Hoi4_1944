@@ -1,0 +1,19 @@
+SWE_join_FIN = {
+	if = {
+		limit = { 
+			date > 1944.1.1
+			original_tag = SWE
+			has_war = no
+			FIN = { has_war_with = SOV }
+			NOT = { has_global_flag = SWE_join_FIN } 
+		}
+
+		SWE = {
+			country_event = {
+				id = sweden.join.germany.1
+			}
+		}
+		set_global_flag = SWE_join_FIN
+	}
+}
+

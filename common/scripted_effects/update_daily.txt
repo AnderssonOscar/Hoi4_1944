@@ -40,4 +40,6 @@ MOD_daily_update = {
 	SOV_start_effects = yes
 
 	ALL_DDAY_FAILED = yes
+
+	#SWE_join_FIN = yes
 }

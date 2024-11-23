@@ -105,7 +105,7 @@ special_projects = {
 		  }
 
 		fire_only_once = yes
-		days_remove = 30
+		days_remove = 14
 		remove_effect = {
 
 	
@@ -142,7 +142,7 @@ special_projects = {
 
 		available = {
 			57 = {is_fully_controlled_by = GER}
-			date > 1944.7.1
+			date > 1944.6.1
 			has_war_with = ENG
 		}
 
@@ -162,7 +162,7 @@ special_projects = {
 		  }
 
 		fire_only_once = yes
-		days_remove = 30
+		days_remove = 14
 		remove_effect = {
 
 				complete_special_project = {

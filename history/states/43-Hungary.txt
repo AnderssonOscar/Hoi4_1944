@@ -4,7 +4,7 @@ state={
 	name="STATE_43" # Northern Hungary
 	manpower = 3750752
 	resources={
-		steel=6 #was 3 was: 4
+		steel=9 #was 3 was: 4
 		aluminium=40 # was: 194
 	}
 	
@@ -26,6 +26,7 @@ state={
 		1943.12.30 = {
 			buildings = {
 				arms_factory = 5
+				industrial_complex = 2
 				anti_air_building = 1
 
 				9660 = {
