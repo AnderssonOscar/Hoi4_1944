@@ -499,7 +499,7 @@ units = {
 		location = 6729
 		division_template = "Cantemir armoured"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "ROM" } }
-		force_equipment_variants = { light_tank_destroyer_chassis_2 = { owner = ROM version_name = "TACAM T-60" } }
+		#force_equipment_variants = { light_tank_destroyer_chassis_2 = { owner = ROM version_name = "TACAM T-60" } }
 		force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1943" } }
 		force_equipment_variants = { light_tank_chassis_1 = { owner = CZE version_name = "LT vz. 35" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "ROM" } }

@@ -106,7 +106,7 @@ allies_dont_invade_GER_before_dday = {
 	}
 
 	enable = {
-		date < 1944.3.24 #1944.4.1
+		date < 1944.3.20 #1944.4.1
 		has_war_with = GER
 		16 = {is_fully_controlled_by = GER} #paris
 	}
@@ -144,7 +144,7 @@ allies_enable_invasion_of_GER = {
 
 	enable = {
 		
-		date > 1944.3.23 #1944.4.1
+		date > 1944.3.21 #1944.4.1
 		has_war_with = GER
 		
 		125 = {is_fully_controlled_by = ENG}
@@ -231,13 +231,13 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = JAP }
-		value = 12
+		value = 10
 	}
 
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 15
-		value = 50
+		value = 55
 	}
 
 	ai_strategy = {
@@ -249,6 +249,18 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 21
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 909
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 912
 		value = -1000
 	}
 
@@ -272,7 +284,19 @@ allies_enable_invasion_of_GER = {
 
 	ai_strategy = {
 		type = invasion_unit_request
+		state = 977
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
 		state = 19
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 806
 		value = -1000
 	}
 
@@ -284,7 +308,13 @@ allies_enable_invasion_of_GER = {
 
 	ai_strategy = {
 		type = invasion_unit_request
-		state = 29
+		state = 10
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 105
 		value = -1000
 	}
 
@@ -318,15 +348,21 @@ allies_enable_invasion_of_GER = {
 		value = -1000
 	}
 
-		ai_strategy = {
+	ai_strategy = {
 		type = invasion_unit_request
 		state = 56
 		value = -1000
 	}
 
-		ai_strategy = {
+	ai_strategy = {
 		type = invasion_unit_request
 		state = 852
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 736
 		value = -1000
 	}
 
@@ -427,7 +463,7 @@ allies_prepare_in_UK = { #stack troops here until we land in germany
 			123
 			122
 		}
-		ratio = 0.2
+		ratio = 0.15
 
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = no
@@ -590,7 +626,7 @@ allies_landed_in_france = {
 
 		enable = {
 			has_war_with = GER
-
+			date > 1944.6.20
 	
 			GER = {
 
@@ -666,28 +702,174 @@ allies_landed_in_france = {
 
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = invade
-		id = "GER"
-		value = -2000
-	}
+	# ai_strategy = {
+	# 	type = invade
+	# 	id = "GER"
+	# 	value = -2000
+	# }
 
-	#ai_strategy = {
-	#	type = front_control
-	#	country_trigger = {
-	#		tag = GER
-	#	}
+	# ai_strategy = {
+	# 	type = invasion_unit_request  
+	# 	country_trigger = { tag = GER }
+	# 	value = -500
+	# }
 
-	#	ordertype = front
-	#	execute_order = yes
-	#	execution_type = rush
-	#	execution_type = rush_weak
-	#}
+
 
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = -500
+		value = 50
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = JAP }
+		value = 25
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 15
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 851
+		value = 10
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 735
+		value = 10
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 977
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 806
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 21
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 22
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 31
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 105
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 30
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 14
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 909
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 912
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 6
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 19
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 23
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 29
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 241
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 59
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 99
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 58
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 56
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 852
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 736
+		value = -1000
 	}
 
 	ai_strategy = {
@@ -1034,6 +1216,7 @@ allies_dont_invade_axis_allies = {
 				tag = BOL
 				tag = CHL
 				tag = HAI
+				tag = TUR
 				}
 	}
 
@@ -1884,4 +2067,50 @@ no_invite_aliance = {
 		id = "SWE"
 		value = -1000
 	}
+}
+
+
+
+
+
+
+ALLIES_invade_south_france = { #dragoon
+
+	allowed = { 
+		tag = USA
+	}
+	
+	enable = {
+		is_in_faction_with = ENG
+		has_war_with = GER
+		date > 1944.5.20
+		date < 1944.10.1
+		OR = {
+			NOT = { 15 = { is_fully_controlled_by = GER } }
+			NOT = { 29 = { is_fully_controlled_by = GER } } #calias
+			NOT = { 14 = { is_fully_controlled_by = GER } }
+		}
+		851 = { is_fully_controlled_by = GER }
+		21 = { is_fully_controlled_by = GER }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GER"
+		value = 75
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 851
+		value = 10
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 21
+		value = 10
+	}
+
 }

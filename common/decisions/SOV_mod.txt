@@ -256,11 +256,11 @@ SOV_great_patriotic_war = {
 
 
 	if = { limit = {
-					date < 1945.3.1
+					date < 1944.3.1
 					NOT = { has_global_flag = easy_mode_1944 }
 					OR = {
-						num_divisions < 421
-						GER = {is_ai = no}
+						num_divisions < 350
+						GER = { is_ai = no }
 					}
 						219 = { is_fully_controlled_by = SOV }
 					}

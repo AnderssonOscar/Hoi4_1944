@@ -215,7 +215,7 @@ division_template = {
 		heavy_armor = { x = 4 y = 2 }
 	}
 	support = {
-    	armored_car_recon = { x = 0 y = 0 }
+    	mot_recon = { x = 0 y = 0 }
 	 	engineer = { x = 0 y = 1 }
 		signal_company  = { x = 0 y = 2 }
 		field_hospital = { x = 0 y = 3 }
@@ -239,7 +239,7 @@ division_template = {
 		motorized = { x = 2 y = 2 }
 	}
 	support = {
-		armored_car_recon = { x = 0 y = 0 }
+		mot_recon = { x = 0 y = 0 }
 	 	engineer = { x = 0 y = 1 }
         artillery = { x = 0 y = 2 }
 	}
@@ -269,7 +269,7 @@ division_template = {
 	#	medium_sp_artillery_brigade = { x = 4 y = 2 } #added non historical
 	}
 	support = {
-		armored_car_recon = { x = 0 y = 0 }
+		mot_recon = { x = 0 y = 0 }
 	 	engineer = { x = 0 y = 1 }
         artillery = { x = 0 y = 2 }
 		logistics_company = { x = 0 y = 3 }
@@ -291,7 +291,7 @@ division_template = {
 		motorized = { x = 0 y = 4 }
 	}
 	support = {
- 		armored_car_recon = { x = 0 y = 0 }
+ 		mot_recon = { x = 0 y = 0 }
 	 	engineer = { x = 0 y = 1 }
         #artillery = { x = 0 y = 2 }
 		rocket_artillery = { x = 0 y = 2 }
@@ -328,7 +328,7 @@ division_template = {
 		light_sp_artillery_brigade = { x = 4 y = 0 }
 	}
 	support = {
- 		armored_car_recon = { x = 0 y = 0 }
+ 		mot_recon = { x = 0 y = 0 }
 	 	engineer = { x = 0 y = 1 }
         logistics_company = { x = 0 y = 2 }
 		anti_air = { x = 0 y = 3 }
@@ -4409,27 +4409,6 @@ instant_effect = {
 		industrial_manufacturer = mio:GER_opel_organization
 	}
 
-
-	add_equipment_production = {
-		equipment = {
-			type = light_tank_destroyer_chassis_1
-			creator = "GER"
-			version_name = "Marder III" 
-		}
-		requested_factories = 2
-		progress = 0.4
-		efficiency = 100
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = train_equipment_2
-			creator = "GER" 
-		}
-		requested_factories = 4
-		progress = 0.2
-		efficiency = 100
-	}
 	
 }
 

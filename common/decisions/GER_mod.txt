@@ -89,13 +89,16 @@ special_projects = {
 		}
 
 
-		visible = { has_tech = rocket_engines }  #improved_rocket_engines
+		visible = {
+			has_tech = rocket_engines
+			has_dlc = "Gotterdammerung"
+		}  #improved_rocket_engines
 
 		cost = 25
 		ai_will_do = {
 		factor = 1
 			modifier = {
-				date > 1944.1.1
+				date > 1944.3.1
 				factor = 100
 			}
 		}
@@ -108,6 +111,16 @@ special_projects = {
 		days_remove = 14
 		remove_effect = {
 
+			add_timed_idea = {
+				idea = GER_rocketry_idea
+				days = 365
+			}
+
+			add_timed_idea = {
+				idea = GER_rocket_production
+				days = 365
+			}
+
 	
 			if = {
 				limit = {
@@ -117,7 +130,6 @@ special_projects = {
 					sp_rockets_rocket_bomber = 1
 				}
 			}
-
 			29 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -125,6 +137,11 @@ special_projects = {
 					level = 3
 					instant_build = yes
 				}
+			}
+
+			add_equipment_to_stockpile = {
+				type = guided_missile_equipment
+				amount = 300
 			}
 		}
 
@@ -146,7 +163,10 @@ special_projects = {
 			has_war_with = ENG
 		}
 
-		visible = { has_tech = rocket_engines } 
+		visible = {
+			 has_tech = rocket_engines
+			 has_dlc = "Gotterdammerung"
+			}  
 
 		cost = 75
 		ai_will_do = {
@@ -178,6 +198,11 @@ special_projects = {
 				set_technology = {
 					sp_rockets_improved_rocket_bomber = 1
 				}
+			}
+
+			add_equipment_to_stockpile = {
+				type = ballistic_missile_equipment
+				amount = 200
 			}
 
 			57 = {

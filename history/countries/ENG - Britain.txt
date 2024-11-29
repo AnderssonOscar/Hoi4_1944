@@ -1892,7 +1892,7 @@ if = {
 		limit = { has_dlc = "No Step Back" }
 		set_oob = "ENG_1944_nsb"
 	else = {
-		set_oob = "ENG_1944_nsb"
+		set_oob = "ENG_1944"
 		}
 	}
 

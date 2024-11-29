@@ -99,6 +99,9 @@ recruit_character = SLO_anton_pulanick
 		construction1 = 1
 		concentrated_industry = 1
 	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 	if = {
 		limit = {
 			has_dlc = "No Step Back"

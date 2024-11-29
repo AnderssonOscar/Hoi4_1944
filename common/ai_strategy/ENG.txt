@@ -1038,11 +1038,35 @@ ENG_naval_role_ratios_anti_submarines = {
 	}
 }
 
+ENG_secure_the_channel = {
+	allowed = { original_tag = ENG }
+	enable = {
+		has_war = yes
+		date > 1944.4.1
+		surrender_progress < 0.05
+		16 = {is_fully_controlled_by = GER} #paris
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+	    type = naval_invasion_supremacy_weight
+	    id = 18
+	    value = 200
+	}
+
+	ai_strategy = {
+    	type = strike_force_home_base
+    	id = 18
+    	value = 250
+	}
+}
+
 
 ENG_the_channel_is_dangerous = {
 	allowed = { original_tag = ENG }
 	enable = {
 		has_war_with = GER
+		date < 1944.1.1
 	}
 	abort_when_not_enabled = yes
 

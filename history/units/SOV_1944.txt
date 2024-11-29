@@ -4032,20 +4032,6 @@ instant_effect = {
 		progress = 0.2
 		efficiency = 100
 	}
-
-
-	add_equipment_production = {
-		equipment = {
-			type = train_equipment_2
-			creator = "SOV" 
-		}
-		requested_factories = 2
-		progress = 0.2
-		efficiency = 100
-	}
-
-
-
 }
 
 #####################

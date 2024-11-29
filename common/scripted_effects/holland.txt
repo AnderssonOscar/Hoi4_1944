@@ -55,22 +55,39 @@ HOL_setup_puppet = {
 				set_country_flag = GER_reichskommissariats_puppet_flag
 				set_stability = 0.83
 				set_war_support = 0.36
-
+				add_manpower = +30000
 				set_research_slots = 4
 
 				load_oob = "RK_OOB"
 
 					add_equipment_to_stockpile = { 
 						type = infantry_equipment
-						amount = 5000
+						amount = 7500
 						producer = GER
 					}	
 
 					add_equipment_to_stockpile = { 
 						type = support_equipment
-						amount = 500
+						amount = 600
 						producer = GER
 					}	
+
+					add_equipment_to_stockpile = {
+						type = motorized_equipment_0
+						amount = 220
+					}
+
+					add_equipment_to_stockpile = {
+						type = convoy_1
+						amount = 50
+						producer = GER
+					}
+
+					add_equipment_to_stockpile = { 
+						type = train_equipment_1
+						amount = 20
+						producer = GER
+					} 
 			}
 
 				set_global_flag = mod_hol_puppet_startup

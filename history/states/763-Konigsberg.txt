@@ -36,7 +36,7 @@ state = {
 		}
 		1943.12.30 = {
 			buildings = {
-				synthetic_refinery = 3
+				synthetic_refinery = 1
 				radar_station = 4
 			}
 		}

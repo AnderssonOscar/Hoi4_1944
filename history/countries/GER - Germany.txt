@@ -2883,7 +2883,7 @@ if = {
 		}
 
 		852 = {
-			start_resistance = yes
+			#start_resistance = yes
 			set_compliance = 41
 			set_resistance = 27
 			set_garrison_strength = 1.0
@@ -2937,6 +2937,13 @@ if = {
 			start_resistance = yes
 			set_compliance = 79
 			set_resistance = 9
+			set_garrison_strength = 1.0
+		}
+
+		28 = { #France strassburg
+			start_resistance = yes
+			set_compliance = 86
+			set_resistance = 7
 			set_garrison_strength = 1.0
 		}
 
@@ -3048,11 +3055,11 @@ if = {
 		set_fuel = 291812
 
 
-		set_convoys = 120
-		set_stability = 0.93
-		set_war_support = 0.8
+		set_convoys = 140
+		set_stability = 0.71
+		set_war_support = 0.55
 		add_command_power = 200
-		army_experience = 145
+		army_experience = 165
 		navy_experience = 165	
 		air_experience = 95
 
@@ -3128,7 +3135,7 @@ if = {
 
 		add_breakthrough_progress = {
 			specialization = specialization_land
-			value = 2
+			value = 3
 		}
 
 		add_breakthrough_progress = {
@@ -3138,7 +3145,7 @@ if = {
 
 		add_breakthrough_progress = {
 			specialization = specialization_nuclear
-			value = 1
+			value = 2
 		}	
 
 
@@ -3206,9 +3213,21 @@ if = {
 		
 	## Added equipment here instead. so the units dont have 100% from start but can still resupply
 	
+	if = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+		}
+
+		add_equipment_to_stockpile = {
+			type = motorbike_equipment_1
+			amount = 1100
+		}
+	}
+
+
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 15000
+		amount = 10000
 	}
 
 	add_equipment_to_stockpile = {

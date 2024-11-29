@@ -3463,7 +3463,7 @@ GER_reichskommissariats = {
 				}
 				transfer_state_to = RKG
 				set_state_flag = GER_RK_capital_state_trasferred_RKG_flag
-				add_compliance = 25
+				add_compliance = 50
 			}
 
 			custom_effect_tooltip = GER_reichskommissariat_norwegen_effect_tt
@@ -3486,7 +3486,7 @@ GER_reichskommissariats = {
 						}
 					}
 					transfer_state_to = RKG
-					add_compliance = 25
+					add_compliance = 50
 				}
 				every_state = {	
 					limit = {
@@ -3507,14 +3507,16 @@ GER_reichskommissariats = {
 					add_contested_owner = RKG
 					set_state_controller_to = RKG
 					add_claim_by = RKG
-					add_compliance = 25
+					add_compliance = 45
 				}
 
 				RKG = {
-					add_manpower = 50000
+					add_manpower = 80000
+					add_stability = +0.07
+
 					add_equipment_to_stockpile = { 
 						type = infantry_equipment
-						amount = 5000
+						amount = 8000
 						producer = GER
 					}	
 					add_equipment_to_stockpile = { 
@@ -3522,8 +3524,21 @@ GER_reichskommissariats = {
 						amount = 500
 						producer = GER
 					}	
+
+					add_equipment_to_stockpile = {
+						type = convoy_1
+						amount = 45
+						producer = GER
+					}
+
+					add_equipment_to_stockpile = { 
+						type = train_equipment_1
+						amount = 20
+						producer = GER
+					} 
+
 					inherit_technology = GER
-					add_offsite_building = { type = arms_factory level = 3 }
+					add_offsite_building = { type = arms_factory level = 5 }
 					load_oob = "RK_OOB"
 				}
 			}
@@ -12689,6 +12704,7 @@ foreign_politics = {
 		}
 
 		visible = {
+			date < 1944.1.1
 			has_subject = HUN
 			HUN = {
 				has_character = HUN_franz_anton_bach

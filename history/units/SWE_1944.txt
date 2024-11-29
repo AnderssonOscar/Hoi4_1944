@@ -304,8 +304,6 @@ units = {
 		}
 		location = 383
 		division_template = "Pansarregemente"
-		force_equipment_variants = { medium_tank_chassis_2 = { owner = SWE version_name = "Stridsvagn m/42" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = SWE version_name = "Stridsvagn m/31" } }
 		force_equipment_variants = { infantry_equipment_2 = { owner = "SWE" } }
 		start_experience_factor = 0.27
 		start_equipment_factor = 1
@@ -318,8 +316,6 @@ units = {
 		}
 		location =  383
 		division_template = "Pansarregemente"
-		force_equipment_variants = { medium_tank_chassis_2 = { owner = SWE version_name = "Stridsvagn m/42" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = SWE version_name = "Stridsvagn m/31" } }
 		force_equipment_variants = { infantry_equipment_2 = { owner = "SWE" } }
 		start_experience_factor = 0.18
 		start_equipment_factor = 1
@@ -332,8 +328,6 @@ units = {
 		}
 		location =  383
 		division_template = "Pansarregemente"
-		force_equipment_variants = { medium_tank_chassis_2 = { owner = SWE version_name = "Stridsvagn m/42" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = SWE version_name = "Stridsvagn m/31" } }
 		force_equipment_variants = { infantry_equipment_2 = { owner = "SWE" } }
 		start_experience_factor = 0.14
 		start_equipment_factor = 1
@@ -444,14 +438,4 @@ instant_effect = {
 		efficiency = 69
 	}
 
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_chassis_2
-			creator = "SWE"
-			version_name = "Stridsvagn m/42" 
-		}
-		requested_factories = 1
-		progress = 0.4
-		efficiency = 69
-	}
 }

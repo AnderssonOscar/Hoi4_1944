@@ -32,11 +32,12 @@ state={
 			controller = RKN
 
 		buildings = {
+			anti_air_building = 2
 			industrial_complex = 3
-			arms_factory = 2
+			arms_factory = 3
 			synthetic_refinery = 1
 			9363 = {
-				bunker = 1
+				bunker = 2
 			}
 
 			}

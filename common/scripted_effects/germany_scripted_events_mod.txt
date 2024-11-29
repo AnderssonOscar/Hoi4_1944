@@ -105,6 +105,9 @@ GER_scripted_events_start_effects = {
 	# 		}
 	# 	}
 	# }
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
 		
 	GER = {
 			create_railway_gun = {
@@ -123,6 +126,7 @@ GER_scripted_events_start_effects = {
 				equipment = railway_gun_equipment_1
 				name = "Siegfried K"
 				location = 6521
+				}
 			}
 		}
 	}

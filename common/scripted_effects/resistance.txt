@@ -140,7 +140,7 @@ Resistance_start_effects = {
 
 				102 = {
 					set_compliance = 51
-					start_resistance = yes
+					#start_resistance = yes
 					set_resistance = 15
 				}
 				

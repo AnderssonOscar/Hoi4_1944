@@ -1092,7 +1092,7 @@ USA_onto_the_beaches = {
 
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 55
+		value = 70
 	}
 }
 

@@ -254,13 +254,13 @@ units = {
 			# Submarine Division 21
 			ship = { name = "HMS Oxley" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
 			ship = { name = "HMS Seahorse" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
-			ship = { name = "HMS Starfish" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			#ship = { name = "HMS Starfish" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
 			ship = { name = "HMS Seawolf" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
 			ship = { name = "HMS Spearfish" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
 			# Submarine Division 22
 			ship = { name = "HMS Starfish" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
-			ship = { name = "HMS Swordfish" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
-			ship = { name = "HMS Sturgeon" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			#ship = { name = "HMS Swordfish" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			#ship = { name = "HMS Sturgeon" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
 			ship = { name = "HMS Sunfish" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
 			ship = { name = "HMS Sterlet" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
 			# Submarine Division 23
@@ -274,7 +274,7 @@ units = {
 			location = 9458 # Portsmouth
 			# Submarine Division 51
 			ship = { name = "HMS Oberon" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Thames" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			#ship = { name = "HMS Thames" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
 			# Submarine Division 52
 			ship = { name = "HMS L23" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG } } }
 			ship = { name = "HMS H28" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG } } }
@@ -444,13 +444,13 @@ units = {
 			ship = { name = "HMS Havock" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = ENG } } }	
 			ship = { name = "HMS Hotspur" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = ENG } } }	
 		}				
-		task_force = {				
-			name = "7th Submarine Flotilla"			# CO: 	
-			location = 2038 # Sierra Leone
-			# Submarine Division 71
-			ship = { name = "HMS Severn" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-			ship = { name = "HMS Clyde" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
-		}
+		# task_force = {				
+		# 	name = "7th Submarine Flotilla"			# CO: 	
+		# 	location = 2038 # Sierra Leone
+		# 	# Submarine Division 71
+		# 	ship = { name = "HMS Severn" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+		# 	ship = { name = "HMS Clyde" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+		# }
 	}
 
 	### FAR EAST ###			
@@ -500,7 +500,7 @@ units = {
 			name = "4th Submarine Flotilla"				# CO: Keble-White
 			location = 10201 # Singapore
 			# Submarine Division 41
-			ship = { name = "HMS Grampus" definition = submarine equipment = { submarine_2 = { amount = 1 owner = ENG } } }
+			#ship = { name = "HMS Grampus" definition = submarine equipment = { submarine_2 = { amount = 1 owner = ENG } } }
 			#ship = { name = "HMS Rorqual" definition = submarine equipment = { submarine_2 = { amount = 1 owner = ENG } } }
 			# Submarine Division 42
 			ship = { name = "HMS Olympus" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }

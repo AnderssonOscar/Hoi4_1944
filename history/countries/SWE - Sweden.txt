@@ -892,7 +892,14 @@ if = {
 	add_opinion_modifier = { target = GER modifier = large_increase	}
 	add_opinion_modifier = { target = GER modifier = large_increase	}
 
-	oob = "SWE_1944"
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "SWE_1944_nsb"
+	else = {
+		set_oob = "SWE_1944"
+		}
+	}
 
 	add_political_power = 2589
 	add_command_power = 200

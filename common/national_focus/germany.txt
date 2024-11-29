@@ -11994,6 +11994,9 @@ focus_tree = {
 			144 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 			918 = { is_fully_controlled_by = SWE }
 
+			195 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
+			242 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
+			16 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 		}
 
 		ai_will_do = {
@@ -37213,7 +37216,7 @@ focus_tree = {
 		icon = GFX_focus_generic_fascist_troops
 		x = 26
 		y = 8
-		cost = 7
+		cost = 5
 		available_if_capitulated = no
 		prerequisite = { focus = GER_gottedamerung_1944 }
 		
@@ -37260,7 +37263,7 @@ focus_tree = {
 		icon = GFX_focus_generic_cas_aircraft
 		x = 34
 		y = 8
-		cost = 7
+		cost = 5
 		available_if_capitulated = no
 		prerequisite = { focus = GER_gottedamerung_1944 }
 		
@@ -37808,7 +37811,7 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_production
 		x = 32
 		y = 10
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = GER_protect_industry }
 		

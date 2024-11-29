@@ -5,7 +5,7 @@ USA_give_nukes = {
 			limit = {
 				date > 1945.9.1
 				has_war_with = JAP
-				#has_tech = nukes
+				has_dlc = "Gotterdammerung"
 				USA = { surrender_progress < 0.01 }
 				USA = { is_ai = yes }
 				JAP = { surrender_progress < 0.2 }
@@ -21,14 +21,17 @@ USA_give_nukes = {
 
 				if = {
 					limit = {
-						not = { has_tech = nukes }
+						NOT = { is_special_project_completed = sp:sp_nuclear_bomb }
 					}
-					set_technology = {
-						nukes = 1
-					}
+
+					 complete_special_project = {
+					 	project = sp:sp_nuclear_bomb
+					 	scientist = USA_robert_oppenheimer
+					 	state = 376
+					 }
 				}
 
-				add_nuclear_bombs = 3
+				add_nuclear_bombs = 2
 				set_global_flag = USA_give_nukes
 		}
 	}

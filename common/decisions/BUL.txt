@@ -4051,7 +4051,10 @@ BUL_internal_factions = {
 
 					if = {
 						limit = {
+							OR = {
+								has_idea = BUL_army_restrictions_aat
 							has_idea = BUL_army_restrictions
+							}
 						}
 						set_rule = {
 							can_not_declare_war = yes
@@ -4324,7 +4327,6 @@ BUL_macedonian_revolutionary_organizations = {
 				custom_trigger_tooltip = { #SOFIA - Macedonia
 					tooltip = BUL_destroy_imro_divisions_macedonia_tt
 					divisions_in_border_state = {
-						type = infantry
 						size < 2
 						state = 48
 						border_state = 106
@@ -4333,7 +4335,6 @@ BUL_macedonian_revolutionary_organizations = {
 				custom_trigger_tooltip = { #PLOVDIV - Central Macedonia
 					tooltip = BUL_destroy_imro_divisions_central_macedonia_tt
 					divisions_in_border_state = {
-						type = infantry
 						size < 4
 						state = 212
 						border_state = 731
@@ -4342,7 +4343,6 @@ BUL_macedonian_revolutionary_organizations = {
 				custom_trigger_tooltip = { #PLOVDIV - Thrace
 					tooltip = BUL_destroy_imro_divisions_thrace_tt
 					divisions_in_border_state = {
-						type = infantry
 						size < 4
 						state = 212
 						border_state = 184
@@ -5767,7 +5767,10 @@ BUL_rearmament = {
 		fire_only_once = yes
 
 		visible = {
+			OR = {
+				has_idea = BUL_army_restrictions_aat
 			has_idea = BUL_army_restrictions
+			}
 			NOT = { has_completed_focus = BUL_support_macedonian_organizations }
 			has_completed_focus = BUL_negotiate_bulgarian_rearmament
 		}
@@ -5825,7 +5828,10 @@ BUL_rearmament = {
 		fire_only_once = yes
 
 		visible = {
+			OR = {
+				has_idea = BUL_army_restrictions_aat
 			has_idea = BUL_army_restrictions
+			}
 			NOT = { has_completed_focus = BUL_support_macedonian_organizations }
 			has_country_flag = { flag = BUL_rearmament_flag value = 1 }
 		}
@@ -5887,7 +5893,10 @@ BUL_rearmament = {
 		fire_only_once = yes
 
 		visible = {
+			OR = {
+				has_idea = BUL_army_restrictions_aat
 			has_idea = BUL_army_restrictions
+			}
 			has_country_flag = { flag = BUL_rearmament_flag value = 2 }
 		}
 
@@ -5934,14 +5943,25 @@ BUL_rearmament = {
 		fire_only_once = yes
 
 		visible = {
+			OR = {
+				has_idea = BUL_army_restrictions_aat
 			has_idea = BUL_army_restrictions
+			}
 		}
 
 		cost = 50
 
 		complete_effect = {
 			clr_country_flag = BUL_rearmament_negotiations_ongoing_flag
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				remove_ideas = BUL_army_restrictions_aat
+			}
+			else = {
 			remove_ideas = BUL_army_restrictions
+			}
 			if = {
 				limit = { has_country_flag = BUL_rearmament_flag }
 				clr_country_flag = BUL_rearmament_flag
@@ -6290,7 +6310,7 @@ BUL_purchase_equipment = {
 
 		priority = 8
 
-		icon = generic_decision
+		icon = generic_trucks
 
 		allowed = { always = no } #Activated from effect
 
@@ -6678,7 +6698,12 @@ BUL_purchase_equipment = {
 				}
 				BUL_is_valid_subject = yes
 			}
-			FROM = { has_tech = early_fighter }
+			FROM = { 
+				OR = { 
+					has_tech = early_fighter 
+					has_tech = iw_small_airframe 
+				}
+			}
 			NOT = { has_country_flag = BUL_purchasing_aircraft_flag }
 
 			NOT = { has_war_with = FROM }
@@ -7168,7 +7193,7 @@ BUL_foreign_agreements = {
 					instant_build = yes
 				}
 			}
-			add_to_variable = { BUL_foreign_industry_consumer_goods_modifier = 0.005 }
+			add_to_variable = { BUL_foreign_industry_consumer_goods_modifier = 0.01 }
 			custom_effect_tooltip = BUL_increase_foreign_industry_ns_tt
 		}
 	}
@@ -7299,7 +7324,7 @@ BUL_foreign_agreements = {
 					instant_build = yes
 				}
 			}
-			add_to_variable = { BUL_foreign_industry_consumer_goods_modifier = 0.005 }
+			add_to_variable = { BUL_foreign_industry_consumer_goods_modifier = 0.01 }
 			custom_effect_tooltip = BUL_increase_foreign_industry_ns_tt
 		}
 	}
@@ -7430,7 +7455,7 @@ BUL_foreign_agreements = {
 					instant_build = yes
 				}
 			}
-			add_to_variable = { BUL_foreign_industry_consumer_goods_modifier = 0.005 }
+			add_to_variable = { BUL_foreign_industry_consumer_goods_modifier = 0.01 }
 			custom_effect_tooltip = BUL_increase_foreign_industry_ns_tt
 		}
 	}
@@ -7523,7 +7548,7 @@ BUL_foreign_agreements = {
 		
 		modifier = {
 			political_power_factor = -0.15
-			consumer_goods_factor = 0.25
+			consumer_goods_factor = 0.50
 		}
 		
 		complete_effect = {
@@ -7653,7 +7678,7 @@ BUL_foreign_agreements = {
 		
 		modifier = {
 			political_power_factor = -0.15
-			consumer_goods_factor = 0.25
+			consumer_goods_factor = 0.50
 		}
 		
 		complete_effect = {
@@ -7771,7 +7796,7 @@ BUL_foreign_agreements = {
 		
 		modifier = {
 			political_power_factor = -0.15
-			consumer_goods_factor = 0.25
+			consumer_goods_factor = 0.50
 		}
 		
 		complete_effect = {
@@ -8053,21 +8078,24 @@ BUL_negotiate_claims_in_the_balkans = {
 
 		on_map_mode = map_and_decisions_view
 
-		state_target = yes
-
+		state_target = europe
+		target_root_trigger = {
+			has_completed_focus = BUL_peaceful_development
+			is_in_faction = yes
+		}
 		target_trigger = {
 			FROM = {
 				BUL_is_balkan_state = yes
 				NOT = { is_controlled_by = BUL }
-				any_neighbor_state = {
-					is_fully_controlled_by = BUL
-				}
 				controller = {
 					PREV = {
 						NOT = { is_core_of = PREV }
 						is_fully_controlled_by = PREV
 					}
 					is_in_faction_with = ROOT
+				}
+				any_neighbor_state = {
+					is_fully_controlled_by = BUL
 				}
 			}
 		}
@@ -8125,6 +8153,8 @@ BUL_negotiate_claims_in_the_balkans = {
 		}
 
 		cost = 25
+
+		fire_only_once = yes
 		
 		complete_effect = {
 			FROM = {
@@ -8723,7 +8753,10 @@ BUL_the_balkan_federation_dream = {
 				has_war = no
 				has_stability > 0.4
 				FROM = { is_neighbor_of = ROOT }
+				OR = {
 				NOT = { has_idea = BUL_army_restrictions }
+					NOT = { has_idea = BUL_army_restrictions_aat }
+				}
 				NOT = {
 					FROM = { has_war_with = GER }
 					FROM = { has_war_with = ITA }
@@ -8934,7 +8967,7 @@ BUL_the_balkan_federation_dream = {
 		days_remove = 90
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_factor = 0.10
 		}
 		
 		complete_effect = {
@@ -9082,7 +9115,10 @@ BUL_the_balkan_federation_dream = {
 		
 		complete_effect = {
 			TUR = {
-				country_event = bftb_bulgaria_balkan_federation.16
+				country_event = { 
+					id = bftb_bulgaria_balkan_federation.16
+					hours = 1
+				}
 			}
 		}
 	}
@@ -10327,7 +10363,7 @@ BUL_balkan_confederation = {
 		days_remove = 120	
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_factor = 0.10
 		}
 		
 		complete_effect = {
