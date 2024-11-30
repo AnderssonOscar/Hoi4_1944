@@ -89,9 +89,13 @@ bookmarks = {
 			ideology = neutrality
 			ideas = {
 				HUN_interventionism
+				HUN_power_to_the_regent_idea
 			}
 			focuses = {
-				HUN_elect_a_king
+				HUN_upgrade_army_equipment
+				HUN_war_economy_focus
+				HUN_reform_army
+				#HUN_elect_a_king
 				#HUN_secret_rearmament
 				#HUN_renounce_the_treaty_of_trianon
 			}

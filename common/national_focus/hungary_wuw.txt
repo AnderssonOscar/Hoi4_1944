@@ -20848,6 +20848,8 @@ focus_tree = {
 
 	completion_reward = {
 
+			add_research_slot = 1
+
 			set_temp_variable = { manpower_base = 611 }
 			multiply_temp_variable = { manpower_base = num_of_controlled_factories }
 			add_to_temp_variable = { var = manpower_base value = 9672 }
@@ -21071,7 +21073,7 @@ focus = {
 			}
 
 				add_stability = 0.1
-				add_war_support = 0.3
+				add_war_support = 0.2
 		}
 }
 

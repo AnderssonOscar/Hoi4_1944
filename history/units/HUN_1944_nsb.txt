@@ -95,7 +95,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
 		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
-		start_experience_factor = 0.32
+		start_experience_factor = 0.72
 		start_equipment_factor = 0.73
 	}
 	
@@ -105,8 +105,8 @@ units = {
 		division_template = "Gyalogdandár"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
-		force_equipment_variants = { anti_tank_equipment_1 = { owner = "GER" } }
-		start_experience_factor = 0.5
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.94
 		start_equipment_factor = 0.43
 	}
 	
@@ -128,7 +128,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_1 = { owner = "YUG" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
-		start_experience_factor = 0.52
+		start_experience_factor = 0.89
 		start_equipment_factor = 0.48
 	}
 	division= {
@@ -171,7 +171,7 @@ units = {
 		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "HUN" } }
-		start_experience_factor = 0.31
+		start_experience_factor = 0.84
 		start_equipment_factor = 1
 	}
 

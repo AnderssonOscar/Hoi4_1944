@@ -52,6 +52,19 @@ ideas = {
 			}
 		}
 
+		effective_recruitment = {
+			allowed = {
+				always = yes # yes means not Triggered via event
+			}
+
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				conscription = 0.01
+			}
+		}
+
 		low_war_casualties = {
 			
 			allowed = {

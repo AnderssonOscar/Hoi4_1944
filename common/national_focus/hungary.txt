@@ -5366,7 +5366,7 @@ focus_tree = {
 
 		}
 	}
-}
+
 
 
 
@@ -5379,8 +5379,8 @@ focus_tree = {
 	focus = {
 		id = HUN_upgrade_army_equipment
 		icon = GFX_focus_secret_rearmament
-		x = 15
-		y = 7
+		x = 16
+		y = 11
 		cost = 5
 		available_if_capitulated = yes
 		#prerequisite = { focus = GER_gottedamerung }
@@ -5403,6 +5403,8 @@ focus_tree = {
 		}
 
 	completion_reward = {
+
+			add_research_slot = 1
 
 			set_temp_variable = { manpower_base = 611 }
 			multiply_temp_variable = { manpower_base = num_of_controlled_factories }
@@ -5577,8 +5579,8 @@ focus_tree = {
 focus = {
 	id = HUN_war_economy_focus
 	icon = GFX_focus_generic_combined_arms
-	x = 15
-	y = 8
+	x = 16
+	y = 12
 	cost = 10
 	available_if_capitulated = yes
 	prerequisite = { focus = HUN_upgrade_army_equipment }
@@ -5627,7 +5629,7 @@ focus = {
 			}
 
 				add_stability = 0.1
-				add_war_support = 0.3
+				add_war_support = 0.2
 		}
 }
 
@@ -5639,8 +5641,8 @@ focus = {
 	focus = {
 		id = HUN_reform_army
 		icon = GFX_focus_generic_little_entente
-		x = 15
-		y = 9
+		x = 16
+		y = 13
 		cost = 10
 		available_if_capitulated = no
 		prerequisite = { focus = HUN_war_economy_focus }

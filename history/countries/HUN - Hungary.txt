@@ -17,7 +17,7 @@ IF = {
 
 IF = {
 	limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "HUN_1936_air_bba"
+		#set_air_oob = "HUN_1936_air_bba"
 		set_technology = {
 			iw_small_airframe = 1
 			engines_1 = 1
@@ -26,7 +26,7 @@ IF = {
 			aa_lmg = 1
 		}
 	ELSE = {
-		set_air_oob = "HUN_1936_air_legacy"
+		#set_air_oob = "HUN_1936_air_legacy"
 		set_technology = {
 			early_fighter = 1
 			CAS1 = 1
@@ -59,22 +59,22 @@ IF = {
 	}
 }
 
-set_research_slots = 3
+#set_research_slots = 1
 
-### SETUP STABILITY AND WAR SUPPORT ###
-IF = {
-	limit = {
-		NOT = {
-			has_dlc = "Gotterdammerung"
-		}
-	}
-set_stability = 0.7
-set_war_support = 0.6
-	ELSE = {
-		set_stability = 0.3
-		set_war_support = 0.4
-	}
-}
+# ### SETUP STABILITY AND WAR SUPPORT ###
+# IF = {
+# 	limit = {
+# 		NOT = {
+# 			has_dlc = "Gotterdammerung"
+# 		}
+# 	}
+# set_stability = 0.7
+# set_war_support = 0.6
+# 	ELSE = {
+# 		set_stability = 0.3
+# 		set_war_support = 0.4
+# 	}
+# }
 
 
 set_technology = {
@@ -657,7 +657,7 @@ add_breakthrough_progress = {
 		add_ideas = HUN_secret_rearmament
 		
 		add_stability = 0.05
-		add_war_support = 0.05
+		#add_war_support = 0.05
 
 	}
 
@@ -727,7 +727,7 @@ add_breakthrough_progress = {
 
 	IF = {
 		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "HUN_1939_air_bba"
+			#set_air_oob = "HUN_1939_air_bba"
 			set_technology = {
 				iw_small_airframe = 1
 				basic_small_airframe = 1
@@ -739,7 +739,7 @@ add_breakthrough_progress = {
 				aa_lmg = 1
 			}	
 		ELSE = {
-			set_air_oob = "HUN_1939_air_legacy"
+		#	set_air_oob = "HUN_1939_air_legacy"
 			set_technology = {
 				fighter1 = 1
 				early_bomber = 1
@@ -805,17 +805,29 @@ add_breakthrough_progress = {
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
 	#add_opinion_modifier = { target = GER modifier = faction_traitor }
 
-	army_experience = 110
+	army_experience = 55
 	navy_experience = 0	
 	air_experience = 75
 
 	add_political_power = 2189
 	add_command_power = 200
 
-	set_convoys = 10
-	set_stability = 0.9 
-	set_war_support = 0.11
-	add_manpower = 187432
+	set_convoys = 50
+
+	if = {
+		limit = { has_dlc = "Gotterdammerung" }
+			set_war_support = -0.55
+			set_stability = 0.91 
+			add_manpower = 19000
+		else = {
+			add_manpower = 39000
+			set_stability = 1.0 
+			set_war_support = 0.65
+		}
+	}
+
+	set_fuel = 123600
+	#set_research_slots = 0
 
 	set_politics = {
 		ruling_party = neutrality
@@ -825,8 +837,8 @@ add_breakthrough_progress = {
 	}
 
 	set_popularities = {
-		neutrality = 35
-		fascism = 45
+		neutrality = 40
+		fascism = 40
 		communism = 10
 		democratic = 10
 	}
@@ -837,7 +849,10 @@ add_breakthrough_progress = {
 		}
 		create_intelligence_agency = yes
 	}
-	
+
+	remove_ideas = {
+		HUN_pal_teleki
+	}
 
 	add_ideas = {
 		#laws
@@ -846,11 +861,32 @@ add_breakthrough_progress = {
 		#service_by_requirement
 		#limited_exports
 		medium_war_casualties
+		effective_recruitment
 		dont_surrender_mod
 		HUN_mavag
 		mw_aircraft
-		
 	}
+
+	add_breakthrough_progress = {
+		specialization = specialization_air
+		value = 2
+	}
+
+	add_breakthrough_progress = {
+		specialization = specialization_land
+		value = 3
+	}
+
+	
+	IF = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		complete_special_project = {
+			project = sp:sp_land_flamethrower_tank
+		}
+	}
+
 
 	if = {
 		limit = {
@@ -872,30 +908,29 @@ add_breakthrough_progress = {
 		unlock_national_focus = HUN_expand_the_technical_university_of_budapest
 
 		unlock_national_focus = HUN_joint_tank_procurement
-	
 	}
 
 
-		IF = {
+	IF = {
 		limit = {
 			has_dlc = "Gotterdammerung"
 		}
 			complete_national_focus = wuw_HUN_promote_hungarianism
 			complete_national_focus = wuw_HUN_reaffirm_territorial_claims
-			complete_national_focus = wuw_HUN_demand_carpathian_ruthenia
-			complete_national_focus = wuw_HUN_demand_transylvania
-			complete_national_focus = wuw_HUN_demand_southern_slovakia
+			unlock_national_focus = wuw_HUN_demand_carpathian_ruthenia
+			unlock_national_focus = wuw_HUN_demand_transylvania
+			unlock_national_focus = wuw_HUN_demand_southern_slovakia
 
 			unlock_national_focus = wuw_HUN_devalue_the_pengo
 			unlock_national_focus = wuw_HUN_invite_foreign_investors
-			complete_national_focus = wuw_HUN_expand_the_hungarian_academy_of_sciences
+			unlock_national_focus = wuw_HUN_expand_the_hungarian_academy_of_sciences
 			complete_national_focus = wuw_HUN_expand_the_lignite_industry
 			complete_national_focus = wuw_HUN_tap_newfound_oil_deposits
 			complete_national_focus = wuw_HUN_expand_the_aluminum_industry
 			complete_national_focus = wuw_HUN_expand_the_diosgyor_machinery_factory
 			complete_national_focus = wuw_HUN_manred_weiss_steel_and_metal_works
 
-			complete_national_focus = wuw_HUN_danuvia_submachine_guns
+			unlock_national_focus = wuw_HUN_danuvia_submachine_guns
 			complete_national_focus = wuw_HUN_establish_the_mavag_army_division
 			complete_national_focus = wuw_HUN_repulo_muszaki_intezet
 
@@ -909,9 +944,7 @@ add_breakthrough_progress = {
 
 			unlock_national_focus = wuw_HUN_quantity_over_quality
 			unlock_national_focus = wuw_HUN_the_turan
-
 		}
-
 
 	if = {
 		limit = {
@@ -922,9 +955,12 @@ add_breakthrough_progress = {
 			}
 		}
 	
-
-
 	set_technology = {
+
+		basic_fortification_tech = 1
+		land_fort_tech_1 = 1
+		land_fort_tech_2 = 1
+
 		sp_armored_engineer_tech = 1
 		sp_armored_maintenance_tech = 1
 
@@ -1002,6 +1038,7 @@ add_breakthrough_progress = {
 		motorised_infantry = 1
 
 		tech_mountaineers = 1
+		tech_mountaineers2 = 1
 		tech_support = 1
 
 		tech_engineers = 1
@@ -1037,6 +1074,9 @@ add_breakthrough_progress = {
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
 			set_technology = {
+
+				bba_early_transport_plane = 1 
+				bba_improved_transport_plane = 1
 				photo_reconnaisance = 1
 
 				#survivability_studies = 1
@@ -1080,7 +1120,8 @@ add_breakthrough_progress = {
 			}
 		else = {
 			set_technology = {
-
+				early_transport_plane = 1
+				improved_transport_plane = 1
 				naval_bomber1 = 1
 
 				CAS1 = 1
@@ -1179,9 +1220,7 @@ add_breakthrough_progress = {
 
 	if = {
 		limit = {
-			
 			has_dlc = "No Step Back"
-			
 		}
 		set_technology = {
 			gwtank_chassis = 1
@@ -1201,6 +1240,29 @@ add_breakthrough_progress = {
 			engine_tech_1 = 1
 			engine_tech_2 = 1
 		}
+
+		create_equipment_variant = {
+			name = "41M Turán"
+			type = medium_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_2
+				special_type_slot_2 = empty
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = additional_machine_guns #easy_maintenance
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 9
+				tank_nsb_armor_upgrade = 5
+			}
+			#icon = "GFX_GER_improved_medium_tank_medium"
+		}
+
 		else = {
 			set_technology = {
 				gwtank = 1
@@ -1236,30 +1298,7 @@ add_breakthrough_progress = {
 			}
 		}
 	}
-
-
-		create_equipment_variant = {
-			name = "41M Turán"
-			type = medium_tank_chassis_2
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_medium_cannon
-				turret_type_slot = tank_medium_three_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_2
-				special_type_slot_2 = empty
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns #easy_maintenance
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 9
-				tank_nsb_armor_upgrade = 5
-			}
-			#icon = "GFX_GER_improved_medium_tank_medium"
-		}
-	}
+	
 
 	if = {
 		limit = {
@@ -1274,19 +1313,15 @@ add_breakthrough_progress = {
 				special_type_slot_1 = empty
 			}
 		}
-
-
-		
 	}
 
-	
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
 			set_air_oob = "HUN_1944_air_bba"
 		else = {
 			set_air_oob = "HUN_1944_air_legacy"
+		}
 	}
-}
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
@@ -1295,7 +1330,7 @@ add_breakthrough_progress = {
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 270
+        amount = 310
     }
 
 	add_equipment_to_stockpile = {
@@ -1303,41 +1338,47 @@ add_breakthrough_progress = {
         amount = 272
     }
 
-
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
         amount = 492
 		producer = GER
     }
 
-	if = {
-		limit = { has_dlc = "No Step Back" }		
-
 	add_equipment_to_stockpile = {
-        type = medium_tank_chassis_1
-        amount = 25
-		variant_name  = "Panzer III Ausf. F"
-		producer = GER
-    }
-
-	add_equipment_to_stockpile = {
-        type = medium_tank_chassis_2
-        amount = 115
-		variant_name  = "41M Turán"
-		producer = HUN
-    }
-
-	add_equipment_to_stockpile = {
-        type = medium_tank_chassis_2
-        amount = 42
-		variant_name  = "T-34-85"
+        type = motorized_equipment_0
+        amount = 210
 		producer = SOV
     }
-}
 
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}		
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_1
+			amount = 25
+			variant_name = "Panzer III Ausf. F"
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 115
+			variant_name = "41M Turán"
+			producer = HUN
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 42
+			variant_name = "T-34-85"
+			producer = SOV
+		}
+	}
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 27
+        amount = 29
     }
 }
