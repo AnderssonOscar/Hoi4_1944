@@ -130,6 +130,18 @@ HUN_reform_army:0 "Reform The Armed Forces"
 HUN_reform_army_desc:0 "Reform The Armed Forces"
 HUN_reform_army_tooltip:0 "Receive 8 Infantry divisons and 2 armored divisions"
 
+HUN_upgrade_army_equipment_wuw:0 "Refit Our Forces"
+HUN_upgrade_army_equipment_wuw_desc:0 "Our army is in need of new equipment"
+HUN_upgrade_army_equipment_wuw_tooltip:0 ""
+
+HUN_war_economy_focus_wuw:0 "Prepare For Defence Of The Homeland"
+HUN_war_economy_focus_wuw_desc:0 ""
+HUN_war_economy_focus_wuw_tooltip:0 ""
+
+HUN_reform_army_wuw:0 "Reform The Armed Forces"
+HUN_reform_army_wuw_desc:0 "Reform The Armed Forces"
+HUN_reform_army_wuw_tooltip:0 "Receive 8 Infantry divisons and 2 armored divisions"
+
 sweden.join.germany.1:0 "Joining the Axis"
 sweden.join.germany.1.t:0 "Joining the Axis"
 sweden.join.germany.1.d:0 "Should we join the axis?"

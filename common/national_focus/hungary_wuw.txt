@@ -20821,7 +20821,7 @@ focus_tree = {
 
 
 	focus = {
-		id = HUN_upgrade_army_equipment
+		id = HUN_upgrade_army_equipment_wuw
 		icon = GFX_focus_secret_rearmament
 		x = 16
 		y = 11
@@ -20854,7 +20854,7 @@ focus_tree = {
 			multiply_temp_variable = { manpower_base = num_of_controlled_factories }
 			add_to_temp_variable = { var = manpower_base value = 9672 }
 
-			add_manpower =manpower_base
+			add_manpower = manpower_base
 
 			add_tech_bonus = {
 				name = HUN_artillery_effort
@@ -20883,52 +20883,6 @@ focus_tree = {
 				uses = 1
 				category = armor
 			}
-
-			# if = {
-			# 	limit = {
-			# 		not = { has_tech = infantry_at2 }
-			# 	}
-			# 	set_technology = {
-			# 		infantry_at2 = 1
-			# 	}
-			# }
-			
-
-			# if = {
-			# 	limit = {
-			# 		not = { has_tech = advanced_infantry_weapons }
-			# 	}
-			# 	set_technology = {
-			# 		advanced_infantry_weapons = 1
-			# 	}
-			# }
-
-			# if = {
-			# 	limit = {
-			# 		not = { has_tech = artillery4 }
-			# 	}
-			# 	set_technology = {
-			# 		artillery4 = 1
-			# 	}
-			# }
-
-			# if = {
-			# 	limit = {
-			# 		not = { has_tech = artillery5 }
-			# 	}
-			# 	set_technology = {
-			# 		artillery5 = 1
-			# 	}
-			# }
-
-			# if = {
-			# 	limit = {
-			# 		not = { has_tech = antiair3 }
-			# 	}
-			# 	set_technology = {
-			# 		antiair3 = 1
-			# 	}
-			# }
 
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_2
@@ -21021,13 +20975,13 @@ focus_tree = {
 
 
 focus = {
-	id = HUN_war_economy_focus
+	id = HUN_war_economy_focus_wuw
 	icon = GFX_focus_generic_combined_arms
 	x = 16
 	y = 12
 	cost = 10
 	available_if_capitulated = yes
-	prerequisite = { focus = HUN_upgrade_army_equipment }
+	prerequisite = { focus = HUN_upgrade_army_equipment_wuw }
 	
 	ai_will_do = {
 		factor = 1000
@@ -21083,13 +21037,13 @@ focus = {
 	
 	#Focus for reform army
 	focus = {
-		id = HUN_reform_army
+		id = HUN_reform_army_wuw
 		icon = GFX_focus_generic_little_entente
 		x = 16
 		y = 13
 		cost = 10
 		available_if_capitulated = no
-		prerequisite = { focus = HUN_war_economy_focus }
+		prerequisite = { focus = HUN_war_economy_focus_wuw }
 		ai_will_do = {
 			factor = 1000
 
@@ -21097,7 +21051,7 @@ focus = {
 				factor = 1000
 
 				OR = {
-					surrender_progress > 0.05
+					surrender_progress > 0.01
 					date > 1944.7.1
 				}
 			}

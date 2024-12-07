@@ -2093,15 +2093,22 @@ country_event = {
 			}
 			add_building_construction = {
 					type = bunker
-					level = 1
+					level = 3
 					province = 3512
 					instant_build = yes
 				}
 
 			add_building_construction = {
 					type = bunker
-					level = 1
+					level = 4
 					province = 6469
+					instant_build = yes
+				}
+
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 6570
 					instant_build = yes
 				}
 		}

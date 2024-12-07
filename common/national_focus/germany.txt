@@ -38224,7 +38224,7 @@ focus_tree = {
 
 				add_building_construction = {
 						type = bunker
-						level = 6
+						level = 5
 						province = 6521
 						instant_build = yes
 					}
@@ -38235,7 +38235,7 @@ focus_tree = {
 			64 = { #outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 4
+						level = 3
 						province = 13367
 						instant_build = yes
 					}
@@ -38246,7 +38246,7 @@ focus_tree = {
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 4
+						level = 3
 						province = 13368
 						instant_build = yes
 					}
@@ -38257,7 +38257,7 @@ focus_tree = {
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
-						level = 4
+						level = 3
 						province = 13369
 						instant_build = yes
 					}

@@ -2109,6 +2109,12 @@ ALLIES_invade_south_france = { #dragoon
 
 	ai_strategy = {
 		type = invasion_unit_request
+		state = 99
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
 		state = 21
 		value = 10
 	}

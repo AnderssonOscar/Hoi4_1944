@@ -291,7 +291,13 @@ GER = {
 #7 6 5 6 1 1 9 7 9 9 7 5 0 3  3 3 1 
 ###########################################################################################################################################################
 
-			ROM = { give_resource_rights = { receiver = GER state = 46 } }  #remove_resource_rights
+			if = {
+				limit = {
+					ROM = { is_ai = yes}
+				}
+				ROM = { give_resource_rights = { receiver = GER state = 46 } }  #remove_resource_rights
+			}
+
 			ITA = { remove_resource_rights = 44 } 
 			
 

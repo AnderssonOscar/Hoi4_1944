@@ -1511,6 +1511,12 @@ USA_go_time = {
 	}
 
 	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = SIA }
+		value = -1000
+	}
+
+	ai_strategy = {
 		type = consider_weak
 		id = "JAP"
 		value = 10
