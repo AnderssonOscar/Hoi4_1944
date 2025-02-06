@@ -155,12 +155,12 @@ collaborationist_formation = {
 			subtract_from_temp_variable = { var = casualties_now value = casualties_last }
 			set_temp_variable = { casualties_since_last_recruitment = casualties_now }
 
-			multiply_temp_variable = { casualties_since_last_recruitment = 18.73 }  
+			multiply_temp_variable = { casualties_since_last_recruitment = 26.73 }  
 
 			clamp_temp_variable = {
 				var = casualties_since_last_recruitment
 				min = 0
-				max = 22500
+				max = 25500
 			}
 
 			add_manpower = casualties_since_last_recruitment

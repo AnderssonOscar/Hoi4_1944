@@ -406,10 +406,10 @@ units = {
 		name = "Panssariosasto 'Lagus'"
 		location = 9198
 		division_template = "Panssariosasto"
-		# force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } } #get locked equipment requirements
-		# force_equipment_variants = { heavy_tank_chassis_1 = { owner = SOV version_name = "KV-1" } }
-		# force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1941" } }
-		# force_equipment_variants = { light_tank_chassis_1 = { owner = SOV version_name = "T-26TU mod. 1933" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } } #get locked equipment requirements
+		force_equipment_variants = { heavy_tank_chassis_1 = { owner = SOV version_name = "KV-1" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = SOV version_name = "T-34-1941" } }
+		force_equipment_variants = { light_tank_chassis_1 = { owner = SOV version_name = "T-26TU mod. 1933" } }
 		start_experience_factor = 0.82
 		start_equipment_factor = 0.99
 

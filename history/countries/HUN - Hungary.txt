@@ -799,7 +799,14 @@ add_breakthrough_progress = {
 1943.12.30 = {
 
 	set_cosmetic_tag = HUN_axis_1944
-	oob = "HUN_1944_nsb"
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "HUN_1944_nsb"
+	else = {
+		set_oob = "HUN_1944"
+		}
+	}
 
 	add_opinion_modifier = { target = GER modifier = large_decrease	}
 	add_opinion_modifier = { target = GER modifier = large_decrease	}

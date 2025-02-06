@@ -1833,7 +1833,7 @@ country_event = {
 			HUN = { is_subject_of = GER}
 			HUN ={ surrender_progress > 0.02 }
 			HUN = { is_ai = yes } 
-
+			has_global_flag = GER_operation_margarethe
 			has_war_with = SOV 
 		}
 
@@ -1948,7 +1948,7 @@ country_event = {
 			# 	}
 				
 				if = {
-					limit = {NOT = { 73 = { is_fully_controlled_by = HUN}}}
+					limit = {NOT = { 73 = {state_is_fully_controlled_by_ROOT_or_subject = yes}}}
 					SOV = { transfer_state = 73 }
 				}
 
@@ -2074,6 +2074,7 @@ country_event = {
 		35 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
 				province = {
 					id = 11456
 				}
@@ -2084,6 +2085,7 @@ country_event = {
 		51 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
 				province = {
 					id = 3547
 					id = 587
@@ -2117,6 +2119,7 @@ country_event = {
 		55 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
 				province = {
 					id = 11560
 				}
@@ -2126,6 +2129,7 @@ country_event = {
 		42 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
 				province = {
 					id = 3558
 					id = 3423
@@ -2137,6 +2141,7 @@ country_event = {
 		36 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
 				province = {
 					id = 9363
 					id = 6241
@@ -2147,6 +2152,7 @@ country_event = {
 		28 = {
 			add_province_modifier = {
 				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
 				province = {
 					id = 549
 					id = 9503
@@ -2189,6 +2195,7 @@ country_event = {
 			35 = {
 			add_province_modifier = {
 				static_modifiers = { GER_flooded_area_static_modifier }
+				days = 180
 				province = {
 					id = 9431
 				}
@@ -2277,6 +2284,7 @@ country_event = {
 	36 = {
 			add_province_modifier = {
 				static_modifiers = { GER_flooded_area_static_modifier }
+				days = 180
 				province = {
 					id = 6241
 					id = 9363
@@ -2287,6 +2295,7 @@ country_event = {
 	7 = {
 			add_province_modifier = {
 				static_modifiers = { GER_flooded_area_static_modifier }
+				days = 180
 				province = {
 					id = 3314
 			}
@@ -2297,6 +2306,7 @@ country_event = {
 	35 = {
 			add_province_modifier = {
 				static_modifiers = { GER_flooded_area_static_modifier }
+				days = 180
 				province = {
 					id = 3262
 					id = 6496

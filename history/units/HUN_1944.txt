@@ -1,0 +1,294 @@
+division_template = {
+	name = "Gyalogdandár"				# Infantry Brigade
+	division_names_group = HUN_INF_01
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+		anti_tank = { x = 0 y = 2 }
+	}
+}
+division_template = {
+	name = "Huszár Dandár" 			# Cavalry Brigade
+	division_names_group = HUN_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Panceloshadosztaly" 			# Light Armor
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+
+division_template = {
+	name = "Mountaineers"
+	#division_names_group = HUN_Mnt_01
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Motorizált Dandár" 			# Motorized Brigade
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+
+units = {
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9660
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
+		start_experience_factor = 0.72
+		start_equipment_factor = 0.73
+	}
+	
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9660
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.94
+		start_equipment_factor = 0.43
+	}
+	
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9660
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
+		start_experience_factor = 0.03
+		start_equipment_factor = 0.79
+	}
+	
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 9660
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "YUG" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "HUN" } }
+		start_experience_factor = 0.89
+		start_equipment_factor = 0.48
+	}
+	division= {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "SOV" } }
+		start_experience_factor = 0.08
+		start_equipment_factor = 0.71
+	}
+	
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "YUG" } }
+		start_experience_factor = 0.01
+		start_equipment_factor = 0.84
+	}
+	
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "HUN" } }
+		start_experience_factor = 0.22
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "HUN" } }
+		start_experience_factor = 0.84
+		start_equipment_factor = 1
+	}
+
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Gyalogdandár"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "HUN" } }
+		force_equipment_variants = { anti_tank_equipment_2 = { owner = "HUN" } }
+		start_experience_factor = 0.29
+		start_equipment_factor = 0.91
+	}
+	
+	
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Mountaineers"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		start_experience_factor = 0.12
+		start_equipment_factor = 0.9
+	}
+	
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Mountaineers"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.61
+	}
+	
+	
+
+	division = {
+		name = "1. Huszár Dandár"
+		location = 619
+		division_template = "Huszár Dandár"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		start_experience_factor = 0.02
+		start_equipment_factor = 0.8
+	}
+	
+	
+	division = {
+		division_name = { is_name_ordered = no name_order = 0 }
+		location = 619
+		division_template = "Panceloshadosztaly"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "HUN" } }
+		start_experience_factor = 0.18
+		start_equipment_factor = 0.79
+	}
+
+	
+}
+
+
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_2
+			creator = "HUN"
+		}
+		requested_factories = 8
+		progress = 0.82
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "HUN"
+		}
+		requested_factories = 3
+		progress = 0.75
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_2
+			creator = "HUN"
+		}
+		requested_factories = 4
+		progress = 0.82
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = anti_air_equipment_2
+			creator = "HUN"
+		}
+		requested_factories = 3
+		progress = 0.82
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = motorized_equipment_1
+			creator = "HUN"
+		}
+		requested_factories = 2
+		progress = 0.4
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = train_equipment_1
+			creator = "HUN" 
+		}
+		requested_factories = 3
+		progress = 0.84
+		efficiency = 100
+	}
+}

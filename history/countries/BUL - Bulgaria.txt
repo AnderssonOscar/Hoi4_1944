@@ -517,7 +517,14 @@ if = {
 
 1943.12.30 = {
 	set_cosmetic_tag = BUL_axis_1944
-	oob = "BUL_1944_nsb"
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "BUL_1944_nsb"
+	else = {
+		set_oob = "BUL_1944"
+		}
+	}
 
 	add_political_power = 2389
 	add_command_power = 200

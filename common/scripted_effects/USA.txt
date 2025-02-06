@@ -3,11 +3,11 @@ USA_give_nukes = {
 	USA = {
 		if = {
 			limit = {
-				date > 1945.9.1
+				date > 1945.7.20
 				has_war_with = JAP
 				has_dlc = "Gotterdammerung"
-				USA = { surrender_progress < 0.01 }
-				USA = { is_ai = yes }
+				surrender_progress < 0.01
+				is_ai = yes
 				JAP = { surrender_progress < 0.2 }
 
 				OR = {
@@ -29,6 +29,11 @@ USA_give_nukes = {
 					 	scientist = USA_robert_oppenheimer
 					 	state = 376
 					 }
+				}
+
+				set_technology = {
+					nukes = 1
+					popup = no
 				}
 
 				add_nuclear_bombs = 2

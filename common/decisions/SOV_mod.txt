@@ -494,6 +494,12 @@ SOV_great_patriotic_war = {
 				breakthrough_bonus_against = 1.40
 			}
 
+			targeted_modifier = {
+				tag = RKU #ukraine
+				attack_bonus_against = 1.35
+				breakthrough_bonus_against = 1.40
+			}
+
 
 			#set_variable = { SOV.offensive_end_day = global.num_days }
 			#add_to_temp_variable = { SOV.offensive_end_day = 15 } #same as offensive_exhaustion

@@ -8,6 +8,7 @@ MOD_start_update = {
 	HOL_setup_resistance = yes
 	ITA_start_setup = yes
 	CHI_scripted_events_start_effects = yes
+	GER_start_effects = yes
 }
 
 MOD_daily_update = {
@@ -26,7 +27,6 @@ MOD_daily_update = {
 	ALLIED_remove_normandy_port = yes
 	GER_fix_ukr_border = yes
 	GER_courland_pocket = yes
-	GER_start_effects = yes
 
 	JAP_ichi_go_1_start_script = yes
 	JAP_ichi_go_2_start_script = yes

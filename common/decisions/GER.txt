@@ -6413,6 +6413,13 @@ GER_reichskommissariats = {
 				}
 
 				GEN = {
+
+				add_ideas = {
+					tot_economic_mobilisation
+					service_by_requirement
+					dont_surrender_mod 
+				}
+
 					add_manpower = 50000
 					add_equipment_to_stockpile = { 
 						type = infantry_equipment
@@ -6665,6 +6672,13 @@ GER_reichskommissariats = {
 					add_compliance = 25
 				}
 				RKH = {
+
+				add_ideas = {
+					tot_economic_mobilisation
+					service_by_requirement
+					dont_surrender_mod 
+				}
+
 					add_manpower = 50000
 					add_equipment_to_stockpile = { 
 						type = infantry_equipment

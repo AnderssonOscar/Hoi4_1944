@@ -799,26 +799,31 @@ SWE_dont_join_anyone = {
 	ai_strategy = {
 		type = alliance
 		id = "ENG"
-		value = 400
+		value = -1000
 	}
 	ai_strategy = {
 		type = alliance
 		id = "USA"
-		value = 400
+		value = -1000
 	}
 	ai_strategy = {
 		type = alliance
 		id = "SOV"
-		value = 400
+		value = -1000
 	}
 	ai_strategy = {
 		type = alliance
 		id = "JAP"
-		value = 400
+		value = -1000
 	}
 	ai_strategy = {
 		type = alliance
 		id = "GER"
-		value = 400
+		value = -1000
+	}
+		ai_strategy = {
+		type = alliance
+		id = "BRA"
+		value = -1000
 	}
 }

@@ -7,6 +7,12 @@ GER_scripted_events_start_effects = {
 		}
 		set_global_flag = GER_scripted_events_start_effects
 
+			GER = {
+				GER_remove_hess_effects = yes
+				set_country_flag = flight_of_hess
+				GER_remove_todt_effects = yes
+			}
+
 	813 = {
 		add_province_modifier = {
 			static_modifiers = { GER_festung_static_modifier }
@@ -176,23 +182,23 @@ GER_dday_events = {
 	
 		if = {
 			limit = {
-					GER = { NOT = { controls_province = 6449 } } #11422
-					NOT = { has_global_flag = sabotage_ports_1 }
+				GER = { any_enemy_country = { controls_province = 6449 } } 
+				NOT = { has_global_flag = sabotage_ports_1 }
 				}
 			set_global_flag = sabotage_ports_1
 			GER = { country_event = german.sabotage.ports.1 }
 
 		} else_if = {
 			limit = { 
-					GER = { NOT = { controls_province = 3552 } }
-					NOT = { has_global_flag = sabotage_ports_2 }
+				GER = { any_enemy_country = { controls_province = 3552 } } 
+				NOT = { has_global_flag = sabotage_ports_2 }
 				}
 			set_global_flag = sabotage_ports_2
 			GER = { country_event = german.sabotage.ports.2 }
 		
 		} else_if = {
 			limit = { 
-				GER = { NOT = { controls_province = 6536 } }
+				GER = { any_enemy_country = { controls_province = 6536 } } 
 				NOT = { has_global_flag = sabotage_ports_3 }
 			}
 			set_global_flag = sabotage_ports_3
@@ -200,7 +206,7 @@ GER_dday_events = {
 		
 		} else_if = {
 			limit = {
-				GER = { NOT = { controls_province = 9510 } }
+				GER = { any_enemy_country = { controls_province = 9510 } } 
 				NOT = { has_global_flag = sabotage_ports_4 }
 				}
 			set_global_flag = sabotage_ports_4
@@ -208,7 +214,7 @@ GER_dday_events = {
 		
 		} else_if = {
 			limit = {
-				GER = { NOT = { controls_province = 6657 } }
+				GER = { any_enemy_country = { controls_province = 6657 } } 
 				NOT = { has_global_flag = sabotage_ports_5 }
 				}
 			set_global_flag = sabotage_ports_5
@@ -216,7 +222,7 @@ GER_dday_events = {
 		
 		} else_if = {
 			limit = {
-				GER = { NOT = { controls_province = 9434 } }
+				GER = { any_enemy_country = { controls_province = 9434 } } 
 				NOT = { has_global_flag = sabotage_ports_6 }
 				}
 			set_global_flag = sabotage_ports_6
@@ -224,7 +230,7 @@ GER_dday_events = {
 
 		} else_if = {
 			limit = { 
-				GER = { NOT = { controls_province = 575 } }
+				GER = { any_enemy_country = { controls_province = 575 } } 
 				NOT = { has_global_flag = sabotage_ports_7 }
 			}
 			set_global_flag = sabotage_ports_7
@@ -232,7 +238,7 @@ GER_dday_events = {
 		
 		} else_if = {
 			limit = { 
-				GER = { NOT = { controls_province = 6598 } } #6598
+				GER = { any_enemy_country = { controls_province = 6598 } } 
 				NOT = { has_global_flag = sabotage_ports_8 }
 			} 
 			set_global_flag = sabotage_ports_8

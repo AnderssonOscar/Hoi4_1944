@@ -20225,6 +20225,7 @@ country_event = {
 
 	trigger = {
 
+		date < 1944.1.1 #mod
 		# Probably for the best
 		has_dlc = "Gotterdammerung"
 

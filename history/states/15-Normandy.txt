@@ -29,11 +29,11 @@ state={
 			air_base = 6
 			6449 = {
 				naval_base = 3
-				coastal_bunker = 1
+				coastal_bunker = 2
 			}
 			9434 = {
 				naval_base = 5
-				coastal_bunker = 1
+				coastal_bunker = 2
 			}
 			485 = {
 				naval_base = 1
@@ -54,8 +54,16 @@ state={
 				naval_base = 8
 			}
 
-			485 = {
-				coastal_bunker = 4
+			3579 = {
+				coastal_bunker = 1
+			}
+
+			11535 = {
+				coastal_bunker = 1
+			}
+
+			6599 = {
+				coastal_bunker = 1
 			}
 
 				radar_station = 2

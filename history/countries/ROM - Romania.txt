@@ -447,7 +447,14 @@ if = {
 	air_experience = 175
 
 	set_research_slots = 2
-	set_oob = "ROM_1944_nsb"
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "ROM_1944_nsb"
+	else = {
+		set_oob = "ROM_1944"
+		}
+	}
+
 
 	add_political_power = 2189
 	add_command_power = 200

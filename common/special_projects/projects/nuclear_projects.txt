@@ -1,3 +1,4 @@
+#1944
 sp_nuclear_reactor = {
 	specialization = specialization_nuclear	
 	icon = GFX_sp_nuclear_reactor

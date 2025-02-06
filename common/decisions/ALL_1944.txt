@@ -459,9 +459,9 @@ war_measures = {
 			}
 		}
 		modifier = {
-			army_defence_factor = 0.25
+			army_defence_factor = 0.3
 			army_org_factor = 0.25
-			max_dig_in_factor = 0.5
+			max_dig_in_factor = 0.75
 			dig_in_speed_factor = 2.0
 		}
 

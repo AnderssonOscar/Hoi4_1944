@@ -20,7 +20,7 @@ allies_dont_spam_invasion = {
 			}
 
 		enable = {
-				date > 1944.6.15
+				date > 1944.6.20
 				has_war_with = GER
 				16 = {is_fully_controlled_by = GER} #paris
 
@@ -106,7 +106,7 @@ allies_dont_invade_GER_before_dday = {
 	}
 
 	enable = {
-		date < 1944.3.20 #1944.4.1
+		date < 1944.3.12 #1944.4.1
 		has_war_with = GER
 		16 = {is_fully_controlled_by = GER} #paris
 	}
@@ -144,7 +144,7 @@ allies_enable_invasion_of_GER = {
 
 	enable = {
 		
-		date > 1944.3.21 #1944.4.1
+		date > 1944.3.13 #1944.4.1
 		has_war_with = GER
 		
 		125 = {is_fully_controlled_by = ENG}
@@ -200,7 +200,7 @@ allies_enable_invasion_of_GER = {
 		type = invade
 		id = "GER"
 		#state_trigger = { state = 15 }
-		value = 250
+		value = 300
 	}
 
 #	ai_strategy = {
@@ -225,7 +225,7 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = GER }
-		value = 80
+		value = 50
 	}
 
 	ai_strategy = {
@@ -237,7 +237,31 @@ allies_enable_invasion_of_GER = {
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 15
-		value = 55
+		value = 65
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 29
+		value = 50
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 14
+		value = 50
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 6
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 29
+		value = -1000
 	}
 
 	ai_strategy = {
@@ -432,12 +456,14 @@ allies_prepare_in_UK = { #stack troops here until we land in germany
 			ENG = { surrender_progress < 0.05 }
 
 			AND = {
-				16 = {is_fully_controlled_by = GER}
-				15 = {is_fully_controlled_by = GER}
-				29 = {is_fully_controlled_by = GER}
-				6 =  {is_fully_controlled_by = GER}
-				14 = {is_fully_controlled_by = GER}
-				34 = {is_fully_controlled_by = GER}
+				GER = {
+					16 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+					15 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+					29 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+					6 =  {state_is_fully_controlled_by_ROOT_or_subject = yes}
+					14 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+					34 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+				}
 			}
 		}
 
@@ -606,6 +632,109 @@ Allies_careful_GER = {  #intrconnected with - Allies_rush_GER
 	}
 }
 
+allies_landed_in_france_abort_invasion = {
+
+	allowed = { 
+		OR = {
+				tag = USA
+				tag = ENG
+				tag = CAN
+				#tag = FRA
+				#tag = RAJ
+				tag = NZL
+				tag = AST
+				#tag = BRA
+				#tag = SAF
+				#tag = MEX
+		}
+	}
+
+	enable = {
+		has_war_with = GER
+		date > 1944.6.11
+		date < 1944.6.20
+
+		GER = {
+
+			OR = { # if we get decent foothold
+
+				AND = {
+					any_enemy_country = { controls_province = 3552 }#brest
+					any_enemy_country = { controls_province = 542 }
+					any_enemy_country = { controls_province = 3758 }
+					any_enemy_country = { controls_province = 6572 }
+				}
+
+				AND = {
+					any_enemy_country = { controls_province = 6536 } #lorient
+					any_enemy_country = { controls_province = 6548 }
+					any_enemy_country = { controls_province = 542 }
+					any_enemy_country = { controls_province = 9510 }
+				}
+
+				AND = {
+					any_enemy_country = { controls_province = 6657 }#la rochelle
+					any_enemy_country = { controls_province = 11582 }
+					any_enemy_country = { controls_province = 665 }
+				}
+
+				AND = {
+					any_enemy_country = { controls_province = 6449 }#cherbourg
+					any_enemy_country = { controls_province = 3579 }
+					any_enemy_country = { controls_province = 9550 }
+					any_enemy_country = { controls_province = 11535 }
+				}
+
+				AND = {
+					any_enemy_country = { controls_province = 9434 }#le havre
+					any_enemy_country = { controls_province = 11563 }
+					any_enemy_country = { controls_province = 9578 }
+					any_enemy_country = { controls_province = 6599 }
+				}
+			
+				AND = {
+					any_enemy_country = { controls_province = 485 }#dieppe
+					any_enemy_country = { controls_province = 11563 }
+					any_enemy_country = { controls_province = 11420 }
+				}
+
+				AND = {
+					any_enemy_country = { controls_province = 575 } #dunkerque
+					any_enemy_country = { controls_province = 11548 }
+					any_enemy_country = { controls_province = 3536 }
+				}
+
+				AND = {
+					any_enemy_country = { controls_province = 6598 }#antwepen
+					any_enemy_country = { controls_province = 480 }
+					any_enemy_country = { controls_province = 11419 }
+				}
+
+				AND = {
+					any_enemy_country = { controls_province = 6560 }# gent 
+					any_enemy_country = { controls_province = 6446 }
+					any_enemy_country = { controls_province = 3576 }
+				}
+
+				AND = {
+					any_enemy_country = { controls_province = 9737 } #bordeaux
+					any_enemy_country = { controls_province = 6621 }
+					any_enemy_country = { controls_province = 11565 }
+					any_enemy_country = { controls_province = 6777 }
+				}
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GER"
+		value = -500
+	}
+}
+
 
 allies_landed_in_france = {
 
@@ -626,75 +755,75 @@ allies_landed_in_france = {
 
 		enable = {
 			has_war_with = GER
-			date > 1944.6.20
+			date > 1944.6.11
 	
 			GER = {
 
 			OR = { # if we get decent foothold
 
 				AND = {
-					NOT = { controls_province = 3552} #brest
-					NOT = { controls_province = 542} 
-					NOT = { controls_province = 3758} 
-					NOT = { controls_province = 6572} 
+					any_enemy_country = { controls_province = 3552 }#brest
+					any_enemy_country = { controls_province = 542 }
+					any_enemy_country = { controls_province = 3758 }
+					any_enemy_country = { controls_province = 6572 }
 				}
 
 				AND = {
-					NOT = { controls_province = 6536} #lorient
-					NOT = { controls_province = 6548} 
-					NOT = { controls_province = 542} 
-					NOT = { controls_province = 9510} 
+					any_enemy_country = { controls_province = 6536 } #lorient
+					any_enemy_country = { controls_province = 6548 }
+					any_enemy_country = { controls_province = 542 }
+					any_enemy_country = { controls_province = 9510 }
 				}
 
 				AND = {
-					NOT = { controls_province = 6657} #la rochelle
-					NOT = { controls_province = 11582} 
-					NOT = { controls_province = 665} 
+					any_enemy_country = { controls_province = 6657 }#la rochelle
+					any_enemy_country = { controls_province = 11582 }
+					any_enemy_country = { controls_province = 665 }
 				}
 
 				AND = {
-					NOT = { controls_province = 6449} #cherbourg
-					NOT = { controls_province = 3579} #around
-					NOT = { controls_province = 9550} #around
-					NOT = { controls_province = 11535} #around
+					any_enemy_country = { controls_province = 6449 }#cherbourg
+					any_enemy_country = { controls_province = 3579 }
+					any_enemy_country = { controls_province = 9550 }
+					any_enemy_country = { controls_province = 11535 }
 				}
 
 				AND = {
-					NOT = { controls_province = 9434} #le havre
-					NOT = { controls_province = 11563} 
-					NOT = { controls_province = 9578}
-					NOT = { controls_province = 6599} 
+					any_enemy_country = { controls_province = 9434 }#le havre
+					any_enemy_country = { controls_province = 11563 }
+					any_enemy_country = { controls_province = 9578 }
+					any_enemy_country = { controls_province = 6599 }
 				}
 			
 				AND = {
-					NOT = { controls_province = 485} #dieppe
-					NOT = { controls_province = 11563}
-					NOT = { controls_province = 11420}
+					any_enemy_country = { controls_province = 485 }#dieppe
+					any_enemy_country = { controls_province = 11563 }
+					any_enemy_country = { controls_province = 11420 }
 				}
 
 				AND = {
-					NOT = { controls_province = 575} #dunkerque
-					NOT = { controls_province = 11548}
-					NOT = { controls_province = 3536}
+					any_enemy_country = { controls_province = 575 } #dunkerque
+					any_enemy_country = { controls_province = 11548 }
+					any_enemy_country = { controls_province = 3536 }
 				}
 
 				AND = {
-					NOT = {	controls_province = 6598} #antwepen
-					NOT = {	controls_province = 480}
-					NOT = {	controls_province = 11419}
+					any_enemy_country = { controls_province = 6598 }#antwepen
+					any_enemy_country = { controls_province = 480 }
+					any_enemy_country = { controls_province = 11419 }
 				}
 
 				AND = {
-					NOT = { controls_province = 6560} # gent 
-					NOT = { controls_province = 6446} 
-					NOT = { controls_province = 3576} 
+					any_enemy_country = { controls_province = 6560 }# gent 
+					any_enemy_country = { controls_province = 6446 }
+					any_enemy_country = { controls_province = 3576 }
 				}
 
 				AND = {
-					NOT = { controls_province = 9737} #bordeaux
-					NOT = { controls_province = 6621} 
-					NOT = { controls_province = 11565} 
-					NOT = { controls_province = 6777} 
+					any_enemy_country = { controls_province = 9737 } #bordeaux
+					any_enemy_country = { controls_province = 6621 }
+					any_enemy_country = { controls_province = 11565 }
+					any_enemy_country = { controls_province = 6777 }
 				}
 			}
 		}
@@ -716,11 +845,11 @@ allies_landed_in_france = {
 
 
 
-	ai_strategy = {
-		type = invasion_unit_request  
-		country_trigger = { tag = GER }
-		value = 50
-	}
+	# ai_strategy = {
+	# 	type = invasion_unit_request  
+	# 	country_trigger = { tag = GER }
+	# 	value = 50
+	# }
 
 	ai_strategy = {
 		type = invasion_unit_request  
@@ -894,7 +1023,7 @@ allies_landed_in_france = {
 	ai_strategy = {
 		type = force_defend_ally_borders
 		id = FRA
-		value = 46
+		value = 49
 	}
 
 	ai_strategy = {

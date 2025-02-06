@@ -1221,10 +1221,10 @@ recruit_character = GER_julius_leber
 recruit_character = GER_albert_speer
 recruit_character = GER_hans_oster
 recruit_character = GER_theodor_heuss
-#recruit_character = GER_fritz_todt
+recruit_character = GER_fritz_todt
 recruit_character = GER_joachim_von_ribbentrop
 recruit_character = GER_ernst_thalmann
-#recruit_character = GER_rudolf_hess
+recruit_character = GER_rudolf_hess
 recruit_character = GER_martin_bormann
 recruit_character = GER_wilhelm_canaris
 recruit_character = GER_joseph_goebbels
@@ -3204,7 +3204,7 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_0
-		amount = 17000
+		amount = 21000
 	}
 
 	add_equipment_to_stockpile = {
@@ -3274,12 +3274,12 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = anti_tank_equipment_1
-        amount = 230
+        amount = 530
     }
 
 	add_equipment_to_stockpile = {
         type = mechanized_equipment_1
-        amount = 610
+        amount = 710
     }
 
 	add_equipment_to_stockpile = {

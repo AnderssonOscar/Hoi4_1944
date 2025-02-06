@@ -14,7 +14,7 @@ on_actions = {
 			
 			GER = {
 				#activate_decision = GER_reichskommissariat_niederlande
-				#activate_decision = GER_reichskommissariat_norwegen
+				activate_decision = GER_reichskommissariat_norwegen
 			}	
 			
 			every_country = {

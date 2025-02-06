@@ -1,4 +1,5 @@
-﻿capital = 282
+﻿#1944
+capital = 282
 
 set_stability = 0.1 #baseline, THE EMPEROR PROTECTS
 set_war_support = 0.75
@@ -142,7 +143,7 @@ add_breakthrough_progress = {
 	value = 0.1
 }
 
-if = {
+IF = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
 	}

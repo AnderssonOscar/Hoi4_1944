@@ -859,7 +859,7 @@ if = {
 
 	if = {
 		limit = { has_dlc = "No Step Back" }
-		set_oob = "FIN_1944"
+		set_oob = "FIN_1944_nsb"
 	else = {
 		set_oob = "FIN_1944"
 		}
