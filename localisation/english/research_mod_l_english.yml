@@ -10,7 +10,7 @@
  antitank6_desc:0 ""
 
  rocket_artillery5:0 "Rocket Artillery Upgrade III"
- antitank6_desc:0 ""
+ rocket_artillery_desc:0 ""
 
  antiair_home:0 "Static Anti-Air Defences"
  antiair_home_desc:0 "Fit analog gunnery computers to our existing anti-aircraft guns"

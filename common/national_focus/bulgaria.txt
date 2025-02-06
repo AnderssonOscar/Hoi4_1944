@@ -651,13 +651,33 @@ focus_tree = {
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 		completion_reward = {
+			
+			IF = {
+				limit = {
+					NOT = {
+						has_tech = atomic_research
+					}
+				}
 			add_tech_bonus = {
 				name = BUL_uranium_prospecting
-			    bonus = 2.0
-			    uses = 2
+				    bonus = 1.0
+				    uses = 1 # was 2
 			    category = nuclear
 			}
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 0.8
+				}
+			}
+			ELSE = {
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 1
+				}
+			}
+
 			add_ideas = BUL_buhovo_uranium_mines
+
 			if = { 
 				limit = {
 					any_allied_country = {
@@ -878,7 +898,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_darzhavna_aeroplanna_rabotilnitsa
-			    bonus = 1.0
+			    bonus = 0.5
 			    uses = 2
 				category = light_air
 			}
@@ -928,7 +948,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_darzhavna_samoletna_fabrika
-			    bonus = 1.0
+			    bonus = 0.5
 			    uses = 2
 				category = cas_bomber
 				category = naval_bomber
@@ -1014,7 +1034,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_kaproni_bulgarski
-			    bonus = 1.0
+			    bonus = 0.5
 			    uses = 2
 				category = cat_strategic_bomber
 				category = tactical_bomber
@@ -1065,7 +1085,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_darzhavna_voenna_fabrika
-			    bonus = 1.0
+			    bonus = 0.5
 			    uses = 2
 				category = infantry_weapons
 				category = support_tech
@@ -1116,7 +1136,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_found_dvf_sopot
-			    bonus = 1.0
+			    bonus = 0.5
 			    uses = 2
 				category = artillery
 			}
@@ -1533,7 +1553,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_a_black_sea_fleet
-			    bonus = 1.0
+			    bonus = 0.5
 			    uses = 2
 				category = dd_tech
 			}
@@ -2345,7 +2365,7 @@ focus_tree = {
 			navy_experience = 15
 			add_tech_bonus = {
 				name = BUL_strike_from_the_seas
-			    bonus = 1.0
+			    bonus = 0.5
 			    uses = 2
 			    category = marine_tech
 			    category = tp_tech
@@ -2459,7 +2479,7 @@ focus_tree = {
 			navy_experience = 25
 			add_tech_bonus = {
 				name = BUL_an_aegean_sea_fleet
-			    bonus = 1.0
+			    bonus = 0.5
 			    uses = 2
 			    category = cl_tech
 			    category = ca_tech
@@ -2528,7 +2548,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_a_powerful_bulgarian_navy
-				bonus = 0.75
+				bonus = 1
 				uses = 1
 				category = bb_tech
 			}
@@ -2560,7 +2580,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_modern_tactics
-			    bonus = 0.75
+			    bonus = 1
 			    uses = 1
 			    category = naval_air
 			}
@@ -3787,7 +3807,7 @@ focus_tree = {
 				BUL = {
 					add_tech_bonus = {
 						name = armor
-						bonus = 1.0
+						bonus = 0.5
 						uses = 2
 						category = armor
 					}
@@ -8807,6 +8827,14 @@ focus_tree = {
 				}
 				77 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
 				add_state_core = 77
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 971
+					971 = { NOT = { is_core_of = ROOT } }
+				}
+				971 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
+				add_state_core = 971
 			}
 			custom_effect_tooltip = BUL_historical_states_tt
 

@@ -16,6 +16,7 @@ if = {
 			iw_small_airframe = 1
 			aa_lmg = 1
 			engines_1 = 1
+			bba_early_transport_plane = 1
 		}
 	else = {
 		set_air_oob = "SWE_1936_air_legacy"
@@ -25,6 +26,7 @@ if = {
 			naval_bomber1 = 1
 			cv_naval_bomber1 = 1
 			early_bomber = 1
+			early_transport_plane = 1
 		}
 	}
 }
@@ -127,7 +129,6 @@ if = {
 	limit = { has_dlc = "La Resistance" }
 	set_technology = {
 		armored_car1 = 1
-		#armored_car2 = 1
 	}
 }
 
@@ -384,7 +385,7 @@ if = {
 		}
 		obsolete = yes #used for oob
 	}
-	create_equipment_variant = {
+	create_equipment_variant = { #Note: There is a copy of this variant in Finnish National Focus file (FIN_bring_foreign_armor_experts). Any changes here should also be applied there
 		name = "Stridsvagn m/31"
 		type = light_tank_chassis_1
 		parent_version = 0
@@ -504,7 +505,7 @@ if = {
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_engine_slot = light_ship_engine_3
 			fixed_ship_torpedo_slot = ship_torpedo_1
 			mid_1_custom_slot = ship_mine_layer_1
 			rear_1_custom_slot = ship_depth_charge_1
@@ -540,7 +541,7 @@ if = {
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_engine_slot = cruiser_ship_engine_2
 			fixed_ship_armor_slot = ship_armor_cruiser_2
 			fixed_ship_secondaries_slot = ship_secondaries_1
 			mid_1_custom_slot = empty
@@ -574,7 +575,7 @@ if = {
 		name_group = SWE_CA_HISTORICAL
 		parent_version = 0
 		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_battery_slot = ship_heavy_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
@@ -790,6 +791,7 @@ if = {
 	recruit_character = SWE_raoul_wallenberg
 	recruit_character = SWE_natanael_beskow
 	recruit_character = SWE_olof_thornell
+	recruit_character = SWE_lise_meitner
 }
 
 if = {

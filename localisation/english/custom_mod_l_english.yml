@@ -28,9 +28,6 @@ seize_some_trucks_desc:0 ""
 dig_in_and_hold:0 "Dig in and hold"
 dig_in_and_hold_desc:0 "Dig deeper!"
 
-seize_some_trucks:0 "Seize civilian trucks"
-seize_some_trucks_desc:0 ""
-
 RKO_expand_ostland_east:0 "Expand Reichskommissariat Ostland eastwards"
 RKO_expand_ostland_east_desc:0 "Place the occupied territory eastwards of Reichskommissariat Ostland into our adminitration."
 
@@ -427,3 +424,12 @@ effective_recruitment:0 "Effective recruitment"
 effective_recruitment_desc:0 "
 
 VICTORY_POINTS_13366: "Buda"
+
+ITA_demand_savoy:0 "Request control of Savoy"
+ITA_demand_savoy_desc:0 ""
+
+ITA_demand_sudtirol:0 "Request control of Südtirol"
+ITA_demand_sudtirol_desc:0 ""
+
+ITA_demand_istra:0 "Request control of Istra & Litorale"
+ITA_demand_istra_desc:0 ""

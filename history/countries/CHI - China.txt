@@ -46,6 +46,7 @@ recruit_character = CHI_chen_yi
 recruit_character = CHI_soong_mei_ling
 recruit_character = CHI_random_prince_of_terror
 recruit_character = CHI_lin_sen
+recruit_character = CHI_wang_ganchang
 
 set_stability = 0.2
 set_war_support = 0.5
@@ -87,32 +88,57 @@ if = {
 		early_ship_hull_light = 1
 		early_ship_hull_cruiser = 1
 		basic_battery = 1
-		 
 		basic_torpedo = 1
 		coastal_defense_ships = 1
 	}
 }
 
-add_ideas = {
-	german_advisors
+600 = { #Jiangxi
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+749 = { #Huangshan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+606 = { #Anhui
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+607 = { #Henan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+620 = { #Hubei
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+602 = { #Hunan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+750 = { #Changde
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+	}
+744 = { #Xian
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+605 = { #Sichuan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+748 = { #Zunyi
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+603 = { #Guizhu
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+615 = { #Shanxi
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+622 = { #Shaanxi
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+325 = { #Yunnan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+325 = { #Dali
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "Waking the Tiger"
-		}
-	}
-	add_ideas = {
-		CHI_communist_uprisings
-	}
-}
-
-
-if = {
-	limit = {
-		has_dlc = "Waking the Tiger"
-	}		
 	add_ideas = {
 		CHI_nine_power_treaty
 		CHI_army_corruption_1
@@ -120,8 +146,9 @@ if = {
 		CHI_incompetent_officers
 		free_trade
 		CHI_hyper_inflation_1
-	}
+	german_advisors
 }
+
 save_global_event_target_as = WTT_current_china_leader
 
 set_convoys = 40
@@ -220,6 +247,7 @@ set_convoys = 40
 		tech_support = 1		
 		tech_recon = 1
 		tech_engineers = 1
+		tech_trucks = 1
 
 		#doctrines
 		air_superiority = 1
@@ -231,7 +259,6 @@ set_convoys = 40
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
 		mechanical_computing = 1
 		computing_machine = 1
 		basic_encryption = 1
@@ -251,6 +278,9 @@ set_convoys = 40
 		concentrated_industry = 1
 		concentrated_industry2 = 1
 		concentrated_industry3 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 }
 

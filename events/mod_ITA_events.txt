@@ -1,0 +1,133 @@
+﻿###########################
+# 1944 Italy Events
+###########################
+
+add_namespace = italy.demands.savoy
+add_namespace = italy.demands.sudtirol
+add_namespace = italy.demands.istra
+
+add_namespace = italy.demands.rejected
+
+country_event = {
+	id = italy.demands.savoy.1
+	title = "Italy requests control of Savoy"
+	picture = GFX_report_event_generic_sign_treaty3
+
+	desc = {
+		text = "Italy is requesting the reintegration of previously occupied italian territory of Savoy"
+	}
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = "OK"
+
+		ai_chance = {
+			base = 10
+		}
+
+		if = {
+			limit = {
+				735 = {is_fully_controlled_by = GER}
+			}
+			
+			ITA = {
+				 transfer_state = 735
+				 add_war_support = +0.01
+				}
+		}
+	}
+
+	option = {
+		name = "No"
+		ITA = { country_event = italy.demands.rejected.1 }
+	}
+}
+
+country_event = {
+	id = italy.demands.sudtirol.1
+	title = "Italy requests control of Südtirol"
+	picture = GFX_report_event_generic_sign_treaty3
+
+	desc = {
+		text = "Italy is requesting the reintegration of previously italian territory of Südtirol"
+	}
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = "OK"
+
+		ai_chance = {
+			base = 10
+		}
+
+		if = {
+			limit = {
+				39 = {is_fully_controlled_by = GER}
+			}
+			ITA = {
+				 transfer_state = 39
+				 add_war_support = +0.02
+				}
+		}
+	}
+
+	option = {
+		name = "No"
+		ITA = { country_event = italy.demands.rejected.1 }
+	}
+}
+
+country_event = {
+	id = italy.demands.istra.1
+	title = "Italy requests control of Istra & Litorale"
+	picture = GFX_report_event_generic_sign_treaty3
+
+	desc = {
+		text = "Italy is requesting the reintegration of previously italian territory of Istra & Litorale"
+	}
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = "OK"
+
+		ai_chance = {
+			base = 10
+		}
+
+		if = {
+			limit = {
+				736 = {is_fully_controlled_by = GER}
+				852 = {is_fully_controlled_by = GER}
+			}
+			ITA = {
+				transfer_state = 736 
+				transfer_state = 852 
+				add_war_support = +0.01
+			}
+		}
+	}
+
+	option = {
+		name = "No"
+		ITA = { country_event = italy.demands.rejected.1 }
+	}
+}
+
+country_event = {
+	id = italy.demands.rejected.1
+	title = "Our territory claims have been rejected"
+	picture = GFX_report_event_generic_sign_treaty3
+
+	desc = {
+		text = "Germany have rejected our claim for the reintegration of previously italian territories"
+	}
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = "OK"
+	}
+}

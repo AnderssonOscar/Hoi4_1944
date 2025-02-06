@@ -484,6 +484,9 @@ if = {
 }
 
 1943.12.30 = {
+
+	become_exiled_in = { target = ENG legitimacy = 30 }
+
 	oob = ""
 	set_air_oob = ""
 	set_naval_oob = ""

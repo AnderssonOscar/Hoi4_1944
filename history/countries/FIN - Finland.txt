@@ -333,9 +333,6 @@ if = {
 	FIN_erik_heinrichs = {
 		set_character_flag = FIN_anti_communist_character_flag
 	}
-	FIN_juho_heiskanen = {
-		set_character_flag = FIN_anti_communist_character_flag
-	}
 	FIN_lauri_malmberg = {
 		set_character_flag = FIN_anti_communist_character_flag
 	}
@@ -350,35 +347,20 @@ if = {
 	FIN_risto_ryti = {
 		set_character_flag = FIN_anti_communist_character_flag
 	}
-
 	FIN_kyosti_kallio = {
 		set_character_flag = FIN_anti_fascist_character_flag
 	}
-
 	FIN_carl_mannerheim = {
 		set_character_flag = FIN_anti_communist_character_flag
 		set_character_flag = FIN_anti_fascist_character_flag
 	}
 	
+
+	##Unit Leaders
 	FIN_aksel_airo = {
 		set_character_flag = FIN_anti_communist_character_flag
 		set_character_flag = FIN_anti_fascist_character_flag
 	}
-
-
-	##Unit Leaders
-	#FIN_vilho_petter_nenonen
-	#FIN_hannu_hannuksela
-	#FIN_hjalmar_siilasvuo
-	#FIN_taavetti_laatikainen
-	#FIN_matti_aarnio
-	#FIN_ruben_lagus
-	#FIN_erkki_raappana
-	#
-	#FIN_ragnar_hakola
-	#FIN_svante_sundman
-
-	
 
 	FIN_woldemar_hagglund = {
 		set_character_flag = FIN_anti_communist_character_flag
@@ -399,6 +381,9 @@ if = {
 		set_character_flag = FIN_anti_communist_character_flag
 	}
 	FIN_lauri_torni = {
+		set_character_flag = FIN_anti_communist_character_flag
+	}
+	FIN_juho_heiskanen = {
 		set_character_flag = FIN_anti_communist_character_flag
 	}
 	FIN_karl_oesch = {
@@ -424,13 +409,6 @@ if = {
 	FIN_toivo_antikainen = {
 		set_character_flag = FIN_anti_fascist_character_flag
 	}
-
-
-	
-	
-	
-	
-	
 
 }
 
@@ -493,7 +471,6 @@ set_convoys = 5
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
 		mechanical_computing = 1
 		computing_machine = 1
 
@@ -521,6 +498,10 @@ set_convoys = 5
 		fleet_in_being = 1
 		battlefleet_concentration = 1
 		submarine_operations = 1
+	}
+
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 
 	# TECH ADJUSTMENTS
@@ -613,12 +594,16 @@ set_convoys = 5
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
 			set_air_oob = "FIN_1939_air_bba"
+			set_technology = { 
+				bba_early_transport_plane = 1 
+			}
 		else = {
 			set_air_oob = "FIN_1939_air_legacy"
 			set_technology = {
 				early_fighter = 1
 				early_bomber = 1
 				CAS1 = 1		
+				early_transport_plane = 1
 			}
 		}
 	}

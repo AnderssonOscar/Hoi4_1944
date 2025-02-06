@@ -308,14 +308,14 @@ characters = {
 			}
 		}
 		
-		field_marshal={
-			traits={ old_guard urban_assault_specialist defensive_doctrine }
-			skill=3
-			attack_skill=3
-			defense_skill=2
-			planning_skill=3
-			logistics_skill=2
-			legacy_id=1
+		corps_commander = { 
+			traits = { trait_cautious brilliant_strategist old_guard }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+			legacy_id = 1
 		}
 	}
 
@@ -515,15 +515,15 @@ characters = {
 		}
 	}
 
-	GER_erwin_rommel={
-		name=GER_erwin_rommel
-		portraits={
-			army={
-				large=GFX_portrait_GER_erwin_rommel
-				small="GFX_idea_erwin_rommel"
+	GER_erwin_rommel = {
+		name = GER_erwin_rommel
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_erwin_rommel
+				small = GFX_idea_erwin_rommel
 			}
 		}
-		advisor={
+		advisor = {
 			slot = high_command
 			idea_token = erwin_rommel
 			ledger = army
@@ -4023,11 +4023,11 @@ characters = {
 		}
 	}
 
-	GER_helmuth_walter = {
-		name = GER_helmuth_walter
+	GER_hellmuth_walter = {
+		name = GER_hellmuth_walter
 		portraits = {
 			army = {
-				large = GFX_portrait_GER_helmuth_walter
+				large = GFX_portrait_GER_hellmuth_walter
 			}
 		}
 
@@ -4177,14 +4177,7 @@ characters = {
 		}
 	}
 
-
-
-
-
-
-
-
-		GER_lothar_rendulic={ # NEW GENERALS
+	GER_lothar_rendulic={ # NEW GENERALS
 		name="Lothar Rendulic"
 		portraits={
 			army={

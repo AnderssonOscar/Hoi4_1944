@@ -5,6 +5,7 @@ oob = "VEN_1936"
 # Starting tech
 set_technology = {
 	infantry_weapons = 1
+	tech_trucks = 1
 	gw_artillery = 1
 	fuel_silos = 1
 	fuel_refining = 1
@@ -63,7 +64,6 @@ add_ideas = idea_VEN_blockade_inactive
 	
 	oob = "VEN_1939"
 	set_technology = {
-		tech_trucks = 1
 		interwar_artillery = 1
 		infantry_weapons1 = 1
 		infantry_weapons2 = 1
@@ -80,7 +80,6 @@ add_ideas = idea_VEN_blockade_inactive
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
 		mechanical_computing = 1
 
 		#industry

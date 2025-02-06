@@ -150,7 +150,6 @@ if = {
 		basic_ship_hull_light = 1
 		early_ship_hull_cruiser = 1
 		basic_ship_hull_cruiser = 1
-
 		early_ship_hull_heavy = 1
 		basic_ship_hull_heavy = 1
 		panzerschiffe = 1
@@ -199,8 +198,9 @@ set_variable = { GER_change_monthly_CG_vichy_france = 0.005 } #Changing monthly 
 set_variable = { GER_change_monthly_CG_price_controls = 0.005 } #Changing monthly CG when taking Price Controls focus
 set_variable = { GER_change_monthly_CG_occupied_states = 0.005 } #Changing monthly CG based on none-core states
 set_variable = { GER_expected_consumer_goods_penalty = 0.1} #Consumer Goods penalty when hitting 100% CGFF
-set_variable = { GER_factory_output_penalty = 0.15 } #Factory output penalty when hitting 100% CGFF
-set_variable = { GER_dockyard_output_penalty = 0.15 } #Dockyard output penalty when hitting 100% CGFF
+set_variable = { GER_factory_output_penalty = 0.2 } #Factory output penalty when hitting 100% CGFF
+set_variable = { GER_dockyard_output_penalty = 0.2 } #Dockyard output penalty when hitting 100% CGFF
+set_variable = { GER_reduce_russian_CG_bonus = 0 } #Used to reduce Soviet Gold Reserves if Germany has taken gold from various Soviet cities before capping them
 
 #INDUSTRAY: MEFO Bills/Economy of Conquest/Recovering Economy/Wirtschaftswunder
 #REMINDER to always update the fake NS if these numbers are altered!
@@ -229,6 +229,7 @@ set_variable = { GER_industrial_production_factory_start_efficiency_factor = 0 }
 set_variable = { GER_industrial_line_change_production_efficiency_factor = 0 }
 set_variable = { GER_industrial_equipment_conversion_speed = 0 }
 set_variable = { GER_industrial_consumer_goods_expected_value = 0 }
+set_variable = { GER_economic_crash_consumer_goods = 0.75 } #Amount of CGFF if the MEFO Bills gets canceled one way or another
 add_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
 
 #WUNDERWAFFEN
@@ -317,6 +318,10 @@ set_variable = { GER_military_air_strategic_bomber_bombing_factor = 0 }
 set_variable = { GER_military_air_range_factor = 0 }
 set_variable = { GER_military_air_fuel_consumption_factor = 0 }
 add_dynamic_modifier = { modifier = GER_airforce_modifier }
+
+#CROSSING THE ATLANTIC
+set_variable = { number_of_states_getting_dockyards = 0 }
+set_variable = { crossing_the_atlantic_max_states_for_dockyards = 10 }
 
 #FORT CONSTRUCTION COST
 set_variable = { GER_fort_construction_cp_cost = 25 }
@@ -654,10 +659,9 @@ set_war_support = 0.3
 
 	complete_special_project = {
 		project = sp:sp_naval_midget_submarine
-		scientist = GER_helmuth_walter
+		scientist = GER_hellmuth_walter
 		state = 56
 	}
-
 
 	IF = {
 		limit = {
@@ -1108,13 +1112,10 @@ set_popularities = {
 	add_to_faction = FIN
 	add_to_faction = SER
 	add_to_faction = ALB
-	add_to_faction = HOL
+	#add_to_faction = HOL
 
-		declare_war_on = { target = SOV type = annex_everything }
-		declare_war_on = {
-			target = ENG
-			type = annex_everything
-		}
+	declare_war_on = { target = SOV type = annex_everything }
+	declare_war_on = { target = ENG type = annex_everything }
 
 add_ideas = {
 		sour_loser
@@ -1289,7 +1290,12 @@ if = {
 	recruit_character = GER_oberste_heeresleitung_character
 	recruit_character = GER_franz_ritter_von_epp
 	recruit_character = GER_walter_ulbricht
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
 	recruit_character = GER_wilhelm_zaisser
+	}
 	recruit_character = GER_otto_ruhle
 	recruit_character = GER_hermann_duncker
 	recruit_character = GER_august_thalheimer
@@ -1328,41 +1334,7 @@ if = {
 
 if = {
 	limit = {
-		has_dlc = "La Resistance"
-	}
-	create_operative_leader = {
-		name = "Otto Skorzeny"
-		GFX = GFX_portrait_otto_skorenzy
-		traits = { operative_commando }
-		bypass_recruitment = no
-		available_to_spy_master = yes
-		nationalities = { GER }
-		gender = male
-	}
-
-	create_operative_leader = {
-		name = "Nikolaus Ritter"
-		GFX = GFX_portrait_nikolaus_ritter
-		traits = { operative_safe_cracker }
-		bypass_recruitment = no
-		available_to_spy_master = yes
-		nationalities = { GER }
-		gender = male
-	}
-	create_operative_leader = {
-		name = "Eleysa Bazna"
-		GFX = GFX_portrait_eleysa_bazna
-		traits = { operative_infiltrator }
-		bypass_recruitment = no
-		available_to_spy_master = yes
-		nationalities = { GER TUR }
-		gender = male
-	}
-}
-
-if = {
-	limit = {
-		not = { has_dlc = "Man the Guns" }
+		NOT = { has_dlc = "Man the Guns" }
 	}
 	### Ship Variants ###
 	## 1936 Start ##
