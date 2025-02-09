@@ -383,16 +383,6 @@ if = {
 
 
 
-
-
-
-
-
-
-
-
-
-
 1943.12.30 = {
 
 	oob = "CHI_1944"
@@ -404,6 +394,41 @@ if = {
 			#set_air_oob = "CHI_1939_air_legacy"
 		}
 	}
+
+	# declare_war_on = {
+	# 	target = GER
+	# 	type = annex_everything
+	# }
+
+	# CHI = { add_to_war = { targeted_alliance = CHI enemy = GER } }
+	# SIK = { add_to_war = { targeted_alliance = CHI enemy = GER } }
+	# GXC = { add_to_war = { targeted_alliance = CHI enemy = GER } }
+	# PRC = { add_to_war = { targeted_alliance = CHI enemy = GER } }
+	# XSM = { add_to_war = { targeted_alliance = CHI enemy = GER } }
+
+	# every_country = {
+	# 	limit = { is_in_faction_with = GER }
+	# 	add_to_war = {
+	# 		targeted_alliance = GER
+	# 		enemy = CHI
+	# 	}
+	# }
+
+	# every_country = {
+	# 	limit = { is_in_faction_with = GER }
+	# 	add_to_war = {
+	# 		targeted_alliance = GER
+	# 		enemy = CHI
+	# 	}
+	# }
+
+	# every_country = {
+	# 	limit = { is_in_faction_with = CHI }
+	# 	add_to_war = {
+	# 		targeted_alliance = ENG
+	# 		enemy = GER
+	# 	}
+	# }
 
 	add_political_power = 2589
 	add_command_power = 200

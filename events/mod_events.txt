@@ -439,7 +439,7 @@ country_event = {
 			modifier = {
 				factor = 35
 				HUN = { is_ai = yes }
-				ITA = { is_ai = yes }
+				#ITA = { is_ai = yes }
 				BUL = { is_ai = yes }
 			}
 		}
@@ -524,7 +524,7 @@ country_event = {
 				date > 1945.1.1
 				OR = {
 					HUN =  { is_ai = no }
-					ITA =  { is_ai = no }
+					#ITA =  { is_ai = no }
 					BUL =  { is_ai = no }
 				}
 			}
@@ -727,8 +727,8 @@ country_event = {
 		option = {
 			name = "I am invincible!"
 
-			add_stability = -0.05
-			add_war_support = -0.05
+			add_stability = -0.1
+			add_war_support = -0.1
 			#add_political_power = +350
 
 			
@@ -1331,6 +1331,7 @@ country_event = {
 		name = "Disable Soviet Offensives"
 		set_global_flag = disable_offensives_1944
 		custom_effect_tooltip = "The Soviets wont launch any special offensives"
+
 		trigger = {
 			OR = {
 				original_tag = GER

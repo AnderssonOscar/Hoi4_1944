@@ -181,7 +181,7 @@ political_actions = {
 				is_embargoed_by = SPA
 			}
 
-				country_event = { id = embargo.stop.1 }
+				#country_event = { id = embargo.stop.1 }
 
 				if = {
 					limit = { has_dlc = "By Blood Alone" }

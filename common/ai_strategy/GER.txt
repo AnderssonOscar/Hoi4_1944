@@ -3278,6 +3278,7 @@ GER_pause_in_SOV = { #We got this far but our home is under siege
 			}
 		}
 		date > 1942.1.1
+		date < 1944.1.1
 	}
 
 	abort_when_not_enabled = yes
@@ -3646,7 +3647,7 @@ GER_defend_hol = {
 			35
 			7
 		}
-		ratio = 0.15
+		ratio = 0.11
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = no
 	}
@@ -3692,7 +3693,7 @@ GER_defend_homeland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
-		value = 19 #was 23
+		value = 15 #was 23
 	}
 
 	ai_strategy = {
@@ -4099,8 +4100,36 @@ GER_leave_greece = { #1944
 	}
 }
 
+GER_leave_south_france = { #1944 
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1944.7.1
+		date < 1945.3.1
+		is_historical_focus_on = yes
+		has_war_with = ENG
+		has_war_with = FRA
 
+		NOT = { 16 = {is_fully_controlled_by = GER} }
+		NOT = { 15 = {is_fully_controlled_by = GER} }
+		NOT = { 14 = {is_fully_controlled_by = GER} }
 
+		785 = { is_fully_controlled_by = GER }
+		18 = { is_fully_controlled_by = GER }
+		17 = { is_fully_controlled_by = GER }
+		
+		735 = { CONTROLLER = { has_war_with = ROOT } }
+	}
+ 
+	abort_when_not_enabled = yes
+
+	# ai_strategy = { #this just leaves the entire front
+	# 	type = front_unit_request
+	# 	area = vichy_mainland
+	# 	value = -100
+	# }
+}
 
 GER_guard_norway = { #1944 
 	allowed = {
@@ -4160,7 +4189,7 @@ GER_berlin_festung = { #1944
 		states = {
 			64
 		}
-		ratio = 0.19
+		ratio = 0.15
 		#area = europe
 		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
@@ -4243,9 +4272,9 @@ GER_guard_estonia = { #1944
 			812
 			12
 		}
-		ratio = 0.09
+		ratio = 0.07
 		subtract_invasions_from_need = no
-		subtract_fronts_from_need = yes
+		subtract_fronts_from_need = no
 	}
 }
 

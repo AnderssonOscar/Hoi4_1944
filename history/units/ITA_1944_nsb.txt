@@ -286,6 +286,62 @@ units = {
 		force_equipment_variants = { anti_air_equipment_2 = { owner = "ITA" } }
 	}
 
+	division = {
+		location = 6788 
+		division_template = "Camicie Nere"	
+		start_experience_factor = 0.11 
+		start_equipment_factor = 0.83 
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+	}
+
+	division = {
+		location = 6788 
+		division_template = "Camicie Nere"	
+		start_experience_factor = 0.31 
+		start_equipment_factor = 0.83 
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+	}
+
+	division = {
+		location = 11891 
+		division_template = "Camicie Nere"	
+		start_experience_factor = 0.21 
+		start_equipment_factor = 0.83 
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+	}
+
+	division = {
+		location = 11891 
+		division_template = "Camicie Nere"	
+		start_experience_factor = 0.26 
+		start_equipment_factor = 0.93 
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+	}
+
+	division = {
+		location = 6780 
+		division_template = "Camicie Nere"	
+		start_experience_factor = 0.21 
+		start_equipment_factor = 0.93 
+		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
+	}
+
+	division = {
+		location = 6780 
+		division_template = "Camicie Nere"	
+		start_experience_factor = 0.41 
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
+	}
+
+	division = {
+		location = 6780 
+		division_template = "Camicie Nere"	
+		start_experience_factor = 0.31 
+		start_equipment_factor = 0.89 
+		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
+	}
+
 
 #	division = {
 #		division_name = {

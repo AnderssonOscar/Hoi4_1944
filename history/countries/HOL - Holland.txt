@@ -19,6 +19,7 @@ if = {
 			iw_medium_airframe = 1
 			early_bombs = 1
 			bba_early_transport_plane = 1
+			air_torpedoe_1 = 1
 		}
 	else = {
 		set_air_oob = "HOL_1936_air_legacy"

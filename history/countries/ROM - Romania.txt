@@ -1041,12 +1041,12 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
-        amount = 5950
+        amount = 4950
     }
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_2
-        amount = 1950
+        amount = 950
     }
 
 	add_equipment_to_stockpile = {
@@ -1062,7 +1062,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_3
-        amount = 2600
+        amount = 1600
 		producer = GER
     }
 
@@ -1073,7 +1073,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 470
+        amount = 370
 		producer = GER
     }
 

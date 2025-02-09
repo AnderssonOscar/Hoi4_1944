@@ -2717,6 +2717,14 @@ SOV_take_finland_high = {
 	# 	value = 55
 	# }
 
+	  ai_strategy = {
+         type = force_concentration_target_weight
+         state = 216
+         state = 146
+
+         value = 40
+     }
+
 	ai_strategy = {
 		type = front_armor_score
 		id = FIN

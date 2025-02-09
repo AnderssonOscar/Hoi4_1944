@@ -40,6 +40,14 @@ state= {
 				industrial_complex = 2
 				arms_factory = 2
 
+				4196 = {
+					bunker = 3
+				}
+
+				7071 = {
+					bunker = 3
+				}
+
 				10012 = {
 					bunker = 4
 				}

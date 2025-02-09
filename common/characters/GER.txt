@@ -850,10 +850,10 @@ characters = {
 		}
 		corps_commander = {
 			traits = { career_officer }
-			skill = 3
+			skill = 4
 			attack_skill = 2
 			defense_skill = 2
-			planning_skill = 3
+			planning_skill = 4
 			logistics_skill = 3
 			legacy_id = 23
 		}
@@ -911,7 +911,7 @@ characters = {
 			traits = { inflexible_strategist trait_cautious war_hero }
 			skill = 4
 			attack_skill = 3
-			defense_skill = 3
+			defense_skill = 4
 			planning_skill = 4
 			logistics_skill = 3
 			legacy_id = 32
@@ -1135,10 +1135,10 @@ characters = {
 		corps_commander = {
 			traits = { militias_officer brilliant_strategist trait_reckless armor_officer politically_connected }
 			skill = 4
-			attack_skill = 2
+			attack_skill = 4
 			defense_skill = 3
-			planning_skill = 4
-			logistics_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
 			legacy_id = 24
 
 			visible = {

@@ -1108,7 +1108,7 @@ technologies = {
 
 		folder = {
 			name = artillery_folder
-			position = { x = -3 y = 14 }
+			position = { x = @anti_air y = 14 }
 		}
 
 		ai_will_do = {

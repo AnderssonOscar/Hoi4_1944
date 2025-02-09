@@ -35,7 +35,7 @@ USA_give_nukes = {
 					nukes = 1
 					popup = no
 				}
-
+				add_command_power = 200
 				add_nuclear_bombs = 2
 				set_global_flag = USA_give_nukes
 		}

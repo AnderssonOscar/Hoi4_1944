@@ -22,7 +22,7 @@ scandy_is_not_for_you = {
 
 	enable = {
 		date > 1944.1.1
-		date < 1945.1.1
+		date < 1945.3.1
 		is_in_faction_with = GER
 
 	}
@@ -39,7 +39,7 @@ scandy_is_not_for_you = {
 		type = front_unit_request
 		country_trigger = { always = yes }
 		area = scandinavia
-		value = -500
+		value = -1000
 	}
 
 	ai_strategy = {
@@ -232,13 +232,30 @@ AXIS_block_VEN_alliance = {
 	 }
 	 
 	enable = {
-		date > 1944.1.1
+		date > 1943.12.31
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = alliance
 		id = "VEN"
+		value = -1000
+	}
+}
+
+VEN_block_AXIS_alliance = {
+	allowed = { 
+		tag = VEN
+	 }
+	 
+	enable = {
+		date > 1943.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "GER"
 		value = -1000
 	}
 }

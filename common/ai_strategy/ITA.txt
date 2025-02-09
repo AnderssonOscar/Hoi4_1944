@@ -90,3 +90,82 @@ ITA_unit_production = {
 	ai_strategy = { type = equipment_variant_production_factor id = armored_car_equipment value = -1000 }
 }
 
+ITA_guard_savoy = { 
+	allowed = {
+		tag = ITA
+	}
+	enable = {
+		date > 1944.4.1
+		date < 1945.1.1
+		ITA = {
+			#south france
+			NOT = { any_enemy_country = { controls_province = 11834 } }#marseille
+			NOT = { any_enemy_country = { controls_province = 6621 } } #toulon
+			NOT = { any_enemy_country = { controls_province = 9909 } } #nice
+
+			#middle italy
+			162 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+			161 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = garrison
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			158
+		}
+		ratio = 0.8
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+	}
+}
+
+ITA_front_guard_savoy = { 
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		date > 1944.8.1
+		ITA = {
+
+			#162 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+
+			OR = {
+				any_enemy_country = { controls_province = 11834 }#marseille
+				any_enemy_country = { controls_province = 6621 } #toulon
+				any_enemy_country = { controls_province = 9909 } #nice
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = garrison
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = { tag = FRA }
+		value = 100
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = FRA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = balanced
+	}
+}

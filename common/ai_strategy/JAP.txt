@@ -409,6 +409,13 @@ JAP_ichi_Go = {
 		execution_type = rush
 	}
 
+     ai_strategy = {
+         type = force_concentration_target_weight
+         state = 602 #changsha
+         state = 594 #nainng
+         value = 40 # +40%
+     }
+
 	ai_strategy = {
 		type = front_armor_score
 		id = "CHI"
@@ -448,11 +455,30 @@ JAP_stop_ichi_Go = {
 }
 
 
+JAP_convoy_is_not_cool = {
+	allowed = { tag = JAP }
+	enable = {
+		date > 1944.1.1
+		date < 1945.8.1
+		has_equipment = {
+  			convoy > 650 # should be more then the jap convoy decisions
+  		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = -100
+	}
+}
+
 JAP_convoy_hungry = {
+	allowed = { tag = JAP }
 	enable = {
 		date > 1944.1.1
 		has_equipment = {
-  			convoy < 400
+  			convoy < 500
   		}
 	}
 	abort_when_not_enabled = yes
@@ -466,13 +492,13 @@ JAP_convoy_hungry = {
 
 
 JAP_the_sea_is_dangerous = {
-	allowed = { original_tag = JAP }
+	allowed = { tag = JAP }
 	enable = {
 		has_war_with = USA
 		has_war_with = CHI
 
 		has_equipment = {
-  			convoy < 400
+  			convoy < 450
   		}
 	}
 	abort_when_not_enabled = yes

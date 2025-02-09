@@ -4,7 +4,7 @@ state= {
 	manpower = 2168600
 	resources={
 		rubber=75 # was: 138
-		oil=5 # was: 10
+		oil=3 # was: 10
 	}
 	
 	state_category = rural
@@ -28,7 +28,7 @@ state= {
 				naval_base = 1
 			}
 		}
-				1943.12.1 = {
+		1943.12.31 = {
 			owner = JAP
 			controller = JAP
 		}

@@ -112,7 +112,12 @@ JAP_mod_operations_cat = {
 
         complete_effect = {
             hidden_effect = {
-                remove_ideas ={ idea = JAP_ichi_go }
+           if = {
+                 limit = {
+               JAP = { has_idea = JAP_ichi_go }
+            }
+             remove_ideas = { JAP_ichi_go }
+        }
             }
             # add_stability = 0.05
             add_war_support = 0.05
@@ -268,7 +273,14 @@ JAP_mod_operations_cat = {
 
         complete_effect = {
             hidden_effect = {
-                remove_ideas ={ idea = JAP_ichi_go }
+
+            if = {
+                 limit = {
+               JAP = { has_idea = JAP_ichi_go }
+            }
+             remove_ideas = { JAP_ichi_go }
+        }
+
             }
             add_war_support = 0.05
         }
@@ -437,7 +449,12 @@ JAP_mod_operations_cat = {
             add_war_support = 0.05
 
             hidden_effect = {
-                remove_ideas ={ idea = JAP_ichi_go }
+             if = {
+                 limit = {
+               JAP = { has_idea = JAP_ichi_go }
+            }
+              remove_ideas = { JAP_ichi_go }
+        }
             }
             set_country_flag = JAP_ichi_go_mod_done
         }

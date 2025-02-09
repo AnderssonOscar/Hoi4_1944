@@ -340,6 +340,7 @@ GER = {
 	on_daily = {
 		effect = {
 			MOD_daily_update = yes
+			MOD_daily_update2 = yes
 		}
 	}
 }

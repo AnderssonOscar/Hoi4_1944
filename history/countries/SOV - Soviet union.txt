@@ -2062,7 +2062,7 @@ if = {
 			set_naval_oob = "SOV_1939_naval_legacy"
 		}
 	}
-
+	set_fuel = 1200000
 	add_political_power = 2989
 	add_command_power = 200
 	army_experience = 190
@@ -3006,7 +3006,7 @@ if = {
 	
 	add_equipment_to_stockpile = { 
 			type = train_equipment_1
-			amount = 125
+			amount = 225
 		}
 
 	add_equipment_to_stockpile = {

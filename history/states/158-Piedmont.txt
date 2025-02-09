@@ -46,6 +46,27 @@ state = {
 			buildings = {
 				anti_air_building = 2
 				radar_station = 3
+
+				11891 = {
+					bunker = 3
+				}
+
+				11721 = {
+					bunker = 3
+				}
+
+				9738 = {
+					bunker = 3
+				}
+
+				6780 = {
+					bunker = 3
+				}
+
+				611 = {
+					bunker = 3
+				}
+
 			}
 		}
 	}

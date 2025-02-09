@@ -6,6 +6,8 @@ add_namespace = soviet.offensive.germany.start
 add_namespace = soviet.offensive.finland.start
 add_namespace = soviet.offensive.romania.start
 
+add_namespace = soviet.offensive.bagration.start
+
 add_namespace = soviet.offensive.end
 
 #New Soviet Offensive
@@ -70,6 +72,23 @@ country_event = {
 		name = "OK"
 
 		custom_effect_tooltip = "Now would be a good time to counterattack"
+	}
+}
+
+
+country_event = {
+	id = soviet.offensive.bagration.start.1
+	title = soviet.offensive.bagration.start.1.t
+	desc = soviet.offensive.bagration.start.1.d
+	picture = GFX_report_event_soviet_tanks 
+	
+	fire_only_once = no
+	is_triggered_only = yes
+
+	option = {
+		name = "OK"
+
+		custom_effect_tooltip = "The offensive should run out of steam in about 20 days."
 	}
 }
 

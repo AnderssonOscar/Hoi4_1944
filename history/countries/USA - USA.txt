@@ -2060,6 +2060,21 @@ if = {
 		has_dlc = "Man the Guns"
 	}
 
+	# Submarines #
+	create_equipment_variant = {
+		name = "Gato Class"
+		type = ship_hull_submarine_3
+		name_group = USA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_3
+			fixed_ship_engine_slot = sub_ship_engine_3
+			mid_1_custom_slot = ship_radar_4
+			front_1_custom_slot = ship_torpedo_sub_3
+			rear_1_custom_slot = ship_torpedo_sub_3
+		}
+	}
+
 	# Destroyers #
 	create_equipment_variant = {
 		name = "Fletcher Class"

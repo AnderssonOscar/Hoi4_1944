@@ -1590,7 +1590,7 @@ IF = {
 1943.12.30 = {
 
 	set_fuel = 261753
-	set_convoys = 100
+	set_convoys = 200
 
 	609 = {
 		#start_resistance = yes

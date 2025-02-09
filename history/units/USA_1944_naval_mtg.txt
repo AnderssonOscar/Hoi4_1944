@@ -234,6 +234,7 @@ units= {
 			ship = { name = "USS Richmond" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = USA version_name = "Omaha Class" } } }				
 			ship = { name = "USS Litchfield" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = USA version_name = "Clemson Class" } } }	
 		}
+		
 		task_force = {					
 			name = "4th Submarine Squadron"			# CO: Scanland		
 			location = 4180 # Pearl Harbor, HI
@@ -644,6 +645,76 @@ units= {
 			ship = { name = "USS Perch" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = USA version_name = "Porpoise Class" } } }
 			ship = { name = "USS Pickerel" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = USA version_name = "Porpoise Class" } } }
 			ship = { name = "USS Permit" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = USA version_name = "Porpoise Class" } } }
+		}
+		task_force = {					
+			name = "6th Submarine Squadron"	
+			location = 13052 
+			ship = { name = "USS Gato" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Greenling" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Grouper" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Growler" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Grunion" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Guardfish" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Albacore" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Amberjack" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Barb" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Blackfish" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Bluefish" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Bonefish" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Cod" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Cero" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Darter" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Drum" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Flying Fish" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Finback" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Haddock" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Halibut" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Herring" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Kingfish" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Silversides" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Trigger" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Whale" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Angler" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Bashaw" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Bluegill" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Bream" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Cavalla" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Cobia" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Croaker" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Dace" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Flasher" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Flier" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Flounder" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Gabilan" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Gunnel" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Gurnard" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Haddo" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Hake" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Harder" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Hoe" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Jack" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Lapon" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Mingo" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Muskallunge" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Paddle" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Pargo" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Peto" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Pogy" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Pompon" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Puffer" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Rasher" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Raton" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Ray" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Redfin" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Robalo" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Rock" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Sawfish" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Scamp" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Scorpion" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Snook" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			ship = { name = "USS Steelhead" definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = USA version_name = "Gato Class" } } }
+			
+			
 		}					
 	}
 } 

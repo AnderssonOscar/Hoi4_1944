@@ -3,8 +3,8 @@ SOV_leningrad_defence_modifier = {
 	icon = GFX_modifiers_SOV_armored_battery
 		enemy_army_speed_factor = -0.25
 		enemy_local_supplies = -0.25
-		army_defence_factor = 0.25
-		dig_in_speed_factor = 0.25
+		army_defence_factor = 0.5
+		dig_in_speed_factor = 0.5
 }
 
 GER_festung_konigsberg_modifier = { 
@@ -67,7 +67,7 @@ MOD_transportation_difficulties_modifier = {
 	enable = { always = yes }
 	icon = GFX_idea_SOV_the_road_of_life
 	army_speed_factor = -0.75
-	dig_in_speed_factor = 0.25
+	#dig_in_speed_factor = 0.25
 }
 
 ROM_blown_up_oil_fields = {

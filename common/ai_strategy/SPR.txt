@@ -13,6 +13,12 @@ SPR_block_JAP_alliance = {
 
 	ai_strategy = {
 		type = alliance
+		id = "GER"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = alliance
 		id = "JAP"
 		value = -1000
 	}

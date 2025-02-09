@@ -151,7 +151,7 @@ USA_dont_forget_about_italy_after_dday = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = ITA }
-		value = 37
+		value = 11
 	}
 
 	ai_strategy = {
@@ -1281,31 +1281,6 @@ USA_srsly_mils_now = {
 	}
 }
 
-USA_now_we_shall_strike = {
-	allowed = {
-		original_tag = JAP
-	}
-	enable = {
-		country_exists = JAP
-
-	}
-
-	abort = {
-		OR = {
-			has_war_with = USA
-			NOT = {
-				country_exists = USA
-			}
-		}
-	}
-
-	ai_strategy = {
-		type = consider_weak
-		id = "USA"
-		value = 75
-	}
-}
-
 USA_think_about_retaliation = {
 	allowed = {
 		original_tag = USA
@@ -1324,6 +1299,69 @@ USA_think_about_retaliation = {
 	}
 
 }
+
+
+
+USA_raid_japan_convoy = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_war_with = JAP
+		date > 1943.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 76 # east china sea
+		value = 100
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 75 # south china sea
+		value = 100
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 79 # sea of japan
+		value = 100
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 78 # philippine sea
+		value = 100
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 76
+		value = -600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 75
+		value = -600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 79
+		value = -600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 78
+		value = -600
+	}
+}
+
+
 
 USA_go_time = {
 	allowed = {
@@ -1501,6 +1539,24 @@ USA_go_time = {
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 728
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 536
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 555
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 537
 		value = -1000
 	}
 

@@ -50,7 +50,7 @@ SOV_great_patriotic_war = {
 			}
 
 			add_political_power = 300
-			add_command_power = 100
+			add_command_power = 150
 
 			set_temp_variable = { mod_start_date_days = SOV_offensive_start_day } #1944.1.1 709560
 			set_temp_variable = { days = global.num_days }
@@ -378,8 +378,8 @@ SOV_great_patriotic_war = {
 		
 		targeted_modifier = {
 			tag = GER
-			attack_bonus_against = 1.1
-			breakthrough_bonus_against = 1.0
+			attack_bonus_against = 1.05
+			breakthrough_bonus_against = 1.05
 		}
 
 		targeted_modifier = {
@@ -390,7 +390,7 @@ SOV_great_patriotic_war = {
 
 		targeted_modifier = {
 			tag = RKO #ostland
-			attack_bonus_against = 1.1
+			attack_bonus_against = 1.0
 			breakthrough_bonus_against = 1.0
 		}
 
@@ -402,14 +402,14 @@ SOV_great_patriotic_war = {
 
 		targeted_modifier = {
 			tag = GEN
-			attack_bonus_against = 1.1
+			attack_bonus_against = 1.0
 			breakthrough_bonus_against = 1.0
 		}
 
 		targeted_modifier = {
 			tag = HUN
-			attack_bonus_against =  0.45
-			breakthrough_bonus_against =  0.35
+			attack_bonus_against =  0.5
+			breakthrough_bonus_against =  0.45
 		}
 
 		modifier = {
@@ -490,14 +490,14 @@ SOV_great_patriotic_war = {
 			
 			targeted_modifier = {
 				tag = ROM
-				attack_bonus_against = 1.35
-				breakthrough_bonus_against = 1.40
+				attack_bonus_against = 1.25
+				breakthrough_bonus_against = 1.25
 			}
 
 			targeted_modifier = {
 				tag = RKU #ukraine
-				attack_bonus_against = 1.35
-				breakthrough_bonus_against = 1.40
+				attack_bonus_against = 1.25
+				breakthrough_bonus_against = 1.25
 			}
 
 

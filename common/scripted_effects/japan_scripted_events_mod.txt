@@ -10,6 +10,7 @@ JAP_scripted_events_start_effects = {
 		728 = {
 			add_province_modifier = {
 				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				days = 120
 				province = {
 					id = 11981
 
@@ -20,6 +21,7 @@ JAP_scripted_events_start_effects = {
 		593 = {
 			add_province_modifier = {
 				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				days = 120
 				province = {
 					#id = 10062
 					id = 7108
@@ -32,6 +34,7 @@ JAP_scripted_events_start_effects = {
 		592 = {
 			add_province_modifier = {
 				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				days = 120
 				province = {
 					id = 1047
 				}
@@ -41,6 +44,15 @@ JAP_scripted_events_start_effects = {
 		593 = {
 			add_province_modifier = {
 				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				days = 120
+				province = {
+					id = 9938
+				}
+			}
+
+			add_province_modifier = {
+				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				days = 120
 				province = {
 					id = 9938
 				}
@@ -50,6 +62,24 @@ JAP_scripted_events_start_effects = {
 		595 = {
 			add_province_modifier = {
 				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				days = 120
+				province = {
+					id = 4196
+				}
+			}
+
+			add_province_modifier = {
+				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				days = 120
+				province = {
+					id = 7071
+					id = 4196
+				}
+			}
+
+			add_province_modifier = {
+				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				days = 120
 				province = {
 					id = 7071
 					id = 4196
@@ -60,6 +90,7 @@ JAP_scripted_events_start_effects = {
 		596 = {
 			add_province_modifier = {
 				static_modifiers = { JAP_good_defence_posistion_static_modifier }
+				days = 120
 				province = {
 					id = 1055
 					id = 9974
@@ -272,6 +303,7 @@ JAP_ichi_go_3_start_script = {
 					id = 12378
 					id = 13143
 					id = 7159
+					id = 7097
 				}
 			}
 		}
@@ -282,7 +314,6 @@ JAP_ichi_go_3_start_script = {
 				province = {
 					id = 9970
 					id = 1120
-					id = 7097
 					id = 12095
 				}
 			}
@@ -368,7 +399,6 @@ JAP_ichi_go_failed_modifiers = {
 				province = {
 					id = 9970
 					id = 1120
-					id = 7097
 					id = 12095
 				}
 			}

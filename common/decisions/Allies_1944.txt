@@ -113,8 +113,8 @@ operations = {
 		
 		available = {
 			has_war_with = GER
-			date > 1944.5.6
-			date < 1945.5.15
+			date > 1944.5.1
+			date < 1945.5.10
 
 			16 = {is_fully_controlled_by = GER}
 
@@ -147,7 +147,7 @@ operations = {
 		}
 
 		modifier = {
-			naval_invasion_prep_speed = -20.0
+			naval_invasion_prep_speed = -50.0
 			#naval_speed_factor = +1.0 #only works for ships, not convoy
 		}
 
@@ -365,7 +365,7 @@ operation_cross_the_rhine= {
 				modulo_temp_variable = { days = 90 }
 				check_variable = { days < 87 }
 
-				16 = {is_fully_controlled_by = GER}
+				15 = {is_fully_controlled_by = GER}
 
 				ENG = { surrender_progress < 0.01 }
 				USA = { surrender_progress < 0.01 }
@@ -422,18 +422,18 @@ operation_cross_the_rhine= {
 				breakthrough_bonus_against = 1.6
 			}
 
-			days_remove = 14
+			days_remove = 17
 			
-			cancel_trigger = {
-				OR = {
-					NOT = { GER = { controls_province = 9478 } }
-					NOT = { GER = { controls_province = 503 } }
-					NOT = { 16 = { is_fully_controlled_by = GER } }
-					NOT = { 29 = { is_fully_controlled_by = GER } }
-					NOT = { 24 = { is_fully_controlled_by = GER } }
-					NOT = { 33 = { is_fully_controlled_by = GER } }
-				}
-			}
+			# cancel_trigger = {
+			# 	OR = {
+			# 		NOT = { GER = { controls_province = 9478 } } #loire
+			# 		NOT = { GER = { controls_province = 503 } }
+			# 		NOT = { 16 = { is_fully_controlled_by = GER } }
+			# 		NOT = { 29 = { is_fully_controlled_by = GER } }
+			# 		NOT = { 24 = { is_fully_controlled_by = GER } }
+			# 		NOT = { 33 = { is_fully_controlled_by = GER } }
+			# 	}
+			# }
 			
 			complete_effect = {
 				#set_state_province_controller = {controller = USA province = 11399} 
@@ -455,13 +455,25 @@ operation_cross_the_rhine= {
 				15 = {
 					damage_building = {
 						type = coastal_bunker
-						damage = 5
+						damage = 6
 						province = 6449 
 					}
 
 					damage_building = {
 						type = coastal_bunker
-						damage = 5
+						damage = 6
+						province = 6599 
+					}
+
+					damage_building = {
+						type = coastal_bunker
+						damage = 6
+						province = 11535 
+					}
+
+					damage_building = {
+						type = coastal_bunker
+						damage = 6
 						province = 9434 
 					}
 				}
@@ -485,7 +497,7 @@ operation_cross_the_rhine= {
 
 						FRA = {	set_province_controller = 3549 }
 						create_unit = {
-							division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.49 start_equipment_factor = 1" 
+							division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.89 start_equipment_factor = 1" 
 							owner = USA
 						}
 					}
@@ -497,7 +509,7 @@ operation_cross_the_rhine= {
 
 					FRA = {	set_province_controller = 553 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.73 start_equipment_factor = 1" 
 						owner = USA
 					}
 				}
@@ -508,7 +520,7 @@ operation_cross_the_rhine= {
 					}
 					FRA = {	set_province_controller = 11521 }
 					create_unit = {
-						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.47 start_equipment_factor = 0.76" 
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 0.67 start_equipment_factor = 0.76" 
 						owner = USA
 					}
 				}
@@ -545,7 +557,7 @@ operation_cross_the_rhine= {
 			
 			available = {
 				has_war_with = GER
-				date > 1944.8.1
+				date > 1944.7.20
 				date < 1944.10.1
 
 				NOT = { 16 = {is_fully_controlled_by = GER} }
@@ -555,7 +567,7 @@ operation_cross_the_rhine= {
 
 				21 = {is_fully_controlled_by = GER} #marseille
 				851 = {is_fully_controlled_by = GER} #toulon
-				735 = {is_fully_controlled_by = GER} #nice
+				#735 = {is_fully_controlled_by = GER} #nice
 				158 = {is_fully_controlled_by = ITA} #italy
 		}
 
@@ -575,7 +587,7 @@ operation_cross_the_rhine= {
 			}
 
 			modifier = {
-				naval_invasion_prep_speed = +10.0
+				naval_invasion_prep_speed = +20.0
 			}
 
 			days_remove = 10
@@ -585,7 +597,7 @@ operation_cross_the_rhine= {
 					16 = {is_fully_controlled_by = GER} 
 					NOT = { 21 = { is_fully_controlled_by = GER } }
 					NOT = { 851 = { is_fully_controlled_by = GER } }
-					NOT = { 735 = { is_fully_controlled_by = GER } }
+				#	NOT = { 735 = { is_fully_controlled_by = GER } }
 					NOT = { 158 = { is_fully_controlled_by = ITA } }
 				}
 			}

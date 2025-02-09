@@ -66,6 +66,10 @@ state={
 				coastal_bunker = 1
 			}
 
+			485 = {
+				coastal_bunker = 4
+			}
+
 				radar_station = 2
 				anti_air_building = 2
 			}

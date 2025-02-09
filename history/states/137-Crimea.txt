@@ -58,10 +58,18 @@ state = {
 			owner = GER
 			controller = GER
 
+			buildings = {
+				9677 = {
+					bunker = 3
+				}
+
+				3722 = {
+					bunker = 1
+				}
+			}
+
 			SOV = {
 				set_province_controller = 9680
-
-
 			}
 		}
 	}

@@ -37551,7 +37551,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.06 start_equipment_factor = 0.95 force_equipment_variants = { infantry_equipment = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.06 start_equipment_factor = 0.95 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" 
 						owner = GER
 					}
 
@@ -37581,7 +37581,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.06 start_equipment_factor = 0.95 force_equipment_variants = { infantry_equipment = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.06 start_equipment_factor = 0.95 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" 
 						owner = GER
 					}
 
@@ -37610,7 +37610,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" 
 						owner = GER
 					}
 
@@ -37620,7 +37620,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.81 force_equipment_variants = { infantry_equipment = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.0 start_equipment_factor = 0.81 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" 
 						owner = GER
 					}
 
@@ -37630,7 +37630,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.05 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment = { owner = \"FRA\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.05 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" 
 						owner = GER
 					}
 
@@ -37640,7 +37640,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" 
 						owner = GER
 					}
 				}
@@ -37654,7 +37654,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.03 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment = { owner = \"GER\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.03 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" 
 						owner = GER
 					}
 
@@ -37684,7 +37684,7 @@ focus_tree = {
 					}
 
 					create_unit = {
-						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.03 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment = { owner = \"SOV\" } }" 
+						division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0.03 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" 
 						owner = GER
 					}
 
