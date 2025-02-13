@@ -1974,6 +1974,23 @@ if = {
 		limit = {
 			has_dlc = "Gotterdammerung"
 		}
+
+		complete_special_project = {
+			project = sp:sp_air_earthshaker_bomb
+		} 
+
+		complete_special_project = {
+			project = sp:sp_air_jet_engine
+		} 
+
+		complete_special_project = {
+			project = sp:sp_naval_proximity_fuze
+		}
+
+		complete_special_project = {
+			project = sp:sp_air_bouncing_bomb
+		}
+
 			set_technology = {
 				sp_armored_motorized_military_police_tech = 1
 			}
@@ -2933,7 +2950,13 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_2
-        amount = 30000
+        amount = 40000
+		producer = USA
+    }
+
+		add_equipment_to_stockpile = {
+        type = mechanized_equipment_2
+        amount = 900
 		producer = USA
     }
 

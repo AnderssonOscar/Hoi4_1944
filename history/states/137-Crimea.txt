@@ -60,12 +60,9 @@ state = {
 
 			buildings = {
 				9677 = {
-					bunker = 3
+					bunker = 2
 				}
 
-				3722 = {
-					bunker = 1
-				}
 			}
 
 			SOV = {

@@ -9,6 +9,7 @@ ITA_demand_savoy = {
 	}
 
 	available = {
+		NOT = { is_puppet_of = GER }
 		735 = { is_fully_controlled_by = GER }
 		
 	}
@@ -46,8 +47,8 @@ ITA_demand_sudtirol = {
 	}
 
 	available = {
+		NOT = { is_puppet_of = GER }
 		39 = { is_fully_controlled_by = GER }
-		
 	}
 
 	visible = {
@@ -82,6 +83,7 @@ ITA_demand_istra = {
 	}
 
 	available = {
+		NOT = { is_puppet_of = GER }
 		736 = { is_fully_controlled_by = GER }
 		852 = { is_fully_controlled_by = GER }
 	}

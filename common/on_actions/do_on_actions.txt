@@ -332,6 +332,8 @@ GER = {
 				GER = { add_mines = { region = 202 amount = 300 } }
 
 				ENG = { add_mines = { region = 68 amount = 250 } }
+				ENG = { add_mines = { region = 18 amount = 500 } }
+				ENG = { add_mines = { region = 16 amount = 250 } }
 			}
 	
 

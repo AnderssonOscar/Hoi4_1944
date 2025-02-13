@@ -83,6 +83,7 @@ collaborationist_formation = {
 			has_war_with = SOV
 			#surrender_progress > 0.1
 			has_capitulated = no
+			is_ai = no
 		}
 
 		cost = 25
@@ -103,17 +104,17 @@ collaborationist_formation = {
 					prioritize = { 64 }
 
 					create_unit = {
-						division = "name = \"600th Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.28 start_equipment_factor = 0.98 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }" 
+						division = "name = \"600th Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.28 start_equipment_factor = 0.98 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
 						owner = GER
 					}
 
 					create_unit = {
-						division = "name = \"650th (Russian) Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.19 start_equipment_factor = 0.71 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }" 
+						division = "name = \"650th (Russian) Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.19 start_equipment_factor = 0.71 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
 						owner = GER
 					}
 
 					create_unit = {
-						division = "name = \"700th (Russian) Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.11 start_equipment_factor = 0.18 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }" 
+						division = "name = \"700th (Russian) Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.11 start_equipment_factor = 0.18 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
 						owner = GER
 					}
 				}

@@ -18554,42 +18554,42 @@ focus_tree = {
 	
 				2 = {
 					create_unit = {
-						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23  force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } }" 
 						owner = ITA
 					}
 	
 					create_unit = {
-						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23 start_equipment_factor = 0.92 force_equipment_variants = { infantry_equipment_1 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23  force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } }" 
 						owner = ITA
 					}
 	
 					create_unit = {
-						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.41 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23  force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } }" 
 						owner = ITA
 					}
 	
 					create_unit = {
-						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.41 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_3 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23  force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } }" 
 						owner = ITA
 					}
 	
 					create_unit = {
-						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.33 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23  force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } }" 
 						owner = ITA
 					}
 	
 					create_unit = {
-						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.36 start_equipment_factor = 0.95 force_equipment_variants = { infantry_equipment_3 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23  force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } }" 
 						owner = ITA
 					}
 	
 					create_unit = {
-						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.43 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_3 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23  force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } }" 
 						owner = ITA
 					}
 	
 					create_unit = {
-						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.13 start_equipment_factor = 0.91 force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+						division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23  force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } }" 
 						owner = ITA
 					}
 				}

@@ -438,6 +438,8 @@ if = {
 	set_stability = 0.17 
 	set_war_support = 0.24
 
+	add_opinion_modifier = { target = GER modifier = embargo }
+
 	add_ideas = {
 		#laws
 	#	war_economy

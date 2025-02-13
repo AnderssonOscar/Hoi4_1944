@@ -14,7 +14,7 @@ war_measures = {
 			is_faction_leader = no
 			has_capitulated = no
 			has_war_with = SOV
-			surrender_progress > 0.04
+			surrender_progress > 0.05
 			date > 1944.7.30
 			is_in_faction_with = GER
 

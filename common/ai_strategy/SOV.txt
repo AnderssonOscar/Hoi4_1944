@@ -54,7 +54,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 33 #1944 was 5
+		value = 43 #1944 was 5
 	}
 
 	ai_strategy = {
@@ -151,7 +151,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = artillery
-		value = 100
+		value = 30
 	}
 
 	ai_strategy = {
@@ -163,7 +163,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = artillery
-		value = 10
+		value = 15
 	}
 
 	ai_strategy = {
@@ -2470,6 +2470,171 @@ SOV_take_germany = {
 }
 
 
+SOV_retake_crimea = {
+	allowed = { original_tag = SOV }
+	enable = {
+
+		NOT = { has_war_with = ENG } #just in case
+		NOT = { has_war_with = USA } #just in case
+
+		NOT = { has_war_with = JAP } # dont get rekt by japan
+		has_war_with = GER
+
+		226 = { CONTROLLER = { has_war_with = GER } } #dnipro
+		137 = { CONTROLLER = { has_war_with = SOV } }
+
+		date > 1944.3.1
+		date < 1944.5.1
+	}
+
+	abort_when_not_enabled = yes
+
+     ai_strategy = {
+         type = force_concentration_target_weight
+         state = 137 #crimea
+         value = 30 # +30%
+     }
+}
+
+
+SOV_center_offensive_1944 = {
+	allowed = { original_tag = SOV }
+	enable = {
+
+		NOT = { has_war_with = ENG } #just in case
+		NOT = { has_war_with = USA } #just in case
+
+		NOT = { has_war_with = JAP } # dont get rekt by japan
+		has_war_with = GER
+
+	#	NOT = { has_global_flag = disable_offensives_1944 }
+	#	has_idea = major_offensive
+
+
+		#Sov controlls
+		#kiev
+		202 = { CONTROLLER = { has_war_with = GER } }
+
+	OR = {
+		92 = { CONTROLLER = { has_war_with = SOV } } #east of warsaw
+		88 = { CONTROLLER = { has_war_with = SOV } }
+	}
+
+		date > 1944.1.1
+		date < 1944.6.1
+	}
+
+	abort_when_not_enabled = yes
+
+    #  ai_strategy = {
+    #      type = force_concentration_factor
+    #     # id = "GER"
+    #      value = 1000
+    #  }
+ 
+
+	 ai_strategy = { #estonia
+         type = force_concentration_target_weight
+         state = 813
+		 state = 812
+		 state = 13
+		 state = 12
+		 state = 808
+		 state = 809
+         state = 191
+         value = -10 # +50%
+     }
+
+	#  ai_strategy = {
+    #      type = force_concentration_target_weight
+    #      state = 206
+    #      state = 96
+	# 	 state = 810
+	# 	 state = 95
+	# 	 state = 784
+	# 	 state = 11
+	# 	 state = 204
+    #      value = -100 # +50%
+    #  }
+
+     ai_strategy = {
+         type = force_concentration_target_weight
+         state = 91
+         state = 93
+		# state = 94
+		 state = 198
+         value = 70 # +50%
+     }
+}
+
+SOV_bagration_offensive_1944 = {
+	allowed = { original_tag = SOV }
+	enable = {
+
+		NOT = { has_war_with = ENG } #just in case
+		NOT = { has_war_with = USA } #just in case
+
+		NOT = { has_war_with = JAP } # dont get rekt by japan
+		has_war_with = GER
+
+		#NOT = { has_global_flag = disable_offensives_1944 }
+		#has_idea = major_offensive
+
+		##Germany controlls
+
+		OR = {
+			#estonia
+			812 = { CONTROLLER = { has_war_with = SOV } }
+			#riga
+			808 = { CONTROLLER = { has_war_with = SOV } }
+			#warsaw
+			10 = { CONTROLLER = { has_war_with = SOV } }
+			#kaunas
+			11 = { CONTROLLER = { has_war_with = SOV } }
+		}
+
+
+		#Sov controlls
+		#kiev
+		202 = { CONTROLLER = { has_war_with = GER } }
+		#smolensk
+		242 = { CONTROLLER = { has_war_with = GER } }
+		#novogrod
+		263 = { CONTROLLER = { has_war_with = GER } }
+
+		date > 1944.6.10
+		date < 1944.9.1
+	}
+
+	abort_when_not_enabled = yes
+
+
+	# ai_strategy = {
+	# 	type = force_concentration_front_factor
+	# 	state = 28  # Alsace-Lorraine
+	# 	ratio = 0.50     # Only if > 50 % of the front consists of Alsace-Lorraine. This should make it deactivate if the frontline extends around the maginot
+	# 	value = -100
+	# }
+
+     ai_strategy = {
+         type = force_concentration_target_weight
+         state = 808 #riga
+         value = 30 # +50%
+     }
+
+  ai_strategy = {
+         type = force_concentration_target_weight
+         state = 97 #bialystok
+         value = 20 # +50%
+     }
+
+	 ai_strategy = {
+         type = force_concentration_target_weight
+         state = 10 #warsaw
+         state = 90 #radom
+         value = 40 # +50%
+     }
+}
 
 
 SOV_dont_hurt_romania_yet = {

@@ -75,107 +75,107 @@ SOV_great_patriotic_war = {
 
 			set_temp_variable = { equipment_base_num = daysdivde }
 			
-			if = { 
-				limit = {
-					NOT = { has_global_flag = easy_mode_1944 }
-				}
+	# 		if = { 
+	# 			limit = {
+	# 				NOT = { has_global_flag = easy_mode_1944 }
+	# 			}
 
-		if = { limit = {
-			has_equipment = {
-				support_equipment < 2000
-			}
-		 }
-			set_temp_variable = { support_eq = equipment_base_num }
-			multiply_temp_variable = { support_eq = 10.9 }
-			add_equipment_to_stockpile = {
-				type = support_equipment_1
-				amount = support_eq
-			}
-		}
-
-
-		if = { limit = {
-			has_equipment = {
-				infantry_equipment < 15000
-			}
-		 }
-			set_temp_variable = { inf_eq = equipment_base_num }
-			multiply_temp_variable = { inf_eq = 221.4 }
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_1
-				amount = inf_eq
-			}
-		}
+	# 	if = { limit = {
+	# 		has_equipment = {
+	# 			support_equipment < 1000
+	# 		}
+	# 	 }
+	# 		set_temp_variable = { support_eq = equipment_base_num }
+	# 		multiply_temp_variable = { support_eq = 1.9 }
+	# 		add_equipment_to_stockpile = {
+	# 			type = support_equipment_1
+	# 			amount = support_eq
+	# 		}
+	# 	}
 
 
-		if = { limit = {
-			has_equipment = {
-				artillery_equipment < 900
-			}
-		 }
-			set_temp_variable = { artillery_eq = equipment_base_num }
-			multiply_temp_variable = { artillery_eq = 11.9 }
-			add_equipment_to_stockpile = {
-				type = artillery_equipment_2
-				amount = artillery_eq
-			}
-		}
+	# 	if = { limit = {
+	# 		has_equipment = {
+	# 			infantry_equipment < 5000
+	# 		}
+	# 	 }
+	# 		set_temp_variable = { inf_eq = equipment_base_num }
+	# 		multiply_temp_variable = { inf_eq = 121.4 }
+	# 		add_equipment_to_stockpile = {
+	# 			type = infantry_equipment_1
+	# 			amount = inf_eq
+	# 		}
+	# 	}
 
 
-		if = { limit = {
-			has_equipment = {
-				motorized_equipment_1 < 7000
-			}
-		 }
-			set_temp_variable = { motorized_eq = equipment_base_num }
-			multiply_temp_variable = { motorized_eq = 8.4 }
-			add_equipment_to_stockpile = {
-				type = motorized_equipment_1
-				amount = motorized_eq
-			}
-		}
-
-		if = { limit = {
-			has_equipment = {
-				mechanized_equipment < 350
-			}
-		 }
-			set_temp_variable = { mechanized_eq = equipment_base_num }
-			multiply_temp_variable = { mechanized_eq = 3.5 }
-			add_equipment_to_stockpile = {
-				type = mechanized_equipment_2
-				amount = mechanized_eq
-			}
-		}
+	# 	if = { limit = {
+	# 		has_equipment = {
+	# 			artillery_equipment < 900
+	# 		}
+	# 	 }
+	# 		set_temp_variable = { artillery_eq = equipment_base_num }
+	# 		multiply_temp_variable = { artillery_eq = 1.9 }
+	# 		add_equipment_to_stockpile = {
+	# 			type = artillery_equipment_2
+	# 			amount = artillery_eq
+	# 		}
+	# 	}
 
 
+	# 	if = { limit = {
+	# 		has_equipment = {
+	# 			motorized_equipment_1 < 5000
+	# 		}
+	# 	 }
+	# 		set_temp_variable = { motorized_eq = equipment_base_num }
+	# 		multiply_temp_variable = { motorized_eq = 1.4 }
+	# 		add_equipment_to_stockpile = {
+	# 			type = motorized_equipment_1
+	# 			amount = motorized_eq
+	# 		}
+	# 	}
 
-	if = { limit = {
-			has_equipment = {
-				anti_air_equipment < 750
-			}
-		 }
-			set_temp_variable = { anti_air_eq = equipment_base_num }
-			multiply_temp_variable = { anti_air_eq = 11.4 }
-			add_equipment_to_stockpile = {
-				type = anti_air_equipment_2
-				amount = anti_air_eq
-			}
-		}
+	# 	if = { limit = {
+	# 		has_equipment = {
+	# 			mechanized_equipment < 350
+	# 		}
+	# 	 }
+	# 		set_temp_variable = { mechanized_eq = equipment_base_num }
+	# 		multiply_temp_variable = { mechanized_eq = 2.5 }
+	# 		add_equipment_to_stockpile = {
+	# 			type = mechanized_equipment_2
+	# 			amount = mechanized_eq
+	# 		}
+	# 	}
 
-		if = { limit = {
-			has_equipment = {
-				anti_tank_equipment < 650 
-			}
-		 }
-			set_temp_variable = { anti_tank_eq = equipment_base_num }
-			multiply_temp_variable = { anti_tank_eq = 11.6 }
-			add_equipment_to_stockpile = {
-				type = anti_tank_equipment_2
-				amount = anti_tank_eq
-			}
-		}
-	}
+
+
+	# if = { limit = {
+	# 		has_equipment = {
+	# 			anti_air_equipment < 750
+	# 		}
+	# 	 }
+	# 		set_temp_variable = { anti_air_eq = equipment_base_num }
+	# 		multiply_temp_variable = { anti_air_eq = 5.4 }
+	# 		add_equipment_to_stockpile = {
+	# 			type = anti_air_equipment_2
+	# 			amount = anti_air_eq
+	# 		}
+	# 	}
+
+	# 	if = { limit = {
+	# 		has_equipment = {
+	# 			anti_tank_equipment < 650 
+	# 		}
+	# 	 }
+	# 		set_temp_variable = { anti_tank_eq = equipment_base_num }
+	# 		multiply_temp_variable = { anti_tank_eq = 5.6 }
+	# 		add_equipment_to_stockpile = {
+	# 			type = anti_tank_equipment_2
+	# 			amount = anti_tank_eq
+	# 		}
+	# 	}
+	# }
 
 
 		if = {
@@ -287,42 +287,42 @@ SOV_great_patriotic_war = {
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.18  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_3 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.18  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.31  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.31  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.28  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.28  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.48  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.48  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.28  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.28  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
 					owner = SOV
 				} 
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.41  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.41  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.32  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_1 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.32  force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
 				create_unit = {
-					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.34  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } } force_equipment_variants = { artillery_equipment_2 = { owner = \"SOV\" } }" 
+					division = "name = \"Strelkovaya Diviziya\" division_template = \"Infantry-Division\" start_experience_factor = 0.34  force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
 					owner = SOV
 				}
 
@@ -378,8 +378,8 @@ SOV_great_patriotic_war = {
 		
 		targeted_modifier = {
 			tag = GER
-			attack_bonus_against = 1.05
-			breakthrough_bonus_against = 1.05
+			attack_bonus_against = 1.0
+			breakthrough_bonus_against = 1.0
 		}
 
 		targeted_modifier = {
@@ -490,14 +490,14 @@ SOV_great_patriotic_war = {
 			
 			targeted_modifier = {
 				tag = ROM
-				attack_bonus_against = 1.25
-				breakthrough_bonus_against = 1.25
+				attack_bonus_against = 1.0
+				breakthrough_bonus_against = 1.0
 			}
 
 			targeted_modifier = {
 				tag = RKU #ukraine
-				attack_bonus_against = 1.25
-				breakthrough_bonus_against = 1.25
+				attack_bonus_against = 1.1
+				breakthrough_bonus_against = 1.1
 			}
 
 

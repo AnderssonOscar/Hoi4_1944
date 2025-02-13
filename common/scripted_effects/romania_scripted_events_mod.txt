@@ -1,0 +1,62 @@
+ROM_start_setup = {
+    if = {
+        limit = {
+            date > 1943.12.30
+            NOT = { has_global_flag = ROM_start_setup }
+            GER = { is_ai = yes }
+			ROM = { is_ai = yes }
+        } 
+
+    	834 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 240
+				province = {
+					id = 741
+                    id = 754
+                    id = 9576
+				}
+			}
+		}
+
+		192 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 240
+				province = {
+					id = 11670
+				}
+			}
+		}
+
+
+        766 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				days = 240
+				province = {
+					id = 6727
+                    id = 6743
+				}
+			}
+		}
+
+    	78 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				days = 240
+				province = {
+					id = 9683
+                    id = 11686
+                    id = 11705
+                    id = 6600
+                    id = 414
+				}
+			}
+		}
+
+
+
+        set_global_flag = ROM_start_setup
+    }
+}

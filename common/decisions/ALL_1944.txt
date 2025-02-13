@@ -28,7 +28,7 @@ economy_decisions = {
 
 		fire_only_once = yes
 		days_remove = 30
-		cost = 75
+		cost = 100
 
 		remove_trigger = {
 			OR = {
@@ -58,7 +58,7 @@ economy_decisions = {
 
 		remove_effect = {
 
-			set_temp_variable = { support_eq = 2.8 }
+			set_temp_variable = { support_eq = 2.6 }
 			multiply_temp_variable = { support_eq = num_of_controlled_factories }
 			add_to_temp_variable = { var = support_eq value = 98 }
 			add_equipment_to_stockpile = {
@@ -66,7 +66,7 @@ economy_decisions = {
 				amount = support_eq
 			}
 
-			set_temp_variable = { inf_eq = 29.7 }
+			set_temp_variable = { inf_eq = 26.7 }
 			multiply_temp_variable = { inf_eq = num_of_controlled_factories }
 			add_to_temp_variable = { var = inf_eq value = 2675 }
 			add_equipment_to_stockpile = {
@@ -207,7 +207,7 @@ ration_airforce_fuel = {
         }
 
 		fire_only_once = yes
-		days_remove = 14
+		days_remove = 21
 		cost = 50
 
 		remove_trigger = {
@@ -302,7 +302,7 @@ ration_airforce_fuel = {
 
 	complete_effect = {
 
-		set_temp_variable = { trucks = 7.9 }
+		set_temp_variable = { trucks = 7.1 }
 		multiply_temp_variable = { trucks = num_of_controlled_factories }
 
 		add_equipment_to_stockpile = {

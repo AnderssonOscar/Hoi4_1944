@@ -10,7 +10,7 @@ MOD_start_update = {
 	CHI_scripted_events_start_effects = yes
 	GER_start_effects = yes
 	GER_give_extra_troops_1944 = yes
-
+	ROM_start_setup = yes
 }
 
 MOD_daily_update2 = {

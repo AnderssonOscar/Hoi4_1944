@@ -155,22 +155,22 @@ GER_start_effects = { # run in update daily
 
         add_equipment_to_stockpile = {
             type = artillery_equipment_2
-            amount = 1700
+            amount = 2700
         }
 
         add_equipment_to_stockpile = {
             type = infantry_equipment_1
-            amount = 12000
+            amount = 22000
         }
 
         add_equipment_to_stockpile = {
             type = motorized_equipment_1
-            amount = 4900
+            amount = 8900
         }
 
         add_equipment_to_stockpile = {
             type = mechanized_equipment_2
-            amount = 2550
+            amount = 3550
         }
 
         add_equipment_to_stockpile = {
@@ -192,7 +192,7 @@ GER_start_effects = { # run in update daily
 
             add_equipment_to_stockpile = {
                 type = medium_tank_chassis_3
-                amount = 1450
+                amount = 1950
                 variant_name = "Panther Ausf. G"
             }
 

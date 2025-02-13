@@ -1,9 +1,9 @@
-ROM_defend_the_front = {
+ROM_defend_the_front_1944 = {
 
-	allowed = { tag = ROM }
+	allowed = { original_tag = ROM }
 
 	enable = {
-	#	is_historical_focus_on = yes
+		is_historical_focus_on = yes
 
 		has_war_with = SOV 
 		
@@ -18,7 +18,7 @@ ROM_defend_the_front = {
 			NOT = { 79 = { is_fully_controlled_by = ROM } }
 		}
 
-		date > 1944.1.1
+		date > 1943.12.31
 	}
 
 	abort_when_not_enabled = yes
@@ -42,10 +42,11 @@ ROM_defend_the_front = {
 		value = 2
 	}
 
+
 	ai_strategy = {
-	 	type = front_unit_request
-		country_trigger = { tag = SOV }
-		value = 425
+		type = front_unit_request
+		country_trigger = {tag = SOV}
+		value = 700
 	}
 
 	ai_strategy = {
@@ -64,21 +65,25 @@ ROM_defend_the_front = {
 	}
 
 	ai_strategy = {
+		type = area_priority
+		id = greater_balkans
+		value = 100
+	}
+
+	ai_strategy = {
 		type = put_unit_buffers
 		ratio = 0.05
 		states = {
 			766
 		}
-
-		subtract_invasions_from_need = no
-		subtract_fronts_from_need = no
 	}
+
 }
 
 
 ROM_dont_waste_pp = {
 
-	allowed = { tag = ROM }
+	allowed = { original_tag = ROM }
 
 	enable = {
 		is_historical_focus_on = yes
@@ -113,7 +118,7 @@ ROM_dont_waste_pp = {
 
 ROM_hold_soviet_offensive = {
 
-	allowed = { tag = ROM }
+	allowed = { original_tag = ROM }
 
 	enable = {
 		OR = {
@@ -307,8 +312,8 @@ ROM_unit_production = {
 
 	ai_strategy = { type = equipment_production_factor id = cas value = -200 }
 	ai_strategy = { type = equipment_variant_production_factor id = small_plane_airframe      value = -100 }
-	ai_strategy = { type = equipment_variant_production_factor id = medium_plane_airframe      value = -100 }
-	ai_strategy = { type = equipment_variant_production_factor id = large_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_plane_airframe      value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = large_plane_airframe      value = -250 }
 	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
 }
 

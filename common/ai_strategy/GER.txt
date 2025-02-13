@@ -1909,7 +1909,7 @@ GER_share_borders_with_ITA_against_SOV = {
 	enable = {
 		is_in_faction_with = ITA
 		going_war_with_SOV = yes
-
+		date < 1944.1.1
 		GER_should_split_SOV_front_with_ITA = yes
 	}
 	abort = {
@@ -3511,6 +3511,23 @@ GER_dont_rush_sov = { # mainly here to stop germany from helping finland to much
 	}
 }
 
+GER_dont_help_Finland = {
+	allowed = { original_tag = GER }
+
+	enable = {
+			date < 1944.6.1
+			FIN = { has_war_with = SOV}
+			GER = { has_war_with = SOV}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = FIN
+		value = 1000
+	}
+}
+
 GER_Finland_is_about_to_surrender = {
 	allowed = { original_tag = GER }
 
@@ -3640,6 +3657,12 @@ GER_defend_hol = {
 	abort_when_not_enabled = yes
 
 
+	 ai_strategy = {
+         type = force_defend_ally_borders
+         id = RKN
+         value = 15
+     }
+
 	ai_strategy = {
 		type = put_unit_buffers
 		states = {
@@ -3647,9 +3670,9 @@ GER_defend_hol = {
 			35
 			7
 		}
-		ratio = 0.11
-		subtract_invasions_from_need = no
-		subtract_fronts_from_need = no
+		ratio = 0.10
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
 	}
 }
 
@@ -3693,7 +3716,7 @@ GER_defend_homeland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
-		value = 15 #was 23
+		value = 12 #was 23
 	}
 
 	ai_strategy = {
@@ -3754,6 +3777,7 @@ GER_stop_making_rocket_artillery = {
 		 id = rocket_artillery_equipment
 		 value = -5
 	}
+	
 }
 
 
@@ -3787,6 +3811,8 @@ GER_out_of_tungsten = {
 	}
 
 
+	ai_strategy = { type = equipment_variant_production_factor id = motorized_rocket_equipment value = -1000 }
+	ai_strategy = { type = equipment_variant_production_factor id = super_heavy_artillery_equipment value = -1000 }
 	ai_strategy = { type = equipment_variant_production_factor id = artillery_equipment value = 10 }
 	ai_strategy = { type = equipment_variant_production_factor id = anti_tank_equipment value = -60 }
 
@@ -4106,7 +4132,7 @@ GER_leave_south_france = { #1944
 	}
 	enable = {
 		date > 1944.7.1
-		date < 1945.3.1
+		date < 1945.1.1
 		is_historical_focus_on = yes
 		has_war_with = ENG
 		has_war_with = FRA
@@ -4115,14 +4141,52 @@ GER_leave_south_france = { #1944
 		NOT = { 15 = {is_fully_controlled_by = GER} }
 		NOT = { 14 = {is_fully_controlled_by = GER} }
 
-		785 = { is_fully_controlled_by = GER }
-		18 = { is_fully_controlled_by = GER }
-		17 = { is_fully_controlled_by = GER }
+		# 785 = { is_fully_controlled_by = GER }
+		# 18 = { is_fully_controlled_by = GER }
+		# 17 = { is_fully_controlled_by = GER }
 		
-		735 = { CONTROLLER = { has_war_with = ROOT } }
+		OR = { #south france - nice
+			735 = { CONTROLLER = { has_war_with = GER } }
+			851 = { CONTROLLER = { has_war_with = GER } }
+			21 = { CONTROLLER = { has_war_with = GER } }
+		}
 	}
  
 	abort_when_not_enabled = yes
+
+	# ai_strategy = {
+	# 	type = area_priority
+	# 	id = vichy_mainland
+	# 	value = -1000
+	# }
+
+
+	# ai_strategy = {
+	#     type = front_unit_request
+	#     state_trigger = {
+	#         is_core_of = FRA
+	#     }
+	#     area = vichy_mainland
+	#     value = -250
+	# }
+
+	# ai_strategy = {
+	#     type = front_unit_request
+	#     state_trigger = {
+	#         is_core_of = FRA
+	#     }
+	#     area = normandy_landing_zone
+	#     value = -250
+	# }
+
+
+	# ai_strategy = {
+	# 	type = front_unit_request
+	# 	strategic_region = 20
+
+	# 	ratio = 1.0
+	# 	value = -100
+	# }
 
 	# ai_strategy = { #this just leaves the entire front
 	# 	type = front_unit_request
@@ -4469,5 +4533,36 @@ GER_only_submarines = {
 		type = role_ratio
 		id = naval_mine_layer
 		value = -250
+	}
+}
+
+
+GER_defend_italy_front = {
+
+	allowed = {
+		original_tag = GER
+	}
+
+	enable = {
+		has_war_with = USA
+		has_war_with = SOV
+
+		date > 1944.1.1
+		date < 1945.4.1
+
+		GER = { surrender_progress < 0.2 }
+
+		OR = {
+			NOT = { 161 = {is_fully_controlled_by = ITA} } #north italy
+			NOT = { 162 = {is_fully_controlled_by = ITA} } #north italy
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = ITA
+		value = 20
 	}
 }

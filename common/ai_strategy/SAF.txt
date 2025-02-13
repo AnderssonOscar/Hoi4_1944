@@ -68,9 +68,15 @@ SAF_dont_rush_yet = {
 	}
 
 	enable = {
-		date < 1944.5.30
 		has_war_with = ITA
 		has_war_with = GER
+
+		OR = {
+			date > 1945.4.1
+			date < 1944.5.30
+			NOT = { 161 = {is_fully_controlled_by = ITA} } #north italy
+			NOT = { 162 = {is_fully_controlled_by = ITA} } #north italy
+		}
 	}
 	abort_when_not_enabled = yes
 

@@ -563,10 +563,10 @@ set_variable = { SOV_red_fleet_special_forces_cap = 0 } #-> Marines
 #DEFENSE INDUSTRY NATIONAL SPIRIT VARS
 set_variable = { SOV_defense_industry_conversion_cost_civ_to_mil_factor = -0.2 }
 set_variable = { SOV_defense_industry_production_factory_max_efficiency_factor = 0.05 }
-set_variable = { SOV_defense_industry_production_factory_efficiency_gain_factor = -0.05 }
+set_variable = { SOV_defense_industry_production_factory_efficiency_gain_factor = 0.25 }
 set_variable = { SOV_defense_industry_line_change_production_efficiency_factor = -0.1 }
 
-set_variable = { SOV_defense_industry_tank_manufacturer_cost_factor = 0 } #-> Tank Designer focus
+set_variable = { SOV_defense_industry_tank_manufacturer_cost_factor = -0.1 } #-> Tank Designer focus
 set_variable = { SOV_defense_industry_land_equipment_upgrade_xp_cost = 0 } #-> Tankograd
 set_variable = { SOV_defense_industry_materiel_manufacturer_cost_factor = 0 } #-> Equipment Designers focus
 set_variable = { SOV_defense_industry_breakthrough_factor = 0 } #-> PC of Mortar Armament
@@ -2047,6 +2047,12 @@ if = {
 	add_opinion_modifier = { target = JAP modifier = large_decrease	}
 	add_opinion_modifier = { target = JAP modifier = large_decrease	}
 
+	add_opinion_modifier = { target = USA modifier = SOV_strengthened_relations_with_us }
+	add_opinion_modifier = { target = USA modifier = SOV_strengthened_relations_with_us }
+	add_opinion_modifier = { target = USA modifier = SOV_strengthened_relations_with_us }
+	add_opinion_modifier = { target = USA modifier = SOV_strengthened_relations_with_us }
+
+
 	if = {
 		limit = { has_dlc = "No Step Back" }
 		set_oob = "SOV_1944_nsb"
@@ -2065,7 +2071,7 @@ if = {
 	set_fuel = 1200000
 	add_political_power = 2989
 	add_command_power = 200
-	army_experience = 190
+	army_experience = 290
 	navy_experience = 125	
 	air_experience = 95
 
@@ -2130,6 +2136,7 @@ if = {
 		limited_exports
 		SOV_soviet_industry
 		low_war_casualties
+		SOV_the_new_soviet_army_1944
 	}
 
 	add_timed_idea = {
@@ -2970,55 +2977,55 @@ if = {
 }
 
 	add_equipment_to_stockpile = { 
-			type = infantry_equipment_1
+			type = infantry_equipment_0
 			amount = 48412
 		}
 
 	add_equipment_to_stockpile = { 
 			type = infantry_equipment_2
-			amount = 28412
+			amount = 100
 		}
 
 	add_equipment_to_stockpile = { 
 			type = anti_tank_equipment_1
-			amount = 3899
+			amount = 100
 		}
 		
 	add_equipment_to_stockpile = { 
 			type = anti_tank_equipment_2
-			amount = 1704
+			amount = 50
 		}
 
 	add_equipment_to_stockpile = { 
 			type = anti_air_equipment_2
-			amount = 2951
+			amount = 200
 		}
 
 	add_equipment_to_stockpile = { 
 			type = artillery_equipment_2
-			amount = 3640
+			amount = 50
 		}
 
 	add_equipment_to_stockpile = { 
 			type = support_equipment_1
-			amount = 3700
+			amount = 100
 		}
 	
 	add_equipment_to_stockpile = { 
 			type = train_equipment_1
-			amount = 225
+			amount = 825
 		}
 
-	add_equipment_to_stockpile = {
-			type = motorized_equipment_1
-			amount = 4326
-	}
+	# add_equipment_to_stockpile = {
+	# 		type = motorized_equipment_0
+	# 		amount = 1326
+	# }
 
 	if = {
 		limit = { has_dlc = "No Step Back" }
 		add_equipment_to_stockpile = {
 			type = light_tank_chassis_1
-			amount = 986
+			amount = 1586
 			variant_name  = "T-26TU"
 			producer = SOV
 		}

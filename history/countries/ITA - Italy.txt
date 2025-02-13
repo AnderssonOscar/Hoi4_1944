@@ -2115,7 +2115,14 @@ if = {
 		
 	}
 
-
+	IF = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+		}
+		complete_special_project = {
+			project = sp:sp_air_jet_engine
+		} 
+	}
 
 	if = {
 		limit = {

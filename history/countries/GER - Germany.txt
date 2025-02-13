@@ -906,6 +906,13 @@ set_war_support = 0.3
 		}
 	}
 
+		add_tech_bonus = {
+			name = ""
+			bonus = 1.0
+			uses = 1
+			technology = tech_field_hospital3
+		}
+
 
 	if = {
 		limit = {
@@ -2761,6 +2768,12 @@ if = {
 		#	factories = 6
 		#	exporter = SWE
 		#}
+
+	SAU = {
+		add_opinion_modifier = { target = GER modifier = embargo }
+		add_opinion_modifier = { target = GER modifier = embargo }
+	}
+
 	if = {
 		limit = {
 			has_dlc = "La Resistance"
@@ -2986,6 +2999,10 @@ if = {
 		unlock_national_focus = GER_establish_night_fighter_squadrons
 		unlock_national_focus = GER_re_establish_the_seekriegsleitung
 		complete_national_focus = GER_aerodynamic_research_institute
+	#	complete_national_focus = GER_reintegrate_luxemburg_and_alsace_lorraine
+		unlock_national_focus = GER_operation_sea_lion
+		unlock_national_focus = GER_demonstration_of_military_achievements
+		unlock_national_focus = GER_an_invincible_army
 
 	# complete_special_project = {
 	# 	project = sp:sp_rockets_improved_guidance
@@ -3027,9 +3044,9 @@ if = {
 		set_fuel = 291812
 
 
-		set_convoys = 140
-		set_stability = 0.71
-		set_war_support = 0.55
+		set_convoys = 180
+		set_stability = 0.68
+		set_war_support = 0.50
 		add_command_power = 200
 		army_experience = 165
 		navy_experience = 165	
@@ -3072,6 +3089,10 @@ if = {
 		} 
 
 		complete_special_project = {
+			project = sp:sp_air_axial_jet_engine
+		} 
+
+		complete_special_project = {
 			project = sp:sp_land_military_engineering_vehicles
 			scientist = GER_eduard_grote
 			state = 3499
@@ -3098,6 +3119,16 @@ if = {
 		complete_special_project = {
 			project = sp:sp_naval_aip_engine
 		} 
+
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				set_technology = {
+					sp_aip_engine_improved_tech = 1
+				}
+			}
+
 	}
 
 		add_breakthrough_progress = {
@@ -3199,12 +3230,12 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 10000
+		amount = 1000
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_0
-		amount = 21000
+		amount = 11000
 	}
 
 	add_equipment_to_stockpile = {
@@ -3227,13 +3258,13 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 9000
+		amount = 7000
 		producer = POL
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 14000
+		amount = 11000
 		producer = CZE
 	}
 
@@ -3284,12 +3315,12 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = mechanized_equipment_2
-        amount = 550
+        amount = 450
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 3300
+        amount = 2400
     }
 
 	add_equipment_to_stockpile = {

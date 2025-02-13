@@ -1327,6 +1327,11 @@ if = {
 		active = yes
 	}
 
+	add_opinion_modifier = { target = SOV modifier = large_increase	}
+	add_opinion_modifier = { target = SOV modifier = large_increase	}
+	add_opinion_modifier = { target = SOV modifier = large_increase	}
+	add_opinion_modifier = { target = SOV modifier = large_increase	}
+
 	set_convoys = 2800
 	if = {
 		limit = { has_dlc = "Man the Guns" }
@@ -1462,8 +1467,21 @@ if = {
 		}
 
 		complete_special_project = {
+			project = sp:sp_air_earthshaker_bomb
+		} 
+
+		complete_special_project = {
+			project = sp:sp_air_jet_engine
+		} 
+
+		complete_special_project = {
 			project = sp:sp_naval_proximity_fuze
 		}
+
+		complete_special_project = {
+			project = sp:sp_air_bouncing_bomb
+		}
+
 	}
 
 	# complete_special_project = {
@@ -2643,8 +2661,14 @@ if = {
 	}
 
 	add_equipment_to_stockpile = {
+        type = infantry_equipment_2
+        amount = 60000
+		producer = USA
+    }
+
+	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 7500
+        amount = 15500
 		producer = USA
     }
 
@@ -2653,5 +2677,30 @@ if = {
         amount = 2500
 		producer = USA
     }
+
+	add_equipment_to_stockpile = {
+        type = mechanized_equipment_2
+        amount = 4500
+    }
+
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis_2
+				amount = 3170
+				variant_name = "M3 Stuart"
+				producer = USA
+			}
+
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis_2
+				amount = 3170
+				variant_name = "M4A2"
+				producer = USA
+			}
+		}
 
 }

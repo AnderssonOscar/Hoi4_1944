@@ -151,7 +151,7 @@ USA_dont_forget_about_italy_after_dday = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = { tag = ITA }
-		value = 11
+		value = 8
 	}
 
 	ai_strategy = {
@@ -160,7 +160,7 @@ USA_dont_forget_about_italy_after_dday = {
 
 		ordertype = front
 		execute_order = yes
-		execution_type = balanced
+		execution_type = careful
 	}
 }
 
@@ -1714,16 +1714,34 @@ USA_unit_production = {
 
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = equipment_production_factor
-		id = infantry
-		value = -100
+		ai_strategy = {
+		type = equipment_variant_production_factor
+		id = infantry_equipment
+		value = 10
 	}
+
+	# ai_strategy = {
+	# 	type = equipment_production_min_factories
+	# 	id = infantry
+	# 	value = 30
+	# }
+
+	# ai_strategy = {
+	# 	type = equipment_production_factor
+	# 	id = infantry
+	# 	value = -100
+	# }
 
 	ai_strategy = {
 		type = equipment_production_factor
 		id = artillery
-		value = -100
+		value = 5
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories 
+		id = anti_air
+		value = 10
 	}
 
 	#Air unit factors
@@ -1751,6 +1769,12 @@ USA_unit_production = {
 		value = -50
 	}
 
+		ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -200
+	}
+
 	ai_strategy = {
 		type = unit_ratio
 		id = strategic_bomber
@@ -1774,7 +1798,6 @@ USA_unit_production = {
 		id = anti_tank
 		value = -25
 	}
-
 
 	ai_strategy = {
 		type = equipment_production_min_factories
@@ -1815,9 +1838,10 @@ USA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 11 #1944 was 5
+		value = 21 #1944 was 5
 	}
 
+	ai_strategy = { type = equipment_variant_production_factor id = light_tank_chassis value = -5 }
 	ai_strategy = { type = equipment_variant_production_factor id = medium_tank_chassis value = 30 }
 
 
@@ -1827,34 +1851,22 @@ USA_unit_production = {
 		value = 60
 	}
 
-	ai_strategy = {
-		type = equipment_production_factor
-		id = tactical_bomber
-		value = -200
-	}
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -500 }
+	ai_strategy = { type = equipment_variant_production_factor id = helicopter_equipment value = -500 }
 
-	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
 }
 
 
 USA_lend_lease_SOV = {
 	allowed = { original_tag = USA }
 	enable = {
-		has_war = yes
-		num_divisions > 85 # we must have some divisions ourselves
+		num_divisions > 200 # we must have some divisions ourselves
 
-		date > 1943.1.1
-		date < 1946.1.1
-		NOT = { has_government = fascism }
-		NOT = { is_in_faction_with = GER }
-		NOT = { has_war_with = SOV }
+		date > 1943.12.31
+		GER = { surrender_progress < 0.4 }
 		GER = {
 			has_war_with = SOV
 			has_war_with = USA
-			has_government = fascism
-		}
-		SOV = {
-			has_capitulated = no
 		}
 	}
 
@@ -1863,13 +1875,19 @@ USA_lend_lease_SOV = {
 	ai_strategy = {
 		type = support
 		id = "SOV"
-		value = 250
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SOV"
+		value = 1000
 	}
 
 	ai_strategy = {
 		type = send_lend_lease_desire
 		id = SOV
-		value = 500
+		value = 1000
 	}
 }
 

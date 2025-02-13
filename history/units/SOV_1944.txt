@@ -178,7 +178,7 @@ division_template = {
 		cavalry = { x = 1 y = 3 }
 		cavalry = { x = 2 y = 0 }
 		cavalry = { x = 2 y = 1 }
-		cavalry = { x = 12 y = 2 }
+		cavalry = { x = 2 y = 2 }
 		cavalry = { x = 2 y = 3 }
 	}
 	support = {
@@ -1873,7 +1873,7 @@ units = {
 
 	division= {	
 
-				location = 11454
+				location = 9543
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -1893,7 +1893,7 @@ units = {
 
 	division= {	
 
-				location = 488
+				location = 9519
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -1913,7 +1913,7 @@ units = {
 
 	division= {	
 
-				location = 3468
+				location = 6495
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -3681,7 +3681,7 @@ division= {
 
 	division= {	
 
-				location = 3494
+				location = 11454
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -3701,7 +3701,7 @@ division= {
 
 	division= {	
 
-				location = 9543
+				location = 488
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }
@@ -3720,7 +3720,7 @@ division= {
 	}	
 	division= {	
 
-				location = 9519
+				location = 3468
 				division_template = "Infantry-Division"
 				force_equipment_variants = { infantry_equipment_2 = { owner = "SOV" } }
 				force_equipment_variants = { anti_tank_equipment_2 = { owner = "SOV" } }

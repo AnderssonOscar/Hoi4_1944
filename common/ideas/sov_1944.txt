@@ -2,16 +2,16 @@ ideas = {
 	country = {
 
 
-	SOV_soviet_industry= {
+	SOV_soviet_industry = {
 		picture = SOV_stakhanovite_movement
 		modifier = {
 				production_lack_of_resource_penalty_factor = -0.25
 				production_factory_max_efficiency_factor = +0.1
 				#production_factory_efficiency_gain_factor = +0.1
 				production_speed_arms_factory_factor = +0.25
-
+				#production_factory_efficiency_gain_factor = 0.1
 				#tank_manufacturer_cost_factor = -0.25
-				supply_consumption_factor = -0.1
+				#supply_consumption_factor = -0.1
 			}
 
 			equipment_bonus = {
@@ -88,6 +88,15 @@ ideas = {
 				army_speed_factor = -0.25
 				dig_in_speed_factor = -0.5
 				ground_attack_factor = -0.5
+			}
+		}
+
+
+	SOV_the_new_soviet_army_1944 = {
+		picture = SOV_politicized_military_ccp_sov_compatibility
+		modifier = {
+				training_time_factor = -0.3
+				supply_consumption_factor = -0.1
 			}
 		}
 	}

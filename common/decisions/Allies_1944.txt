@@ -14,7 +14,7 @@ operations = {
 			NOT = {has_war_with = USA}
 			127 = {is_fully_controlled_by = ENG} #england
 
-			GER = { surrender_progress < 0.02 }
+			#GER = { surrender_progress < 0.02 }
 			OR = {
 				NOT = { 15 = {is_fully_controlled_by = GER} }
 				NOT = { 14 = {is_fully_controlled_by = GER} }
@@ -33,7 +33,7 @@ operations = {
 		}
 
 		fire_only_once = yes
-		days_re_enable = 87 
+		#days_re_enable = 87 
 		cost = 0
 
 		ai_will_do = {
@@ -44,27 +44,27 @@ operations = {
 			#news_event = { id = mod.news.1 } # D-DAY dday 1944
 			GER = { 
 			15 = {
-				set_resistance = 52
+				set_resistance = 61
 			#	set_compliance = 47
 
 				damage_building = {
 					type = coastal_bunker
-					damage = 2
+					damage = 4
 				}
 			}
 
 			14 = {
-				set_resistance = 54
+				set_resistance = 59
 				#set_compliance = 44
 			}
 
 			30 = {
-				set_resistance = 51
+				set_resistance = 56
 				#set_compliance = 41
 			}
 
 			16 = {
-				set_resistance = 41
+				set_resistance = 47
 			}
 
 
@@ -74,13 +74,13 @@ operations = {
 						state = 15
 						state = 16
 						state = 24
-						state = 785
+						#state = 785
 						state = 29
 					}
 				}
 				damage_building = {
 					type = supply_node
-					damage = 0.21
+					damage = 0.31
 				}
 
 				damage_building = {
@@ -90,7 +90,7 @@ operations = {
 				
 				damage_building = {
 					type = rail_way
-					damage = 1
+					damage = 2
 				}
 
 			}
@@ -134,7 +134,11 @@ operations = {
 		fire_only_once = yes
 
 		ai_will_do = {
-			factor = 250
+			base = 100
+			modifier = {
+				date > 1944.5.1
+				add = 100
+			}
 		}
 		
 		visible = {
@@ -152,7 +156,7 @@ operations = {
 		}
 
 
-		days_remove = 30
+		days_remove = 28
 		
 		
 		complete_effect = {
@@ -358,7 +362,7 @@ operation_cross_the_rhine= {
 			
 			available = {
 				has_war_with = GER
-				date > 1944.5.28
+				date > 1944.5.26
 				date < 1944.12.1
 
 				set_temp_variable = { days = global.num_days }
@@ -386,9 +390,13 @@ operation_cross_the_rhine= {
 		 	days_re_enable = 80
 			fire_only_once = no
 
-			ai_will_do = {
-				factor = 250
+		ai_will_do = {
+			base = 100
+			modifier = {
+				date > 1944.5.1
+				add = 100
 			}
+		}
 			
 			visible = {
 				OR = {
@@ -422,7 +430,7 @@ operation_cross_the_rhine= {
 				breakthrough_bonus_against = 1.6
 			}
 
-			days_remove = 17
+			days_remove = 18
 			
 			# cancel_trigger = {
 			# 	OR = {

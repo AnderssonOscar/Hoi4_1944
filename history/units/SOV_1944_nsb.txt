@@ -1,4 +1,4 @@
-﻿##### Division Templates #####
+﻿##### Division Templates ##### #nsb
 
 division_template = {
 	name = "Infantry-Division"			# Rifle Division
