@@ -49,6 +49,13 @@ state={
 				set_province_controller = 6174
 				set_province_controller = 79
 			}
+			buildings = {
+				anti_air_building = 5
+
+			3151 = {
+				bunker = 4
+			}
+			}
 		}
 	}
 

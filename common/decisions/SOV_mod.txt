@@ -490,8 +490,8 @@ SOV_great_patriotic_war = {
 			
 			targeted_modifier = {
 				tag = ROM
-				attack_bonus_against = 1.0
-				breakthrough_bonus_against = 1.0
+				attack_bonus_against = 1.1
+				breakthrough_bonus_against = 1.1
 			}
 
 			targeted_modifier = {

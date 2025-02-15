@@ -1511,6 +1511,7 @@ ENG_Defends_Mediterranean = {
 
 	enable = {
 		always = yes
+		date < 1944.5.1
 	}
 	abort_when_not_enabled = yes
 

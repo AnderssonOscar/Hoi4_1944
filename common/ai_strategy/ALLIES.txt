@@ -219,7 +219,7 @@
      ai_strategy = {
          type = area_priority
          id = normandy_landing_zone
-         value = 500
+         value = 100
      }
 
      ai_strategy = {
@@ -231,25 +231,25 @@
      ai_strategy = {
          type = invasion_unit_request
          country_trigger = { tag = JAP }
-         value = 10
+         value = 15
      }
 
      ai_strategy = {
          type = invasion_unit_request
          state = 15
-         value = 65
+         value = 50
      }
 
      ai_strategy = {
          type = invasion_unit_request
          state = 29
-         value = 50
+         value = 35
      }
 
      ai_strategy = {
          type = invasion_unit_request
          state = 14
-         value = 50
+         value = 35
      }
 
      ai_strategy = {
@@ -484,7 +484,7 @@
      ai_strategy = {
          type = area_priority
          id = europe
-         value = 150
+         value = 100
      }
 
 
@@ -585,7 +585,7 @@
          state = 7
          state = 36
 
-         value = -50
+         value = -25
      }
 
      ai_strategy = {
@@ -884,18 +884,6 @@
 
      ai_strategy = {
          type = invasion_unit_request
-         state = 851
-         value = 10
-     }
-
-     ai_strategy = {
-         type = invasion_unit_request
-         state = 735
-         value = 10
-     }
-
-     ai_strategy = {
-         type = invasion_unit_request
          state = 977
          value = -1000
      }
@@ -1079,7 +1067,7 @@
      }
 
      enable = {
-         date > 1944.6.7
+         date > 1944.6.25
          has_war_with = GER
 
          NOT = {
@@ -1141,7 +1129,7 @@
          state = 31
          state = 806
 
-         value = 35 # +35%
+         value = 25 # +35%
      }
 
      # ai_strategy = {
@@ -1632,41 +1620,41 @@
          value = -25
      }
 
-     ai_strategy = {
-         type = invade
-         id = "JAP"
-         value = 0
-     }
+    #  ai_strategy = {
+    #      type = invade
+    #      id = "JAP"
+    #      value = 0
+    #  }
 
-     ai_strategy = {
-         type = naval_avoid_region
-         id = 90
-         value = 600
-     }
+    #  ai_strategy = {
+    #      type = naval_avoid_region
+    #      id = 90
+    #      value = 600
+    #  }
 
-     ai_strategy = {
-         type = naval_avoid_region
-         id = 76
-         value = 600
-     }
+    #  ai_strategy = {
+    #      type = naval_avoid_region
+    #      id = 76
+    #      value = 600
+    #  }
 
-     ai_strategy = {
-         type = naval_avoid_region
-         id = 79
-         value = 600
-     }
+    #  ai_strategy = {
+    #      type = naval_avoid_region
+    #      id = 79
+    #      value = 600
+    #  }
 
-     ai_strategy = {
-         type = naval_avoid_region
-         id = 77
-         value = 600
-     }
+    #  ai_strategy = {
+    #      type = naval_avoid_region
+    #      id = 77
+    #      value = 600
+    #  }
 
-     ai_strategy = {
-         type = naval_avoid_region
-         id = 87
-         value = 600
-     }
+    #  ai_strategy = {
+    #      type = naval_avoid_region
+    #      id = 87
+    #      value = 600
+    #  }
  }
 
 
@@ -1713,7 +1701,7 @@
      ai_strategy = {
          type = invade
          id = "JAP"
-         value = 10
+         value = 15
      }
 
      ai_strategy = {
@@ -2282,8 +2270,38 @@
 
 
 
+ ALLIES_DONT_ENG_invade_south_france = { #dragoon
+     allowed = {
+         tag = ENG
+     }
 
+     enable = {
+         is_in_faction_with = ENG
+         has_war_with = GER
+         date > 1944.1.1 
+         date < 1945.1.1
+     }
+     
+     abort_when_not_enabled = yes
 
+     ai_strategy = {
+         type = invasion_unit_request
+         state = 851
+         value = -100
+     }
+
+     ai_strategy = {
+         type = invasion_unit_request
+         state = 735
+         value = -100
+     }
+
+     ai_strategy = {
+         type = invasion_unit_request
+         state = 21
+         value = -100
+     }
+ }
 
  ALLIES_invade_south_france = { #dragoon
 
@@ -2294,7 +2312,7 @@
      enable = {
          is_in_faction_with = ENG
          has_war_with = GER
-         date > 1944.5.20
+         date > 1944.6.20 # allies_landed_in_france_abort_invasion
          date < 1944.10.1
          OR = {
              NOT = { 15 = { is_fully_controlled_by = GER } }
@@ -2320,8 +2338,8 @@
 
      ai_strategy = {
          type = invasion_unit_request
-         state = 99
-         value = -1000
+         state = 735
+         value = 8
      }
 
      ai_strategy = {
@@ -2330,4 +2348,9 @@
          value = 7
      }
 
+     ai_strategy = {
+         type = invasion_unit_request
+         state = 99
+         value = -1000
+     }
  }

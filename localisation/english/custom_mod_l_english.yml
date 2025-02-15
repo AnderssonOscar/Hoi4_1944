@@ -115,6 +115,8 @@ mod_switched_side:0 "Disorganized forces"
 
 dont_surrender_mod:0 "No surrender!"
 
+naval_forces_supplies:0 "Well supplied navy"
+
 HUN_upgrade_army_equipment:0 "Refit Our Forces"
 HUN_upgrade_army_equipment_desc:0 "Our army is in need of new equipment"
 HUN_upgrade_army_equipment_tooltip:0 ""

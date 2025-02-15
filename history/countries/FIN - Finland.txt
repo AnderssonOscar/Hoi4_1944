@@ -894,6 +894,13 @@ if = {
 		FIN_lotta_svard
 	}
 
+		add_tech_bonus = {
+			name = ""
+			bonus = 1.0
+			uses = 1
+			technology = tech_field_hospital3
+		}
+
 	set_technology = {
 
 		#electronics

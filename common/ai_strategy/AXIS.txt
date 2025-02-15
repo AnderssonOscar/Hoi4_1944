@@ -35,23 +35,23 @@ scandy_is_not_for_you = {
 		value = -1000
 	}
 
-	ai_strategy = { 
-		type = front_unit_request
-		country_trigger = { always = yes }
-		area = scandinavia
-		value = -1000
+	# ai_strategy = { 
+	# 	type = front_unit_request
+	# 	country_trigger = { always = yes }
+	# 	area = scandinavia
+	# 	value = -1000
+	# }
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = RKG
+		value = 100
 	}
 
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = FIN
-		value = 1000
-	}
-
-	ai_strategy = {
-		type = force_defend_ally_borders
-		id = FIN
-		value = -1000
+		value = 100
 	}
 }
 
@@ -99,10 +99,19 @@ Axis_dont_forget_about_italy = {
 Axis_allies_dont_help_italy = {
 
 	allowed = {
-		is_in_faction_with = ITA
-		has_war_with = USA
-		NOT = {tag = GER}
-		NOT = {tag = ITA}
+		OR = {
+			original_tag = FIN
+			original_tag = ROM
+			original_tag = HUN
+			original_tag = CRO
+			original_tag = SLO
+			original_tag = SER
+			original_tag = BUL
+			original_tag = GRE
+			tag = RKO
+			tag = RKN
+			tag = RKG
+		}
 	}
 
 	enable = {
@@ -114,7 +123,7 @@ Axis_allies_dont_help_italy = {
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "ITA"
-		value = 500
+		value = 100
 	}
 }
 

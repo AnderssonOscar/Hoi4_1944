@@ -1337,6 +1337,30 @@ USA_raid_japan_convoy = {
 	}
 
 	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 43 # ireland
+		value = -200
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 18 # channel
+		value = -200
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 16 # east england
+		value = -200
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 42 # biscay
+		value = -200
+	}
+
+	ai_strategy = {
 		type = naval_avoid_region
 		id = 76
 		value = -600
@@ -1373,7 +1397,7 @@ USA_go_time = {
 	enable = {
 		has_war_with = JAP
 		OR = {
-			date > 1944.12.1 #1944 was 1943.6.6
+			date > 1944.11.1 #1944 was 1943.6.6
 			AND = {
 				NOT = { 16 = {is_fully_controlled_by = GER} }
 				has_war_with = GER
@@ -1385,7 +1409,7 @@ USA_go_time = {
 	ai_strategy = {
 		type = invade
 		id = "JAP"
-		value = 2
+		value = 6
 	}
 
 	## related to navies
@@ -1418,7 +1442,7 @@ USA_go_time = {
 	ai_strategy = {
 		type = naval_mission_threshold
 		id = "MISSION_CONVOY_ESCORT"
-		value = 150 #puts our threshold at 250
+		value = 100 #puts our threshold at 250
 	}
 
 

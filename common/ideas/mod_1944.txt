@@ -111,5 +111,13 @@ ideas = {
 			}
 		}
 
+
+	naval_forces_supplies = {
+		picture = MTG_naval_treaty_adherent
+		modifier = {
+				navy_max_range_factor = +0.25
+			}
+		}
+
 	}
 }

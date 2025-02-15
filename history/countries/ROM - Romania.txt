@@ -442,7 +442,7 @@ if = {
 
 	set_cosmetic_tag = ROM_fascism_1944
 
-	army_experience = 155 #245
+	army_experience = 135 #245
 	navy_experience = 25	
 	air_experience = 175
 
@@ -459,9 +459,9 @@ if = {
 	add_political_power = 2189
 	add_command_power = 200
 
-	set_convoys = 46
+	set_convoys = 66
 	set_stability = 0.88 
-	set_war_support = 0.53
+	set_war_support = 0.51
 	add_manpower = 154500
 	set_fuel_ratio = 1.0
 
@@ -1041,7 +1041,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
-        amount = 4950
+        amount = 2150
     }
 
 	add_equipment_to_stockpile = {
@@ -1062,18 +1062,18 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_3
-        amount = 1600
+        amount = 600
 		producer = GER
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 221
+        amount = 121
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 370
+        amount = 270
 		producer = GER
     }
 

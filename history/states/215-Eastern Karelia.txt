@@ -18,6 +18,13 @@ state={
 		1943.1.1 = {
 			controller = FIN
 			owner = SOV
+
+			buildings = {
+				3189 = {
+					bunker = 2
+				}
+			}
+
 			FIN = {
 				set_province_controller = 155
 				set_province_controller = 157

@@ -3046,7 +3046,7 @@ if = {
 
 		set_convoys = 180
 		set_stability = 0.68
-		set_war_support = 0.50
+		set_war_support = 0.47
 		add_command_power = 200
 		army_experience = 165
 		navy_experience = 165	

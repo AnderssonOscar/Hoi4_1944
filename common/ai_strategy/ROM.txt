@@ -1,3 +1,99 @@
+ROM_unit_buffer_capital= { 
+	allowed = {
+		original_tag = ROM
+	}
+	enable = { 
+			has_war = yes
+			date > 1943.12.31
+			#surrender_progress > 0.11
+			is_historical_focus_on = yes
+
+			OR = {
+				has_war_with = SOV
+				has_war_with = GER
+			}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.2
+		states = {
+			46
+			971
+		}
+
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+	}
+}
+
+ROM_hold_crimea_1944 = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		GER = { controls_province = 3686 }
+		surrender_progress < 0.15
+
+		date < 1945.1.1
+		date > 1943.12.31
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.15
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+		states = {
+			137
+		}
+	}
+}
+
+ROM_dont_trust_hungary_1944 = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		surrender_progress < 0.1
+		date > 1943.12.31
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.15
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+		states = {
+			83
+			82
+			84
+		}
+	}
+}
+
 ROM_defend_the_front_1944 = {
 
 	allowed = { original_tag = ROM }
@@ -11,42 +107,47 @@ ROM_defend_the_front_1944 = {
 		NOT = { has_war_with = GER }
 		is_in_faction_with = GER
 
+		#kursk
+		220 = { is_fully_controlled_by = SOV } 
+		221 = { is_fully_controlled_by = SOV } 
 
 		OR = {
 			NOT = { 78 = { is_fully_controlled_by = ROM } }
 			NOT = { 766 = { is_fully_controlled_by = ROM } }
 			NOT = { 79 = { is_fully_controlled_by = ROM } }
+
+			NOT = { 192 = { is_fully_controlled_by = ROM } }
+			NOT = { 834 = { is_fully_controlled_by = ROM } }
 		}
 
+		date < 1944.10.1
 		date > 1943.12.31
 	}
 
 	abort_when_not_enabled = yes
 
+		ai_strategy = {
+			type = dont_defend_ally_borders
+			id = "GER"
+			value = 30
+		}
 
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "GER"
-		value = 30
-	}
+		ai_strategy = {
+			type = dont_defend_ally_borders
+			id = "SLO"
+			value = 5
+		}
 
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "SLO"
-		value = 5
-	}
-
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "HUN"
-		value = 2
-	}
-
+		ai_strategy = {
+			type = dont_defend_ally_borders
+			id = "HUN"
+			value = 2
+		}
 
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = {tag = SOV}
-		value = 700
+		value = 20
 	}
 
 	ai_strategy = {
@@ -54,14 +155,19 @@ ROM_defend_the_front_1944 = {
 		id = 26 
 		value = 30000 #value of stocked main front in active combat is usually around 35,000
 	}
-	ai_strategy = {
-		type = garrison
-		value = -500
-	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	value = 0
+	# }
+
+	# ai_strategy = {
+	# 	type = garrison_reinforcement_priority
+	# 	value = -100
+	# }
 
 	ai_strategy = {
-		type = garrison_reinforcement_priority #supression
-		value = -100
+		type = ignore_army_incompetence
+		value = 100
 	}
 
 	ai_strategy = {
@@ -77,7 +183,27 @@ ROM_defend_the_front_1944 = {
 			766
 		}
 	}
+}
 
+ROM_italy_front_bad = { 
+	allowed = {
+		original_tag = ROM
+	}
+	enable = { 
+			has_war = yes
+			date > 1944.1.1
+			#surrender_progress > 0.11
+			is_historical_focus_on = yes
+			is_in_faction_with = ITA
+	}
+
+	abort_when_not_enabled = yes
+
+		ai_strategy = {
+			type = dont_defend_ally_borders
+			id = "ITA"
+			value = 10
+		}
 }
 
 
@@ -191,39 +317,6 @@ ROM_attack_after_soviet_offensive = {
 
 
 
-
-ROM_unit_buffer_capital= { 
-	allowed = {
-		original_tag = ROM
-	}
-	enable = { 
-			has_war = yes
-			date > 1944.1.1
-			surrender_progress > 0.16
-			is_historical_focus_on = yes
-
-			OR = {
-				has_war_with = SOV
-				has_war_with = GER
-			}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = put_unit_buffers
-
-		ratio = 0.1
-
-		states = {
-			46
-		}
-
-		subtract_invasions_from_need = no
-		subtract_fronts_from_need = yes
-	}
-}
-
 ROM_unit_production = {
 
 	allowed = {	original_tag = ROM }
@@ -238,6 +331,19 @@ ROM_unit_production = {
 		date < 1945.3.1
 	}
 	abort_when_not_enabled = yes
+
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 40 
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = -10
+	}
 
 	#Air unit factors
 	ai_strategy = {

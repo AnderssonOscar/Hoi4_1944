@@ -775,6 +775,12 @@ FRA_focus_europe = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = -100
+	}
+
+	ai_strategy = {
 		type = area_priority
 		id = europe
 		value = 100
@@ -853,228 +859,311 @@ FRA_help_in_italy = {
 }
 
 
-FRA_stop_invasions = {
+# FRA_stop_invasions = { #moved to allies and usa does it now
 
-	allowed = { 
-		tag = FRA
-		}
+# 	allowed = { 
+# 		tag = FRA
+# 		}
 	
-	enable = {
+# 	enable = {
+# 		is_in_faction_with = ENG
+# 		has_war_with = GER
+
+# 		#south france
+# 		OR = {
+# 			date > 1944.10.1
+# 			date < 1944.6.1
+# 			AND = {
+# 				NOT = { 851 = { is_fully_controlled_by = GER } }
+# 				NOT = { 21 = { is_fully_controlled_by = GER } }
+# 			}
+# 		}
+# 	}
+
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = {
+# 		type = invade
+# 		id = "GER"
+# 		value = -1000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request  
+# 		country_trigger = { tag = GER }
+# 		value = -500
+# 	}
+# }
+
+
+# FRA_invade_south_france = { #dragoon
+
+# 	allowed = { 
+# 		tag = FRA
+# 	}
+	
+# 	enable = {
+# 		is_in_faction_with = ENG
+# 		has_war_with = GER
+# 		date > 1944.5.20
+# 		date < 1944.10.1
+# 		OR = {
+# 			NOT = { 15 = { is_fully_controlled_by = GER } }
+# 			NOT = { 6 = { is_fully_controlled_by = GER } }
+# 			NOT = { 14 = { is_fully_controlled_by = GER } }
+# 		}
+# 		851 = { is_fully_controlled_by = GER }
+# 		21 = { is_fully_controlled_by = GER }
+# 	}
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = {
+# 		type = invade
+# 		id = "GER"
+# 		value = 1000
+# 	}
+
+# 		ai_strategy = {
+# 		type = front_control
+# 		country_trigger = {
+# 			tag = GER
+# 		}
+
+# 		ordertype = front
+# 		execute_order = yes
+# 		execution_type = rush
+# 	}
+
+# 	ai_strategy = {
+# 		type = strike_force_home_base
+# 		id = 68
+# 	}
+
+# 	ai_strategy = {
+# 	    type = naval_invasion_supremacy_weight
+# 	    id = 18
+# 	    value = 200
+# 	}
+
+# 	ai_strategy = {
+# 		type = naval_invasion_focus
+# 		value = 1000
+# 	}
+
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = normandy_landing_zone
+# 		value = 500
+# 	}
+
+# 	ai_strategy = {
+# 		type = front_unit_request
+# 		country_trigger = {tag = GER}
+# 		value = -10
+# 	}
+
+# 	ai_strategy = {
+# 		type = front_unit_request
+# 		country_trigger = {tag = ITA}
+# 		value = -10
+# 	}
+
+# 	ai_strategy = {
+# 		type = front_unit_request
+# 		country_trigger = {tag = JAP}
+# 		value = -100
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request  
+# 		country_trigger = { tag = GER }
+# 		value = 80
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 851
+# 		value = 100
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 21
+# 		value = 100
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 735
+# 		value = 100
+# 	}
+
+# 	###NOT THESE!
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 6
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 736
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 852
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 19
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 14
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 15
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 23
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 29
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 56
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 99
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 735
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 99
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 59
+# 		value = -10000
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		state = 56
+# 		value = -10000
+# 	}
+# }
+
+ FRA_prepare_in_UK = { #stack troops here until we land in germany
+     allowed = {
+		original_tag = FRA
+     }
+
+     enable = {
+		date > 1944.3.1
 		is_in_faction_with = ENG
 		has_war_with = GER
+		ENG = { surrender_progress < 0.05 }
 
-		#south france
-		OR = {
-			date > 1944.10.1
-			date < 1944.6.1
-			AND = {
-				NOT = { 851 = { is_fully_controlled_by = GER } }
-				NOT = { 21 = { is_fully_controlled_by = GER } }
-			}
+		GER = {
+			16 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+			15 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+			29 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+			6 =  {state_is_fully_controlled_by_ROOT_or_subject = yes}
+			14 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
+			34 = {state_is_fully_controlled_by_ROOT_or_subject = yes}
 		}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = invade
-		id = "GER"
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request  
-		country_trigger = { tag = GER }
-		value = -500
-	}
-}
+    }
 
 
-FRA_invade_south_france = { #dragoon
+     abort_when_not_enabled = yes
 
-	allowed = { 
-		tag = FRA
-	}
-	
-	enable = {
-		is_in_faction_with = ENG
-		has_war_with = GER
-		date > 1944.5.20
-		date < 1944.10.1
-		OR = {
-			NOT = { 15 = { is_fully_controlled_by = GER } }
-			NOT = { 6 = { is_fully_controlled_by = GER } }
-			NOT = { 14 = { is_fully_controlled_by = GER } }
-		}
-		851 = { is_fully_controlled_by = GER }
-		21 = { is_fully_controlled_by = GER }
-	}
-	abort_when_not_enabled = yes
+     ai_strategy = {
+         type = area_priority
+         id = uk
+         value = 100
+     }
+
+	 ai_strategy = {
+         type = dont_defend_ally_borders
+         id = "ENG"
+         value = 100
+     }
 
 	ai_strategy = {
-		type = invade
-		id = "GER"
-		value = 1000
-	}
+         type = front_unit_request
+         country_trigger = { tag = JAP }
+         value = -100
+     }
 
-		ai_strategy = {
-		type = front_control
-		country_trigger = {
-			tag = GER
-		}
+	 ai_strategy = {
+         type = dont_defend_ally_borders
+         id = "RAJ"
+         value = 100
+     }
 
-		ordertype = front
-		execute_order = yes
-		execution_type = rush
+	ai_strategy = {
+		type = theatre_distribution_demand_increase
+		id = 127
+		value = 50
 	}
 
 	ai_strategy = {
-		type = strike_force_home_base
-		id = 68
+		type = theatre_distribution_demand_increase
+		id = 123
+		value = 50
 	}
 
 	ai_strategy = {
-	    type = naval_invasion_supremacy_weight
-	    id = 18
-	    value = 200
+		type = garrison
+		value = 50
 	}
 
-	ai_strategy = {
-		type = naval_invasion_focus
-		value = 1000
-	}
+     ai_strategy = {
+         type = put_unit_buffers
+		area = uk
+         #order_id = 1
+         # south england
+         states = {
+             125
+             126
+             127
+             123
+             122
+         }
+         ratio = 1.0
 
-	ai_strategy = {
-		type = area_priority
-		id = normandy_landing_zone
-		value = 500
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		country_trigger = {tag = GER}
-		value = -10
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		country_trigger = {tag = ITA}
-		value = -10
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		country_trigger = {tag = JAP}
-		value = -100
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request  
-		country_trigger = { tag = GER }
-		value = 80
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 851
-		value = 100
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 21
-		value = 100
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 735
-		value = 100
-	}
-
-	###NOT THESE!
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 6
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 736
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 852
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 19
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 14
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 15
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 23
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 29
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 56
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 99
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 735
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 99
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 59
-		value = -10000
-	}
-
-	ai_strategy = {
-		type = invasion_unit_request
-		state = 56
-		value = -10000
-	}
-}
-
+         subtract_invasions_from_need = yes
+         subtract_fronts_from_need = yes
+     }
+ }

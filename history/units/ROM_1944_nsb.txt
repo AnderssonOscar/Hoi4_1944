@@ -423,9 +423,9 @@ units = {
 		force_equipment_variants = { infantry_equipment_1 = { owner = "CZE" } }
 		force_equipment_variants = { artillery_equipment_1 = { owner = "CZE" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "ROM" } }
-		start_experience_factor = 0.21
+		start_experience_factor = 0.86
 		start_equipment_factor = 0.86
-		start_manpower_factor = 1.0
+		start_manpower_factor = 0.66
 	}
 
 	division = {
@@ -434,9 +434,9 @@ units = {
 		force_equipment_variants = { infantry_equipment_1 = { owner = "CZE" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "ROM" } }
 		force_equipment_variants = { anti_tank_equipment_2 = { owner = "ROM" } }
-		start_experience_factor = 0.21
+		start_experience_factor = 0.41
 		start_equipment_factor = 0.86
-		start_manpower_factor = 1.0
+		start_manpower_factor = 0.61
 	}
 
 	division = {
@@ -445,9 +445,9 @@ units = {
 		force_equipment_variants = { infantry_equipment_1 = { owner = "CZE" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "ROM" } }
 		force_equipment_variants = { anti_tank_equipment_1 = { owner = "ITA" } }
-		start_experience_factor = 0.21
+		start_experience_factor = 0.31
 		start_equipment_factor = 0.66
-		start_manpower_factor = 1.0
+		start_manpower_factor = 0.76
 	}
 
 	division = {
@@ -456,9 +456,9 @@ units = {
 		force_equipment_variants = { infantry_equipment_1 = { owner = "CZE" } }
 		force_equipment_variants = { artillery_equipment_2 = { owner = "ROM" } }
 		force_equipment_variants = { anti_tank_equipment_1 = { owner = "ITA" } }
-		start_experience_factor = 0.21
+		start_experience_factor = 0.25
 		start_equipment_factor = 0.86
-		start_manpower_factor = 1.0
+		start_manpower_factor = 0.61
 	}
 
 	division = {

@@ -151,7 +151,7 @@ every_state = {
 set_variable = { ITA_new_industrialization_program_factories_required = 100 }
 
 #VALLO ALPINO ORIENTALE
-set_variable = { ITA_vallo_alpino_days = 180 }
+set_variable = { ITA_vallo_alpino_days = 90 }
 set_variable = { ITA_vallo_alpino_cp_cost = 25 }
 set_variable = { ITA_vallo_alpino_pp_cost = 15 }
 set_variable = { ITA_vallo_alpino_cp_cost_negative = -25 }
@@ -1800,6 +1800,8 @@ if = {
 		ITA_battaglia_per_la_terra
 
 		ITA_pact_of_steel
+		vittorio_emanuele
+		vittorio_emanuele_albania_ethiopia
 		#ITA_battaglia_per_le_nascite
 	}
 

@@ -49,8 +49,25 @@ SOV_start_effects = {
 						   variant_name = "IS-2"
 						   producer = SOV
 					   }
+
+						if = {
+						limit = { has_dlc = "No Step Back" }
+						add_equipment_to_stockpile = {
+							type = light_tank_chassis_1
+							amount = 1000
+							variant_name  = "T-26TU"
+							producer = SOV
+						}
+					}
 	   
 				   else = {
+
+						   
+					   add_equipment_to_stockpile = {
+						   type = light_tank_equipment_1
+						   amount = 1000
+						   producer = SOV
+					   }
 	   
 					   add_equipment_to_stockpile = {
 						   type = medium_tank_equipment_2

@@ -1431,6 +1431,7 @@ if = {
 		export_focus
 		war_economy
 		newport_news_shipbuilding
+		naval_forces_supplies
 	}
 
 
@@ -1441,7 +1442,16 @@ if = {
 
 	remove_ideas = {
 		great_depression
-		MTG_naval_treaty_adherent
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		remove_ideas = {
+			MTG_naval_treaty_adherent
+			MTG_naval_treaty_adherent_reduced
+		}
 	}
 
 	complete_special_project = {

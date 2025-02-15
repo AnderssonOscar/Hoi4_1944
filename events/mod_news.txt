@@ -17,7 +17,7 @@ news_event = {
 
 	trigger = {  #trigger dont want to work
 		NOT = { has_global_flag = dday_news }
-			date > 1944.5.1
+			date > 1944.6.1
 				OR = {
 					NOT = { 15 = { is_fully_controlled_by = GER } }
 					NOT = { 29 = { is_fully_controlled_by = GER } }

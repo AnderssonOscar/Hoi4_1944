@@ -1935,7 +1935,7 @@ if = {
 
 	add_political_power = 1550
 	add_command_power = 100
-	set_convoys = 2590
+	set_convoys = 3590
 	add_manpower = 700000
 	set_stability = 0.8
 	set_fuel_ratio = 0.9
@@ -2950,11 +2950,31 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_2
-        amount = 40000
+        amount = 70000
 		producer = USA
     }
 
-		add_equipment_to_stockpile = {
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 1910
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_2
+        amount = 780
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_air_equipment_1
+        amount = 840
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_tank_equipment_2
+        amount = 930
+    }
+
+	add_equipment_to_stockpile = {
         type = mechanized_equipment_2
         amount = 900
 		producer = USA

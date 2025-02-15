@@ -464,9 +464,9 @@ country_event = {
 
 			transfer_units_fraction = {
 				target = SOV
-				size = 0.25
-				stockpile_ratio = 0.0
-				army_ratio = 0.25
+				size = 0.5
+				stockpile_ratio = 0.25
+				army_ratio = 0.5
 				navy_ratio = 1.0
 				air_ratio = 0.75
 		}
