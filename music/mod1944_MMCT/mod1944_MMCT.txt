@@ -27,9 +27,10 @@ music = {
 	factor = 1
     modifier = {
 		 factor = 20 
-		 date > 1944.5.25
-		 date < 1944.6.22
-		 has_war = yes
+		 date < 1944.1.1 #disabled activated by allied decision
+		 #date > 1944.5.25
+		 #date < 1944.6.22
+		# has_war = no
 		}
     #modifier = { factor = 0 has_war = yes } #example modifier: music will not play when at war
   }

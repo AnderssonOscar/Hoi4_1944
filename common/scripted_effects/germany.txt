@@ -440,6 +440,14 @@ GER_give_extra_troops_1944 = {
                 }
             }
 
+
+    if = {
+        limit = {
+            ITA = { is_ai = yes }
+            HUN = { is_ai = yes }
+            ROM = { is_ai = yes }
+        }
+
             55 = {
 
                 create_unit = {
@@ -490,7 +498,6 @@ GER_give_extra_troops_1944 = {
             }
 
             763 = {
-
                 create_unit = {
                     division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
                     owner = GER
@@ -582,40 +589,6 @@ GER_give_extra_troops_1944 = {
                     division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
                     owner = GER
                 }
-
-                create_unit = {
-                    division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
-                    owner = GER
-                }
-
-                create_unit = {
-                    division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
-                    owner = GER
-                }
-
-                create_unit = {
-                    division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
-                    owner = GER
-                }
-
-                create_unit = {
-                    division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
-                    owner = GER
-                }
-
-                create_unit = {
-                    division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
-                    owner = GER
-                }
-
-                create_unit = {
-                    division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
-                    owner = GER
-                }
-
-                create_unit = {
-                    division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
-                    owner = GER
                 }
             }
         }

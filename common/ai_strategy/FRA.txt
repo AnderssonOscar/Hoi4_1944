@@ -1167,3 +1167,45 @@ FRA_help_in_italy = {
          subtract_fronts_from_need = yes
      }
  }
+
+
+  FRA_send_all_home = { 
+     allowed = {
+		original_tag = FRA
+     }
+
+     enable = {
+		date > 1944.3.1
+		is_in_faction_with = ENG
+		has_war_with = GER
+
+		GER = {
+			OR = {
+				16 = {state_is_fully_controlled_by_ROOT_or_subject = no}
+				15 = {state_is_fully_controlled_by_ROOT_or_subject = no}
+				29 = {state_is_fully_controlled_by_ROOT_or_subject = no}
+				6 =  {state_is_fully_controlled_by_ROOT_or_subject = no}
+				14 = {state_is_fully_controlled_by_ROOT_or_subject = no}
+				34 = {state_is_fully_controlled_by_ROOT_or_subject = no}
+			}
+		}
+    }
+
+     abort_when_not_enabled = yes
+
+	 ai_strategy = {
+         type = front_control
+         country_trigger = {
+             tag = GER
+         }
+         ordertype = front
+         execute_order = yes
+         execution_type = balanced
+     }
+
+	ai_strategy = {
+         type = front_unit_request
+         country_trigger = { tag = GER }
+         value = 200
+     }
+ }
