@@ -53,7 +53,7 @@ ROM_hold_crimea_1944 = {
 
 	ai_strategy = {
 		type = put_unit_buffers
-		ratio = 0.15
+		ratio = 0.2
 		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
 		states = {
@@ -75,7 +75,7 @@ ROM_dont_trust_hungary_1944 = {
 		NOT = { has_war_with = GER }
 		is_in_faction_with = GER
 
-		surrender_progress < 0.1
+		surrender_progress < 0.15
 		date > 1943.12.31
 	}
 
@@ -83,13 +83,14 @@ ROM_dont_trust_hungary_1944 = {
 
 	ai_strategy = {
 		type = put_unit_buffers
-		ratio = 0.15
+		ratio = 0.2
 		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
 		states = {
 			83
 			82
 			84
+			79
 		}
 	}
 }
@@ -147,7 +148,7 @@ ROM_defend_the_front_1944 = {
 	ai_strategy = {
 		type = front_unit_request
 		country_trigger = {tag = SOV}
-		value = 20
+		value = 14
 	}
 
 	ai_strategy = {

@@ -435,7 +435,7 @@ if = {
 
 	#set_convoys = 175
 
-	set_stability = 0.17 
+	set_stability = 0.14 
 	set_war_support = 0.24
 
 	add_opinion_modifier = { target = GER modifier = embargo }
@@ -636,6 +636,9 @@ if = {
 
 	set_technology = {
 
+		basic_fortification_tech = 1
+		land_fort_tech_1 = 1
+
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
@@ -662,6 +665,7 @@ if = {
 		#weapons
 		support_weapons = 1
 		support_weapons2 = 1
+		support_weapons3 = 1
 
 		infantry_weapons = 1
 		infantry_weapons1 = 1
@@ -686,8 +690,11 @@ if = {
 		tech_engineers3 = 1
 
 		tech_recon = 1
+		tech_recon2 = 1
 		tech_field_hospital = 1
 		tech_military_police = 1
+
+		tech_mountaineers = 1
 	}
 
 
@@ -698,12 +705,18 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_0
-        amount = 71000
+        amount = 120000
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
         amount = 2500
+    }
+
+	add_equipment_to_stockpile = {
+        type = artillery_equipment_1
+        amount = 445
+		producer = SOV
     }
 
 	add_equipment_to_stockpile = {
@@ -715,6 +728,6 @@ if = {
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 29
+        amount = 19
     }
 }

@@ -225,7 +225,7 @@
      ai_strategy = {
          type = invasion_unit_request
          country_trigger = { tag = GER }
-         value = 50
+         value = 70
      }
 
      ai_strategy = {
@@ -237,7 +237,7 @@
      ai_strategy = {
          type = invasion_unit_request
          state = 15
-         value = 50
+         value = 70
      }
 
      ai_strategy = {
@@ -1074,8 +1074,8 @@
              AND = {
                  15 = {is_fully_controlled_by = GER}
                  14 = {is_fully_controlled_by = GER}
-                 6 =  {is_fully_controlled_by = GER}
-                 29 = {is_fully_controlled_by = GER}
+                 #6 =  {is_fully_controlled_by = GER}
+                # 29 = {is_fully_controlled_by = GER}
                  7 = {is_fully_controlled_by = GER}
              }
          }
@@ -1084,7 +1084,7 @@
 
      ai_strategy = {
          type = put_unit_buffers
-         ratio = 0.10
+         ratio = 0.06
          states = {
              15
              14
@@ -1145,7 +1145,7 @@
      allowed = {
          OR = {
              tag = CAN
-             #tag = FRA
+             tag = FRA
              tag = RAJ
              tag = NZL
              tag = AST
@@ -1424,6 +1424,12 @@
      ai_strategy = {
          type = invade
          id = "BUL"
+         value = -500
+     }
+
+     ai_strategy = {
+         type = invade
+         id = "ROM"
          value = -500
      }
 
@@ -1816,8 +1822,8 @@
      enable = {
          #is_historical_focus_on = yes
          has_war_with = GER
-         date > 1944.5.30
-         date < 1944.9.5
+         date > 1944.5.20
+         date < 1944.9.1
 
          18 = {is_fully_controlled_by = GER}
          27 = {is_fully_controlled_by = GER}
@@ -1844,14 +1850,20 @@
 
      ai_strategy = {
          type = strategic_air_importance
+         id = 18
+         value = 30000 #value of stocked main front in active combat is usually around 35,000
+     }
+
+     ai_strategy = {
+         type = strategic_air_importance
          id = 208
-         value = 40000 #value of stocked main front in active combat is usually around 35,000
+         value = 30000 #value of stocked main front in active combat is usually around 35,000
      }
 
      ai_strategy = {
          type = strategic_air_importance
          id = 19
-         value = 40000 #value of stocked main front in active combat is usually around 35,000
+         value = 30000 #value of stocked main front in active combat is usually around 35,000
      }
  }
 
@@ -2312,11 +2324,11 @@
      enable = {
          is_in_faction_with = ENG
          has_war_with = GER
-         date > 1944.6.20 # allies_landed_in_france_abort_invasion
-         date < 1944.10.1
+         date > 1944.6.10 # allies_landed_in_france_abort_invasion
+         date < 1944.11.1
          OR = {
              NOT = { 15 = { is_fully_controlled_by = GER } }
-             NOT = { 29 = { is_fully_controlled_by = GER } } #calias
+            # NOT = { 29 = { is_fully_controlled_by = GER } } #calias
              NOT = { 14 = { is_fully_controlled_by = GER } }
          }
          851 = { is_fully_controlled_by = GER }
@@ -2329,6 +2341,36 @@
          id = "GER"
          value = 60
      }
+
+    ai_strategy = {
+		type = naval_mission_threshold
+		id = "MISSION_CONVOY_ESCORT"
+		value = 125 
+	}
+
+    ai_strategy = {
+	    type = naval_invasion_supremacy_weight
+	    id = 18
+	    value = 200
+	}
+
+    ai_strategy = {
+	    type = naval_invasion_supremacy_weight
+	    id = 42
+	    value = 200
+	}
+
+    ai_strategy = {
+	    type = naval_invasion_supremacy_weight
+	    id = 47
+	    value = 200
+	}
+
+    ai_strategy = {
+	    type = naval_invasion_supremacy_weight
+	    id = 68
+	    value = 200
+	}
 
      ai_strategy = {
          type = invasion_unit_request
@@ -2353,4 +2395,29 @@
          state = 99
          value = -1000
      }
+
+    #around france
+    ai_strategy = {
+		type = naval_avoid_region
+		id = 18
+		value = -600
+	}
+
+    ai_strategy = {
+		type = naval_avoid_region
+		id = 42
+		value = -600
+	}
+
+    ai_strategy = {
+		type = naval_avoid_region
+		id = 47
+		value = -600
+	}
+
+    ai_strategy = {
+		type = naval_avoid_region
+		id = 68
+		value = -600
+	}
  }

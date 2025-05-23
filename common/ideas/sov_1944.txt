@@ -79,13 +79,13 @@ ideas = {
 			picture = great_depression
 			
 			modifier = {
-				army_attack_factor = -1.25
-				breakthrough_factor = -1.25
+				army_attack_factor = -1.2
+				breakthrough_factor = -1.2
 				#land_reinforce_rate = -1
 
 				army_org_factor = -0.2
-				supply_consumption_factor = +0.1
-				army_speed_factor = -0.25
+				#supply_consumption_factor = +0.1
+				army_speed_factor = -0.2
 				dig_in_speed_factor = -0.5
 				ground_attack_factor = -0.5
 			}

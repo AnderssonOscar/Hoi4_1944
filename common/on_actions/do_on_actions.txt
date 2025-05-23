@@ -322,7 +322,7 @@ GER = {
 				GER = { add_mines = { region = 173 amount = 480 } }
 				GER = { add_mines = { region = 207 amount = 410 } }
 				GER = { add_mines = { region = 174 amount = 150 } }
-				GER = { add_mines = { region = 42 amount = 250 } }
+				GER = { add_mines = { region = 42 amount = 100 } }
 
 				GER = { add_mines = { region = 206 amount = 300 } }
 

@@ -391,7 +391,7 @@ create_import = {
 		improved_radio = 1
 		radio_detection = 1
 		cavity_magnatron = 1
-		monopulse_radar = 1
+		#monopulse_radar = 1
 		mechanical_computing = 1
 		computing_machine = 1
 		basic_encryption = 1
@@ -1590,7 +1590,7 @@ IF = {
 1943.12.30 = {
 
 	set_fuel = 261753
-	set_convoys = 200
+	set_convoys = 300
 
 	609 = {
 		#start_resistance = yes
@@ -1858,6 +1858,7 @@ IF = {
 			}
 
 
+
 			if = {
 				limit = { has_dlc = "By Blood Alone" }
 					set_technology = {
@@ -1934,13 +1935,32 @@ IF = {
 			#	project = sp:sp_naval_super_heavy_battleship
 			#}
 
-			#complete_special_project = {
-			#	project = sp:sp_naval_cruiser_submarine
-			#}
+		if = {
+			limit = {
+				has_dlc = "Gotterdammerung"
+			}
+			set_technology = {
+				sp_armored_motorized_military_police_tech = 1
+			}
+		}
+
+			complete_special_project = {
+				project = sp:sp_air_jet_engine
+			} 
+
+		if = {
+			limit = {
+				  has_dlc = "Man the Guns" 
+				 }
+
+			complete_special_project = {
+				project = sp:sp_naval_cruiser_submarine
+			} 
 
 			complete_special_project = {
 				project = sp:sp_naval_midget_submarine
 			}
+		}
 
 			add_breakthrough_progress = {
 				specialization = specialization_naval
@@ -2016,6 +2036,7 @@ IF = {
 				radio = 1
 				radio_detection = 1
 				
+				centimetric_radar = 1
 				
 				
 				#
@@ -2072,7 +2093,7 @@ IF = {
 				advanced_infantry_weapons = 1
 				#advanced_infantry_weapons2 = 1
 		
-				infantry_at = 1
+				#infantry_at = 1
 				#infantry_at2 = 1
 				
 			}

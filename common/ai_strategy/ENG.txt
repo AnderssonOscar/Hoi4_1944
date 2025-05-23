@@ -1044,20 +1044,29 @@ ENG_secure_the_channel = {
 		has_war = yes
 		date > 1944.4.1
 		surrender_progress < 0.05
-		16 = {is_fully_controlled_by = GER} #paris
+		OR = {
+			16 = { is_fully_controlled_by = GER } #paris
+			21 = { is_fully_controlled_by = GER } #marseille
+		}
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 	    type = naval_invasion_supremacy_weight
 	    id = 18
-	    value = 200
+	    value = 100
+	}
+
+	ai_strategy = {
+		type = naval_mission_threshold
+		id = "MISSION_CONVOY_ESCORT"
+		value = 125 
 	}
 
 	ai_strategy = {
     	type = strike_force_home_base
     	id = 18
-    	value = 250
+    	value = 100
 	}
 }
 

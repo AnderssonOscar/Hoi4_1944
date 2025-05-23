@@ -2978,17 +2978,17 @@ if = {
 
 	add_equipment_to_stockpile = { 
 			type = infantry_equipment_0
-			amount = 48412
+			amount = 98412
 		}
 
 	add_equipment_to_stockpile = { 
 			type = infantry_equipment_2
-			amount = 100
+			amount = 10000
 		}
 
 	add_equipment_to_stockpile = { 
 			type = anti_tank_equipment_1
-			amount = 100
+			amount = 2000
 		}
 		
 	add_equipment_to_stockpile = { 
@@ -2998,17 +2998,17 @@ if = {
 
 	add_equipment_to_stockpile = { 
 			type = anti_air_equipment_2
-			amount = 200
+			amount = 2000
 		}
 
 	add_equipment_to_stockpile = { 
 			type = artillery_equipment_2
-			amount = 50
+			amount = 5000
 		}
 
 	add_equipment_to_stockpile = { 
 			type = support_equipment_1
-			amount = 100
+			amount = 1000
 		}
 	
 	add_equipment_to_stockpile = { 

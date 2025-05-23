@@ -3182,7 +3182,7 @@ if = {
 			joseph_goebbels
 			walther_funk
 			medium_war_casualties
-
+			naval_forces_supplies
 			#GER_lack_of_airforce_instructors
 			#GER_lack_of_army_NCOs
 
@@ -3252,7 +3252,7 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 18000
+		amount = 14000
 		producer = FRA
 	}
 
@@ -3264,13 +3264,13 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 11000
+		amount = 9000
 		producer = CZE
 	}
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 1910
+        amount = 1610
     }
 
 	add_equipment_to_stockpile = {
@@ -3310,7 +3310,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = mechanized_equipment_1
-        amount = 710
+        amount = 610
     }
 
 	add_equipment_to_stockpile = {
@@ -3320,7 +3320,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 2400
+        amount = 2200
     }
 
 	add_equipment_to_stockpile = {

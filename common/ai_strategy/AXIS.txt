@@ -95,6 +95,34 @@ Axis_dont_forget_about_italy = {
 	}
 }
 
+AXIS_dont_help_east = { 
+	allowed = {
+		OR = {
+			original_tag = BUL
+			original_tag = ITA
+			original_tag = RKN
+		}
+	}
+	enable = { 
+		has_war_with = SOV
+		date < 1945.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+     ai_strategy = {
+         type = dont_defend_ally_borders
+         id = GER
+         value = 100
+     }
+
+	 ai_strategy = {
+         type = dont_defend_ally_borders
+         id = ROM
+         value = 100
+     }
+}
+
 
 Axis_allies_dont_help_italy = {
 

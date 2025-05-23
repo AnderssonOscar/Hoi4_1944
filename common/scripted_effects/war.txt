@@ -86,3 +86,22 @@ ALL_DDAY_FAILED = {
         clr_global_flag = ALL_DDAY_FAILED
     }
 }
+
+
+ALL_JAPAN_HOMELAND_INVASION_READY = {
+    if = {
+        limit = {
+            date > 1944.10.1
+            original_tag = JAP
+            JAP = { has_war_with = USA }
+            
+            any_enemy_country = { controls_province = 13025 } # iwo jima
+            any_enemy_country = { controls_province = 11932 } # okinawa
+            any_enemy_country = { controls_province = 13023 } # saipan port
+        }
+        
+        set_global_flag = ALL_JAPAN_HOMELAND_INVASION_READY
+    } else = {
+        clr_global_flag = ALL_JAPAN_HOMELAND_INVASION_READY
+    }
+}

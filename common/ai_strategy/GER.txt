@@ -4566,3 +4566,117 @@ GER_defend_italy_front = {
 		value = 20
 	}
 }
+
+
+
+GER_protect_baltic = {
+	allowed = {
+		original_tag = GER
+		}
+
+	enable = {
+		date < 1945.4.1
+		has_war_with = SOV
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_mission_threshold
+		id = "MISSION_CONVOY_ESCORT"
+		value = 10 
+	}
+
+	ai_strategy = {
+	    type = naval_mission_threshold
+	    id = MISSION_PATROL
+	    value = 100
+	}
+
+	ai_strategy = {
+    	type = strike_force_home_base
+    	id = 207
+    	value = 10
+	}
+
+}
+
+
+GER_raid_atlantic_convoy = { #helps a bit with landing in south france later
+	allowed = {
+		original_tag = GER
+	}
+
+	enable = {
+		GER = { has_war_with = USA }
+		date < 1944.10.1 # maybe we lost ports by then
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 58 #central atlantic gap
+		value = 250
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 51 #mid atlantic
+		value = 250
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 49 # north atlantic ridge
+		value = 250
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 44 # iceland
+		value = 250
+	}
+
+	# #dont die in dangerous areas
+	# ai_strategy = {
+	# 	type = naval_convoy_raid_region
+	# 	id = 47 # south france
+	# 	value = -200
+	# }
+
+	# ai_strategy = {
+	# 	type = naval_convoy_raid_region
+	# 	id = 68 # south france
+	# 	value = -200
+	# }
+
+	# ai_strategy = {
+	# 	type = naval_convoy_raid_region
+	# 	id = 42 # biscay
+	# 	value = -200
+	# }
+
+	# ai_strategy = {
+	# 	type = naval_convoy_raid_region
+	# 	id = 18 # channel
+	# 	value = -200
+	# }
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 18
+		value = 600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 16
+		value = 600
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 43
+		value = 600
+	}
+}

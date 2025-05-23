@@ -1092,7 +1092,7 @@ USA_onto_the_beaches = {
 
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 70
+		value = 150
 	}
 }
 
@@ -1100,7 +1100,7 @@ USA_convoy_hungry = {
 	enable = {
 		date > 1940.1.1
 		has_equipment = {
-  			convoy < 600
+  			convoy < 2000
   		}
 		convoy_threat < 0.2 # there are other strategies for this, so we dont want to double up
 	}
@@ -1315,25 +1315,25 @@ USA_raid_japan_convoy = {
 	ai_strategy = {
 		type = naval_convoy_raid_region
 		id = 76 # east china sea
-		value = 100
+		value = 75
 	}
 
 	ai_strategy = {
 		type = naval_convoy_raid_region
 		id = 75 # south china sea
-		value = 100
+		value = 75
 	}
 
 	ai_strategy = {
 		type = naval_convoy_raid_region
 		id = 79 # sea of japan
-		value = 100
+		value = 75
 	}
 
 	ai_strategy = {
 		type = naval_convoy_raid_region
 		id = 78 # philippine sea
-		value = 100
+		value = 75
 	}
 
 	ai_strategy = {
@@ -1351,6 +1351,12 @@ USA_raid_japan_convoy = {
 	ai_strategy = {
 		type = naval_convoy_raid_region
 		id = 16 # east england
+		value = -200
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 42 # biscay
 		value = -200
 	}
 
@@ -1397,7 +1403,7 @@ USA_go_time = {
 	enable = {
 		has_war_with = JAP
 		OR = {
-			date > 1944.11.1 #1944 was 1943.6.6
+			has_global_flag = ALL_JAPAN_HOMELAND_INVASION_READY
 			AND = {
 				NOT = { 16 = {is_fully_controlled_by = GER} }
 				has_war_with = GER
@@ -1442,7 +1448,7 @@ USA_go_time = {
 	ai_strategy = {
 		type = naval_mission_threshold
 		id = "MISSION_CONVOY_ESCORT"
-		value = 100 #puts our threshold at 250
+		value = 75
 	}
 
 
@@ -1455,13 +1461,13 @@ USA_go_time = {
 	ai_strategy = {
 		type = invasion_unit_request
 		strategic_region = 154 #japan home
-		value = -100
+		value = -500
 	}
 
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 645
-		value = 6
+		value = 14
 	}
 
 	ai_strategy = {
@@ -1479,7 +1485,7 @@ USA_go_time = {
 	ai_strategy = {
 		type = invasion_unit_request
 		state = 526
-		value = 3
+		value = 12
 	}
 
 	ai_strategy = {
@@ -1606,26 +1612,22 @@ USA_go_time = {
 
 USA_allow_invasion_of_japan = {
 	allowed = {
-		OR = {
-			original_tag = USA
-		}
-		is_historical_focus_on = yes
+		original_tag = USA
 	}
 	enable = {
+		is_historical_focus_on = yes
 		has_war_with = JAP
-		OR = {
-			NOT = { has_war_with = GER }
-
-			AND = {
-				NOT = { 645 = { is_fully_controlled_by = JAP } }
-				NOT = { 526 = { is_fully_controlled_by = JAP } }
-				NOT = { 646 = { is_fully_controlled_by = JAP } } #saipan
-
-				date > 1945.1.1
-		   }
-
-			date > 1945.8.1
-		}
+		has_global_flag = ALL_JAPAN_HOMELAND_INVASION_READY
+		# OR = {
+		# 	NOT = { has_war_with = GER }
+		# 	AND = {
+		# 		NOT = { 645 = { is_fully_controlled_by = JAP } } #iwo jima
+		# 		NOT = { 526 = { is_fully_controlled_by = JAP } } #okinava
+		# 		NOT = { 646 = { is_fully_controlled_by = JAP } } #saipan
+		# 		date > 1945.1.1
+		#    }
+		# 	date > 1945.8.1
+		# }
 
 	}
 	abort_when_not_enabled = yes

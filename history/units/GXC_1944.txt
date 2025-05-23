@@ -178,6 +178,33 @@ units = {
 		start_manpower_factor = 1.0
 	}
 
+	division = {
+		location = 1087
+		division_template = "Binary Infantry"
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+		start_experience_factor = 0.17
+		start_equipment_factor = 0.86
+		start_manpower_factor = 1.0
+	}
+
+	division = {
+		location = 1087
+		division_template = "Binary Infantry"
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+		start_experience_factor = 0.17
+		start_equipment_factor = 0.86
+		start_manpower_factor = 1.0
+	}
+
+	division = {
+		location = 1087
+		division_template = "Binary Infantry"
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+		start_experience_factor = 0.17
+		start_equipment_factor = 0.86
+		start_manpower_factor = 1.0
+	}
+
 }
 instant_effect = {
 	add_equipment_production = {

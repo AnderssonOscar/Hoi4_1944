@@ -300,7 +300,7 @@ CHI_hunker_down_now  = {
 	}
 
 	enable = {
-		date < 1945.10.1 
+		date < 1945.9.1 
 		has_war_with = JAP
 		is_historical_focus_on = yes
 		surrender_progress > 0.3

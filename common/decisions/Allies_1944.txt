@@ -75,7 +75,7 @@ operations = {
 						state = 16
 						state = 24
 						#state = 785
-						state = 29
+						#state = 29
 					}
 				}
 				damage_building = {
@@ -201,7 +201,7 @@ operations = {
 		}
 		
 		visible = {
-			GER = { is_ai = no }
+			#GER = { is_ai = no }
 			is_ai = yes
 			date > 1944.5.29
 			date < 1946.1.1
@@ -379,7 +379,7 @@ operation_cross_the_rhine= {
 				AND = {
 					controls_state = 16
 					controls_state = 15
-					controls_state = 29
+					#controls_state = 29
 					#controls_state = 6 belgium could be reichkommisar
 				}
 			}
@@ -449,11 +449,12 @@ operation_cross_the_rhine= {
 			every_country = {
 				limit = {
 					OR = {
+						date < 1944.6.15
 						tag = GER
 					 	is_in_faction_with = GER
 					}
 				}
-				GER = { play_song = "Over There" }
+				play_song = "Over There"
 			}
 				country_event = allies.dday.start.1 
 
@@ -566,21 +567,22 @@ operation_cross_the_rhine= {
 			icon = generic_operation
 		
 			allowed = {
-				OR = {
-					tag = ENG
+				#OR = {
+					#tag = ENG
 					tag = USA
-				}
+				#}
 			}
 			
 			available = {
 				has_war_with = GER
-				date > 1944.7.20
+				date > 1944.7.25
 				date < 1944.10.1
 
 				NOT = { 16 = {is_fully_controlled_by = GER} }
 
-				ENG = { surrender_progress < 0.01 }
-				USA = { surrender_progress < 0.01 }
+				ENG = { surrender_progress < 0.05 }
+				USA = { surrender_progress < 0.05 }
+				
 
 				21 = {is_fully_controlled_by = GER} #marseille
 				851 = {is_fully_controlled_by = GER} #toulon
@@ -595,19 +597,16 @@ operation_cross_the_rhine= {
 			}
 			
 			visible = {
-				OR = {
-					tag = ENG
-					tag = USA
-				}
 				is_ai = yes
 				has_war_with = GER
 			}
 
 			modifier = {
 				naval_invasion_prep_speed = +20.0
+				naval_invasion_penalty = -2.0
 			}
 
-			days_remove = 10
+			days_remove = 16
 			
 			cancel_trigger = {
 				OR = {

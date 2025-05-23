@@ -303,6 +303,36 @@ FIN_dont_leave_finland  = {
 }
 
 
+FIN_dont_help_other_fronts = { 
+	allowed = {
+		original_tag = FIN
+	}
+	enable = { 
+		has_war = yes
+		has_war_with = SOV
+		date < 1945.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+     ai_strategy = {
+         type = dont_defend_ally_borders
+         id = GER
+         value = 100
+     }
+
+	 ai_strategy = {
+         type = dont_defend_ally_borders
+         id = ROM
+         value = 100
+     }
+
+	 ai_strategy = {
+         type = dont_defend_ally_borders
+         id = ROM
+         value = 100
+     }
+}
 
 FIN_unit_buffer_leningrad = { #so soviet dont rush in
 	allowed = {
@@ -319,7 +349,7 @@ FIN_unit_buffer_leningrad = { #so soviet dont rush in
 	ai_strategy = {
 		type = put_unit_buffers
 
-		ratio = 0.15
+		ratio = 0.10
 
 		states = {
 			146

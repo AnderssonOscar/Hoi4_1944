@@ -11,7 +11,8 @@ SOV_start_effects = {
 
 		if = {
 			limit = { # give extra if  offensives are off
-				has_global_flag = disable_offensives_1944
+				#has_global_flag = disable_offensives_1944
+				NOT = { has_global_flag = easy_mode_1944 }
 			}
 
 			set_technology = {
@@ -20,7 +21,7 @@ SOV_start_effects = {
 
 					add_equipment_to_stockpile = {
 						type = mechanized_equipment_2
-						amount = 1500
+						amount = 2500
 					}
 
 					add_equipment_to_stockpile = {
@@ -30,7 +31,7 @@ SOV_start_effects = {
 
 					add_equipment_to_stockpile = {
 						type = support_equipment_1
-						amount = 2600
+						amount = 5600
 					}
 
 					if = {
@@ -38,7 +39,7 @@ SOV_start_effects = {
 	   
 					   add_equipment_to_stockpile = {
 						   type = medium_tank_chassis_2
-						   amount = 2900
+						   amount = 3900
 						   variant_name = "T-34-85"
 						   producer = SOV
 					   }
@@ -71,7 +72,7 @@ SOV_start_effects = {
 	   
 					   add_equipment_to_stockpile = {
 						   type = medium_tank_equipment_2
-						   amount = 2900
+						   amount = 3900
 						   producer = SOV
 					   }
 			   

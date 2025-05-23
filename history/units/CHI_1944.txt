@@ -1502,7 +1502,23 @@ units = {
 		division_template = "Sanjiao Jun"
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
 		start_experience_factor = 0.16
-		start_equipment_factor = 0.71
+		start_equipment_factor = 0.94
+	}
+
+		division = { 
+		location = 7976
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.94
+	}
+
+		division = { 
+		location = 10863
+		division_template = "Sanjiao Jun"
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+		start_experience_factor = 0.16
+		start_equipment_factor = 0.94
 	}
 
 

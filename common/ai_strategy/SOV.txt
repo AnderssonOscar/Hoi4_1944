@@ -2907,7 +2907,7 @@ SOV_defend_leningrad = {
 
 SOV_stop_stupid_garrison = {
 	allowed = {
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
@@ -2931,7 +2931,7 @@ SOV_stop_stupid_garrison = {
 
 SOV_dont_do_naval_invasion_ger = {
 	allowed = { 
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
@@ -2969,14 +2969,14 @@ SOV_dont_do_naval_invasion_ger = {
 
 SOV_dont_do_naval_invasion_bul = {
 	allowed = { 
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
 		date > 1944.1.1
 		date < 1945.1.1
 		has_war_with = GER
-		NOT = {has_war_with = JAP}
+		#NOT = {has_war_with = JAP}
 		NOT = {has_war_with = ENG}
 		NOT = {has_war_with = USA}
 	}
@@ -3000,7 +3000,7 @@ SOV_dont_do_naval_invasion_bul = {
 
 SOV_dont_do_naval_invasion_ITA = {
 	allowed = { 
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
@@ -3027,11 +3027,39 @@ SOV_dont_do_naval_invasion_ITA = {
 	}
 }
 
+SOV_dont_do_naval_invasion_ROM = {
+	allowed = { 
+		original_tag = SOV
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1944.8.1
+		has_war_with = GER
+		NOT = {has_war_with = JAP}
+		NOT = {has_war_with = ENG}
+		NOT = {has_war_with = USA}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "ROM"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = ROM }
+		value = -500
+	}
+}
 
 
 SOV_dont_do_naval_invasion_nor = {
 	allowed = { 
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
@@ -3132,7 +3160,7 @@ SOV_dont_do_naval_invasion_nor = {
 
 SOV_dont_do_naval_invasion_fin = {
 	allowed = { 
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
@@ -3161,7 +3189,7 @@ SOV_dont_do_naval_invasion_fin = {
 
 SOV_dont_rush_gre = {
 	allowed = {
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
@@ -3186,7 +3214,7 @@ SOV_dont_rush_gre = {
 
 SOV_dont_rush_cro = {
 	allowed = {
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
@@ -3211,7 +3239,7 @@ SOV_dont_rush_cro = {
 
 SOV_dont_rush_bul = {
 	allowed = {
-		tag = SOV
+		original_tag = SOV
 	}
 
 	enable = {
@@ -3238,7 +3266,7 @@ SOV_dont_rush_bul = {
 
 SOV_Stop_guarding_these_borders = {
 	allowed = {
-			tag = SOV
+			original_tag = SOV
 	}
 
 	enable = {
