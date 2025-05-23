@@ -687,7 +687,7 @@ country_event = {
 			level = 6
 		}
 
-		add_manpower = -750000
+	#	add_manpower = -750000
 	}
 
 

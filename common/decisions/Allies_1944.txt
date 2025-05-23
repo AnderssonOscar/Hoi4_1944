@@ -151,7 +151,7 @@ operations = {
 		}
 
 		modifier = {
-			naval_invasion_prep_speed = -50.0
+			naval_invasion_prep_speed = -95.0
 			#naval_speed_factor = +1.0 #only works for ships, not convoy
 		}
 
@@ -362,7 +362,7 @@ operation_cross_the_rhine= {
 			
 			available = {
 				has_war_with = GER
-				date > 1944.5.26
+				date > 1944.5.29
 				date < 1944.12.1
 
 				set_temp_variable = { days = global.num_days }
@@ -426,8 +426,8 @@ operation_cross_the_rhine= {
 
 			targeted_modifier = {
 				tag = GER
-				attack_bonus_against = 1.6
-				breakthrough_bonus_against = 1.6
+				attack_bonus_against = 1.45
+				breakthrough_bonus_against = 1.45
 			}
 
 			days_remove = 18

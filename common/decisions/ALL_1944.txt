@@ -472,11 +472,6 @@ war_measures = {
 	}
 
 
-
-
-
-
-
 	draft_children = {
 
 		icon = generic_political_discourse
@@ -563,11 +558,75 @@ war_measures = {
 				has_stability > 0.45
 			}
 		}
-		complete_effect = {
-
-        }
    }
 
+
+scavenger_training_trait_decision = { 
+
+		visible = { 
+			has_war = yes
+			has_army_manpower = {size > 50000}
+		}
+		
+		available = {
+			OR = {
+				has_idea = tot_economic_mobilisation
+				has_idea = totaler_krieg_economy
+			}
+        }
+
+		fire_only_once = yes
+		days_remove = 120
+		cost = 100
+
+		remove_trigger = {
+			OR = {
+				has_war = no
+				not = {
+					OR = {
+						has_idea = tot_economic_mobilisation
+						has_idea = totaler_krieg_economy
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 25
+				date > 1944.4.1
+				has_political_power > 250
+				has_war_support > 0.8
+				has_equipment = {
+					infantry_equipment < 100
+				}
+			}
+		}
+
+		complete_effect = {
+			add_war_support = -0.05
+
+			every_army_leader = {
+				limit = {
+					NOT = { has_trait = scavenger }
+					OR = {
+						has_trait = militias_officer
+						logistics_skill_level > 3
+					}
+				}
+				add_unit_leader_trait = scavenger
+				}
+        }
+
+		remove_effect = {
+			add_war_support = 0.025
+			}
+ 
+			modifier = {
+				equipment_capture = 0.1
+			}
+		}
 }
 
 

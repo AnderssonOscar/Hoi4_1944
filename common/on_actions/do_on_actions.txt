@@ -5,7 +5,14 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			
+
+			POL = { become_exiled_in = { target = ENG legitimacy = 50 } }
+			ETH = { become_exiled_in = { target = ENG legitimacy = 60 } }
+			ICE = { become_exiled_in = { target = ENG legitimacy = 65 } }
+			BRM = { become_exiled_in = { target = ENG legitimacy = 50 } }
+
+			PHI = { become_exiled_in = { target = USA legitimacy = 50 } }
+
 			GER = {
 				country_event = {
 					id = mod.start.1
@@ -21,9 +28,15 @@ on_actions = {
 				set_country_flag = FIN_aware_about_motti_tactics_flag
 			}
 
+				 ITA = { 162 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+				 ITA = { 2 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+				 ITA = { 157 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+				 USA = { 117 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+				 USA = { 849 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+
 			SOV = { 195 = {add_dynamic_modifier = { modifier = SOV_leningrad_defence_modifier scope = SOV } } }
-			USA = { 117 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
-			USA = { 849 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
+			# USA = { 117 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
+			# USA = { 849 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
 
 		if = {
 			limit = {

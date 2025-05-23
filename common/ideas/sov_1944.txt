@@ -54,9 +54,9 @@ ideas = {
 				#out_of_supply_factor = +0.25
 				supply_consumption_factor = -0.5
 				land_reinforce_rate = +0.5
-				army_org_factor = +0.40
+				army_org_factor = +0.25
 
-				terrain_penalty_reduction = +0.25
+				#terrain_penalty_reduction = +0.25
 
 				#max_planning_factor = +0.5
 				planning_speed = +2.0

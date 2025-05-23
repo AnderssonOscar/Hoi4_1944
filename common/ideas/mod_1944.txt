@@ -44,10 +44,10 @@ ideas = {
 				supply_consumption_factor = -0.5
 
 				land_reinforce_rate = +0.25
-				army_org_factor = +0.25
+				#army_org_factor = +0.25
 
-				terrain_penalty_reduction = +1.0
-				ground_attack_factor = +0.5
+				#terrain_penalty_reduction = +1.0
+				#ground_attack_factor = +0.5
 				command_power_gain_mult = +10.0
 			}
 		}

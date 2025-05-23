@@ -1,4 +1,4 @@
-capital = 64
+capital = 64 #1944
 
 if = {
 	limit = {
@@ -205,7 +205,7 @@ set_variable = { GER_reduce_russian_CG_bonus = 0 } #Used to reduce Soviet Gold R
 #INDUSTRAY: MEFO Bills/Economy of Conquest/Recovering Economy/Wirtschaftswunder
 #REMINDER to always update the fake NS if these numbers are altered!
 set_variable = { GER_monthly_consumer_goods_increase = GER_monthly_consumer_goods_start } #Amount of increasing CG each month
-set_variable = { GER_industrial_consumer_goods_factor = 0.1 } #Used for MEFO Bills, Economy of Conquest and Recovering Economy and Wirtschaftswunder - must correspond with the Fake MEFO Bills NS for the 1936 Bookmark
+set_variable = { GER_industrial_consumer_goods_factor = 0.2 } #Used for MEFO Bills, Economy of Conquest and Recovering Economy and Wirtschaftswunder - must correspond with the Fake MEFO Bills NS for the 1936 Bookmark
 set_variable = { GER_industrial_civilian_intel_to_others = -25 }
 set_variable = { GER_industrial_army_intel_to_others = -25 }
 set_variable = { GER_industrial_navy_intel_to_others = -25 }
@@ -1121,8 +1121,10 @@ set_popularities = {
 	add_to_faction = ALB
 	#add_to_faction = HOL
 
+	declare_war_on = { target = POL type = annex_everything }
+	declare_war_on = { target = YUG type = annex_everything }
 	declare_war_on = { target = SOV type = annex_everything }
-	declare_war_on = { target = ENG type = annex_everything }
+	declare_war_on = { target = ENG type = topple_government }
 
 add_ideas = {
 		sour_loser
@@ -1392,7 +1394,7 @@ if = {
 			tank_nsb_armor_upgrade = 2
 		}
 		obsolete = yes
-		icon = "GFX_gwtank_medium"
+		icon = "GFX_GER_gwtank_medium"
 	}
 	create_equipment_variant = {
 		name = "Panzer I Ausf. A"
@@ -1479,7 +1481,7 @@ if = {
 	create_equipment_variant = {
 		name = "Deutschland Class"
 		type = ship_hull_cruiser_panzerschiff
-		name_group = GER_CA_HISTORICAL
+		name_group = GER_PZ_HISTORICAL
 		parent_version = 0
 		modules = {
         	fixed_ship_anti_air_slot = ship_anti_air_1
@@ -1675,7 +1677,7 @@ if = {
 	create_equipment_variant = {
 		name = "Deutschland Class"
 		type = ship_hull_pre_dreadnought
-		name_group = GER_BB_HISTORICAL
+		name_group = GER_PZ_HISTORICAL
 		parent_version = 0
 		modules = {
 			fixed_ship_battery_slot = ship_heavy_battery_1
@@ -2012,7 +2014,7 @@ if = {
 				tank_nsb_engine_upgrade = 3
 				tank_nsb_armor_upgrade = 3
 			}
-			
+			icon = "GFX_CZE_improved_light_tank_medium"
 			#icon = "GFX_CZE_basic_main_tank"
 		}
 
@@ -2763,6 +2765,9 @@ if = {
 1943.12.30 = {
 		set_cosmetic_tag = GER_fascism_1944
 
+		POL = { set_state_flag = GER_seize_gold_reserves_state_flag }
+		YUG = { set_state_flag = GER_seize_gold_reserves_state_flag }
+
 		#create_import = {
 		#	resource = steel
 		#	factories = 6
@@ -3230,7 +3235,7 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 1000
+		amount = 9000
 	}
 
 	add_equipment_to_stockpile = {
@@ -3246,19 +3251,19 @@ if = {
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_2
-		amount = 2100
+		amount = 1100
 		producer = ITA
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 14000
+		amount = 7000
 		producer = FRA
 	}
 
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
-		amount = 7000
+		amount = 3000
 		producer = POL
 	}
 
@@ -3270,12 +3275,12 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 1610
+        amount = 1410
     }
 
 	add_equipment_to_stockpile = {
         type = artillery_equipment_2
-        amount = 380
+        amount = 180
     }
 
 	add_equipment_to_stockpile = {
@@ -3315,17 +3320,17 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = mechanized_equipment_2
-        amount = 450
+        amount = 400
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 2200
+        amount = 940
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_0
-        amount = 1490
+        amount = 1290
     }
 
 	if = {
@@ -3351,14 +3356,14 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = medium_tank_chassis_2
-			amount = 225
+			amount = 215
 			variant_name = "T-34-1943"
 			producer = SOV
 		}
 
 		add_equipment_to_stockpile = {
 			type = medium_tank_chassis_3
-			amount = 110
+			amount = 45
 			variant_name = "Panther Ausf. G"
 		}
 
@@ -3370,13 +3375,13 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = medium_tank_chassis_1
-			amount = 115
+			amount = 85
 			variant_name = "Panzer III Ausf. F"
 		}
 
 		add_equipment_to_stockpile = {
 			type = medium_tank_destroyer_chassis_2
-			amount = 135
+			amount = 115
 			variant_name = "Sturmgeschutz III"
 		}
 
@@ -3399,7 +3404,4 @@ add_equipment_to_stockpile = {
         type = train_equipment_3
         amount = 75
     }
-
-
 }
-

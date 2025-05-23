@@ -45,6 +45,7 @@ MOD_daily_update = {
 	SOV_start_effects = yes
 
 	ALL_DDAY_FAILED = yes
+	ALL_NORWAY_UNDEFENDED = yes
 
 	#SWE_join_FIN = yes
 }

@@ -96,17 +96,17 @@ ITA_slowdown_allied_advance = {
             }
         }
 
-        2 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 90} } 
-        157 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 90} } 
-        162 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 90} } 
+        # 2 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 90} } 
+        # 157 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 90} } 
+        # 162 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 90} } 
 
-        2 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = ENG days = 90} } 
-        157 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = ENG days = 90} } 
-        162 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = ENG days = 90} } 
+        # 2 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = ENG days = 90} } 
+        # 157 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = ENG days = 90} } 
+        # 162 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = ENG days = 90} } 
         
-        2 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = CAN days = 90} } 
-        157 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = CAN days = 90} } 
-        162 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = CAN days = 90} } 
+        # 2 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = CAN days = 90} } 
+        # 157 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = CAN days = 90} } 
+        # 162 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = CAN days = 90} } 
 
         set_global_flag = ITA_slowdown_allied_advance
     }

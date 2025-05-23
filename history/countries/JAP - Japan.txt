@@ -1589,7 +1589,7 @@ IF = {
 
 1943.12.30 = {
 
-	set_fuel = 261753
+	set_fuel = 121753
 	set_convoys = 300
 
 	609 = {
@@ -1832,6 +1832,20 @@ IF = {
 						enemy = JAP
 					}
 			}
+
+			PHI = {
+				add_to_war = {
+					targeted_alliance = USA
+					enemy = JAP
+				}
+			}
+
+			BRM = {
+				add_to_war = {
+					targeted_alliance = USA
+					enemy = JAP
+				}
+			}
 	
 			MEX = {
 					add_to_war = {
@@ -1953,9 +1967,9 @@ IF = {
 				  has_dlc = "Man the Guns" 
 				 }
 
-			complete_special_project = {
-				project = sp:sp_naval_cruiser_submarine
-			} 
+			# complete_special_project = {
+			# 	project = sp:sp_naval_cruiser_submarine
+			# } 
 
 			complete_special_project = {
 				project = sp:sp_naval_midget_submarine
@@ -2631,7 +2645,7 @@ IF = {
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_0
-			amount = 48000
+			amount = 41000
 		}
 
 		add_equipment_to_stockpile = {
@@ -2646,12 +2660,12 @@ IF = {
 
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_1
-			amount = 270
+			amount = 170
 		}
 
 		add_equipment_to_stockpile = {
 			type = artillery_equipment_1
-			amount = 410
+			amount = 310
 		}
 
 		add_equipment_to_stockpile = {

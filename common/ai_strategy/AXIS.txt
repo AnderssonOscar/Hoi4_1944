@@ -216,6 +216,18 @@ axis_dont_invade_when_defensive = {
 	}
 
 	ai_strategy = {
+		type = invade
+		id = "PAL"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "KUW"
+		value = -500
+	}
+
+	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = FRA }
 		value = -500

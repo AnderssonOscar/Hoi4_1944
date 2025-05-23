@@ -45,7 +45,7 @@ ideas = {
 		modifier = {
 				production_lack_of_resource_penalty_factor = -0.25
 				production_factory_max_efficiency_factor = 0.1
-				production_factory_efficiency_gain_factor = 0.1
+				#production_factory_efficiency_gain_factor = 0.1
 			}
 
 		equipment_bonus = {

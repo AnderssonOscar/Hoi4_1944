@@ -10,6 +10,7 @@ war_start_effects = {
         ENG = { add_to_faction = COG }
 
 
+
         # every_country = {
         # 	limit = { is_in_faction_with = GER }
         # 	add_to_war = {
@@ -71,10 +72,8 @@ ALL_DDAY_FAILED = {
                 16 = {is_fully_controlled_by = PREV}
                 15 = {is_fully_controlled_by = PREV}
                 29 = {is_fully_controlled_by = PREV}
-                6 =  {is_fully_controlled_by = PREV}
                 14 = {is_fully_controlled_by = PREV}
                 23 = {is_fully_controlled_by = PREV}
-                34 = {is_fully_controlled_by = PREV}
                 19 = {is_fully_controlled_by = PREV}
                 21 = {is_fully_controlled_by = PREV}
                 851 = {is_fully_controlled_by = PREV}
@@ -84,6 +83,30 @@ ALL_DDAY_FAILED = {
         set_global_flag = ALL_DDAY_FAILED
     } else = {
         clr_global_flag = ALL_DDAY_FAILED
+    }
+}
+
+ALL_NORWAY_UNDEFENDED = {
+    if = {
+        limit = {
+ 
+        ENG = {
+            any_enemy_country = {
+                OR = {
+                    army_manpower_in_state = { amount > 40000 state = 110 }
+                    army_manpower_in_state = { amount > 40000 state = 142 }
+                    army_manpower_in_state = { amount > 40000 state = 921 }
+                    army_manpower_in_state = { amount > 40000 state = 922 }
+                    army_manpower_in_state = { amount > 40000 state = 920}
+                    army_manpower_in_state = { amount > 40000 state = 143 }
+                }
+            }
+        }
+    }
+
+        clr_global_flag = ALL_NORWAY_UNDEFENDED
+    } else = {
+        set_global_flag = ALL_NORWAY_UNDEFENDED
     }
 }
 

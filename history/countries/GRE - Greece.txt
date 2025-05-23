@@ -692,7 +692,7 @@ if = {
 	}
 
 	164 = {
-		start_resistance = yes
+		#start_resistance = yes
 		set_compliance = 42
 		set_resistance = 12
 		set_garrison_strength = 1.0

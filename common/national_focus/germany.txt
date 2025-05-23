@@ -2370,13 +2370,13 @@ focus_tree = {
 			OR = {
 				has_resources_in_country = {
 					resource = oil
-					amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+					amount > 124 #This needs to correspond to the Bypass values in the previous focuses
 					extracted = yes
 				}
 				any_subject_country = {
 					has_resources_in_country = {
 						resource = oil
-						amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+						amount > 124 #This needs to correspond to the Bypass values in the previous focuses
 						extracted = yes
 					}
 				}
@@ -2384,13 +2384,13 @@ focus_tree = {
 			OR = {
 				has_resources_in_country = {
 					resource = tungsten
-					amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+					amount > 49 #This needs to correspond to the Bypass values in the previous focuses
 					extracted = yes
 				}
 				any_subject_country = {
 					has_resources_in_country = {
 						resource = tungsten
-						amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+						amount > 49 #This needs to correspond to the Bypass values in the previous focuses
 						extracted = yes
 					}
 				}
@@ -9943,7 +9943,13 @@ focus_tree = {
 					NOT = { CZE = { controls_state = 664 } }
 					NOT = { owns_state = 664 }
 				}
-				HUN = { is_friend_or_potential_friend_of_GER = no }
+				HUN = { 
+					OR = {
+						is_friend_or_potential_friend_of_GER = no
+						has_government = communism
+						has_government = democratic
+					}
+				}
 				CZE = { is_puppet_of = GER }
 				CZE = { is_in_faction_with = GER }
 			}
@@ -10731,7 +10737,7 @@ focus_tree = {
 	#	search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
 	#
 	#	completion_reward = {
-	#	custom_effect_tooltip = "TODO_Manu: Effects are underwhelming, need something new"
+	#	custom_effect_tooltip = "MM: Effects are underwhelming, need something new"
 	#		if = {
 	#			limit = {
 	#				HUN = {
@@ -22187,8 +22193,8 @@ focus_tree = {
 			GER_add_or_modify_politburo = yes
 
 			add_to_variable = { GER_politburo_democratic_drift = 0.02 tooltip = democratic_drift_tt }
-			add_to_variable = { GER_politburo_modifier_party_popularity_stability_factor = 0.15 tooltip = party_popularity_stability_factor_tt }
-			add_to_variable = { GER_politburo_modifier_defensive_war_stability_factor = 0.15 tooltip = defensive_war_stability_factor_tt }
+			add_to_variable = { GER_politburo_party_popularity_stability_factor = 0.15 tooltip = party_popularity_stability_factor_tt }
+			add_to_variable = { GER_politburo_defensive_war_stability_factor = 0.15 tooltip = defensive_war_stability_factor_tt }
 		}
 	}
 
@@ -22464,6 +22470,7 @@ focus_tree = {
 		relative_position_id = GER_liberate_austria
 		cost = 5
 		available = {
+			is_subject = no
 			any_neighbor_country = {
 				capital_scope = {
 					is_on_continent = europe
@@ -25633,7 +25640,35 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
+			if = {
+				limit = {
+					num_faction_members > 1
+				}
+				for_each_scope_loop = {
+					array = ROOT.allies
+					add_to_variable = { GER.GER_rnd_programs_modifier_allies_count = 1 }
+					log = "[This.GetName] was added to the RnD Program§"
+				}
 
+				set_temp_variable = { temp_targets_index = GER_rnd_programs_modifier_allies_count }
+
+				while_loop_effect = {
+					limit = {
+						check_variable = { temp_targets_index > 0 }
+						check_variable = { 
+							var = GER_rnd_programs_modifier_research_speed_factor
+							value = 0.1
+							compare = less_than_or_equals
+						}
+					}
+					add_to_variable = { GER_rnd_programs_modifier_research_speed_factor = 0.01 }
+					subtract_from_temp_variable = { temp_targets_index = 1 }
+				}
+
+				hidden_effect = { #This is necessary since Germany is already accounted for when setting all of this up
+					subtract_from_variable = { GER.GER_rnd_programs_modifier_research_speed_factor = 0.01 }
+				}
+			}
 			add_dynamic_modifier = { modifier = GER_rnd_programs_modifier }
 			custom_effect_tooltip = GER_shared_rd_programs_ww_tt
 			
@@ -28669,7 +28704,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			is_subject = no
-			num_faction_members > 0
+			num_faction_members > 1
 		}
 
 		bypass = {
@@ -28707,7 +28742,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 			is_faction_leader = yes
-			num_faction_members > 0
+			num_faction_members > 1
 		}
 
 		search_filters = { FOCUS_FILTER_INTERNATIONAL_TRADE }
@@ -31820,6 +31855,12 @@ focus_tree = {
 						}
 					}
 				}
+				FRA = { 
+					OR = {
+						exists = no 
+						is_ally_with = ROOT 
+					}
+				}
 			}
 		}
 
@@ -31873,6 +31914,8 @@ focus_tree = {
 
 		bypass = {
 			OR = {
+				AND = {
+			OR = {
 				has_war_with = BEL
 				is_in_faction_with = BEL
 				BEL = { exists = no }
@@ -31881,6 +31924,14 @@ focus_tree = {
 				has_war_with = LUX
 				is_in_faction_with = LUX
 				LUX = { exists = no }
+					}
+				}
+				FRA = {
+					OR = {
+						exists = no 
+						is_ally_with = ROOT 
+					}
+				}
 			}
 		}
 
@@ -31976,6 +32027,7 @@ focus_tree = {
 		}
 
 		bypass = {
+			OR = {
 			SWI = {
 				OR = {
 					exists = no
@@ -31983,6 +32035,13 @@ focus_tree = {
 					has_war_with = ROOT
 					is_guaranteed_by = ROOT
 					has_non_aggression_pact_with = ROOT
+					}
+				}
+				FRA = {
+					OR = {
+						exists = no 
+						is_ally_with = ROOT 
+					}
 				}
 			}
 		}
@@ -32899,6 +32958,7 @@ focus_tree = {
 		completion_reward = {
 			
 			add_named_threat = { threat = 3 name = GER_unify_west_africa }
+			
 			every_other_country = {
 				limit = {
 					NOT = {
@@ -39221,46 +39281,46 @@ focus_tree = {
 						static_modifiers = {GER_festung_static_modifier}
 						#add_dynamic_modifier = { modifier = GER_festung_konigsberg_modifier scope = GER } 
 						province = {
-							id = 13372
-							id = 13371
+							id = 13383
+							id = 13382
 							id = 6332
-							id = 13370
+							id = 13381
 						}
 					}
 				}
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 13372 }	}
+	if = {	limit = {	GER = { controls_province = 13382 }	}
 		763 = { 
 
 				add_building_construction = { #east
 					type = bunker
 					level = 6
-					province = 13372
+					province = 13382
 					instant_build = yes
 				}
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 13371 }	}
+	if = {	limit = {	GER = { controls_province = 13381 }	}
 		763 = { 
 				add_building_construction = { #south
 					type = bunker
 					level = 6
-					province = 13371
+					province = 13381
 					instant_build = yes
 				}
 			}
 		}
 
-	if = {	limit = {	GER = { controls_province = 13370 }	}
+	if = {	limit = {	GER = { controls_province = 13382 }	}
 		763 = {
 
 				add_building_construction = { #north
 					type = bunker
 					level = 6
-					province = 13370
+					province = 13382
 					instant_build = yes
 				}
 			}
@@ -39341,10 +39401,10 @@ focus_tree = {
 				static_modifiers = {GER_festung_static_modifier}
 				province = {
 					id = 6521
-					id = 13367
-					id = 13368
-					id = 13369
-					id = 13373
+					id = 13380
+					id = 13379
+					id = 13378
+					id = 13377
 					}
 				}
 			}
@@ -39359,34 +39419,34 @@ focus_tree = {
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13367 }	}
+		if = {	limit = {	GER = { controls_province = 13377 }	}
 			64 = { #outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 3
-						province = 13367
+						province = 13377
 						instant_build = yes
 					}
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13368 }	}
+		if = {	limit = {	GER = { controls_province = 13378 }	}
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 3
-						province = 13368
+						province = 13378
 						instant_build = yes
 					}
 				}
 			}
 
-		if = {	limit = {	GER = { controls_province = 13369 }	}
+		if = {	limit = {	GER = { controls_province = 13379 }	}
 			64 = { # outside berlin
 				add_building_construction = {
 						type = bunker
 						level = 3
-						province = 13369
+						province = 13379
 						instant_build = yes
 					}
 				}
@@ -39394,12 +39454,12 @@ focus_tree = {
 
 
 
-		if = {	limit = {	GER = { controls_province = 13373 }	}
+		if = {	limit = {	GER = { controls_province = 13380 }	}
 			68 = { #kustrin
 				add_building_construction = {
 						type = bunker
 						level = 8
-						province = 13373
+						province = 13380
 						instant_build = yes
 					}
 				}

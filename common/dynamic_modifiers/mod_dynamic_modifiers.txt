@@ -66,7 +66,9 @@ ALLIED_prepared_invasion_modifier = {
 MOD_transportation_difficulties_modifier = { 
 	enable = { always = yes }
 	icon = GFX_idea_SOV_the_road_of_life
-	army_speed_factor = -0.75
+	army_speed_factor = -0.8
+	army_attack_factor = -0.25
+	max_dig_in_factor = 0.25
 	#dig_in_speed_factor = 0.25
 }
 

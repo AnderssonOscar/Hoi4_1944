@@ -3158,7 +3158,7 @@ GER_defend_normandy = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
-		value = 11 #was 23 lower then GER_defend_homeland
+		value = 5 #was 23 lower then GER_defend_homeland
 	}
 }
 
@@ -3710,13 +3710,13 @@ GER_defend_homeland = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = HOL
-		value = 30
+		value = 15
 	}
 
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
-		value = 12 #was 23
+		value = 10 #was 23
 	}
 
 	ai_strategy = {
@@ -3779,13 +3779,6 @@ GER_stop_making_rocket_artillery = {
 	}
 	
 }
-
-
-
-
-
-
-
 
 
 
@@ -3896,9 +3889,6 @@ GER_out_of_tungsten = {
 }
 
 
-
-
-
 GER_stop_stupid_garrison = {
 	allowed = {
 		tag = GER
@@ -3917,7 +3907,6 @@ GER_stop_stupid_garrison = {
 		value = -500
 	}
 }
-
 
 
 GER_build_more_mil = {
@@ -3963,11 +3952,6 @@ GER_build_more_mil = {
 		value = -500
 	}
 }
-
-
-
-
-
 
 
 GER_konsigs_festung_buffer = { #1944 

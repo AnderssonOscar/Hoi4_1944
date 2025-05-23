@@ -53,9 +53,6 @@ state={
 
 				11548 = {
 					naval_base = 1
-				}
-
-				11548 = {
 					coastal_bunker = 4
 				}
 

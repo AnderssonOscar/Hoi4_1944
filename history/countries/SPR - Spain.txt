@@ -838,7 +838,7 @@ if = {
 	complete_national_focus = SPA_adopt_the_26_points
 	complete_national_focus = SPA_dictator_for_life
 	complete_national_focus = SPA_la_division_azul
-	complete_national_focus = SPA_the_tangiers_enclave
+	unlock_national_focus = SPA_the_tangiers_enclave
 
 	if = {
 		limit = { has_dlc = "By Blood Alone" }

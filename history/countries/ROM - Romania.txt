@@ -460,8 +460,8 @@ if = {
 	add_command_power = 200
 
 	set_convoys = 66
-	set_stability = 0.88 
-	set_war_support = 0.51
+	set_stability = 0.81 
+	set_war_support = 0.50
 	add_manpower = 154500
 	set_fuel_ratio = 1.0
 
@@ -1046,7 +1046,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_2
-        amount = 950
+        amount = 450
     }
 
 	add_equipment_to_stockpile = {
@@ -1062,7 +1062,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_3
-        amount = 600
+        amount = 100
 		producer = GER
     }
 

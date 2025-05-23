@@ -2670,6 +2670,7 @@ SOV_take_romania = {
 	}
 
 	abort_when_not_enabled = yes
+
 	ai_strategy = {
 		type = front_control
 		tag = ROM
@@ -2680,10 +2681,20 @@ SOV_take_romania = {
 		execution_type = rush
 	}	
 
+	 ai_strategy = {
+         type = force_concentration_target_weight
+         state = 192
+		 state = 834
+		 state = 78
+		# state = 79
+
+         value = 25 # +50%
+     }
+
 	ai_strategy = {
 		type = front_armor_score
 		id = ROM
-		value = 200
+		value = 50
 	}
 }
 
@@ -2879,20 +2890,21 @@ SOV_defend_leningrad = {
 		original_tag = SOV
 	}
 	enable = {
-		is_historical_focus_on = yes
 		date > 1943.12.30
-
 		OR = {
+			has_war_with = GER
 			has_war_with = FIN
-			GER = { surrender_progress < 0.1 }
 		}
+
+		NOT = { 208 = { is_fully_controlled_by = SOV } } 
+		NOT = { 146 = { is_fully_controlled_by = SOV } } 
 	}
 
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = put_unit_buffers
-		ratio = 0.05
+		ratio = 0.04
 
 		# states to put garrison orders (if no state is friendly, strat is invalid)
 		states = {
@@ -3276,6 +3288,7 @@ SOV_Stop_guarding_these_borders = {
 		NOT = { has_war_with = ENG}
 		NOT = { has_war_with = USA}
 		NOT = { has_war_with = FRA}
+		NOT = { has_war_with = PER}
 
 		has_war_with = GER
 		ENG = {has_war_with = GER}
@@ -3311,6 +3324,12 @@ SOV_Stop_guarding_these_borders = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = TUR
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = PER
 		value = -100
 	}
 

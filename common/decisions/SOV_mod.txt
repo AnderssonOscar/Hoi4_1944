@@ -378,8 +378,8 @@ SOV_great_patriotic_war = {
 		
 		targeted_modifier = {
 			tag = GER
-			attack_bonus_against = 1.15
-			breakthrough_bonus_against = 1.15
+			attack_bonus_against = 1.1
+			breakthrough_bonus_against = 1.1
 		}
 
 		targeted_modifier = {
@@ -390,8 +390,8 @@ SOV_great_patriotic_war = {
 
 		targeted_modifier = {
 			tag = RKO #ostland
-			attack_bonus_against = 1.2
-			breakthrough_bonus_against = 1.2
+			attack_bonus_against = 1.1
+			breakthrough_bonus_against = 1.1
 		}
 
 		targeted_modifier = {

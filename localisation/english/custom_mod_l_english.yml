@@ -115,6 +115,8 @@ mod_switched_side:0 "Disorganized forces"
 
 dont_surrender_mod:0 "No surrender!"
 
+dday_bonus:0 "DDay"
+
 naval_forces_supplies:0 "Well supplied navy"
 
 HUN_upgrade_army_equipment:0 "Refit Our Forces"
@@ -425,7 +427,7 @@ GER_1944_mod_shortcut:0 "Downfall"
 effective_recruitment:0 "Effective recruitment"
 effective_recruitment_desc:0 "
 
-VICTORY_POINTS_13366: "Buda"
+VICTORY_POINTS_13376: "Buda"
 
 ITA_demand_savoy:0 "Request control of Savoy"
 ITA_demand_savoy_desc:0 ""
@@ -435,3 +437,6 @@ ITA_demand_sudtirol_desc:0 ""
 
 ITA_demand_istra:0 "Request control of Istra & Litorale"
 ITA_demand_istra_desc:0 ""
+
+scavenger_training_trait_decision:0 "Operation manuals for captured equipment"
+scavenger_training_trait_decision_desc:0 "Print new operation manuals for our troops to make better use of newly captured equipment."
