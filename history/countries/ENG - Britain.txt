@@ -2177,6 +2177,7 @@ if = {
 		support_weapons3 = 1
 
 		infantry_at = 1
+		infantry_at2 = 1
 
 		tech_engineers = 1
 		tech_engineers2 = 1

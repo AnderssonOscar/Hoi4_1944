@@ -24,6 +24,7 @@ war_measures = {
 			has_war_with = JAP
 			RAJ = { has_war_with = JAP }
 			CHI = { has_war_with = JAP }
+			is_ai = yes
 
 			NOT = { 
 				CHI = { has_war_with = RAJ } 

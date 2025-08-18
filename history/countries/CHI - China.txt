@@ -448,13 +448,14 @@ if = {
 		service_by_requirement
 		low_war_casualties
 		mod_boost
+		limited_exports
 	}
 
 	set_popularities = {
-		neutrality = 80
-		democratic = 0
-		fascism = 0
-		communism = 20
+		neutrality = 70
+		democratic = 3
+		fascism = 2
+		communism = 25
 	}
 
 	remove_ideas = {
@@ -489,6 +490,7 @@ if = {
 		complete_national_focus = CHI_financial_policy
 		complete_national_focus = CHI_price_controls
 		complete_national_focus = CHI_expand_the_academica_sinica
+		complete_national_focus = CHI_the_hump
 	}
 
 

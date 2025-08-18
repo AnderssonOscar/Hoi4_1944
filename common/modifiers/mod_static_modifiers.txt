@@ -33,7 +33,7 @@ MOD_good_defence_posistion_static_modifier = {
 
 JAP_good_defence_posistion_static_modifier = {
 	max_dig_in_factor = 0.5
-	army_defence_factor = 0.25
+	army_defence_factor = 0.5
 	army_speed_factor = -0.5
 }
 

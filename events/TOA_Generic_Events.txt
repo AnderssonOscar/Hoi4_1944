@@ -1,5 +1,5 @@
 ###########################
-# News Events
+# News Events 1944
 ###########################
 
 add_namespace = south_american_news

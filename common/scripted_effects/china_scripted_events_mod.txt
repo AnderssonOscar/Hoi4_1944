@@ -9,6 +9,25 @@ CHI_scripted_events_start_effects = {
 		set_global_flag = CHI_scripted_events_start_effects
 
 	CHI = {
+
+		add_command_power = 80
+		army_experience = 50
+
+		remove_ideas = {
+			CHI_army_corruption_2
+			CHI_incompetent_officers
+		}
+
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 55000
+		}
+
+		add_equipment_to_stockpile = {
+            type = support_equipment_1
+            amount = 2500
+        }
+
 		if = {
 			limit = {
 				NOT = { GER = { has_template = "Sanjiao Jun" } }

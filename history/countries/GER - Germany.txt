@@ -2765,8 +2765,8 @@ if = {
 1943.12.30 = {
 		set_cosmetic_tag = GER_fascism_1944
 
-		POL = { set_state_flag = GER_seize_gold_reserves_state_flag }
-		YUG = { set_state_flag = GER_seize_gold_reserves_state_flag }
+		POL = { set_country_flag = GER_dont_seize_gold_reserves_flag }
+		YUG = { set_country_flag = GER_dont_seize_gold_reserves_flag }
 
 		#create_import = {
 		#	resource = steel

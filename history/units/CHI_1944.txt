@@ -2533,12 +2533,12 @@ units = {
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_0
+			type = infantry_equipment_2
 			creator = "CHI"
 		}
-		requested_factories = 6
+		requested_factories = 23
 		progress = 0.1
-		efficiency = 100
+		efficiency = 93
 	}
 
 	add_equipment_production = {
@@ -2546,9 +2546,19 @@ instant_effect = {
 			type = support_equipment_1
 			creator = "CHI" 
 		}
-		requested_factories = 1
+		requested_factories = 5
 		progress = 0.15
 		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "CHI" 
+		}
+		requested_factories = 5
+		progress = 0.3
+		efficiency = 75
 	}
 
 	add_equipment_production = {

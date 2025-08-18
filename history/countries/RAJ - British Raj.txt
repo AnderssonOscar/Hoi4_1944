@@ -1,4 +1,4 @@
-﻿capital = 439
+﻿capital = 439 #1944
 if = {
 	limit = {
 		has_dlc = "Graveyard of Empires"
@@ -79,7 +79,6 @@ recruit_character = RAJ_anyang_bhula
 recruit_character = RAJ_john_edward_golightly
 recruit_character = RAJ_bhimrao_ramji_ambedkar
 recruit_character = RAJ_chakravarti_rajagopalachari
-recruit_character = RAJ_karam_singh_mann
 recruit_character = RAJ_agha_khan_iii
 recruit_character = RAJ_subhas_chanda_bose
 recruit_character = RAJ_mahatma_mohandas_gandhi
@@ -200,7 +199,6 @@ if = {
 	add_ideas = {
 		RAJ_princely_states
 		RAJ_marginalized_muslim_community
-		RAJ_agrarian_society
 		RAJ_risk_of_famine
 	}
 
@@ -638,16 +636,105 @@ if = {
 	add_command_power = 200
 
 	set_convoys = 200
-	set_stability = 0.96 
-	set_war_support = 0.6
+	set_stability = 0.91 
+	set_war_support = 0.3
+
+	#retire_country_leader = yes
+	#promote_character = RAJ_archibald_wavell
+	#retire_character = RAJ_freeman_freeman_thomas
+
+	add_country_leader_role = {
+		character = RAJ_archibald_wavell
+		promote_leader = yes
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1.1"
+			traits = { war_industrialist }
+		}
+	}
 
 	add_ideas = {
 		#laws
 		war_economy
-		all_adults_serve
-		limited_exports
+		extensive_conscription
+		export_focus
 	}
 
+	if = {
+		limit = {
+			has_dlc = "Graveyard of Empires"
+		}
+		add_manpower = 200000
+
+		complete_national_focus = RAJ_provincial_autonomy
+		complete_national_focus = RAJ_tea_exports
+		unlock_national_focus = RAJ_cottage_industries
+		complete_national_focus = RAJ_trade_port
+		complete_national_focus = RAJ_keep_british_generals
+		complete_national_focus = RAJ_learn_from_the_crown
+		complete_national_focus = RAJ_east_india_railways
+		complete_national_focus = RAJ_the_calcutta_line
+		complete_national_focus = RAJ_the_burma_road
+		complete_national_focus = RAJ_quinine
+		complete_national_focus = RAJ_local_recruitment_offices
+		complete_national_focus = RAJ_legacy_of_military_service
+		complete_national_focus = RAJ_regimental_loyalty
+		complete_national_focus = RAJ_abolish_agrarian_society_criteria
+		complete_national_focus = RAJ_frontier_corps
+		complete_national_focus = RAJ_indian_territorial_force
+		complete_national_focus = RAJ_the_burma_rifles
+		complete_national_focus = RAJ_gurkhas
+	}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		early_carrier = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+
+	set_naval_oob = "RAJ_1944_naval_mtg"
+	
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		smoke_generator = 1
+		basic_depth_charges = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		basic_fire_control_system = 1
+		basic_dp_light_battery = 1
+	}
 
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
@@ -691,6 +778,8 @@ if = {
 
 				air_torpedoe_1 = 1
 				air_torpedoe_2 = 1
+
+				bba_early_transport_plane = 1
 			}
 		else = {
 			set_technology = {
@@ -713,6 +802,7 @@ if = {
 		
 				tactical_bomber1 = 1
 				#tactical_bomber2 = 1
+				early_transport_plane = 1
 			}
 		}
 	}
@@ -729,6 +819,8 @@ if = {
 
 
 	set_technology = {
+		basic_fortification_tech = 1
+
 		sp_armored_engineer_tech = 1
 		sp_armored_maintenance_tech = 1
 		tech_trucks = 1
@@ -775,6 +867,7 @@ if = {
 
 		infantry_weapons = 1
 		infantry_weapons1 = 1
+		infantry_weapons2 = 1
 
 		improved_infantry_weapons = 1
 		improved_infantry_weapons_2 = 1
@@ -782,9 +875,10 @@ if = {
 		advanced_infantry_weapons = 1
 
 		infantry_at = 1
-		infantry_at2 = 1
+		#infantry_at2 = 1
 
 		gw_artillery = 1
+		interwar_artillery = 1
 		artillery1 = 1
 		artillery2 = 1
 
@@ -794,7 +888,7 @@ if = {
 
 		interwar_antitank = 1
 		antitank1 = 1
-		antitank2 = 1
+		#antitank2 = 1
 
 		motorised_infantry = 1
 
@@ -833,23 +927,23 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_2
-        amount = 500
+        amount = 5500
+		producer = ENG
     }
 
 	add_equipment_to_stockpile = {
         type = support_equipment_1
-        amount = 50
+        amount = 500
     }
 
 	add_equipment_to_stockpile = {
         type = motorized_equipment_1
-        amount = 500
-		producer = GER
+        amount = 900
+		producer = ENG
     }
-
 
 	add_equipment_to_stockpile = { 
         type = train_equipment_1
-        amount = 15
+        amount = 25
     }
 }

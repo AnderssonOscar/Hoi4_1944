@@ -116,7 +116,7 @@ CHI_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
-		value = 20
+		value = 0
 	}
 	
 	ai_strategy = {
@@ -139,7 +139,7 @@ CHI_unit_production = {
 	
 	ai_strategy = {
 		type = ignore_army_incompetence
-		value = 50
+		value = 100
 	}
 }
 
@@ -208,7 +208,12 @@ CHI_prio_military_even_at_peace = {
 		type = added_military_to_civilian_factory_ratio
 		value = 50
 	}
-	
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 250
+	}
 }
 	
 CHI_dont_mess_with_the_soviets = {
@@ -252,21 +257,6 @@ CHI_some_safer_places_to_build = {
     }
 }
 
-CHI_you_should_be_prepared_for_war = {
-	allowed = { 
-		is_literally_china = yes
-	}
-	enable = {
-		always = yes
-	}
-	abort_when_not_enabled = yes
-	
-	ai_strategy = {
-        type = force_build_armies
-        value = 100
-    }
-}
-
 CHI_buffer_in_mainland = {
 	allowed = {
 		is_literally_china = yes
@@ -292,6 +282,101 @@ CHI_buffer_in_mainland = {
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = no
 	}
+}
+
+CHI_unit_production = {
+
+	allowed = {	original_tag = CHI }
+	enable = {
+		has_war_with = JAP
+
+		date > 1944.1.1
+		date < 1945.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 20
+	}
+
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = -100 
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = -100 
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = heavy_fighter
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = -100
+	}
+
+	ai_strategy = { type = equipment_variant_production_factor id = light_tank_chassis value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_tank_chassis value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_chassis value = -250 }
+
+	ai_strategy = { type = equipment_production_factor id = cas value = -200 }
+	ai_strategy = { type = equipment_variant_production_factor id = small_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = large_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
 }
 
 CHI_hunker_down_now  = {
@@ -324,32 +409,39 @@ CHI_stockpile_less_make_more_troops = {
 	}
 
 	enable = {
-		date > 1944.1.1
-		date < 1945.8.1
+		has_war_with = JAP
+		date > 1943.12.30
+		date < 1944.8.1
 	}
 	abort_when_not_enabled = yes
+
+	ai_strategy = {
+        type = force_build_armies
+        value = 1000
+    }
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 1000
+	}
 
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
-		value = -40
+		value = -100
 	}
-}
-
-
-CHI_make_more_troops = {
-	allowed = { 
-		is_literally_china = yes
-	}
-	enable = {
-		date > 1944.1.1
-		date < 1945.6.1
-	}
-	abort_when_not_enabled = yes
-	
-	ai_strategy = {
-        type = force_build_armies
-        value = 500
-    }
 }
 
 

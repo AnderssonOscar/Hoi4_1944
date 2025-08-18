@@ -1703,7 +1703,29 @@ IF = {
 			JAP_first_air_fleet
 		}
 
-		
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+		not = { has_dlc = "Waking the Tiger" }
+	}
+	set_autonomy = {
+		target = SIA
+		autonomous_state = autonomy_integrated_puppet
+	}
+}
+if = {
+	limit = { 
+		not = {
+			has_dlc = "Waking the Tiger"
+			has_dlc = "Together for Victory"
+		}
+	}
+	set_autonomy = {
+		target = SIA
+		autonomous_state = autonomy_puppet
+	}
+}
+
 		add_to_faction = SIA
 		add_to_faction = MEN
 		add_to_faction = MAN
@@ -1871,7 +1893,14 @@ IF = {
 				coastal_fort_tech_2 = 1
 			}
 
-
+		IF = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			complete_special_project = {
+				project = sp:sp_land_flamethrower_tank
+			}
+		}
 
 			if = {
 				limit = { has_dlc = "By Blood Alone" }
@@ -1914,6 +1943,8 @@ IF = {
 
 						armor_piercing_bombs = 1
 						#heavy_bombs = 1
+
+						bba_improved_transport_plane = 1
 					}
 				else = {
 					#set_air_oob = "ITA_1936_air_legacy"
@@ -1936,6 +1967,8 @@ IF = {
 				
 						tactical_bomber1 = 1
 						tactical_bomber2 = 1
+
+						improved_transport_plane = 1
 					}
 				}
 			}
@@ -2013,6 +2046,7 @@ IF = {
 		
 				tech_logistics_company = 1
 				tech_logistics_company2 = 1
+				tech_logistics_company3 = 1
 		
 				tech_military_police = 1
 				tech_military_police2 = 1
@@ -2080,7 +2114,7 @@ IF = {
 				construction2 = 1
 				construction3 = 1
 				construction4 = 1
-				#construction5 = 1
+				construction5 = 1
 		
 				concentrated_industry = 1
 				concentrated_industry2 = 1
@@ -2676,6 +2710,24 @@ IF = {
 		add_equipment_to_stockpile = {
 			type = motorized_equipment_0
 			amount = 410
+		}
+
+		if = {
+			limit = { has_dlc = "By Blood Alone" }
+
+			add_equipment_to_stockpile = {
+				type = cv_small_plane_airframe_1
+				amount = 160
+				variant_name = "A5M"
+				producer = JAP
+			}
+
+			add_equipment_to_stockpile = {
+				type = cv_small_plane_naval_bomber_airframe_1
+				amount = 120
+				variant_name = "B5N"
+				producer = JAP
+			}
 		}
 
 
