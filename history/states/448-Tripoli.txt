@@ -14,17 +14,12 @@ state={
 		}
 		buildings = {
 			infrastructure = 2
-			air_base = 2
+			air_base = 6
 			1149 = {
 				naval_base = 5
 			}
 		}
 		add_core_of = LBA
-
-				1943.12.1 = {
-			owner = ENG
-			controller = ENG
-		}
 	}
 
 	provinces={

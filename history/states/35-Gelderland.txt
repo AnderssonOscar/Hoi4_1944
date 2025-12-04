@@ -6,8 +6,9 @@ state={
 		owner = HOL
 		add_core_of = HOL
 		buildings = {
-			infrastructure = 4
+			infrastructure = 3
 			industrial_complex = 5
+
 		}
 		victory_points = {
 			3262 5 
@@ -18,14 +19,6 @@ state={
 		victory_points = {
 			11562 1 
 		}
-		1943.12.1 = {
-			owner = RKN
-			controller = RKN
-
-			buildings = {
-				anti_air_building = 1
-			}
-		}
 
 	}
 
@@ -33,6 +26,11 @@ state={
 		480 3262 6496 6500 9431 11456 11562 
 	}
 	manpower=1449000
+
+	resources = {
+		coal = 12 #initial distribution
+	}
+
 	buildings_max_level_factor=1.000
 	state_category=city
 

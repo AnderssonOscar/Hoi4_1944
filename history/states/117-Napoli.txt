@@ -33,20 +33,10 @@ state = {
 				industrial_complex = 3
 			}
 		}
-
-		1943.12.1 = {
-			owner = USA
-			controller = USA
-
-			buildings = {
-				819 = { bunker = 3 }
-				anti_air_building = 2
-			}
-		}
 	}
 
 	provinces = {
-		819 851 955 3958 3968 6972 9826 11803 9856 
+		819 851 955 3958 3968 6972 9826 11803 9856
 	}
 
 	local_supplies = 13.0 

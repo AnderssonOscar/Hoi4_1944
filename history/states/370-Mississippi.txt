@@ -20,14 +20,6 @@ state={
 			}
 		}
 		add_core_of = USA
-
-		1943.12.30 = {
-			buildings = {
-				industrial_complex = 3
-				arms_factory = 4
-				dockyard = 3
-			}
-		}
 	}
 
 	provinces={

@@ -5,6 +5,11 @@ state = {
 
 	state_category = city
 
+	resources = {
+
+		coal = 8 #initial distribution
+	}
+	
 	history = {
 
 		owner = GER
@@ -31,13 +36,6 @@ state = {
 		1939.1.1 = {
 			buildings = {
 				air_base = 3
-			}
-		}
-
-		1943.12.30 = {
-			buildings = {
-				arms_factory = 1
-				anti_air_building = 2
 			}
 		}
 	}

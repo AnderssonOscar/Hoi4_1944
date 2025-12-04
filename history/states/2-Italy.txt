@@ -37,19 +37,6 @@ state = {
 				industrial_complex = 5
 			}
 		}
-
-		1943.12.30 = {
-			buildings = {
-				anti_air_building = 4
-				arms_factory = 4
-				radar_station = 3
-				fuel_silo = 1
-
-				11846 = {
-					bunker = 1
-				}
-			}
-		}
 	}
 
 	provinces = {

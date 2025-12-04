@@ -21,13 +21,6 @@ state= {
 
 		}
 		add_core_of = ENG
-
-		1943.12.30 = {
-			buildings = {
-				arms_factory = 2
-				industrial_complex = 2
-			}
-		}
 	}
 
 	provinces= {

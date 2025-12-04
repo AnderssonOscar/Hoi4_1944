@@ -19,7 +19,7 @@ state = {
 		victory_points = {
 			6711 5 
 		}
-		
+
 		victory_points = {
 			9672 2 
 		}
@@ -27,15 +27,7 @@ state = {
 		victory_points = {
 			9670 1 
 		}
-
-		1943.12.1 = {
-			owner = HUN
-			controller = HUN
-
-			buildings = {
-				industrial_complex = 2
-			}
-		}
+		
 	}
 
 	provinces = {

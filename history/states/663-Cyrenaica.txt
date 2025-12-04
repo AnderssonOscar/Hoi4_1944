@@ -11,11 +11,6 @@ state={
 			infrastructure = 1
 		}
 		add_core_of = LBA
-
-				1943.12.1 = {
-			owner = ENG
-			controller = ENG
-		}
 	}
 
 	provinces={

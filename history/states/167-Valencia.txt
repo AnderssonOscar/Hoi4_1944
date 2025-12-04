@@ -26,13 +26,6 @@ state={
 			}
 		}
 		add_core_of = SPR
-
-		1943.12.30 = {
-			buildings = {
-				industrial_complex = 3
-				fuel_silo = 1
-			}
-		}
 	}
 
 	provinces={

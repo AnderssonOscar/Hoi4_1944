@@ -13,16 +13,16 @@ state=
 			12140 = {
 				naval_base = 1
 			}
-
-			
 		}
 		victory_points = {
 			12140 1
-		 }
+		}
 
-		1943.12.31 = {
-			owner = JAP
-			controller = JAP
+		strategic_province_location = {
+			natural_harbor = 12140
+		}
+		strategic_state_location = {
+			favorable_approach = 12140
 		}
 
 	}

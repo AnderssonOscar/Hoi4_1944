@@ -18,17 +18,12 @@ state={
 		}
 		add_core_of = LAT
 
-				1943.12.1 = {
-			owner = GER
-			controller = GER
-		}
-
 	}
 
 	provinces={
 		265 3255 3525 6222 6342 11358 
 	}
-	manpower=64500
+	manpower=215500
 	buildings_max_level_factor=1.000
 	state_category=town
 }

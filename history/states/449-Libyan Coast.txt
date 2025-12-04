@@ -4,7 +4,7 @@ state={
 	name="STATE_449" # El Agheila
 	manpower = 40431
 	
-	state_category = enclave
+	state_category = wasteland
 
 	history={
 		owner = ITA
@@ -12,12 +12,6 @@ state={
 			infrastructure = 2
 		}
 		add_core_of = LBA
-
-		1943.12.1 = {
-			owner = ENG
-			controller = ENG
-		}
-
 	}
 
 	provinces={

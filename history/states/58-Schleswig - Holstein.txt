@@ -25,7 +25,7 @@ state = {
 			dockyard = 6
 			air_base = 5
 			6389 = {
-				naval_base = 8
+				naval_base = 8	
 			}
 		}
 		
@@ -34,15 +34,7 @@ state = {
 				synthetic_refinery = 3
 				anti_air_building = 5
 				dockyard = 7
-				arms_factory = 4
-			}
-		}
-
-		1943.12.30 = {
-			owner = GER
-			controller = GER
-			buildings = {
-				fuel_silo = 2
+				arms_factory = 3
 			}
 		}
 	}

@@ -21,31 +21,9 @@ state = {
 
 			# Lower Svir Hydroelectric Station
 			11153 = { dam = 1 }
-			
+
 		}
-		1943.12.1 = {
-			owner = FIN
-			controller = FIN
-
-			buildings = {
-				11153 = {
-					bunker = 2
-				}
-
-				6057 = {
-					bunker = 1
-				}
-
-				3084 = {
-					bunker = 1
-				}
-
-				6106 = {
-					bunker = 1
-				}
-			}
-		}
-
+		
 	}
 
 	provinces = {

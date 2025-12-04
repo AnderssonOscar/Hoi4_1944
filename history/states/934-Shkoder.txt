@@ -5,6 +5,7 @@ state = {
 	resources = {
 		aluminium = 1.000
         chromium = 1.000
+        coal = 1 # initial distribution = with infra 1.4 / 1 total
 	}
 
 	history = {
@@ -22,10 +23,6 @@ state = {
 		    owner = ITA
 		    controller = ITA
 		    remove_claim_by = ITA
-		}
-		1943.12.30 = {
-			owner = ALB
-			controller = ALB
 		}
 
 	}

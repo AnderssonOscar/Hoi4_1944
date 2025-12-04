@@ -1,7 +1,7 @@
 
 state = {
 	id = 39
-	name = "STATE_39" # (South Tyrol) Alto Adige -> #TODO_Manu: Should change name to Südtirol when under Austrian/German control
+	name = "STATE_39" # (South Tyrol) Alto Adige
 	manpower = 298290 # was 641650 before Trentino split
 	
 	state_category = town
@@ -22,18 +22,6 @@ state = {
 		add_core_of = ITA
 		add_core_of = LBV
 		add_claim_by = AUS
-
-		
-		1943.12.1 = {
-			owner = GER
-			controller = GER
-			add_core_of = GER
-			buildings = {
-				industrial_complex = 1
-			}
-
-		}
-
 	}
 
 	provinces = {

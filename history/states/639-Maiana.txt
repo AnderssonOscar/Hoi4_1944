@@ -27,23 +27,14 @@ state={
 			13021 1 
 		}
 
-		1943.12.30 = {
-			buildings = {
-				air_base = 2
-				13021 = {
-					naval_base = 3
-				}
-				4387 = {
-					naval_base = 4
-				}
-				7393 = {
-					naval_base = 2
-				}
-				13020 = {
-					naval_base = 3
-				}
-			}
+		strategic_province_location = {
+			defensible_coastline = 13021
 		}
+
+		strategic_province_location = {
+			defensible_coastline = 7393
+		}
+
 	}
 
 	provinces={

@@ -19,11 +19,6 @@ state={
 		}
 		add_core_of = PER
 		add_core_of = AZR
-
-		1944.1.1 = {
-			owner = SOV
-			controller = SOV
-		}
 	}
 
 	provinces={

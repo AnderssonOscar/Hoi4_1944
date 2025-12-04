@@ -20,13 +20,7 @@ state={
 				air_base = 3
 			}
 		}
-
-					1943.12.1 = {
-			owner = GER
-			controller = GER
-		}
 	}
-
 
 	provinces={
 		493 584 9439 9508 9546 11428 11515 

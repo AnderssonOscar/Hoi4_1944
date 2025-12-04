@@ -29,28 +29,6 @@ state={
 		}
 		
 
-		1943.12.1 = {
-			buildings = {
-				# 3060 = {
-				# 	bunker = 1
-				# }
-
-				# 9150 = {
-				# 	bunker = 1
-				# }
-
-				9100 = {
-					bunker = 2
-				}
-
-				9206 = {
-					bunker = 2
-				}
-
-				
-			}
-		}
-
 	}
 
 	provinces={

@@ -1,7 +1,7 @@
 state = {
 	id = 532
 	name = "STATE_532" # Tokai
-	manpower = 6174000
+	manpower = 7174000 # was 6174000
 	state_category = large_city
 
 	history = {
@@ -35,17 +35,6 @@ state = {
 				10125 = {
 					air_facility = 1 # Mitsubishi Arnsenals 
 				}
-			}
-		}
-
-
-		1943.12.30 = {
-			buildings = {
-				anti_air_building = 1
-				arms_factory = 2
-				dockyard = 1
-				industrial_complex = 2
-				fuel_silo = 1
 			}
 		}
 

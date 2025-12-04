@@ -13,38 +13,6 @@ state={
 		}
 		add_core_of = SOV
 		add_core_of = KAR
-
-
-		1943.1.1 = {
-			controller = FIN
-			owner = SOV
-
-			buildings = {
-				3189 = {
-					bunker = 2
-				}
-			}
-
-			FIN = {
-				set_province_controller = 155
-				set_province_controller = 157
-				set_province_controller = 13130
-				set_province_controller = 3071
-				set_province_controller = 2998
-				set_province_controller = 11146
-				set_province_controller = 80
-				set_province_controller = 11175
-				set_province_controller = 11054
-				set_province_controller = 6098
-				set_province_controller = 6096
-				set_province_controller = 11096
-				set_province_controller = 3067
-				set_province_controller = 9198
-				set_province_controller = 9119
-				set_province_controller = 6175
-				set_province_controller = 9074
-			}
-		}
 	}
 
 	provinces={

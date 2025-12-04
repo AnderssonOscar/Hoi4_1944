@@ -20,17 +20,6 @@ state=
 				coastal_bunker = 1
 			}
 		}
-
-		1943.12.1 = {
-			owner = JAP
-			controller = JAP
-
-		buildings = {
-			infrastructure = 3 #was: 5
-			air_base = 5
-		}
-
-		}
 	}
 	provinces={
 		10062

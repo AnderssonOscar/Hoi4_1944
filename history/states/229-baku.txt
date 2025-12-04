@@ -22,12 +22,6 @@ state={
 		add_core_of = SOV
 		add_core_of = AZR
 
-		1943.12.30 = {
-			buildings = {
-				radar_station = 2
-				synthetic_refinery = 3
-			}
-		}
 	}
 
 	provinces={

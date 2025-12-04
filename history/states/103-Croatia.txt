@@ -9,14 +9,11 @@ state={
 
 	history={
 		owner = YUG
-		victory_points = {
-			3868 3 
+		victory_points = { #Dubrovnik
+			6889 3 
 		}
-		victory_points = {
+		victory_points = { #Split
 			3924 3
-		}
-		victory_points = {
-			11564 1 
 		}
 		buildings = {
 			infrastructure = 3
@@ -32,19 +29,6 @@ state={
 		add_core_of = YUG
 		#add_claim_by = ITA #added by focus
 		add_core_of = CRO
-
-
-		1943.12.1 = {
-			owner = CRO
-			controller = CRO
-		}
-
-		1943.12.30 = {
-			buildings = {
-				arms_factory = 3
-			}
-		}
-
 	}
 
 	provinces={

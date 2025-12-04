@@ -3,6 +3,10 @@ state = {
 	name = "STATE_55"
 	manpower = 3798235
 
+	resources = {
+		coal = 8 # initial distribution
+	}
+
 	state_category = large_city
 
 	history = {
@@ -45,12 +49,6 @@ state = {
 				arms_factory = 4
 				# From "Develop Heraeus Research Facilities"
 				industrial_complex = 4
-			}
-		}
-
-		1943.12.30 = {
-			buildings = {
-				anti_air_building = 3
 			}
 		}
 	}

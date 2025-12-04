@@ -26,22 +26,6 @@ state={
 				industrial_complex = 3
 			}
 		}
-
-		
-		1943.12.1 = {
-			owner = GER
-			controller = GER
-
-			buildings = {
-				11370 = {
-					bunker = 4
-				}
-
-				9289 = {
-					bunker = 3
-				}
-			}
-		}
 	}
 
 	provinces={

@@ -17,11 +17,13 @@ state={
 			413 5
 		}
 		add_core_of = SOV
-
-		1943.12.30 = {
+		1939.1.1 = {
 			buildings = {
-				arms_factory = 2
+				9448 = {
+					air_facility = 1
+				}
 			}
+			
 		}
 	}
 

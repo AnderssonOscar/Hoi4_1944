@@ -26,51 +26,6 @@ state={
 				coastal_bunker = 2
 			}
 		}
-		1943.12.30 = {
-			owner = GER
-			controller = GER
-			buildings = {
-				radar_station = 2
-
-			53 = {
-				coastal_bunker = 1
-			}
-			3096 = {
-				coastal_bunker = 1
-			}
-			9216 = {
-				coastal_bunker = 1
-			}
-			11100 = {
-				coastal_bunker = 1
-			}
-			9127 = {
-				coastal_bunker = 1
-			}
-			188 = {
-				coastal_bunker = 1
-			}
-			3090 = {
-				coastal_bunker = 1
-			}
-			199 = {
-				coastal_bunker = 1
-			}
-			122 = {
-				coastal_bunker = 1
-			}
-			65 = {
-				coastal_bunker = 1
-			}
-			3192 = {
-				coastal_bunker = 1
-			}
-			137 = {
-				coastal_bunker = 1
-			}
-
-			}
-		}
 		
 		victory_points = {
 			53 3

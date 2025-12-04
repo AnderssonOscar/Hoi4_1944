@@ -8,20 +8,13 @@ state = {
 	history = {
 		owner = BRM
 		add_core_of = BRM
-		victory_points = {
-			4425 1 
+
+		buildings = {
+			infrastructure = 1
 		}
 
-		1944.1.1 = {
-			owner = JAP
-			controller = JAP
-
-			RAJ = {
-				set_province_controller = 4318
-				set_province_controller = 1197
-				set_province_controller = 1934
-				set_province_controller = 4996
-			}
+		victory_points = {
+			4425 1 
 		}
 	}
 

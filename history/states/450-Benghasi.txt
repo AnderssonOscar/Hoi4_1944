@@ -4,7 +4,7 @@ state={
 	name="STATE_450"
 	manpower = 82535
 	
-	state_category = enclave
+	state_category = wasteland
 
 	history={
 		owner = ITA
@@ -20,12 +20,6 @@ state={
 			}
 		}
 		add_core_of = LBA
-
-
-		1943.12.1 = {
-			owner = ENG
-			controller = ENG
-		}
 	}
 
 	provinces={

@@ -32,10 +32,6 @@ state = {
 			air_base = 4
 		}
 		
-		1944.1.1 = {
-			owner = ENG
-			controller = ENG
-		}
 	}
 
 	provinces = {

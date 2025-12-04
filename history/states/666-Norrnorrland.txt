@@ -1,4 +1,3 @@
-
 state = {
 	id = 666
 	name = "STATE_666"
@@ -41,13 +40,10 @@ state = {
 			9108 = {
 				naval_base = 2
 			}
-		}
 
-		1943.12.30 = {
-			buildings = {
-				industrial_complex = 1
-				infrastructure = 2
-			}
+			# Harsprånget
+			#3054 = { dam = 1 }
+
 		}
 
 	}

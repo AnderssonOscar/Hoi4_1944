@@ -25,10 +25,6 @@ state = {
 				coastal_bunker = 1
 			}
 		}
-		1943.12.30 = {
-			owner = GER
-			controller = GER
-		}
 	}
 
 	provinces = {

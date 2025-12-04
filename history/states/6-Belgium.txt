@@ -28,33 +28,16 @@ state = {
 
 		buildings = {
 			infrastructure = 3 #was: 5
-			arms_factory = 5
+			arms_factory = 3
 			industrial_complex = 4
-			air_base = 4
+			air_base = 2
 			6560 = {
 				naval_base = 3
 			}
 		}
 		
 		add_extra_state_shared_building_slots = 2
-
-		 1944.1.1 = {
-			owner = GER
-			controller = GER
-			
-
-			add_core_of = FRA #dont create belgium at invasion
-
-			buildings = {
-				anti_air_building = 1
-				6560 = {
-					coastal_bunker = 3
-				}
-				6446 = {
-					coastal_bunker = 3
-				}
-			}
-     	}  
+	
 	}
 
 	provinces = {

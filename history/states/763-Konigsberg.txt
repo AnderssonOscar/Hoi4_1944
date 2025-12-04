@@ -17,31 +17,23 @@ state = {
 		buildings = {
 			infrastructure = 3 #was: 6
 			industrial_complex = 2
-
 			anti_air_building = 2
 			6332 = {
 				bunker = 1
 				naval_base = 5
-
 			}
 			air_base = 6
 		}
-
+		
 		1939.1.1 = {
 			buildings = {
 				anti_air_building = 5
 			}
 		}
-		1943.12.30 = {
-			buildings = {
-				synthetic_refinery = 1
-				radar_station = 4
-			}
-		}
 	}
 
 	provinces = {
-		281 348 395 3384 6332 11265 13381 13382 13383
+		281 348 395 3384 6332 11265
 	}
 
 	local_supplies = 0.0 

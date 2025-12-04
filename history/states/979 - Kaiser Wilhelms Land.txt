@@ -40,21 +40,6 @@ state = {
 			12237 3 # Lae
 		}
 
-		1944.1.1 = {
-			owner = JAP
-			controller = JAP
-			add_core_of = JAP
-
-			AST = {
-				set_province_controller = 12193
-				set_province_controller = 12237
-				set_province_controller = 7365
-				set_province_controller = 10251
-				set_province_controller = 4418
-			}
-
-		}
-
 	}
 
 	provinces = {

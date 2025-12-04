@@ -15,15 +15,17 @@ state = {
 			infrastructure = 2
 			industrial_complex = 1
 			arms_factory = 1
+			1330 = {
+				naval_base = 1
+			}
 		}
 
 		victory_points = {
 			1330 15 # Rangoon
 		}
 
-		1944.1.1 = {
-			owner = JAP
-			controller = JAP
+		victory_points = {
+			10344 1 # Taungoo
 		}
 
 	}

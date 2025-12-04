@@ -16,13 +16,6 @@ state = {
 		}
 		add_core_of = SOV
 		add_core_of = MEL
-
-		1943.12.31 = {
-			buildings = {
-				arms_factory = 7
-		}
-		}
-
 	}
 
 	provinces = {

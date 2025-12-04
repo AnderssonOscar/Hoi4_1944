@@ -6,6 +6,7 @@ state = {
 	state_category = town
 	resources = {
 		steel = 2
+		coal = 1 #initial distribution 
 	}
 
 	history = {
@@ -25,14 +26,6 @@ state = {
 
 			}
 
-		}
-
-		1943.12.30 = {
-			buildings = {
-				industrial_complex = 1
-				dockyard = 1
-				arms_factory = 2
-			}
 		}
 		add_core_of = SWE
 

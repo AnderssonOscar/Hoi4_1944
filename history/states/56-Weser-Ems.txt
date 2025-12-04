@@ -31,6 +31,12 @@ state = {
 			fuel_silo = 1
 			241 = {
 				naval_base = 8
+				naval_headquarters = {
+					level = 1
+					allowed = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+				}
 			}
 			air_base = 3
 		}
@@ -39,21 +45,11 @@ state = {
 			buildings = {
 				industrial_complex = 4
 				dockyard = 3
-			}
-		}
-
-
-		1943.12.30 = {
-			buildings = {
 				241 = {
-					coastal_bunker = 6
 					naval_facility = 1 # Wilhelmshaven Naval Dockyards
 				}
-				anti_air_building = 2
 			}
 		}
-
-
 	}
 
 	provinces = {

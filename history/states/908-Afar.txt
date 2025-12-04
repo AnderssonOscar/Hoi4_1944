@@ -30,11 +30,6 @@ state = {
 
 		}
 
-		1943.12.30 = {
-			owner = ENG
-			controller = ENG
-		}
-
 	}
 
 	provinces = {

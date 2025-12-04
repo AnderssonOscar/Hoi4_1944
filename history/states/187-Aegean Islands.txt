@@ -29,11 +29,6 @@ state={
 			8435 1
 		}
 		add_core_of = GRE
-
-		1943.12.1 = {
-			#owner = GER
-			#controller = GER
-		}
 	}
 
 	provinces={

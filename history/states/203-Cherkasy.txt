@@ -17,22 +17,6 @@ state={
 		}
 		add_core_of = SOV
 		add_core_of = UKR
-
-		
-		1943.12.30 = {
-			controller = GER
-			owner = GER
-			SOV = {
-				set_province_controller = 11530
-				set_province_controller = 9491
-				set_province_controller = 11454
-				set_province_controller = 488
-				set_province_controller = 3468
-				set_province_controller = 6478
-			}
-		}
-
-		
 	}
 
 	provinces={

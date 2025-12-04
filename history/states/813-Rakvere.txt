@@ -2,9 +2,6 @@
 state={
 	id=813
 	name="STATE_813"
-	resources={
-		oil=5.000 #1944 was 2
-	}
 
 	history={
 		owner = EST
@@ -17,24 +14,12 @@ state={
 		buildings = {
 			infrastructure = 3 #was: 5
 			4640 = {
-				naval_base = 2
-				bunker = 2
+				naval_base = 1
+
 			}
 
 		}
 		add_core_of = EST
-
-		1943.12.1 = {
-			owner = GER
-			controller = GER
-			buildings = {
-				4640 = {
-					bunker = 4
-					naval_base = 3
-				}
-			}
-
-		}
 
 	}
 

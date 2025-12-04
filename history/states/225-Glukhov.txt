@@ -19,12 +19,6 @@ state={
 		}
 		add_core_of = SOV
 		add_core_of = UKR
-
-		1943.12.30 = {
-			buildings = {
-				arms_factory = 2
-			}
-		}
 	}
 
 	provinces={

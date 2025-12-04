@@ -30,14 +30,7 @@ state = {
 				air_base = 8
 				9388 = { #Not exact match with historical location but has supplies
 					air_facility = 1 #Representing Peenemünde's Research Facilities
-			}
-		}
-	}
-
-		1943.12.30 = {
-			buildings = {
-				arms_factory = 1
-				anti_air_building = 1
+				}
 			}
 		}
 	}

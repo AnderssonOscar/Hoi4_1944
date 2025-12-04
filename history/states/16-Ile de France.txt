@@ -42,17 +42,6 @@ state = {
 				industrial_complex = 6
 			}
 		}
-
-		1943.12.1 = {
-			owner = GER
-			controller = GER
-		}
-
-		1943.12.30 = {
-			buildings = {
-				arms_factory = 4
-			}
-		}
 	}
 
 	provinces = {

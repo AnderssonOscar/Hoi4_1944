@@ -17,11 +17,6 @@ state=
 		}
 		add_core_of = YUG
 		add_core_of = SLV
-
-		1943.12.1 = {
-			owner = GER
-			controller = GER
-		}
 	}
 	provinces={
 		596 665 3631 3654 6672 9596

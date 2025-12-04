@@ -14,10 +14,6 @@ state = {
 				naval_base = 1
 			}
 		}
-		1943.12.30 = {
-			owner = GER
-			controller = GER
-		}
 	}
 
 	provinces={

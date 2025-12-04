@@ -6,14 +6,14 @@ state = {
 
 	state_category = megalopolis
 
+	history = {
 
-	history={
 		owner = GER
 		add_core_of = GER
 		add_core_of = PRE
 
 		victory_points = {
-			6521 65 
+			6521 50 # Berlin
 		}
 
 		victory_points = {
@@ -47,21 +47,15 @@ state = {
 			buildings = {
 				air_base = 10
 				anti_air_building = 5
-				arms_factory = 3
-				industrial_complex = 3
+				arms_factory = 10
+				industrial_complex = 7
 			}
 		}
 
-		1943.12.30 = {
-			buildings = {
-				radar_station = 4
-				synthetic_refinery = 2
-			}
-		}
 	}
 
 	provinces = {
-		375 478 3367 3499 3522 6487 6521 9428 9456 9496 9560 11219 11359 11415 11444 11505 13377 13378 13379 13380
+		375 478 3367 3499 3522 6487 6521 9428 9456 9496 9560 11219 11359 11415 11444 11505 
 	}
 
 	local_supplies = 0.0 

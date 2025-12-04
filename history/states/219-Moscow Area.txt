@@ -6,7 +6,8 @@ state={
 	
 	state_category = megalopolis
 	resources={
-		steel=16 # was: 28
+		steel = 16 # was: 28
+		coal = 16 # initial distribution
 	}
 
 	history={
@@ -36,16 +37,6 @@ state={
 				3391 = {
 					land_facility = 1 # Mytischi
 				}
-			}
-		}
-
-
-		1943.12.30 = {
-			buildings = {
-				anti_air_building = 3
-				radar_station = 4
-				synthetic_refinery = 3
-				fuel_silo = 3
 			}
 		}
 	}

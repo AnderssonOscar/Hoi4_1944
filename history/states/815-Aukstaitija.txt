@@ -14,14 +14,6 @@ state={
 		}
 		add_core_of = LIT
 
-		1943.12.1 = {
-			buildings = {
-				arms_factory = 1
-			}
-			owner = GER
-			controller = GER
-		}
-
 	}
 
 	provinces={

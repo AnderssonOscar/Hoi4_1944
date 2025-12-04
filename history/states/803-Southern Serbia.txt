@@ -16,11 +16,6 @@ state={
 		add_core_of = SER
 		add_claim_by = BUL
 
-		1943.12.1 = {
-			owner = BUL
-			controller = BUL
-		}
-
 	}
 
 	provinces={

@@ -7,7 +7,8 @@ state={
 	state_category = megalopolis
 	
 	resources={
-		steel=44 # was: 80
+		steel = 44 # was: 80
+		coal = 160 # initial distribution = with infra 432 / 1280 total
 	}
 
 
@@ -34,14 +35,6 @@ state={
 			buildings = {
 				industrial_complex = 6
 				dockyard = 8
-			}
-		}
-
-		
-		1943.12.30 = {
-			buildings = {
-				synthetic_refinery = 3
-				industrial_complex = 2
 			}
 		}
 

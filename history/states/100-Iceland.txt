@@ -17,11 +17,6 @@ state = {
 			}
 			industrial_complex = 1
 		}
-
-		1943.12.30 = {
-			owner = USA
-			controller = USA
-		}
 		# add_core_of = DEN
 		add_core_of = ICE
 	}

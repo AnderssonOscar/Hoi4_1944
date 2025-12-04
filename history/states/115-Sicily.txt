@@ -40,11 +40,6 @@ state = {
 			}
 
 		}
-		1943.12.1 = {
-			owner = USA
-			controller = USA
-		}
-
 		add_core_of = ITA
 		add_core_of = TTS
 

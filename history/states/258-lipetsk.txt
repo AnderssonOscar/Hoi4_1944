@@ -15,12 +15,6 @@ state={
 		victory_points = {
 			6398 1
 		}
-
-		1943.12.30 = {
-			buildings = {
-				arms_factory = 5
-			}
-		}
 	}
 
 	provinces={

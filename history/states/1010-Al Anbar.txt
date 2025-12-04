@@ -14,11 +14,6 @@ state = {
 		victory_points = {
 			12413 1 # Rumadiyah
 		}
-
-		1944.1.1 = {
-			owner = ENG
-			controller = ENG
-		}
 	}
 
 	provinces = {

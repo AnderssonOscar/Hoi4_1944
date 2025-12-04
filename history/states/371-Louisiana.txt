@@ -26,12 +26,6 @@ state={
 			7552 10 
 		}
 
-		1943.12.30 = {
-			buildings = {
-				dockyard = 5
-			}
-		}
-
 	}
 
 	provinces={

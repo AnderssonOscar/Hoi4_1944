@@ -9,9 +9,13 @@ state = {
 		owner = BRM
 		add_core_of = BRM
 
-		1944.1.1 = {
-			owner = JAP
-			controller = JAP
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+
+		victory_points = {
+			7254 1 # Bassein
 		}
 	}
 

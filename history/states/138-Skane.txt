@@ -3,6 +3,10 @@ state = {
 	id = 138
 	name = "STATE_138"
 	manpower = 1047701
+
+	resources = {
+		coal = 2 #initial distribution
+	}
 	
 	state_category = city
 
@@ -30,14 +34,6 @@ state = {
 			9279 = {
 				naval_base = 5
 				coastal_bunker = 1
-			}
-		}
-
-		1943.12.30 = {
-			buildings = {
-				fuel_silo = 1
-				industrial_complex = 2
-				arms_factory = 3
 			}
 		}
 

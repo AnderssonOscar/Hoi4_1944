@@ -25,23 +25,6 @@ state={
 		}
 		add_core_of = SOV
 		add_core_of = UKR
-
-
-		1943.12.30 = {
-
-			buildings = {
-				industrial_complex = 2
-			}
-
-			controller = SOV
-			owner = SOV
-			GER = {
-				set_province_controller = 6423
-				set_province_controller = 11561
-				set_province_controller = 9419
-				set_province_controller = 11715
-			}
-		}
 	}
 
 	provinces={

@@ -18,11 +18,6 @@ state={
 		add_core_of = YUG
 		add_core_of = SER
 		add_core_of = TRA
-
-						1943.12.1 = {
-			owner = SER
-			controller = SER
-		}
 	}
 
 	provinces={

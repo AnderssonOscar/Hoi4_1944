@@ -15,11 +15,6 @@ state={
 			infrastructure = 1
 		}
 
-		1943.12.1 = {
-			owner = JAP
-			controller = JAP
-		}
-
 	}
 
 	provinces={

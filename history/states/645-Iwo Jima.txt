@@ -20,13 +20,8 @@ state=
 			13025 5
 		 }
 
-		 1943.12.31 = {
-			buildings = {
-				air_base = 9
-				13025 = {
-					naval_base = 5
-				}
-			}
+		 strategic_province_location = {
+		 	defensible_coastline = 13025
 		 }
 
 	}

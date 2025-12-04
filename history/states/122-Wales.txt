@@ -8,6 +8,7 @@ state= {
 	resources={
 		steel=11 # was: 16
 		aluminium=3 # was: 4
+		coal = 55 #initial distribution
 	}
 
 	history=
@@ -27,17 +28,6 @@ state= {
 				naval_base = 3
 			}
 		}
-
-		1943.12.30 = {
-			buildings = {
-				arms_factory = 4
-				industrial_complex = 1
-				synthetic_refinery = 2
-				fuel_silo = 1
-				anti_air_building = 2
-			}
-		}
-
 		add_core_of = ENG
 		add_core_of = WLS
 	}
