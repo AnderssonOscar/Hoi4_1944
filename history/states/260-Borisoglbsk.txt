@@ -25,6 +25,12 @@ state={
 			}
 			
 		}
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 2
+			}
+		}
 	}
 
 	provinces={

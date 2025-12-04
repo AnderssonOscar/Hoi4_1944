@@ -31,6 +31,11 @@ state = {
 		}
 		add_core_of = ITA
 		add_core_of = SPM
+
+		1943.12.1 = {
+			owner = USA
+			controller = USA
+		}
 	}
 	provinces = {
 		902 6891 9772 9863 11755 11773 11824 11874 	

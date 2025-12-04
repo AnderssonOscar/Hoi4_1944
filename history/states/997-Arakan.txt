@@ -1,7 +1,7 @@
 state = {
 	id = 997
 	name = "STATE_997"
-
+	
 	resources = {
 		rubber = 3
 	}
@@ -21,6 +21,11 @@ state = {
 			}
 		}
 
+		1944.1.1 = {
+			owner = JAP
+			controller = JAP
+		}
+		
 		victory_points = {
 			12090 1 # Akyab/Sittwe
 		}

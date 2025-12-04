@@ -21,6 +21,11 @@ state={
 			owner = POL
 			controller = POL
 		}
+
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
 	}
 
 	provinces={

@@ -2,7 +2,7 @@ state = {
 	id = 627
 	name = "STATE_627"
 	manpower = 815609 
-
+	
 	state_category = rural
 
 	history = {
@@ -23,7 +23,11 @@ state = {
 		victory_points = {
 			4241 5 # Davao
 		}
-		
+
+		1943.12.1 = {
+			owner = JAP
+			controller = JAP
+		}
 	}
 
 	provinces = {

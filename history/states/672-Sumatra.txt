@@ -7,7 +7,7 @@ state = {
 	
 	resources = {
 		rubber = 150 # was: 268
-		oil = 12 # was: 24
+		oil = 4 # was: 24
 		aluminium = 28 # was: 50
 		coal = 4 # initial distribution
 	}
@@ -45,8 +45,10 @@ state = {
 
 			12113 = {
 				naval_base = 1
-			}
-
+		}
+		1943.12.1 = {
+			owner = JAP
+			controller = JAP
 		}
 	}
 

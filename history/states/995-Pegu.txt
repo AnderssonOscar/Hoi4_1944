@@ -28,6 +28,11 @@ state = {
 			10344 1 # Taungoo
 		}
 
+		1944.1.1 = {
+			owner = JAP
+			controller = JAP
+		}
+
 	}
 
 	provinces = {

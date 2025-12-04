@@ -28,6 +28,10 @@ state=
 				naval_base = 3
 			}
 		}
+		1943.12.1 = {
+			owner = ENG
+			controller = ENG
+		}
 	}
 	provinces={
 		5017 5047 5091 8043 12723 12766 13250 13251

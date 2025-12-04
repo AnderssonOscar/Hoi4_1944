@@ -17,6 +17,12 @@ state=
 		}
 		add_core_of = YUG
 		add_core_of = SLV
+
+		1943.12.30 = {
+			owner = CRO
+			controller = CRO
+		}
+
 	}
 	provinces={
 		6650 9627

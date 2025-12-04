@@ -30,6 +30,10 @@ state = {
 				coastal_bunker = 3
 			}
 		}
+		1943.12.30 = {
+			owner = GER
+			controller = GER
+		}
 		add_core_of = NOR
 	}
 

@@ -25,11 +25,15 @@ state = {
 			}
 
 		}
-
+		
 		victory_points = {
 			12213 1 # Aparri
 		}
-		
+
+		1943.12.1 = {
+			owner = JAP
+			controller = JAP
+		}
 	}
 
 	provinces = {

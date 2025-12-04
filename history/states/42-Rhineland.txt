@@ -69,6 +69,15 @@ state = {
 				}
 			}
 		}
+
+		
+		1943.12.30 = {
+			buildings = {
+				radar_station = 3
+				anti_air_building = 3
+				synthetic_refinery = 2
+			}
+		}
 	}
 
 	provinces = {

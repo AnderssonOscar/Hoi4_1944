@@ -17,6 +17,22 @@ state={
 		}
 		add_core_of = SOV
 		add_core_of = BLR
+
+		1943.12.30 = {
+			controller = GER
+			owner = GER
+			SOV = {
+				set_province_controller = 11220
+				set_province_controller = 323
+			}
+
+			buildings = {
+				11241 = {
+					bunker = 5
+				}
+			}
+		}
+
 	}
 
 	provinces={

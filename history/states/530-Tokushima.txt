@@ -24,6 +24,13 @@ state = {
 			7197 8 # Kochi
 		}
 
+		1943.12.30 = {
+			buildings = {
+					arms_factory = 2
+					dockyard = 1
+			}
+		}
+
 		victory_points = {
 			4179 10 # Matsuyama
 		}

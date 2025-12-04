@@ -38,6 +38,14 @@ state={
 				industrial_complex = 4
 			}
 		}
+
+		1943.12.1 = {
+			buildings = {
+					
+					fuel_silo = 1
+					synthetic_refinery = 3
+			}
+		}
 	}
 
 	provinces={

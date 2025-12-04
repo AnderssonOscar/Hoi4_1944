@@ -20,10 +20,15 @@ state = {
 		}
 		add_core_of = ITA
 		add_core_of = TTS
+
+		1943.12.1 = {
+			owner = USA
+			controller = USA
+		}
 	}
 
 	provinces = {
-		3901 9990 10027 12066 12098 
+		3901 9990 10027 12066 12098  
 	}
 
 	local_supplies = 0.0 

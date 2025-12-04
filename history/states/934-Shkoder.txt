@@ -24,6 +24,10 @@ state = {
 		    controller = ITA
 		    remove_claim_by = ITA
 		}
+		1943.12.30 = {
+			owner = ALB
+			controller = ALB
+		}
 
 	}
 

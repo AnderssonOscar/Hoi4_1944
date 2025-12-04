@@ -24,6 +24,15 @@ state=
 		 	defensible_coastline = 13025
 		 }
 
+		 1943.12.31 = {
+			buildings = {
+				air_base = 9
+				13025 = {
+					naval_base = 5
+				}
+			}
+		 }
+
 	}
 	provinces={
 		13025

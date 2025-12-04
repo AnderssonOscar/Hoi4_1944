@@ -7,8 +7,9 @@ state = {
 	manpower = 854300
 
 	resources = {
-		steel = 13 # was: 20
-		chromium = 3 # was: 4
+		steel = 14 # was: 20
+		chromium = 4 # was: 4
+		tungsten=2 #1944 new
 	}
 	
 	state_category = town
@@ -36,7 +37,7 @@ state = {
 					has_dlc = "Gotterdammerung"
 				}
 			}
-			add_claim_by = HUN
+		add_claim_by = HUN
 		}
 		
 

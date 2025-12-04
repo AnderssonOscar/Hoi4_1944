@@ -12,7 +12,7 @@ state = {
 
 		buildings = {
 			infrastructure = 3 #was: 6
-			industrial_complex = 2
+			industrial_complex = 3
 			arms_factory = 1
 			air_base = 2
 		}
@@ -24,7 +24,12 @@ state = {
 		victory_points = {
 			11646 1 
 		}
-		
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 3
+			}
+		}
 	}
 
 	provinces = {

@@ -26,6 +26,10 @@ state={
 				industrial_complex = 3
 			}
 		}
+					1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
 	}
 
 	provinces={

@@ -24,6 +24,12 @@ state = {
 			infrastructure = 2
 			#industrial_complex = 1 was 1
 		}
+		1943.12.30 = {
+			buildings = {
+				industrial_complex = 1
+				infrastructure = 3
+			}
+		}
 	}
 
 	provinces = {

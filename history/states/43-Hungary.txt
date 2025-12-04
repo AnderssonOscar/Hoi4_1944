@@ -5,7 +5,7 @@ state={
 	manpower = 3750752
 	resources = {
 		steel = 6 #was 3 was: 4
-		aluminium = 40 # was: 194
+		aluminium = 30 # was: 194
 		coal = 4 #initial distribution
 	}
 	
@@ -23,6 +23,18 @@ state={
 			9660 20 
 		}
 		add_core_of = HUN
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 5
+				industrial_complex = 3
+				anti_air_building = 2
+
+				9660 = {
+					land_facility = 1 
+				}
+			}
+		}
 	}
 
 	provinces={

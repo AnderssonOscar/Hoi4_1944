@@ -17,6 +17,14 @@ state={
 			air_base = 1
 		}
 		add_core_of = SOV
+
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 7
+				fuel_silo = 2
+			}
+		}
 	}
 
 	provinces={

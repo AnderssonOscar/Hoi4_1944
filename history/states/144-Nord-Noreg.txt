@@ -20,7 +20,7 @@ state = {
 		
 		owner = NOR
 		add_core_of = NOR
-		add_core_of = SMI
+			add_core_of = SMI
 		
 		buildings = {
 			infrastructure = 2
@@ -29,6 +29,10 @@ state = {
 				naval_base = 3
 			}
 			
+		}
+		1943.12.30 = {
+			owner = GER
+			controller = GER
 		}
 	}
 

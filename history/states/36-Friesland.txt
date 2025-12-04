@@ -18,13 +18,40 @@ state={
 			6336 1 
 		}
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
 			industrial_complex = 2
 			6336 = {
 				naval_base = 3
 
 			}
 
+		}
+
+		1943.12.1 = {
+			owner = RKN
+			controller = RKN
+
+		buildings = {
+			anti_air_building = 2
+			industrial_complex = 3
+			arms_factory = 3
+			synthetic_refinery = 1
+
+			9363 = {
+				bunker = 2
+			}
+
+			9335 = {
+				coastal_bunker = 2
+			}
+			11318 = {
+				coastal_bunker = 2
+			}
+			6336 = {
+				coastal_bunker = 2
+			}
+
+			}
 		}
 
 	}

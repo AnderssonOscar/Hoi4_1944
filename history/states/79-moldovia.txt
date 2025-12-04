@@ -6,7 +6,7 @@ state=
 	
 	resources = {
 		coal = 1 # initial distribution
-	}
+		}
 
 	state_category = rural
 	

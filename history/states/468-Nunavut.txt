@@ -35,6 +35,14 @@ state = {
 			10230 1
 		}
 
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 3
+				fuel_silo = 1
+			}
+		}
+
 	}
 
 	provinces = {

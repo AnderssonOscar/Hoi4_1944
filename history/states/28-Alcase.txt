@@ -24,32 +24,34 @@ state={
 			infrastructure = 4
 			industrial_complex = 3
 			549 = {
-				bunker = 10
+				bunker = 6
 
 			}
 			678 = {
-				bunker = 10
+				bunker = 6
 
 			}
 			3629 = {
-				bunker = 10
+				bunker = 4
 
 			}
 			6529 = {
-				bunker = 10
+				bunker = 6
+
 			}
 			9503 = {
-				bunker = 10
+				bunker = 5
+
 			}
 			9559 = {
-				bunker = 10
+				bunker = 6
 
 			}
 			11502 = {
-				bunker = 10
+				bunker = 4
 
 			}
-			anti_air_building = 5
+			anti_air_building = 2 #1944 ws 5
 			air_base = 5
 
 		}
@@ -58,6 +60,10 @@ state={
 			buildings = {
 				industrial_complex = 4
 			}
+		}
+		1943.12.1 = {
+			owner = GER
+			controller = GER
 		}
 	}
 

@@ -45,11 +45,21 @@ state = {
 			buildings = {
 				industrial_complex = 4
 				dockyard = 3
-				241 = {
-					naval_facility = 1 # Wilhelmshaven Naval Dockyards
-				}
 			}
 		}
+
+
+		1943.12.30 = {
+			buildings = {
+				241 = {
+					coastal_bunker = 6
+					naval_facility = 1 # Wilhelmshaven Naval Dockyards
+				}
+				anti_air_building = 2
+			}
+		}
+
+
 	}
 
 	provinces = {

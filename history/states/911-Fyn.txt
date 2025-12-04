@@ -18,7 +18,7 @@ state = {
 				naval_base = 3
 			}
 		}
-		1939.1.1 = {
+1939.1.1 = {
 			buildings = {
 				infrastructure = 3
 				industrial_complex = 1
@@ -29,6 +29,12 @@ state = {
 				}
 			}
 		}
+
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
+
 	}
 	provinces = {
 		3325 3374 13260

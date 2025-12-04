@@ -4,7 +4,7 @@ state = {
 	
 	state_category = rural
 	manpower = 1567516
-
+	
 	resources = {
 		tungsten = 70
 		coal = 4 #Kalewa mines near the Chindwin River
@@ -16,6 +16,11 @@ state = {
 
 		buildings = {
 			infrastructure = 1
+		}
+
+		1944.1.1 = {
+			owner = JAP
+			controller = JAP
 		}
 
 		victory_points = {

@@ -25,7 +25,7 @@ state = {
 
 			}
 		}
-		1939.1.1 = {
+	1939.1.1 = {
 			buildings = {
 				infrastructure = 3
 				arms_factory = 2
@@ -38,6 +38,12 @@ state = {
 				}
 			}
 		}
+
+		1943.12.30 = {
+			owner = GER
+			controller = GER
+		}
+
 	}
 
 	provinces={

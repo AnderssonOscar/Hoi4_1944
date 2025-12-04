@@ -27,6 +27,16 @@ state={
 		}
 		add_core_of = YUG
 		add_core_of = BOS
+
+		
+		1943.12.1 = {
+			owner = CRO
+			controller = CRO
+
+			buildings = {
+				industrial_complex = 1
+			}
+		}
 	}
 
 	provinces={

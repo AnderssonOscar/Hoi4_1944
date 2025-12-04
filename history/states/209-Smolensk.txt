@@ -16,6 +16,22 @@ state={
 			air_base = 4
 		}
 		add_core_of = SOV
+
+		
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+
+			buildings = {
+				415 = {
+					bunker = 2
+				}
+
+				3310 = {
+					bunker = 2
+				}
+			}
+		}
 	}
 
 	provinces={

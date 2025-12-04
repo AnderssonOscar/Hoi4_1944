@@ -7,7 +7,7 @@ state={
 	state_category = town
 	
 	resources={
-		steel=12 #was:30 was: 48
+		steel=8 # was: 48 1944 changed to 8 from 30
 	}
 
 	history={
@@ -23,6 +23,26 @@ state={
 			}
 		}
 		add_core_of = FRA
+
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
+
+
+		1943.12.30 = {
+			buildings = {
+				anti_air_building = 5
+				infrastructure = 4
+				radar_station = 3
+				dockyard = 3
+
+			6657 = {
+				coastal_bunker = 4
+				naval_base = 7
+			}
+			}
+		}
 	}
 
 	provinces={

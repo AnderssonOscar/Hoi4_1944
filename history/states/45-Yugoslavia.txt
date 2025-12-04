@@ -12,6 +12,17 @@ state={
 		add_core_of = YUG
 		add_core_of = SER
 
+		1943.12.1 = {
+			owner = HUN
+			controller = HUN
+		}
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 2
+			}
+		}
+
 	}
 
 	provinces={

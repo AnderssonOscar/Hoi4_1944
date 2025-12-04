@@ -29,9 +29,17 @@ state = {
 			271 = {
 				naval_base = 3
 			}
-
 		}
+		1943.12.1 = {
+			buildings = {
+				fuel_silo = 1
+				synthetic_refinery = 3
+				11221 = {
+					nuclear_facility = 1 
+				}
+			}
 		
+		}
 	}
 
 	provinces = {

@@ -32,6 +32,13 @@ state={
 			}
 		}
 
+		1943.12.30 = {
+			buildings = {
+				synthetic_refinery = 3
+				fuel_silo = 3
+			}
+		}
+
 	}
 
 	provinces={

@@ -44,6 +44,17 @@ state = {
 				dockyard = 5
 			}
 		}
+
+		1943.12.1 = {
+			owner = USA
+			controller = USA
+			buildings = {
+				air_base = 10
+				anti_air_building = 4
+				radar_station = 4
+			}	
+		}
+		
 	}
 	provinces = {
 		883	6843 6939 6980 6979 9784 11837 11998

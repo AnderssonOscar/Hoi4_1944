@@ -27,6 +27,11 @@ state = {
 				industrial_complex = 2
 			}
 		}
+
+		1943.12.1 = {
+			owner = ROM
+			controller = ROM
+		}
 	}
 
 	provinces = {

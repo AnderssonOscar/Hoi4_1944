@@ -37,10 +37,17 @@ state = {
 			12068 1 # Gaoxiong
 		}
 
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 1
+			}
+		}
+
 	}
 	provinces = {
 		1091 1175 4096 7186 7214 9955 11914 11959 12027 12068
-	}
+		}
 
 	local_supplies = 0.0 
 }

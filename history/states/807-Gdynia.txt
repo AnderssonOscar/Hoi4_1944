@@ -33,9 +33,16 @@ state = {
 				naval_base = 1
 			}
 		}
-		
+
 		1938.3.12 = {
 			add_claim_by = GER
+		}
+
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+			add_core_of = PRE
+			add_core_of = GER
 		}
 	}
 

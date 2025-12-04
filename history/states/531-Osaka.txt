@@ -46,6 +46,17 @@ state = {
 			}
 		}
 
+		1943.12.30 = {
+			buildings = {
+				fuel_silo = 1
+				arms_factory = 1
+				anti_air_building = 1
+
+				11960 = {
+                	land_facility = 1
+            	}
+			}
+		}
 	}
 
 	provinces = {

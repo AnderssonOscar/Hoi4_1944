@@ -31,6 +31,11 @@ state={
 			10837 10 
 		}
 		add_core_of = PER
+
+		1943.12.1 = {
+			owner = SOV
+			controller = SOV
+		}
 	}
 
 	provinces={

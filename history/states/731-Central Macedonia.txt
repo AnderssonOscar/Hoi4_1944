@@ -21,6 +21,19 @@ state={
 		add_core_of = GRE
 		add_claim_by = BUL
 
+		1943.12.1 = {
+		#	owner = GER
+		#	controller = GER
+		}
+
+		1943.12.30 = {
+			buildings = {
+				11818 = {
+					coastal_bunker = 5
+				}
+			}
+		}
+
 	}
 
 	provinces={

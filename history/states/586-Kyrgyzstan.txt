@@ -25,9 +25,14 @@ state={
 				industrial_complex = 4
 
 			}
-
 		}
 
+		1943.12.31 = {
+			buildings = {
+				infrastructure = 1
+				arms_factory = 6
+		}
+		}
 	}
 
 	provinces={

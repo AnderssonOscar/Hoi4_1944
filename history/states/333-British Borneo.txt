@@ -7,7 +7,7 @@ state = {
 
 	resources = {
 		rubber = 20 # was: 72, then 40
-		oil = 2 # was: 18, then 12
+		oil = 10 # was: 18, then 12
 		coal = 1 # initial distribution
 	}
 	
@@ -32,7 +32,11 @@ state = {
 			}
 
 		}
-		
+
+		1943.12.1 = {
+			owner = JAP
+			controller = JAP
+		}
 	}
 
 	provinces = {

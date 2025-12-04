@@ -48,6 +48,13 @@ state = {
 			}
 		}
 
+		1943.12.30 = {
+			buildings = {
+				1055 = {
+					bunker = 3
+					}
+				}
+			}
 		1938.10.25 = {		
 			JAP = {
 				set_province_controller = 1055

@@ -22,7 +22,7 @@ state={
                     allowed = {
                         has_dlc = "Gotterdammerung"
                     }
-                }
+			}
 			}
 		}
 		add_core_of = USA
@@ -31,6 +31,14 @@ state={
 		}
 		victory_points = {
 			11654 3 
+		}
+
+		
+		1943.12.30 = {
+			buildings = {
+				synthetic_refinery = 3
+				industrial_complex = 2
+			}
 		}
 
 	}

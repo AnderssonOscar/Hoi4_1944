@@ -30,6 +30,12 @@ state = {
 		### CHANGED TO A MROE ROBUST SYSTEM
 		##CONTROLLED BY ITALY AT GAME START -> ITALIAN NAMES
 		#set_province_name = { id = 11564 name = VICTORY_POINTS_11564_ITA }
+
+		1943.12.30 = {
+			owner = GER
+			controller = GER
+		}
+
 	}
 
 	provinces = {

@@ -1,47 +1,82 @@
 state={
-	id=7
-	name="STATE_7"
-	resources={
-		steel=4.000
-	}
+    id=7
+    name="STATE_7"
+    resources={
+        steel=4.000
+    }
 
-	history={
-		owner = HOL
-		add_core_of = HOL
-		victory_points = {
-			391 40 
-		}
-		victory_points = {
-			3211 10 
-		}
-		victory_points = {
-			9498 20 
-		}
-		buildings = {
-			infrastructure = 3
-			arms_factory = 4
-			industrial_complex = 3
-			dockyard = 3
-			air_base = 5
-			3314 = {
-				naval_base = 5
+    history={
+        owner = HOL
+        add_core_of = HOL
+        victory_points = {
+            391 40
+        }
+        victory_points = {
+            3211 10
+        }
+        victory_points = {
+            9498 20
+        }
+        buildings = {
+            infrastructure = 4
+            arms_factory = 4
+            industrial_complex = 3
+            dockyard = 3
+            air_base = 5
+            3314 = {
+                naval_base = 5
 
-			}
-			9498 = {
-				naval_base = 10
+            }
+            9498 = {
+                naval_base = 10
 
-			}
+            }
 
-		}
+        }
 
-	}
+        1943.12.1 = {
+            owner = RKN
+            controller = RKN
 
-	provinces={
-		68 391 3211 3314 9498 
-	}
-	manpower=4123000
-	buildings_max_level_factor=1.000
-	state_category=metropolis
+            buildings = {
+                infrastructure = 4
+                arms_factory = 3
+                industrial_complex = 2
+                dockyard = 3
+                air_base = 10
+                radar_station = 3
+                fuel_silo = 1
+                anti_air_building = 3
 
-	local_supplies=0.0 
+                3314 = {
+                    naval_base = 5
+
+                }
+                9498 = {
+                    naval_base = 10
+					coastal_bunker = 2
+
+                }
+                3211 = {
+                    coastal_bunker = 2
+                }
+
+                68 = {
+                    coastal_bunker = 1
+                }
+
+            }
+
+        }
+
+    }
+
+    provinces={
+        68 391 3211 3314 9498
+    }
+    manpower=4123000
+    buildings_max_level_factor=1.000
+    state_category=metropolis
+
+    local_supplies=0.0
 }

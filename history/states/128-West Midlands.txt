@@ -28,6 +28,16 @@ state={
 				industrial_complex = 4
 			}
 		}
+
+		1943.12.1 = {
+			buildings = {
+					anti_air_building = 3
+					synthetic_refinery = 3
+			9297 = {
+                	land_facility = 1
+            	}
+			}
+		}
 	}
 
 	provinces={

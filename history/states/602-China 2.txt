@@ -25,6 +25,20 @@ state={
 			}
 
 		}
+		1944.1.1 = {
+			buildings = {
+				industrial_complex = 1
+				arms_factory = 3
+				fuel_silo = 1
+				anti_air_building = 1
+
+				# 7097 = {
+				# 	bunker = 3
+				# }
+
+			}
+		}
+		
 
 		victory_points = {
 			7097 5 # Changsha 

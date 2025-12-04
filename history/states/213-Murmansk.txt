@@ -29,6 +29,22 @@ state={
 			}
 		}
 
+
+		1943.12.30 = {
+			controller = SOV
+			owner = SOV
+			FIN = {
+				set_province_controller = 6117
+			}
+
+		buildings = {
+			3134 = {
+				bunker = 2
+				}
+			}
+		}
+
+
 		add_core_of = SOV
 		add_core_of = SMI
 		

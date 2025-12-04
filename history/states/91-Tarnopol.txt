@@ -20,6 +20,15 @@ state={
 		}
 		add_core_of = POL
 		add_core_of = UKR
+
+		1943.12.1 = {
+			buildings = {
+				arms_factory = 2
+			}
+			owner = GER
+			controller = GER
+		}
+
 	}
 
 	provinces={

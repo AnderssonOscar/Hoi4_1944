@@ -38,7 +38,13 @@ state = {
 			buildings = {
 				synthetic_refinery = 2
 				arms_factory = 5
-				industrial_complex = 10
+				industrial_complex = 6
+			}
+		}
+
+		1943.12.30 = {
+			buildings = {
+				anti_air_building = 1
 			}
 		}
 	}

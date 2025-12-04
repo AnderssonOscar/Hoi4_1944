@@ -19,6 +19,11 @@ state={
 			arms_factory = 1
 			industrial_complex = 1  
 		}
+		1943.12.30 = {
+			buildings = {
+				air_base = 1
+			}
+		}
 		victory_points = {
 			10737 5 
 		}

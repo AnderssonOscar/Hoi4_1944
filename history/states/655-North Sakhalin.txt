@@ -1,3 +1,4 @@
+
 state = {
 	id = 655
 	name = "STATE_655"
@@ -11,13 +12,10 @@ state = {
 	
 	state_category = pastoral
 	history = {
-
 		owner = SOV
 		add_core_of = SOV
 		add_core_of = FER
-		add_core_of = ANU
 		add_claim_by = JAP
-
 		buildings = {
 			infrastructure = 2
 			air_base = 1

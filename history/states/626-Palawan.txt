@@ -16,10 +16,10 @@ state=
 			}
 		}
 		add_core_of = PHI
-		1939.1.1 = {
-			buildings = {
-				industrial_complex = 1
-			}
+
+		1943.12.1 = {
+			owner = JAP
+			controller = JAP
 		}
 	}
 	provinces={

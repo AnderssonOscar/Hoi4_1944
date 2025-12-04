@@ -23,6 +23,11 @@ state = {
 		buildings = {
 			infrastructure = 1
 		}
+
+		1944.1.1 = {
+			owner = JAP
+			controller = JAP
+		}
 	}
 
 	provinces = {

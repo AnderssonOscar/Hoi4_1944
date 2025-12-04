@@ -15,7 +15,11 @@ state = {
 		buildings = {
 			infrastructure = 0
 		}
-		
+
+		1943.12.1 = {
+			owner = ENG
+			controller = ENG
+		}
 	}
 
 	provinces = {

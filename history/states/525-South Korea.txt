@@ -19,9 +19,18 @@ state = {
 			arms_factory = 1
 		}
 
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 1
+			}
+		}
+
 		victory_points = {
 			7125 3 # Seoul/Keijō/Gyeongseong
 		}
+
+		add_core_of = KOR
 
 	}
 
@@ -29,5 +38,5 @@ state = {
 		1100 7125 7221 10036 
 	}
 
-	local_supplies = 0.0 
+	local_supplies=0.0 
 }

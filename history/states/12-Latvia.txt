@@ -20,6 +20,11 @@ state={
 			air_base = 3
 		}
 		add_core_of = LAT
+
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
 	}
 
 	provinces={

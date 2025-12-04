@@ -22,6 +22,10 @@ state = {
 			1492 3 # Mandalay
 		}
 
+		1944.1.1 = {
+			owner = JAP
+			controller = JAP
+		}
 	}
 
 	provinces = {

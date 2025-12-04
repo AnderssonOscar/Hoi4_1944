@@ -33,6 +33,11 @@ state={
 				dockyard = 2
 			}
 		}
+		
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
 	}
 
 	provinces={

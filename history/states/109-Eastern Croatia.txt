@@ -3,7 +3,7 @@ state={
 	id=109
 	name="STATE_109" # Croatia
 	manpower = 2224400
-
+	
 	resources = {
 		coal = 1 #initial distribution
 	}
@@ -21,6 +21,19 @@ state={
 		}
 		add_core_of = YUG
 		add_core_of = CRO
+
+		1943.12.1 = {
+			owner = CRO
+			controller = CRO
+		}
+
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 3
+				fuel_silo = 1
+			}
+		}
 	}
 
 	provinces={

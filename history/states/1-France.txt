@@ -19,6 +19,12 @@ state={
 		}
 		add_core_of = COR
 		add_core_of = FRA
+
+		1943.12.30 = {
+			owner = USA
+			controller = USA
+     	}	
+
 	}
 
 	provinces={

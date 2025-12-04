@@ -20,6 +20,11 @@ state = {
 		}
 		add_core_of = YUG
 		add_core_of = MAC
+
+		1943.12.1 = {
+			owner = ALB
+			controller = ALB
+		}
 	}
 
 	provinces = {

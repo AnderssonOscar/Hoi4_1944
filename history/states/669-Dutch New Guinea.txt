@@ -22,9 +22,21 @@ state = {
 			12371 = {
 				naval_base = 2
 			}
-
 		}
 
+		1943.12.30 = {
+			controller = JAP
+			owner = JAP
+			AST = {
+				set_province_controller = 10505
+				set_province_controller = 1629
+				set_province_controller = 12457
+				set_province_controller = 1617
+				set_province_controller = 7627
+				set_province_controller = 1602
+				set_province_controller = 8250
+			}
+		}
 	}
 
 	provinces = {

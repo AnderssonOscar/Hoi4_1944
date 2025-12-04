@@ -15,6 +15,20 @@ state={
 			infrastructure = 3 #was: 5
 			air_base = 2
 		}
+
+
+		1943.12.30 = {
+			controller = SOV
+			owner = SOV
+			GER = {
+				#set_province_controller = 9234
+				set_province_controller = 3089
+				set_province_controller = 11072
+				set_province_controller = 117
+				set_province_controller = 11109
+
+			}
+		}
 		add_core_of = SOV
 	}
 
@@ -24,3 +38,47 @@ state={
 
 	local_supplies=11.0 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#7 6 5 6 1 1 9 7 9 9 7 5 0 3  3 3 1 

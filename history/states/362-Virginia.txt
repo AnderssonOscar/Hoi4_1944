@@ -36,7 +36,14 @@ state={
 				dockyard = 5
 
 			}
+		}
 
+		1943.12.30 = {
+			buildings = {
+				nuclear_reactor = 1 
+				synthetic_refinery = 3
+				industrial_complex = 2
+			}
 		}
 
 	}

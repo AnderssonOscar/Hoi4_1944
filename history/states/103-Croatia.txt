@@ -29,6 +29,19 @@ state={
 		add_core_of = YUG
 		#add_claim_by = ITA #added by focus
 		add_core_of = CRO
+
+
+		1943.12.1 = {
+			owner = CRO
+			controller = CRO
+		}
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 3
+			}
+		}
+
 	}
 
 	provinces={

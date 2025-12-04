@@ -13,7 +13,7 @@ state = {
 		add_core_of = PRE
 
 		victory_points = {
-			6521 50 # Berlin
+			6521 60 # Berlin
 		}
 
 		victory_points = {
@@ -47,11 +47,17 @@ state = {
 			buildings = {
 				air_base = 10
 				anti_air_building = 5
-				arms_factory = 10
-				industrial_complex = 7
+				arms_factory = 3
+				industrial_complex = 3
 			}
 		}
 
+		1943.12.30 = {
+			buildings = {
+				radar_station = 4
+				synthetic_refinery = 2
+			}
+		}
 	}
 
 	provinces = {

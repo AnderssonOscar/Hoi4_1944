@@ -7,19 +7,23 @@ state = {
 	
 	resources = {
 		steel = 3 
-		tungsten = 5
+		tungsten = 7 #5 1944
 	}
 
 	history = {
 		owner = NOR
 		add_core_of = NOR
-		add_core_of = SMI
+			add_core_of = SMI
 		
 		victory_points = {
 			3048 1
 		}
 		buildings = {
 			infrastructure = 2
+		}
+		1943.12.30 = {
+			owner = GER
+			controller = GER
 		}
 	}
 

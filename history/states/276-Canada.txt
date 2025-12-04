@@ -26,7 +26,15 @@ state = {
 		}
 
 		victory_points = {
-			3775 10 # Toronto
+			3775 10
+		}
+
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 9
+				industrial_complex = 1
+				fuel_silo = 1
+			}
 		}
 
 	}

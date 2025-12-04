@@ -13,6 +13,12 @@ state={
 			infrastructure = 3
 		}
 		add_core_of = POL
+
+			1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
+
 	}
 
 	provinces={

@@ -28,6 +28,35 @@ state={
 				arms_factory = 7
 			}
 		}
+
+		buildings = {
+			arms_factory = 2
+
+			149 = {
+				bunker = 3
+			}
+
+			
+			11068 = {
+				bunker = 1
+			}
+		}
+
+		1943.12.30 = {
+			controller = SOV
+			owner = SOV
+			GER = {
+				set_province_controller = 6174
+				set_province_controller = 79
+			}
+			buildings = {
+				anti_air_building = 5
+
+			3151 = {
+				bunker = 4
+			}
+			}
+		}
 	}
 
 	provinces={

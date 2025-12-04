@@ -21,6 +21,16 @@ state = {
 		victory_points = {
 			9197 1 # Volkhov
 		}
+
+		1943.12.30 = {
+			controller = SOV
+			owner = SOV
+			GER = {
+				set_province_controller = 9164
+				set_province_controller = 3072
+
+			}
+		}
 	}
 
 	provinces = {

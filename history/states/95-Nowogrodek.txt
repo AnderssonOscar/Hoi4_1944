@@ -15,6 +15,10 @@ state={
 		add_core_of = POL
 		add_core_of = BLR
 
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
 	}
 
 	provinces={

@@ -4,7 +4,7 @@ state={
 	name="STATE_15"
 	manpower = 2332100
 	resources={
-		steel=21 # was: 36
+		steel=12 # was: 36 1944 was 21
 	}
 	
 	state_category = city
@@ -29,17 +29,51 @@ state={
 			air_base = 6
 			6449 = {
 				naval_base = 3
-				coastal_bunker = 1
+				coastal_bunker = 3
 			}
 			9434 = {
 				naval_base = 5
-				coastal_bunker = 1
+				coastal_bunker = 3
 			}
-			485= {
+			485 = {
 				naval_base = 1
 			}
 		}
 		add_core_of = FRA
+
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+
+			buildings = {
+
+			6449 = {
+				naval_base = 7
+			}
+			9434 = {
+				naval_base = 8
+			}
+
+			3579 = {
+				coastal_bunker = 2
+			}
+
+			11535 = {
+				coastal_bunker = 2
+			}
+
+			6599 = {
+				coastal_bunker = 2
+			}
+
+			485 = {
+				coastal_bunker = 4
+			}
+
+				radar_station = 2
+				anti_air_building = 2
+			}
+		}
 	}
 
 	provinces={

@@ -28,6 +28,11 @@ state = {
 		add_core_of = SOV
 		add_core_of = DAG
 
+		1943.12.30 = {
+			buildings = {
+				arms_factory = 4
+			}
+		}
 	}
 
 	provinces = {
