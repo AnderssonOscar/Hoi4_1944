@@ -885,6 +885,7 @@ if = {
 		interwar_antiair = 1
 		antiair1 = 1
 		antiair2 = 1
+		antiair3 = 1
 
 		interwar_antitank = 1
 		antitank1 = 1

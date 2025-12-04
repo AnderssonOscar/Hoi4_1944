@@ -1,59 +1,65 @@
 
 state = {
-	id = 99
-	name = "STATE_99"
-	manpower = 1254177
-	state_category = rural
+    id = 99
+    name = "STATE_99"
+    manpower = 1254177
+    state_category = rural
 
-	history={
-		owner = DEN
-		add_core_of = DEN
-		victory_points = {
-			6235 2 
-		}
-		victory_points = {
-			6364 3 
-		}
-		victory_points = {
-			3277 1 
-		}
-		victory_points = {
-			399 2
-		}
-		victory_points = {
-			3206 1
-		}
-		buildings = {
-			infrastructure = 3
-			industrial_complex = 1
-			dockyard = 1
-			air_base = 2
-			394 = {
-				naval_base = 2
-			}
-			399 = {
-				naval_base = 2
-			}
-			6364 = {
-				naval_base = 1
-			}
-		}
+    history={
+        owner = DEN
+        add_core_of = DEN
+        victory_points = {
+            6235 2
+        }
+        victory_points = {
+            6364 3
+        }
+        victory_points = {
+            3277 1
+        }
+        victory_points = {
+            399 2
+        }
+        victory_points = {
+            3206 1
+        }
+        buildings = {
+            infrastructure = 3
+            industrial_complex = 1
+            dockyard = 1
+            air_base = 2
+            394 = {
+                naval_base = 2
+            }
+            399 = {
+                naval_base = 2
+            }
+            6364 = {
+                naval_base = 1
+            }
+        }
 
-		1943.12.1 = {
-			buildings = {
-				399 = {
-					coastal_bunker = 4
-				}
-			}
-				owner = GER
-				controller = GER
-			}
-	}
+        1943.12.1 = {
+            buildings = {
+                399 = {
+                    coastal_bunker = 3
+                }
+                13263 = {
+                    coastal_bunker = 1
+                }
+                13262 = {
+                    coastal_bunker = 2
+                }
+            }
+            owner = GER
+            controller = GER
+        }
+    }
 
-	provinces={
-		316 394 399 3206 3277 3341 6235 6364 13259 13262 13263
-	}
-	
-	
-	local_supplies = 0.000
+    provinces={
+        316 394 399 3206 3277 3341 6235 6364 13259 13262 13263
+    }
+
+
+    local_supplies = 0.000
 }

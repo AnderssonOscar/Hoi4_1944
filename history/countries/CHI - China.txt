@@ -430,6 +430,8 @@ if = {
 	# 	}
 	# }
 
+	set_fuel = 374300
+
 	add_political_power = 2589
 	add_command_power = 200
 
@@ -437,6 +439,10 @@ if = {
 
 	set_stability = 0.14 
 	set_war_support = 0.24
+
+	army_experience = 75
+	navy_experience = 10	
+	air_experience = 25
 
 	add_opinion_modifier = { target = GER modifier = embargo }
 
@@ -483,7 +489,6 @@ if = {
 		complete_national_focus = CHI_army_reform
 		complete_national_focus = CHI_nationalism
 
-
 		#1944
 		complete_national_focus = CHI_60_divisions_plan
 		complete_national_focus = CHI_invite_foreign_investors
@@ -491,6 +496,13 @@ if = {
 		complete_national_focus = CHI_price_controls
 		complete_national_focus = CHI_expand_the_academica_sinica
 		complete_national_focus = CHI_the_hump
+
+		complete_national_focus = CHI_prioritize_the_interior
+		unlock_national_focus = CHI_subjugate_the_warlords
+		unlock_national_focus = CHI_anti_communism
+		unlock_national_focus = CHI_pick_a_fight_with_japan
+		complete_national_focus = CHI_war_of_resistance
+		complete_national_focus = CHI_scorched_earth_tactics
 	}
 
 
@@ -644,7 +656,7 @@ if = {
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		
+		improved_radio = 1
 		
 		#doctrine
 
@@ -657,8 +669,6 @@ if = {
 
 		excavation1 = 1
 
-
-
 		basic_machine_tools = 1
 		improved_machine_tools = 1
 
@@ -668,10 +678,11 @@ if = {
 		support_weapons = 1
 		support_weapons2 = 1
 		support_weapons3 = 1
+		support_weapons4 = 1
 
 		infantry_weapons = 1
 		infantry_weapons1 = 1
-		#infantry_weapons2 = 1
+		infantry_weapons2 = 1
 
 		interwar_antitank = 1
 		antitank1 = 1

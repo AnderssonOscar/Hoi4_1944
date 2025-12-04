@@ -43,6 +43,11 @@ state = {
 			buildings = {
 				fuel_silo = 1
 				anti_air_building = 2
+
+				
+				11584 = {
+                    coastal_bunker = 3
+                }
 			}
 		}
 	}

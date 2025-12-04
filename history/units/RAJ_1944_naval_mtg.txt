@@ -11,7 +11,6 @@ units = {
 			ship = { name = "Narbada" definition = destroyer start_experience_factor = 0.21 equipment = { ship_hull_light_2 = { amount = 1 owner = RAJ creator = "ENG" version_name = "E/F/G/H Class" } } }	
 			ship = { name = "Godavari" definition = destroyer start_experience_factor = 0.23 equipment = { ship_hull_light_2 = { amount = 1 owner = RAJ creator = "ENG" version_name = "E/F/G/H Class" } } }	
 			ship = { name = "Kistna" definition = destroyer start_experience_factor = 0.29 equipment = { ship_hull_light_2 = { amount = 1 owner = RAJ creator = "ENG" version_name = "E/F/G/H Class" } } }	
-			ship = { name = "Narbada" definition = destroyer start_experience_factor = 0.21 equipment = { ship_hull_light_2 = { amount = 1 owner = RAJ creator = "ENG" version_name = "E/F/G/H Class" } } }	
 		}
 	}
 }

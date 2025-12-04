@@ -2644,7 +2644,11 @@ if = {
 	complete_national_focus = SOV_the_new_soviet_woman
 	unlock_national_focus = SOV_they_will_know_fear
 	complete_national_focus = SOV_foster_flying_clubs
-
+	complete_national_focus = SOV_the_collectivization_process
+	complete_national_focus = SOV_organization_centralization_discipline
+	complete_national_focus = SOV_war_economy
+	complete_national_focus = SOV_the_komsomol
+	complete_national_focus = SOV_positive_heroism
 
 	#######################################			AIRPLANES		####################################
 

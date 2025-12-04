@@ -50,6 +50,9 @@ state = {
 				6560 = {
 					coastal_bunker = 3
 				}
+				6446 = {
+					coastal_bunker = 3
+				}
 			}
      	}  
 	}

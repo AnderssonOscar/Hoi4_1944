@@ -36,8 +36,19 @@ state={
 			industrial_complex = 3
 			arms_factory = 3
 			synthetic_refinery = 1
+
 			9363 = {
 				bunker = 2
+			}
+
+			9335 = {
+				coastal_bunker = 2
+			}
+			11318 = {
+				coastal_bunker = 2
+			}
+			6336 = {
+				coastal_bunker = 2
 			}
 
 			}

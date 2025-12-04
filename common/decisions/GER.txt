@@ -2208,6 +2208,7 @@ GER_fortify_the_vaterland_cat = {
 		}
 
 		visible = {
+			date < 1944.1.1
 		}
 
 		available = {
@@ -2398,6 +2399,7 @@ GER_fortify_the_vaterland_cat = {
 		}
 
 		visible = {
+			date < 1944.1.1
 		}
 
 		available = {
@@ -2600,6 +2602,7 @@ GER_fortify_the_vaterland_cat = {
 		}
 
 		visible = {
+			date < 1944.1.1
 		}
 
 		available = {

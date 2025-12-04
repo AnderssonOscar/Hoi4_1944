@@ -13,7 +13,8 @@ war_measures = {
 
 			has_war_with = SOV
 			OR = {
-				surrender_progress > FIN_surrender_limit
+
+				FIN = { check_variable = { surrender_progress > FIN_surrender_limit } }
 				GER = { surrender_progress > 0.05 }
 			}
 			date > 1944.7.25
@@ -51,7 +52,7 @@ war_measures = {
 				date > 1944.9.4
 
 				OR = {
-					surrender_progress > FIN_surrender_limit
+					FIN = { check_variable = { surrender_progress > FIN_surrender_limit } }
 					GER = { surrender_progress > 0.01 }
 				}
 				factor = 100

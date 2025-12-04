@@ -86,8 +86,8 @@ ideas = {
 				army_org_factor = -0.2
 				#supply_consumption_factor = +0.1
 				army_speed_factor = -0.2
-				dig_in_speed_factor = -0.5
-				ground_attack_factor = -0.5
+				#dig_in_speed_factor = -0.5
+				#ground_attack_factor = -0.5
 			}
 		}
 
