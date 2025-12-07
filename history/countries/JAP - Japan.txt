@@ -2550,7 +2550,7 @@ if = {
 		complete_national_focus = JAP_fund_propaganda_films
 
 		complete_national_focus = JAP_unsinkable_aircraft_carriers
-		complete_national_focus = JAP_found_the_great_japan_press_association
+		unlock_national_focus = JAP_found_the_great_japan_press_association
 		complete_national_focus = JAP_approach_mitsui
 		complete_national_focus = JAP_approach_yasuda
 		complete_national_focus = JAP_approach_sumitomo
@@ -3575,12 +3575,12 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_1
-			amount = 4000
+			amount = 1000
 		}
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_0
-			amount = 41000
+			amount = 40000
 		}
 
 		add_equipment_to_stockpile = {

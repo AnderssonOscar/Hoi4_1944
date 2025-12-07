@@ -1189,7 +1189,7 @@ if = {
 
 	add_equipment_to_stockpile = {
         type = infantry_equipment_1
-        amount = 2150
+        amount = 1150
     }
 
 	add_equipment_to_stockpile = {
