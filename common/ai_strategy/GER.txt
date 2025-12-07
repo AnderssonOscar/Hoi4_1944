@@ -250,6 +250,57 @@ GER_anti_armor = {
 	}
 }
 
+GER_assault_armor = {
+	allowed = {
+		original_tag = GER
+		OR = {
+			has_dlc = "Gotterdammerung" # Needed for the assault engineers
+			has_dlc = "No Step Back" # Needed for Flame tanks
+		}
+	}
+	enable = {
+		OR = { 
+			has_war = yes
+			AND = {
+				ai_wants_divisions > 6 
+				date > 1939.6.1
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized_assault
+		value = 1
+	}
+}
+GER_assault_armor_ostfront = {
+	allowed = {
+		original_tag = GER
+		OR = {
+			has_dlc = "Gotterdammerung" # Needed for the assault engineers
+			has_dlc = "No Step Back" # Needed for Flame tanks
+		}
+	}
+	enable = {
+		OR = { 
+			has_war = yes
+			AND = {
+				ai_wants_divisions > 6 
+				has_war_with = SOV
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized_assault
+		value = 2
+	}
+}
+
 GER_armored_production = {
 	allowed = {
 		original_tag = GER
@@ -291,6 +342,18 @@ GER_halt_light_armor_production_in_transitioning = {
 		type = equipment_variant_production_factor
 		id = light_tank_chassis
 		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = light_tank_flame_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_chassis
+		value = 50
 	}
 }
 
@@ -358,13 +421,19 @@ GER_highered_armored_production = {
 		num_of_military_factories > 109
 	}
 	abort = {
-		num_of_military_factories < 110
+		num_of_military_factories < 60
+	}
+	
+	ai_strategy = { #Germany struggles with manual management of this in an endless loop
+		type = equipment_production_min_factories_archetype
+		id = motorized_equipment
+		value = 1
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 20
+		value = 2
 	}
 }
 
@@ -694,7 +763,7 @@ GER_soviet_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_alliance_with_the_ussr
+		has_idea = soviet_german_friendship
 		country_exists = SOV
 	}
 	abort = {
@@ -727,17 +796,17 @@ GER_italy_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "ITA"
+		id = ITA
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "ITA"
+		id = ITA
 		value = 200
 	}
 }
 
-iron_pact_italy = {
+GER_iron_pact_italy = {
 	allowed = {
 		original_tag = GER
 	}
@@ -753,12 +822,12 @@ iron_pact_italy = {
 
 	ai_strategy = {
 		type = befriend
-		id = "ITA"
+		id = ITA
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "ITA"
+		id = ITA
 		value = 100
 	}
 }
@@ -777,22 +846,25 @@ japan_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "JAP"
+		id = JAP
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "JAP"
+		id = JAP
 		value = 200
 	}
 }
 
-china_ally = {
+GER_china_ally = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
+		OR = {
 		has_completed_focus = GER_befriend_china
+			has_completed_focus = GER_closer_sino_germanic_relations
+		}
 		country_exists = CHI
 	}
 	abort = {
@@ -992,7 +1064,7 @@ GER_anschluss_rejected = {
 	enable = {
 		OR = {
 			has_completed_focus = GER_anschluss
-			has_completed_focus = GER_anschluss
+			has_completed_focus = GER_the_austrian_question
 		}
 		country_exists = AUS
 	}
@@ -1373,7 +1445,10 @@ GER_naval_role_ratios_maximum_kaiser = {
 		has_dlc = "Man the Guns"
 	}
 	enable = {
+		OR = {
+			has_completed_focus = GER_rebuild_the_high_seas_fleet_ww
 		has_completed_focus = GER_rebuild_the_high_seas_fleet
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -1783,6 +1858,12 @@ AXIS_dont_mess_with_volunteers = {
 		id = MAN
 		value = -500
 	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = MEN
+		value = -500
+	}
 }
 
 GER_industry_we_are_the_baddies = {
@@ -2181,9 +2262,7 @@ GER_we_are_bad_at_espionage_because_it_is_expensive_and_not_tanks = {
 		num_of_civilian_factories > 30
 	}
 	abort = {
-		OR = {
 			num_of_civilian_factories > 90
-		}
 	}
 	ai_strategy = {
 		type = intelligence_agency_usable_factories
@@ -3515,7 +3594,7 @@ GER_dont_help_Finland = {
 	allowed = { original_tag = GER }
 
 	enable = {
-			date < 1944.6.1
+			date < 1944.6.25
 			FIN = { has_war_with = SOV}
 			GER = { has_war_with = SOV}
 	}
@@ -3525,6 +3604,12 @@ GER_dont_help_Finland = {
 		type = dont_defend_ally_borders
 		id = FIN
 		value = 1000
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = FIN
+		value = -1000
 	}
 }
 

@@ -27,8 +27,7 @@ air_wings = {
 			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 			#small_plane_airframe_2 = { owner = "JAP" creator = "JAP" version_name = "Mitsubishi A6M Zero" amount = 100 }	
 	}
-	597 = {															#  Jinan
-			# 4 Hikodan
+	533 = {
 			small_plane_cas_airframe_1 =  { owner = "JAP" version_name = "Ki-30/32" amount = 100 }
 			medium_plane_airframe_1 =  { owner = "JAP" version_name = "G3M2" amount = 100 } 
 

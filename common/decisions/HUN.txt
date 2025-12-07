@@ -1,3 +1,4 @@
+#1944
 # The National Academy of Sciences
 HUN_national_academy_of_sciences_category = {
 	
@@ -1197,22 +1198,20 @@ HUN_territorial_revision_category = {
 
 		target_trigger = {
 			FROM = {
-				NOT = {
-					OR = {
-						has_war_with = ROOT
-						original_tag = ROOT
-					}
-				}
-				NOT = {
-					has_country_flag = HUN_refused_banatian_demands
-					has_country_flag = HUN_sent_banatian_demands
-				}
 				OR = {
 					controls_state = 764
 					any_subject_country = {
 						is_ai = yes
 						controls_state = 764
 					}
+				}
+				NOT = {
+						has_war_with = ROOT
+						original_tag = ROOT
+				}
+				NOT = {
+					has_country_flag = HUN_refused_banatian_demands
+					has_country_flag = HUN_sent_banatian_demands
 				}
 			}
 		}
@@ -1970,8 +1969,6 @@ HUN_territorial_revision_category = {
 		}
 
 		visible = { 
-
-
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
@@ -3324,6 +3321,11 @@ HUN_the_empire_category = {
 			ALB = {
 				drop_cosmetic_tag = yes
 				set_cosmetic_tag = ALB_wiedist_principality
+				set_party_name = {
+					ideology = neutrality
+					long_name = ALB_house_of_wied_party_long
+					name = ALB_house_of_wied_party
+				}	
 				promote_character = ALB_wilhelm_of_wied
 			}
 

@@ -1,4 +1,4 @@
-#Remember to change the tooltips if the effects are changed
+#Remember to change the tooltips if the effects are changed #1944
 #State scope. Prev is target country.
 
 #1944 this not used for anything just fix errors

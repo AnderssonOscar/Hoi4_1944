@@ -1,6 +1,8 @@
-﻿capital = 41
+﻿#1944
+capital = 41
 
 oob = "SPR_1936"
+
 if = {
 	limit = { has_dlc = "Man the Guns" }
 		set_naval_oob = "SPR_1936_naval_mtg"
@@ -311,7 +313,7 @@ if = {
 		basic_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		basic_medium_battery = 1
+		
 		basic_torpedo = 1
 		basic_depth_charges = 1
 		mtg_transport = 1
@@ -442,12 +444,12 @@ set_stability = 0.5
 		support_weapons2 = 1
 
 		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		submarine_operations = 1
+		
+		
+		
+		
+		
+		
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -470,6 +472,11 @@ set_stability = 0.5
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
 	}
+
+	set_grand_doctrine = grand_battleplan
+	set_grand_doctrine = new_fleet_in_being
+	set_grand_doctrine = new_strategic_destruction
+
 	complete_special_project = {
 		project = sp:sp_air_radar
 	}
@@ -848,6 +855,89 @@ if = {
 	}
 }
 
+		#Land
+		set_sub_doctrine = large_unit_tactics
+		add_mastery = {
+			amount = 200
+			sub_doctrine = large_unit_tactics
+		}
+
+		set_sub_doctrine = fire_concentration
+		add_mastery = {
+			amount = 100
+			sub_doctrine = fire_concentration
+		}
+
+		set_sub_doctrine = armored_infantry_support
+		add_mastery = {
+			amount = 50
+			sub_doctrine = armored_infantry_support
+		}
+
+		set_sub_doctrine = mission_type_tactics
+		add_mastery = {
+			amount = 100
+			sub_doctrine = mission_type_tactics
+		}
+
+		#Navy
+		set_sub_doctrine = submarine_coastal_defense
+		add_mastery = {
+			amount = 100
+			sub_doctrine = submarine_coastal_defense
+		}
+
+		if = {
+			limit = { has_dlc = "No Compromise, No Surrender" }
+				set_sub_doctrine = 	patrol_boats
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	patrol_boats
+				}
+			else = {
+				set_sub_doctrine = 	support_integrated_operations
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	support_integrated_operations
+				}
+			}
+		}
+
+		set_sub_doctrine = armored_raiders
+		add_mastery = {
+			amount = 100
+			sub_doctrine = armored_raiders
+		}
+
+		#Air
+		set_sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		add_mastery = {
+			amount = 100
+			sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		}
+
+		set_sub_doctrine = air_subdoctrine_flying_artillery
+		add_mastery = {
+			amount = 50
+			sub_doctrine = air_subdoctrine_flying_artillery
+		}
+
+		if = {
+			limit = { has_dlc = "La Resistance" }
+				set_sub_doctrine = 	air_subdoctrine_aerial_reconnaissance
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	air_subdoctrine_aerial_reconnaissance
+				}
+			else = {
+				set_sub_doctrine = 	air_subdoctrine_operational_air_support
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	air_subdoctrine_operational_air_support
+				}
+			}
+		}
+
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
 			set_technology = {
@@ -950,11 +1040,11 @@ if = {
 		excavation3 = 1
 
 		#doctrine
-		trench_warfare = 1
-		grand_battle_plan = 1
-		prepared_defense = 1
-		grand_assault = 1
-		infantry_offensive = 1
+		
+		
+		
+		
+		
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1
@@ -1048,8 +1138,8 @@ if = {
 			basic_light_battery = 1
 			basic_light_shell = 1
 	
-			basic_medium_battery = 1
-			basic_medium_shell = 1
+			
+			
 	
 			basic_heavy_battery = 1
 			basic_heavy_shell = 1
@@ -1060,7 +1150,7 @@ if = {
 			improved_ship_torpedo_launcher = 1
 			improved_ship_hull_cruiser = 1
 
-			improved_airplane_launcher = 1
+			
 			magnetic_detonator = 1
 
 			basic_fire_control_system = 1

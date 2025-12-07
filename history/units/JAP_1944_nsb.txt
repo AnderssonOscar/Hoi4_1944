@@ -155,7 +155,7 @@ units = {
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.35
 		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "Karafuto Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -166,7 +166,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.21
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = {
 		name = "Ominato Kichi Kaiheidan"
@@ -519,7 +519,7 @@ units = {
 		location = 10698
 		division_template = "Senshadan"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 		start_experience_factor = 0.59
 		start_equipment_factor = 0.74
 	}
@@ -549,7 +549,7 @@ units = {
 		location = 10541
 		division_template = "Senshadan"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 		start_experience_factor = 0.64
 		start_equipment_factor = 0.97
 	}
@@ -610,7 +610,7 @@ units = {
 		location = 3944
 		division_template = "Senshadan"
 		force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 		start_experience_factor = 0.27
 		start_equipment_factor = 0.84
 	}
@@ -624,7 +624,7 @@ units = {
 	}
 	division = {
 		name = "3 Kokkyou Keibitai"
-		location = 810
+		location = 6811
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
@@ -632,7 +632,7 @@ units = {
 	}
 	division = {
 		name = "4 Kokkyou Keibitai"
-		location = 3843
+		location = 1571
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
@@ -640,7 +640,7 @@ units = {
 	}
 	division = {
 		name = "9 Kokkyou Keibitai"
-		location = 5427
+		location = 6863
 		division_template = "Chuton-chi Shidan"			# Japanese Border Guard garrison (better experience, equipment than Manchukuo militia)
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
@@ -736,7 +736,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.63
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "8 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -747,7 +747,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.66
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "9 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -758,7 +758,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.41
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "11 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -769,7 +769,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.54
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "1 Kiheishidan"
 		division_name = {
@@ -829,7 +829,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.48
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "3 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -840,7 +840,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.86
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "4 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -851,7 +851,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.81
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 
 	### 12 Homengun (CO: Iida) ###
@@ -904,7 +904,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.41
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "6 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -915,7 +915,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.38
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "10 Dokuritsu Konsei Ryodan"
 		division_name = {
@@ -926,7 +926,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.66
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 
 	### Mouko Homengun (CO: Okabe) ###
@@ -949,7 +949,7 @@ units = {
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.3
 		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-		force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+		force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 	}
 	division = { # "1 Mouko Kiheishidan"
 		division_name = {
@@ -1955,7 +1955,7 @@ units = {
 			location = 7381
 			division_template = "Senshadan"	
 			force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
-			force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+			force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 			start_experience_factor = 0.67
 			start_equipment_factor = 0.73
 		}
@@ -1966,7 +1966,7 @@ units = {
 			location = 11913
 			division_template = "Senshadan"	
 			force_equipment_variants = { infantry_equipment_2 = { owner = "JAP" } }
-			force_equipment_variants = { light_tank_chassis_1 = { owner = JAP version_name = "Type 95 Ha-Go" } }
+			force_equipment_variants = { light_tank_chassis_2 = { owner = JAP version_name = "Type 95 Ha-Go" } }
 			start_experience_factor = 0.71
 			start_equipment_factor = 0.84
 		}
@@ -3074,7 +3074,7 @@ instant_effect = {
 	}
 	add_equipment_production = {
 		equipment = {
-			type = light_tank_chassis_1
+			type = light_tank_chassis_2
 			creator = "JAP" 
 			version_name = "Type 95 Ha-Go"
 		}

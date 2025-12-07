@@ -249,6 +249,13 @@ ideas = {
 						has_idea = AUS_treaty_of_saint_germain_en_laye
 					}
 				}
+				IF = {
+					limit = {
+						has_dlc	= "Graveyard of Empires"
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}
 			}
 
 			modifier = {
@@ -303,6 +310,15 @@ ideas = {
 					factor = 0
 					NOT = { has_idea = volunteer_only }
 				}
+				modifier = {
+					original_tag = JAP
+					has_idea = volunteer_only
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 10
+				}
 			}
 
 			cancel_if_invalid = no
@@ -315,6 +331,29 @@ ideas = {
 				OR = {
 					has_government = fascism
 					has_government = communism
+					if = {
+						limit = {
+							PHI_SEA = yes
+						}
+						if = {
+							limit = {
+								has_idea = PHI_ties_with_republican_spain
+							}
+							has_idea = PHI_ties_with_republican_spain
+						}
+						else_if = {
+							limit = {
+								has_idea = PHI_ties_with_republican_spain_2
+							}
+							has_idea = PHI_ties_with_republican_spain_2
+						}
+						else = {
+							hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+						}
+					}
+					else = {
+						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+					}
 					SWE_rapid_mob_manpower_law_trigger = yes 
 					if = {
 						limit = {
@@ -480,7 +519,13 @@ ideas = {
 						has_idea = AUS_treaty_of_saint_germain_en_laye
 					}
 				}
-				
+				IF = {
+					limit = {
+						has_dlc	= "Graveyard of Empires"
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}				
 			}
 			ai_will_do = {
    				factor = 1
@@ -541,6 +586,16 @@ ideas = {
 					has_completed_focus = GUAY_coup_detat
 				}
 
+				modifier = {
+					original_tag = JAP
+					has_idea = limited_conscription
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 10
+				}
+
 			}
 
 			cost = 150
@@ -565,6 +620,29 @@ ideas = {
 				OR = {
 					has_government = fascism
 					has_government = communism
+					if = {
+						limit = {
+							PHI_SEA = yes
+						}
+						if = {
+							limit = {
+								has_idea = PHI_ties_with_republican_spain
+							}
+							has_idea = PHI_ties_with_republican_spain
+						}
+						else_if = {
+							limit = {
+								has_idea = PHI_ties_with_republican_spain_2
+							}
+							has_idea = PHI_ties_with_republican_spain_2
+						}
+						else = {
+							hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+						}
+					}
+					else = {
+						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+					}
 					SWE_rapid_mob_manpower_law_trigger = yes
 					AND = {
 						has_war = yes
@@ -722,6 +800,13 @@ ideas = {
 						has_idea = AUS_treaty_of_saint_germain_en_laye
 					}
 				}
+				IF = {
+					limit = {
+						has_dlc	= "Graveyard of Empires"
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}
 			}
 
 			ai_will_do = {
@@ -765,6 +850,13 @@ ideas = {
 					has_manpower < 2000000
 				}
 
+				modifier = { # germany needs this before russia, badly
+					factor = 10
+
+					original_tag = GER
+					date > 1941.1.1
+				}
+
 				modifier = {
 					factor = 0
 					NOT = { has_idea = extensive_conscription }
@@ -777,6 +869,16 @@ ideas = {
 						original_tag = PAR
 					}
 					has_completed_focus = GUAY_coup_detat
+				}
+
+				modifier = {
+					original_tag = JAP
+					has_idea = extensive_conscription
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 5
 				}
 
 			}
@@ -822,6 +924,14 @@ ideas = {
 
 					conscription_ratio > 0.85
 					has_idea = service_by_requirement
+				}
+
+				if = {
+					limit = {
+						original_tag = GER
+						is_ai = yes
+					}
+					date > 1944.10.1
 				}
 
 				if = {
@@ -954,6 +1064,13 @@ ideas = {
 						has_idea = AUS_treaty_of_saint_germain_en_laye
 					}
 				}
+				IF = {
+					limit = {
+						has_dlc	= "Graveyard of Empires"
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}
 			}
 
 			ai_will_do = {
@@ -991,6 +1108,16 @@ ideas = {
 				modifier = {
 					factor = 0
 					NOT = { has_idea = service_by_requirement }
+				}
+
+				modifier = {
+					original_tag = JAP
+					has_idea = service_by_requirement
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 3
 				}
 
 			}
@@ -1049,6 +1176,15 @@ ideas = {
 					conscription_ratio > 0.85
 					has_idea = all_adults_serve
 				}
+
+				if = {
+					limit = {
+						original_tag = GER
+						is_ai = yes
+					}
+					date > 1945.1.1
+				}
+
 				if = {
 					limit = {
 						original_tag = AST
@@ -1179,6 +1315,13 @@ ideas = {
 						has_idea = AUS_treaty_of_saint_germain_en_laye
 					}
 				}
+				IF = {
+					limit = {
+						has_dlc	= "Graveyard of Empires"
+						original_tag = AFG
+					}
+					has_completed_focus = AFG_adopt_nufus
+				}
 			}
 
 			ai_will_do = {
@@ -1211,9 +1354,13 @@ ideas = {
 				}
 
 				modifier = {
-					factor = -10
-					original_tag = SOV
-					date < 1945.4.1
+					original_tag = JAP
+					has_idea = all_adults_serve
+					OR = {
+						has_active_mission = JAP_army_faction_demands_conscription_law_change
+						has_active_mission = JAP_naval_faction_demands_conscription_law_change
+					}
+					factor = 2
 				}
 
 			}

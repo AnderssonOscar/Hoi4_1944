@@ -187,7 +187,7 @@ units = {
 	}
 
 	division = { 
-		location = 810
+		location = 6811
 		division_template = "Qu Jun"
 		start_experience_factor = 0.16
 		start_equipment_factor = 0.9

@@ -20,7 +20,7 @@ CHI_scripted_events_start_effects = {
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_1
-			amount = 55000
+			amount = 65000
 		}
 
 		add_equipment_to_stockpile = {

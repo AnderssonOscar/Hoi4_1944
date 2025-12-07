@@ -1,3 +1,4 @@
+#1944
 # befriend
 # conquer
 # antagonize
@@ -280,40 +281,52 @@ JAP_care_less_about_making_friends = {
 }
 
 
+#### IMPERIAL INFLUENCE MISSIONS AI STRATS #### 
 
-JAP_build_more_mil = {
-	allowed = { tag = JAP }
+JAP_satisfy_army_factories_construction = {
+	allowed = {
+		original_tag = JAP
+	}
 	enable = {
-		date < 1945.1.1
-		date > 1943.12.30
-		has_war_with = USA
-		has_war = yes
+		has_active_mission = JAP_army_faction_demands_military_factories
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
-		type = building_target
-		id = arms_factory
-		value = 250
-	}
-
-	ai_strategy = {
-		type = building_target
-		id = fuel_silo
-		value = -500
-	}
-
-	ai_strategy = {
-		type = added_military_to_civilian_factory_ratio
-		value = 100
-	}
-
-	ai_strategy = {
-		type = dockyard_to_military_factory_ratio
-		value = -5
+	    type = build_building
+	    id = arms_factory
+	    value = 100
 	}
 }
 
+JAP_satisfy_navy_dockyards_construction = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		has_active_mission = JAP_naval_faction_demands_dockyards
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+	    type = build_building
+	    id = dockyard
+	    value = 100
+	}
+}
 
+JAP_satisfy_zaibatsus_factories_construction = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		has_active_mission = JAP_zaibatsu_faction_demands_factories
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+	    type = build_building
+	    id = industrial_complex
+	    value = 100
+	}
+}
 
 JAP_just_hold_china_allies = {
 	allowed = { original_tag = JAP }
@@ -616,4 +629,296 @@ JAP_the_sea_is_dangerous = {
 		id = 71
 		value = 600
 	}
+}
+
+
+less_trucks_4_u_JAP = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		date < 1939.1.1
+	}
+	abort = {
+		date > 1939.1.1
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 80
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 12
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = -80
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -80
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mountaineers
+		value = -80
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 20
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 5 #10 to 5
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 20 #From 40 to 20
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 4
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = support_equipment
+		value = 2
+	}
+
+}
+
+JAP_build_some_factories_jeez = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		date > 1939.1.2
+	}
+	abort = {
+		OR = {
+			num_of_military_factories > 50
+			CHI = { is_subject_of = JAP }
+		}
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 80
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 12
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = -80
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = -10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = armor
+		value = -80
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -80
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mountaineers
+		value = -80
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 20
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 5 #10 to 5
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 20 #From 40 to 20
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = light_tank_chassis
+		value = -50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 5
+	}
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 15
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = support_equipment
+		value = 2
+	}
+
+}
+
+JAP_glorious_nippon_steel_has_triumphed = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			num_of_military_factories > 50
+			CHI = { is_subject_of = JAP }
+		}
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 80
+	}
+
+	# Old garrison system against resistance
+	# ai_strategy = {
+	# 	type = role_ratio
+	# 	id = suppression
+	# 	value = 8
+	# }
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 1
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = -80
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 1
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = armor
+		value = 5
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -80
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mountaineers
+		value = -80
+	}
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 30
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 4 #10 to 5
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -80
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 20 #From 40 to 20
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 5
+	}
+
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = support_equipment
+		value = 2
+	}
+
 }

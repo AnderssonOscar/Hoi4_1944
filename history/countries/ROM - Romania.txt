@@ -1,4 +1,5 @@
-﻿capital = 46
+﻿#1944
+capital = 46
 
 if = {
 	limit = {
@@ -19,6 +20,23 @@ if = {
 		set_naval_oob = "ROM_1936_naval_mtg"
 	else = {
 		set_naval_oob = "ROM_1936_naval_legacy"
+	}
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "ROM_1936_air_bba"
+		set_technology = {
+			iw_small_airframe = 1
+			aa_lmg = 1
+			engines_1 = 1
+			bba_early_transport_plane = 1
+		}
+	else = {
+		set_air_oob = "ROM_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_transport_plane = 1
+		}
 	}
 }
 
@@ -178,6 +196,69 @@ set_convoys = 10
 
 	add_political_power = 1198
 	add_command_power = 100
+
+	set_technology = {
+		interwar_artillery = 1
+		interwar_antitank = 1
+		tech_recon = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		#Air
+		#force_rotation = 1
+		#fighter_baiting = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_operational_integrity
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			basic_submarine = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				engines_2 = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+			}
+		else = {
+			set_technology = {
+				fighter1 = 1
+				early_bomber = 1
+				tactical_bomber1 = 1
+			}
+		}
+	}
+
 	if = {
 		limit = {
 			has_dlc = "Death or Dishonor"
@@ -270,17 +351,6 @@ set_convoys = 10
 		tech_recon = 1
 		infantry_weapons2 = 1
 		support_weapons = 1
-
-		#doctrines
-		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-		
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -547,8 +617,8 @@ if = {
 			improved_light_battery = 1
 			#improved_light_shell = 1
 	
-			basic_medium_battery = 1
-			basic_medium_shell = 1
+			
+			
 
 			improved_ship_hull_submarine = 1
 			improved_ship_hull_light = 1
@@ -695,7 +765,94 @@ if = {
 				sp_armored_motorized_military_police_tech = 1
 			}
 		}
+
+		set_grand_doctrine = grand_battleplan
+		set_grand_doctrine = new_fleet_in_being
+		set_grand_doctrine = new_operational_integrity
 	
+
+		#Land
+		set_sub_doctrine = defensive_postures
+		add_mastery = {
+			amount = 300
+			sub_doctrine = defensive_postures
+		}
+
+		set_sub_doctrine = anti_tank_frontline
+		add_mastery = {
+			amount = 100
+			sub_doctrine = anti_tank_frontline
+		}
+
+		set_sub_doctrine = armored_infantry_support
+		add_mastery = {
+			amount = 100
+			sub_doctrine = armored_infantry_support
+		}
+
+		set_sub_doctrine = mission_type_tactics
+		add_mastery = {
+			amount = 100
+			sub_doctrine = mission_type_tactics
+		}
+
+		#Navy
+		set_sub_doctrine = submarine_coastal_defense
+		add_mastery = {
+			amount = 100
+			sub_doctrine = submarine_coastal_defense
+		}
+
+		if = {
+			limit = { has_dlc = "No Compromise, No Surrender" }
+				set_sub_doctrine = 	patrol_boats
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	patrol_boats
+				}
+			else = {
+				set_sub_doctrine = 	support_integrated_operations
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	support_integrated_operations
+				}
+			}
+		}
+
+		set_sub_doctrine = armored_raiders
+		add_mastery = {
+			amount = 100
+			sub_doctrine = armored_raiders
+		}
+
+		#Air
+		set_sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		add_mastery = {
+			amount = 300
+			sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		}
+
+		set_sub_doctrine = air_subdoctrine_flying_artillery
+		add_mastery = {
+			amount = 50
+			sub_doctrine = air_subdoctrine_flying_artillery
+		}
+
+		if = {
+			limit = { has_dlc = "La Resistance" }
+				set_sub_doctrine = 	air_subdoctrine_aerial_reconnaissance
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	air_subdoctrine_aerial_reconnaissance
+				}
+			else = {
+				set_sub_doctrine = 	air_subdoctrine_operational_air_support
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	air_subdoctrine_operational_air_support
+				}
+			}
+		}
 
 
 	set_technology = {
@@ -712,16 +869,7 @@ if = {
 		cavity_magnatron = 1
 		centimetric_radar = 1
 		phased_array = 1
-		
 
-
-		#doctrine
-		trench_warfare = 1
-		grand_battle_plan = 1
-		prepared_defense = 1
-		grand_assault = 1
-		infantry_offensive = 1
-		
 
 		#industry
 		

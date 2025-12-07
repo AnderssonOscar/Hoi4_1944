@@ -1,4 +1,4 @@
-﻿
+﻿#1944
 ####
 #### NO STEP BACK
 ####
@@ -114,6 +114,7 @@ recruit_character = SOV_sergey_gorshkov
 recruit_character = SOV_stepan_krasovsky
 recruit_character = SOV_vasily_blyukher
 recruit_character = SOV_vasily_chuykov
+recruit_character = SOV_aleksandr_cherepanov
 recruit_character = SOV_vasily_kuznetsov
 recruit_character = SOV_vladimir_kasatonov
 recruit_character = SOV_vladimir_tributs
@@ -787,12 +788,13 @@ set_technology = { #WARNING: Do not just remove techs from here -> It can impact
 	paratroopers = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	mass_assault = 1
-	fleet_in_being = 1
 	fuel_silos = 1
 	fuel_refining = 1
 	basic_train = 1
 }
+
+set_grand_doctrine = mass_assault
+set_grand_doctrine = new_fleet_in_being
 
 if = {
 	limit = {
@@ -1192,16 +1194,6 @@ add_ideas = {
 		support_weapons2 = 1
 		paratroopers = 1
 
-		#doctrines
-		pocket_defence = 1
-		defence_in_depth = 1
-		battlefleet_concentration = 1
-		submarine_operations = 1
-
-		#Air
-		formation_flying = 1		
-		dive_bombing = 1
-		direct_ground_support = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -1225,6 +1217,33 @@ add_ideas = {
 		concentrated_industry2 = 1
 		concentrated_industry3 = 1
 	}
+
+set_grand_doctrine = mass_assault
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_battlefield_support
+
+set_sub_doctrine = large_unit_tactics
+add_mastery = {
+    amount = 200
+    sub_doctrine = large_unit_tactics
+}
+set_sub_doctrine = fire_concentration
+add_mastery = {
+    amount = 100
+    sub_doctrine = fire_concentration
+}
+set_sub_doctrine = deep_battle
+add_mastery = {
+    amount = 100
+    sub_doctrine = deep_battle
+}
+set_sub_doctrine = air_subdoctrine_dogfighting_mastery
+add_mastery = {
+    amount = 75
+    sub_doctrine = air_subdoctrine_dogfighting_mastery
+}
+
+
 	
 	complete_special_project = {
 		project = sp:sp_air_radar
@@ -1287,7 +1306,7 @@ set_popularities = {
 	communism = 88
 }
 
-create_faction = Comintern
+create_faction_from_template = faction_template_comintern
 add_to_faction = SOV
 add_to_faction = MON
 add_to_faction = TAN
@@ -2013,24 +2032,6 @@ if = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 1943.12.30 = {
 	set_cosmetic_tag = SOV_1944
 
@@ -2155,6 +2156,94 @@ if = {
 	##################################################		TECH		##########################################################
 
 
+	set_sub_doctrine = large_unit_tactics
+	add_mastery = {
+		amount = 300
+		sub_doctrine = large_unit_tactics
+	}
+	set_sub_doctrine = fire_concentration
+	add_mastery = {
+		amount = 300
+		sub_doctrine = fire_concentration
+	}
+
+	set_sub_doctrine = streamlined_deployment
+	add_mastery = {
+		amount = 400
+		sub_doctrine = streamlined_deployment
+	}
+
+	set_sub_doctrine = rapid_domination
+	add_mastery = {
+		amount = 100
+		sub_doctrine = rapid_domination
+	}
+
+	set_sub_doctrine = air_subdoctrine_fighter_bombers
+	add_mastery = {
+		amount = 200
+		sub_doctrine = air_subdoctrine_fighter_bombers
+	}
+
+	set_sub_doctrine = air_subdoctrine_flying_artillery
+	add_mastery = {
+		amount = 100
+		sub_doctrine = air_subdoctrine_flying_artillery
+	}
+
+	set_sub_doctrine = air_subdoctrine_theater_interdiction
+	add_mastery = {
+		amount = 100
+		sub_doctrine = air_subdoctrine_theater_interdiction
+	}
+
+	set_sub_doctrine = capital_hunters
+	add_mastery = {
+		amount = 100
+		sub_doctrine = capital_hunters
+	}
+
+
+		add_breakthrough_progress = {
+			specialization = specialization_air
+			value = 5
+		}
+
+		add_breakthrough_progress = {
+			specialization = specialization_land
+			value = 3
+		}
+
+		add_breakthrough_progress = {
+			specialization = specialization_naval
+			value = 2
+		}
+
+		add_breakthrough_progress = {
+			specialization = specialization_nuclear
+			value = 2
+		}	
+
+	if = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+		}
+		complete_special_project = {
+			project = sp:sp_land_super_heavy_howitzer
+		} 
+
+		complete_special_project = {
+			project = sp:sp_land_military_engineering_vehicles
+		} 
+
+			set_technology = {
+				sp_armored_engineer_tech = 1
+				sp_armored_maintenance_tech = 1
+				sp_armored_signal_tech = 1
+				sp_armored_motorized_military_police_tech = 1
+			}
+	}
+
 
 
 	set_technology = {
@@ -2174,34 +2263,13 @@ if = {
 		centimetric_radar = 1
 	
 
+		basic_fortification_tech = 1
+		land_fort_tech_1 = 1
+		land_fort_tech_2 = 1
+
 		#Rockets
 		experimental_rockets = 1
 		rocket_engines = 1
-
-
-
-		#Land Doctrine
-		large_front_operations = 1
-		deep_operations = 1
-		operational_concentration = 1
-		vast_offensives = 1
-
-		#Air Doctrine
-		formation_flying = 1
-		dive_bombing = 1
-		direct_ground_support = 1
-		formation_fighting = 1
-		hunt_and_destroy = 1
-		combat_unit_destruction = 1
-
-		#Naval Doctrine
-		#doctrines
-		pocket_defence = 1
-		defence_in_depth = 1
-		battlefleet_concentration = 1
-		submarine_operations = 1
-
-
 
 		#industry
 
@@ -2457,8 +2525,8 @@ if = {
 		basic_light_battery = 1
 		improved_light_battery = 1
 
-		basic_medium_battery = 1
-		improved_medium_battery = 1
+		
+		
 
 		basic_heavy_battery = 1
 		improved_heavy_battery = 1
@@ -2472,7 +2540,7 @@ if = {
 
 		basic_depth_charges = 1
 		improved_depth_charges = 1
-		improved_airplane_launcher = 1
+		
 
 		mtg_transport = 1
 		mtg_landing_craft = 1
@@ -2490,7 +2558,7 @@ if = {
 
 		basic_light_shell = 1
 
-		basic_medium_shell = 1
+		
 
 		basic_heavy_shell = 1
 		improved_heavy_shell = 1

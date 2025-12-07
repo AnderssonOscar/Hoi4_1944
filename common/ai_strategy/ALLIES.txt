@@ -106,7 +106,7 @@
      }
 
      enable = {
-         date < 1944.3.11 #1944.4.1
+         date < 1944.3.16 #1944.4.1
          has_war_with = GER
          16 = {is_fully_controlled_by = GER} #paris
      }
@@ -144,7 +144,7 @@
 
      enable = {
 
-         date > 1944.3.10 #1944.4.1
+         date > 1944.3.15 #1944.4.1
          has_war_with = GER
 
          125 = {is_fully_controlled_by = ENG}
@@ -196,6 +196,11 @@
          value = 600
      }
 
+    ai_strategy = {
+		type = naval_invasion_dominance_weight
+		value = 50
+	}
+
      ai_strategy = {
          type = invade
          id = "GER"
@@ -219,7 +224,7 @@
      ai_strategy = {
          type = area_priority
          id = normandy_landing_zone
-         value = 100
+         value = 80
      }
 
      ai_strategy = {
@@ -1443,6 +1448,24 @@
          value = -500
      }
 
+    ai_strategy = {
+         type = invade
+         id = "RNG" #china
+         value = -500
+     }
+
+    ai_strategy = {
+         type = invade
+         id = "VIN" #vietnam
+         value = -500
+     }
+
+     ai_strategy = {
+         type = invade
+         id = "CAM" #vietnam
+         value = -500
+     }
+
      ai_strategy = { #maybe
          type = invade
          id = "SWE"
@@ -2283,27 +2306,9 @@
 	}
 
     ai_strategy = {
-	    type = naval_invasion_supremacy_weight
-	    id = 18
-	    value = 200
-	}
-
-    ai_strategy = {
-	    type = naval_invasion_supremacy_weight
-	    id = 42
-	    value = 200
-	}
-
-    ai_strategy = {
-	    type = naval_invasion_supremacy_weight
-	    id = 47
-	    value = 200
-	}
-
-    ai_strategy = {
-	    type = naval_invasion_supremacy_weight
-	    id = 68
-	    value = 200
+		type = naval_dominance
+		id = western_med_control_zone
+		value = 30
 	}
 
      ai_strategy = {

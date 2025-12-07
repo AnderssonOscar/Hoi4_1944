@@ -5022,8 +5022,6 @@ country_event = {
 			}
 		}
 
-		#TODO_Manu: Relation modifier so that FIN can send more volunteers to Karelia
-
 		KAR = {
 			if = {
 				limit = {
@@ -5588,6 +5586,17 @@ country_event = {
 		OR = {
 			has_global_flag = FIN_snipers_active
 			has_global_flag = FIN_snipers_active_with_extra_arms
+		}
+
+		FIN = {
+			any_core_state = {
+				ROOT = {
+					divisions_in_state = {
+						size > 0
+						state = PREV
+					}
+				}
+			}
 		}
 		
 	}

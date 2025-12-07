@@ -6,9 +6,9 @@ state = {
 	state_category = large_town
 
 	resources = {
-		oil = 1
+		oil = 4 #1944 was 1
 		aluminium = 20
-		coal = 2 # initial distribution
+		coal = 4 # initial distribution #1944 was 2
 	}
 
 	history = {

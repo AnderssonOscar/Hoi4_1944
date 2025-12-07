@@ -1052,9 +1052,9 @@ ENG_secure_the_channel = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-	    type = naval_invasion_supremacy_weight
-	    id = 18
-	    value = 100
+		type = naval_dominance
+		id = home_islands_control_zone
+		value = 100
 	}
 
 	ai_strategy = {

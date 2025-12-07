@@ -1,3 +1,4 @@
+#1944
 political_actions = {
 
 	
@@ -90,26 +91,20 @@ political_actions = {
 			industrial_capacity_factory = -0.05
 		}
 
-		days_remove = 90
-		days_re_enable = 30
+		days_remove = 180
+		days_re_enable = 540
 
-		cost = 50
+		cost = 100
 
 		complete_effect = {
 
-		}
-
-		remove_effect = {
-			if = { limit = { has_war = no }
-				add_stability = 0.05
-			}
 		}
 
 		ai_will_do = {
 			base = 0
 			modifier = {
 				add = 1
-				has_stability < 0.8
+				has_stability < 0.6
 				has_political_power > 155 #Spend on other things first
 			}
 			modifier = {
@@ -117,63 +112,28 @@ political_actions = {
 				original_tag = SPR
 				NOT = { has_global_flag = spanish_civil_war }
 			}
-		}
-	}
-
-	promises_of_peace = {
-
-		icon = generic_political_discourse
-
-		available = {
-			has_war = no
-			has_war_support > 0.2
-			has_stability < 1.0
-			if = {
-				limit = {
-					tag = SPR
-				}
+			modifier = {
+				factor = 0 
+				tag = ICE
+				has_completed_focus = ICE_not_our_king
+				NOT = { has_completed_focus = ICE_break_with_the_crown }
+			}
+			modifier = {
+				factor = 0 
+				tag = GER
+				has_completed_focus = GER_oppose_hitler_ww
 				NOT = {
-					has_idea = SPR_political_violence
+					OR = {
+						has_completed_focus = GER_the_peoples_victory 
+						has_completed_focus = GER_monarchist_sentiment 
+					}
 				}
 			}
-		}
-
-		visible = {
-			always = yes
-		}
-
-		remove_trigger = {
-			has_war = yes
-			has_war_support < 0.05
-		}
-
-		fire_only_once = no
-
 		modifier = {
-			stability_weekly = 0.005
-			war_support_weekly = -0.01
-			political_power_gain = -0.5
-		}
-
-		days_remove = 90
-		days_re_enable = 360
-
-		cost = 50
-
-		complete_effect = {
-
-		}
-
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 1
-				has_stability < 0.4
-			}
-			modifier = {
-				factor = 0
-				original_tag = SPR
-				NOT = { has_global_flag = spanish_civil_war }
+				add = 1000
+				has_stability < 0.76
+				original_tag = SWE
+				has_idea = SWE_hungershield
 			}
 		}
 	}
@@ -334,7 +294,7 @@ economy_decisions = {
 				type = train_equipment
 				amount = 30
 			}
-			add_stability = -0.02
+			add_stability = -0.02 #1944
 		}
 	}			
 }
@@ -474,6 +434,10 @@ propaganda_efforts = {
 					has_idea = extensive_conscription
 				}
 			}
+			modifier = {
+				factor = 0
+				has_war_support > 0.9
+			}
 		}
 	}
 	
@@ -609,6 +573,7 @@ propaganda_efforts = {
 		available = {
 			IF = {
 				limit = {
+					has_dlc = "Trial of Allegiance"
 					tag = BRA
 				}
 				threat > 0.25
@@ -618,6 +583,20 @@ propaganda_efforts = {
 			ELSE = {
 			threat > 0.25
 			has_tech = radio
+			}
+		
+
+			IF = {
+				limit = {
+					tag = AFG
+				}
+				threat > 0.25
+				#has_tech = radio
+				has_completed_focus = AFG_establish_radio_networks
+			}
+			ELSE = {
+				threat > 0.25
+				has_tech = radio
 			}
 		}
 
@@ -709,6 +688,7 @@ propaganda_efforts = {
 			}
 			hidden_effect = {
 				country_event = political.33
+				set_country_flag = has_taken_the_war_propaganda_film_industry_decision
 			}
 		}
 
@@ -1725,9 +1705,21 @@ war_measures = {
             has_war = yes
             if = {
 				limit = {
-					NOT = { original_tag = GER }
+					NOT = {
+						original_tag = GER
+						original_tag = JAP
+					}
 				}
             has_idea = tot_economic_mobilisation
+        		if = {
+        			limit = {
+        				original_tag = PRC
+        			}
+        			NOT = { 
+        				has_completed_focus = PRC_holding_half_the_sky
+        				has_completed_focus = PRC_promote_womens_suffrage
+        			}
+        		}
 			}
 			else_if = {
 				limit = {
@@ -1738,6 +1730,16 @@ war_measures = {
 					has_idea = totaler_krieg_economy
 				}
 				NOT = { has_completed_focus = GER_womens_rights_and_equality }
+			}
+			else_if = {
+				limit = {
+					original_tag = JAP
+				}
+				OR = {
+					has_idea = tot_economic_mobilisation
+					has_idea = national_defense_state
+				}
+				NOT = { has_completed_focus = JAP_democratic_women_in_the_workforce }
 			}
             OR = {
                 AND = {
@@ -1793,6 +1795,18 @@ war_measures = {
         				NOT = { has_idea = totaler_krieg_economy }
         			}
         			has_completed_focus = GER_womens_rights_and_equality
+        		}
+            }
+            else_if = {
+            	limit = {
+            		original_tag = JAP
+            	}
+        		OR = {
+        			has_war = no
+        			AND = {
+        				NOT = { has_idea = tot_economic_mobilisation }
+        				NOT = { has_idea = national_defense_state }
+        			}
         		}
             }
         	else = {
@@ -1893,10 +1907,8 @@ war_measures = {
 		complete_effect = {
 			if = {
 				limit = {
-					check_variable = {
-						var = GER_war_bonds_var
-						value = 50
-						compare = less_than
+					NOT = {
+						has_variable = GER_war_bonds_var
 					}
 				}
 				set_variable = {
@@ -1910,35 +1922,13 @@ war_measures = {
 			}
 			if = {
 				limit = {
-					check_variable = {
-						var = GER_war_bonds_var
-						value = 100
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = GER_war_bonds_war_support_var
-						value = -0.025
-						compare = greater_than
-					}
+					has_variable = GER_war_bonds_war_support_var
 				}
-				set_variable = {
-					var = GER_war_bonds_war_support_var
-					value = -0.025
-				}
-			}
-			if = {
-				limit = {
-					check_variable = {
-						var = GER_war_bonds_war_support_var
-						value = -0.025
-						compare = less_than_or_equals
-					}
+				add_war_support = GER_war_bonds_war_support_var
 				}
 				add_to_variable = {
 					var = GER_war_bonds_war_support_var
 					value = -0.025
-				}
-				add_war_support = GER_war_bonds_war_support_var
 		}
     }
 }
@@ -1947,13 +1937,7 @@ diversify_special_forces = {
 
 	icon = GFX_decision_generic_military
 
-	available = {
-		date > 1940.1.1
-	}
-
-	visible = {
-			AND = {
-				is_major = yes
+		allowed = {
 		has_dlc = "Arms Against Tyranny"
 		NOT = {
 			OR = {
@@ -1961,15 +1945,23 @@ diversify_special_forces = {
 				tag = USA #has a focus
 				tag = SOV #has a focus
 				tag = JAP #has a focus
-						tag = CHL #has a focus
-						tag = BRA #has a focus
-						tag = ARG #has a focus
 						tag = AST #has a focus
 						tag = FRA #has a focus
+					tag = GER #has a focus
 					}
 				} 
-				AND = {
+		}
+
+		available = {
+		}
+
+		visible = {
+			is_major = yes
+			date > 1940.1.1
+			IF = {
+				limit = {
 					has_dlc = "Trial of Allegiance"
+				}
 					NOT = {
 						OR = {
 							tag = CHL #has a focus
@@ -1980,8 +1972,22 @@ diversify_special_forces = {
 						}
 					}
 				}
-				AND = {
+			IF = {
+				limit = {
+            		has_dlc = "Graveyard of Empires"
+				}
+				NOT = {
+					OR = {
+						tag = PER #has a focus
+						tag = IRQ #has a focus
+						tag = RAJ #has a focus
+					}
+				}
+			}
+			IF = {
+				limit = {
 					has_dlc = "Gotterdammerung"
+				}
 					NOT = {
 						OR = {
 							tag = BEL #has a focus
@@ -1989,7 +1995,7 @@ diversify_special_forces = {
 						}
 					}
 			}
-		} 
+			PHI_SEA = no
 	}
 
 	fire_only_once = yes
@@ -2000,11 +2006,36 @@ diversify_special_forces = {
 		add_potential_special_forces_tree = yes
 	}
 	ai_will_do = {
-		factor = 201
+			base = 201
 		modifier = {
 			factor = 0
 			is_major = no
 		}
+			modifier = {
+				factor = 0
+				original_tag = CHI 
+				amount_taken_ideas = {
+					amount < 1
+					slots = {
+						army_chief
+					}
+				}
+				amount_taken_ideas = {
+					amount < 2
+					slots = {
+						high_command
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = special_forces_mountaineers
+					has_tech = special_forces_marines
+					has_tech = special_forces_paratroopers
+					has_tech = special_forces_rangers
+				}
+			}
 	}
 }
 
@@ -2242,7 +2273,6 @@ economy_decisions = {
 							include_locked = yes
 						}
 						NOT = { has_state_flag = war_building_slot_flag }
-						infrastructure > 4
 					}
 					add_extra_state_shared_building_slots = 1
 					set_state_flag = war_building_slot_flag
@@ -3019,7 +3049,7 @@ foreign_support = {
 					}
 				}
 				AND = {
-					601 = { #Xikang
+					747 = { #Dali
 						has_state_flag = CHI_needed_for_the_hump
 						OR = {
 							is_controlled_by = ROOT
@@ -3049,7 +3079,7 @@ foreign_support = {
 					}
 				}
 				AND = {
-					601 = { #Xikang
+					747 = { #Dali 
 						has_state_flag = CHI_needed_for_the_hump
 						OR = {
 							is_controlled_by = ROOT

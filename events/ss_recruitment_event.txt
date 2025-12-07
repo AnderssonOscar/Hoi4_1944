@@ -1,5 +1,5 @@
 ﻿###########################
-#ss recruitment events
+#ss recruitment events 1944
 ###########################
 
 add_namespace = ss_recruitment_event
@@ -1391,7 +1391,7 @@ country_event = {
 	id = ss_recruitment_event.20
 	title = ss_recruitment_event.20.t	
 	desc = ss_recruitment_event.20.desc	#
-	picture = GFX_report_event_hitler_handshake		
+	picture = [GetHitlerHandshakeEventPicture]		
 
 	is_triggered_only = yes			# 
 
@@ -1420,7 +1420,7 @@ country_event = {
 	id = ss_recruitment_event.21
 	title = ss_recruitment_event.21.t	
 	desc = ss_recruitment_event.21.desc	#
-	picture = GFX_report_event_hitler_parade		
+	picture = GFX_report_event_soldiers_parade		
 
 	is_triggered_only = yes			# 
 

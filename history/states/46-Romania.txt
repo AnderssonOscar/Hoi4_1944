@@ -3,7 +3,7 @@ state = {
 	name = "STATE_46" # Muntenia
 	manpower = 3971400 # was 4461400
 	resources = {
-		oil = 18 # was: 70 1944
+		oil = 22 # was: 70 1944
 	}
 
 	state_category = city
@@ -34,7 +34,7 @@ state = {
 				anti_air_building = 4
 				arms_factory = 3
 				industrial_complex = 2
-				fuel_silo = 1
+				fuel_silo = 2
 
 				9617 = {
 					land_facility = 1 

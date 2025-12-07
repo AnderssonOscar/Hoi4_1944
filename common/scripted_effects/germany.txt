@@ -24,12 +24,12 @@ GER_start_effects = { # run in update daily
 
         set_global_flag = mod_GER_start_effects
 
-        set_fuel = 119000
+        set_fuel = 1190000
         add_political_power = 1250
         army_experience = 195
         #add_command_power = 80
 
-        add_manpower = 950000
+        add_manpower = 1900000
 
         set_technology = {
             #modern_oil_processing = 1
@@ -134,7 +134,7 @@ GER_start_effects = { # run in update daily
 
             add_equipment_to_stockpile = {
                 type = artillery_equipment_2
-                amount = 1800
+                amount = 2200
             }
 
             add_equipment_to_stockpile = {
@@ -145,12 +145,12 @@ GER_start_effects = { # run in update daily
 
         add_equipment_to_stockpile = {
             type = infantry_equipment_2
-            amount = 30000
+            amount = 35000
         }
 
         add_equipment_to_stockpile = {
             type = support_equipment_1
-            amount = 3550
+            amount = 4550
         }
 
         add_equipment_to_stockpile = {
@@ -160,22 +160,22 @@ GER_start_effects = { # run in update daily
 
         add_equipment_to_stockpile = {
             type = infantry_equipment_1
-            amount = 22000
+            amount = 27000
         }
 
         add_equipment_to_stockpile = {
             type = motorized_equipment_1
-            amount = 8900
+            amount = 9900
         }
 
         add_equipment_to_stockpile = {
             type = mechanized_equipment_2
-            amount = 3550
+            amount = 3950
         }
 
         add_equipment_to_stockpile = {
             type = anti_air_equipment_2
-            amount = 4350
+            amount = 4950
         }
 
 

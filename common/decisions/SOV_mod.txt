@@ -396,8 +396,8 @@ SOV_great_patriotic_war = {
 
 		targeted_modifier = {
 			tag = RKU #ukraine
-			attack_bonus_against = 1.15
-			breakthrough_bonus_against = 1.15
+			attack_bonus_against = 1.1
+			breakthrough_bonus_against = 1.1
 		}
 
 		targeted_modifier = {
@@ -408,8 +408,8 @@ SOV_great_patriotic_war = {
 
 		targeted_modifier = {
 			tag = HUN
-			attack_bonus_against =  0.5
-			breakthrough_bonus_against =  0.45
+			attack_bonus_against =  0.65
+			breakthrough_bonus_against =  0.65
 		}
 
 		modifier = {
@@ -490,8 +490,8 @@ SOV_great_patriotic_war = {
 			
 			targeted_modifier = {
 				tag = ROM
-				attack_bonus_against = 1.2
-				breakthrough_bonus_against = 1.2
+				attack_bonus_against = 1.25
+				breakthrough_bonus_against = 1.25
 			}
 
 			targeted_modifier = {

@@ -1230,6 +1230,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
@@ -1260,6 +1264,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
@@ -1297,6 +1305,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
@@ -1356,6 +1368,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			any_army_leader = {
@@ -1392,6 +1408,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			any_army_leader = {
@@ -1433,6 +1453,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
@@ -1470,6 +1494,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
@@ -1504,6 +1532,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
@@ -1539,6 +1571,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
@@ -1656,6 +1692,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
@@ -1690,6 +1730,10 @@ communism_on_the_rise = {
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
+				AND = {
+					has_idea_with_trait = ARG_communist_insurrectionist
+					original_tag = IRQ
+				}
 			}
 		}
 
@@ -1891,10 +1935,10 @@ political_actions = {
             ITA = { has_government = ROOT }
         }
         ai_will_do = {
-			factor = 1
+			base = 1
 			modifier = {
 				tag = ENG
-				has_War = no
+				has_war = no
 				date < 1937.3.1
 				factor = 0
 			}
@@ -1906,8 +1950,13 @@ political_actions = {
     	icon = generic_civil_support
 
     	visible = {
+    		OR = {
 			NOT = { has_government = fascism }
-
+				AND = {
+					original_tag = RAJ
+					has_idea = idea_RAJ_kingmaker	
+				}
+			}
 			IF = {
 				limit = {
 					has_dlc = "Gotterdammerung"
@@ -1947,13 +1996,18 @@ political_actions = {
 		cost = 50
 
 		cancel_trigger = {
-			AND = {
+			if = {
+				limit = {
 				original_tag = AUS
+				}
 				OR = {
 					has_completed_focus = AUS_clamp_down_on_dnsap
 					has_completed_focus = AUS_ban_dnsap
 					has_completed_focus = AUS_rebuild_democratic_systems
 				}
+			}
+			else = {
+				always = no
 			}
 		}
 
@@ -2023,7 +2077,13 @@ political_actions = {
     	icon = generic_civil_support
 
     	visible = {
+    		OR = {
 			NOT = { has_government = democratic }
+    			AND = {
+    				original_tag = RAJ
+    				has_idea = idea_RAJ_kingmaker	
+    			}
+			}
 		}
 
 		available = {
@@ -2063,7 +2123,13 @@ political_actions = {
     	icon = generic_civil_support
 
     	visible = {
+    		OR = {
 			NOT = { has_government = communism }
+    			AND = {
+    				original_tag = RAJ
+    				has_idea = idea_RAJ_kingmaker	
+    			}
+			}
 		}
 
 		available = {
@@ -2095,6 +2161,24 @@ political_actions = {
 		
 		ai_will_do = {
 			base = 0
+			modifier = { # If they have nothing else big to spend pp on, and this is avaiable, Monarchist Germany should start work on removing communist support. 
+				add = 10
+				original_tag = GER
+				OR = {
+					has_country_flag = GER_AI_RANDOM_KAISER
+					has_game_rule = {
+						rule = GER_ai_behavior
+						option = KAISER
+					}
+				}
+			}
+			modifier = { 
+				add = 5
+				has_dlc = "No Compromise, No Surrender"
+				original_tag = CHI
+				communism > 0.1
+			}
+
 		}
     }
 
@@ -2109,8 +2193,12 @@ political_actions = {
     		OR = { # has_focus_tree is not allwoed in the allowed trigger
     			has_focus_tree = austro_hungarian_releasable_focus
     			has_focus_tree = generic_focus
+    			has_idea = idea_RAJ_kingmaker
     		}
+    		OR = {
 			NOT = { has_government = neutrality }
+    			original_tag = RAJ
+			}
 		}
 
 		available = {
@@ -2150,7 +2238,17 @@ political_actions = {
 		icon = generic_civil_support
 
 		available = {
+			if = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					original_tag = RAJ
+					has_idea = ENG_dominion_fascist_propaganda
+					
+				}
+			}
+			else = {
 			fascism < 0.2
+			}
 			IF = {
 				limit = {
 					tag = SPR
@@ -2183,6 +2281,13 @@ political_actions = {
 							has_idea = idea_CHL_near_anarchic_society_4
 						}
 					}
+				}
+			}
+
+			if = {
+				limit = {
+					original_tag = RAJ
+					has_dlc = "Graveyard of Empires"
 				}
 			}
 		}
@@ -2245,6 +2350,12 @@ political_actions = {
 			remove_fascist_spirits_effect = yes
 			custom_effect_tooltip = ban_fascist_party_tt
 			add_stability = ban_ideology_var
+			if = {
+				limit = {
+					has_idea = ENG_dominion_fascist_propaganda
+				}
+				remove_ideas = ENG_dominion_fascist_propaganda
+			}
 		}
 
 		ai_will_do = {
@@ -2766,6 +2877,27 @@ political_actions = {
 				has_government = neutrality
 				NOT = { has_completed_focus = FIN_the_lone_wolf }
 				neutrality < 0.85
+			}
+			modifier = {
+				add = 1
+				has_dlc = "No Compromise, No Surrender"
+				original_tag = CHI
+				NOT = { has_completed_focus = CHI_end_military_primacy }
+				fascism > 0.1
+			}
+			modifier = {
+				add = 1.5
+				has_dlc = "No Compromise, No Surrender"
+				original_tag = CHI
+				NOT = { has_completed_focus = CHI_end_military_primacy }
+				communism > 0.1
+			}
+			modifier = {
+				add = 2.5
+				has_dlc = "No Compromise, No Surrender"
+				original_tag = CHI
+				NOT = { has_completed_focus = CHI_end_military_primacy }
+				communism > 0.25
 			}
 		}
 	}

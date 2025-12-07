@@ -2688,7 +2688,7 @@ SOV_take_romania = {
 		 state = 78
 		# state = 79
 
-         value = 25 # +50%
+         value = 35 # +50%
      }
 
 	ai_strategy = {

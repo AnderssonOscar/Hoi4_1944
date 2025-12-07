@@ -1,4 +1,4 @@
-﻿capital = 43 # Budapest (Northern Hungary)
+﻿capital = 43 # Budapest (Northern Hungary) #1944
 
 IF = {
 	limit = {
@@ -59,22 +59,22 @@ IF = {
 	}
 }
 
-#set_research_slots = 1
+set_research_slots = 3
 
-# ### SETUP STABILITY AND WAR SUPPORT ###
-# IF = {
-# 	limit = {
-# 		NOT = {
-# 			has_dlc = "Gotterdammerung"
-# 		}
-# 	}
-# set_stability = 0.7
-# set_war_support = 0.6
-# 	ELSE = {
-# 		set_stability = 0.3
-# 		set_war_support = 0.4
-# 	}
-# }
+### SETUP STABILITY AND WAR SUPPORT ###
+IF = {
+	limit = {
+		NOT = {
+			has_dlc = "Gotterdammerung"
+		}
+	}
+	set_stability = 0.7
+	set_war_support = 0.6
+	ELSE = {
+		set_stability = 0.3
+		set_war_support = 0.4
+	}
+}
 
 
 set_technology = {
@@ -84,7 +84,6 @@ set_technology = {
 	tech_recon = 1
 	tech_trucks = 1
 	gw_artillery = 1
-
 	fuel_silos = 1
 	basic_train = 1
 }
@@ -687,13 +686,6 @@ add_breakthrough_progress = {
 		tech_maintenance_company = 1
 		tech_field_hospital = 1
 
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -711,6 +703,11 @@ add_breakthrough_progress = {
 		dispersed_industry2 = 1
 		fuel_refining = 1
 	}
+
+	set_grand_doctrine = grand_battleplan
+	set_grand_doctrine = new_fleet_in_being
+	set_grand_doctrine = new_strategic_destruction
+
 	complete_special_project = {
 		project = sp:sp_air_radar
 	}
@@ -961,6 +958,66 @@ add_breakthrough_progress = {
 				sp_armored_motorized_military_police_tech = 1
 			}
 		}
+
+
+				set_grand_doctrine = grand_battleplan
+		set_grand_doctrine = new_fleet_in_being
+		set_grand_doctrine = new_operational_integrity
+	
+
+		#Land
+		set_sub_doctrine = defensive_postures
+		add_mastery = {
+			amount = 250
+			sub_doctrine = defensive_postures
+		}
+
+		set_sub_doctrine = fire_concentration
+		add_mastery = {
+			amount = 100
+			sub_doctrine = fire_concentration
+		}
+
+		set_sub_doctrine = armored_infantry_support
+		add_mastery = {
+			amount = 100
+			sub_doctrine = armored_infantry_support
+		}
+
+		set_sub_doctrine = mission_type_tactics
+		add_mastery = {
+			amount = 100
+			sub_doctrine = mission_type_tactics
+		}
+
+		#Air
+		set_sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		add_mastery = {
+			amount = 200
+			sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		}
+
+		set_sub_doctrine = air_subdoctrine_flying_artillery
+		add_mastery = {
+			amount = 50
+			sub_doctrine = air_subdoctrine_flying_artillery
+		}
+
+		if = {
+			limit = { has_dlc = "La Resistance" }
+				set_sub_doctrine = 	air_subdoctrine_aerial_reconnaissance
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	air_subdoctrine_aerial_reconnaissance
+				}
+			else = {
+				set_sub_doctrine = 	air_subdoctrine_operational_air_support
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	air_subdoctrine_operational_air_support
+				}
+			}
+		}
 	
 	set_technology = {
 
@@ -983,13 +1040,7 @@ add_breakthrough_progress = {
 		excavation1 = 1
 		excavation2 = 1
 		excavation3 = 1
-
-		#doctrine
-		trench_warfare = 1
-		grand_battle_plan = 1
-		prepared_defense = 1
-		grand_assault = 1
-		infantry_offensive = 1
+		excavation4 = 1
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1
@@ -1007,6 +1058,7 @@ add_breakthrough_progress = {
 		construction1 = 1
 		construction2 = 1
 		construction3 = 1
+		construction4 = 1
 
 		dispersed_industry = 1
 		dispersed_industry2 = 1
@@ -1193,8 +1245,8 @@ add_breakthrough_progress = {
 			#improved_light_battery = 1
 			#improved_light_shell = 1
 	
-			basic_medium_battery = 1
-			#basic_medium_shell = 1
+			
+			#
 
 			#improved_ship_hull_submarine = 1
 			#improved_ship_hull_light = 1

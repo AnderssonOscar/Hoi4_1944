@@ -21,6 +21,11 @@ state = {
 			10237 1 # Balikpapan
 		}
 
+		1943.12.31 = {
+			owner = JAP
+			controller = JAP
+		}
+
 		buildings = {
 			infrastructure = 1
 
@@ -39,11 +44,7 @@ state = {
 			13298 = {
 				naval_base = 1
 		}
-		1943.12.31 = {
-			owner = JAP
-			controller = JAP
-		}
-
+	}
 	}
 
 	provinces = {

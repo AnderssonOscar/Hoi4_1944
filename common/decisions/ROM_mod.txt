@@ -226,15 +226,14 @@ war_measures = {
 			if = {
 				limit = {
 					is_ai = yes
+					ROM = { has_template = "Divizia Infanterie" }
 				}
+
 				ROM = { delete_units = { division_template = "Divizia Infanterie" disband = yes } }
 			}
 
 			add_stability = -0.21
 			add_war_support = -0.50
-
-
-
 
 			division_template = {
 				name = "Sov Divizia Infanterie"

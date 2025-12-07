@@ -11,7 +11,7 @@ state = {
 		add_core_of = JAP
 
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
 			air_base = 3
 			arms_factory = 1
 			industrial_complex = 2
@@ -26,7 +26,7 @@ state = {
 
 		1943.12.30 = {
 			buildings = {
-					arms_factory = 2
+					arms_factory = 1
 					dockyard = 1
 			}
 		}

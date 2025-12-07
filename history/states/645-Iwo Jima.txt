@@ -26,7 +26,7 @@ state=
 
 		 1943.12.31 = {
 			buildings = {
-				air_base = 9
+				radar_station = 3
 				13025 = {
 					naval_base = 5
 				}

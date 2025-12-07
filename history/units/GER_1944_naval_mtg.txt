@@ -9,97 +9,97 @@
 		task_force = {
 			name = "XIII. U-Boots-Flot."
 			location = 6536	#lorient
-			ship = { name = "U-48" definition = submarine start_experience_factor = 0.73 equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIB Class" } } }
-			ship = { name = "U-103" definition = submarine start_experience_factor = 0.83 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB Class" } } }
-			ship = { name = "U-123" definition = submarine start_experience_factor = 0.79 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB Class" } } }
-			ship = { name = "U-107" definition = submarine start_experience_factor = 0.69 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB Class" } } }
-			ship = { name = "U-37" definition = submarine start_experience_factor = 0.74 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB Class" } } }
-			ship = { name = "U-66" definition = submarine start_experience_factor = 0.87 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB Class" } } }
-			ship = { name = "U-68" definition = submarine start_experience_factor = 0.89 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB Class" } } }
+			ship = { name = "U-48" definition = submarine start_experience_factor = 0.73 equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIB" } } }
+			ship = { name = "U-103" definition = submarine start_experience_factor = 0.83 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB" } } }
+			ship = { name = "U-123" definition = submarine start_experience_factor = 0.79 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB" } } }
+			ship = { name = "U-107" definition = submarine start_experience_factor = 0.69 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB" } } }
+			ship = { name = "U-37" definition = submarine start_experience_factor = 0.74 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB" } } }
+			ship = { name = "U-66" definition = submarine start_experience_factor = 0.87 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB" } } }
+			ship = { name = "U-68" definition = submarine start_experience_factor = 0.89 equipment = { ship_hull_cruiser_submarine = { amount = 1 owner = GER version_name = "Type IXB" } } }
 		}
 		task_force = {
 			name = "I. U-Boots-Flot. Weddige"
 			location = 6657		# La Rochelle  
-			ship = { ordered_name = 14 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 16 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 18 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 20 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 22 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 24 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+			ship = { ordered_name = 14 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 16 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 18 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 20 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 22 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 24 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 		}
 		task_force = {
 			name = "V. U-Boots-Flot. Saltzwed"
 			location = 6657		# La Rochelle  
-			ship = { ordered_name = 56 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 57 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 58 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 59 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 60 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 61 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 37 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 38 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 43 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 44 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+			ship = { ordered_name = 56 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 57 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 58 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 59 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 60 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 61 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 37 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 38 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 43 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 44 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 		}
 
 		task_force = {
 			name = "VII. U-Boots-Flot. Wegener"
 			location = 6657		# La Rochelle  
-			ship = { ordered_name = 45 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 46 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 51 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 52 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 53 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+			ship = { ordered_name = 45 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 46 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 51 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 52 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 53 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 		}
 		task_force = {
 			name = "Ausbildungs-Flottille"
 			location = 3552		# Brest  
-			ship = { ordered_name = 1 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 2 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 3 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 10 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 11 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
+			ship = { ordered_name = 1 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 2 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 3 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 10 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 11 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II" } } }
 		}
 				task_force = {
 			name = "VIII. U-Boots-Flot."
 			location = 3552		# Brest  
-			ship = { ordered_name = 14 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 16 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 22 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 24 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+			ship = { ordered_name = 14 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 16 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 22 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 24 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 		}
 		task_force = {
 			name = "IX. U-Boots-Flot. Emsmann"
 			location = 9737		#  
-			ship = { ordered_name = 56 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 57 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 58 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 59 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 60 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 61 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 37 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 38 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 43 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 44 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+			ship = { ordered_name = 56 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 57 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 58 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 59 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 60 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 61 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 37 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 38 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 43 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 44 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 		}
 
 		task_force = {
 			name = "XI. U-Boots-Flot."
 			location = 9510		#   
-			ship = { ordered_name = 45 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 46 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 52 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 53 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
+			ship = { ordered_name = 45 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 46 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 52 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 53 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
 		}
 		task_force = {
 			name = "XII. U-Boots-Flot."
 			location = 575		#   
-			ship = { ordered_name = 1 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 2 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 7 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 8 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 10 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 11 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
+			ship = { ordered_name = 1 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 2 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 7 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 8 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 10 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 11 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
 		}
 
 	}
@@ -114,22 +114,22 @@
 			name = "Zerstörerflotte" 	# CO: Lütjens
 			location = 241 	# Kiel 
 			# 4. Zerstörer Flottille
-            ship = { name = "Admiral Hipper" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Admiral Hipper Class" } } }	
-            ship = { name = "Köln" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Königsberg Class" } } }
-			ship = { name = "Emden" definition = light_cruiser start_experience_factor = 0.31 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Emden Class" } } }
-			ship = { ordered_name = 10 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class"} } }
-			ship = { ordered_name = 12 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class"} } }
-			ship = { ordered_name = 13 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class"} } }
-			ship = { ordered_name = 202 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Albatros
-			ship = { ordered_name = 203 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Seeadler
+            ship = { name = "Admiral Hipper" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Admiral Hipper" } } }	
+            ship = { name = "Köln" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Königsberg" } } }
+			ship = { name = "Emden" definition = light_cruiser start_experience_factor = 0.31 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Emden" } } }
+			ship = { ordered_name = 10 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A"} } }
+			ship = { ordered_name = 12 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A"} } }
+			ship = { ordered_name = 13 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A"} } }
+			ship = { ordered_name = 202 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# Albatros
+			ship = { ordered_name = 203 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# Seeadler
 		}
        task_force = {
                 name = "Kriegsmarine Reserven"
                 location = 6389 # Kiel
-            	ship = { name = "Gneisenau" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Scharnhorst Class" } } }
-                ship = { name = "Prinz Eugen" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Admiral Hipper Class" } } }	
-			    ship = { name = "Schlesien" definition = battleship equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = GER version_name = "Deutschland Class" } } }			
-				ship = { name = "Zähringen" definition = battleship equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = GER version_name = "Deutschland Class" } } }	
+            	ship = { name = "Gneisenau" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Scharnhorst" } } }
+                ship = { name = "Prinz Eugen" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Admiral Hipper" } } }	
+			    ship = { name = "Schlesien" definition = battleship equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = GER version_name = "Deutschland" } } }			
+				ship = { name = "Zähringen" definition = battleship equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = GER version_name = "Deutschland" } } }	
             }
         }
 
@@ -140,23 +140,23 @@
             name = "Tirpitz Geschwader"
             location = 11050
 
-			ship = { name = "Tirpitz" definition = battleship start_experience_factor = 0.44 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Bismarck Class" } } }
-            ship = { ordered_name = 17 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
-			ship = { ordered_name = 204 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Greif
-			ship = { ordered_name = 205 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Falke
-			ship = { ordered_name = 206 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Kondor
-			ship = { name = "Galster" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# 
+			ship = { name = "Tirpitz" definition = battleship start_experience_factor = 0.44 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Bismarck" } } }
+            ship = { ordered_name = 17 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }
+			ship = { ordered_name = 204 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# Greif
+			ship = { ordered_name = 205 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# Falke
+			ship = { ordered_name = 206 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# Kondor
+			ship = { name = "Galster" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# 
 
-			ship = { name = "Z31" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }		
-			ship = { name = "Z32" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }		
-			ship = { name = "Z33" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }		
-			ship = { name = "Z34" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }	
-			ship = { name = "Z37" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }	
-			ship = { name = "Z38" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }	
-			ship = { name = "Z39" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }	
+			ship = { name = "Z31" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }		
+			ship = { name = "Z32" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }		
+			ship = { name = "Z33" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }		
+			ship = { name = "Z34" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }	
+			ship = { name = "Z37" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }	
+			ship = { name = "Z38" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }	
+			ship = { name = "Z39" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }	
 
-			ship = { name = "Z35" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }	
-			ship = { name = "Z36" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936 Class" } } }	
+			ship = { name = "Z35" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }	
+			ship = { name = "Z36" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1936" } } }	
 
         }
     }   
@@ -167,12 +167,12 @@
 		task_force = {
 		name = "Schwarzes Meer U-Boots-Flot I"
 		location = 657
-		ship = { definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
-		ship = { definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
-		ship = { definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
-		ship = { definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
-		ship = { definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-		ship = { definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+		ship = { definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II" } } }
+		ship = { definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II" } } }
+		ship = { definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II" } } }
+		ship = { definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II" } } }
+		ship = { definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+		ship = { definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 	}
 } 
 
@@ -182,13 +182,13 @@
         task_force = {
                 name = "Lützow Geschwader"
                 location = 362
-                #ship = { name = "Lützow" definition = heavy_cruiser  start_experience_factor = 0.25 equipment = { ship_hull_cruiser_panzerschiff = { amount = 1 owner = GER version_name = "Deutschland Class" } } }
-           		ship = { name = "Admiral Scheer" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_panzerschiff = { amount = 1 owner = GER version_name = "Deutschland Class" } } }
-                ship = { ordered_name = 18 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
-		    	ship = { ordered_name = 19 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
-				ship = { ordered_name = 209 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Jaguar
-				ship = { ordered_name = 210 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Leopard
-				ship = { ordered_name = 211 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }		# Luchs
+                #ship = { name = "Lützow" definition = heavy_cruiser  start_experience_factor = 0.25 equipment = { ship_hull_cruiser_panzerschiff = { amount = 1 owner = GER version_name = "Deutschland" } } }
+           		ship = { name = "Admiral Scheer" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_panzerschiff = { amount = 1 owner = GER version_name = "Deutschland" } } }
+                ship = { ordered_name = 18 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }
+		    	ship = { ordered_name = 19 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }
+				ship = { ordered_name = 209 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# Jaguar
+				ship = { ordered_name = 210 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# Leopard
+				ship = { ordered_name = 211 definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A" } } }		# Luchs
     	} 
     }
 
@@ -199,44 +199,44 @@
 		task_force = {
 			name = "I. U-Boots-Flot."
 			location = 122		# Bergen
-			ship = { ordered_name = 14 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 16 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 18 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 22 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 24 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+			ship = { ordered_name = 14 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 16 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 18 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 22 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 24 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 		}
 		task_force = {
 			name = "II. U-Boots-Flot. "
 			location = 122		# Bergen 
-			ship = { ordered_name = 56 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 57 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 58 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 59 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 60 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC Class" } } }
-			ship = { ordered_name = 61 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+			ship = { ordered_name = 56 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 57 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 58 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 59 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 60 definition = submarine equipment = { ship_hull_submarine_3 = { amount = 1 owner = GER version_name = "Type VIIC" } } }
+			ship = { ordered_name = 61 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 		}
 		task_force = {
 			name = "III. U-Boots-Flot."
 			location = 6115	
-			ship = { ordered_name = 37 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 38 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 43 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 44 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 25 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
-			ship = { ordered_name = 30 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 29 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 36 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 12 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
+			ship = { ordered_name = 37 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 38 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 43 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 44 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 25 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II" } } }
+			ship = { ordered_name = 30 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 29 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 36 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 12 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II" } } }
 		}
 		task_force = {
 			name = "IV. U-Boots-Flot."
 			location = 3022	#Trondheim
-			ship = { ordered_name = 45 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 46 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 47 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 48 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 52 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
-			ship = { ordered_name = 53 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII Class" } } }
+			ship = { ordered_name = 45 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 46 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 47 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 48 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 52 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
+			ship = { ordered_name = 53 definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "Type VII" } } }
 		}
 	}
 
@@ -256,7 +256,7 @@ instant_effect = {
 		equipment = {
 			type = ship_hull_submarine_3
 			creator = "GER" 
-			version_name = "Type VIIC Class"
+			version_name = "Type VIIC"
 		}
 		requested_factories = 5
 		progress = 0.86
@@ -268,7 +268,7 @@ instant_effect = {
 		equipment = {
 			type = ship_hull_submarine_3
 			creator = "GER" 
-			version_name = "Type VIIC Class"
+			version_name = "Type VIIC"
 		}
 		requested_factories = 5
 		progress = 0.75
@@ -280,7 +280,7 @@ instant_effect = {
 		equipment = {
 			type = ship_hull_submarine_4
 			creator = "GER" 
-			version_name = "Type XXIII Class"
+			version_name = "Type XXIII"
 		}
 		requested_factories = 10
 		progress = 0.25

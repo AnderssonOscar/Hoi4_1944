@@ -140,11 +140,11 @@ if = {
 		support_weapons = 1
 
 		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
+		
+		
+		
+		
+		
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -403,10 +403,10 @@ if = {
 		excavation3 = 1
 
 		#doctrine
-		trench_warfare = 1
-		grand_battle_plan = 1
-		prepared_defense = 1
-		#grand_assault = 1
+		
+		
+		
+		#
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1

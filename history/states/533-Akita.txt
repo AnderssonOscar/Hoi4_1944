@@ -40,11 +40,11 @@ state = {
 			9807 1 # Morioka
 		}
 
-				1943.12.30 = {
+		1943.12.30 = {
 			buildings = {
 				anti_air_building = 1
 				arms_factory = 2
-				industrial_complex = 2
+				industrial_complex = 1
 			}
 		}
 

@@ -1550,27 +1550,7 @@ country_event = {
 			antitank3 = 1
 			antitank4 = 1
 
-			#doctrines
-			mobile_warfare = 1
-			delay = 1
-			elastic_defence = 1
-			armored_spearhead = 1
-			schwerpunk = 1
-			blitzkrieg = 1
-			kampfgruppe = 1 #MOBILE WARFARE
-			convoy_interdiction_ti = 1
-			unrestricted_submarine_warfare = 1
-			raider_patrols = 1
-			wolfpacks = 1
-			capital_ship_raiders = 1
-			#air
-			formation_flying = 1		
-			dive_bombing = 1
-			direct_ground_support = 1
-			formation_fighting = 1
-			hunt_and_destroy = 1
-			combat_unit_destruction = 1
-
+			
 			#electronics
 			electronic_mechanical_engineering = 1
 			mechanical_computing = 1

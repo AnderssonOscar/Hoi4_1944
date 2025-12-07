@@ -29,8 +29,8 @@ set_technology = {
 	tech_engineers = 1
 	tech_recon = 1
 	gw_artillery = 1
-	trench_warfare = 1
-	fleet_in_being = 1
+	
+	
 	fuel_silos = 1
 }
 
@@ -133,12 +133,12 @@ if = {
 		support_weapons2 = 1
 		
 		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
+		
+		
+		
+		
+		
+		
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -303,11 +303,11 @@ recruit_character = SAF_abram_fischer
 		
 
 		#doctrine
-		trench_warfare = 1
-		grand_battle_plan = 1
-		prepared_defense = 1
-		grand_assault = 1
-		#infantry_offensive = 1
+		
+		
+		
+		
+		#
 
 		#industry
 		
@@ -480,7 +480,7 @@ recruit_character = SAF_abram_fischer
 			basic_battery = 1
 			basic_light_battery = 1
 			basic_heavy_battery = 1
-			basic_medium_battery = 1
+			
 			improved_ship_torpedo_launcher = 1
 			early_ship_hull_submarine = 1
 			basic_ship_hull_submarine = 1
@@ -509,7 +509,7 @@ recruit_character = SAF_abram_fischer
 			basic_light_shell = 1
 			improved_light_battery = 1
 			improved_light_shell = 1
-			improved_medium_shell = 1
+			
 
 			basic_heavy_shell = 1
 			improved_heavy_shell = 1

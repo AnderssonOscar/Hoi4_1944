@@ -1,3 +1,4 @@
+#1944
 capital = 47
 
 #oob = "GRE_1936"
@@ -46,10 +47,12 @@ set_technology = {
 	tech_recon = 1
 	tech_trucks = 1
 	gw_artillery = 1
-	trench_warfare = 1
 	fuel_silos = 1
 	synth_oil_experiments = 1
 }
+
+set_grand_doctrine = grand_battleplan
+
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
@@ -254,14 +257,6 @@ set_convoys = 10
 		infantry_weapons2 = 1
 		support_weapons = 1
 
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
@@ -283,6 +278,11 @@ set_convoys = 10
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
 	}
+
+	set_grand_doctrine = grand_battleplan
+	set_grand_doctrine = new_fleet_in_being
+	set_grand_doctrine = new_strategic_destruction
+
 	complete_special_project = {
 		project = sp:sp_air_radar
 	}
@@ -698,6 +698,26 @@ if = {
 		set_garrison_strength = 1.0
 	}
 
+		set_grand_doctrine = grand_battleplan
+		#Land
+		set_sub_doctrine = defensive_postures
+		add_mastery = {
+			amount = 100
+			sub_doctrine = defensive_postures
+		}
+
+		set_sub_doctrine = field_engineering
+		add_mastery = {
+			amount = 100
+			sub_doctrine = field_engineering
+		}
+
+		set_sub_doctrine = mission_type_tactics
+		add_mastery = {
+			amount = 100
+			sub_doctrine = mission_type_tactics
+		}
+
 	set_technology = {
 
 		#electronics
@@ -705,17 +725,10 @@ if = {
 		radio = 1
 		radio_detection = 1
 		
-		
-		#
-		#
-
 		#industry
 		excavation1 = 1
 		excavation2 = 1
 		excavation3 = 1
-
-		#doctrine
-		trench_warfare = 1
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1
@@ -830,7 +843,7 @@ if = {
 	
 			basic_torpedo = 1
 			magnetic_detonator = 1
-			electric_torpedo = 1
+			
 			 
 			coastal_defense_ships = 1
 		}

@@ -91,9 +91,9 @@ recruit_character = SLO_anton_pulanick
 	
 	set_technology = {
 		#doctrines
-		formation_flying = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
+		
+		
+		
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -163,6 +163,26 @@ set_popularities = {
 		extensive_conscription
 	}
 
+		set_grand_doctrine = grand_battleplan
+		#Land
+		set_sub_doctrine = defensive_postures
+		add_mastery = {
+			amount = 100
+			sub_doctrine = defensive_postures
+		}
+
+		set_sub_doctrine = field_engineering
+		add_mastery = {
+			amount = 100
+			sub_doctrine = field_engineering
+		}
+
+		set_sub_doctrine = mission_type_tactics
+		add_mastery = {
+			amount = 100
+			sub_doctrine = mission_type_tactics
+		}
+
 	set_technology = {
 		tech_trucks = 1
 		#electronics
@@ -173,10 +193,6 @@ set_popularities = {
 		excavation1 = 1
 		excavation2 = 1
 		excavation3 = 1
-
-		#doctrine
-		trench_warfare = 1
-		prepared_defense = 1
 
 		basic_machine_tools = 1
 		improved_machine_tools = 1

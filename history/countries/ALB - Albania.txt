@@ -82,9 +82,6 @@ set_convoys = 15
 		excavation1 = 1
 		excavation2 = 1
 
-		#doctrine
-		trench_warfare = 1
-
 		basic_machine_tools = 1
 		improved_machine_tools = 1
 
@@ -114,6 +111,15 @@ set_convoys = 15
 		tech_recon = 1	
 		
 		basic_train = 1
+	}
+
+	set_grand_doctrine = grand_battleplan
+	set_grand_doctrine = new_operational_integrity	
+
+	set_sub_doctrine = defensive_postures
+	add_mastery = {
+		amount = 100
+		sub_doctrine = defensive_postures
 	}
 
 	add_ideas = {

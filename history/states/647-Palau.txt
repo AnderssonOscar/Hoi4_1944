@@ -23,7 +23,6 @@ state = {
 			4357 = {
 				naval_base = 1
 			}
-
 		}
 		
 		victory_points = {
@@ -40,12 +39,6 @@ state = {
 		strategic_province_location = {
 			defensible_coastline = 4357
 		}
-
-			1943.12.31 = {
-			buildings = {
-				owner = USA
-			}
-		 }
 	}
 
 	provinces = {

@@ -30,6 +30,10 @@ add_breakthrough_progress = {
 	value = 0.3
 }
 
+set_grand_doctrine = new_mobile_warfare
+set_grand_doctrine = new_convoy_raiding
+set_grand_doctrine = new_battlefield_support
+
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "GER_1936_air_bba"
@@ -89,9 +93,8 @@ set_technology = {
 	CAS1 = 1
 	naval_bomber1 = 1
 	basic_train = 1
-	mobile_warfare = 1
-	trade_interdiction = 1
-	formation_flying = 1
+	
+	
 	synth_oil_experiments = 1
 	fuel_silos = 1
 	fuel_refining = 1
@@ -160,14 +163,12 @@ if = {
 		basic_torpedo = 1
 		magnetic_detonator = 1
 		homing_torpedo = 1
-		electric_torpedo = 1
+		
 		improved_ship_torpedo_launcher = 1
 		basic_battery = 1
 		basic_light_battery = 1
-		basic_medium_battery = 1
+		
 		basic_heavy_battery = 1
-		 
-		improved_airplane_launcher = 1
 		basic_depth_charges = 1
 		sonar = 1
 
@@ -176,7 +177,6 @@ if = {
 		advanced_ship_hull_cruiser = 1
 
 		basic_cruiser_armor_scheme = 1
-
 	}
 	set_naval_oob = "GER_1936_naval_mtg"
 }
@@ -190,7 +190,6 @@ if = {
 		armored_car3 = 1
 	}
 }
-
 
 #CONSUMER GOODS INCREASE AND PENALTIES VARIABLES
 set_variable = { GER_monthly_consumer_goods_start = 0.03 } #Starting amount of monthly increasing CG for MEFO Bills 
@@ -438,11 +437,19 @@ set_variable = { GER_narvik_shipments = 0 }
 set_variable = { GER_narvik_civs = 0 }
 set_research_slots = 4
 set_convoys = 200
+IF = {
+	limit = {
+		has_dlc = "Gotterdammerung"
+	}
+	set_stability = 0.7 # Was 0.75, but get 5% from the Reichstag
+	ELSE = {
 set_stability = 0.75 
+	}
+}
 set_war_support = 0.3
 
 
-
+# SETUP THE 1939 SCENARIO
 1939.1.1 = {
 	add_named_threat = { threat = 40 name = 1939_bookmark_threat }
 	set_war_support = 0.78
@@ -788,24 +795,24 @@ set_war_support = 0.3
 			antitank4 = 1
 
 			#doctrines
-			delay = 1
-			elastic_defence = 1
-			armored_spearhead = 1
-			schwerpunk = 1
-			blitzkrieg = 1
-			kampfgruppe = 1 #MOBILE WARFARE
-			convoy_interdiction_ti = 1
-			unrestricted_submarine_warfare = 1
-			raider_patrols = 1
-			wolfpacks = 1
-			capital_ship_raiders = 1
+			
+			
+			
+			
+			
+			 #MOBILE WARFARE
+			
+			
+			
+			
+			
 			#air
-			formation_flying = 1		
-			dive_bombing = 1
-			direct_ground_support = 1
-			formation_fighting = 1
-			hunt_and_destroy = 1
-			combat_unit_destruction = 1
+					
+			
+			
+			
+			
+			
 
 
 			#electronics
@@ -882,6 +889,36 @@ set_war_support = 0.3
 			antiair3 = 1
 			antiair4 = 1
 			antiair5 = 1
+	}
+
+	set_grand_doctrine = new_mobile_warfare
+	set_grand_doctrine = new_convoy_raiding
+	set_grand_doctrine = new_battlefield_support
+
+	set_sub_doctrine = mobile_infantry
+	add_mastery = {
+		amount = 200
+		sub_doctrine = mobile_infantry
+	}
+	set_sub_doctrine = mission_type_tactics
+	add_mastery = {
+		amount = 100
+		sub_doctrine = mission_type_tactics
+	}
+	set_sub_doctrine = mobile_recon_and_assault
+	add_mastery = {
+		amount = 150
+		sub_doctrine = mobile_recon_and_assault
+	}
+	set_sub_doctrine = air_subdoctrine_tactical_flexibility
+	add_mastery = {
+		amount = 100
+		sub_doctrine = air_subdoctrine_tactical_flexibility
+	}
+	set_sub_doctrine = air_subdoctrine_dive_bombers
+	add_mastery = {
+		amount = 50
+		sub_doctrine = air_subdoctrine_dive_bombers
 	}
 
 	if = {
@@ -1030,7 +1067,7 @@ set_war_support = 0.3
 		improved_ship_torpedo_launcher = 1
 		basic_battery = 1
 		basic_light_battery = 1
-		basic_medium_battery = 1
+		
 		basic_heavy_battery = 1
 		 
 		 
@@ -1062,18 +1099,18 @@ set_war_support = 0.3
 		basic_heavy_armor_scheme = 1
 		improved_heavy_armor_scheme = 1
 
-		basic_dp_medium_battery = 1
+		
 
-		basic_medium_battery = 1
+		
 
 
 		basic_light_shell = 1
 		improved_light_battery = 1
 		improved_light_shell = 1
 
-		basic_medium_shell = 1
-		improved_medium_battery = 1
-		improved_medium_shell = 1
+		
+		
+		
 
 		basic_heavy_shell = 1
 		improved_heavy_shell = 1
@@ -1082,7 +1119,7 @@ set_war_support = 0.3
 		basic_dp_light_battery = 1
 		improved_dp_light_battery = 1
 
-		basic_dp_medium_battery = 1
+		
 		
 		early_ship_hull_carrier = 1
 		basic_ship_hull_carrier = 1
@@ -1095,6 +1132,8 @@ set_war_support = 0.3
 	}
 }
 
+
+# Setup German Politics
 set_politics = {
 	ruling_party = fascism
 	last_election = "1933.3.5"
@@ -1107,7 +1146,8 @@ set_popularities = {
 	communism = 5
 }
 
-	create_faction = Axis
+# Wowow nice faction
+create_faction_from_template = faction_template_axis
 	add_to_faction = GER
 	add_to_faction = ITA
 	add_to_faction = GRE
@@ -1136,6 +1176,7 @@ add_ideas = {
 }
 add_ideas = GER_mefo_bills_1
 
+# Activates the MEFO Bills Mission
 activate_mission = GER_mefo_bills_mission
 
 	every_country = {
@@ -1341,6 +1382,7 @@ if = {
 	GER_create_operative_fritz_duquesne = yes
 }
 
+# Creating different equipment variants
 if = {
 	limit = {
 		NOT = { has_dlc = "Man the Guns" }
@@ -1349,7 +1391,7 @@ if = {
 	## 1936 Start ##
 	# Light Cruisers #
 	create_equipment_variant = {
-		name = "Königsberg Class"
+		name = "Königsberg"
 		type = light_cruiser_1
 		parent_version = 0
 		upgrades = {
@@ -1360,9 +1402,8 @@ if = {
 		}
 		obsolete = yes
 	}
-	# Heavy Cruisers #
 	create_equipment_variant = {
-		name = "Deutschland Class"
+		name = "Deutschland"
 		type = heavy_cruiser_1
 		parent_version = 0
 		upgrades = {
@@ -1377,7 +1418,7 @@ if = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
-	create_equipment_variant = {
+	create_equipment_variant = { #Note: There is a copy of this variant in Finnish Scripted Effects file (FIN_purchase_german_equipment_for_cw). Any changes here should also be applied there
 		name = "Leichttraktor"
 		type = light_tank_chassis_0
 		parent_version = 0
@@ -1396,7 +1437,7 @@ if = {
 		obsolete = yes
 		icon = "GFX_GER_gwtank_medium"
 	}
-	create_equipment_variant = {
+	create_equipment_variant = { #Note: There is a copy of this variant in Finnish National Focus file (FIN_bring_foreign_armor_experts) and Chinese history file. Any changes here should also be applied there
 		name = "Panzer I Ausf. A"
 		type = light_tank_chassis_1
 		parent_version = 0
@@ -1437,7 +1478,7 @@ if = {
 		icon = "GFX_GER_basic_heavy_tank_medium"
 	}
 	create_equipment_variant = {
-		name = "Panzer II Ausf. a"
+		name = "Panzer II Ausf. A"
 		type = light_tank_chassis_2
 		design_team = mio:GER_daimler_benz_organization
 		parent_version = 0
@@ -1479,7 +1520,7 @@ if = {
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	create_equipment_variant = {
-		name = "Deutschland Class"
+		name = "Deutschland"
 		type = ship_hull_cruiser_panzerschiff
 		name_group = GER_PZ_HISTORICAL
 		parent_version = 0
@@ -1489,13 +1530,13 @@ if = {
 			fixed_ship_secondaries_slot = ship_secondaries_1
 			fixed_ship_armor_slot = ship_armor_cruiser_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_engine_slot = cruiser_ship_engine_2
 			rear_1_custom_slot = ship_torpedo_1
 			mid_1_custom_slot = ship_airplane_launcher_1
     	}
 	}
 	create_equipment_variant = {
-		name = "Type 24 Class"
+		name = "Type 24"
 		type = ship_hull_light_1
 		name_group = GER_TB_HISTORICAL
 		parent_version = 0
@@ -1511,7 +1552,7 @@ if = {
 		obsolete = yes
 	}
 	create_equipment_variant = {
-		name = "Zerstörer 1934 Class"
+		name = "Zerstörer 1934"
 		type = ship_hull_light_2
 		name_group = GER_DD_HISTORICAL
 		parent_version = 0
@@ -1528,7 +1569,7 @@ if = {
 		obsolete = yes
 	}
 	create_equipment_variant = {
-		name = "Zerstörer 1934A Class"
+		name = "Zerstörer 1934A"
 		type = ship_hull_light_2
 		name_group = GER_DD_HISTORICAL
 		parent_version = 0
@@ -1544,7 +1585,7 @@ if = {
 		}
 	}
 	create_equipment_variant = {
-		name = "Type II Class"
+		name = "Type II"
 		type = ship_hull_submarine_1
 		name_group = GER_SS_HISTORICAL
 		parent_version = 0
@@ -1556,7 +1597,7 @@ if = {
 		obsolete = yes
 	}
 	create_equipment_variant = {
-		name = "Type VII Class"
+		name = "Type VII"
 		type = ship_hull_submarine_2
 		name_group = GER_SS_HISTORICAL
 		parent_version = 0
@@ -1567,7 +1608,7 @@ if = {
 		}
 	}
 	create_equipment_variant = {
-		name = "Königsberg Class"
+		name = "Königsberg"
 		type = ship_hull_cruiser_1
 		name_group = GER_CL_HISTORICAL
 		parent_version = 0
@@ -1576,7 +1617,7 @@ if = {
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_engine_slot = cruiser_ship_engine_2
 			fixed_ship_armor_slot = ship_armor_cruiser_1
 			mid_1_custom_slot = ship_torpedo_1
 			mid_2_custom_slot = ship_light_medium_battery_1
@@ -1585,7 +1626,7 @@ if = {
 		obsolete = yes
 	}
 	create_equipment_variant = {
-		name = "Emden Class"
+		name = "Emden"
 		type = ship_hull_cruiser_1
 		name_group = GER_CL_HISTORICAL
 		parent_version = 0
@@ -1638,7 +1679,7 @@ if = {
 		}
 	}
 	create_equipment_variant = {
-		name = "Admiral Hipper Class"
+		name = "Admiral Hipper"
 		type = ship_hull_cruiser_2
 		name_group = GER_CA_HISTORICAL
 		parent_version = 0
@@ -1647,7 +1688,7 @@ if = {
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_engine_slot = cruiser_ship_engine_2
 			fixed_ship_armor_slot = ship_armor_cruiser_2
 			front_1_custom_slot = ship_anti_air_1
 			mid_1_custom_slot = ship_torpedo_1
@@ -1656,7 +1697,7 @@ if = {
 		}
 	}
 	create_equipment_variant = {
-		name = "Scharnhorst Class"
+		name = "Scharnhorst"
 		type = ship_hull_heavy_2
 		name_group = GER_BB_HISTORICAL
 		parent_version = 0
@@ -1667,7 +1708,7 @@ if = {
 			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = heavy_ship_engine_2
 			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_bb_1
+			fixed_ship_armor_slot = ship_armor_bc_1
 			front_1_custom_slot = ship_anti_air_1
 			mid_1_custom_slot = empty
 			mid_2_custom_slot = ship_secondaries_1
@@ -1675,7 +1716,7 @@ if = {
 		}
 	}
 	create_equipment_variant = {
-		name = "Deutschland Class"
+		name = "Deutschland"
 		type = ship_hull_pre_dreadnought
 		name_group = GER_PZ_HISTORICAL
 		parent_version = 0
@@ -1684,7 +1725,7 @@ if = {
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_engine_slot = heavy_ship_engine_2
 			fixed_ship_secondaries_slot = ship_secondaries_1
 			fixed_ship_armor_slot = ship_armor_bb_1
 			front_1_custom_slot = ship_anti_air_1
@@ -1733,7 +1774,7 @@ if = {
 			has_dlc = "Man the Guns"
 		}
 		create_equipment_variant = {
-			name = "Zerstörer 1936 Class"
+			name = "Zerstörer 1936"
 			type = ship_hull_light_2
 			name_group = GER_DD_HISTORICAL
 			parent_version = 0
@@ -1749,7 +1790,7 @@ if = {
 		}
 
 		create_equipment_variant = {
-			name = "Type I Class"
+			name = "Type I"
 			type = ship_hull_submarine_1
 			name_group = GER_SS_HISTORICAL
 			parent_version = 0
@@ -1761,7 +1802,7 @@ if = {
 		}
 
 		create_equipment_variant = {
-			name = "Type VII Class"
+			name = "Type VII"
 			type = ship_hull_submarine_2
 			name_group = GER_SS_HISTORICAL
 			parent_version = 0
@@ -1774,7 +1815,7 @@ if = {
 
 		
 		create_equipment_variant = {
-			name = "Type VIIB Class"
+			name = "Type VIIB"
 			type = ship_hull_submarine_3
 			name_group = GER_SS_HISTORICAL
 			parent_version = 0
@@ -1788,7 +1829,7 @@ if = {
 		}
 
 			create_equipment_variant = {
-			name = "Type VIIC Class"
+			name = "Type VIIC"
 			type = ship_hull_submarine_3
 			name_group = GER_SS_HISTORICAL
 			parent_version = 0
@@ -1808,7 +1849,7 @@ if = {
 	}
 
 		create_equipment_variant = {
-			name = "Type IXB Class"
+			name = "Type IXB"
 			type = ship_hull_cruiser_submarine
 			name_group = GER_SS_HISTORICAL
 			parent_version = 0
@@ -1822,7 +1863,7 @@ if = {
 		}
 
 		create_equipment_variant = {
-			name = "Type XXIII Class"
+			name = "Type XXIII"
 			type = ship_hull_submarine_4
 			name_group = GER_SS_HISTORICAL
 			parent_version = 0
@@ -1836,7 +1877,7 @@ if = {
 		}
 
 	create_equipment_variant = {
-		name = "Type 24 Class"
+		name = "Type 24"
 		type = ship_hull_light_1
 		name_group = GER_TB_HISTORICAL
 		parent_version = 0
@@ -1853,7 +1894,7 @@ if = {
 	}
 
 		create_equipment_variant = {
-		name = "Zerstörer 1934A Class"
+		name = "Zerstörer 1934A"
 		type = ship_hull_light_2
 		name_group = GER_DD_HISTORICAL
 		parent_version = 0
@@ -1870,7 +1911,7 @@ if = {
 	}
 
 		create_equipment_variant = {
-		name = "Bremse Class"
+		name = "Bremse"
 		type = ship_hull_cruiser_1
 		name_group = GER_CL_HISTORICAL
 		parent_version = 0
@@ -1891,7 +1932,7 @@ if = {
 
 
 		create_equipment_variant = {
-			name = "Bismarck Class"
+			name = "Bismarck"
 			type = ship_hull_heavy_2
 			name_group = GER_BB_HISTORICAL
 			parent_version = 0
@@ -1910,7 +1951,7 @@ if = {
 			}
 		}
 		create_equipment_variant = {
-			name = "Graf Zeppelin Class"
+			name = "Graf Zeppelin"
 			type = ship_hull_carrier_1
 			name_group = GER_CV_HISTORICAL
 			parent_version = 0
@@ -1993,7 +2034,7 @@ if = {
 				tank_nsb_armor_upgrade = 2
 			}
 			obsolete = yes
-			#icon = "GFX_CZE_imp_light_tank"
+			icon = "GFX_CZE_basic_light_tank_medium"
 		}
 		create_equipment_variant = {
 			name = "Panzer 38(t)"
@@ -2748,7 +2789,7 @@ if = {
 
 	# Heavy Cruisers #
 	#create_equipment_variant = {
-	#	name = "Deutschland Class"
+	#	name = "Deutschland"
 	#	type = heavy_cruiser_1
 	#	parent_version = 0
 	#	upgrades = {
@@ -3046,7 +3087,7 @@ if = {
 		add_named_threat = { threat = 50 name = 1939_bookmark_threat }
 
 		#set_fuel_ratio = 0.35 # 1944 was 0.8 dosent seems to work
-		set_fuel = 291812
+		set_fuel = 391812
 
 
 		set_convoys = 180
@@ -3097,11 +3138,30 @@ if = {
 			project = sp:sp_air_axial_jet_engine
 		} 
 
+
+	if = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+		}
+		complete_special_project = {
+			project = sp:sp_land_super_heavy_howitzer
+			scientist = GER_karl_heinrich_emil_becker
+			state = 3499	
+		} 
+
 		complete_special_project = {
 			project = sp:sp_land_military_engineering_vehicles
 			scientist = GER_eduard_grote
 			state = 3499
 		} 
+
+			set_technology = {
+				sp_armored_engineer_tech = 1
+				sp_armored_maintenance_tech = 1
+				sp_armored_signal_tech = 1
+				sp_armored_motorized_military_police_tech = 1
+			}
+	}
 
 
 		if = {
@@ -3165,6 +3225,86 @@ if = {
 		# 	specialization = specialization_air
 		# 	value = 0.5
 		# }
+
+		#Land
+		set_sub_doctrine = mobile_infantry
+		add_mastery = {
+			amount = 300
+			sub_doctrine = mobile_infantry
+		}
+
+		set_sub_doctrine = anti_tank_frontline
+		add_mastery = {
+			amount = 250
+			sub_doctrine = anti_tank_frontline
+		}
+
+		set_sub_doctrine = mobile_defense
+		add_mastery = {
+			amount = 250
+			sub_doctrine = mobile_defense
+		}
+
+		set_sub_doctrine = mission_type_tactics
+		add_mastery = {
+			amount = 250
+			sub_doctrine = mission_type_tactics
+		}
+
+		#Sea
+		set_sub_doctrine = wolfpacks
+		add_mastery = {
+			amount = 400
+			sub_doctrine = wolfpacks
+		}
+
+		if = {
+			limit = { has_dlc = "No Compromise, No Surrender" }
+				set_sub_doctrine = 	patrol_boats
+				add_mastery = {
+					amount = 200
+					sub_doctrine = 	patrol_boats
+				}
+			else = {
+				set_sub_doctrine = 	support_integrated_operations
+				add_mastery = {
+					amount = 200
+					sub_doctrine = 	support_integrated_operations
+				}
+			}
+		}
+
+		set_sub_doctrine = armored_raiders
+		add_mastery = {
+			amount = 100
+			sub_doctrine = armored_raiders
+		}
+
+		#Air
+		set_sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		add_mastery = {
+			amount = 300
+			sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		}
+
+		set_sub_doctrine = air_subdoctrine_dive_bombers
+		add_mastery = {
+			amount = 350
+			sub_doctrine = air_subdoctrine_dive_bombers
+		}
+
+		set_sub_doctrine = air_subdoctrine_tactical_battlefield_support
+		add_mastery = {
+			amount = 300
+			sub_doctrine = air_subdoctrine_tactical_battlefield_support
+		}
+
+		set_sub_doctrine = 	air_subdoctrine_night_bombing
+		add_mastery = {
+			amount = 100
+			sub_doctrine = 	air_subdoctrine_night_bombing
+		}
+
 
 		set_technology = {
 			sp_rockets_improved_guidance = 1
