@@ -400,6 +400,14 @@ CHI_hunker_down_now  = {
 		ordertype = front
 		execution_type = careful
 	}
+
+	ai_strategy = {
+		type = front_control
+		tag = RNG
+
+		ordertype = front
+		execution_type = careful
+	}
 }
 
 
@@ -468,6 +476,12 @@ CHI_dont_do_naval_invasion = {
 	ai_strategy = {
 		type = invasion_unit_request  
 		country_trigger = { tag = MAN }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = RNG }
 		value = -500
 	}
 }

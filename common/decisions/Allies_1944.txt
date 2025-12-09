@@ -117,16 +117,6 @@ operations = {
 			date < 1945.5.10
 
 			16 = {is_fully_controlled_by = GER}
-
-		GER = {
-
-			AND = {
-				controls_state = 16
-				#controls_state = 15
-				#controls_state = 29
-			}
-		}
-
 		}
 
 		#cost = 25
@@ -151,23 +141,13 @@ operations = {
 		}
 
 		modifier = {
-			naval_invasion_prep_speed = -95.0
+			naval_invasion_prep_speed = -1000.0
 			#naval_speed_factor = +1.0 #only works for ships, not convoy
 		}
 
 
 		days_remove = 28
-		
-		
-		complete_effect = {
-
-		}
-
-		remove_effect = {
-
-
-
-		}
+	
 	}
 
 
@@ -363,7 +343,7 @@ operation_cross_the_rhine= {
 			available = {
 				has_war_with = GER
 				date > 1944.5.29
-				date < 1944.12.1
+				date < 1944.11.1
 
 				set_temp_variable = { days = global.num_days }
 				modulo_temp_variable = { days = 90 }
@@ -408,6 +388,7 @@ operation_cross_the_rhine= {
 			}
 
 			modifier = {
+					naval_invasion_planning_bonus_speed = 1000.0
 					naval_invasion_prep_speed = +1000.0
 					#amphibious_invasion #speed
 					#naval_invasion_capacity = +10.00
@@ -418,7 +399,7 @@ operation_cross_the_rhine= {
 					#army_attack_factor = +1.25
 					#breakthrough_factor = +1.25
 					army_org_regain = +1.0
-					army_org_factor = +1.0
+					#army_org_factor = +1.0
 					naval_invasion_penalty = -2.5
 					supply_consumption_factor = -1.0
 					#max_commander_army_group_size = +1.0
@@ -602,15 +583,16 @@ operation_cross_the_rhine= {
 			}
 
 			modifier = {
-				naval_invasion_prep_speed = +20.0
-				naval_invasion_penalty = -2.0
+				naval_invasion_prep_speed = +0.0
+				naval_invasion_penalty = -1.0
+				naval_invasion_planning_bonus_speed = 100.0
 			}
 
 			days_remove = 16
 			
 			cancel_trigger = {
 				OR = {
-					16 = {is_fully_controlled_by = GER} 
+					15 = {is_fully_controlled_by = GER} 
 					NOT = { 21 = { is_fully_controlled_by = GER } }
 					NOT = { 851 = { is_fully_controlled_by = GER } }
 				#	NOT = { 735 = { is_fully_controlled_by = GER } }

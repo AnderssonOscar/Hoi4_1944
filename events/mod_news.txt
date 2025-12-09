@@ -207,9 +207,9 @@ news_event = {
 			static_modifiers = {GER_festung_static_modifier}
 			province = {
 				id = 6332
-				id = 13372
-				id = 13371
-				id = 13370
+				# id = 13372
+				# id = 13371
+				# id = 13370
 				}
 			}
 		}

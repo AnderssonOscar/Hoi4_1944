@@ -794,27 +794,6 @@ set_war_support = 0.3
 			antitank3 = 1
 			antitank4 = 1
 
-			#doctrines
-			
-			
-			
-			
-			
-			 #MOBILE WARFARE
-			
-			
-			
-			
-			
-			#air
-					
-			
-			
-			
-			
-			
-
-
 			#electronics
 			electronic_mechanical_engineering = 1
 			mechanical_computing = 1
@@ -827,8 +806,6 @@ set_war_support = 0.3
 			radio_detection = 1
 			cavity_magnatron = 1
 			centimetric_radar = 1
-			
-			
 			
 
 			#industry

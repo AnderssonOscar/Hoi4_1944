@@ -138,7 +138,7 @@ JAP_ichi_go_1_start_script = {
 					controls_province = 7580
 					controls_province = 9934
 					controls_province = 7167
-					controls_province = 4619
+					#controls_province = 4619
 				}
 			}
 		}
@@ -162,8 +162,7 @@ JAP_ichi_go_1_start_script = {
 				province = {
 					id = 7580
 					id = 9934
-					id = 7167
-					#id = 4619
+					#id = 7167
 				}
 			}
 		}
@@ -369,9 +368,9 @@ JAP_ichi_go_failed_modifiers = {
 				province = {
 					id = 7580
 					id = 9934
-					id = 7167
-					id = 4619
-					id = 4631
+					#id = 7167 fix
+					#id = 4619
+					#id = 4631
 				}
 			}
 		}
@@ -411,7 +410,7 @@ JAP_ichi_go_failed_modifiers = {
 					id = 1023
 					id = 7095
 					id = 1597
-					id = 4028
+					#id = 4028 #fix
 				}
 			}
 		}

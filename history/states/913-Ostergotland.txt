@@ -30,6 +30,10 @@ state = {
 				fuel_silo = 1
 				industrial_complex = 2
 				arms_factory = 3
+
+				9393 = { 
+					air_facility = 1
+				}
 			}
 		}
 	}

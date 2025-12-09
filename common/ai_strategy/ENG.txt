@@ -1729,122 +1729,40 @@ ENG_super_boost_armor_div_med = { #lets make sure the uk upgrades armor divs to 
 	}
 }
 
-ENG_USA_take_italys_spaghetti = {
+ENG_navy_prepare_dday = {
 	allowed = {
 		original_tag = ENG
-		is_historical_focus_on = yes
-	}
-	enable = {
-		date > 1943.1.1
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = naval_invasion_focus
-		value = 10
-	}
-}
-
-ENG_onto_the_beaches_2 = {
-	allowed = {
-		original_tag = ENG
-		is_historical_focus_on = yes
-	}
-	enable = {
-		date > 1943.6.1
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = naval_invasion_focus
-		value = 20
-	}
-}
-
-ENG_onto_the_beaches_3 = {
-	allowed = {
-		original_tag = ENG
-		is_historical_focus_on = yes
 	}
 	enable = {
 		date > 1944.1.1
+		16 = {is_fully_controlled_by = GER}
 	}
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 30
+		value = 200
 	}
-}
-
-ENG_onto_the_beaches_4 = {
-	allowed = {
-		original_tag = ENG
-		is_historical_focus_on = yes
-	}
-	enable = {
-		date > 1944.6.1
-	}
-	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = naval_invasion_focus
+		type = naval_dominance
+		id = 18 # region id
+		value = 40 # Percentage between 0 and 100
+	}
+
+	ai_strategy = {
+		type = naval_dominance
+		id = 42 # region id
+		value = 35 # Percentage between 0 and 100
+	}
+
+	ai_strategy = {
+		type = naval_dominance
+		id = 47
 		value = 20
 	}
 }
-
-ENG_USA_d_day = {
-	allowed = {
-		OR = {
-			original_tag = USA
-			original_tag = ENG
-		}
-		is_historical_focus_on = yes
-	}
-	enable = {
-		date > 1943.9.1
-	}
-	abort_when_not_enabled = yes
-
-
-	ai_strategy = {
-		type = area_priority
-		id = normandy_landing_zone
-		value = 60
-	}
-}
-
-#ENG_we_hate_fighting_in_the_balkans = {
-#
-#	allowed = {
-#		original_tag = ENG
-#	}
-#	enable = {
-#		date < 1942.1.1
-#	}
-#
-#	ai_strategy = {
-#		type = dont_defend_ally_borders #Just a bit, we wait for greece
-#		id = YUG
-#		value = 30
-#	}
-#}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ENG_unit_production_mod = {
 
@@ -2113,7 +2031,18 @@ ENG_lend_lease = {
 	}
 }
 
-
+ENG_raids = {
+	allowed = {
+		original_tag = ENG
+	}
+    enable = { always = yes }
+    abort_when_not_enabled = yes
+    ai_strategy = {
+        type = raid_target_country
+        id = GER
+        value = 500 # +500% more likely to target GER
+    }
+}
 
 ENG_finish_germany_first = {
 

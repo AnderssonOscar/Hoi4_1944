@@ -1076,6 +1076,8 @@ if = {
 		unlock_national_focus = CHI_pick_a_fight_with_japan
 		complete_national_focus = CHI_war_of_resistance
 		complete_national_focus = CHI_scorched_earth_tactics
+
+		complete_national_focus = CHI_construction_battalions
 	}
 
 

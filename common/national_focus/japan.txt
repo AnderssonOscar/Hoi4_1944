@@ -11859,6 +11859,12 @@ focus_tree = {
 		}
 
 		available = {
+
+			IF = { #1944 dont get supplies fom puppet
+				limit = { is_ai = yes }
+				NOT = { has_war_with = USA } 
+			}
+
 			is_subject = no
 			OR = {
 				has_government = neutrality

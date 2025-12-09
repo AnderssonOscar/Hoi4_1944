@@ -4328,6 +4328,7 @@ instant_effect = {
 		requested_factories = 12
 		progress = 0.3
 		efficiency = 100
+		industrial_manufacturer = mio:GER_carl_walther_organization
 	}
 
 	add_equipment_production = {

@@ -731,8 +731,6 @@ FRA_guard_mediterranean = {
 		date < 1945.1.1
 		has_war_with = GER
 		is_in_faction_with = ENG
-		FRA = { surrender_progress < 0.0}
-		ENG = { surrender_progress < 0.0}
 	}
 
 	abort_when_not_enabled = yes
@@ -740,12 +738,18 @@ FRA_guard_mediterranean = {
 	ai_strategy = {
 		type = strike_force_home_base
 		id = 68 # western
+		value = 200
 	}
 
 	ai_strategy = {
-		type = naval_mission_threshold
-		id = "MISSION_CONVOY_ESCORT"
-		value = 250 #puts our threshold at 250
+		type = naval_dominance
+		id = western_med_control_zone
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = naval_invasion_dominance_weight
+		value = 500
 	}
 
 	ai_strategy = {
@@ -858,231 +862,6 @@ FRA_help_in_italy = {
 	}
 }
 
-
-# FRA_stop_invasions = { #moved to allies and usa does it now
-
-# 	allowed = { 
-# 		tag = FRA
-# 		}
-	
-# 	enable = {
-# 		is_in_faction_with = ENG
-# 		has_war_with = GER
-
-# 		#south france
-# 		OR = {
-# 			date > 1944.10.1
-# 			date < 1944.6.1
-# 			AND = {
-# 				NOT = { 851 = { is_fully_controlled_by = GER } }
-# 				NOT = { 21 = { is_fully_controlled_by = GER } }
-# 			}
-# 		}
-# 	}
-
-# 	abort_when_not_enabled = yes
-
-# 	ai_strategy = {
-# 		type = invade
-# 		id = "GER"
-# 		value = -1000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request  
-# 		country_trigger = { tag = GER }
-# 		value = -500
-# 	}
-# }
-
-
-# FRA_invade_south_france = { #dragoon
-
-# 	allowed = { 
-# 		tag = FRA
-# 	}
-	
-# 	enable = {
-# 		is_in_faction_with = ENG
-# 		has_war_with = GER
-# 		date > 1944.5.20
-# 		date < 1944.10.1
-# 		OR = {
-# 			NOT = { 15 = { is_fully_controlled_by = GER } }
-# 			NOT = { 6 = { is_fully_controlled_by = GER } }
-# 			NOT = { 14 = { is_fully_controlled_by = GER } }
-# 		}
-# 		851 = { is_fully_controlled_by = GER }
-# 		21 = { is_fully_controlled_by = GER }
-# 	}
-# 	abort_when_not_enabled = yes
-
-# 	ai_strategy = {
-# 		type = invade
-# 		id = "GER"
-# 		value = 1000
-# 	}
-
-# 		ai_strategy = {
-# 		type = front_control
-# 		country_trigger = {
-# 			tag = GER
-# 		}
-
-# 		ordertype = front
-# 		execute_order = yes
-# 		execution_type = rush
-# 	}
-
-# 	ai_strategy = {
-# 		type = strike_force_home_base
-# 		id = 68
-# 	}
-
-# 	ai_strategy = {
-# 	    type = naval_invasion_supremacy_weight
-# 	    id = 18
-# 	    value = 200
-# 	}
-
-# 	ai_strategy = {
-# 		type = naval_invasion_focus
-# 		value = 1000
-# 	}
-
-# 	ai_strategy = {
-# 		type = area_priority
-# 		id = normandy_landing_zone
-# 		value = 500
-# 	}
-
-# 	ai_strategy = {
-# 		type = front_unit_request
-# 		country_trigger = {tag = GER}
-# 		value = -10
-# 	}
-
-# 	ai_strategy = {
-# 		type = front_unit_request
-# 		country_trigger = {tag = ITA}
-# 		value = -10
-# 	}
-
-# 	ai_strategy = {
-# 		type = front_unit_request
-# 		country_trigger = {tag = JAP}
-# 		value = -100
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request  
-# 		country_trigger = { tag = GER }
-# 		value = 80
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 851
-# 		value = 100
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 21
-# 		value = 100
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 735
-# 		value = 100
-# 	}
-
-# 	###NOT THESE!
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 6
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 736
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 852
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 19
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 14
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 15
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 23
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 29
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 56
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 99
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 735
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 99
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 59
-# 		value = -10000
-# 	}
-
-# 	ai_strategy = {
-# 		type = invasion_unit_request
-# 		state = 56
-# 		value = -10000
-# 	}
-# }
 
  FRA_prepare_in_UK = { #stack troops here until we land in germany
      allowed = {
