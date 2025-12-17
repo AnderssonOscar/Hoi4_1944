@@ -2,7 +2,9 @@ state = {
 	id = 283
 	name = "STATE_283"
 	resources = {
-		tungsten = 1.000
+		tungsten = 4.000 #1944 was 1
+		steel=6.000 #1944 was 0
+		coal = 16  #1944 was 0
 	}
 
 	history = {
@@ -55,6 +57,12 @@ state = {
 			}		
 			owner = CHI
 			controller = CHI
+		}
+
+		1944.1.1 = {
+			buildings = {
+				arms_factory = 2
+			}
 		}
 	}
 

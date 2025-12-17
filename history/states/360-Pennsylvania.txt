@@ -7,8 +7,8 @@ state={
 	state_category = megalopolis
 	
 	resources={
-		steel = 44 # was: 80
-		coal = 160 # initial distribution = with infra 432 / 1280 total
+		steel = 124 # was: 80
+		coal = 190 # initial distribution = with infra 432 / 1280 total
 	}
 
 
@@ -41,6 +41,7 @@ state={
 		
 		1943.12.30 = {
 			buildings = {
+				infrastructure = 1
 				synthetic_refinery = 3
 				industrial_complex = 2
 				industrial_infrastructure = 1

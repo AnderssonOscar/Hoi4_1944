@@ -2348,7 +2348,7 @@ create_equipment_variant = {
 1943.12.30 = {
 
 	set_fuel = 310600
-	set_convoys = 300
+	set_convoys = 200
 
 	609 = {
 		#start_resistance = yes
@@ -2434,8 +2434,8 @@ create_equipment_variant = {
 		add_political_power = 1198
 		add_command_power = 100
 		army_experience = 45
-		navy_experience = 155	
-		air_experience = 165
+		navy_experience = 110	
+		air_experience = 95
 
 		retire_character = JAP_isoroku_yamamoto
 
@@ -2451,8 +2451,17 @@ create_equipment_variant = {
 		democratic = 10
 		communism = 5
 	}
+		JAP_add_or_modify_imperial_army = yes
+		add_to_variable = { JAP_army_army_infantry_attack_factor = -0.1 tooltip = army_infantry_attack_factor_tt }
+		add_to_variable = { JAP_army_army_org_factor = -0.03 tooltip = army_org_factor_tt }
+		add_to_variable = { JAP_army_experience_loss_factor = 0.05 tooltip = experience_loss_factor_tt }
+		add_to_variable = { JAP_army_conscription_factor = -0.1 tooltip = conscription_factor_tt }
 
-	
+		JAP_add_or_modify_army_and_naval_air_services = yes
+		add_to_variable = { JAP_airforce_air_defence_factor = -0.1 tooltip = air_defence_factor_tt }
+		add_to_variable = { JAP_airforce_air_accidents_factor = 0.1 tooltip = air_accidents_factor_tt }
+		add_to_variable = { JAP_airforce_air_cas_efficiency = -0.2 tooltip = air_cas_efficiency_tt }
+
 		#adding ministers
 		add_ideas = {
 			JAP_mitsumasa_yonai
@@ -2467,12 +2476,13 @@ create_equipment_variant = {
 			service_by_requirement
 			closed_economy
 			dont_surrender_mod
-			low_war_casualties
+			medium_war_casualties
 		}
 
 		remove_ideas = {
 			JAP_tora_tora_tora_idea
 			JAP_first_air_fleet
+			JAP_strike_south_idea
 		}
 
 if = {
@@ -2591,6 +2601,7 @@ if = {
 		complete_national_focus = JAP_expand_japan_manchukuo_economic_bloc
 
 		unlock_national_focus = JAP_sea_pressure_siam
+		unlock_national_focus = JAP_naval_armaments_program
 
 
 
@@ -2994,12 +3005,8 @@ if = {
 		
 				radio = 1
 				radio_detection = 1
-				
 				centimetric_radar = 1
 				
-				
-				#
-		
 				#industry
 				excavation1 = 1
 				excavation2 = 1
@@ -3032,9 +3039,6 @@ if = {
 				concentrated_industry3 = 1
 				concentrated_industry4 = 1
 		
-				#1944
-				
-
 				experimental_rockets = 1
 				rocket_engines = 1
 		
@@ -3213,8 +3217,6 @@ if = {
 				damage_control_1 = 1
 				damage_control_2 = 1
 
-				
-		
 				basic_cruiser_armor_scheme = 1
 				basic_heavy_armor_scheme = 1
 		
@@ -3222,17 +3224,9 @@ if = {
 				improved_heavy_armor_scheme = 1
 				improved_heavy_armor_scheme = 1
 		
-				#
-		
-				
-		
 				basic_light_shell = 1
 				improved_light_battery = 1
 				improved_light_shell = 1
-		
-				
-				
-				
 		
 				basic_heavy_shell = 1
 				improved_heavy_shell = 1
@@ -3240,8 +3234,6 @@ if = {
 		
 				basic_dp_light_battery = 1
 				improved_dp_light_battery = 1
-		
-				
 		
 				fire_control_methods_1 = 1
 				fire_control_methods_2 = 1
@@ -3580,7 +3572,7 @@ if = {
 
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_0
-			amount = 40000
+			amount = 10000
 		}
 
 		add_equipment_to_stockpile = {

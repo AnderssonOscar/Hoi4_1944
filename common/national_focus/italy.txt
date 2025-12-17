@@ -17837,6 +17837,7 @@ focus_tree = {
 
 		bypass = {
 			ITA_is_antifascist_civil_war_over = yes
+			date < 1944.1.1
 		}
 
 		available = {
@@ -18364,6 +18365,7 @@ focus_tree = {
 		
 		bypass = {
 			ITA_is_antifascist_civil_war_over = yes
+			date < 1944.1.1
 		}
 
 		available = {
@@ -18400,6 +18402,7 @@ focus_tree = {
 
 		bypass = {
 			ITA_is_antifascist_civil_war_over = yes
+			date < 1944.1.1
 		}
 
 		available = {
@@ -18428,6 +18431,7 @@ focus_tree = {
 
 		bypass = {
 			ITA_is_antifascist_civil_war_over = yes
+			date < 1944.1.1
 		}
 
 		available = {
@@ -18466,7 +18470,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_battaglioni_m
-		cost = 5
+		cost = 2
 
 		bypass = {
 			ITA_is_antifascist_civil_war_over = yes

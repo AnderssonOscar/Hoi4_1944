@@ -42,6 +42,10 @@ state = {
 				fuel_silo = 1
 				industrial_complex = 2
 				arms_factory = 3
+
+			3307 = {
+                land_facility = 1 #landsverk
+            }
 			}
 		}
 

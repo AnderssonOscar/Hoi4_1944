@@ -292,34 +292,53 @@ air_wings = {
 	}
 
 	"USS Lexington" = {
-		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F3F" }				# F3F Grumman
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 10 version_name = "Vindicator" }					# SB2U Vindicator
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 10 version_name = "Vindicator" }					# SB2U Vindicator
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 5 version_name = "Vindicator" }					# SB2U Vindicator
-		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 10 version_name = "Devastator" }			# TBD Devastator
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
 	}
 	"USS Saratoga" = {
-		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F3F" }				# F3F Grumman
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 10 version_name = "Vindicator" }					# SB2U Vindicator
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 10 version_name = "Vindicator" }					# SB2U Vindicator
-		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 10 version_name = "Devastator" }			# TBD Devastator
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
 	}
 	"USS Enterprise" = {
-		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F3F" }				# F3F Grumman
-		cv_small_plane_airframe_0 =  { owner = "USA" amount = 2 version_name = "F3F" }				# F3F Grumman
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 10 version_name = "Vindicator" }					# SB2U Vindicator
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 10 version_name = "Vindicator" }					# SB2U Vindicator					
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 10 version_name = "Vindicator" }					# SB2U Vindicator					
-		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 10 version_name = "Devastator" }			# TBD Devastator
-		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 2 version_name = "Devastator" }			# TBD Devastator
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
 	}
 	"USS Ranger" = {
-		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F3F" }				# F3F Grumman
-		cv_small_plane_airframe_0 =  { owner = "USA" amount = 8 version_name = "F3F" }				# F3F Grumman
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 10 version_name = "Vindicator" }					# SB2U Vindicator
-		cv_small_plane_cas_airframe_1 =  { owner = "USA" amount = 8 version_name = "Vindicator" }					# SB2U Vindicator
-		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 10 version_name = "Devastator" }			# TBD Devastator
-		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 8 version_name = "Devastator" }			# TBD Devastator
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+	}
+
+	385 = {
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 100 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 100 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 100 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 100 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 100 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 100 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 100 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 100 version_name = "TBF Avenger" }
 	}
 }
 
@@ -377,11 +396,33 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = cv_small_plane_airframe_1
+			type = cv_small_plane_airframe_2
 			creator = "USA" 
-			version_name = "F2A Buffalo"
+			version_name = "F6F Hellcat"
 		}
-		requested_factories = 1
+		requested_factories = 2
+		progress = 0.15
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = cv_small_plane_cas_airframe_2
+			creator = "USA" 
+			version_name = "SB2C Helldiver"
+		}
+		requested_factories = 2
+		progress = 0.15
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = cv_small_plane_naval_bomber_airframe_2
+			creator = "USA" 
+			version_name = "TBF Avenger"
+		}
+		requested_factories = 2
 		progress = 0.15
 		efficiency = 100
 	}

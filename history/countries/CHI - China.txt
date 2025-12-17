@@ -1024,10 +1024,11 @@ if = {
 	#	war_economy
 		tot_economic_mobilisation
 		#service_by_requirement
-		service_by_requirement
+		extensive_conscription
 		low_war_casualties
 		mod_boost
 		limited_exports
+		CHI_core_defence
 	}
 
 	set_popularities = {
