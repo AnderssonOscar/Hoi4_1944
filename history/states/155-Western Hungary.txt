@@ -2,9 +2,9 @@ state = {
 	id = 155
 	name = "STATE_155" # North Transdanubia
 	manpower = 1465070 # was 2197605
-
-	state_category = large_town # was city
 	
+	state_category = large_town # was city
+
 	resources = {
 		aluminium = 40 # moved from Northern Hungary, then was 60
 		coal = 1 # more coal is added through a focus
@@ -21,11 +21,7 @@ state = {
 
 		victory_points = {
 			686 1 # Sopron
-		}
-
-		 victory_points = {
-		 	13376 10 # buda
-		 }
+		} 
 
 		buildings = {
 			infrastructure = 3 #was: 6
@@ -33,7 +29,7 @@ state = {
 			arms_factory = 1
 			air_base = 3
 		}
-
+		
 		1943.12.30 = {
 			buildings = {
 				fuel_silo = 1

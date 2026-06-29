@@ -9,7 +9,7 @@ state = {
 	state_category = city
 	
 	resources = {
-		tungsten = 5 # was: 2
+		tungsten = 1 # was: 2
 	}
 
 	history = {
@@ -21,6 +21,15 @@ state = {
 			industrial_complex = 3
 			arms_factory = 2
 			air_base = 3
+			3484 = {
+				landmark_bojnice_castle = {
+					level = 1
+					allowed = {
+						has_dlc = "Peace For Our Time"
+					}
+				}
+			}
+
 		}
 
 		victory_points = {
@@ -43,7 +52,7 @@ state = {
 			controller = SLO
 			add_core_of = SLO
 		}
-
+		
 		1943.12.30 = {
 			buildings = {
 				fuel_silo = 1

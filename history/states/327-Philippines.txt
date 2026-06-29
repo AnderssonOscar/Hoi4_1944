@@ -36,6 +36,10 @@ state = {
 			1221 1 # Batangas
 		}
 
+		victory_points = {
+			4288 1 # Calapan
+		}
+
 		1943.12.1 = {
 			owner = JAP
 			controller = JAP

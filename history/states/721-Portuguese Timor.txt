@@ -14,12 +14,18 @@ state = {
 			12190 2 # Dili
 		}
 
+		victory_points = {
+			12206 1 # Pante Macassar
+		}
+
 		buildings = {
 			infrastructure = 2
 			12190 = {
 				naval_base = 1
 			}
-		}
+			12206 = {
+				naval_base = 1
+			}
 
 		1943.12.1 = {
 			owner = JAP
