@@ -452,17 +452,6 @@ if = {
 		infantry_weapons2 = 1
 		support_weapons = 1
 
-		#doctrines
-		#Air
-		
-		
-				
-		
-		
-		
-		
-		
-
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
@@ -963,31 +952,19 @@ if = {
 
 		damage_control_1 = 1
 
-		
-
 		basic_cruiser_armor_scheme = 1
-
 		basic_heavy_armor_scheme = 1
 
-		
-
-		
-
 		basic_light_shell = 1
-		improved_light_battery = 1
-
-		
+		improved_light_battery = 1	
 
 		basic_heavy_shell = 1
 		improved_heavy_shell = 1
 
 		basic_dp_light_battery = 1
 
-		
-
 		fire_control_methods_1 = 1
 		
-
 		}
 	}
 

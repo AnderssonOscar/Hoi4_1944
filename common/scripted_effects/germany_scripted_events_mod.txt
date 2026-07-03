@@ -11,6 +11,7 @@ GER_scripted_events_start_effects = {
 				GER_remove_hess_effects = yes
 				set_country_flag = flight_of_hess
 				GER_remove_todt_effects = yes
+				remove_ideas = PER_persian_german_trade_idea_2
 			}
 
 	813 = {

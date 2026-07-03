@@ -32,10 +32,6 @@ state = {
 			10260 1 # Alotau
 		}
 
-		JAP = {
-			set_province_controller = 1222 # ADD THE REST 1944
-		}
-
 		1943.12.30 = {
 			buildings = {
 				air_base = 5
