@@ -1,0 +1,1248 @@
+﻿#1944
+capital = 46
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_oob = "ROM_1936"
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_oob = "ROM_1936_nsb"
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "ROM_1936_naval_mtg"
+	else = {
+		set_naval_oob = "ROM_1936_naval_legacy"
+	}
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "ROM_1936_air_bba"
+		set_technology = {
+			iw_small_airframe = 1
+			aa_lmg = 1
+			engines_1 = 1
+			bba_early_transport_plane = 1
+		}
+	else = {
+		set_air_oob = "ROM_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_transport_plane = 1
+		}
+	}
+}
+
+set_research_slots = 3
+set_stability = 0.6
+set_war_support = 0.6
+
+recruit_character = ROM_gheorghe_tatarescu
+recruit_character = ROM_constantin_ion_parhon
+recruit_character = ROM_armand_calinescu
+recruit_character = ROM_corneliu_codreanu
+recruit_character = ROM_petre_dumitrescu
+recruit_character = ROM_ion_antonescu
+recruit_character = ROM_ioan_mihail_racovita
+recruit_character = ROM_gheorghe_avramescu
+recruit_character = ROM_constantin_sanatescu
+recruit_character = ROM_horia_macellariu
+recruit_character = ROM_gheorghe_potopeanu
+recruit_character = ROM_emanoil_ionescu
+recruit_character = ROM_gheorghe_mihail
+recruit_character = ROM_ermil_gheorghiu
+recruit_character = ROM_nicolae_sova
+recruit_character = ROM_gheorghe_jienescu
+recruit_character = ROM_paul_teodorescu
+recruit_character = ROM_gheorghe_vasiliu
+recruit_character = ROM_iuliu_maniu
+recruit_character = ROM_petru_groza
+recruit_character = ROM_gheorghe_gheorghiu_dej
+recruit_character = ROM_nicolae_malaxa
+recruit_character = ROM_mihail_sturdza
+recruit_character = ROM_gheorghe_argeseanu
+recruit_character = ROM_king_michael
+recruit_character = ROM_octavian_goga
+
+# Starting tech
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+	}
+}
+
+#Ideas
+if = {
+	limit = {
+		has_dlc = "Death or Dishonor"
+	}
+	add_ideas = {
+		ROM_king_carol_ii_hedonist
+	}
+	give_guarantee = CZE
+	give_guarantee = GRE
+	give_guarantee = TUR
+	give_guarantee = YUG
+}
+if = {
+	limit = {
+		AND = {  
+			NOT = { has_dlc = "Death or Dishonor" }
+			has_dlc = "Battle for the Bosporus"
+		}
+	}
+	give_guarantee = GRE
+	give_guarantee = TUR
+	give_guarantee = YUG
+}
+add_ideas = neutrality_idea
+
+#Kick off kings crazy life
+if = {
+	limit = {
+		has_dlc = "Death or Dishonor"
+	}
+	ROM = {
+		#Pick from list of the sane events first
+		random_list = {
+			100 = { country_event = { id = DOD_romania.81 days = 2 random_days = 20 } }
+		}
+	}
+}
+
+if = {
+	limit = {
+		#has_dlc = Battle for the Bosporus
+	}
+	add_opinion_modifier = { 
+		target = GRE
+		modifier = BFTB_balkan_pact_ally
+	}
+	add_opinion_modifier = { 
+		target = TUR
+		modifier = BFTB_balkan_pact_ally
+	}
+	add_opinion_modifier = { 
+		target = YUG
+		modifier = BFTB_balkan_pact_ally
+	}
+	add_opinion_modifier = { 
+		target = BUL
+		modifier = BFTB_balkan_pact_enemy
+	}
+	add_opinion_modifier = { 
+		target = HUN
+		modifier = BFTB_balkan_pact_enemy
+	}
+}
+
+set_convoys = 10
+1939.1.1 = {
+	
+	remove_ideas = neutrality_idea
+
+	add_political_power = 1198
+	add_command_power = 100
+
+	set_technology = {
+		interwar_artillery = 1
+		interwar_antitank = 1
+		tech_recon = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		#Air
+		#force_rotation = 1
+		#fighter_baiting = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_operational_integrity
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			basic_submarine = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				engines_2 = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+			}
+		else = {
+			set_technology = {
+				fighter1 = 1
+				early_bomber = 1
+				tactical_bomber1 = 1
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		complete_national_focus = ROM_preserve_greater_romania
+		complete_national_focus = ROM_army_maneuvers
+		complete_national_focus = ROM_expand_the_air_force
+		complete_national_focus = ROM_civil_works
+		complete_national_focus = ROM_agrarian_reform
+		complete_national_focus = ROM_local_development
+		complete_national_focus = ROM_army_war_college
+		complete_national_focus = ROM_danubian_transport_network
+		complete_national_focus = ROM_malaxa
+		complete_national_focus = ROM_flexible_foreign_policy
+		complete_national_focus = ROM_air_superiority
+		complete_national_focus = ROM_expand_the_galati_shipyards
+		complete_national_focus = ROM_trade_treaty_with_germany
+		complete_national_focus = ROM_iar_80
+		complete_national_focus = ROM_appoint_allied_friendly_government
+		complete_national_focus = ROM_cas
+		complete_national_focus = ROM_royal_guards_divisions
+		complete_national_focus = ROM_the_zb_53
+		complete_national_focus = ROM_vanatori_de_munte
+		complete_national_focus = ROM_hunedoara_steel_works
+		complete_national_focus = ROM_appoint_german_friendly_government
+		complete_national_focus = ROM_invite_german_advisors
+		unlock_national_focus = ROM_iron_guard
+
+		#King stuff
+		unlock_national_focus = ROM_institute_royal_dictatorship
+		unlock_national_focus = ROM_revise_the_constitution
+		create_country_leader = {
+			name = "Carol II"
+			desc = "POLITICS_CAROL_II_DESC"
+			picture = GFX_Portrait_romania_Carol_II			
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				hedonist
+				camarilla_leader
+			}
+			id = 550
+		}
+		#ROM = {
+		#	#Pick from list of the sane events first
+		#	random_list = {
+		#		100 = { country_event = { id = DOD_romania.80 days = 2 random_days = 20 } }
+		#	}
+		#}
+
+		else = {		
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = large_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+	
+	if = {
+		limit = { NOT = { has_dlc = "No Step Back" } }
+		set_oob = "ROM_1939"
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" } 
+		set_oob = "ROM_1939_nsb"
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "ROM_1939_naval_mtg"
+		else = {
+			set_naval_oob = "ROM_1939_naval_legacy"
+		}
+	}
+
+	set_technology = {
+		fighter1 = 1
+		fighter2 = 1
+		CAS1 = 1
+		CAS2 = 1
+		early_bomber = 1
+		tactical_bomber1 = 1
+		interwar_artillery = 1
+		interwar_antitank = 1
+		tech_recon = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			basic_submarine = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1933.12.20"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 60
+	fascism = 18
+	communism = 2
+	neutrality = 20
+}
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1939.7.15"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		democratic = 20
+		fascism = 35
+		communism = 2
+		neutrality = 43
+	}
+}
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	create_equipment_variant = {
+		name = "IAR 14" 
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+		}
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Regele Ferdinand Class"
+		type = destroyer_1
+		upgrades = {
+			ship_torpedo_upgrade = 1
+			destroyer_engine_upgrade = 1
+			ship_ASW_upgrade = 1
+			ship_anti_air_upgrade = 1
+		}
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "Delfinul Class"				
+		type = ship_hull_submarine_2
+		name_group = ROM_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Marasti Class"				
+		type = ship_hull_light_1
+		name_group = ROM_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Regele Ferdinand Class"	
+		type = ship_hull_light_1
+		name_group = ROM_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+}
+
+# 1939 Start #
+1939.1.1 = {
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+	}
+}
+
+
+
+
+
+1943.12.30 = {
+
+	set_cosmetic_tag = ROM_fascism_1944
+
+	army_experience = 135 #245
+	navy_experience = 25	
+	air_experience = 175
+
+	set_research_slots = 2
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "ROM_1944_nsb"
+	else = {
+		set_oob = "ROM_1944"
+		}
+	}
+
+
+	add_political_power = 2189
+	add_command_power = 200
+
+	set_convoys = 66
+	set_stability = 0.81 
+	set_war_support = 0.50
+	add_manpower = 154500
+	set_fuel_ratio = 1.0
+
+	remove_ideas = {
+		ROM_king_carol_ii_hedonist
+		#ROM_king_carol_ii_paid_with_pp
+		ROM_iron_guard
+	}
+
+	add_ideas = {
+		#laws
+		tot_economic_mobilisation
+		service_by_requirement
+
+		medium_war_casualties
+		ROM_figurehead_king_michael
+		ROM_leonidas_works
+		ROM_iar
+	}
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = yes
+	}
+
+	#retire_character = ROM_corneliu_codreanu
+	#retire_character = ROM_octavian_goga
+
+	#ROM_ion_antonescu = {
+	#	promote_character = yes
+	#	promote_character = fascism
+	#}
+	#promote_character = { character = ROM_ion_antonescu ideology = fascism }
+	#promote_character = ROM_ion_antonescu
+
+	activate_decision = women_in_the_workforce
+
+	set_popularities = {
+		neutrality = 10
+		fascism = 70
+		communism = 8
+		democratic = 12
+	}
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1940.12.20"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+
+	if = {
+		limit = { has_dlc = "Man the Guns" } 
+		set_technology = {
+			
+			basic_naval_mines = 1
+			submarine_mine_laying = 1
+			early_ship_hull_light = 1
+			basic_ship_hull_light = 1
+			early_ship_hull_submarine = 1
+			basic_ship_hull_submarine = 1
+			early_ship_hull_cruiser = 1
+			basic_battery = 1
+			basic_cruiser_armor_scheme = 1
+			basic_torpedo = 1
+			basic_depth_charges = 1
+			coastal_defense_ships = 1
+			mtg_transport = 1
+			early_ship_hull_carrier = 1
+
+			sonar = 1
+			smoke_generator = 1
+
+			damage_control_1 = 1
+
+			fire_control_methods_1 = 1
+
+			basic_light_battery = 1
+			basic_light_shell = 1
+			improved_light_battery = 1
+			#improved_light_shell = 1
+	
+			
+			
+
+			improved_ship_hull_submarine = 1
+			improved_ship_hull_light = 1
+
+			improved_ship_torpedo_launcher = 1
+
+			basic_fire_control_system = 1
+			improved_depth_charges = 1
+		}
+	}
+
+	
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		set_technology = {
+			armored_car1 = 1
+			armored_car2 = 1
+		}
+	}
+
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			
+
+		create_equipment_variant = {
+			name = "Renault UE Chenillette"
+			type = light_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = 0
+			}
+		}
+
+		create_equipment_variant = {
+			name = "Renault R35"
+			type = medium_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_cannon
+				turret_type_slot = tank_medium_one_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 7
+				tank_nsb_armor_upgrade = 3
+			}
+		}
+
+		create_equipment_variant = {
+			name = "TACAM T-60"
+			type = light_tank_destroyer_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = 0
+			}
+		}
+
+		create_equipment_variant = {
+			name = "Maresal"
+			type = light_tank_destroyer_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon_2
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = sloped_armor
+				special_type_slot_3 = expanded_fuel_tank
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 9
+				tank_nsb_armor_upgrade = 3
+			}
+		}
+			
+		else = {
+			
+		}
+	}
+
+
+
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		unlock_national_focus = ROM_force_abdication
+		complete_national_focus = ROM_the_royal_foundation
+		complete_national_focus = ROM_fortify_the_borders
+		complete_national_focus = ROM_invest_in_the_iar
+
+		complete_national_focus = ROM_reserve_divisions
+		complete_national_focus = ROM_acquire_modern_tanks
+		complete_national_focus = ROM_mobile_tank_destroyers
+
+		unlock_national_focus = ROM_expand_ploiesti_oil_production
+		unlock_national_focus = ROM_german_romanian_oil_exploitation_company
+
+		complete_national_focus = ROM_license_german_equipment
+		complete_national_focus = ROM_the_maresal
+	}
+
+	add_country_leader_role = {
+		character = ROM_ion_antonescu
+		promote_leader = yes
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.1.1.1"
+		}
+	}
+
+	retire_character = ROM_corneliu_codreanu
+
+	if = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+		}
+			set_technology = {
+				sp_armored_motorized_military_police_tech = 1
+			}
+		}
+
+		set_grand_doctrine = grand_battleplan
+		set_grand_doctrine = new_fleet_in_being
+		set_grand_doctrine = new_operational_integrity
+	
+
+		#Land
+		set_sub_doctrine = defensive_postures
+		add_mastery = {
+			amount = 300
+			sub_doctrine = defensive_postures
+		}
+
+		set_sub_doctrine = anti_tank_frontline
+		add_mastery = {
+			amount = 100
+			sub_doctrine = anti_tank_frontline
+		}
+
+		set_sub_doctrine = armored_infantry_support
+		add_mastery = {
+			amount = 100
+			sub_doctrine = armored_infantry_support
+		}
+
+		set_sub_doctrine = mission_type_tactics
+		add_mastery = {
+			amount = 100
+			sub_doctrine = mission_type_tactics
+		}
+
+		#Navy
+		set_sub_doctrine = submarine_coastal_defense
+		add_mastery = {
+			amount = 100
+			sub_doctrine = submarine_coastal_defense
+		}
+
+		if = {
+			limit = { has_dlc = "No Compromise, No Surrender" }
+				set_sub_doctrine = 	patrol_boats
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	patrol_boats
+				}
+			else = {
+				set_sub_doctrine = 	support_integrated_operations
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	support_integrated_operations
+				}
+			}
+		}
+
+		set_sub_doctrine = armored_raiders
+		add_mastery = {
+			amount = 100
+			sub_doctrine = armored_raiders
+		}
+
+		#Air
+		set_sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		add_mastery = {
+			amount = 300
+			sub_doctrine = 	air_subdoctrine_fighter_homeland_defense
+		}
+
+		set_sub_doctrine = air_subdoctrine_flying_artillery
+		add_mastery = {
+			amount = 50
+			sub_doctrine = air_subdoctrine_flying_artillery
+		}
+
+		if = {
+			limit = { has_dlc = "La Resistance" }
+				set_sub_doctrine = 	air_subdoctrine_aerial_reconnaissance
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	air_subdoctrine_aerial_reconnaissance
+				}
+			else = {
+				set_sub_doctrine = 	air_subdoctrine_operational_air_support
+				add_mastery = {
+					amount = 100
+					sub_doctrine = 	air_subdoctrine_operational_air_support
+				}
+			}
+		}
+
+
+	set_technology = {
+		sp_armored_engineer_tech = 1
+		sp_armored_maintenance_tech = 1
+
+		tech_trucks = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		improved_radio = 1
+		radio_detection = 1
+		cavity_magnatron = 1
+		centimetric_radar = 1
+		phased_array = 1
+
+
+		#industry
+		
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		construction4 = 1
+
+		excavation1 = 1
+		excavation2 = 1
+		excavation3 = 1
+		excavation4 = 1
+
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+
+		fuel_silos = 1
+		fuel_refining = 1
+		fuel_refining2 = 1
+		fuel_refining3 = 1
+		fuel_refining4 = 1
+		fuel_refining5 = 1
+
+		rubber_processing = 1
+
+		#weapons
+		support_weapons = 1
+		support_weapons2 = 1
+		support_weapons3 = 1
+		support_weapons4 = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		improved_infantry_weapons = 1
+		improved_infantry_weapons_2 = 1
+
+		infantry_at = 1
+
+		interwar_antitank = 1
+		antitank1 = 1
+		antitank2 = 1
+		antitank3 = 1
+		antitank4 = 1
+
+		gw_artillery = 1
+		artillery1 = 1
+		artillery2 = 1
+		artillery3 = 1
+		artillery4 = 1
+		
+		antiair1 = 1
+		antiair2 = 1
+		antiair3 = 1
+
+		motorised_infantry = 1
+
+		tech_mountaineers = 1
+		tech_support = 1
+
+		tech_engineers = 1
+		tech_engineers2 = 1
+		tech_engineers3 = 1
+
+		tech_recon = 1
+		tech_recon2 = 1
+		tech_recon3 = 1
+
+		tech_field_hospital = 1
+		tech_field_hospital2 = 1	
+
+		tech_military_police = 1
+		tech_military_police2 = 1
+
+		tech_maintenance_company = 1
+		tech_maintenance_company2 = 1
+
+		tech_signal_company = 1
+
+		tech_logistics_company = 1
+		
+	}
+
+	if = {
+		limit = {
+			
+			has_dlc = "No Step Back"
+			
+		}
+		set_technology = {
+				gwtank_chassis = 1
+
+				basic_medium_tank_chassis = 1 
+
+				basic_light_tank_chassis = 1 
+				improved_light_tank_chassis = 1 
+
+				basic_heavy_tank_chassis = 1 
+				improved_heavy_tank_chassis = 1 
+
+				armor_tech_1 = 1
+				armor_tech_2 = 1
+
+				engine_tech_1 = 1
+				engine_tech_2 = 1
+
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
+
+				basic_light_tank = 1
+				improved_light_tank = 1
+
+				basic_medium_tank = 1
+				#improved_medium_tank = 1
+				#advanced_medium_tank = 1
+
+				basic_heavy_tank = 1
+				improved_heavy_tank = 1
+				#advanced_heavy_tank = 1
+
+				basic_light_art = 1
+				improved_light_art = 1
+
+				basic_medium_art = 1
+				improved_medium_art = 1
+
+				basic_heavy_art = 1
+				improved_heavy_art = 1
+
+				basic_light_spaa = 1
+				improved_light_spaa = 1
+
+				basic_medium_spaa = 1
+				improved_medium_spaa = 1
+
+				basic_heavy_spaa = 1
+				improved_heavy_spaa = 1
+
+				basic_light_td = 1
+				improved_light_td = 1
+
+				basic_medium_td = 1
+				improved_medium_td = 1
+
+				basic_heavy_td = 1
+				improved_heavy_td = 1
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		set_technology = {
+			special_forces_mountaineers = 1
+		}
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		set_technology = {
+			improved_equipment_conversion = 1
+			advanced_equipment_conversion = 1
+		}
+	}
+
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				#survivability_studies = 1
+
+				aa_lmg = 1
+				aa_hmg = 1
+
+				aa_cannon_1 = 1
+				#aa_cannon_2 = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+				#engines_3 = 1
+
+				#range_improvements = 1
+
+				early_bombs = 1
+
+				aircraft_construction = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+				#advanced_small_airframe = 1
+
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				improved_medium_airframe = 1
+
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+				#improved_large_airframe = 1
+				#advanced_large_airframe = 1
+
+				air_torpedoe_1 = 1
+				air_torpedoe_2 = 1
+			}
+		else = {
+			set_technology = {
+
+				naval_bomber1 = 1
+
+				CAS1 = 1
+				CAS2 = 1
+		
+				early_fighter = 1
+				fighter1 = 1
+				fighter2 = 1
+				#fighter3 = 1
+		
+				heavy_fighter1 = 1
+				#heavy_fighter2 = 1
+		
+				strategic_bomber1 = 1
+				#strategic_bomber2 = 1
+		
+				tactical_bomber1 = 1
+				tactical_bomber2 = 1
+			}
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		create_equipment_variant = {
+			name = "Rechinul Class"				
+			type = ship_hull_submarine_3
+			name_group = ROM_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_3
+				fixed_ship_engine_slot = sub_ship_engine_3
+				rear_1_custom_slot = ship_torpedo_sub_3
+			}
+		}
+	}
+
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+
+		create_equipment_variant = {
+			name = "IAR 14" 
+			type = small_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = light_mg_2x
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+		}
+
+		create_equipment_variant = {
+			name = "IAR 80"
+			type = small_plane_airframe_2
+			modules = {
+				fixed_main_weapon_slot = light_mg_2x
+				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
+				engine_type_slot = engine_2_1x
+				#special_type_slot_1 = fuel_tanks_small
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+			}
+		}
+
+	else = {
+		
+			create_equipment_variant = {
+				name = "IAR 80"
+				type = fighter_equipment_2
+				upgrades = {
+					plane_gun_upgrade = 1
+					plane_range_upgrade = 0  
+					plane_engine_upgrade = 2
+					plane_reliability_upgrade = 2
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "ROM_1944_air_bba" # fix new later
+		else = {
+			set_air_oob = "ROM_1944_air_legacy"
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "ROM_1944_naval_mtg"
+		else = {
+			set_naval_oob = "ROM_1939_naval_legacy"
+		}
+	}
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_1
+        amount = 1150
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_2
+        amount = 450
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_tank_equipment_2
+        amount = 22
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = anti_tank_equipment_2
+        amount = 11
+    }
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment_3
+        amount = 100
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 121
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 170
+		producer = GER
+    }
+
+	add_equipment_to_stockpile = { 
+        type = train_equipment_1
+        amount = 39
+    }
+
+		if = {
+			limit = { has_dlc = "No Step Back" }
+				
+				add_equipment_to_stockpile = {
+					type = medium_tank_destroyer_chassis_2
+					amount = 224
+					variant_name  = "Sturmgeschutz III"
+					producer = GER
+				}
+				
+
+			else = {
+				
+		}
+	}
+}

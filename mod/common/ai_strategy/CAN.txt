@@ -1,0 +1,90 @@
+CAN_stop_garrison = {
+	allowed = { original_tag = CAN }
+	enable = {
+		date > 1943.12.31
+		has_war_with = GER
+		is_in_faction_with = ENG
+		FRA = { surrender_progress < 0.0}
+		ENG = { surrender_progress < 0.0}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = garrison
+		value = -1000
+	}
+}
+
+
+CAN_help_in_italy = {
+
+	allowed = {
+		original_tag = CAN
+	}
+
+	enable = {
+		
+		date > 1943.12.31
+
+			#rhine area
+			42 = { is_fully_controlled_by = GER }
+			51 = { is_fully_controlled_by = GER }
+			28 = { is_fully_controlled_by = GER } #metz
+
+		
+		has_war_with = ITA
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = ITA}
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = italy
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = USA
+		value = 1000
+	}
+}
+
+
+CAN_dont_rush_yet = {
+
+	allowed = {
+		original_tag = CAN
+	}
+
+	enable = {
+		has_war_with = ITA
+		has_war_with = GER
+
+		OR = {
+			date > 1945.4.1
+			date < 1944.5.30
+			NOT = { 161 = {is_fully_controlled_by = ITA} } #north italy
+			NOT = { 162 = {is_fully_controlled_by = ITA} } #north italy
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = ITA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}

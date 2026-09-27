@@ -1,0 +1,12 @@
+ideas = {
+	country = {
+
+	HUN_peace_negotiations = {
+		picture = generic_disjointed_gov
+		modifier = {
+			army_org_factor = -0.25
+			army_speed_factor = -0.25
+			}
+		}
+	}
+}

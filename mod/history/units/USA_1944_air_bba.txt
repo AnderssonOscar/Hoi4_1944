@@ -1,0 +1,430 @@
+﻿					
+air_wings = {
+
+	2 = {
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 100 version_name = "Devastator" }	
+	}
+	849 = {
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+	}
+	127 = {
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+
+		medium_plane_airframe_1 = { owner = "USA" version_name = "B-18" amount = 100}
+		medium_plane_airframe_1 = { owner = "USA" version_name = "B-18" amount = 100}
+		medium_plane_airframe_0 = { owner = "USA" version_name = "P2Y" amount = 100}
+		medium_plane_airframe_0 = { owner = "USA" version_name = "P2Y" amount = 100}
+		medium_plane_airframe_1 = { owner = "USA" version_name = "B-23" amount = 100}
+	}
+
+	366 = {
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+
+
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+	}
+
+	129 = {
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }		
+
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+	}
+
+	357 = {
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+		medium_plane_airframe_1 = { owner = "USA" version_name = "B-10" amount = 100}
+		medium_plane_airframe_0 = { owner = "USA" version_name = "B-6A" amount = 100}
+		medium_plane_airframe_1 = { owner = "USA" version_name = "B-23" amount = 100}
+	}
+
+	358 = {
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+	}
+
+	523 = {
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_0 = { owner = "USA" amount = 100 version_name = "P-26A" }		
+		small_plane_airframe_0 = { owner = "USA" amount = 100 version_name = "P-26A" }		
+
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 100 version_name = "Devastator" }		
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+	}
+
+	633 = {
+		small_plane_airframe_3 = { owner = "USA" amount = 100 version_name = "Bell P-63 Kingcobra" }
+		small_plane_airframe_3 = { owner = "USA" amount = 100 version_name = "Bell P-63 Kingcobra" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_0 = { owner = "USA" amount = 100 version_name = "P-26A" }		
+		small_plane_airframe_0 = { owner = "USA" amount = 100 version_name = "P-26A" }	
+		small_plane_airframe_0 = { owner = "USA" amount = 100 version_name = "P-26A" }	
+		
+
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_0 = { owner = "USA" amount = 100 version_name = "P-6" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }		
+
+		medium_plane_airframe_2 = { owner = "USA" version_name = "B-25" amount = 100}
+	}
+	737 = {
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-36A" }
+
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-36A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+
+	}
+
+	378 = {
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-36A" }
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+	}
+
+	633 = {
+
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-36A" }
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_3 = { owner = "USA" amount = 100 version_name = "Bell P-63 Kingcobra" }
+		small_plane_airframe_3 = { owner = "USA" amount = 100 version_name = "Bell P-63 Kingcobra" }	
+
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 100 version_name = "Devastator" }		
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+	}
+	629 = {
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-35A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-36A" }
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-36A" }	
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+	}
+
+	##ENGLAND
+	120 = {
+		small_plane_airframe_1 = { owner = "USA" amount = 100 version_name = "P-36A" }
+		small_plane_cas_airframe_1 = { owner = "USA" amount = 100 version_name = "A-17" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-39 Airacobra A" }
+
+		small_plane_cas_airframe_2 = { owner = "USA" amount = 100 version_name = "A-20" }	
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 100 version_name = "Devastator" }	
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 100 version_name = "Devastator" }
+		cv_small_plane_naval_bomber_airframe_1 =  { owner = "USA" amount = 100 version_name = "Devastator" }
+	}
+
+	132 = {
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+		large_plane_airframe_1 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }	
+
+		transport_plane_equipment_1 = { owner = "USA" amount = 500 }
+	}
+	
+
+	370 = {
+		transport_plane_equipment_1 = { owner = "USA" amount = 600 }
+
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
+	}
+
+	"USS Bunker Hill" = {
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+	}
+	"USS Saratoga" = {
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+	}
+	"USS Enterprise" = {
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+	}
+	"USS Ranger" = {
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 10 version_name = "TBF Avenger" }
+	}
+
+	385 = {
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_airframe_2 =  { owner = "USA" amount = 100 version_name = "F6F Hellcat" }	
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 100 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 100 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 100 version_name = "SB2C Helldiver" }
+		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 100 version_name = "SB2C Helldiver" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 100 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 100 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 100 version_name = "TBF Avenger" }
+		cv_small_plane_naval_bomber_airframe_2 =  { owner = "USA" amount = 100 version_name = "TBF Avenger" }
+	}
+}
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+		
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_2
+			creator = "USA" 
+			version_name = "P-39 Airacobra A"
+		}
+		requested_factories = 15
+		progress = 0.15
+		efficiency = 89
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_2
+			creator = "USA" 
+			version_name = "P-51 Mustang A"
+		}
+		requested_factories = 10
+		progress = 0.15
+		efficiency = 64
+	}
+
+
+	add_equipment_production = {
+		equipment = {
+			type = large_plane_airframe_1
+			creator = "USA" 
+			version_name = "B-17 Flying Fortress A"
+		}
+		requested_factories = 10
+		progress = 0.15
+		efficiency = 89
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = large_plane_airframe_3
+			creator = "USA" 
+			version_name = "B-29 Superfortress A"
+		}
+		requested_factories = 20
+		progress = 0.15
+		efficiency = 59
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = cv_small_plane_airframe_2
+			creator = "USA" 
+			version_name = "F6F Hellcat"
+		}
+		requested_factories = 2
+		progress = 0.15
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = cv_small_plane_cas_airframe_2
+			creator = "USA" 
+			version_name = "SB2C Helldiver"
+		}
+		requested_factories = 2
+		progress = 0.15
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = cv_small_plane_naval_bomber_airframe_2
+			creator = "USA" 
+			version_name = "TBF Avenger"
+		}
+		requested_factories = 2
+		progress = 0.15
+		efficiency = 100
+	}
+}
+#####################

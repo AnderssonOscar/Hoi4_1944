@@ -1,0 +1,362 @@
+############################################################################################################
+#	1944
+############################################################################################################
+
+on_actions = {
+	on_startup = {
+		effect = {
+
+			POL = { become_exiled_in = { target = ENG legitimacy = 50 } }
+			ETH = { become_exiled_in = { target = ENG legitimacy = 60 } }
+			ICE = { become_exiled_in = { target = ENG legitimacy = 65 } }
+			BRM = { become_exiled_in = { target = ENG legitimacy = 50 } }
+
+			PHI = { become_exiled_in = { target = USA legitimacy = 50 } }
+
+			GER = {
+				country_event = {
+					id = mod.start.1
+				}
+			}
+			
+			GER = {
+				#activate_decision = GER_reichskommissariat_niederlande
+				activate_decision = GER_reichskommissariat_norwegen
+			}	
+			
+			every_country = {
+				set_country_flag = FIN_aware_about_motti_tactics_flag
+			}
+
+				 ITA = { 162 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+				 ITA = { 2 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+				 ITA = { 157 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+				 USA = { 117 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+				 USA = { 849 = { add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier days = 60 } } }
+
+			SOV = { 195 = {add_dynamic_modifier = { modifier = SOV_leningrad_defence_modifier scope = SOV } } }
+			# USA = { 117 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
+			# USA = { 849 = {add_dynamic_modifier = { modifier = MOD_transportation_difficulties_modifier scope = USA days = 14} } }
+
+		if = {
+			limit = {
+				JAP = { is_ai = yes }
+			}
+				CHI = { 596 = {add_dynamic_modifier = { modifier = CHI_hold_modifier scope = CHI days = 120} } }
+				CHI = { 595 = {add_dynamic_modifier = { modifier = CHI_hold_modifier scope = CHI days = 325} } }
+				CHI = { 593 = {add_dynamic_modifier = { modifier = CHI_hold_modifier scope = CHI days = 225} } }
+				CHI = { 600 = {add_dynamic_modifier = { modifier = CHI_hold_modifier scope = CHI days = 325} } }
+		}
+			JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation
+
+	every_country = {
+		limit = { 
+			num_of_factories > 12
+			num_divisions > 1
+		 }
+		 
+		add_ideas = { 
+			mod_boost
+		}
+	}
+
+
+	every_country = {
+		limit = { 
+			OR = {
+				tag = YUN
+				tag = GXC
+				#tag = XSM
+				#tag = CHI
+				tag = PRC
+			}
+		 }
+		 
+		add_ideas = { 
+			dont_surrender_mod
+		}
+	}
+
+	FRA = {
+		if = {
+			limit = {
+				is_ai = yes
+				date > 1943.12.31
+				
+			}
+			set_capital = {
+				state = 459 
+				remember_old_capital = no
+			}
+		}
+	}
+	
+	
+	FIN = {
+		if = {
+			limit = {
+				date > 1943.12.31
+			}
+			add_manpower = -111000
+		}
+	}
+
+
+	SWE = {
+		if = {
+			limit = {
+				is_ai = no
+				date > 1943.12.31
+				
+			}
+
+				add_tech_bonus = {
+					name = SWE_support_boost
+					bonus = 1.0
+					uses = 1
+					category = support_tech
+				}
+
+		if = {
+			limit = {
+				has_dlc = "No Step Back" 
+			}
+				add_tech_bonus = {
+					name = SWE_armor_boost
+					bonus = 1.0
+					uses = 1
+					technology = basic_medium_tank_chassis
+					technology = improved_medium_tank_chassis
+					technology = advanced_medium_tank_chassis
+					technology = mechanised_infantry
+				}
+			}
+		}
+	}
+		if = {
+			limit = {
+				has_dlc = "No Step Back" 
+			}
+		ITA = {
+			country_event = { id = italy.fascist.0 hours = 1 } #crashes italy without nsb
+		}
+	}
+
+	SOV = {
+		if = {
+			limit = {
+				is_ai = yes
+				date > 1943.12.31
+			}
+			add_political_power = 2450
+			army_experience = 390
+			add_command_power = 250
+
+			add_equipment_to_stockpile = { 
+				type = convoy_1
+				amount = 3950
+			}
+
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_2
+				amount = 195000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_1
+				amount = 55000
+			}
+
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment_1
+				amount = 9500
+			}
+
+			add_equipment_to_stockpile = { 
+				type = artillery_equipment_3
+				amount = 5500
+			}
+
+			add_equipment_to_stockpile = {
+				type = anti_air_equipment_2
+				amount = 6050
+			}
+
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_2
+				amount = 3900
+			}
+
+			set_technology = {
+				modern_rubber_processing = 1
+			}
+
+			}
+		}
+
+
+	random_country = {
+		limit = {
+			owns_state = 7
+		}
+
+		add_ideas = {
+			dont_surrender_mod
+		}
+	}
+
+	every_country = {
+		limit = { has_war = yes }
+		add_command_power = 50
+	}
+
+
+	AFG = {
+		add_ai_strategy  = {
+			type = alliance	
+			id = SOV
+			value = -5000
+			}
+		}
+
+	VEN = {
+		add_ai_strategy  = {
+			type = alliance	
+			id = GER
+			value = -5000
+			}
+		}
+
+		VEN = {
+			add_ai_strategy  = {
+				type = alliance	
+				id = JAP
+				value = -5000
+				}
+			}
+
+	SOV = {
+		add_ai_strategy  = {
+			type = alliance	
+			id = AFG
+			value = -5000
+			}
+		}
+	
+
+	##Dont join allies
+	every_country = {
+			limit = {
+				is_in_faction = yes
+			}
+
+				LIB = {add_ai_strategy  = { ## after 1945
+					type = alliance	
+					id = PREV
+					value = -5000
+					}
+				}
+
+
+			SWI = {add_ai_strategy  = {
+				type = alliance	
+				id = PREV
+				value = -5000
+			}
+		}
+
+		
+			AFG = {add_ai_strategy  = {
+				type = alliance	
+				id = PREV
+				value = -5000
+			}
+		}
+
+
+			IRE = {add_ai_strategy  = {
+					type = alliance	
+					id = PREV
+					value = -5000
+				}
+			}
+
+			FIN = {add_ai_strategy  = {
+				type = alliance	
+				id = PREV
+				value = -5000
+			}
+		}
+	}
+
+GER = {
+	add_ideas = {
+		totaler_krieg_economy
+	}
+	add_manpower = -1200000
+}
+
+
+
+
+
+###########################################################################################################################################################
+###########################################################################################################################################################
+#7 6 5 6 1 1 9 7 9 9 7 5 0 3  3 3 1 
+###########################################################################################################################################################
+
+			if = {
+				limit = {
+					ROM = { is_ai = yes}
+				}
+				ROM = { give_resource_rights = { receiver = GER state = 46 } }  #remove_resource_rights
+			}
+
+			ITA = { remove_resource_rights = 44 } 
+			
+
+			85 = {
+				if = {
+					limit = {
+						has_dynamic_modifier = { modifier = international_city }
+					}
+					remove_dynamic_modifier = { modifier = international_city }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+
+				#TODO add mines for japan & norway
+				JAP = { add_mines = { region = 90 amount = 500 } }
+				JAP = { add_mines = { region = 79 amount = 500 } }
+				JAP = { add_mines = { region = 76 amount = 500 } }
+
+				GER = { add_mines = { region = 173 amount = 480 } }
+				GER = { add_mines = { region = 207 amount = 410 } }
+				GER = { add_mines = { region = 174 amount = 150 } }
+				GER = { add_mines = { region = 42 amount = 100 } }
+
+				GER = { add_mines = { region = 206 amount = 300 } }
+
+				FIN = { add_mines = { region = 9 amount = 380 } }
+
+				ITA = { add_mines = { region = 168 amount = 450 } }
+				GER = { add_mines = { region = 202 amount = 300 } }
+
+				ENG = { add_mines = { region = 68 amount = 250 } }
+				ENG = { add_mines = { region = 18 amount = 500 } }
+				ENG = { add_mines = { region = 16 amount = 250 } }
+			}
+	
+
+		}
+	}
+	on_daily = {
+		effect = {
+			MOD_daily_update = yes
+			MOD_daily_update2 = yes
+		}
+	}
+}

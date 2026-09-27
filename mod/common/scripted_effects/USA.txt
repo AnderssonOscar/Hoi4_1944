@@ -1,0 +1,43 @@
+USA_give_nukes = {
+
+	USA = {
+		if = {
+			limit = {
+				date > 1945.7.20
+				has_war_with = JAP
+				has_dlc = "Gotterdammerung"
+				surrender_progress < 0.01
+				is_ai = yes
+				JAP = { surrender_progress < 0.2 }
+
+				OR = {
+					645 = { is_fully_controlled_by = USA }
+					526 = { is_fully_controlled_by = USA }
+					646 = { is_fully_controlled_by = USA } #saipan
+			   }
+
+				NOT = { has_global_flag = USA_give_nukes }
+			}
+
+				if = {
+					limit = {
+						NOT = { is_special_project_completed = sp:sp_nuclear_bomb }
+					}
+
+					 complete_special_project = {
+					 	project = sp:sp_nuclear_bomb
+					 	scientist = USA_robert_oppenheimer
+					 	state = 376
+					 }
+				}
+
+				set_technology = {
+					nukes = 1
+					popup = no
+				}
+				add_command_power = 200
+				add_nuclear_bombs = 2
+				set_global_flag = USA_give_nukes
+		}
+	}
+}

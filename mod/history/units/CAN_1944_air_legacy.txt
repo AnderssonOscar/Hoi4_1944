@@ -1,0 +1,28 @@
+﻿
+
+air_wings = {
+	### Royal Canadian Air Force (RCAF)(CO: ) ###
+	276 = {																# Ontario
+		# RCAF Station Trenton (ONT)#
+		CAS_equipment_1 = { owner = "CAN" amount = 100 }
+		fighter_equipment_2 =  { owner = "CAN" amount = 100 }
+		fighter_equipment_2 =  { owner = "CAN" amount = 100 }
+	}
+	473 = {																# Vancouver
+		# RCAF Station Vancouver (BC) #
+		fighter_equipment_1 =  { owner = "CAN" amount = 100 }
+		fighter_equipment_2 =  { owner = "CAN" amount = 100 }
+
+		nav_bomber_equipment_1 =  { owner = "CAN" amount = 100 }	
+	}
+
+	133 = { #scotland
+		fighter_equipment_1 =  { owner = "CAN" amount = 100 }
+		fighter_equipment_2 =  { owner = "CAN" amount = 100 }
+
+		CAS_equipment_1 = { owner = "CAN" amount = 100 }
+
+		strat_bomber_equipment_2 = { owner = "CAN" amount = 100 }
+		strat_bomber_equipment_2 = { owner = "CAN" amount = 100 }
+	}
+}

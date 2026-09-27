@@ -1,0 +1,173 @@
+collaborationist_formation = {
+
+	Recruit_Andrey_Vlasov = {
+		icon = generic_army_support
+
+		available = {
+			has_war_with = SOV
+
+			OR = {
+				date > 1944.9.1
+				surrender_progress > 0.01
+			}
+		}
+		visible = {
+			has_war_with = SOV
+			has_capitulated = no
+		}
+
+		#cost = 25
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				surrender_progress > 0.01
+				factor = 100
+			}
+		}
+
+		complete_effect = {
+			SOV = {
+				SOV_andrey_vlasov = {
+					set_nationality = GER
+					remove_unit_leader_trait = trait_SOV_cowed_by_stalin_army
+				}
+			}
+			
+			division_template = {
+				name = "Russische Befreiungsarmee"
+				is_locked = yes
+				template_counter = 3
+				priority = 0
+				division_names_group = GER_ALTINF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+		}
+
+	}
+
+	Russian_Liberation_Army = {
+		icon = generic_army_support
+
+		available = {
+			has_war_with = SOV
+			OR = {
+				date > 1944.9.1
+				surrender_progress > 0.01
+			}
+		}
+
+		visible = {
+			has_war_with = SOV
+			#surrender_progress > 0.1
+			has_capitulated = no
+			is_ai = no
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				surrender_progress > 0.01
+				factor = 100
+			}
+		}
+
+		complete_effect = {
+
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } is_core_of = ROOT	}
+					prioritize = { 64 }
+
+					create_unit = {
+						division = "name = \"600th Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.28 start_equipment_factor = 0.98 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+						owner = GER
+					}
+
+					create_unit = {
+						division = "name = \"650th (Russian) Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.19 start_equipment_factor = 0.71 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
+						owner = GER
+					}
+
+					create_unit = {
+						division = "name = \"700th (Russian) Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.11 start_equipment_factor = 0.18 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }" 
+						owner = GER
+					}
+				}
+			}
+	}
+
+
+	Recruit_POWS = {
+		icon = generic_army_support
+
+		available = {
+			has_war_with = SOV
+		}
+
+		visible = {
+			has_war_with = SOV
+			has_capitulated = no
+
+			SOV = {casualties_k > 50}
+		}
+ 
+		cost = 10
+		days_re_enable = 30
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_manpower < 250000
+				factor = 100
+			}
+		}
+
+		complete_effect = {
+
+			set_temp_variable = { casualties_now = global.SOV_casualties_g }
+			set_temp_variable = { casualties_last = global.casualties_last_recruitment}
+
+			subtract_from_temp_variable = { var = casualties_now value = casualties_last }
+			set_temp_variable = { casualties_since_last_recruitment = casualties_now }
+
+			multiply_temp_variable = { casualties_since_last_recruitment = 26.73 }  
+
+			clamp_temp_variable = {
+				var = casualties_since_last_recruitment
+				min = 0
+				max = 25500
+			}
+
+			add_manpower = casualties_since_last_recruitment
+			set_variable = { global.casualties_last_recruitment = global.SOV_casualties_g }
+
+		}
+	}
+
+}

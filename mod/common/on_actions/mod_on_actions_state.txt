@@ -1,0 +1,44 @@
+# on_actions = {
+# 	on_startup = {
+# 		effect = {
+
+# 		}
+# 	}
+
+# 	# #ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+# 	# on_state_control_changed = {
+# 	# 	effect = {
+# 	# 		if = {
+# 	# 			limit = { # Execute if SOV captures konigsberg GER
+# 	# 				original_tag = SOV
+#     #                 FROM = { original_tag = GER }
+# 	# 				FROM.FROM = { state = 763 }
+# 	# 			}
+# 	# 			FROM = {
+# 	# 				FROM = { country_event = romania.switch.side.2 }
+# 	# 			}
+# 	# 		}
+# 	# 	}
+# 	# }
+
+
+# 	# on_state_control_changed = {
+# 	# 	effect = {
+# 	# 		if = {
+# 	# 			limit = {
+# 	# 				FROM = { original_tag = GER }
+# 	# 				ROOT = { original_tag = SOV } 
+# 	# 				FROM.FROM = { state = 197 }
+# 	# 			}
+# 	# 			FROM = { country_event = german.sabotage.ports.1 }
+
+# 	# 		}
+# 	# 	}
+# 	# }
+	
+
+# 	on_daily = {
+# 		effect = {}
+
+
+# }

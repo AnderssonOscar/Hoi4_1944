@@ -1,0 +1,571 @@
+JAP_mod_operations_cat = {
+
+    JAP_ichi_go_mod_1 = {
+
+        icon = jap_conquer_china
+
+        available = {
+            event_target:WTT_current_china_leader = {
+                has_capitulated = no
+                exists = yes
+            }
+            JAP = { controls_province = 9958}
+            JAP = { controls_province = 4619}
+            #date > 1944.4.17
+        }
+
+        visible = {
+
+        if = {
+			limit = {
+				JAP = { is_ai = yes }
+			}
+            date > 1944.4.18
+        }
+
+            original_tag = JAP
+            NOT = { has_country_flag = JAP_ichi_go_mod_1 }
+        }
+
+        fire_only_once = yes
+
+        ai_will_do = {
+            base = 1
+            modifier = {
+                is_historical_focus_on = yes
+                date > 1944.4.17
+                factor = 250
+            }
+            modifier = {
+                is_historical_focus_on = yes
+                date < 1944.4.17
+                factor = -250
+            }
+        }
+
+        cost = 0
+
+        highlight_states = {
+            highlight_provinces = { 1139 9958 10364 12012 7568 7580 9934 7167 4619 }
+        }
+
+        complete_effect = {
+            set_country_flag = JAP_ichi_go_mod_1
+            activate_mission = JAP_ichi_go_mod_1_timer
+            add_timed_idea ={ idea = JAP_ichi_go days = 60 }
+
+            activate_mission_tooltip = JAP_conquer_china
+            set_country_flag = JAP_conquer_china_activate
+
+            607 = {
+                add_dynamic_modifier = {
+                    modifier = JAP_offensive_modifier
+                    scope = JAP
+                    days = 60
+                }
+            }
+        }
+    }
+
+
+    JAP_ichi_go_mod_1_timer = {
+
+        icon = jap_conquer_china
+        available = {
+            has_war_with = CHI
+
+            custom_trigger_tooltip = {
+                tooltip = "Take control of the railway between beijing and whuan"
+
+                #JAP = { controls_province = 4144}
+                JAP = { controls_province = 1139}
+                JAP = { controls_province = 9958}
+                JAP = { controls_province = 10364}
+                JAP = { controls_province = 12012}
+                JAP = { controls_province = 7568}
+                JAP = { controls_province = 7580}
+                JAP = { controls_province = 9934}
+                JAP = { controls_province = 7167}
+                JAP = { controls_province = 4619}
+            }
+        }
+        highlight_states = {
+            highlight_provinces = { 1139 9958 10364 12012 7568 7580 9934 7167 4619 }
+        }
+
+        visible = {
+            original_tag = JAP
+            has_war_with = CHI
+        }
+
+        activation = {
+            always = no
+        }
+
+        fire_only_once = yes
+        is_good = no
+        days_mission_timeout = 60
+
+        timeout_effect = {
+            set_country_flag = JAP_ichi_go_failed
+        }
+
+        complete_effect = {
+            hidden_effect = {
+           if = {
+                 limit = {
+               JAP = { has_idea = JAP_ichi_go }
+            }
+             remove_ideas = { JAP_ichi_go }
+        }
+            }
+            # add_stability = 0.05
+            add_war_support = 0.05
+        }
+    }
+
+
+    JAP_ichi_go_mod_2 = {
+
+        icon = jap_conquer_china
+
+        available = {
+
+            event_target:WTT_current_china_leader = {
+                has_capitulated = no
+                exists = yes
+            }
+
+            custom_trigger_tooltip = {
+                tooltip = "Control the of railway between beijing and whuan"
+
+                JAP = { controls_province = 4144}
+                JAP = { controls_province = 1139}
+                JAP = { controls_province = 9958}
+                JAP = { controls_province = 10364}
+                JAP = { controls_province = 12012}
+                JAP = { controls_province = 7568}
+                JAP = { controls_province = 7580}
+                JAP = { controls_province = 9934}
+                JAP = { controls_province = 7167}
+                JAP = { controls_province = 4619}
+            }
+        }
+
+        highlight_states = {
+            highlight_provinces = { 4619 4631 9999 7097 13143 7502 7159}
+        }
+
+        visible = {
+
+        if = {
+			limit = {
+				JAP = { is_ai = yes }
+			}
+            date > 1944.5.11
+        }
+
+            original_tag = JAP
+            has_country_flag = JAP_ichi_go_mod_1
+
+            NOT = { has_country_flag = JAP_ichi_go_failed }
+        }
+
+        fire_only_once = yes
+
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                is_historical_focus_on = yes
+                factor = 100
+            }
+        }
+        cost = 0
+
+        complete_effect = {
+            set_country_flag = JAP_ichi_go_mod_2
+            activate_mission = JAP_ichi_go_mod_2_timer
+            add_timed_idea = { idea = JAP_ichi_go days = 80 }
+
+
+        if = {
+			limit = {
+				JAP = { is_ai = yes }
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 40000
+			}
+
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 1500
+			}
+
+            add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 1500
+			}
+        }
+
+
+            602 = {
+                add_dynamic_modifier = {
+                    modifier = JAP_offensive_modifier
+                    scope = JAP
+                    days = 75
+                }
+            }
+        }
+    }
+
+
+    JAP_ichi_go_mod_2_timer = {
+
+        icon = jap_conquer_china
+        available = {
+            has_war_with = CHI
+
+            custom_trigger_tooltip = {
+                tooltip = "Take control of the railway between whuan and Changsha"
+
+                JAP = { controls_province = 4144}
+                JAP = { controls_province = 1139}
+                JAP = { controls_province = 9958}
+                JAP = { controls_province = 10364}
+                JAP = { controls_province = 12012}
+                JAP = { controls_province = 7568}
+                JAP = { controls_province = 7580}
+                JAP = { controls_province = 9934}
+                JAP = { controls_province = 7167}
+                JAP = { controls_province = 4619}
+
+                #from changsha to airfield
+                JAP = { controls_province = 4631}
+                JAP = { controls_province = 9999}
+                JAP = { controls_province = 7097}
+                JAP = { controls_province = 13143}
+                JAP = { controls_province = 7502}
+                JAP = { controls_province = 7159}
+            }
+        }
+
+        highlight_states = {
+            highlight_provinces = { 4631 9999 7097 13143 7502 7159}
+        }
+
+        visible = {
+            original_tag = JAP
+            has_war_with = CHI
+        }
+
+        activation = {
+            always = no
+        }
+
+        fire_only_once = yes
+        is_good = no
+        days_mission_timeout = 80
+
+        timeout_effect = {
+            set_country_flag = JAP_ichi_go_failed
+        }
+
+        complete_effect = {
+            hidden_effect = {
+
+            if = {
+                 limit = {
+               JAP = { has_idea = JAP_ichi_go }
+            }
+             remove_ideas = { JAP_ichi_go }
+        }
+
+            }
+            add_war_support = 0.05
+        }
+    }
+
+    JAP_ichi_go_mod_3 = {
+
+        icon = jap_conquer_china
+
+        available = {
+            event_target:WTT_current_china_leader = {
+                has_capitulated = no
+                exists = yes
+            }
+
+            custom_trigger_tooltip = {
+                tooltip = "Control the railway leading from beijing to the Changsha airfield"
+
+                JAP = { controls_province = 4144}
+                JAP = { controls_province = 1139}
+                JAP = { controls_province = 9958}
+                JAP = { controls_province = 10364}
+                JAP = { controls_province = 12012}
+                JAP = { controls_province = 7568}
+                JAP = { controls_province = 7580}
+                JAP = { controls_province = 9934}
+                JAP = { controls_province = 7167}
+                JAP = { controls_province = 4619}
+
+                #from changsha to airfield
+                JAP = { controls_province = 4631}
+                JAP = { controls_province = 9999}
+                JAP = { controls_province = 7097}
+                JAP = { controls_province = 13143}
+                JAP = { controls_province = 7502}
+                JAP = { controls_province = 7159}
+
+            }
+        }
+
+        visible = {
+
+        if = {
+			limit = {
+				JAP = { is_ai = yes }
+			}
+            date > 1944.8.1
+        }
+
+            original_tag = JAP
+            has_country_flag = JAP_ichi_go_mod_2
+            NOT = { has_country_flag = JAP_ichi_go_failed }
+        }
+
+        highlight_states = {
+            highlight_provinces = { 11918 9982 9970 1120 12095 1047 11918 12378 1023 7168 7095 1597 4028 10050 7137 }
+        }
+
+        fire_only_once = yes
+
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                is_historical_focus_on = yes
+                factor = 100
+            }
+        }
+        cost = 0
+
+        complete_effect = {
+            set_country_flag = JAP_ichi_go_mod_3
+            activate_mission = JAP_ichi_go_mod_3_timer
+            add_timed_idea = { idea = JAP_ichi_go days = 90 }
+
+            594 = {
+                add_dynamic_modifier = {
+                    modifier = JAP_offensive_modifier
+                    scope = JAP
+                    days = 90
+                }
+            }
+
+            599 = {
+                add_dynamic_modifier = {
+                    modifier = JAP_offensive_modifier
+                    scope = JAP
+                    days = 90
+                }
+            }
+        }
+    }
+
+    JAP_ichi_go_mod_3_timer = {
+
+        icon = jap_conquer_china
+        available = {
+            has_war_with = CHI
+
+            custom_trigger_tooltip = {
+                tooltip = "Take control the railway leaing to Nanning and Guangzhou"
+
+                JAP = { controls_province = 4144}
+                JAP = { controls_province = 1139}
+                JAP = { controls_province = 9958}
+                JAP = { controls_province = 10364}
+                JAP = { controls_province = 12012}
+                JAP = { controls_province = 7568}
+                JAP = { controls_province = 7580}
+                JAP = { controls_province = 9934}
+                JAP = { controls_province = 7167}
+                JAP = { controls_province = 4619}
+
+                #from changsha to airfield
+                JAP = { controls_province = 4631}
+                JAP = { controls_province = 9999}
+                JAP = { controls_province = 7097}
+                JAP = { controls_province = 13143}
+                JAP = { controls_province = 7502}
+                JAP = { controls_province = 7159}
+
+                #from airfield to guangzou
+                JAP = { controls_province = 11918}
+                JAP = { controls_province = 9982}
+                JAP = { controls_province = 9970}
+                JAP = { controls_province = 1120}
+                JAP = { controls_province = 12095}
+                JAP = { controls_province = 1047}
+
+                # To nanning
+                JAP = { controls_province = 11918}
+                JAP = { controls_province = 12378}
+                JAP = { controls_province = 1023}
+                JAP = { controls_province = 7168}
+                JAP = { controls_province = 7095}
+                JAP = { controls_province = 1597}
+                JAP = { controls_province = 4028}
+                JAP = { controls_province = 10050}
+                JAP = { controls_province = 7137}
+
+            }
+        }
+
+        highlight_states = {
+            highlight_provinces = { 11918 9982 9970 1120 12095 1047 11918 12378 1023 7168 7095 1597 4028 10050 7137}
+        }
+
+        visible = {
+            original_tag = JAP
+            has_war_with = CHI
+        }
+
+        activation = {
+            always = no
+        }
+
+        fire_only_once = yes
+        is_good = no
+        days_mission_timeout = 90
+
+        timeout_effect = {
+
+            set_country_flag = JAP_ichi_go_failed
+        }
+
+        complete_effect = {
+            add_war_support = 0.05
+
+            hidden_effect = {
+             if = {
+                 limit = {
+               JAP = { has_idea = JAP_ichi_go }
+            }
+              remove_ideas = { JAP_ichi_go }
+        }
+            }
+            set_country_flag = JAP_ichi_go_mod_done
+        }
+    }
+}
+
+
+JAP_mod_homefront_cat = {
+
+    JAP_efficient_convoys = {
+        icon = generic_naval
+
+        visible = { 
+            has_war = yes
+
+            has_equipment = {
+                convoy > 10
+            }
+        }
+        
+        available = {
+            has_equipment = {
+                convoy < 501
+            }
+        }
+
+        fire_only_once = no
+        days_remove = 30
+        days_re_enable = 0
+        #cost = 100
+		custom_cost_text = decision_cost_pp_50_NavXP_25
+        custom_cost_trigger = {
+			has_political_power > 49
+			has_navy_experience > 29
+		}
+
+        complete_effect = {
+			hidden_effect = {
+				add_political_power = -50
+				navy_experience = -25
+			}
+		}
+        
+        modifier = {
+            transport_capacity = -0.25
+            convoy_retreat_speed = 0.25
+        }
+    }
+
+    JAP_food_shortage = {
+        icon = generic_operation
+
+        allowed = {
+            original_tag = JAP
+        }
+
+        #failure trigger
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = "Maintain a fleet of atleast 500 convoys & keep South Korea under our control"
+ 
+                has_equipment = {
+                    convoy > 499
+                }
+                525 = { is_controlled_by_ROOT_or_ally = yes }
+            }
+        }
+ 
+        highlight_states = {
+            highlight_state_targets = {
+                state = 525
+            }
+        }
+
+        # visible = {
+        #     #is_ai = no
+        # }
+
+        days_mission_timeout = 120
+        fire_only_once = no
+        is_good = no
+
+        activation = {
+            has_war_with = USA
+            has_war_with = CHI
+            NOT = {has_global_flag = JAP_food_shortage}
+
+            hidden_trigger = {
+                date > 1944.1.1
+                OR = {
+                    NOT = { 525 = { is_controlled_by_ROOT_or_ally = yes } }
+                    has_equipment = {
+                        convoy < 500
+                    }
+                }
+            }
+        } 
+
+        #success
+        timeout_effect = {
+            set_global_flag = JAP_food_shortage
+            add_war_support = -0.25
+            add_stability = -0.25
+            add_manpower = -500000
+
+            add_timed_idea ={ idea = JAP_home_famine days = 120 }
+        }
+
+        #failure
+        complete_effect = {
+
+        }
+    }
+}

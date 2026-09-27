@@ -1,0 +1,461 @@
+ROM_unit_buffer_capital= { 
+	allowed = {
+		original_tag = ROM
+	}
+	enable = { 
+			has_war = yes
+			date > 1943.12.31
+			#surrender_progress > 0.11
+			is_historical_focus_on = yes
+
+			OR = {
+				has_war_with = SOV
+				has_war_with = GER
+			}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.2
+		states = {
+			46
+			971
+		}
+
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+	}
+}
+
+ROM_hold_crimea_1944 = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		GER = { controls_province = 3686 }
+		surrender_progress < 0.15
+
+		date < 1945.1.1
+		date > 1943.12.31
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.2
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+		states = {
+			137
+		}
+	}
+}
+
+ROM_dont_trust_hungary_1944 = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		surrender_progress < 0.15
+		date > 1943.12.31
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.2
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = yes
+		states = {
+			83
+			82
+			84
+			79
+		}
+	}
+}
+
+ROM_defend_the_front_1944 = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		#kursk
+		220 = { is_fully_controlled_by = SOV } 
+		221 = { is_fully_controlled_by = SOV } 
+
+		OR = {
+			NOT = { 78 = { is_fully_controlled_by = ROM } }
+			NOT = { 766 = { is_fully_controlled_by = ROM } }
+			NOT = { 79 = { is_fully_controlled_by = ROM } }
+
+			NOT = { 192 = { is_fully_controlled_by = ROM } }
+			NOT = { 834 = { is_fully_controlled_by = ROM } }
+		}
+
+		date < 1944.10.1
+		date > 1943.12.31
+	}
+
+	abort_when_not_enabled = yes
+
+		ai_strategy = {
+			type = dont_defend_ally_borders
+			id = "GER"
+			value = 30
+		}
+
+		ai_strategy = {
+			type = dont_defend_ally_borders
+			id = "SLO"
+			value = 5
+		}
+
+		ai_strategy = {
+			type = dont_defend_ally_borders
+			id = "HUN"
+			value = 2
+		}
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = SOV}
+		value = 14
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 26 
+		value = 30000 #value of stocked main front in active combat is usually around 35,000
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	value = 0
+	# }
+
+	# ai_strategy = {
+	# 	type = garrison_reinforcement_priority
+	# 	value = -100
+	# }
+
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 100
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = greater_balkans
+		value = 100
+	}
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.05
+		states = {
+			766
+		}
+	}
+}
+
+ROM_italy_front_bad = { 
+	allowed = {
+		original_tag = ROM
+	}
+	enable = { 
+			has_war = yes
+			date > 1944.1.1
+			#surrender_progress > 0.11
+			is_historical_focus_on = yes
+			is_in_faction_with = ITA
+	}
+
+	abort_when_not_enabled = yes
+
+		ai_strategy = {
+			type = dont_defend_ally_borders
+			id = "ITA"
+			value = 10
+		}
+}
+
+
+ROM_dont_waste_pp = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		date > 1944.1.1
+		date < 1945.1.1
+
+		has_political_power < 500
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -100
+	}
+
+	ai_strategy = { 
+		type = pp_spend_priority
+		id = admiral
+		value = -100
+	}
+}
+
+
+ROM_hold_soviet_offensive = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		OR = {
+			SOV = { has_idea = major_offensive } 
+
+			AND = {
+				SOV = { NOT = { has_idea = major_offensive } }
+				SOV = { NOT = { has_idea = offensive_exhaustion } } 
+			}
+		}
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		NOT = { has_war_with = BUL }
+		NOT = { has_war_with = GER }
+		is_in_faction_with = GER
+
+		date > 1944.1.1
+	#	date < 1944.9.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = { tag = SOV }
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}
+
+ROM_attack_after_soviet_offensive = {
+
+	allowed = { original_tag = ROM }
+
+	enable = {
+		SOV = { has_idea = offensive_exhaustion } 
+		surrender_progress < 0.24
+		is_historical_focus_on = yes
+
+		has_war_with = SOV 
+		NOT = { has_war_with = BUL }
+		is_in_faction_with = GER
+
+		OR = {
+			NOT = { controls_province = 6727} #core romania coast-river
+			NOT = { controls_province = 6743} 
+			NOT = { controls_province = 9683} 
+			NOT = { controls_province = 11686} 
+
+			NOT = { controls_province = 11686} #Iasi
+		}
+
+		NOT = { controls_province = 11670 } #if we gain odessa stop
+
+		date > 1944.1.1
+		date < 1944.9.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = { tag = SOV }
+		ordertype = front
+		execute_order = yes
+		execution_type = balanced
+	}
+}
+
+
+
+ROM_unit_production = {
+
+	allowed = {	original_tag = ROM }
+	enable = {
+		is_historical_focus_on = yes
+		is_in_faction_with = GER
+		has_war_with = SOV
+		has_war_with = ENG
+		has_war_with = USA
+
+		date > 1944.1.1
+		date < 1945.3.1
+	}
+	abort_when_not_enabled = yes
+
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 40 
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = -10
+	}
+
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = -100 
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = -100 
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = heavy_fighter
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = -100
+	}
+
+	ai_strategy = { type = equipment_variant_production_factor id = light_tank_chassis value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_tank_chassis value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = heavy_tank_chassis value = -250 }
+
+	ai_strategy = { type = equipment_production_factor id = cas value = -200 }
+	ai_strategy = { type = equipment_variant_production_factor id = small_plane_airframe      value = -100 }
+	ai_strategy = { type = equipment_variant_production_factor id = medium_plane_airframe      value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = large_plane_airframe      value = -250 }
+	ai_strategy = { type = equipment_variant_production_factor id = rocket_interceptor_equipment value = -250 }
+}
+
+
+
+
+ROM_build_more_mil = {
+	allowed = { tag = ROM }
+	enable = {
+		is_historical_focus_on = yes
+		date < 1945.1.1
+		date > 1943.12.30
+		has_war_with = SOV
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 250
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = fuel_silo
+		value = -500
+	}
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 75
+	}
+
+	ai_strategy = {
+		type = dockyard_to_military_factory_ratio
+		value = -5
+	}
+}

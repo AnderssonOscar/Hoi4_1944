@@ -1,0 +1,203 @@
+ALLIED_normandy_port = {
+	if = {
+		limit = { 
+			original_tag = ENG
+			is_in_faction_with = USA
+			has_war_with = GER
+			date > 1944.6.1
+
+			NOT = { has_global_flag = ALLIED_normandy_port } 
+
+			#dont build if we already have:
+			16 = { is_fully_controlled_by = GER } #paris
+			#34 = { is_fully_controlled_by = GER } #liege
+			24 = { is_fully_controlled_by = GER } #tours
+			
+			GER = { NOT = { controls_province = 3579 } }
+			GER = { NOT = { controls_province = 11535 } }
+			USA = { is_ai = yes }
+			ENG = { is_ai = yes }
+			FRA = { is_ai = yes }
+			NOT = { has_global_flag = easy_mode_1944 }
+		}
+
+		15 = {
+			add_building_construction = {
+				type = naval_base
+				level = 3
+				province = 11535
+				instant_build = yes
+			}
+			# add_building_construction = {
+			# 	type = naval_base
+			# 	level = 1
+			# 	province = 3579
+			# 	instant_build = yes
+			# }
+
+
+				add_province_modifier = {
+					static_modifiers = { MOD_prepared_naval_invasion_static_modifier }
+					province = {
+						id = 11535
+						id = 3579
+					}
+				}
+		}
+
+		set_global_flag = ALLIED_normandy_port
+	}
+}
+
+ALLIED_remove_normandy_port = {
+	if = {
+		limit = { 
+			original_tag = ENG
+			is_in_faction_with = USA
+			has_war_with = GER
+			date > 1944.7.1
+			NOT = { has_global_flag = ALLIED_remove_normandy_port } 
+			GER = { controls_province = 3579 }
+			GER = { controls_province = 11535 }
+			USA = { is_ai = yes }
+			ENG = { is_ai = yes }
+			FRA = { is_ai = yes }
+			has_global_flag = ALLIED_normandy_port
+		}
+
+		15 = {
+			remove_building = {
+				type = naval_base
+				province = 11535
+				level = 2
+			}
+
+			# remove_building = {
+			# 	type = naval_base
+			# 	province = 3579
+			# 	level = 1
+			# }
+
+			remove_province_modifier = {
+				static_modifiers = { MOD_prepared_naval_invasion_static_modifier }
+				province = {
+					id = 11535
+					id = 3579
+				}
+			}
+		}
+
+		set_global_flag = ALLIED_remove_normandy_port
+	}
+}
+
+
+
+ALLIED_normandy_invasion = {
+	if = {
+		limit = { 
+			original_tag = ENG
+			is_in_faction_with = USA
+			has_war_with = GER
+			date > 1944.6.1
+
+			NOT = { has_global_flag = ALLIED_normandy_invasion } 
+
+			16 = { is_fully_controlled_by = GER } #paris
+			#34 = { is_fully_controlled_by = GER } #liege
+			24 = { is_fully_controlled_by = GER } #tours
+			22 = { is_fully_controlled_by = GER } #languedoc
+			
+			OR = {
+				GER = { NOT = { controls_province = 485 } }
+				GER = { NOT = { controls_province = 11535 } }
+				GER = { NOT = { controls_province = 11535 } }
+				GER = { NOT = { controls_province = 6599 } }
+				GER = { NOT = { controls_province = 9434 } }
+				GER = { NOT = { controls_province = 3579 } }
+				GER = { NOT = { controls_province = 6449 } }
+			}
+			USA = { is_ai = yes }
+			ENG = { is_ai = yes }
+			FRA = { is_ai = yes }
+			NOT = { has_global_flag = easy_mode_1944 }
+		}
+
+		15 = {
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = USA 
+				days = 30
+			}
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = ENG
+				days = 30
+			}
+		}
+
+
+		30 = {
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = USA 
+				days = 30
+			}
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = ENG
+				days = 30
+			}
+		}
+
+		set_global_flag = ALLIED_normandy_invasion
+	}
+}
+
+
+ALLIED_brittany_invasion = {
+	if = {
+		limit = { 
+			original_tag = ENG
+			is_in_faction_with = USA
+			has_war_with = GER
+			date > 1944.6.1
+
+			NOT = { has_global_flag = ALLIED_brittany_invasion } 
+
+			16 = { is_fully_controlled_by = GER } #paris
+			34 = { is_fully_controlled_by = GER } #liege
+			24 = { is_fully_controlled_by = GER } #tours
+			22 = { is_fully_controlled_by = GER } #languedoc
+			
+
+			NOT = { 14 = { is_fully_controlled_by = GER }}
+
+			USA = { is_ai = yes }
+			ENG = { is_ai = yes }
+			FRA = { is_ai = yes }
+			NOT = { has_global_flag = easy_mode_1944 }
+		}
+
+		14 = {
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = USA 
+				days = 30
+			}
+
+			add_dynamic_modifier = {
+				modifier = ALLIED_prepared_invasion_modifier
+				scope = ENG
+				days = 30
+			}
+		}
+
+		set_global_flag = ALLIED_brittany_invasion
+	}
+}

@@ -1,0 +1,752 @@
+GER_scripted_events_start_effects = {
+	
+	if = {
+		limit = { 
+			date > 1943.12.30
+			NOT = { has_global_flag = GER_scripted_events_start_effects }
+		}
+		set_global_flag = GER_scripted_events_start_effects
+
+			GER = {
+				GER_remove_hess_effects = yes
+				set_country_flag = flight_of_hess
+				GER_remove_todt_effects = yes
+				remove_ideas = PER_persian_german_trade_idea_2
+			}
+
+	813 = {
+		add_province_modifier = {
+			static_modifiers = { GER_festung_static_modifier }
+			province = {
+				id = 4640
+			}
+		}
+	}
+
+	6 = {
+		add_province_modifier = {
+			static_modifiers = { GER_flooded_area_static_modifier }
+			province = {
+				id = 6560
+			}
+		}
+	}
+
+	977 = {
+		add_province_modifier = {
+			static_modifiers = { GER_flooded_area_static_modifier }
+			province = {
+				id = 6598
+			}
+		}
+	}
+
+	28 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 678
+			}
+		}
+	}
+
+	35 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 11456
+			}
+		}
+	}
+
+	7 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 9498
+			}
+		}
+	}
+
+	51 = {
+		add_province_modifier = {
+			static_modifiers = { GER_defence_rhine_defence_static_modifier }
+			province = {
+				id = 3444
+			}
+		}
+	}
+
+	# 15 = {
+	# 	add_province_modifier = {
+	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+	# 		province = {
+	# 			id = 485
+	# 		}
+	# 	}
+	# }
+
+	# 56 = { #wilhelmshaven
+	# 	add_province_modifier = {
+	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+	# 		province = {
+	# 			id = 241
+	# 		}
+	# 	}
+	# }
+
+	# 59 = { #hamburg
+	# 	add_province_modifier = {
+	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+	# 		province = {
+	# 			id = 6325
+	# 		}
+	# 	}
+	# }
+
+	# 99 = { #denmark
+	# 	add_province_modifier = {
+	# 		static_modifiers = { MOD_defence_naval_invasion_static_modifier }
+	# 		province = {
+	# 			id = 399
+	# 		}
+	# 	}
+	# }
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		
+	GER = {
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "Dora"
+				location = 6521
+			}
+
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "Schwerer Gustav"
+				location = 6521
+			}
+
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "Siegfried K"
+				location = 6521
+				}
+			}
+		}
+	}
+}
+
+GER_calculate_casualities_inflicted_on_SOV = {
+	
+	if = {
+		limit = { 
+			tag = GER
+			has_war_with = SOV
+		}
+
+		SOV = { set_temp_variable = { SOV_casualties = casualties_k } }
+		set_variable = { global.SOV_casualties_g = SOV_casualties }
+	}
+}
+
+GER_operation_margarethe = {
+	if = {
+		limit = { 
+			original_tag = GER
+			date > 1944.3.18
+			HUN = { is_ai = yes } 
+			HUN = { is_in_faction_with = GER }
+
+			has_war_with = SOV
+			NOT = { has_global_flag = GER_operation_margarethe } 
+		}
+
+		GER = {
+			country_event = {
+				id = operation.margarethe.1
+			}
+		}
+		set_global_flag = GER_operation_margarethe
+	}
+}
+
+
+GER_dday_events = {
+	
+	if = {
+		limit = {
+			GER = { has_war_with = USA }
+		}
+	
+		if = {
+			limit = {
+				GER = { any_enemy_country = { controls_province = 6449 } } 
+				NOT = { has_global_flag = sabotage_ports_1 }
+				}
+			set_global_flag = sabotage_ports_1
+			GER = { country_event = german.sabotage.ports.1 }
+
+		} else_if = {
+			limit = { 
+				GER = { any_enemy_country = { controls_province = 3552 } } 
+				NOT = { has_global_flag = sabotage_ports_2 }
+				}
+			set_global_flag = sabotage_ports_2
+			GER = { country_event = german.sabotage.ports.2 }
+		
+		} else_if = {
+			limit = { 
+				GER = { any_enemy_country = { controls_province = 6536 } } 
+				NOT = { has_global_flag = sabotage_ports_3 }
+			}
+			set_global_flag = sabotage_ports_3
+			GER = { country_event = german.sabotage.ports.3 }
+		
+		} else_if = {
+			limit = {
+				GER = { any_enemy_country = { controls_province = 9510 } } 
+				NOT = { has_global_flag = sabotage_ports_4 }
+				}
+			set_global_flag = sabotage_ports_4
+			GER = { country_event = german.sabotage.ports.4 }
+		
+		} else_if = {
+			limit = {
+				GER = { any_enemy_country = { controls_province = 6657 } } 
+				NOT = { has_global_flag = sabotage_ports_5 }
+				}
+			set_global_flag = sabotage_ports_5
+			GER = { country_event = german.sabotage.ports.5 }
+		
+		} else_if = {
+			limit = {
+				GER = { any_enemy_country = { controls_province = 9434 } } 
+				NOT = { has_global_flag = sabotage_ports_6 }
+				}
+			set_global_flag = sabotage_ports_6
+			GER = { country_event = german.sabotage.ports.6 }
+
+		} else_if = {
+			limit = { 
+				GER = { any_enemy_country = { controls_province = 575 } } 
+				NOT = { has_global_flag = sabotage_ports_7 }
+			}
+			set_global_flag = sabotage_ports_7
+			GER = { country_event = german.sabotage.ports.7 }
+		
+		} else_if = {
+			limit = { 
+				GER = { any_enemy_country = { controls_province = 6598 } } 
+				NOT = { has_global_flag = sabotage_ports_8 }
+			} 
+			set_global_flag = sabotage_ports_8
+			GER = { country_event = german.sabotage.ports.8 }
+		}
+	}
+}
+
+GER_konigsberg_battle = {
+	if = {
+		limit = { 
+			original_tag = GER
+			date > 1944.1.1
+			GER = {
+				#army_manpower_in_state = { amount > 20000 state = 763 }
+				has_war_with = SOV
+				OR = {
+					NOT = {	controls_province = 11265 } 
+					NOT = {	controls_province = 395 } 
+					NOT = {	controls_province = 6402 } 
+					NOT = {	controls_province = 11245 } 
+				}
+			}
+			NOT = { has_global_flag = GER_konigsberg_battle }
+			GER = { has_completed_focus = GER_festung_cities }
+		}
+
+		GER = {
+			news_event = {
+				id = mod.news.4
+			}
+		}
+		set_global_flag = GER_konigsberg_battle
+	}
+}
+
+GER_paris_lost = {
+	if = {
+		limit = { 
+			original_tag = GER
+			is_in_faction_with = GER
+
+			OR = {
+				has_war_with = FRA
+				has_war_with = ENG
+				has_war_with = USA
+			}
+			NOT = { has_global_flag = GER_paris_lost } 
+
+			NOT = { controls_province = 11506 } 
+			NOT = { controls_province = 9523 } 
+		}
+
+		GER = { news_event = { id = mod.news.6 } }
+		set_global_flag = GER_paris_lost
+	}
+}
+
+
+GER_rhine_defence = {
+	if = {
+		limit = { 
+			tag = GER
+
+			OR = {
+				has_war_with = FRA
+				has_war_with = ENG
+				has_war_with = USA
+			}
+			NOT = { has_global_flag = GER_rhine_defence } 
+
+		GER = {
+			OR = {
+				NOT = { controls_province = 3444 } 
+				NOT = { controls_province = 587 } 
+				NOT = { controls_province = 3547 } 
+				NOT = { controls_province = 11494 } 
+				NOT = { controls_province = 3423 } 
+				NOT = { controls_province = 11560 } 
+				NOT = { controls_province = 3558 } 
+				NOT = { controls_province = 549 } 
+				NOT = { controls_province = 6529 } 
+				NOT = { controls_province = 678 } 
+			}
+		}
+	}
+
+		country_event = { id = rhine.defence.0 }
+		set_global_flag = GER_rhine_defence
+	}
+}
+
+GER_rhine_crossing = {
+	if = {
+		limit = { 
+			tag = GER
+
+			OR = {
+				has_war_with = FRA
+				has_war_with = ENG
+				has_war_with = USA
+			}
+			NOT = { has_global_flag = GER_rhine_crossing } 
+			has_global_flag = GER_rhine_defence
+
+		GER = {
+			54 = { is_fully_controlled_by = GER } #nuremburg
+			52 = { is_fully_controlled_by = GER } #Munich
+			57 = { is_fully_controlled_by = GER } #munster
+
+			OR = {
+				NOT = { controls_province = 3512 } 
+				NOT = { controls_province = 6469 } 
+				NOT = { controls_province = 6570 } 
+				NOT = { controls_province = 529 } 
+				NOT = { controls_province = 6444 } 
+				NOT = { controls_province = 6488 } 
+				NOT = { controls_province = 589 } 
+				NOT = { controls_province = 6568 } 
+				NOT = { controls_province = 3530 } 
+				NOT = { controls_province = 6542 } 
+				NOT = { controls_province = 6712 } 
+				NOT = { controls_province = 11640 } 
+			}
+		}
+	}
+
+		35 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 11456
+				}
+			}
+		}
+
+		51 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 3547
+					id = 587
+					id = 3444
+					id = 529
+				}
+			}
+		}
+
+		55 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 11560
+				}
+			}
+		}
+
+		42 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 3558
+					id = 3423
+					id = 11494
+				}
+			}
+		}
+
+		36 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 9363
+					id = 6241
+				}
+			}
+		}
+
+		28 = {
+			remove_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				province = {
+					id = 549
+					id = 9503
+					id = 6529
+					id = 678
+				}
+			}
+		}
+
+		GER = { news_event = mod.news.7 }
+		set_global_flag = GER_rhine_crossing
+	}
+}
+
+
+GER_estonia_lost = {
+	if = {
+		limit = { 
+			NOT = { has_global_flag = GER_estonia_lost } 
+			tag = GER
+			FIN = { has_government = neutrality }
+			FIN = { has_war_with = SOV }
+			FIN = {	is_ai = yes }
+	
+			has_war_with = SOV
+			FIN = { is_in_faction_with = GER }
+			date > 1944.1.1
+	
+			any_country = {
+				OR = {
+					tag = SOV
+					is_in_faction_with = SOV
+					has_war_with = GER
+				}
+				controls_province = 3152  #tallin
+				#NOT = {	controls_province = 567 }  
+				#NOT = {	controls_province = 83 } 
+		
+				controls_province = 3074  
+				controls_province = 496  
+				controls_province = 11426  
+		
+				controls_province = 4640  #narva
+				controls_province = 11127  #rakvere
+		
+				#NOT = {	controls_province = 3174 } #pärnu
+			}
+		}
+			
+		country_event = { id = finland.estonia.lost.1 }
+		set_global_flag = GER_estonia_lost
+	}
+}
+
+
+GER_fix_ukr_border = {
+	if = {
+		limit = { 
+			NOT = { has_global_flag = GER_fix_ukr_border } 
+			tag = GER
+			has_war_with = SOV
+			RKU = { is_puppet_of = GER }
+			RKU = { has_war_with = SOV }
+	
+			date > 1943.12.31
+			date < 1944.1.8
+	
+			197 = { is_fully_controlled_by = RKU }
+			198 = { is_fully_controlled_by = RKU }
+			199 = { is_fully_controlled_by = RKU }
+		}
+
+		SOV = {
+			if = {
+				limit = {
+					NOT = { controls_province = 11715 }
+					NOT = { controls_province = 11561 }
+					NOT = { controls_province = 6423 }
+					NOT = { controls_province = 9419 }
+				}
+				RKU = {
+					set_province_controller = 11715
+					set_province_controller = 11561
+					set_province_controller = 6423
+					set_province_controller = 9419 
+					}
+				}
+			}
+
+	SOV = {
+		if = {
+			limit = {
+				NOT = { controls_province = 11530 }
+				NOT = { controls_province = 9491 }
+				NOT = { controls_province = 11454 }
+				NOT = { controls_province = 488 }
+				NOT = { controls_province = 3468 }
+				NOT = { controls_province = 6478 }
+			}
+			set_province_controller = 11530
+			set_province_controller = 9491
+			set_province_controller = 11454
+			set_province_controller = 488
+			set_province_controller = 3468
+			set_province_controller = 6478
+			}
+		}
+
+
+		SOV = {
+			if = {
+				limit = {
+					NOT = { controls_province = 550 }
+					NOT = { controls_province = 11490 }
+				}
+				set_province_controller = 550
+				set_province_controller = 11490
+				}
+			}
+	
+		set_global_flag = GER_fix_ukr_border
+	}
+}
+
+
+GER_flood_benelux = {
+	if = {
+		limit = { 
+			original_tag = GER
+			HOL = { is_ai = yes }
+
+			OR = {
+				has_war_with = FRA
+				has_war_with = ENG
+				has_war_with = USA
+			}
+
+			NOT = { has_global_flag = GER_flood_benelux } 
+
+
+			GER = {
+				any_enemy_country = {
+					OR = {
+						controls_province = 6446
+						controls_province = 3576
+						controls_province = 516
+						controls_province = 11519
+						controls_province = 13068	
+					}
+				}
+			}
+			
+		GER = {
+			any_allied_country = {
+				controls_province = 3314 
+				controls_province = 3262 
+				controls_province = 6496 
+				controls_province = 11456 
+				controls_province = 6241 
+			}
+		}
+	}
+
+		country_event = { id = netherlands.flooding.start.0 }
+		set_global_flag = GER_flood_benelux
+	}
+}
+
+
+GER_courland_pocket = {
+	if = {
+		limit = { 
+			tag = GER
+
+			OR = {
+				has_war_with = SOV
+				has_war_with = ENG
+			}
+			#ROM = { NOT = { is_in_faction_with = GER } }
+
+			#NOT = { 766 = { is_fully_controlled_by = ROM } } #bessarabia romania ceded after surrender
+			NOT = { 78 = { is_fully_controlled_by = ROM } } #bessarabia romania ceded after surrender
+
+			NOT = { has_global_flag = GER_courland_pocket } 
+			is_ai = yes
+			
+		GER = {
+			190 = { is_fully_controlled_by = GER } 
+
+			OR = {
+				NOT = { controls_province = 6222 } 
+				NOT = { controls_province = 6342 } 
+				NOT = { controls_province = 6376 } 
+				NOT = { controls_province = 9731 } 
+				NOT = { controls_province = 9499 } 
+			}
+		}
+	}
+
+		add_equipment_to_stockpile = { 
+			type = convoy_1
+			amount = 100
+		}
+
+		190 = {
+			add_dynamic_modifier = {
+				modifier = GER_courland_pocket_modifier
+				scope = GER 
+				days = 120
+			}
+		}
+
+		809 = {
+			add_building_construction = {
+				type = bunker
+				level = 8
+				province = 3525
+				instant_build = yes
+			}
+
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				days = 200
+				province = {
+					id = 3525
+				}
+			}
+
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				days = 200
+				province = {
+					id = 3525
+				}
+			}
+		}
+
+		190 = {
+			add_building_construction = {
+				type = bunker
+				level = 8
+				province = 9262
+				instant_build = yes
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 7
+				province = 11246
+				instant_build = yes
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 7
+				province = 3194
+				instant_build = yes
+			}
+		}
+
+
+
+
+		GER = {
+
+			if = {
+				limit = {
+					NOT = { GER = { has_template = "Ersatz-division" } }
+				}
+			
+
+			division_template = {
+				name = "Ersatz-division"
+				division_names_group = GER_ERSATZ_01
+			
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					anti_air = { x = 0 y = 1 }
+				}
+			}
+		}
+
+			190 = {
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.61 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.53 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.23 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.53 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.23 start_equipment_factor = 1" 
+					owner = GER
+				}
+			}
+		}
+
+
+
+
+		set_global_flag = GER_courland_pocket
+	}
+}

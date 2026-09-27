@@ -1,0 +1,130 @@
+war_measures = {
+
+	BUL_surrender_soviet = {
+
+		icon = generic_prepare_civil_war
+
+			allowed = {
+			
+				tag = BUL	
+			}
+
+		available = {
+			has_war_with = SOV
+			is_in_faction_with = GER
+			surrender_progress > 0.01
+
+			date > 1944.7.10
+			date < 1946.1.1
+
+			#has_government = fascism
+
+			any_country = {
+				is_faction_leader = yes
+				has_war_with = BUL
+				OR = {
+					has_government = communism
+					original_tag = SOV
+				}
+			}
+		}
+
+		visible = {
+			has_war_with = SOV
+			is_puppet = no
+			has_capitulated = no
+			is_ai = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 6
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war_with = ROM
+				surrender_progress > 0.01
+				factor = 100
+			}
+		}
+
+
+	complete_effect = {
+			GER = { country_event = bulgaria.switch.side.1 }
+		}
+
+		remove_effect = {
+			every_country = {
+				limit = {
+					 has_war_with = BUL 
+				OR = { 
+					is_faction_leader = yes 
+					is_in_faction = no
+				}
+			 }
+				white_peace = BUL 
+			}
+
+			GER = { remove_from_faction = BUL }
+
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
+				}
+				SOV = {
+					set_autonomy = {
+						target = BUL
+						autonomous_state = autonomy_integrated_puppet
+						end_wars  = no 
+						end_civil_wars = no
+					}
+				}
+				else = {
+					SOV = {
+					set_autonomy = {
+							target = BUL
+							autonomous_state = autonomy_puppet
+							end_wars  = no 
+							end_civil_wars = no
+						}
+					}
+				}
+			}
+
+			set_politics = {
+				ruling_party = communism
+				last_election = "1940.12.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+
+			set_popularities = {
+				neutrality = 30
+				democratic = 10
+				fascism = 20
+				communism = 40
+			}
+
+			add_timed_idea = { idea = mod_switched_side days = 60 }
+
+			SOV = { add_to_faction = BUL }
+
+		BUL = {
+			
+
+			add_to_war = {
+				targeted_alliance = SOV
+				enemy = GER
+				}
+			}
+
+			set_cosmetic_tag = BUL_communism
+			BUL = { white_peace = FIN }
+		}
+	}
+
+}
+
+

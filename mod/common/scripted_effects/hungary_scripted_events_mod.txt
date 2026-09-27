@@ -1,0 +1,15 @@
+HUN_budapest_lost = {
+	if = {
+		limit = { 
+			original_tag = HUN
+			is_in_faction_with = GER
+			has_war_with = SOV
+			NOT = { has_global_flag = GER_budapest_lost } 
+			NOT = { controls_province = 9660 } 
+		}
+
+	#	news_event = 
+		set_global_flag = GER_budapest_lost
+	}
+}
+

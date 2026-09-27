@@ -1,0 +1,14 @@
+﻿
+air_wings = {
+	111 = { 														# Helsinki
+		CAS_equipment_1 = { owner = "FIN" amount = 75 }				# 1, 4 Bomber Groups -- Fokker C.Xs, Blenheim Is
+		fighter_equipment_0 = { owner = "FIN" amount = 65 }			# 2 Fighter Group -- Fokker D.XXIs, Bristol Bulldogs
+		fighter_equipment_1 = { owner = "FIN" creator = "GER" version_name = "Bf 109 E" amount = 275 }
+
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+
+}

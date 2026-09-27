@@ -1,0 +1,171 @@
+﻿					
+			
+			
+air_wings = {
+
+	2 = {
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 500 }
+	}
+	849 = {
+		tac_bomber_equipment_2 = {
+			owner = "USA"
+			amount = 250
+		}
+	}
+	127 = {
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
+		tac_bomber_equipment_2 = {
+			owner = "USA"
+			amount = 500
+		}
+	}
+
+	366 = {
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 500 }
+
+		tac_bomber_equipment_2 = {
+			owner = "USA"
+			amount = 500
+		}
+	}
+	
+	129 = {
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 250 }
+		
+
+		nav_bomber_equipment_2 = {
+			owner = "USA"
+			amount = 500
+		}
+	}
+	357 = {
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
+		tac_bomber_equipment_2 = {
+			owner = "USA"
+			amount = 1000
+		}
+	}
+
+	358 = {
+		CAS_equipment_2 = {
+			owner = "USA"
+			amount = 1000
+		}
+	}
+
+	523 = {
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 250 }
+
+	}
+	633 = {
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
+		tac_bomber_equipment_2 = {
+			owner = "USA"
+			amount = 100
+		}
+	}
+	737 = {
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
+	}
+	633 = {
+		fighter_equipment_1 = {
+			owner = "USA"
+			amount = 1000
+		}
+		CAS_equipment_2 = {
+			owner = "USA"
+			amount = 500
+		}
+	}
+	629 = {
+		fighter_equipment_2 = { owner = "USA" version_name = "P-39 Airacobra A" amount = 1000 }
+
+		CAS_equipment_2 = {
+			owner = "USA"
+			amount = 500
+		}
+	}
+
+	##ENGLAND
+		120 = {
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 1000 }
+
+		CAS_equipment_2 = {
+			owner = "USA"
+			amount = 250
+		}
+	}
+
+	132 = {
+		fighter_equipment_3 = { owner = "USA" version_name = "P-51 Mustang A" amount = 500 }
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }
+		strat_bomber_equipment_2 = { owner = "USA" version_name = "B-17 Flying Fortress A" amount = 100 }
+		transport_plane_equipment_1 = { owner = "USA" amount = 900 }
+	}
+
+
+	"USS Bunker Hill" = {
+		cv_fighter_equipment_1 =  { owner = "USA" amount = 10 }				# F3F Grumman
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 5 }					# SB2U Vindicator
+		cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 10 }			# TBD Devastator
+	}
+	"USS Saratoga" = {
+		cv_fighter_equipment_1 =  { owner = "USA" amount = 10 }				# F3F Grumman
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 5 }					# SB2U Vindicator
+		cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 10 }			# TBD Devastator
+	}
+	"USS Enterprise" = {
+		cv_fighter_equipment_1 =  { owner = "USA" amount = 10 }				# F3F Grumman
+		cv_fighter_equipment_1 =  { owner = "USA" amount = 2 }				# F3F Grumman
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
+		cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 10 }			# TBD Devastator
+		cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 2 }			# TBD Devastator
+	}
+	"USS Ranger" = {
+		cv_fighter_equipment_1 =  { owner = "USA" amount = 10 }				# F3F Grumman
+		cv_fighter_equipment_1 =  { owner = "USA" amount = 8 }				# F3F Grumman
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
+		cv_CAS_equipment_1 =  { owner = "USA" amount = 8 }					# SB2U Vindicator
+		cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 10 }			# TBD Devastator
+		cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 8 }			# TBD Devastator
+	}
+}
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = cv_fighter_equipment_1
+			creator = "USA" 
+		}
+		requested_factories = 1
+		progress = 0.15
+		efficiency = 100
+	}
+}
+#####################

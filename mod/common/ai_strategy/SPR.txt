@@ -1,0 +1,43 @@
+
+SPR_block_JAP_alliance = {
+	allowed = { 
+		OR = {
+			tag = SPR
+		}
+	 }
+	 
+	enable = {
+		date > 1944.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "GER"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "JAP"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "MEN"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "MAN"
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "SIA"
+		value = -1000
+	}
+}

@@ -1,0 +1,319 @@
+CHI_scripted_events_start_effects = {
+	
+	if = {
+		limit = { 
+			date > 1943.12.30
+			JAP = { is_ai = no}
+			NOT = { has_global_flag = CHI_scripted_events_start_effects }
+		}
+		set_global_flag = CHI_scripted_events_start_effects
+
+	CHI = {
+
+		add_command_power = 80
+		army_experience = 50
+
+		remove_ideas = {
+			CHI_army_corruption_2
+			CHI_incompetent_officers
+		}
+
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 65000
+		}
+
+		add_equipment_to_stockpile = {
+            type = support_equipment_1
+            amount = 2500
+        }
+
+		if = {
+			limit = {
+				NOT = { GER = { has_template = "Sanjiao Jun" } }
+			}
+			
+			division_template = {
+				name = "Sanjiao Jun"
+				division_names_group = CHI_INF_01
+			
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+					priority = 0
+			}
+		}
+
+			605 = {
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.06 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.03 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.06 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.06 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.03 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.06 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.05 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.06 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.03 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.04 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.06 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.05 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.04 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.06 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.03 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.04 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.03 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.04 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.04 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.03 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.04 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.04 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.02 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.03 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.04 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+
+				create_unit = {
+					division = "name = \"Juntuán\" division_template = \"Sanjiao Jun\" start_experience_factor = 0.01 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_0 = { owner = \"CHI\" } }" 
+					owner = CHI
+				}
+			}
+		}
+
+
+
+		602 = {
+			add_province_modifier = {
+				static_modifiers = { MOD_good_defence_posistion_static_modifier }
+				province = {
+					id = 7097
+					id = 7159
+				}
+			}
+		}
+	}
+}

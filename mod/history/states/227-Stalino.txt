@@ -1,0 +1,38 @@
+
+state={
+	id=227
+	name="STATE_227"
+	manpower = 3767336
+
+	resources = {
+		coal = 144 # initial distribution #1944 was 82
+	}
+	
+	state_category = city
+
+	history={
+		owner = SOV
+		buildings = {
+			infrastructure = 3 #was: 5
+		}
+		victory_points = {
+			6474 10
+		}
+		add_core_of = SOV
+		add_core_of = UKR
+
+		 1943.12.30 = {
+            buildings = {
+                anti_air_building = 2
+                radar_station = 2
+				air_base = 5
+			}
+		 }
+	}
+
+	provinces={
+		502 3421 3449 3466 3479 3491 6420 6474 6493 6776 
+	}
+
+	local_supplies=10.0 
+}

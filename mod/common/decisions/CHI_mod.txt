@@ -1,0 +1,93 @@
+war_measures = {
+
+	CHI_request_supply_usa = {
+
+		icon = generic_prepare_civil_war
+
+			allowed = {
+				tag = CHI	
+			}
+
+		available = {
+
+			CHI = { has_government = neutrality }
+
+			CHI = {	controls_province = 6999}
+			OR = {
+				CHI = {	controls_province = 1319}
+				YUN = {	controls_province = 1319}
+			}
+			RAJ = {controls_province = 4245}
+		}
+
+		visible = {
+			has_war_with = JAP
+			RAJ = { has_war_with = JAP }
+			CHI = { has_war_with = JAP }
+			is_ai = yes
+
+			NOT = { 
+				CHI = { has_war_with = RAJ } 
+				CHI = { has_war_with = USA } 
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 30
+		days_re_enable = 0
+
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				CHI = { surrender_progress < 0.1 }
+				factor = -100
+			}
+		}
+
+		complete_effect = {}
+
+	remove_effect = {
+
+			set_temp_variable = { mod_start_date_days = 709560 } #1944.1.1
+			set_temp_variable = { days = global.num_days }
+
+			subtract_from_temp_variable = { days = mod_start_date_days }
+
+			clamp_temp_variable = {
+				var = days
+				min = 0
+				max = 330
+			}
+
+			set_temp_variable = { inf_eq = 63.7 }
+			multiply_temp_variable = { inf_eq = days }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_2
+				amount = inf_eq 
+				producer = USA
+			}
+
+			set_temp_variable = { support_eq = 2.9 }
+			multiply_temp_variable = { support_eq = days }
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = support_eq
+				producer = USA
+			}
+
+			set_temp_variable = { art_eq = 0.81 }
+			multiply_temp_variable = { art_eq = days }
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_2
+				amount = art_eq
+				producer = USA
+		}
+	}
+	}
+}
+
+
+
+

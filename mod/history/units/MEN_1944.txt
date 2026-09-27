@@ -1,0 +1,128 @@
+﻿division_template = {
+	name = "Juntuán"				# Represents a corps of 3 NRA divisions (2 brigades of 2 regiments each)
+	division_names_group = MEN_INF_01
+									# Militia-level training and equipment
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Qibing Jun"			# Cavalry Division
+	division_names_group = MEN_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Mengjiang Juntuán"				# Represents a corps of 3 NRA divisions (2 brigades of 2 regiments each)
+	division_names_group = MEN_INF_01
+									# Militia-level training and equipment
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+
+##### OOB #####
+units = {
+	division = { # "1 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 828
+		division_template = "Juntuán"		
+	}
+	division = { # "1 Qibing Jun"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 1590
+		division_template = "Qibing Jun"
+	}
+	division = { # "2 Qibing Jun"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 828
+		division_template = "Qibing Jun"
+	}
+
+		division = { # "2 Qibing Jun"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 4572
+		division_template = "Qibing Jun"
+	}
+
+	division = {	
+		location = 12880
+		division_template = "Juntuán"
+		start_experience_factor = 0.08
+		start_equipment_factor = 0.94
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "CHI" } }
+	}
+
+	division = {	
+		location = 10629
+		division_template = "Juntuán"
+		start_experience_factor = 0.22
+		start_equipment_factor = 0.71
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "JAP" } }
+	}
+
+	division = {	
+		location = 1959
+		division_template = "Juntuán"
+		start_experience_factor = 0.05
+		start_equipment_factor = 0.76
+		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "CHI" } }
+	}
+
+	division = {	
+		location = 10854
+		division_template = "Juntuán"
+		start_experience_factor = 0.18
+		start_equipment_factor = 0.86
+		force_equipment_variants = { infantry_equipment_1 = { owner = "JAP" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
+	}
+
+}
+
+
+########## STARTING PRODUCTION ##########
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "MEN"
+		}
+		requested_factories = 1
+		progress = 0.52
+		efficiency = 100
+	}
+}

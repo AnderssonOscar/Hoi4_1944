@@ -1,0 +1,470 @@
+
+# operations = {
+
+# 	GER_operation_margarethe = {
+
+# 		icon = generic_operation
+
+# 		allowed = {
+# 			tag = GER
+# 		}
+
+# 		visible = { 
+# 			HUN = { has_government = neutrality }
+# 			HUN = {has_war_with = SOV} 
+# 			NOT = {has_war_with = HUN}
+# 			HUN = { is_ai = yes }
+# 			date > 1999.1.1
+# 		}
+
+# 		available = {
+# 			43 = {is_fully_controlled_by = HUN}
+# 			date > 1944.3.15
+# 		}
+# 		cost = 0
+# 		days_remove = 3
+# 		fire_only_once = yes
+# 		days_mission_timeout = 180
+
+# 		is_good = no
+
+# 		timeout_effect = {
+# 			add_political_power = -100
+# 			add_war_support = -0.1
+# 		}
+
+# 		remove_effect = {
+
+# 			HUN = {
+# 				set_politics = {
+# 					ruling_party = fascism
+# 					last_election = "1944.3.1"
+# 					election_frequency = 48
+# 					elections_allowed = no
+# 				}
+
+				
+# 				set_popularities = {
+# 					neutrality = 30
+# 					democratic = 10
+# 					fascism = 60
+# 					communism = 0
+# 				}
+
+
+# 				GER = {
+# 					#puppet = PREV
+# 					set_autonomy = { target = PREV autonomy_state = autonomy_satellite }
+# 				}
+
+# 				#GER = { country_event = operation.margarethe.1 }
+# 				#custom_effect_tooltip = operation.margarethe.decision.1.d
+# 		}
+# 	}
+
+# 		ai_will_do = {
+# 			factor = 3
+
+# 			modifier = {
+# 				date > 1944.3.16
+# 				factor = 100
+# 			}
+# 		}
+# 	}
+	
+# }
+
+	
+special_projects = {
+
+	GER_rocket_bases_1 = {
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			29 = {is_fully_controlled_by = GER}
+			date > 1944.3.1
+			has_war_with = ENG
+		}
+
+
+		visible = {
+			has_tech = rocket_engines
+			has_dlc = "Gotterdammerung"
+		}  #improved_rocket_engines
+
+		cost = 25
+		ai_will_do = {
+		factor = 1
+			modifier = {
+				date > 1944.3.1
+				factor = 100
+			}
+		}
+
+		cancel_trigger = {
+			NOT = { 29 = {is_fully_controlled_by = GER} }
+		  }
+
+		fire_only_once = yes
+		days_remove = 14
+		remove_effect = {
+
+			add_timed_idea = {
+				idea = GER_rocketry_idea
+				days = 365
+			}
+
+			add_timed_idea = {
+				idea = GER_rocket_production
+				days = 365
+			}
+
+	
+			if = {
+				limit = {
+					not = { has_tech = sp_rockets_rocket_bomber }
+				}
+				set_technology = {
+					sp_rockets_rocket_bomber = 1
+				}
+			}
+			29 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = rocket_site 
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			add_equipment_to_stockpile = {
+				type = guided_missile_equipment
+				amount = 300
+			}
+		}
+
+		complete_effect = { 
+			
+		 }
+	}
+
+
+	
+	GER_rocket_bases_2 = {
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			57 = {is_fully_controlled_by = GER}
+			date > 1944.6.1
+			has_war_with = ENG
+		}
+
+		visible = {
+			 has_tech = rocket_engines
+			 has_dlc = "Gotterdammerung"
+			}  
+
+		cost = 75
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				51 = {is_fully_controlled_by = GER}
+				factor = 100
+			}
+		}
+
+		cancel_trigger = {
+			NOT = { 57 = {is_fully_controlled_by = GER} }
+		  }
+
+		fire_only_once = yes
+		days_remove = 14
+		remove_effect = {
+
+				complete_special_project = {
+					project = sp:sp_rockets_ballistic_missile
+					scientist = GER_von_braun
+					state = 62
+				}
+
+			if = {
+				limit = {
+					not = { has_tech = sp_rockets_improved_rocket_bomber }
+				}
+				set_technology = {
+					sp_rockets_improved_rocket_bomber = 1
+				}
+			}
+
+			add_equipment_to_stockpile = {
+				type = ballistic_missile_equipment
+				amount = 200
+			}
+
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = rocket_site 
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		complete_effect = { 
+			
+		 }
+	}
+
+
+
+	GER_oder_neisse_defence = {
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			OR = {
+				NOT = { 87 = { is_fully_controlled_by = GER } }
+				NOT = { 807 = { is_fully_controlled_by = GER } }
+				NOT = { 86 = { is_fully_controlled_by = GER } }
+				NOT = { 63 = { is_fully_controlled_by = GER } }
+				NOT = { 10 = { is_fully_controlled_by = GER } }
+			}
+		}
+
+		visible = { 
+			date > 1944.1.1
+			62 = {is_fully_controlled_by = GER}
+			64 = {is_fully_controlled_by = GER}
+			65 = {is_fully_controlled_by = GER}
+			GER = { controls_province = 6282 } #stettin
+			GER = { controls_province = 3572 }
+
+			has_war_with = SOV
+		 } 
+
+		cost = 75
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					NOT = { 86 = { is_fully_controlled_by = GER } }
+					NOT = { 63 = { is_fully_controlled_by = GER } }
+				}
+				factor = 100
+			}
+		}
+
+		cancel_trigger = {
+				NOT = { 62 = {is_fully_controlled_by = GER} }
+				NOT = { 64 = {is_fully_controlled_by = GER} }
+				NOT = { 65 = {is_fully_controlled_by = GER} }
+				NOT = { GER = { controls_province = 6282 } } #stettin
+				#NOT = { GER = { controls_province = 3572 } }
+		  }
+
+		fire_only_once = yes
+		days_remove = 7
+		remove_effect = {
+
+			if = {	limit = {	GER = { controls_province = 6282 }	} #stettin
+			62 = { 
+				add_building_construction = {
+						type = bunker
+						level = 5
+						province = 6282
+						instant_build = yes
+					}
+				}
+			}
+
+			if = {	limit = {	GER = { controls_province = 3207 }	}
+			62 = { 
+				add_building_construction = {
+						type = bunker
+						level = 4
+						province = 3207
+						instant_build = yes
+					}
+				}
+			}
+
+			if = {	limit = {	GER = { controls_province = 9496 }	}
+			64 = { 
+				add_building_construction = {
+						type = bunker
+						level = 4
+						province = 9496
+						instant_build = yes
+					}
+				}
+			}
+
+			if = {	limit = {	GER = { controls_province = 3572 }	}
+			68 = { 
+				add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3572
+						instant_build = yes
+					}
+				}
+			}
+
+			if = {	limit = {	GER = { controls_province = 9535 }	}
+			65 = { 
+				add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9535
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+		complete_effect = { 
+			#add_manpower = -6500
+		 }
+	}
+}
+	
+
+
+
+
+
+
+
+
+
+war_measures = {
+
+	emergency_reserves = {
+		icon = generic_prepare_civil_war
+			allowed = {
+				tag = GER
+			}
+
+		available = {
+
+			64 = {is_fully_controlled_by = GER}
+
+		}
+	
+
+		visible = {
+			has_war_with = ENG
+			has_war_with = SOV
+
+			surrender_progress > 0.2
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				surrender_progress > 0.01
+				factor = 100
+			}
+		}
+
+		complete_effect = {
+
+			add_stability = -0.05
+
+			if = {
+				limit = {
+					NOT = { GER = { has_template = "Ersatz-division" } }
+				}
+
+			division_template = {
+				name = "Ersatz-division"
+				division_names_group = GER_ERSATZ_01
+			
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					anti_air = { x = 0 y = 1 }
+				}
+			}
+		}
+
+			64 = {
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.23 start_equipment_factor = 0.59 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.17 start_equipment_factor = 0.91 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.03 start_equipment_factor = 0.82 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.20 start_equipment_factor = 0.71 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.29 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.19 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.16 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.09 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.03 start_equipment_factor = 0.89 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.28 start_equipment_factor = 0.94 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.11 start_equipment_factor = 0.79 force_equipment_variants = { infantry_equipment_2 = { owner = \"GER\" } }" 
+					owner = GER
+				}
+			}
+		}
+	}
+}

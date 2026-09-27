@@ -1,0 +1,32 @@
+JAP_mod_operations_cat = { 
+	picture = GFX_decision_cat_picture_JAP_mod
+	icon = GFX_decision_category_FIN_motti_tactics
+
+	allowed = {
+		original_tag = JAP
+	}
+
+	priority = {
+		base = 7
+	}
+
+	visible = {
+	}
+}
+
+
+JAP_mod_homefront_cat = { 
+	picture = GFX_decision_transport_cat_picture_JAP_mod
+	icon = generic_economy
+
+	allowed = {
+		original_tag = JAP
+	}
+
+	priority = {
+		base = 8
+	}
+
+	visible = {
+	}
+}

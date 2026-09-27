@@ -1,0 +1,51 @@
+MOD_start_update = {
+	#GRE_setup_puppet = yes
+	
+	GER_scripted_events_start_effects = yes
+	resistance_scripted_events_start_effects = yes
+	JAP_scripted_events_start_effects = yes
+	HOL_setup_puppet = yes
+	HOL_setup_resistance = yes
+	ITA_start_setup = yes
+	CHI_scripted_events_start_effects = yes
+	GER_start_effects = yes
+	GER_give_extra_troops_1944 = yes
+	ROM_start_setup = yes
+}
+
+MOD_daily_update2 = {
+	JAP_start_effects = yes
+	JAP_ichi_go_1_start_script = yes
+	JAP_ichi_go_2_start_script = yes
+	JAP_ichi_go_3_start_script = yes
+	JAP_ichi_go_failed_modifiers = yes
+
+	USA_give_nukes = yes
+}
+
+MOD_daily_update = {
+	GER_calculate_casualities_inflicted_on_SOV = yes
+	GER_dday_events = yes
+	GER_operation_margarethe = yes
+	GER_flood_benelux = yes
+	GER_rhine_crossing = yes
+	GER_rhine_defence = yes
+	GER_estonia_lost = yes
+	GER_paris_lost = yes
+	GER_konigsberg_battle = yes
+	ALLIED_normandy_invasion = yes
+	ALLIED_brittany_invasion = yes
+	ALLIED_normandy_port = yes
+	ALLIED_remove_normandy_port = yes
+	GER_fix_ukr_border = yes
+	GER_courland_pocket = yes
+	ITA_slowdown_allied_advance = yes
+
+
+	SOV_start_effects = yes
+
+	ALL_DDAY_FAILED = yes
+	ALL_NORWAY_UNDEFENDED = yes
+
+	#SWE_join_FIN = yes
+}

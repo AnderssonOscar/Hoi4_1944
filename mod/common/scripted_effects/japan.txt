@@ -1,0 +1,18 @@
+JAP_start_effects = {
+	
+	if = {
+		limit = { 
+			tag = JAP
+			#is_ai = yes
+			date > 1944.1.1
+			NOT = { has_global_flag = JAP_start_effects }
+		}
+		set_global_flag = JAP_start_effects
+
+		remove_ideas = {
+			JAP_tora_tora_tora_idea
+			JAP_first_air_fleet
+		}
+
+	}
+}

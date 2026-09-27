@@ -1,0 +1,330 @@
+###########################
+# 1944 News
+###########################
+
+add_namespace = mod.news
+
+# D-DAY
+news_event = {
+	id = mod.news.1
+	title = "D-Day"
+	desc = mod.news.1.d
+	picture = GFX_dday_news
+
+	immediate = {
+		set_global_flag = dday_news
+	}
+
+	trigger = {  #trigger dont want to work
+		NOT = { has_global_flag = dday_news }
+			date > 1944.6.1
+				OR = {
+					NOT = { 15 = { is_fully_controlled_by = GER } }
+					NOT = { 29 = { is_fully_controlled_by = GER } }
+					NOT = { 14 = { is_fully_controlled_by = GER } }
+					NOT = { 6 = { is_fully_controlled_by = GER } }
+				}
+		}
+
+	major = yes 
+
+	desc = {
+		text = mod.news.1.d
+		trigger = {
+				OR = {
+					is_in_faction_with = ENG
+					has_war = no
+				}
+		}
+	}
+
+	desc = {
+		text = "A massive naval armada has helped the Allied forces to secure a foothold on the beaches of france, we need to push them back into the ocean."
+		trigger = {
+				is_in_faction_with = GER
+		}
+	}
+	
+	option = {
+		name = "OK"
+	}
+}
+
+# operation panzerfaust
+news_event = {
+	id = mod.news.2
+	title = hungary.operation.panzerfaust.1.t
+	desc = mod.news.2.d
+	picture = GFX_operation_panzerfaust
+	
+	fire_for_sender = yes
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = "OK"
+	}
+}
+
+# operation margarethe
+news_event = {
+	id = mod.news.3
+	title = "Operation Margarethe"
+	desc = mod.news.3.d
+	picture = GFX_operation_margarethe
+	
+	fire_for_sender = yes
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = "OK"
+	}
+}
+
+
+news_event = {
+	id = mod.news.4
+	title = "Battle of Königsberg"
+	desc = mod.news.4.d
+	picture = GFX_konigsberg_defence
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = konigsberg_battle
+
+hidden_effect = {
+		GER = {
+
+			if = {
+				limit = {
+					NOT = { GER = { has_template = "Ersatz-division" } }
+				}
+			
+
+			division_template = {
+				name = "Ersatz-division"
+				division_names_group = GER_ERSATZ_01
+			
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					anti_air = { x = 0 y = 1 }
+				}
+			}
+		}
+
+			763 = {
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
+					owner = GER
+				}
+
+				create_unit = {
+					division = "name = \"Ersatz-division\" division_template = \"Ersatz-division\" start_experience_factor = 0.43 start_equipment_factor = 1" 
+					owner = GER
+				}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "OK"
+	}
+}
+
+news_event = {
+	id = mod.news.5
+	title = "Königsberg in Ruins"
+	desc = mod.news.5.d
+	picture = GFX_konigsberg_ruins
+	
+	immediate = {
+		set_global_flag = konigsberg_ruins
+
+	hidden_effect = {
+		GER = { add_war_support = -0.05 }
+
+		763 = { 
+
+		remove_building = {
+			type = bunker
+			province = 6332
+			level = 5
+		}
+
+		remove_building = {
+			type = bunker
+			province = 13372
+			level = 5
+		}
+
+		remove_building = {
+			type = bunker
+			province = 13371
+			level = 5
+		}
+
+		remove_building = {
+			type = bunker
+			province = 13370
+			level = 5
+		}
+
+		
+
+		remove_province_modifier = {
+			static_modifiers = {GER_festung_static_modifier}
+			province = {
+				id = 6332
+				# id = 13372
+				# id = 13371
+				# id = 13370
+				}
+			}
+		}
+	}
+}
+
+	trigger = {
+		NOT = { has_global_flag = konigsberg_ruins }
+		date > 1944.1.1
+		is_in_faction_with = GER
+		GER = {
+			has_war_with = SOV
+			NOT = {	controls_province = 6332 } 
+		}
+	}
+	major = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "OK"
+	}
+}
+
+
+
+#paris liberated
+news_event = {
+	id = mod.news.6
+	title = mod.news.6.t
+	desc = mod.news.6.d
+	picture = GFX_paris_liberated
+	
+	#fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		
+		hidden_effect = {
+			GER = { add_war_support = -0.05 }
+		}
+	}
+
+	major = yes
+	
+	option = {
+		name = "OK"
+	}
+}
+
+#rhine crossed
+news_event = {
+	id = mod.news.7
+	title = mod.news.7.t
+	desc = mod.news.7.d
+	picture = GFX_rhine_crossing
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+		}
+	}
+
+	major = yes
+	
+	option = {
+		name = "OK"
+	}
+}
+
+#mussolini dead
+news_event = {
+	id = mod.news.8
+	title = mod.news.8.t
+	desc = mod.news.8.d
+	picture = GFX_rhine_crossing
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+		}
+	}
+
+	major = yes
+	
+	option = {
+		name = "OK"
+	}
+}
+
+
+#soviet invasion of manchuria
+news_event = {
+	id = mod.news.9
+	title = mod.news.9.t
+	desc = mod.news.9.d
+	picture = GFX_soviet_invasion_manchuria
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+		}
+	}
+
+	major = yes
+	
+	option = {
+		name = "OK"
+	}
+}

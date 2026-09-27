@@ -1,0 +1,93 @@
+SAF_help_in_italy = {
+
+	allowed = {
+		original_tag = SAF
+	}
+
+	enable = {
+		date > 1943.12.31
+		surrender_progress < 0.01
+		is_in_faction_with = USA
+		has_war_with = GER
+		has_war_with = ITA
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = ITA}
+		value = 700
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = italy
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = USA
+		value = 100
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GER }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = ITA }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = CRO }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = GRE }
+		value = -500
+	}
+}
+
+
+
+
+
+SAF_dont_rush_yet = {
+
+	allowed = {
+		original_tag = SAF
+	}
+
+	enable = {
+		has_war_with = ITA
+		has_war_with = GER
+
+		OR = {
+			date > 1945.4.1
+			date < 1944.5.30
+			NOT = { 161 = {is_fully_controlled_by = ITA} } #north italy
+			NOT = { 162 = {is_fully_controlled_by = ITA} } #north italy
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = ITA
+		}
+
+		ordertype = front
+		execute_order = yes
+		execution_type = careful
+	}
+}

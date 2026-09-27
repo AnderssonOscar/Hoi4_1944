@@ -1,0 +1,53 @@
+﻿
+### Flygvapnet ###
+air_wings = {
+	141 = {
+		medium_plane_airframe_0 = { owner = "SWE" creator = "GER" version_name = "Ju 86"  amount = 70}			# 1. Bombflyggruppen -- Junkers 86K
+
+		small_plane_cas_airframe_0 = { owner = "SWE" creator = "ENG" version_name = "Fairey Gordon" amount = 36}					# 4. Bombflyggruppen -- Hawker Hart
+		small_plane_airframe_0 =  { owner = "SWE" creator = "ENG" version_name = "Gloster Gladiator" amount = 55}			# 8. Jaktflyggruppen -- Gloster Gladiators
+
+		small_plane_cas_airframe_1 = { owner = "SWE" creator = "USA" version_name = "A-17" amount = 103} #103
+		small_plane_airframe_1 =  { owner = "SWE" creator = "USA" version_name = "P-35A" amount = 60}
+
+		medium_plane_airframe_1 = { owner = "SWE" creator = "ITA" version_name = "Ca.313" amount = 86}	
+		small_plane_airframe_0 = { owner = "SWE" creator = "ITA" version_name = "CR.42" amount = 72 }	
+
+		small_plane_cas_airframe_1 = { owner = "SWE" version_name = "Saab 17" amount = 273} #324 in august 1944
+		small_plane_airframe_2 = { owner = "SWE" version_name = "FFVS J 22" amount = 74 }	#198 in 1946
+	}
+
+	140 = {
+		small_plane_airframe_1 = { owner = "SWE" creator = "ITA" version_name = "Re.2000" amount = 60 }	
+		small_plane_naval_bomber_airframe_1 =  { owner = "SWE" amount = 12 creator = "GER" version_name = "Do 22"}			# 2. Torpedflyggruppen -- Heinkel He 115
+	}
+}
+
+	#########################
+	## STARTING PRODUCTION ##
+	#########################
+	instant_effect = {
+	
+		add_equipment_production = {
+			equipment = {
+				type = small_plane_airframe_2
+				creator = "SWE" 
+				version_name = "FFVS J 22"
+			}
+			requested_factories = 3
+			progress = 0.15
+			efficiency = 73
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = small_plane_cas_airframe_1
+				creator = "SWE" 
+				version_name = "Saab 17"
+			}
+			requested_factories = 1
+			progress = 0.15
+			efficiency = 81
+		}
+	}
+		#####################

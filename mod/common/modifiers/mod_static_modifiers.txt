@@ -1,0 +1,44 @@
+GER_festung_static_modifier = {
+	army_defence_factor = 0.2
+	max_dig_in_factor = 0.75
+	supply_consumption_factor = -0.25
+}
+
+GER_flooded_area_static_modifier = {
+	army_defence_factor = 0.25
+	max_dig_in_factor = 0.5
+	truck_attrition_factor = 0.25
+	army_speed_factor = -0.25
+}
+
+GER_defence_rhine_defence_static_modifier = {
+	#max_dig_in_factor = 0.25
+	river_crossing_factor = 0.5 #just modifies troop speed
+}
+
+JAP_offensive_static_modifier = {
+	#army_attack_factor = 0.35
+	army_defence_factor = -0.75
+	army_speed_factor = 0.2
+}
+
+MOD_defence_naval_invasion_static_modifier = {
+	naval_invasion_penalty = 2.5
+}
+
+MOD_good_defence_posistion_static_modifier = {
+	max_dig_in_factor = 0.5
+	army_defence_factor = 0.25
+}
+
+JAP_good_defence_posistion_static_modifier = {
+	max_dig_in_factor = 0.5
+	army_defence_factor = 0.5
+	army_speed_factor = -0.5
+}
+
+MOD_prepared_naval_invasion_static_modifier = {
+	supply_consumption_factor = -0.75
+	out_of_supply_factor = -0.5
+	army_defence_factor = 0.25
+}

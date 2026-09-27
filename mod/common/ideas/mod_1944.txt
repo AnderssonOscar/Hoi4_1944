@@ -1,0 +1,123 @@
+ideas = {
+	country = {
+		
+	dont_surrender_mod = {
+		picture = chi_war_of_resistance3
+		modifier = {
+			#max_surrender_limit_offset = -0.5
+			#forced_surrender_limit = +0.15
+			surrender_limit = 1
+			#surrender_limit = 0.20
+			}
+		}
+
+	safe_industry = {
+		modifier = {
+			industry_air_damage_factor = -0.25
+			}
+		}
+
+	mod_boost = {
+		picture = generic_artillery_manufacturer_2
+		modifier = {
+			political_power_factor = +0.7
+			command_power_gain_mult = +0.25
+			max_command_power_mult = +0.75
+			mobilization_speed = +0.175
+			}
+		}
+
+	mod_switched_side = {
+		picture = great_depression
+		modifier = {
+			army_org_factor = -0.5
+			dig_in_speed_factor = -0.5
+			army_speed_factor = -0.5
+			}
+		}
+
+
+		dday_bonus = {
+			picture = eng_preparing_the_second_front
+			modifier = {
+				out_of_supply_factor = -0.5
+				supply_consumption_factor = -0.5
+
+				land_reinforce_rate = +0.25
+				#army_org_factor = +0.25
+
+				#terrain_penalty_reduction = +1.0
+				#ground_attack_factor = +0.5
+				command_power_gain_mult = +10.0
+			}
+		}
+
+		effective_recruitment = {
+			allowed = {
+				always = yes # yes means not Triggered via event
+			}
+
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				conscription = 0.01
+			}
+		}
+
+		low_war_casualties = {
+			
+			allowed = {
+				always = yes # yes means not Triggered via event
+			}
+
+			removal_cost = -1
+			picture = prc_low_popular_support
+			
+			modifier = {
+				#stability_factor = -0.05
+				conscription = -0.025
+				#recruitable_population_factor = -0.99
+			}
+		}
+
+		medium_war_casualties = {
+			
+			allowed = {
+				always = yes # yes means not Triggered via event
+			}
+
+			removal_cost = -1
+			picture = prc_low_popular_support2 #tur_disorganised_armed_forces
+			
+			modifier = {
+				#stability_factor = -0.05
+				conscription = -0.06
+			}
+		}
+
+		high_war_casualties = {
+			
+			allowed = {
+				always = yes # yes means not Triggered via event
+			}
+
+			removal_cost = -1
+			picture = prc_low_popular_support3 #tur_disorganised_armed_forces
+			
+			modifier = {
+				#stability_factor = -0.05
+				conscription = -0.11
+			}
+		}
+
+
+	naval_forces_supplies = {
+		picture = MTG_naval_treaty_adherent
+		modifier = {
+				navy_max_range_factor = +0.25
+			}
+		}
+
+	}
+}

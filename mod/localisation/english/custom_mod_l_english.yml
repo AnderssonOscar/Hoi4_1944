@@ -1,0 +1,442 @@
+﻿l_english:
+ maintheme:0 "Main Theme - 1944(Erika)"
+
+draft_children:0 "Child Soldiers"
+draft_children_desc:0 "We are not desperate, the kids simply need to get out and get some fresh air!"
+
+siphon_gas:0 "Siphon Gas"
+siphon_gas_desc:0 "Siphon Gas from every available source."
+
+old_weapon_caches:0 "Old Weapon Caches"
+old_weapon_caches_desc:0 ""
+
+GER_rocket_bases_1:0 "Develop the V1 rocket & build launch site"
+GER_rocket_bases_1_desc:0 ""
+
+GER_rocket_bases_2:0 "Develop the V2 rocket & build launch site"
+GER_rocket_bases_2_desc:0 ""
+
+ration_army_fuel:0 "Ration the fuel of the army"
+ration_army_fuel_desc:0 ""
+
+ration_airforce_fuel:0 "Ration the fuel of the airforce"
+ration_airforce_fuel_desc:0 ""
+
+seize_some_trucks:0 "Seize civilian trucks"
+seize_some_trucks_desc:0 ""
+
+dig_in_and_hold:0 "Dig in and hold"
+dig_in_and_hold_desc:0 "Dig deeper!"
+
+RKO_expand_ostland_east:0 "Expand Reichskommissariat Ostland eastwards"
+RKO_expand_ostland_east_desc:0 "Place the occupied territory eastwards of Reichskommissariat Ostland into our adminitration."
+
+RKO_expand_ostland_south:0 "Expand Reichskommissariat Ostland southwards"
+RKO_expand_ostland_south_desc:0 "Place the occupied territory southwards of Reichskommissariat Ostland into our adminitration."
+
+low_war_casualties:0 "Low War Casualties"
+low_war_casualties_desc:0 ""
+medium_war_casualties:0 "Medium War Casualties"
+medium_casualties_desc:0 ""
+overlord_prep:0 "D-Day"
+overlord_prep_desc:0 "D-Day preperations..."
+
+GER_lack_of_airforce_instructors:0 "Shortage of Airforce Instructor"
+GER_lack_of_airforce_instructors_desc:0 ""
+
+GER_lack_of_army_NCOs:0 "Shortage of NCOs"
+GER_lack_of_army_NCOs_desc:0 "The losses of our experienced Non-Commissioned Officers is not being replaced."
+
+FRA_move_capital_back:0 "Move our capital back to Paris"
+FRA_move_capital_back_desc:0 "We can finally come home."
+
+GER_gottedamerung_1944:0 "Götterdämmerung"
+GER_gottedamerung_1944_desc:0 "Götterdämmerung"
+GER_gottedamerung_1944_tooltip:0 ""
+
+GER_train_more_ncos:0 "New NCO Training Schools"
+GER_train_more_ncos_desc:0 "Establish new Non-Commissioned Officers Training Schools"
+GER_train_more_ncos_tooltip:0 ""
+
+GER_train_more_pilots:0 "Reform Pilot Training"
+GER_train_more_pilots_desc:0 "Reform Pilot Training"
+GER_train_more_pilots_tooltip:0 ""
+
+GER_hand_out_panzerfausts:0 "Mass produce the Panzerfaust"
+GER_hand_out_panzerfausts_desc:0 "Supply our troops with weapons to deal with the tanks."
+GER_hand_out_panzerfausts_tooltip:0 ""
+
+GER_form_volksgrenadier:0 "Form the volksgrenadier"
+GER_form_volksgrenadier_desc:0 "Form the volksgrenadier"
+GER_form_volksgrenadier_tooltip:0 "Receive 18 volksgrenadier divisions of varying quality."
+
+GER_form_volksturm:0 "Form the volksturm"
+GER_form_volksturm_desc:0 "Form the volksturm"
+GER_form_volksturm_tooltip:0 "Receive 32 Volksturm divisions of varying quality."
+
+GER_simplify_production:0 "Simplify arms production"
+GER_simplify_production_desc:0 "We can increase our production by lowering our standards."
+GER_simplify_production_tooltip:0 "Production increase:"
+
+GER_fighter_production:0 "Figther aircraft production"
+GER_fighter_production_desc:0 "We have to increase our production of fighters."
+GER_fighter_production_tooltip:0 "Production increase:"
+
+GER_protect_industry:0 "Protect the industries"
+GER_protect_industry_desc:0 "Focus on protecting our precious industry from air raids"
+GER_protect_industry_tooltip:0 "Protection from air raids:"
+
+GER_everyting_for_war_effort:0 "Everyting for the war effort"
+GER_everyting_for_war_effort_desc:0 "Convert existing civilian factories into producing military goods"
+GER_everyting_for_war_effort_tooltip:0 "Converts existing civilian factories into producing military goods:"
+
+GER_gustav_line:0 "Gustav Line"
+GER_gustav_line_desc:0 "Build series of denfensive works to stop the Allies in italy."
+GER_gustav_line_tooltip:0 "Lower Italy gets:"
+
+GER_festung_cities:0 "Declare festung cities"
+GER_festung_cities_desc:0 "Declare festung cities"
+GER_festung_cities_tooltip:0 "These places are delcared fortresses:"
+
+GER_fanatical_defense:0 "Fanatical defense of the reich"
+GER_fanatical_defense_desc:0 "Fanatical defense of the reich"
+GER_fanatical_defense_tooltip:0 ""
+
+GER_endsieg:0 "Endsieg"
+GER_endsieg_desc:0 "Endsieg"
+GER_endsieg_tooltip:0 ""
+
+GER_festung_supply:0 "Festung rationing"
+GER_endsieg_attack:0 "Endsieg is here"
+
+SOV_launch_major_offensive_ger:0 "Launch Major Offensive"
+
+mod_switched_side:0 "Disorganized forces"
+
+dont_surrender_mod:0 "No surrender!"
+
+dday_bonus:0 "DDay"
+
+naval_forces_supplies:0 "Well supplied navy"
+
+HUN_upgrade_army_equipment:0 "Refit Our Forces"
+HUN_upgrade_army_equipment_desc:0 "Our army is in need of new equipment"
+HUN_upgrade_army_equipment_tooltip:0 ""
+
+HUN_war_economy_focus:0 "Prepare For Defence Of The Homeland"
+HUN_war_economy_focus_desc:0 ""
+HUN_war_economy_focus_tooltip:0 ""
+
+HUN_reform_army:0 "Reform The Armed Forces"
+HUN_reform_army_desc:0 "Reform The Armed Forces"
+HUN_reform_army_tooltip:0 "Receive 8 Infantry divisons and 2 armored divisions"
+
+HUN_upgrade_army_equipment_wuw:0 "Refit Our Forces"
+HUN_upgrade_army_equipment_wuw_desc:0 "Our army is in need of new equipment"
+HUN_upgrade_army_equipment_wuw_tooltip:0 ""
+
+HUN_war_economy_focus_wuw:0 "Prepare For Defence Of The Homeland"
+HUN_war_economy_focus_wuw_desc:0 ""
+HUN_war_economy_focus_wuw_tooltip:0 ""
+
+HUN_reform_army_wuw:0 "Reform The Armed Forces"
+HUN_reform_army_wuw_desc:0 "Reform The Armed Forces"
+HUN_reform_army_wuw_tooltip:0 "Receive 8 Infantry divisons and 2 armored divisions"
+
+sweden.join.germany.1:0 "Joining the Axis"
+sweden.join.germany.1.t:0 "Joining the Axis"
+sweden.join.germany.1.d:0 "Should we join the axis?"
+
+romania.switch.side.1:0 "Romania is negotiating"
+romania.switch.side.1.t:0 "Romania is negotiating with the soviets."
+romania.switch.side.1.d:0 "We have received information that the romanians are preparing to betray us. \nStop them by taking back the lost territory whitin 12 days.\n\nWe could also seize control of the country..."
+
+romania.cancel.switch.side.1:0 "Romanian counter-offensive"
+romania.cancel.switch.side.1.t:0 "Our Romanian counter-offensive was successful."
+romania.cancel.switch.side.1.d:0 "Romania has withdrawn from negotiations with the Soviets, for now."
+
+romania.cancel.switch.side.2:0 "Romanian goverment under german control"
+romania.cancel.switch.side.2.t:0 "Romanian goverment under german control"
+romania.cancel.switch.side.2.d:0 "Germany launched their so called Operation Margarethe II which took control of the romainan goverment.\nThere will be no more negotiations."
+
+finland.switch.side.1:0 "Finland is negotiating"
+finland.switch.side.1.t:0 "Finland is negotiating with the soviets."
+finland.switch.side.1.d:0 "We have received information that the finland are preparing to betray us."
+
+bulgaria.switch.side.1:0 "Bulgaria is negotiating"
+bulgaria.switch.side.1.t:0 "Bulgaria is negotiating with the soviets."
+bulgaria.switch.side.1.d:0 "We have received information that the bulgaria are preparing to betray us."
+
+warsaw.uprising.1:0 "Warsaw Uprising"
+warsaw.uprising.1.t:0 "Polish underground resistance has risen"
+warsaw.uprising.1.d:0 "With our enemies on the outskirts of the Warsaw it's inhabitants are trying to sabotage our military effort."
+warsaw.uprising_tool_tip:0 "Partisans will destroy Warsaws supply hub."
+
+GER_operation_margarethe:0 "Operation Margarethe" # not used
+GER_operation_margarethe_desc:0 "We need to stop the hungarians secretly negotiating a separate peace with the Allies" # not used
+operation.margarethe.decision.1.d:0 "We need to stop the hungarians secretly negotiating a separate peace with the Allies" # not used
+
+operation.margarethe.1:0 "Operation Margarethe"
+operation.margarethe.1.t:0 "Operation Margarethe"
+operation.margarethe.1.d:0 "The hungarians secretly negotiating a separate peace with the Allies.\nThe negotiations will most likely not lead anywhere, but we could launch a quick invasion and make sure of it."
+
+operation.margarethe.2:0 "Operation Margarethe II"
+operation.margarethe.2.t:0 "Operation Margarethe II"
+operation.margarethe.2.d:0 "We have successfully gotten romania back in line."
+
+german.ryti.ribbentrop.1:0 "Ryti–Ribbentrop Agreement"
+german.ryti.ribbentrop.1.t:0 "Ryti–Ribbentrop Agreement"
+german.ryti.ribbentrop.1.d:0 "Finland requests our extended support against the bolsheviks\n\nWe can divert part of our industry for a while to supply the finnish."
+german_ryti_ribbentrop_tanks_tt:0 "§Y~300§ §W units of§ §Y Tanks Of Mixed Type & Quality§ §W is added to the national stockpile.§\n"
+
+FIN_request_german_support:0 "Request German Support" ##76561197997503331 
+FIN_request_german_support_desc:0 "Maybe germany will send us equipment to fight the soviets"
+
+finland.ryti.ribbentrop.1:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.1.t:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.1.d:0 "We pledged to continued the war against the soviets, Germany has in turn sent us a large shipment of supplies, men and a mix of tanks."
+finland_ryti_ribbentrop_large_tt:0 "\nA §Glarge shipment of german equipment and tanks have been added to our storage.§"
+
+finland.ryti.ribbentrop.2:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.2.t:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.2.d:0 "We pledged to continued the war against the soviets, Germany has in turn sent us a shipment of supplies."
+german_ryti_ribbentrop_medium_tt:0 "\nA §Ggerman shipment of equipment have been added to our storage.§"
+
+finland.ryti.ribbentrop.3:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.3.t:0 "Ryti–Ribbentrop Agreement"
+finland.ryti.ribbentrop.3.d:0 "Germany has declined to support us."
+
+GER_ryt_ribbentrop_agreement:0 "Ryti-Ribbentrop Agreement"
+GER_ryt_ribbentrop_agreement_desc:0 "We sent Finland some shipments of our much needed supplies."
+
+collaborationist_formation:0 "Collaboration Decisions"
+collaborationist_formation_desc:1 "To help the war effort we need to allow collaboration with the previously undesirable."
+Recruit_Andrey_Vlasov:0 "Recruit Andrey Vlasov"
+Russian_Liberation_Army:0 "From the Russian Liberation Army"
+Recruit_POWS:0 "Recruit POWs"
+
+GER_oder_neisse_defence:0"Prepare defences along the oder-neisse river"
+GER_oder_neisse_defence_desc:0"Construct defensive fortifications from Stettin to outside of Dresden."
+
+german.sabotage.ports.1:0 "Cherbourg port is lost"
+german.sabotage.ports.1.t:0 "Cherbourg port is lost"
+german.sabotage.ports.1.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.2:0 "Brest port is lost"
+german.sabotage.ports.2.t:0 "Brest port is lost"
+german.sabotage.ports.2.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.3:0 "Lorient port is lost"
+german.sabotage.ports.3.t:0 "Lorient port is lost"
+german.sabotage.ports.3.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.4:0 "Saint-Nazaire port is lost"
+german.sabotage.ports.4.t:0 "Saint-Nazaire port is lost"
+german.sabotage.ports.4.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.5:0 "La Rochelleport is lost"
+german.sabotage.ports.5.t:0 "La Rochelle port is lost"
+german.sabotage.ports.5.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.6:0 "Le Havre port is lost"
+german.sabotage.ports.6.t:0 "Le Havre port is lost"
+german.sabotage.ports.6.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.7:0 "Dunkerque port is lost"
+german.sabotage.ports.7.t:0 "Dunkerque port is lost"
+german.sabotage.ports.7.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.8:0 "Antwerpen port is lost"
+german.sabotage.ports.8.t:0 "Antwerpen port is lost"
+german.sabotage.ports.8.d:0 "Should we order the last remaining troops to destroy the port facilities?"
+
+german.sabotage.ports.1.a:0 "Render the port facilities useless."
+german.sabotage.ports.1.b:0 "We will be back soon"
+
+finland.estonia.lost.1:0 "Estonia is lost"
+finland.estonia.lost.1.t:0 "Estonia is lost"
+finland.estonia.lost.1.d:0 "Finland will now be more willing to negotiate a seperate peace with the soviets."
+
+finland.estonia.lost.1.a:0 "Traitors"
+
+mod.start.1:0 "1944 - Downfall"
+mod.start.1.t:0 "1944 - Downfall"
+
+mod.start.1.d:0 "The war has taken a turn for the worse. We and our Allies still have europe under control, but for how long?\nIn the east the Soviets launches new offensives in intervals targeting diffrent fronts. In England the Allies are preparing an invansion force."
+
+mod.start.1.d_allies:0 "January 1 1944\n\nThis war has dragged on for too long... \nWith our combined forces the Axis powers will soon crumble."
+mod.start.1.d_jap:0 "The war in the pacific might not be going our way at the moment, but we can still achieve victory in the mainland.\nAlthough the Allies might overwhelm us if the Axis powers in europe would fall"
+
+#Greece
+GRE_Secure_The_Hellenic_State:0 "Secure The Hellenic State"
+GRE_Secure_The_Hellenic_State_desc:0 ""
+GRE_Secure_The_Hellenic_State_tooltip:0 ""
+
+GRE_Deal_With_Enemys_Of_The_State:0 "Deal With Enemys Of The State"
+GRE_Deal_With_Enemys_Of_The_State_desc:0 "We need to take back control of the parts of our country that is plagued by resistance groups"
+GRE_Deal_With_Enemys_Of_The_State_tooltip:0 "We need to take back control of the parts of our country that is plagued by resistance groups:"
+
+GRE_Raw_Resources_Focus:0 "Raw Resources Focus"
+GRE_Raw_Resources_Focus_desc:0 "We must contribute resources more for the war effort"
+GRE_Raw_Resources_Focus_tooltip:0 "We must contribute resources more for the war effort:"
+
+GRE_Industry_Focus:0 "Military Industry Focus"
+GRE_Industry_Focus_desc:0 "Industry must be rebuilt if our nation are to stand a chance in this war"
+GRE_Industry_Focus_tooltip:0 "Industry must be rebuilt if our nation are to stand a chance in this war:"
+
+GRE_Food_Focus:0 "Food Import Focus"
+GRE_Food_Focus_desc:0 "To avoid another famine we have to secure our food imports"
+GRE_Food_Focus_tooltip:0 "To avoid another famine we have to secure our food imports:"
+
+GRE_Raise_New_Security_Battalions:0 "Raise New Security Battalions"
+GRE_Raise_New_Security_Battalions_desc:0 "We cant keep relying on foreign forces to protect our regime."
+GRE_Raise_New_Security_Battalions_tooltip:0 "We cant keep relying on foreign forces to protect our regime:"
+
+GRE_Raise_Hellenic_Divisions:0 "Raise Hellenic Divisions"
+GRE_Raise_Hellenic_Divisions_desc:0 "Our german overlord have allowed us to create divisions for the protection of our new state"
+GRE_Raise_Hellenic_Divisions_tooltip:0 "Our german overlord have allowed us to create divisions for the protection of our new state:"
+
+GRE_Hellenic_Occupation_Troops:0 "Hellenic Occupation Troops"
+GRE_Hellenic_Occupation_Troops_desc:0 "Replace the axis occupation troops with our own."
+GRE_Hellenic_Occupation_Troops_tooltip:0 "Replace the axis occupation troops with our own:"
+
+GRE_occupation_cost:0 "Paying for German Occupation"
+GRE_occupation_cost_desc:0 "Payment for the troops stationed in our country"
+
+GRE_recent_famine:0 "Recent Famine"
+GRE_recent_famine_desc:0 "We recently recovered from a famine"
+
+major_offensive:0 "Major Offensive"
+major_offensive_desc:0 "Major Offensive is being contucted"
+
+offensive_exhaustion:0 "Offensive Exhaustion"
+offensive_exhaustion_desc:0 "Exhausted from recently contucting a major offensive"
+
+soviet.offensive.germany.start.1:0 "Soviets are starting a new offensive against the German lines"
+soviet.offensive.germany.start.1.t:0 "Soviets are starting a new offensive against the German lines"
+soviet.offensive.germany.start.1.d:0 "Today the Soviets launched yet another offensive at directed at the German §Wlines§"
+
+soviet.offensive.finland.start.1:0 "Soviets are starting a new offensive against the Finnish lines"
+soviet.offensive.finland.start.1.t:0 "Soviets are starting a new offensive against the Finnish lines"
+soviet.offensive.finland.start.1.d:0 "Today the Soviets launched yet another offensive at directed at the Finnish §Wlines§"
+
+soviet.offensive.romania.start.1:0 "Soviets are starting a new offensive against the Romanian lines"
+soviet.offensive.romania.start.1.t:0 "Soviets are starting a new offensive against the Romanian lines"
+soviet.offensive.romania.start.1.d:0 "Today the Soviets launched yet another offensive at directed at the Romanian  §Wlines§"
+
+soviet.offensive.end.1:0 "Soviet Offensive Slows Down"
+soviet.offensive.end.1.t:0 "Soviet Offensive Slows Down"
+soviet.offensive.end.1.d:0 "The offensive that the Soviets launched a coluple weeks ago is slowing down."
+
+mod_boost:0 "World War"
+mod_boost_desc:0 "The war seems soon to be reaching an end"
+
+hungary.operation.panzerfaust.1:0 "Operation Panzerfaust"
+hungary.operation.panzerfaust.1.t:0 "Operation Panzerfaust"
+hungary.operation.panzerfaust.1.d:0 "We have recived word that Miklós Horthy again secretly negotiating his country's surrender.\nWe should intervene now or else Hungary might become our enemy."
+
+mod.news.3.d:0 "After Hungary's leadership began exploring options for negotiating\n a separate peace with the Allies. The German forces launched Operation Margarethe.\n\nThey quickly invaded Hungary without significant resistance from the Hungarian military or government.\nBudapest and other key cities and strategic locations in the country were seized. In a German friendly government Horthy's is allowed to remain in power"
+
+mod.news.2.d:0 "Today Miklós Horthy announced on national radio broadcast that Hungary had signed an armistice with the Soviets. Not long after the broadcast Horthy was captured and deposed by German forces, led by SS officer Otto Skorzeny. With Horthy gone a new German puppet goverment have been declared."
+
+mod.news.1.d:0 "Today the liberation of Europe has begun with allied troops landing on french beaches\n\nThis massive Allied military operation will be a pivotal moment in the war and mark the beginning of the liberation of Western Europe from Nazi German occupation."
+
+SOV_leningrad_defence_modifier:0 "Leningrad Defence"
+GER_festung_konigsberg_modifier:0 "Festung Königsberg"
+ALLIED_prepared_invasion_modifier:0 "Prepared Invasion"
+
+mod.news.4.d:0 "With the advancing Soviet Red Army Königsberg has been well-fortified, with a combination of old and modern defenses. The city has medieval fortifications and a network of forts and bunkers built during these last years. These fortifications will make it a formidable stronghold."
+
+mod.news.5.d:0 "Königsberg has finally succumbed to the Red Army earlier this day.\n\nOriginally founded in the 13th century by the Teutonic Knights, with a long and eventfull history finally put to rest, there are only ruins left behind from this once well known historical city."
+
+rhine.defence.0:0 "Defence Of The Rhine"
+rhine.defence.0.t:0 "Defence Of The Rhine"
+rhine.defence.0.d:0 "As The Allies seek to advance into Germany from the west the Rhine River serves as the last natural barrier in front of the german interior.\n\nShould we destroy the bridges to stop the invader?"
+rhine.defence.0.tt:0 "§YRailways left side of the Rhine will be destroyed.\n\nImprovised fortifications will be constructed on the right bank.\n§ §W§"
+
+mod.news.7:0 "Rhine Crossing"
+mod.news.7.t:0 "Rhine Crossing"
+mod.news.7.d:0 "The Allies has successfully established bridgeheads on the eastern bank of the Rhine. Once these bridgeheads are secured, additional troops and equipment will be rapidly brought across the river."
+
+mod.news.6:0 "Paris Liberated"
+mod.news.6.t:0 "Paris Liberated"
+mod.news.6.d:0 "Today marks the end of German occupation in the French capital. \nThe liberation of Paris was met with widespread jubilation. Parisians poured into the streets to celebrate their freedom after years of German occupation.\n\nThe occupation of Paris is finally over."
+
+mod.news.9:0 "Soviet invasion of Manchuria"
+mod.news.9.t:0 "Soviet invasion of Manchuria"
+mod.news.9.d:0 "Today the Soviets declared war on Japan and launched an invasion of Manchuria.\n\nThe primary objective of the invasion is to swiftly defeat Japanese forces in Manchuria and Korea, as well as to secure territory and influence in the post-war order in Asia."
+
+netherlands.flooding.start.0:0 "Fortress Holland"
+netherlands.flooding.start.0.t:0 "Fortress Holland"
+netherlands.flooding.start.0.d:0 "To impede the advance of enemy forces and to protect strategic positions we can flood certian areas of Holland"
+netherlands.flooding.start.0.tt:0 "§YWalcheren has already been flooded by the allies§ §W§"
+netherlands.flooding.start.0.tt_1:0 "§YFlood the areas surrounding Amsterdam§ §W\n\n§"
+
+CHI_request_supply_usa:0 "Request Lend-Lease from USA"
+CHI_request_supply_usa_desc:0 "Fly in supplies from india to Kunming"
+
+MOD_transportation_difficulties_modifier:0 "Transportation difficulties"
+ROM_blown_up_oil_fields:0 "Oil fields destroyed"
+
+SIA_THAI_fascism: "Thailand"
+NOR_REICH_fascism: "Reichskommissariat Norwegen"
+
+SER_REICH_fascism: "National Salvation"
+
+JAP_mod_operations_cat:0 "Operation Ichi-Go"
+JAP_mod_operations_cat_desc:0 "Operation Ichi-Go Will be a complex military campaign that will be conducted in three major stages.\n\nThe success of this offensive will secure the land route for troop and resource transportation."
+
+JAP_ichi_go_mod_1:0 "Ichi-Go Stage 1"
+JAP_ichi_go_mod_1_desc:0 "The goal of this phase is to break through Chinese defensive lines in northern China and secure the Ping-Han Railway to connect Beijing to Wuhan"
+
+JAP_ichi_go_mod_1_timer:0 "Ichi-Go Stage 1"
+JAP_ichi_go_mod_1_timer_desc:0 "The goal of this phase is to break through Chinese defensive lines in northern China and secure the Ping-Han Railway to connect Beijing to Wuhan"
+
+JAP_ichi_go_mod_2:0 "Ichi-Go Stage 2"
+JAP_ichi_go_mod_2_desc:0 "The goal of this phase move southward into Hunan Province to seize key areas, particularly the city of Changsha and airbases"
+
+JAP_ichi_go_mod_2_timer:0 "Ichi-Go Stage 2"
+JAP_ichi_go_mod_2_timer_desc:0 "The goal of this phase move southward into Hunan Province to seize key areas, particularly the city of Changsha and airbases"
+
+JAP_ichi_go_mod_3:0 "Ichi-Go Stage 3"
+JAP_ichi_go_mod_3_desc:0 "The goal of this phase is to push into southern China, particularly Guangxi Province, to secure the railway link to Indochina"
+
+JAP_ichi_go_mod_3_timer:0 "Ichi-Go Stage 3"
+JAP_ichi_go_mod_3_timer_desc:0 "The goal of this phase is to push into southern China, particularly Guangxi Province, to secure the railway link to Indochina"
+
+JAP_mod_homefront_cat:0 "Food Situation"
+JAP_mod_homefront_cat_desc:0 "§WEnemy submarines are devastating our shipply lines, which we depend on to bring food and resources from its our oversea territories.§ \n\n Maintain a fleet of atleast §Y500§  convoys§W§"
+
+JAP_efficient_convoys:0 "Efficient convoys"
+JAP_efficient_convoys_desc:0 "We must make an effort to make the best use of our remaining convoys."
+
+decision_cost_pp_50_NavXP_25:0 "£pol_power  §Y50§! £navy_experience  §Y25§!"
+decision_cost_pp_50_NavXP_25_blocked:0 "£pol_power  §R50§! £navy_experience  §R25§!"
+decision_cost_pp_50_NavXP_25_tooltip:0 "It costs £pol_power  §Y50§! £navy_experience  §Y25§! to take the decision"
+
+JAP_food_shortage:0 "Food shortage"
+JAP_food_shortage_desc:0 "We must keep our agricultural terriorties & maintain a sizeable fleet of convoys."
+
+CHI_hold_modifier:0 "Well-fortified positions"
+
+JAP_home_famine:0 "Famine"
+JAP_home_famine_desc:0 "Our country is suffering from a Widespread scarcity of food."
+
+GER_1944_mod_shortcut:0 "Downfall"
+
+effective_recruitment:0 "Effective recruitment"
+effective_recruitment_desc:0 "
+
+VICTORY_POINTS_13376: "Buda"
+
+ITA_demand_savoy:0 "Request control of Savoy"
+ITA_demand_savoy_desc:0 ""
+
+ITA_demand_sudtirol:0 "Request control of Südtirol"
+ITA_demand_sudtirol_desc:0 ""
+
+ITA_demand_istra:0 "Request control of Istra & Litorale"
+ITA_demand_istra_desc:0 ""
+
+scavenger_training_trait_decision:0 "Operation manuals for captured equipment"
+scavenger_training_trait_decision_desc:0 "Print new operation manuals for our troops to make better use of newly captured equipment."

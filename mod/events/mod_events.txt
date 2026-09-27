@@ -1,0 +1,2316 @@
+﻿###########################
+# 1944 Events
+###########################
+
+add_namespace = sweden.join.germany
+add_namespace = romania.switch.side
+add_namespace = romania.cancel.switch.side
+add_namespace = finland.switch.side
+add_namespace = bulgaria.switch.side
+add_namespace = warsaw.uprising
+add_namespace = operation.margarethe
+add_namespace = 20_july.plot
+add_namespace = italy.fascist
+add_namespace = german.ryti.ribbentrop
+add_namespace = finland.ryti.ribbentrop
+add_namespace = allies.dday.start
+add_namespace = mod.start
+add_namespace = mod.start.options
+add_namespace = german.sabotage.ports
+add_namespace = finland.estonia.lost
+add_namespace = hungary.operation.panzerfaust
+
+add_namespace = netherlands.flooding.start
+add_namespace = rhine.defence
+
+add_namespace = reichskommissariat.start
+
+# Romania switch side
+country_event = {
+	id = sweden.join.germany.1
+	title = sweden.join.germany.1.t
+	desc = sweden.join.germany.1.d
+	picture = GFX_report_event_romania_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Join the axis"
+
+		add_to_war = {
+			targeted_alliance = GER
+			enemy = ENG
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = -100
+				date < 1945.1.1
+			}
+		}
+
+		custom_effect_tooltip = "Join the Axis and declare war on the allies"
+	}
+
+	option = {
+		name = "No"
+
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1943.12.31
+			}
+		}
+		custom_effect_tooltip = "Stay neutral"
+	}
+}
+
+
+#Destroy Cherbourg from allies
+country_event = {
+	id = german.sabotage.ports.1
+	title = german.sabotage.ports.1.t
+	desc = german.sabotage.ports.1.d
+	picture = GFX_report_event_hol_polderen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = german.sabotage.ports.1.a
+		ai_chance = {
+			base = 8
+		}
+		GER = {
+			add_manpower = -10000 
+			add_political_power = -100
+			add_war_support = -0.01
+		}
+		15 = { 
+			remove_building = {
+				type = naval_base
+				province = 6449
+				level = 1
+			}
+			damage_building = {
+				type = naval_base
+				damage = 3
+				province = 6449 
+			}
+		}
+	}
+	
+	option = {
+		name = german.sabotage.ports.1.b
+		add_war_support = 0.01
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+#Destroy Brest from allies
+country_event = {
+	id = german.sabotage.ports.2
+	title = german.sabotage.ports.2.t
+	desc = german.sabotage.ports.2.d
+	picture = GFX_report_event_hol_polderen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = german.sabotage.ports.1.a
+		ai_chance = {
+			base = 8
+		}
+		GER = {
+			add_manpower = -2500 
+			add_political_power = -25
+		}
+		14 = { 
+			remove_building = {
+				type = naval_base
+				province = 3552
+				level = 7
+			}
+			damage_building = {
+				type = naval_base
+				damage = 3
+				province = 3552 
+			}
+		}
+	}
+	
+	option = {
+		name = german.sabotage.ports.1.b
+		add_war_support = 0.01
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+#Destroy lorient from allies
+country_event = {
+	id = german.sabotage.ports.3
+	title = german.sabotage.ports.3.t
+	desc = german.sabotage.ports.3.d
+	picture = GFX_report_event_hol_polderen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = german.sabotage.ports.1.a
+		ai_chance = {
+			base = 8
+		}
+		GER = {
+			add_manpower = -2500 
+			add_political_power = -25
+		}
+		14 = { 
+			remove_building = {
+				type = naval_base
+				province = 6536
+				level = 3
+			}
+			damage_building = {
+				type = naval_base
+				damage = 3
+				province = 6536 
+			}
+		}
+	}
+	
+	option = {
+		name = german.sabotage.ports.1.b
+		add_war_support = 0.01
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#Destroy Saint-Nazaire from allies
+country_event = {
+	id = german.sabotage.ports.4
+	title = german.sabotage.ports.4.t
+	desc = german.sabotage.ports.4.d
+	picture = GFX_report_event_hol_polderen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = german.sabotage.ports.1.a
+		ai_chance = {
+			base = 8
+		}
+		GER = {
+			add_manpower = -2500 
+			add_political_power = -25
+		}
+		14 = { 
+			remove_building = {
+				type = naval_base
+				province = 9510
+				level = 1
+			}
+			damage_building = {
+				type = naval_base
+				damage = 2
+				province = 9510 
+			}
+		}
+	}
+	
+	option = {
+		name = german.sabotage.ports.1.b
+		add_war_support = 0.01
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+#Destroy La Rochelle from allies
+country_event = {
+	id = german.sabotage.ports.5
+	title = german.sabotage.ports.5.t
+	desc = german.sabotage.ports.5.d
+	picture = GFX_report_event_hol_polderen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = german.sabotage.ports.1.a
+		ai_chance = {
+			base = 8
+		}
+		GER = {
+			add_manpower = -2500 
+			add_political_power = -25
+		}
+		23 = { 
+			remove_building = {
+				type = naval_base
+				province = 6657
+				level = 4
+			}
+			damage_building = {
+				type = naval_base
+				damage = 3
+				province = 6657 
+			}
+		}
+	}
+
+	option = {
+		name = german.sabotage.ports.1.b
+		add_war_support = 0.01
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+#Destroy Le havre from allies
+country_event = {
+	id = german.sabotage.ports.6
+	title = german.sabotage.ports.6.t
+	desc = german.sabotage.ports.6.d
+	picture = GFX_report_event_hol_polderen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = german.sabotage.ports.1.a
+		ai_chance = {
+			base = 8
+		}
+		GER = {
+			add_manpower = -2500 
+			add_political_power = -25
+		}
+		15 = { 
+			remove_building = {
+				type = naval_base
+				province = 9434
+				level = 2
+			}
+			damage_building = {
+				type = naval_base
+				damage = 3
+				province = 9434 
+			}
+		}
+	}
+
+	option = {
+		name = german.sabotage.ports.1.b
+		add_war_support = 0.01
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#Destroy Dunkerque from allies
+country_event = {
+	id = german.sabotage.ports.7
+	title = german.sabotage.ports.7.t
+	desc = german.sabotage.ports.7.d
+	picture = GFX_report_event_hol_polderen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = german.sabotage.ports.1.a
+		ai_chance = {
+			base = 8
+		}
+		GER = {
+			add_manpower = -2500 
+			add_political_power = -25
+		}
+		29 = { 
+			remove_building = {
+				type = naval_base
+				province = 575
+				level = 4
+			}
+			damage_building = {
+				type = naval_base
+				damage = 2
+				province = 575 
+			}
+		}
+	}
+
+	option = {
+		name = german.sabotage.ports.1.b
+		add_war_support = 0.01
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#Destroy Antwerpen from allies
+country_event = {
+	id = german.sabotage.ports.8
+	title = german.sabotage.ports.8.t
+	desc = german.sabotage.ports.8.d
+	picture = GFX_report_event_hol_polderen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = german.sabotage.ports.1.a
+		ai_chance = {
+			base = 8
+		}
+		GER = {
+			add_manpower = -2500 
+			add_political_power = -25
+		}
+		6 = { 
+			remove_building = {
+				type = naval_base
+				province = 6598
+				level = 3
+			}
+			damage_building = {
+				type = naval_base
+				damage = 5
+				province = 6598 
+			}
+		}
+	}
+
+	option = {
+		name = german.sabotage.ports.1.b
+		add_war_support = 0.01
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+# Romania switch side
+country_event = {
+	id = romania.switch.side.2
+	title = romania.switch.side.1.t
+	desc = romania.switch.side.1.d
+	picture = GFX_report_event_romania_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Our offensive will sort this out."
+
+		add_war_support = 0.025
+		set_variable = { 
+			var = rom_switch
+			value = 1
+		}
+		ai_chance = {
+			base = 4
+			modifier = {
+				factor = 35
+				HUN = { is_ai = yes }
+				#ITA = { is_ai = yes }
+				BUL = { is_ai = yes }
+			}
+		}
+
+		custom_effect_tooltip = "You have 12 days to retake the lost territory."
+	}
+
+	option = {
+		name = "Launch Operation Margarethe II"
+
+		GER = {
+			add_manpower = -50000 
+			add_political_power = -250
+			add_war_support = -0.1
+		}
+
+		ROM = {
+			add_stability = -0.25
+			add_war_support = -0.4
+			add_manpower = -75000 
+
+			transfer_units_fraction = {
+				target = SOV
+				size = 0.5
+				stockpile_ratio = 0.25
+				army_ratio = 0.5
+				navy_ratio = 1.0
+				air_ratio = 0.75
+		}
+
+		add_timed_idea = { idea = dont_surrender_mod days = 365 }
+
+		46 = {
+			if = {
+				limit = { controller = { tag = ROM }}
+
+				damage_building = {
+					type = supply_node
+					damage = 0.21
+				}
+
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				
+				damage_building = {
+					type = rail_way
+					damage = 2
+				}
+
+				damage_building = {
+					type = air_base
+					damage = 4
+				}
+
+				add_dynamic_modifier = {
+					modifier = ROM_blown_up_oil_fields days = 90
+				}
+			}
+		}
+	}
+
+		#every_state = {
+			#limit = { 
+				#is_core_of = ROM
+				#NOT = { is_fully_controlled_by = ROM }
+			# }
+			 #SOV = { transfer_state = PREV }
+		#}
+
+		ROM = { set_cosmetic_tag = ROM_fascism_puppet_1944 }
+
+		GER = {
+			set_autonomy = { target = ROM autonomy_state = autonomy_integrated_puppet end_wars = no }
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 25
+				date > 1945.1.1
+				OR = {
+					HUN =  { is_ai = no }
+					#ITA =  { is_ai = no }
+					BUL =  { is_ai = no }
+				}
+			}
+		}
+
+		custom_effect_tooltip = "Stop romania from switching sides."
+	}
+}
+
+
+# Romania switch side
+country_event = {
+	id = romania.switch.side.1
+	title = romania.switch.side.1.t
+	desc = romania.switch.side.1.d
+	picture = GFX_report_event_romania_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+		set_variable = { 
+			var = rom_switch
+			value = 1
+		}
+	}
+}
+
+# Romania switch side
+country_event = {
+	id = romania.cancel.switch.side.1
+	title = romania.cancel.switch.side.1.t
+	desc = romania.cancel.switch.side.1.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Good"
+
+
+		set_variable = { 
+			var = rom_switch
+			value = 0
+		}
+	}
+}
+
+country_event = {
+	id = romania.cancel.switch.side.2
+	title = romania.cancel.switch.side.2.t
+	desc = romania.cancel.switch.side.2.d
+	picture = GFX_report_event_romania_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Good"
+
+		set_variable = { 
+			var = rom_switch
+			value = 0
+		}
+	}
+}
+
+
+# Finland switch side
+country_event = {
+	id = finland.switch.side.1
+	title = finland.switch.side.1.t
+	desc = finland.switch.side.1.d
+	picture = GFX_report_event_soviet_finnish_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+
+			set_variable = { 
+				var = fin_switch
+				value = 1
+			}
+	}
+}
+
+
+# Bulgaria switch side
+country_event = {
+	id = bulgaria.switch.side.1
+	title = bulgaria.switch.side.1.t
+	desc = bulgaria.switch.side.1.d
+	picture = GFX_report_event_bul_prince_simeon
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+
+		set_variable = { 
+			var = bul_switch
+			value = 1
+		}
+	}
+}
+
+
+# Warsaw uprising
+country_event = {
+	id = warsaw.uprising.1
+	title = warsaw.uprising.1.t
+	desc = warsaw.uprising.1.d
+
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	
+	option = {
+		name = "Let them be"
+
+		add_stability = -0.05
+		10 = { set_resistance = 84 }
+		10 = { 
+			remove_building = {
+			type = supply_node
+			province = 3544
+			level = 1
+		}
+	}
+
+	custom_effect_tooltip = warsaw.uprising_tool_tip
+	
+}
+
+	option = {
+        name = "Raze it to the ground"
+		10 = { set_resistance = 7 }
+
+		add_manpower = -5000
+		add_political_power = -100
+
+		10 = {
+			remove_building = {
+			type = arms_factory
+			level = 5
+		}
+	}
+
+		10 = {
+		   remove_building = {
+		   type = industrial_complex
+		   level = 2
+	   }
+	}
+
+
+		10 = { 
+			remove_building = {
+			type = air_base
+			level = 6
+		}
+
+	#	add_manpower = -750000
+	}
+
+
+    }
+
+}
+
+country_event = {
+	#news_event = {
+		id = 20_july.plot.1
+		#	id = news.1944
+		title = ss_recruitment_event.15.t	
+		desc = ss_recruitment_event.15.desc	
+		picture = GFX_report_event_generic_ruins	
+		#hidden = yes
+		
+		
+		trigger = {
+			tag = GER
+			date > 1944.7.19 #1944.7.20
+			#date < 1944.2.5
+			surrender_progress < 0.1
+			has_government = fascism
+			has_war_with = SOV 
+			has_war_with = ENG 
+			has_war_with = USA 
+		}
+
+		mean_time_to_happen = {
+			days = 1
+		}
+		fire_only_once = yes
+		
+		#immediate = {
+
+		#}
+		
+		option = {
+			name = "I am invincible!"
+
+			add_stability = -0.1
+			add_war_support = -0.1
+			#add_political_power = +350
+
+			
+			custom_effect_tooltip = "you don't investigate any further.."
+			ai_chance = {
+				base = 5
+			}
+		}
+
+		option = {
+			name = "Let the Gestapo sort this out"
+			
+			retire_character = GER_erwin_rommel
+			retire_character = GER_gunther_von_kluge
+			retire_character = GER_erich_von_manstein
+			add_manpower = -7000
+			#add_political_power = -75
+			add_stability = +0.025
+			add_war_support = +0.05
+			add_command_power = +100.0
+			add_political_power = +200
+			#add_war_support = -0.05
+
+			ai_chance = {
+				base = 25
+			}
+		}
+}
+
+# fix italy for 1944
+country_event = {
+	id = italy.fascist.0
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		complete_national_focus = ITA_the_italian_social_republic
+		hidden_effect = {
+			ITA_set_special_characters_as_fascist_effect = yes
+			ITA_start_civil_war_effect = yes
+			set_global_flag = ITA_antifascist_civil_war_triggered_flag
+
+		#	modify_global_flag = {
+		#		flag = ITA_antifascist_civil_war_triggered_flag
+		#		value = -1
+		#	}
+
+			play_song = "bella_ciao"
+		}
+	}
+}
+
+
+
+
+
+
+
+##########################################################################################
+# Ryti–Ribbentrop Agreement
+country_event = {
+	id = german.ryti.ribbentrop.1
+	title = german.ryti.ribbentrop.1.t
+	desc = german.ryti.ribbentrop.1.d 
+ 
+	#major = yes
+
+	picture = GFX_report_event_soviet_tanks_snow
+	is_triggered_only = yes
+	
+	option = {
+		name = "Send a large military aid package"
+		
+		FIN = {
+			add_to_variable = {
+				var = FIN_surrender_limit
+				value = 0.01
+				tooltip = "will be less likely to sue for peace with the Soviets."
+			}
+		}
+
+
+			#FIN = { add_manpower = +25000 }
+			#GER = { add_manpower = -25000 }
+
+			set_temp_variable = { support_eq = 4.1 }
+			multiply_temp_variable = { support_eq = GER:num_of_military_factories}
+			add_to_temp_variable = { var = support_eq value = 98 }
+
+			set_temp_variable = { inf_eq = 79.7 }
+			multiply_temp_variable = { inf_eq = GER:num_of_military_factories  }
+			add_to_temp_variable = { var = inf_eq value = 1675 }
+
+			set_temp_variable = { at_eq = 3.9 }
+			multiply_temp_variable = { at_eq = GER:num_of_military_factories  }
+			add_to_temp_variable = { var = at_eq value = 125 }
+
+			set_temp_variable = { anti_air_eq = 2.6 }
+			multiply_temp_variable = { anti_air_eq = GER:num_of_military_factories  }
+			add_to_temp_variable = { var = anti_air_eq value = 80 }
+
+			set_temp_variable = { motor_eq = 2.35 }
+			multiply_temp_variable = { motor_eq = GER:num_of_military_factories  }
+			add_to_temp_variable = { var = motor_eq value = 84 }
+
+	FIN = {
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = support_eq
+			producer = GER
+		} 
+
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_3
+			amount = inf_eq
+			producer = GER
+		}
+	
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment_2
+			amount = at_eq
+			producer = GER
+		}
+	
+		add_equipment_to_stockpile = {
+			type = anti_air_equipment_3
+			amount = anti_air_eq
+			producer = GER
+		}
+	
+		add_equipment_to_stockpile = {
+			type = motorized_equipment_1
+			amount = motor_eq
+			producer = GER
+		}
+		
+
+	hidden_effect = {
+
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+			
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 68 #40
+			variant_name = "Panzer IV Ausf. H"
+			producer = GER
+		}
+	
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 48
+			variant_name = "T-34-85"
+			producer = SOV
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 28
+			variant_name = "T-34-1943"
+			producer = SOV
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_2
+			amount = 32
+			variant_name = "T-34-1941"
+			producer = SOV
+		}
+		
+		add_equipment_to_stockpile = {
+			type = heavy_tank_chassis_1
+			amount = 32
+			variant_name = "KV-1"
+			producer = SOV
+		}
+	
+		add_equipment_to_stockpile = {
+			type = medium_tank_destroyer_chassis_2
+			amount = 37
+			variant_name = "Sturmgeschutz III"
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = light_tank_chassis_2
+			amount = 47
+			variant_name = "BT-7"
+			producer = SOV
+		}
+		
+	else = {
+
+		add_equipment_to_stockpile = {
+			type = light_tank_equipment_1
+			amount = 50
+			producer = SOV
+		}
+		
+		add_equipment_to_stockpile = {
+			type = medium_tank_destroyer_equipment_2
+			amount = 37
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = medium_tank_equipment_1
+			amount = 110
+			producer = SOV
+		}
+
+		add_equipment_to_stockpile = {
+			type = heavy_tank_equipment_1
+			amount = 32
+			producer = SOV
+		}
+	}
+	}
+}
+	
+	custom_effect_tooltip = german_ryti_ribbentrop_tanks_tt
+
+	
+		if = {
+			limit = {
+				not = { has_tech = infantry_at }
+			}
+			set_technology = {
+				infantry_at = 1
+			}
+		}
+
+		if = {
+			limit = {
+				not = { has_tech = infantry_at2 }
+			}
+			set_technology = {
+				infantry_at2 = 1
+			}
+		}
+	}
+
+
+
+		GER = { add_timed_idea = { idea = GER_ryt_ribbentrop_agreement days = 60 } }
+		hidden_effect = { FIN = { country_event = finland.ryti.ribbentrop.1} }
+		ai_chance = {
+			base = 1
+			modifier = {
+
+				OR = {
+					AND = {
+						surrender_progress < 0.01
+						FIN = { surrender_progress < 0.5 }
+					}
+					FIN = { is_ai = no }
+				}
+				
+				factor = 100
+			}
+		}
+	}
+ 
+	option = {
+		name = "Send military aid package"
+
+
+		#FIN = { add_manpower = +10000 }
+		#GER = { add_manpower = -10000 }
+
+		set_temp_variable = { support_eq = 2.3 }
+		multiply_temp_variable = { support_eq = num_of_military_factories}
+		add_to_temp_variable = { var = support_eq value = 98 }
+
+		set_temp_variable = { inf_eq = 49.7 }
+		multiply_temp_variable = { inf_eq = num_of_military_factories  }
+		add_to_temp_variable = { var = inf_eq value = 1675 }
+
+		set_temp_variable = { at_eq = 2.1 }
+		multiply_temp_variable = { at_eq = num_of_military_factories  }
+		add_to_temp_variable = { var = at_eq value = 125 }
+
+		set_temp_variable = { anti_air_eq = 1.2 }
+		multiply_temp_variable = { anti_air_eq = num_of_military_factories  }
+		add_to_temp_variable = { var = anti_air_eq value = 80 }
+
+	FIN = {
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = support_eq
+			producer = GER
+		} 
+	
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_2
+			amount = inf_eq
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment_2
+			amount = at_eq
+			producer = GER
+		}
+
+		add_equipment_to_stockpile = {
+			type = anti_air_equipment_2
+			amount = anti_air_eq
+			producer = GER
+		}
+
+		if = {
+			limit = {
+				not = { has_tech = infantry_at }
+			}
+			set_technology = {
+				infantry_at = 1
+			} 
+		}
+	}
+
+	GER = { add_timed_idea = { idea = GER_ryt_ribbentrop_agreement days = 30 } }
+
+		hidden_effect = {
+			FIN = { country_event = finland.ryti.ribbentrop.2}
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+
+			OR = {
+				surrender_progress < 0.1
+				FIN = {surrender_progress < 0.10}
+			}
+				factor = 50
+			}
+		}
+	}
+	
+	option = {
+		name = "We can't spare anything."
+		FIN = { country_event = finland.ryti.ribbentrop.3}
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					surrender_progress > 0.1
+					FIN = {surrender_progress > 0.15}
+				}
+
+				factor = 100
+			}
+		}
+	}
+}
+
+
+# Finland Ryti–Ribbentrop Agreement Large shipment
+country_event = {
+	id = finland.ryti.ribbentrop.1
+	title = finland.ryti.ribbentrop.1.t
+	desc = finland.ryti.ribbentrop.1.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Great" 
+		FIN = { add_manpower = +25000 }
+		FIN = { add_war_support = 0.1 }
+
+		custom_effect_tooltip = finland_ryti_ribbentrop_large_tt
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+# Finland Ryti–Ribbentrop Agreement shipment
+country_event = {
+	id = finland.ryti.ribbentrop.2
+	title = finland.ryti.ribbentrop.2.t
+	desc = finland.ryti.ribbentrop.2.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+
+		FIN = { add_manpower = +1000 }
+		custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+# Finland Ryti–Ribbentrop Agreement no shipment
+country_event = {
+	id = finland.ryti.ribbentrop.3
+	title = finland.ryti.ribbentrop.3.t
+	desc = finland.ryti.ribbentrop.3.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Crap"
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+
+
+# USA/ENG D-Day
+country_event = {
+	id = allies.dday.start.1
+	title = allies.dday.start.1.t
+	desc = allies.dday.start.1.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		if = {
+			limit = { USA = {is_ai = yes} }
+			add_timed_idea = { idea = dday_bonus days = 16 } 
+		}
+
+		if = {
+			limit = { ENG = {is_ai = yes} }
+			add_timed_idea = { idea = dday_bonus days = 16 } 
+		}
+	}
+	 }
+
+	option = {
+		name = "Ok"
+
+		#custom_effect_tooltip = finland_ryti_ribbentrop_medium_tt
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = mod.start.1
+	title = mod.start.1.t
+	
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+		if = {
+			limit = { 
+				NOT = { has_global_flag = mod_start_effects }
+			}
+				set_global_flag = mod_start_effects
+				industry_start_effects = yes
+				tech_start_effects = yes
+				#GER_start_effects = yes
+				GRE_setup_puppet = yes
+				Resistance_start_effects = yes
+				war_start_effects = yes
+				MOD_start_update = yes
+				country_event = { id = greece.start.event.0 }
+				random_country = {
+					limit = { is_ai = no }
+						country_event = { id = mod.start.options.1 }
+				}
+			}
+		}
+	}
+}
+
+
+
+country_event = {
+	id = mod.start.options.1
+	title = mod.start.1.t
+	desc = "Its 1944 and the war rages on.."
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	desc = {
+		text = mod.start.1.d
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+
+	desc = {
+		text = mod.start.1.d_allies
+		trigger = {
+			OR = {
+				original_tag = ENG
+				original_tag = SOV
+				is_in_faction_with = SOV
+				is_in_faction_with = ENG
+			}
+		}
+	}
+
+	desc = {
+		text = mod.start.1.d_jap
+		trigger = {
+			OR = {
+				original_tag = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+
+	option = {
+		name = "Start"
+
+		trigger = {
+			NOT = { 
+				OR = {
+					original_tag = GER
+					is_in_faction_with = GER
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "Normal Mode"
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+			}
+		}
+
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+
+	option = {
+		name = "Easy Mode"
+		set_global_flag = easy_mode_1944
+		custom_effect_tooltip = "Soviets and allies AI weaker, but Soviet offensives will continue"
+
+		hidden_effect = {
+			SOV = {
+				remove_ideas = {
+					SOV_soviet_industry
+				}
+			}
+		}
+
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+
+	option = {
+		name = "Disable Soviet Offensives"
+		set_global_flag = disable_offensives_1944
+		custom_effect_tooltip = "The Soviets wont launch any special offensives"
+
+		trigger = {
+			OR = {
+				original_tag = GER
+				is_in_faction_with = GER
+				has_war = no
+			}
+		}
+	}
+}
+
+
+#reichskommissariat start
+country_event = {
+	id = reichskommissariat.start.1
+	title = "Reichskommissariat start"
+	desc = ""
+	picture = GFX_report_event_FIN_mannerheim_president
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+		if = {
+			limit = { has_dlc = "By Blood Alone" }
+				set_technology = {
+					photo_reconnaisance = 1
+	
+					survivability_studies = 1
+	
+					aa_lmg = 1
+					aa_hmg = 1
+	
+					aa_cannon_1 = 1
+					aa_cannon_2 = 1
+					
+					engines_1 = 1
+					engines_2 = 1
+					engines_3 = 1
+	
+					range_improvements = 1
+	
+					early_bombs = 1
+	
+					aircraft_construction = 1
+	
+	
+					iw_small_airframe = 1
+					basic_small_airframe = 1
+					improved_small_airframe = 1
+					advanced_small_airframe = 1
+	
+					iw_medium_airframe = 1
+					basic_medium_airframe = 1
+					improved_medium_airframe = 1
+	
+					iw_large_airframe = 1
+					basic_large_airframe = 1
+					improved_large_airframe = 1
+	
+					armor_piercing_bombs = 1
+					heavy_bombs = 1
+				}
+			else = {
+				set_technology = {
+					
+					naval_bomber1 = 1
+					naval_bomber2 = 1
+			
+					CAS1 = 1
+					CAS2 = 1
+			
+					fighter1 = 1
+					fighter2 = 1
+					fighter3 = 1
+			
+					heavy_fighter1 = 1
+					heavy_fighter2 = 1
+			
+					strategic_bomber1 = 1
+					strategic_bomber2 = 1
+			
+					tactical_bomber1 = 1
+					tactical_bomber2 = 1
+					
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "La Resistance"
+			}
+			set_technology = {
+				armored_car1 = 1
+				armored_car2 = 1
+				armored_car3 = 1
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			set_technology = {
+					basic_medium_tank_chassis = 1 
+					improved_medium_tank_chassis = 1 
+					advanced_medium_tank_chassis = 1 
+	
+					basic_light_tank_chassis = 1 
+					improved_light_tank_chassis = 1 
+					#advanced_light_tank_chassis = 1 
+	
+					basic_heavy_tank_chassis = 1 
+					improved_heavy_tank_chassis = 1 
+					advanced_heavy_tank_chassis = 1 
+	
+					armor_tech_1 = 1
+					armor_tech_2 = 1
+					armor_tech_3 = 1
+	
+					engine_tech_1 = 1
+					engine_tech_2 = 1
+					engine_tech_3 = 1
+	
+					railway_gun = 1
+			}
+			 else = {
+				set_technology = {
+					gwtank = 1
+	
+					basic_light_tank = 1
+					improved_light_tank = 1
+	
+					basic_medium_tank = 1
+					improved_medium_tank = 1
+					advanced_medium_tank = 1
+	
+					basic_heavy_tank = 1
+					improved_heavy_tank = 1
+					advanced_heavy_tank = 1
+	
+					basic_light_art = 1
+					improved_light_art = 1
+	
+					basic_medium_art = 1
+					improved_medium_art = 1
+	
+					basic_heavy_art = 1
+					improved_heavy_art = 1
+	
+					basic_light_spaa = 1
+					improved_light_spaa = 1
+	
+					basic_medium_spaa = 1
+					improved_medium_spaa = 1
+	
+					basic_heavy_spaa = 1
+					improved_heavy_spaa = 1
+	
+					basic_light_td = 1
+					improved_light_td = 1
+	
+					basic_medium_td = 1
+					improved_medium_td = 1
+	
+					basic_heavy_td = 1
+					improved_heavy_td = 1
+				}
+			}
+		}
+
+		set_technology = {
+			basic_train = 1
+			#wartime_train = 1
+			#armored_train = 1
+
+			basic_medium_art = 1
+			interwar_artillery = 1
+			interwar_antitank = 1
+			infantry_weapons2 = 1
+			improved_infantry_weapons = 1
+			support_weapons = 1
+			support_weapons2 = 1
+			paratroopers = 1
+			improved_infantry_weapons_2 = 1
+			support_weapons3 = 1
+			support_weapons4 = 1
+			mechanised_infantry = 1
+			mechanised_infantry2 = 1
+			tech_mountaineers2 = 1
+			tech_engineers2 = 1
+			tech_recon2 = 1
+			paratroopers2 = 1
+			marines = 1
+
+			tech_special_forces = 1
+			improved_special_forces = 1 #expanded
+
+			tech_field_hospital = 1
+			tech_field_hospital2 = 1		
+			tech_signal_company = 1
+			tech_signal_company2 = 1
+			tech_logistics_company = 1
+			tech_logistics_company2 = 1
+			artillery1 = 1
+			artillery2 = 1
+			artillery3 = 1
+			artillery4 = 1
+			artillery5 = 1
+			antiair1 = 1
+			antiair2 = 1
+			antitank1 = 1
+			antitank2 = 1
+			antitank3 = 1
+			antitank4 = 1
+
+			
+			#electronics
+			electronic_mechanical_engineering = 1
+			mechanical_computing = 1
+			computing_machine = 1
+
+			radio = 1
+			radio_detection = 1
+
+			#industry
+			excavation1 = 1
+			excavation2 = 1
+			excavation3 = 1
+			basic_machine_tools = 1
+			improved_machine_tools = 1
+			advanced_machine_tools = 1
+			assembly_line_production = 1
+			synth_oil_experiments = 1
+			oil_processing = 1
+			rubber_processing = 1
+			improved_rubber_processing = 1
+			advanced_rubber_processing = 1
+			fuel_silos = 1
+			fuel_refining = 1
+			fuel_refining2 = 1
+			fuel_refining3 = 1
+			fuel_refining4 = 1
+			improved_oil_processing = 1
+			advanced_oil_processing = 1
+			construction1 = 1
+			construction2 = 1
+			construction3 = 1
+			construction4 = 1
+			#construction5 = 1
+			dispersed_industry = 1
+			dispersed_industry2 = 1
+			dispersed_industry3 = 1
+			dispersed_industry4 = 1
+			dispersed_industry5 = 1
+			improved_equipment_conversion = 1
+
+			#1944
+			experimental_rockets = 1
+			rocket_engines = 1
+			jet_engines = 1
+			atomic_research = 1
+			advanced_infantry_weapons = 1
+			#advanced_infantry_weapons2 = 1
+			infantry_at = 1
+			#infantry_at2 = 1
+			tech_engineers3 = 1
+			tech_recon3 = 1
+			tech_military_police = 1
+			tech_military_police2 = 1
+			tech_military_police3 = 1
+			tech_maintenance_company = 1
+			tech_maintenance_company2 = 1
+			#tech_maintenance_company3 = 1
+			#tech_field_hospital3 = 1
+			tech_logistics_company3 = 1
+			#tech_signal_company3 = 1
+			rocket_artillery = 1
+			rocket_artillery2 = 1
+			rocket_artillery3 = 1
+			rocket_artillery4 = 1
+			antiair1 = 1
+			antiair2 = 1
+			antiair3 = 1
+			antiair4 = 1
+			antiair5 = 1
+		}
+	}
+}
+
+	option = {
+		name = "Start"
+		ai_chance = {
+			base = 10
+		}
+
+	}
+}
+
+
+#Finland surrender faster
+country_event = {
+	id = finland.estonia.lost.1
+	title = finland.estonia.lost.1.t
+	desc = finland.estonia.lost.1.d
+	picture = GFX_report_event_FIN_mannerheim_president
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+	FIN = {
+		subtract_from_variable = {
+			var = FIN_surrender_limit
+			value = 0.03
+		}
+	}
+
+		# hidden_effect = {
+		# 	FIN = {
+		# 		set_variable = { FIN_surrender_limit = 0 }
+		# 	}
+		# }
+	}
+
+	option = {
+		name = finland.estonia.lost.1.a
+		ai_chance = {
+			base = 10
+		}
+
+	}
+}
+
+
+
+# operation_margarethe
+country_event = {
+	id = operation.margarethe.1
+	title = operation.margarethe.1.t
+	desc = operation.margarethe.1.d 
+	picture = GFX_report_event_SOV_negotiations_japan_bukharin
+ 
+	is_triggered_only = yes
+	fire_only_once = yes
+	# trigger = {
+	# 	original_tag = GER
+	# 	date > 1944.3.13
+	# 	HUN = { is_ai = yes } 
+	# 	HUN = { is_in_faction_with = GER }
+
+	# 	has_war_with = SOV 
+	# }
+
+	# mean_time_to_happen = { days = 1 }
+	# fire_only_once = yes
+
+	option = {
+		every_country = {
+			limit = {
+				 is_in_faction_with = GER 
+				}
+				news_event = { id = mod.news.3 }
+			}
+
+		GER = {add_stability = -0.025}
+		HUN = { add_stability = -0.1}
+			  
+
+HUN = {
+		GER = {
+			set_autonomy = { target = PREV autonomy_state = autonomy_satellite }
+		}
+
+		if = {
+			limit = {73 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 73 }
+		}
+
+		if = {
+			limit = {76 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 76 }
+		}
+
+		if = {
+			limit = {154 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 154 }
+		}
+		if = {
+			limit = {664 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 664 }
+		}
+
+		if = {
+			limit = {155 = { is_fully_controlled_by = SOV}}
+			SOV = { transfer_state = 155 }
+		}
+	}
+
+		hidden_effect = {
+
+		HUN = {
+			set_cosmetic_tag = HUN_axis_puppet_1_1944
+
+			set_politics = {
+				ruling_party = neutrality
+				last_election = "1944.3.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			
+			set_popularities = {
+				neutrality = 25
+				democratic = 10
+				fascism = 65
+				communism = 0
+			}
+
+			#retire_country_leader = yes
+			#recruit_character = HUN_miklos_horthy
+			#promote_character = HUN_miklos_horthy
+		}
+	}
+
+
+		name = "Start the invasion"
+
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = {
+		GER = { add_political_power = -200 }
+
+		HUN = {
+			if = {
+				limit = {
+					HUN = { is_ai = yes }
+				}
+			
+
+			 hidden_effect = {
+				add_stability = -0.1
+				add_timed_idea = { idea = HUN_peace_negotiations days = 160 }
+				add_war_support = -0.1 
+
+				every_country = {
+					limit = {
+						 is_in_faction_with = HUN 
+						}
+						 add_opinion_modifier = { target = HUN modifier = large_decrease } 
+						 add_opinion_modifier = { target = HUN modifier = large_decrease } 
+					}
+			 }
+			 add_ideas = {
+				closed_economy
+			 }
+			}
+		}
+
+		name = "Let the peace talks continue"
+
+		ai_chance = {
+			base = 0
+		}
+	}
+
+}
+
+country_event = {
+		id = hungary.operation.panzerfaust.1
+		title = hungary.operation.panzerfaust.1.t	
+		desc = hungary.operation.panzerfaust.1.d	
+		picture = GFX_report_event_hungary_refused	
+	
+		trigger = {
+			original_tag = GER
+			HUN = { is_subject_of = GER}
+			HUN ={ surrender_progress > 0.02 }
+			HUN = { is_ai = yes } 
+			has_global_flag = GER_operation_margarethe
+			has_war_with = SOV 
+		}
+
+		fire_only_once = yes
+
+		 
+		option = {
+			name = "Launch the operation"
+
+			every_country = {
+				limit = {
+					OR = {
+						is_in_faction_with = ENG
+						is_in_faction_with = GER
+						is_in_faction_with = SOV
+					}
+				}
+				news_event = { id = mod.news.2 }
+			}
+
+		HUN = {
+				set_cosmetic_tag = HUN_axis_puppet_2_1944
+
+			if = {
+				limit = { # should be used for oil resource transfer
+					controls_province = 3683
+					controls_province = 701
+					controls_province = 682
+				 }
+			}
+		}
+
+	HUN = {
+		hidden_effect = {
+
+			division_template = {
+				name = "Rongyos Gárda"		
+				division_names_group = HUN_INF_01
+				template_counter = 90
+				is_locked = yes
+				force_allow_recruiting = yes
+				division_cap = 12 
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+				}
+				support = {
+				}
+			}
+
+			random_state = {
+				limit = {
+					is_fully_controlled_by = PREV
+				}
+				create_unit = {
+					division = "name = \"Rongyos Gárda 'Lajtabánság'\" division_template = \"Rongyos Gárda\" start_experience_factor = 0.4 start_equipment_factor = 0.65"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"Rongyos Gárda 'Sopron'\" division_template = \"Rongyos Gárda\" start_experience_factor = 0.3 start_equipment_factor = 0.95"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"Rongyos Gárda 'Komárno'\" division_template = \"Rongyos Gárda\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"Rongyos Gárda 'Szeged'\" division_template = \"Rongyos Gárda\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
+					owner = PREV
+				}
+			}
+
+			 HUN = { 
+			        every_army_leader = {
+			        	limit = {
+			        		NOT = { has_trait = trait_HUN_fascist_sympathies }
+			        	}
+			        	retire = THIS
+			        }
+			    }
+
+			set_global_flag = arrow_cross_insurgency_happened
+
+			add_stability = -0.1
+
+			set_popularities = {
+				neutrality = 10
+				democratic = 0
+				fascism = 80
+				communism = 10
+			}
+		
+		set_politics = {
+			ruling_party = fascism
+			last_election = "1944.4.1"
+			election_frequency = 48
+			elections_allowed = no
+		}
+	}
+
+			#retire_country_leader = yes
+			# create_country_leader = {
+			# 		name = "Ferenc Szálasi"
+			# 		desc = ""
+			# 		picture = GFX_portrait_hun_ferenc_szalasi
+			# 		expire = "1965.1.1"
+			# 		ideology = nazism
+			# 		traits = {
+			# 		}
+			# 	}
+				
+				if = {
+					limit = {NOT = { 73 = {state_is_fully_controlled_by_ROOT_or_subject = yes}}}
+					SOV = { transfer_state = 73 }
+				}
+
+				if = {
+					limit = {
+						SOV = {
+							controls_province = 713
+							controls_province = 3696
+							controls_province = 11676
+							controls_province = 727
+							controls_province = 746
+							controls_province = 3689
+							controls_province = 6711
+						}
+					}
+					SOV = { transfer_state = 76 }
+				}
+
+				if = {
+					limit = {154 = { is_fully_controlled_by = SOV}}
+					SOV = { transfer_state = 154 }
+				}
+				if = {
+					limit = {664 = { is_fully_controlled_by = SOV}}
+					SOV = { transfer_state = 664 }
+				}
+
+				if = {
+					limit = {155 = { is_fully_controlled_by = SOV}}
+					SOV = { transfer_state = 155 }
+				}
+			}
+
+		GER = {
+			#HUN = { give_resource_rights = { receiver = GER state = 155 } } #dosent work with puppet
+			set_autonomy = { target = HUN autonomy_state = autonomy_integrated_puppet }
+			add_war_support = -0.05
+			#add_stability = -0.1
+			#add_manpower = -1000
+		}
+
+			ai_chance = {
+				base = 5
+			}
+		}
+
+		option = {
+			name = "We have no need of such allies"
+
+			HUN = {
+				#add_stability = +0.1
+				#add_war_support = -0.25
+			hidden_effect = {
+
+				remove_ideas = {
+					HUN_strengthen_fascists
+					HUN_invite_foreign_investors
+				}
+
+				every_country = {
+					limit = {
+						 has_war_with = HUN 
+					OR = { 
+						is_faction_leader = yes 
+						is_in_faction = no
+					}
+				 }
+					white_peace = HUN 
+				}
+			}
+				GER = { remove_from_faction = HUN }
+				SOV = { add_to_faction = HUN }
+
+				add_to_war = {
+					targeted_alliance = SOV
+					enemy = GER
+				}
+			}
+
+			ai_chance = {
+				base = 0
+			}
+		}
+}
+
+
+country_event = {
+	id = rhine.defence.0
+	title = rhine.defence.0.t
+	desc = rhine.defence.0.d
+	picture = GFX_rhine_defence
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {}
+
+	option = {
+		name = "Yes"
+
+		custom_effect_tooltip = rhine.defence.0.tt
+
+		#add_manpower = -25000§
+		add_political_power = -100
+		add_war_support = -0.05
+
+		hidden_effect = {
+
+		42 = {
+			damage_building = {
+				type = rail_way
+				damage = 5
+			}
+		}
+
+		51 = {
+			damage_building = {
+				type = rail_way
+				damage = 5
+			}
+		}
+
+		35 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
+				province = {
+					id = 11456
+				}
+			}
+		}
+
+
+		51 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
+				province = {
+					id = 3547
+					id = 587
+					id = 3444
+					id = 529
+				}
+			}
+			add_building_construction = {
+					type = bunker
+					level = 3
+					province = 3512
+					instant_build = yes
+				}
+
+			add_building_construction = {
+					type = bunker
+					level = 4
+					province = 6469
+					instant_build = yes
+				}
+
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 6570
+					instant_build = yes
+				}
+		}
+
+
+		55 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
+				province = {
+					id = 11560
+				}
+			}
+		}
+
+		42 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
+				province = {
+					id = 3558
+					id = 3423
+					id = 11494
+				}
+			}
+		}
+
+		36 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
+				province = {
+					id = 9363
+					id = 6241
+				}
+			}
+		}
+
+		28 = {
+			add_province_modifier = {
+				static_modifiers = { GER_defence_rhine_defence_static_modifier }
+				days = 120
+				province = {
+					id = 549
+					id = 9503
+					id = 6529
+					id = 678
+				}
+			}
+		}
+	}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = "No"
+
+		add_war_support = +0.05
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+country_event = {
+	id = netherlands.flooding.start.0
+	title = netherlands.flooding.start.0.t
+	desc = netherlands.flooding.start.0.d
+	picture = GFX_festung_holland
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+
+		hidden_effect = {
+			35 = {
+			add_province_modifier = {
+				static_modifiers = { GER_flooded_area_static_modifier }
+				days = 180
+				province = {
+					id = 9431
+				}
+			}
+		}
+		}
+	}
+
+	option = {
+		name = "Create Fortress Holland"
+		custom_effect_tooltip = netherlands.flooding.start.0.tt_1
+
+	36 = {
+		add_building_construction = {
+			type = bunker
+			level = 3
+			province = 6241
+			instant_build = yes
+		}
+	}
+
+		36 = {
+		add_building_construction = {
+			type = bunker
+			level = 3
+			province = 9363
+			instant_build = yes
+		}
+	}
+
+	7 = {
+		add_building_construction = {
+			type = bunker
+			level = 1
+			province = 3314
+			instant_build = yes
+		}
+	}
+
+	35 = {
+	add_building_construction = {
+		type = bunker
+		level = 2
+		province = 3262
+		instant_build = yes
+		}
+	
+
+	add_building_construction = {
+		type = bunker
+		level = 2
+		province = 6496
+		instant_build = yes
+	}
+
+	add_building_construction = {
+		type = bunker
+		level = 2
+		province = 11456
+		instant_build = yes
+	}
+
+	add_building_construction = {
+		type = bunker
+		level = 2
+		province = 9431
+		instant_build = yes
+	}
+}
+
+
+
+	35 = {
+		if = {
+			limit = {
+				industrial_complex > 2
+				arms_factory > 2
+			}
+			remove_building = { type = industrial_complex level = 3 }
+			remove_building = { type = arms_factory level = 3 }
+		}
+	}
+
+	hidden_effect = {
+
+	36 = {
+			add_province_modifier = {
+				static_modifiers = { GER_flooded_area_static_modifier }
+				days = 180
+				province = {
+					id = 6241
+					id = 9363
+			}
+		}
+	}
+
+	7 = {
+			add_province_modifier = {
+				static_modifiers = { GER_flooded_area_static_modifier }
+				days = 180
+				province = {
+					id = 3314
+			}
+		}
+
+	}
+
+	35 = {
+			add_province_modifier = {
+				static_modifiers = { GER_flooded_area_static_modifier }
+				days = 180
+				province = {
+					id = 3262
+					id = 6496
+					id = 11456
+				}
+			}
+		}
+	}
+
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = {
+		name = "No"
+		custom_effect_tooltip = netherlands.flooding.start.0.tt
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+

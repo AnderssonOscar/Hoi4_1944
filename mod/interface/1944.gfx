@@ -1,0 +1,54 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_select_date_1944"
+		texturefile = "gfx/interface/select_date_1944.dds"
+	}
+	spriteType = {
+		name = "GFX_dday_news"
+		texturefile = "gfx/news/dday_news.dds"
+	}
+	spriteType = {
+		name = "GFX_operation_panzerfaust"
+		texturefile = "gfx/news/panzerfaust_news.dds"
+	}
+	spriteType = {
+		name = "GFX_operation_margarethe"
+		texturefile = "gfx/news/operation_margarethe_news.dds"
+	}
+	spriteType = {
+		name = "GFX_konigsberg_defence"
+		texturefile = "gfx/news/konigsberg_defence_news.dds"
+	}
+	spriteType = {
+		name = "GFX_konigsberg_ruins"
+		texturefile = "gfx/news/konigsberg_ruins_news.dds"
+	}
+	spriteType = {
+		name = "GFX_paris_liberated"
+		texturefile = "gfx/news/paris_liberated_news.dds"
+	}
+	spriteType = {
+		name = "GFX_rhine_crossing"
+		texturefile = "gfx/news/rhine_crossing_news.dds"
+	}
+	spriteType = {
+		name = "GFX_soviet_invasion_manchuria"
+		texturefile = "gfx/news/soviet_invasion_manchuria_news.dds"
+	}
+	spriteType = {
+		name = "GFX_festung_holland"
+		texturefile = "gfx/events/report_event_festung_holland.dds"
+	}
+	spriteType = {
+		name = "GFX_rhine_defence"
+		texturefile = "gfx/events/report_event_rhine_defence.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_picture_JAP_mod"
+		texturefile = "gfx/interface/decisions/decision_cat_picture_JAP_mod.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_transport_cat_picture_JAP_mod"
+		texturefile = "gfx/interface/decisions/decision_transport_cat_picture_JAP_mod.dds"
+	}
+}

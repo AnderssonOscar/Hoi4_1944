@@ -1,0 +1,67 @@
+state = {
+	id = 979
+	name = "STATE_979"
+
+	manpower = 190000 #PreTAOG 359000
+	state_category = "rural"
+
+	history = {
+
+		add_core_of = PNG
+		owner = AST
+
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+
+			12240 = {
+				naval_base = 1
+			}
+
+			12154 = {
+				naval_base = 1
+			}
+
+			12237 = {
+				naval_base = 2
+			}
+
+		}
+
+		victory_points = {
+			12240 1 # Wewak
+		}
+
+		victory_points = {
+			12154 2 # Madang
+		}
+
+		victory_points = {
+			12237 3 # Lae
+		}
+
+		1944.1.1 = {
+			owner = JAP
+			controller = JAP
+			add_core_of = JAP
+
+			AST = {
+				set_province_controller = 12193
+				set_province_controller = 12237
+				set_province_controller = 7365
+				set_province_controller = 10251
+				set_province_controller = 4418
+			}
+
+		}
+
+	}
+
+	provinces = {
+		4418 12237 10251 7365 12193 12154 7614 4393 1389 12240 12400 10423
+	}
+
+	
+	buildings_max_level_factor = 1
+	local_supplies = 0.0 
+}

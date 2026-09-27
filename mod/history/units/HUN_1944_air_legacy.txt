@@ -1,0 +1,37 @@
+﻿
+
+### Magyar Légiero ###
+air_wings = {
+	43 = {
+		fighter_equipment_2 =  {
+			owner = "HUN"
+			amount = 145
+		}
+
+		fighter_equipment_1 =  {
+			owner = "HUN"
+			amount = 65
+		}
+		fighter_equipment_1 = { owner = "CRO" creator = "ITA" amount = 44 }	
+
+		fighter_equipment_1 = { owner = "HUN" creator = "GER" version_name = "Bf 109 E" amount = 25 }
+
+		CAS_equipment_2 =  {
+			owner = "HUN"
+			amount = 65
+		}
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_2
+			creator = "HUN" 
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 61
+	}
+}

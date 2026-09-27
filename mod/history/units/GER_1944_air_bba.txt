@@ -1,0 +1,303 @@
+﻿
+
+###### Luftwaffe (CO: Göring) ######
+air_wings = {
+
+	64 = { 	
+		transport_plane_equipment_2 = { owner = "GER" amount = 100 }	
+		transport_plane_equipment_2 = { owner = "GER" amount = 100 }	
+		transport_plane_equipment_2 = { owner = "GER" amount = 100 }	
+		transport_plane_equipment_2 = { owner = "GER" amount = 100 }
+		transport_plane_equipment_2 = { owner = "GER" amount = 100 }			
+
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }		
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_1  = { owner = "GER"  amount = 100 version_name = "Bf 109 E" }		
+		#small_plane_airframe_1  = { owner = "GER"  amount = 100 version_name = "Bf 109 E" }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+
+	}
+
+	192 = { 	 # odessa
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }							
+	}
+
+	62 = { 	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		#small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		#small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		#small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }						
+	}
+
+	29 = {	
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+	}
+
+	763 = { 																		# Konigsberg 	
+		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }		
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }						
+	}
+
+	209 = { 
+		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }	
+		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }					
+	}
+
+	206 = { 
+		small_plane_airframe_1  = { owner = "GER"  amount = 100 version_name = "Bf 109 E" }		
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+	}
+
+	199 = { 
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		
+	}
+
+
+	198 = { 
+
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+
+		large_plane_airframe_2 = { owner = "GER" version_name = "He 177" amount = 100}
+		large_plane_airframe_2 = { owner = "GER" version_name = "He 177" amount = 100}
+		large_plane_airframe_2 = { owner = "GER" version_name = "He 177" amount = 100}
+
+	}
+
+	10 = { 
+		small_plane_airframe_1  = { owner = "GER"  amount = 100 version_name = "Bf 109 E" }		
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+	}
+
+	9 = { 
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+	}
+
+	57 = { 
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+		#small_plane_cas_airframe_1 =  { owner = "GER" amount = 100  version_name = "Ju 87" }	
+	}
+
+	6 = { 
+		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+		#small_plane_airframe_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }
+	}
+
+	15 = {  #normandy
+		medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100} 	
+		medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
+		medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
+		#medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
+		#medium_plane_airframe_1 = { owner = "GER" version_name = "He 111" amount = 100}
+
+		medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		#medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+		#medium_plane_airframe_2 = { owner = "GER" version_name = "Ju 88" amount = 100}
+
+		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 F" amount = 100 }	
+		small_plane_airframe_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }	
+		#small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }					
+	}
+
+	110 = { 	
+		small_plane_airframe_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }					
+	}
+
+	182 = { 
+		small_plane_naval_bomber_airframe_1 = { owner = "GER" amount = 100 version_name = "Do 22"}
+	}
+
+	185 = { 
+		small_plane_naval_bomber_airframe_1 = { owner = "GER" amount = 100 version_name = "Do 22"}
+	}
+
+	104 = { 
+		small_plane_naval_bomber_airframe_1 = { owner = "GER" amount = 100 version_name = "Do 22"}
+	}
+
+	144 = { 
+		small_plane_naval_bomber_airframe_1 = { owner = "GER" amount = 100 version_name = "Do 22"}
+	}
+}
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_3
+			creator = "GER" 
+			version_name = "Ta 152 A"
+		}
+		requested_factories = 3
+		progress = 0.05
+		efficiency = 21
+		industrial_manufacturer = mio:GER_focke_wulf_organization
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_2
+			creator = "GER" 
+			version_name = "Fw 190"
+		}
+		requested_factories = 15
+		progress = 0.81
+		efficiency = 69
+		industrial_manufacturer = mio:GER_focke_wulf_organization
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_2
+			creator = "GER" 
+			version_name = "Bf 109 G"
+		}
+		requested_factories = 10
+		progress = 0.9
+		efficiency = 90
+		industrial_manufacturer = mio:GER_messerschmitt_organization
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = medium_plane_airframe_1
+			creator = "GER" 
+			version_name = "He 111"
+		}
+		requested_factories = 5
+		progress = 0.1
+		efficiency = 100
+		#industrial_manufacturer = mio:GER_heinkel_organization
+	}
+}
+
+#####################

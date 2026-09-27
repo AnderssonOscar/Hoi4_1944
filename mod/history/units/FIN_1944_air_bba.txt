@@ -1,0 +1,15 @@
+﻿
+
+air_wings = {
+	111 = { 														# Helsinki
+		medium_plane_airframe_1 = { owner = "FIN" creator = "ENG" version_name = "Bristol Blenheim" amount = 20  }	
+		small_plane_airframe_1 = { owner = "FIN" creator = "HOL" version_name = "Fokker D.XXI"  amount = 40 }
+
+		small_plane_airframe_1 = { owner = "FIN" creator = "GER" version_name = "Bf 109 E" amount = 100 }
+		small_plane_airframe_2 = { owner = "FIN" creator = "GER" version_name = "Fw 190" amount = 70 }
+		small_plane_airframe_2 = { owner = "FIN" creator = "GER" version_name = "Fw 190" amount = 30 }
+
+		medium_plane_airframe_2 = { owner = "FIN" creator = "GER" version_name = "Ju 88" amount = 70}
+		small_plane_cas_airframe_1 =  { owner = "FIN" creator = "GER" version_name = "Ju 87" amount = 40 }
+	}
+}

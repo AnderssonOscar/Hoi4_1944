@@ -1,0 +1,136 @@
+industry_start_effects = {
+	
+	if = {
+		limit = {
+			date > 1943.12.30
+			NOT = { has_global_flag = mod_industry_start_effects }
+		}
+		
+		set_global_flag = mod_industry_start_effects
+
+####################################################### INDUSTRY #####################################################
+		every_state = {
+			limit = {
+
+				is_core_of = controller
+				is_fully_controlled_by = controller
+
+				controller = { num_of_factories > 15}
+				NOT = { has_state_flag = war_building_slot_flag }
+				OR = {
+					NOT = { is_controlled_by = GER } #Germany already got to civs added to states 
+					NOT = { is_controlled_by = JAP }
+				}
+
+				OR = {
+					arms_factory  > 1
+					industrial_complex > 1
+					dockyard > 1
+				}
+					
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+
+	every_state = {
+		limit = {
+			is_core_of = controller
+			is_fully_controlled_by = controller
+
+			controller = { num_of_factories > 15}
+			NOT = { has_state_flag = war_building_slot_flag }
+
+			OR = {
+				arms_factory  > 1
+				industrial_complex > 1
+				dockyard > 1
+			}
+				
+			free_building_slots = {
+
+				building = arms_factory
+				size > 3
+				include_locked = yes
+			}
+		}
+
+		add_extra_state_shared_building_slots = 3
+		add_building_construction = {
+			type = arms_factory
+			level = 3
+			instant_build = yes
+		}
+	}
+
+############################### USA RUBBER INDUSTRY ######################################
+		USA = {
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = rubber
+				amount = 5
+			}
+		}
+
+########################################AIR BASE###################################################################################################################
+
+	every_state = {
+		limit = {
+			is_fully_controlled_by = controller
+			controller = { num_of_factories > 25}
+			NOT = { has_state_flag = war_building_slot_flag }
+
+			AND = {
+				air_base  > 1
+				air_base  < 6
+			}
+		}
+				
+		add_building_construction = {
+			type = air_base
+			level = 2
+			instant_build = yes
+		}
+	}
+
+	###########################################################################################################################################################
+	#Extra for these
+	every_state = {
+		limit = {
+			is_core_of = controller
+			is_fully_controlled_by = controller
+			NOT = { has_state_flag = war_building_slot_flag }
+
+			OR = {
+				is_controlled_by = USA
+				is_controlled_by = ENG
+			}
+
+			free_building_slots = {
+
+				building = arms_factory
+				size > 5
+				include_locked = yes
+			}
+		}
+
+		add_extra_state_shared_building_slots = 5
+		add_building_construction = {
+			type = arms_factory
+			level = 5
+			instant_build = yes
+		}
+	}
+	}
+}

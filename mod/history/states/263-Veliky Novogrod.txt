@@ -1,0 +1,84 @@
+
+state={
+	id=263
+	name="STATE_263"
+	manpower = 1092577
+	
+	state_category = town
+
+	history={
+		owner = SOV
+		victory_points = {
+			117 5 
+		}
+		buildings = {
+			infrastructure = 3 #was: 5
+			air_base = 2
+		}
+
+
+		1943.12.30 = {
+			controller = SOV
+			owner = SOV
+			GER = {
+				#set_province_controller = 9234
+				set_province_controller = 3089
+				set_province_controller = 11072
+				set_province_controller = 117
+				set_province_controller = 11109
+
+			}
+		}
+		add_core_of = SOV
+	}
+
+	provinces={
+		8 71 110 117 320 3089 6086 6154 6225 9212 9234 11072 11109 11191 
+	}
+
+	local_supplies=11.0 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#7 6 5 6 1 1 9 7 9 9 7 5 0 3  3 3 1 

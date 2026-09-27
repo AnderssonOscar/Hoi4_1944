@@ -1,0 +1,277 @@
+﻿
+#AIRCRAFT
+air_wings = {
+	64 = { 
+		transport_plane_equipment_1 = { owner = "GER" amount = 100 }
+		transport_plane_equipment_1 = { owner = "GER" amount = 100 }
+		transport_plane_equipment_1 = { owner = "GER" amount = 100 }
+		transport_plane_equipment_1 = { owner = "GER" amount = 100 }
+		transport_plane_equipment_1 = { owner = "GER" amount = 100 }
+
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+
+	}
+
+	192 = { # odessa
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+
+	}
+
+	62 = { 																		# Stettin
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		#CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		#CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		#tac_bomber_equipment_1 = { owner = "GER" amount = 250 } 		
+		#CAS_equipment_2 =  { owner = "GER" amount = 250 }
+		#CAS_equipment_2 =  { owner = "GER" amount = 250 }
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+	}
+
+	29 = {
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		#fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		#tac_bomber_equipment_2 = { owner = "GER" amount = 250 }		
+	}
+
+	763 = { 																		# Konigsberg 
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		CAS_equipment_1 =  { owner = "GER" amount = 100 }
+		CAS_equipment_1 =  { owner = "GER" amount = 100 }
+		CAS_equipment_1 =  { owner = "GER" amount = 100 }
+
+	#	tac_bomber_equipment_2 = { owner = "GER" amount = 125 } 
+	#	fighter_equipment_3 = { owner = "GER"  version_name = "Ta 152 A" amount = 250 }	
+	#	fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }
+	#	fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 250 }
+	}
+
+	209 = { 
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		#CAS_equipment_2 =  { owner = "GER" amount = 250 }
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 500 }	
+	}
+
+	206 = { 
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+
+
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }		
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		#fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 250 }	
+		#CAS_equipment_2 = { owner = "GER" amount = 250 }
+	}
+
+	199 = { 
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }		
+	}
+
+	198 = { 
+
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+		tac_bomber_equipment_2 = { owner = "GER"  version_name = "Ju 88" amount = 100 }	
+
+		strat_bomber_equipment_2 = { owner = "GER" version_name = "He 177" amount = 100}
+		strat_bomber_equipment_2 = { owner = "GER" version_name = "He 177" amount = 100}
+		strat_bomber_equipment_2 = { owner = "GER" version_name = "He 177" amount = 100}
+
+	}
+
+	10 = { 
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		
+	}
+
+	9 = { 
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+	}
+
+	57 = { 
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }		
+	}
+
+	6 = { 
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }		
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Bf 109 G" amount = 100 }	
+
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+		fighter_equipment_2 = { owner = "GER"  version_name = "Fw 190" amount = 100 }	
+	}
+
+	15 = {  #normandy
+
+		tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
+		tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
+		tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
+		#tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
+		#tac_bomber_equipment_1 = { owner = "GER"  version_name = "He 111" amount = 100 }	
+
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		CAS_equipment_2 =  { owner = "GER" amount = 100 }
+		#CAS_equipment_2 =  { owner = "GER" amount = 100 }			
+	}
+
+
+	110 = { 	
+		fighter_equipment_1 = { owner = "GER"  version_name = "Bf 109 E" amount = 100 }					
+	}
+
+	182 = { 
+		nav_bomber_equipment_2 = { owner = "GER"   amount = 100 }	
+	}
+
+	185 = { 
+		nav_bomber_equipment_2 = { owner = "GER"   amount = 100 }	
+	}
+
+	104 = { 
+		nav_bomber_equipment_2 = { owner = "GER"   amount = 100 }	
+	}
+
+	144 = { 
+		nav_bomber_equipment_2 = { owner = "GER"   amount = 100 }	
+	}
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_2
+			creator = "GER" 
+		}
+		requested_factories = 15
+		progress = 0.15
+		efficiency = 65
+	}
+
+		add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_3
+			creator = "GER" 
+		}
+		requested_factories = 10
+		progress = 0.15
+		efficiency = 65
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = CAS_equipment_2
+			creator = "GER" 
+		}
+		requested_factories = 10
+		progress = 0.2
+		efficiency = 100
+	}
+
+}

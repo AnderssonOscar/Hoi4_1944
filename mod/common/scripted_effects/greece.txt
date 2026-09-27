@@ -1,0 +1,182 @@
+
+GRE_setup_puppet = {
+	
+	GRE = {
+		if = {
+			limit = {
+				date > 1943.12.30
+				NOT = { has_global_flag = mod_gre_puppet_startup }
+			}
+				set_global_flag = mod_gre_puppet_startup
+
+			hidden_effect = {
+				GRE = {
+					start_civil_war = {
+						ideology = neutrality
+						size = 0
+						#transfer_state = 47
+						#transfer_state = 186
+						#transfer_state = 185
+						#transfer_state = 731
+						#transfer_state = 187
+						#transfer_state = 182
+						#transfer_state = 164
+
+						#GER = {
+						#	puppet = PREV
+						#	set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						#}
+
+						ENG = {add_to_faction = PREV}
+
+						#add_to_war = {
+						#	targeted_alliance = ENG
+						#	enemy = GRE 
+						#	hostility_reason = asked_to_join 
+						#}
+
+
+						set_popularities = {
+							democratic = 10
+							fascism = 0
+							communism = 10
+							neutrality = 80
+						}
+
+						transfer_units_fraction = {
+							target = GRE
+							size = 1
+							stockpile_ratio = 1
+							army_ratio = 1
+							navy_ratio = 1.0
+							air_ratio = 1.0
+						}
+
+						add_equipment_to_stockpile = {
+							type = infantry_equipment_0
+							amount = 9950
+						}
+
+						add_equipment_to_stockpile = {
+							type = artillery_equipment_1
+							amount = 270
+						}
+					
+						add_equipment_to_stockpile = {
+							type = support_equipment_1
+							amount = 350
+						}
+				
+						add_equipment_to_stockpile = {
+							type = motorized_equipment_1
+							amount = 156
+							producer = GER
+						}
+					
+						add_equipment_to_stockpile = { 
+							type = train_equipment_1
+							amount = 12
+						}
+
+						add_equipment_to_stockpile = { 
+							type = convoy_1
+							amount = 20
+						}
+
+						add_manpower = +73000
+						add_political_power = 1500	
+				}
+			}
+
+				hidden_effect = {
+					GRE = {
+						add_stability = 2.0
+						load_focus_tree = greek_focus_hellenic
+						add_ideas = {
+							medium_war_casualties
+							GRE_occupation_cost
+							GRE_recent_famine
+						}
+					
+						set_state_controller = 47
+						set_state_controller = 186
+						set_state_controller = 185
+						set_state_controller = 731
+						set_state_controller = 187
+						set_state_controller = 182
+						set_state_controller = 164
+
+					#	set_cosmetic_tag = GRE_hellenic_state	
+						set_cosmetic_tag = GRE_fascism
+						transfer_navy = {
+							target = GRE
+						}
+
+				}
+
+					random_country = {
+						limit= {
+							original_tag = GRE
+							has_government = neutrality
+						}
+		
+						GRE = {
+							transfer_navy = {
+								target = PREV
+							}
+						}
+					}
+
+
+				}
+			}
+		}
+	}
+	
+}
+
+
+GRE_setup_resistance = {
+
+	GRE = {
+		if = {
+			limit = {
+				date > 1943.12.30
+				is_subject_of = GER
+				NOT = { has_global_flag = GRE_setup_resistance }
+			}
+				set_global_flag = GRE_setup_resistance
+
+			every_state = {
+				limit = {
+					is_core_of = THIS
+					controller = {
+						has_government = fascism
+						tag = GRE
+					}
+				}
+
+				force_enable_resistance = {
+					occupier = THIS.controller
+					occupied = THIS
+				}
+
+				start_resistance = THIS
+				set_resistance = 27
+				set_compliance = 38
+				add_resistance_target = 34
+			}
+		}
+	}
+}
+
+# on_actions = { #ROOT is the nation being puppeted, FROM is the overlord. 
+# 	on_puppet = {
+# 		effect = {
+# 			ROOT = {
+# 				if = 
+# 				GRE_setup_resistance = yes
+# 			}
+# 		}
+# 	}
+# }

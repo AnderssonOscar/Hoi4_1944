@@ -1,0 +1,19 @@
+﻿### Air Forces ###
+air_wings = {
+	# Chongqing
+	1037 = { 
+		small_plane_airframe_0 = { owner = "CHI" amount = 20 creator = "SOV" version_name = "I-15" }
+		small_plane_airframe_0 = { owner = "CHI" amount = 50 creator = "USA" version_name = "P-26A" }
+
+		small_plane_airframe_2 = { owner = "CHI" amount = 100 creator = "USA" version_name = "Curtiss P-40 Warhawk" }
+	}
+
+	602 = { 
+		small_plane_airframe_2 = { owner = "CHI" amount = 100 creator = "USA" version_name = "Curtiss P-40 Warhawk" }
+		small_plane_airframe_2 = { owner = "CHI" amount = 100 creator = "USA" version_name = "Curtiss P-40 Warhawk" }
+	}
+
+	750 = { 
+		small_plane_airframe_2 = { owner = "CHI" amount = 100 creator = "USA" version_name = "Curtiss P-40 Warhawk" }
+	}
+}

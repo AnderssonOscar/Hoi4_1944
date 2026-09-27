@@ -1,0 +1,28 @@
+
+state={
+	id=811
+	name="STATE_811"
+
+	history={
+		owner = EST
+		buildings = {
+			infrastructure = 1
+		}
+		victory_points = {
+			185 1
+		}
+		add_core_of = EST
+
+		1943.12.1 = {
+			owner = GER
+			controller = GER
+		}
+	}
+
+	provinces={
+		185 6201 
+	}
+	manpower=32370
+	buildings_max_level_factor=1.000
+	state_category=small_island
+}

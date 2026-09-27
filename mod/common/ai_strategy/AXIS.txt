@@ -1,0 +1,359 @@
+scandy_is_not_for_you = {
+	allowed = {
+
+		OR = {
+			original_tag = ITA
+			original_tag = ROM
+			original_tag = HUN
+			original_tag = CRO
+			original_tag = SLO
+			original_tag = SER
+			original_tag = BUL
+			original_tag = GRE
+			tag = RKO
+			tag = RKN
+			tag = RKG
+		}
+	}
+
+	enable = {
+		date > 1943.12.30
+		date < 1945.3.1
+		is_in_faction_with = GER
+
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = area_priority
+		id = scandinavia
+		value = -1000
+	}
+
+	# ai_strategy = { 
+	# 	type = front_unit_request
+	# 	country_trigger = { always = yes }
+	# 	area = scandinavia
+	# 	value = -1000
+	# }
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = FIN
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = FIN
+		value = -1000
+	}
+
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = RKG
+		value = 100
+	}
+}
+
+
+
+Axis_dont_forget_about_italy = {
+
+	allowed = {
+		OR = {
+			original_tag = ITA
+			original_tag = GER
+		}
+	}
+
+	enable = {
+		OR = {
+			original_tag = ITA
+			original_tag = GER
+		}
+
+		date > 1943.12.30
+		has_war_with = USA
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		country_trigger = {tag = USA}
+		tag = USA
+		value = 20 #65
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			tag = USA
+		}
+		ordertype = front
+		execute_order = no
+		execution_type = careful
+	}
+}
+
+AXIS_dont_help_east = { 
+	allowed = {
+		OR = {
+			original_tag = BUL
+			original_tag = ITA
+			original_tag = RKN
+		}
+	}
+	enable = { 
+		has_war_with = SOV
+		date < 1945.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+     ai_strategy = {
+         type = dont_defend_ally_borders
+         id = GER
+         value = 100
+     }
+
+	 ai_strategy = {
+         type = dont_defend_ally_borders
+         id = ROM
+         value = 100
+     }
+}
+
+
+Axis_allies_dont_help_italy = {
+
+	allowed = {
+		OR = {
+			original_tag = FIN
+			original_tag = ROM
+			original_tag = HUN
+			original_tag = CRO
+			original_tag = SLO
+			original_tag = SER
+			original_tag = BUL
+			original_tag = GRE
+			tag = RKO
+			tag = RKN
+			tag = RKG
+		}
+	}
+
+	enable = {
+		date > 1943.12.30
+		ITA = { surrender_progress < 0.4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "ITA"
+		value = 100
+	}
+}
+
+
+axis_dont_invade_when_defensive = {
+	allowed = { 
+		OR = {
+				tag = BUL
+				tag = ROM
+				tag = FIN
+				tag = ITA
+				tag = GER
+				tag = GRE
+				tag = CRO
+				tag = ALB
+				tag = HUN
+				tag = HOL
+				tag = RKO
+				tag = RKN
+				tag = RKG
+			}
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1946.1.1
+		has_war_with = USA
+		has_war_with = SOV
+		has_war_with = ENG
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "USA"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = USA }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "ENG"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = ENG }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "FRA"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "PAL"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "KUW"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = FRA }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "SOV"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = SOV }
+		value = -500
+	}
+}
+
+AXIS_block_VEN_alliance = {
+	allowed = { 
+		OR = {
+			tag = BUL
+			tag = ROM
+			tag = FIN
+			tag = ITA
+			tag = GER
+			tag = GRE
+			tag = CRO
+			tag = ALB
+			tag = SER
+			tag = HUN
+			tag = HOL
+			tag = MAN
+			tag = JAP
+			tag = SIA
+			tag = MEN
+			tag = SLO
+			tag = BLR
+			tag = UKR
+			tag = D01
+			tag = D02
+			tag = D03
+			tag = D04
+			tag = D05
+			tag = D06
+			tag = D07
+			tag = RKO
+			tag = RKN
+			tag = RKG
+		}
+	 }
+	 
+	enable = {
+		date > 1943.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "VEN"
+		value = -1000
+	}
+}
+
+VEN_block_AXIS_alliance = {
+	allowed = { 
+		tag = VEN
+	 }
+	 
+	enable = {
+		date > 1943.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "GER"
+		value = -1000
+	}
+}
+
+
+AXIS_dont_hurt_these = {
+	enable = {
+		OR = {
+			tag = BUL
+			tag = ROM
+			tag = FIN
+			tag = ITA
+			tag = GER
+			tag = GRE
+			tag = CRO
+			tag = ALB
+			tag = SER
+			tag = HUN
+			tag = HOL
+			tag = MAN
+			tag = JAP
+			tag = SIA
+			tag = MEN
+			tag = SLO
+			tag = BLR
+			tag = UKR
+			tag = D01
+			tag = D02
+			tag = D03
+			tag = D04
+			tag = D05
+			tag = D06
+			tag = D07
+			tag = RKO
+			tag = RKN
+			tag = RKG
+		}
+
+		is_historical_focus_on = yes
+		date > 1944.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = SWE
+		value = -1000
+	}
+}

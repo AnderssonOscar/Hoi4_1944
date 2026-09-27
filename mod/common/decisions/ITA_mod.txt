@@ -1,0 +1,330 @@
+political_actions = {
+
+ITA_demand_savoy = {
+
+	icon = GFX_decision_generic_operation
+
+	allowed = {
+		tag = ITA	
+	}
+
+	available = {
+		NOT = { is_puppet_of = GER }
+		735 = { is_fully_controlled_by = GER }
+		
+	}
+
+	visible = {
+		is_ai = no
+		date > 1943.12.30
+
+		GER = { has_war_with = SOV }
+		has_war_with = SOV
+		is_in_faction_with = GER
+	}
+
+	highlight_states = {
+		highlight_state_targets = {
+			state = 735
+		}
+	}
+
+	fire_only_once = yes
+	cost = 100
+
+	complete_effect = {
+		GER = { country_event = italy.demands.savoy.1 }
+	}
+}
+
+
+ITA_demand_sudtirol = {
+
+	icon = GFX_decision_generic_operation
+
+	allowed = {
+		tag = ITA	
+	}
+
+	available = {
+		NOT = { is_puppet_of = GER }
+		39 = { is_fully_controlled_by = GER }
+	}
+
+	visible = {
+		is_ai = no
+		date > 1943.12.30
+
+		GER = { has_war_with = SOV }
+		has_war_with = SOV
+		is_in_faction_with = GER
+	}
+
+	highlight_states = {
+		highlight_state_targets = {
+			state = 39
+		}
+	}
+
+	fire_only_once = yes
+	cost = 150
+
+	complete_effect = {
+		GER = { country_event = italy.demands.sudtirol.1 }
+	}
+}
+
+ITA_demand_istra = {
+
+	icon = GFX_decision_generic_operation
+
+	allowed = {
+		tag = ITA	
+	}
+
+	available = {
+		NOT = { is_puppet_of = GER }
+		736 = { is_fully_controlled_by = GER }
+		852 = { is_fully_controlled_by = GER }
+	}
+
+	visible = {
+		is_ai = no
+		date > 1943.12.30
+
+		GER = { has_war_with = SOV }
+		has_war_with = SOV
+		is_in_faction_with = GER
+	}
+
+	highlight_states = {
+		highlight_state_targets = {
+			state = 736
+			state = 852
+		}
+	}
+
+	fire_only_once = yes
+	cost = 100
+
+	complete_effect = {
+		GER = { country_event = italy.demands.istra.1 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	# ITA_take_back_control = {
+
+	# 	icon = generic_operation
+
+	# 	allowed = {
+	# 		tag = ITA
+	# 	}
+
+	# 	visible = { 
+	# 		date > 1994.1.1 #dont need when it exist in natioanl focus
+	# 		is_puppet_of = GER
+			
+
+	# 		OR = {
+	# 			has_war_with = SOV
+	# 			has_war_with = ENG
+	# 			has_war_with = USA
+	# 		}
+	# 	}
+
+	# 	available = {
+			
+			
+	# 		has_army_manpower = {
+	# 			size > 150000
+	# 		}
+
+
+	# 		if = {
+	# 			limit = {
+	# 				any_country = {
+	# 					OR = {
+	# 						tag = GER
+	# 						is_in_faction_with = GER
+	# 					}
+	# 				}
+	# 			}
+	# 			has_full_control_of_state = 156
+	# 			has_full_control_of_state = 117
+	# 			has_full_control_of_state = 157
+	# 			has_full_control_of_state = 2
+	# 			has_full_control_of_state = 162
+	# 			has_full_control_of_state = 161
+	# 			has_full_control_of_state = 158
+	# 			has_full_control_of_state = 159
+	# 			has_full_control_of_state = 160
+	# 		}
+
+
+	# 		OR = {
+
+	# 		GER = { has_capitulated = yes }
+
+	# 			GER = {
+	# 				has_opinion = {
+	# 					target = ITA
+	# 					value > 74
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+
+	# 	cost = 0
+	# 	fire_only_once = yes
+
+
+	# 	complete_effect = { 
+	# 		add_stability = +0.15
+
+
+
+	# 		division_template = {
+	# 			name = "RSI - Divisione di Fanteria"
+	# 			division_names_group = ITA_INF_01
+			
+	# 			regiments = {
+	# 				infantry = { x = 0 y = 0 }
+	# 				infantry = { x = 0 y = 1 }
+	# 				infantry = { x = 0 y = 2 }
+	# 				infantry = { x = 1 y = 0 }
+	# 				infantry = { x = 1 y = 1 }
+	# 				infantry = { x = 1 y = 2 }
+	# 				infantry = { x = 2 y = 0 }
+	# 				infantry = { x = 2 y = 1 }
+	# 				infantry = { x = 2 y = 2 }
+	# 				infantry = { x = 2 y = 3 }
+	# 				artillery_brigade = { x = 3 y = 0 }
+	# 				artillery_brigade = { x = 3 y = 1 }
+	# 			}
+	# 			support = {
+	# 				engineer = { x = 0 y = 0 }
+	# 				artillery = { x = 0 y = 1 } 
+	# 				anti_air = { x = 0 y = 2 }
+	# 			}
+	# 		}
+
+
+	# 		2 = {
+	# 			create_unit = {
+	# 				division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+	# 				owner = ITA
+	# 			}
+
+	# 			create_unit = {
+	# 				division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.23 start_equipment_factor = 0.92 force_equipment_variants = { infantry_equipment_1 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+	# 				owner = ITA
+	# 			}
+
+	# 			create_unit = {
+	# 				division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.41 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_3 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+	# 				owner = ITA
+	# 			}
+
+	# 			create_unit = {
+	# 				division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.41 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_3 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+	# 				owner = ITA
+	# 			}
+
+	# 			create_unit = {
+	# 				division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.33 start_equipment_factor = 1 force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+	# 				owner = ITA
+	# 			}
+
+	# 			create_unit = {
+	# 				division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.36 start_equipment_factor = 0.95 force_equipment_variants = { infantry_equipment_3 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+	# 				owner = ITA
+	# 			}
+
+	# 			create_unit = {
+	# 				division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.43 start_equipment_factor = 0.85 force_equipment_variants = { infantry_equipment_3 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+	# 				owner = ITA
+	# 			}
+
+	# 			create_unit = {
+	# 				division = "name = \"RSI - Divisione di Fanteria\" division_template = \"RSI - Divisione di Fanteria\" start_experience_factor = 0.13 start_equipment_factor = 0.91 force_equipment_variants = { infantry_equipment_2 = { owner = \"ITA\" } } force_equipment_variants = { anti_air_equipment_2 = { owner = \"ITA\" } }" 
+	# 				owner = ITA
+	# 			}
+	# 		}
+
+
+
+
+	# 		GER = {
+	# 			set_autonomy = {
+	# 			target = ITA
+	# 			autonomy_state = autonomy_free
+	# 		}
+	# 	}
+
+	# 		transfer_state = 156
+	# 		transfer_state = 117
+	# 		transfer_state = 157
+	# 		transfer_state = 2
+	# 		transfer_state = 162
+	# 		transfer_state = 161
+	# 		transfer_state = 158
+	# 		transfer_state = 159
+	# 		transfer_state = 160
+
+	# 		if = {
+	# 			limit = {
+	# 				any_country = {
+	# 					OR = {
+	# 						tag = GER
+	# 						is_in_faction_with = GER
+	# 					}
+	# 					has_full_control_of_state = 115
+	# 				}
+	# 			}
+	# 			transfer_state = 115
+	# 		}
+
+
+	# 		if = {
+	# 			limit = {
+	# 				any_country = {
+	# 					OR = {
+	# 						tag = GER
+	# 						is_in_faction_with = GER
+	# 					}
+	# 					has_full_control_of_state = 114
+	# 				}
+					
+	# 			}
+				
+	# 			transfer_state = 114
+	# 		}
+
+	# 		#GER = { release = ITA }
+	# 	}
+	# }
+	
+}
+

@@ -1,0 +1,43 @@
+state = {
+	id = 1065
+	name = "STATE_1065"
+	manpower = 201100
+	
+	state_category = town
+	
+	resources = {
+	}
+
+	history = {
+
+		owner = ENG
+		add_core_of = MAL
+
+		victory_points = {
+			13408 1 # Seberang Perai 
+		}
+
+		buildings = {
+
+			infrastructure = 2
+
+			13408 = {
+				naval_base = 1
+				bunker = 2
+			}
+
+		}
+
+		1943.12.1 = {
+			owner = JAP
+			controller = JAP
+		}
+		
+	}
+
+	provinces = {
+		13408 
+	}
+
+	local_supplies = 0.0 
+}

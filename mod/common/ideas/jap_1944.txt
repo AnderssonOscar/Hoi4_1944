@@ -1,0 +1,11 @@
+ideas = {
+	country = {
+
+	JAP_home_famine = {
+		picture = SWE_hungershield
+		modifier = {
+			consumer_goods_factor = 0.25
+			} 
+		}
+	}
+}

@@ -1,0 +1,59 @@
+state={
+	id=215
+	name="STATE_215"
+	resources={
+		steel=30 # was: 52.000
+	}
+
+	history={
+		owner = SOV
+		buildings = {
+			infrastructure = 2
+
+		}
+		add_core_of = SOV
+		add_core_of = KAR
+
+
+		1943.1.1 = {
+			controller = FIN
+			owner = SOV
+
+			buildings = {
+				3189 = {
+					bunker = 2
+				}
+			}
+
+			FIN = {
+				set_province_controller = 155
+				set_province_controller = 157
+				set_province_controller = 13130
+				set_province_controller = 3071
+				set_province_controller = 2998
+				set_province_controller = 11146
+				set_province_controller = 80
+				set_province_controller = 11175
+				set_province_controller = 11054
+				set_province_controller = 6098
+				set_province_controller = 6096
+				set_province_controller = 11096
+				set_province_controller = 3067
+				set_province_controller = 9198
+				set_province_controller = 9119
+				set_province_controller = 6175
+				set_province_controller = 9074
+			}
+		}
+	}
+
+	provinces={
+		36 80 86 94 134 155 157 170 176 2998 3008 3067 3071 3078 3189 6021 6029 6090 6096 6098 6159 6175 9045 9055 9074 9119 9195 9198 11045 11054 11094 11096 11146 11175 11181 11212 13130 
+	}
+	manpower=214858
+	
+	state_category = rural
+	buildings_max_level_factor=1.000
+
+	local_supplies=0.0 
+}

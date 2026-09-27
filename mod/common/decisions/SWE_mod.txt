@@ -1,0 +1,303 @@
+
+
+political_actions = {
+
+	SWE_start_embargo_with_axis = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			tag = SWE	
+		}
+
+		available = {
+
+		OR = {
+			GER = { NOT = { is_embargoed_by = SWE } }
+			JAP = { NOT = { is_embargoed_by = SWE } }
+			any_country = {
+				OR = {
+					tag = GER 
+					tag = JAP  
+				}
+				any_allied_country = {
+					NOT = { is_embargoed_by = SWE }
+				}
+			}
+		}
+
+		OR = { 
+			if = { 
+				limit = {
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+							is_in_faction_with = JAP
+						}
+					}
+				}
+
+					AND = {
+						NOT = { 16 = {is_fully_controlled_by = THIS } } #Paris
+						NOT = { 5 = {is_fully_controlled_by = THIS } } #königberg - ermald
+					}
+				}
+
+				GER = { surrender_progress > 0.1 }
+			}
+		}
+
+		visible = {
+			date < 1947.1.1
+			date > 1944.10.1 #1944.11.15
+			has_capitulated = no
+
+			NOT = {has_war_with = GER}
+			has_war = no
+			is_ai = yes
+
+			GER = { has_capitulated = no }
+
+			OR = {
+				NOT = { is_in_faction_with = GER }
+				NOT = { is_in_faction_with = JAP }
+			}
+		}
+
+		fire_only_once = no
+		days_re_enable = 30
+		cost = 0
+
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				date > 1944.1.1
+				factor = 100
+			}
+		}
+
+	complete_effect = {
+		set_variable = { global.SWE_start_embargo_with_axis = 1 }
+
+		every_country = {
+			limit = {  
+				OR = {
+					is_in_faction_with = GER
+					is_in_faction_with = JAP
+				}
+				NOT = { is_embargoed_by = SWE }
+			}
+
+			country_event = { id = embargo.start.1 }
+			
+		if = {
+			limit = {
+				has_dlc = "Arms Against Tyranny"
+			}
+			set_country_flag = SWE_rejected_ball_bearing
+
+			if = {
+				limit = { has_idea = SWE_ball_bearing_idea }
+					remove_ideas = SWE_ball_bearing_idea
+			}
+
+			if = {
+				limit = { has_idea = SWE_ball_bearing_idea_food_partner }
+					remove_ideas = SWE_ball_bearing_idea_food_partner
+					#SWE_reduce_or_remove_ball_bearing_food_trade_modifier = yes
+			}
+
+			if = {
+				limit = { has_idea = SWE_ball_bearing_idea_research_partner }
+					remove_ideas = SWE_ball_bearing_idea_research_partner
+			}
+		}
+
+				if = {
+					limit = { has_dlc = "By Blood Alone" }
+						ROOT = { send_embargo = PREV }
+					else = {
+						ROOT = {add_opinion_modifier = { target = PREV modifier = embargo}}
+						ROOT = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
+						ROOT = {add_opinion_modifier = { target = PREV modifier = large_decrease }}
+					}
+				}
+		}
+		custom_effect_tooltip = embargo_relation_tt
+		}
+	}
+
+
+	SWE_stop_embargo_with_axis = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			tag = SWE	
+		}
+
+		available = {
+
+		OR = {
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+							is_in_faction_with = JAP
+						}
+					}
+				}
+				
+				AND = {
+					5 = { is_fully_controlled_by = THIS } #königberg - ermald
+					763 = { is_fully_controlled_by = THIS } #königberg
+
+					51 = { is_fully_controlled_by = THIS } #rhineland
+					50 = { is_fully_controlled_by = THIS } #wurttemberg
+
+					surrender_progress < 0.1
+				}
+			}
+
+			AND = {
+				NOT = { GER = { has_war_with = USA } }
+				NOT = { GER = { has_war_with = ENG } }
+			}
+
+			is_in_faction_with = GER
+
+			OR = {
+				has_war_with = SOV
+				has_war_with = USA
+				has_war_with = ENG
+			}
+		}
+	}
+
+		visible = {
+			date < 1947.1.1
+			date > 1944.1.1
+			NOT = {has_war_with = GER}
+			has_capitulated = no
+			is_ai = yes
+			check_variable = { global.SWE_start_embargo_with_axis = 1 }
+		}
+
+		fire_only_once = no
+		cost = 0
+		days_re_enable = 30
+
+		ai_will_do = { #must lose paris and pyrenees
+			factor = 1
+			modifier = {
+
+				date > 1944.1.1
+				factor = 100
+			}
+		}
+ 
+	complete_effect = {
+		set_variable = { global.SWE_start_embargo_with_axis = 0 }
+
+		every_country = {
+			limit = { 
+				OR = {
+					is_in_faction_with = GER
+					is_in_faction_with = JAP
+				} 
+				is_embargoed_by = SWE
+			}
+
+				#country_event = { id = embargo.stop.1 }
+
+				if = {
+					limit = { has_dlc = "By Blood Alone" }
+						ROOT = { break_embargo = PREV }
+					else = {
+						ROOT = {remove_opinion_modifier = { target = PREV modifier = embargo}}
+						ROOT = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
+						ROOT = {remove_opinion_modifier = { target = PREV modifier = large_decrease }}
+				}
+			}
+		}
+		
+		}
+	}
+
+
+
+	SWE_fight_germany = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SWE	
+		}
+
+		available = {
+			GER = { surrender_progress > 0.05 } 
+
+			any_country = {
+				OR = {
+					is_in_faction_with = USA
+				}
+				#southern norway
+				has_full_control_of_state = 110
+				has_full_control_of_state = 920
+				has_full_control_of_state = 142
+				has_full_control_of_state = 921
+				has_full_control_of_state = 922
+			}
+		}
+
+
+
+		visible = {
+			date > 1945.1.1
+			is_ai = yes
+			has_war = no
+			is_in_faction = no
+
+			SOV = { has_war_with = GER }
+			FIN = { has_war_with = GER }
+			USA = { has_war_with = GER }
+			ENG = { has_war_with = GER }
+		}
+
+		complete_effect = {
+
+			random_country = {
+				limit = {
+					OR = {
+						tag = ENG
+						tag = USA
+					}
+					is_faction_leader = yes
+				}
+				add_to_faction = SWE
+				# TUR = { 
+				# 	add_to_war = {
+				# 	targeted_alliance = PREV
+				# 	enemy = GER
+				# 	}
+				# }
+			 }
+			 
+		}
+
+		fire_only_once = yes
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1945.1.1
+					factor = 100
+				}
+			}
+		}
+}
+
+

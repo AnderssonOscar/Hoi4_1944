@@ -1,0 +1,202 @@
+﻿###### AIRFORCE ######
+air_wings = {
+
+	219 = { 
+		transport_plane_equipment_1 = { owner = "SOV" amount = 100 }
+		transport_plane_equipment_1 = { owner = "SOV" amount = 100 }
+		transport_plane_equipment_1 = { owner = "SOV" amount = 100 }
+		transport_plane_equipment_1 = { owner = "SOV" amount = 100 }
+		transport_plane_equipment_1 = { owner = "SOV" amount = 100 }
+
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }				
+	}
+
+	235 = { 
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+	}
+
+	214 = { 
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }				
+	}
+
+
+	195 = { 																	
+
+		tac_bomber_equipment_1 = { owner = "SOV" version_name = "ANT-40" amount = 100 } 	
+		tac_bomber_equipment_1 = { owner = "SOV" version_name = "ANT-40" amount = 100 } 	
+		tac_bomber_equipment_1 = { owner = "SOV" version_name = "ANT-40" amount = 100 } 	
+		tac_bomber_equipment_1 = { owner = "SOV" version_name = "ANT-40" amount = 100 } 		 	
+
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+	}
+	218 = { 																		
+
+		tac_bomber_equipment_1 = { owner = "SOV" version_name = "ANT-40" amount = 100 } 	
+		tac_bomber_equipment_1 = { owner = "SOV" version_name = "ANT-40" amount = 100 } 	
+		tac_bomber_equipment_1 = { owner = "SOV" version_name = "ANT-40" amount = 100 } 	
+
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }			
+
+	}
+
+	217 = { 																		
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }			
+	}
+
+
+	408 = { 																		
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+		fighter_equipment_3 = { owner = "SOV"  version_name = "Yak-3 A" amount = 100 }	
+
+
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+	}
+
+	266 = { 																		
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+		fighter_equipment_2 = { owner = "SOV" creator = "USA" version_name = "P-39 Airacobra A" amount = 100 }
+
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+	}
+
+	221 = { 																		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }	
+
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+		CAS_equipment_1 =  { owner = "SOV" amount = 100 }
+	}
+
+	264 = {
+		strat_bomber_equipment_1 = { owner = "SOV" amount = 100 }
+		strat_bomber_equipment_1 = { owner = "SOV" amount = 100 }
+		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+		fighter_equipment_2 = { owner = "SOV"  version_name = "La-5 A" amount = 100 }		
+	}
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+	
+	add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_2
+			creator = "SOV" 
+			version_name = "La-5 A" 
+		}
+		requested_factories = 15
+		progress = 0.15
+		efficiency = 65
+	}
+
+		add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_3
+			creator = "SOV" 
+			version_name = "Yak-3 A" 
+		}
+		requested_factories = 10
+		progress = 0.15
+		efficiency = 65
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = CAS_equipment_2
+			creator = "SOV" 
+		}
+		requested_factories = 10
+		progress = 0.2
+		efficiency = 100
+	}
+}
+	#####################

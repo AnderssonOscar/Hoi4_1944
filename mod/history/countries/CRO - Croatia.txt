@@ -1,0 +1,366 @@
+﻿capital = 109
+
+set_research_slots = 3
+
+oob = "CRO_1944"
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	tech_recon = 1	
+	tech_trucks = 1
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_submarine = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		mtg_transport = 1
+	}
+}
+
+#set_convoys = 5
+
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	unlock_national_focus = production_effort
+	unlock_national_focus = production_effort_2
+
+	complete_national_focus = political_effort
+	complete_national_focus = collectivist_ethos
+	complete_national_focus = nationalism_focus
+	
+	set_technology = {
+	
+		#doctrines
+		
+		
+		
+		
+		
+		
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+set_politics = {
+	ruling_party = fascism
+	last_election = "1935.6.9"
+	election_frequency = 12
+	elections_allowed = no # none after offset 1
+}
+set_popularities = {
+	democratic = 15
+	fascism = 75
+	communism = 10
+}
+
+recruit_character = CRO_ante_pavelic
+recruit_character = CRO_vladko_macek
+recruit_character = CRO_nikola_mandic
+recruit_character = CRO_joseph_francis
+recruit_character = CRO_duro_jakcin
+recruit_character = CRO_slavko_kvaternik
+recruit_character = CRO_miroslav_navratil
+
+
+
+1943.12.30 = {
+	set_cosmetic_tag = CRO_fascism_1944
+	
+	oob = "CRO_1944"
+
+	add_political_power = 2589
+	add_command_power = 200
+
+	set_convoys = 18
+	set_stability = 0.9 
+	set_war_support = 0.57
+	add_manpower = 500
+
+	set_popularities = {
+		neutrality = 10
+		fascism = 70
+		communism = 12
+		democratic = 8
+	}
+	
+	add_ideas = {
+		#laws
+		tot_economic_mobilisation
+		service_by_requirement
+		low_war_casualties
+		dont_surrender_mod
+		#limited_exports
+
+	}
+
+	104 = {
+		#start_resistance = yes
+		set_compliance = 18
+		set_resistance = 83
+		set_garrison_strength = 1.0
+	}
+
+	804 = {
+		#start_resistance = yes
+		set_compliance = 23
+		set_resistance = 62
+		set_garrison_strength = 1.0
+	}
+
+	853 = {
+		#start_resistance = yes
+		set_compliance = 23
+		set_resistance = 52
+		set_garrison_strength = 1.0
+	}
+
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+
+				#survivability_studies = 1
+
+				aa_lmg = 1
+				#aa_hmg = 1
+
+				#aa_cannon_1 = 1
+				#aa_cannon_2 = 1
+				
+				engines_1 = 1
+				engines_2 = 1
+				#engines_3 = 1
+
+				#range_improvements = 1
+
+				early_bombs = 1
+
+				#aircraft_construction = 1
+
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				improved_small_airframe = 1
+				#advanced_small_airframe = 1
+
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				#improved_medium_airframe = 1
+
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+				#improved_large_airframe = 1
+				#advanced_large_airframe = 1
+
+				air_torpedoe_1 = 1
+				#air_torpedoe_2 = 1
+			}
+		else = {
+			set_technology = {
+
+				naval_bomber1 = 1
+
+				CAS1 = 1
+				#CAS2 = 1
+		
+				early_fighter = 1
+				fighter1 = 1
+				fighter2 = 1
+				#fighter3 = 1
+		
+				heavy_fighter1 = 1
+				#heavy_fighter2 = 1
+		
+				strategic_bomber1 = 1
+				#strategic_bomber2 = 1
+		
+				tactical_bomber1 = 1
+				#tactical_bomber2 = 1
+			}
+		}
+	}
+
+		set_grand_doctrine = grand_battleplan
+		#Land
+		set_sub_doctrine = defensive_postures
+		add_mastery = {
+			amount = 100
+			sub_doctrine = defensive_postures
+		}
+
+		set_sub_doctrine = field_engineering
+		add_mastery = {
+			amount = 100
+			sub_doctrine = field_engineering
+		}
+
+		set_sub_doctrine = mission_type_tactics
+		add_mastery = {
+			amount = 100
+			sub_doctrine = mission_type_tactics
+		}
+
+	set_technology = {
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+
+		#industry
+		excavation1 = 1
+		excavation2 = 1
+		excavation3 = 1
+
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+
+		fuel_silos = 1
+		fuel_refining = 1
+
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+
+		early_fighter = 1
+		fighter1 = 1
+
+		support_weapons = 1
+		support_weapons2 = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+
+		gw_artillery = 1
+		artillery1 = 1
+		artillery2 = 1
+
+		interwar_antiair = 1
+		antiair1 = 1
+
+		interwar_antitank = 1
+		antitank1 = 1
+
+		motorised_infantry = 1
+
+		tech_mountaineers = 1
+		tech_support = 1
+
+		tech_engineers = 1
+		tech_engineers2 = 1
+
+		tech_recon = 1
+		tech_recon2 = 1
+
+		tech_field_hospital = 1
+
+		tech_military_police = 1
+
+		tech_maintenance_company = 1
+		
+		basic_train = 1
+	}
+
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+				gwtank_chassis = 1
+				basic_light_tank_chassis = 1 
+		}
+	}
+
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 500
+		producer = GER
+    }
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "CRO_1944_air_bba"
+		else = {
+			set_air_oob = "CRO_1944_air_legacy"
+		}
+	}
+
+
+	add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 1250
+    }
+
+	add_equipment_to_stockpile = {
+        type = support_equipment_1
+        amount = 250
+    }
+
+	add_equipment_to_stockpile = {
+        type = motorized_equipment_1
+        amount = 500
+		producer = GER
+    }
+
+
+	add_equipment_to_stockpile = { 
+        type = train_equipment_1
+        amount = 15
+    }
+}

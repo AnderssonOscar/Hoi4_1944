@@ -1,0 +1,74 @@
+
+units = {
+
+	### Marine Francaise (CO: Darlan) ###
+	# Admiralty North (CO: Castex) #
+	fleet = {
+		name = "Amiral Nord"			
+		naval_base =  3501 # dover	
+		task_force = {				
+			name = "1ère Région Navale"					# CO: Le Bigot	
+			location =  3501 # dover			
+			# 11e Légère Division des Contre-Torpilleurs
+			ship = { name = "La Cordelière" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }			
+			ship = { name = "Branlebas" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }		
+		}
+		task_force = {				
+			name = "Sous-Marins Force du Nord"			
+			location = 3501 # dover			
+			# 16e Division des Sous-Marins
+			ship = { name = "Orphée" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = FRA version_name = "630 Series" } } }
+			ship = { name = "Antiope" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = FRA version_name = "630 Series" } } }
+		}
+	}				
+
+	### NORTH AFRICA ###				
+	fleet = {
+		name = "Amiral Afrique"			
+		naval_base = 7132 # Oran
+		task_force = {				
+			name = "4ème Région Navale"					# CO: Rivet	
+			location = 9458  # ENG Port	
+			# 12e Légère Division des Contre-Torpilleurs
+			ship = { name = "La Pomone" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }		
+			ship = { name = "L'Iphigénie" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }		
+		}								
+		task_force = {				
+			name = "Sous-Marins Force de Levant"			# CO: de Carpentier
+			location = 9458  # ENG Port				
+			# 11e Division des Sous-Marins
+			ship = { name = "Requin" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = FRA version_name = "600 Series" } } }							
+			ship = { name = "Narval" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = FRA version_name = "600 Series" } } }				
+		}				
+		task_force = {				
+			name = "Sous-Marins Force du Maroc"			
+			location = 9458 # ENG Port			
+			# 4e Division des Sous-Marins
+			ship = { name = "Le Centaure" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = FRA version_name = "Redoutable Class" } } }
+			ship = { name = "Henri Poincaré" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = FRA version_name = "Redoutable Class" } } }
+		}
+		task_force = {				
+			name = "Tunis"			
+			location = 9994	 #borrowed from eng
+
+			ship = { name = "Duquesne" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FRA version_name = "Suffren Class" } } }
+			#ship = { name = "Duquesne" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FRA version_name = "Suffren Class" } } }
+			ship = { name = "Suffren" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FRA version_name = "Suffren Class" } } }
+			ship = { name = "Roselys" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }		
+			ship = { name = "Aconit" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Lobelia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Commandant Détroyat" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Commandant d'Estienne d'Orves" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Renoncule" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }	
+			ship = { name = "Commandant Drogou" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FRA version_name = "Le Fantasque Class" } } }		
+			#borrowed from USA
+			ship = { name = "Sénégalais " definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Algérien" definition = destroyer start_experience_factor = 0.11 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Tunisien" definition = destroyer start_experience_factor = 0.21 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Marocain" definition = destroyer start_experience_factor = 0.23 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Hova" definition = destroyer start_experience_factor = 0.29 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+			ship = { name = "Somali" definition = destroyer start_experience_factor = 0.21 equipment = { ship_hull_light_4 = { amount = 1 owner = FRA creator = "USA" version_name = "Cannon Class" } } }	
+		}
+	}
+}
+

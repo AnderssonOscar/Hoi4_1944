@@ -1,0 +1,46 @@
+﻿l_english:
+
+ artillery6:0 "Modern Artillery Upgrade"
+ artillery6_desc:0 ""
+
+ antiair6:0 "Anti-Air Upgrade III"
+ antiair6_desc:0 ""
+
+ antitank6:0 "Anti-Tank Upgrade III"
+ antitank6_desc:0 ""
+
+ rocket_artillery5:0 "Rocket Artillery Upgrade III"
+ rocket_artillery_desc:0 ""
+
+ antiair_home:0 "Static Anti-Air Defences"
+ antiair_home_desc:0 "Fit analog gunnery computers to our existing anti-aircraft guns"
+
+ antiair_home2:0 "Static Anti-Air Defences II"
+ antiair_home2_desc:0 "Combine our anti-aircraft guns with radar aiming systems"
+
+
+
+
+
+
+ fuel_refining6:0 "Modern Fuel Refining"
+ fuel_refining6_desc:0 ""
+
+ modern_rubber_processing2:0 "Improved Modern Rubber Processing"
+ modern_rubber_processing2_desc:0 ""
+
+ modern_oil_processing2:0 "Improved Modern Oil Processing"
+ modern_oil_processing2_desc:0 ""
+
+
+ dispersed_industry6:0 "Dispersed industry VI"
+ dispersed_industry6_desc:0 ""
+ 
+ concentrated_industry6:0 "Concentrated Industry VI"
+ concentrated_industry6_desc:0 ""
+
+ construction6:0 "Construction VI"
+ construction6_desc:0 ""
+
+ excavation6:0 "Excavation VI"
+ excavation6_desc:0 ""

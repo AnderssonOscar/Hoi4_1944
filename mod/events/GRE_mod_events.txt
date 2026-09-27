@@ -1,0 +1,17 @@
+###########################
+# Greece 1944 Events
+###########################
+
+add_namespace = greece.start.event
+
+country_event = {
+	id = greece.start.event.0
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		GRE_setup_resistance = yes
+	}
+}

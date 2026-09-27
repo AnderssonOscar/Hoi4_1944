@@ -1,0 +1,135 @@
+
+RAJ_defend_the_front = {
+
+	allowed = { tag = RAJ }
+
+	enable = {
+		is_historical_focus_on = yes
+
+		has_war_with = JAP 
+		NOT = { has_war_with = CHI }
+		is_in_faction_with = ENG
+
+		date > 1944.1.1
+		date < 1946.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "USA"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "FRA"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "AST"
+		value = 100
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "USA"
+		value = 100
+	}
+
+	ai_strategy = {
+	 	type = front_unit_request
+		 country_trigger = { tag = JAP }
+		value = 25
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = 70
+		target = burma
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = ENG
+		value = 20
+	}
+
+	}
+
+RAJ_more_infrastructure = {
+	allowed = { tag = RAJ }
+	enable = {
+		date > 1943.12.30
+		date < 1945.1.1
+		has_war_with = JAP
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = fuel_silo
+		value = -500
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = infrastructure
+		value = 100
+	}
+}
+
+
+RAJ_hunker_down_now  = {
+	allowed = {
+		original_tag = RAJ
+	}
+
+	enable = {
+		date < 1945.6.1
+		has_war_with = JAP
+		is_historical_focus_on = yes
+		surrender_progress < 0.01
+	}
+		abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		tag = JAP
+		ratio = 0.6
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+	}
+}
+
+RAJ_dont_do_naval_invasion = {
+	allowed = { 
+		tag = RAJ
+	}
+
+	enable = {
+		date > 1944.1.1
+		date < 1945.6.1
+		has_war_with = JAP
+		NOT = {has_war_with = SOV}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = JAP }
+		value = -500
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request  
+		country_trigger = { tag = SIA }
+		value = -500
+	}
+}
