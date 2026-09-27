@@ -1,15 +1,15 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (47 checks,
+Everything below can be re-run: `python tools/verify_update.py` (48 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 47 checks pass
+## Result: all 48 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
-| Integrity | mod/ fully committed; all 914 mod files byte-identical to the commits | PASS |
+| Integrity | mod/ fully committed; all 920 mod files byte-identical to the commits | PASS |
 | Integrity | Steam Workshop copy never touched (914/914 files = baseline) | PASS |
-| Scope | exactly the 27 intended files changed (21 edited, 3 deleted, 3 new), nothing else | PASS |
+| Scope | exactly the 33 intended files changed (21 edited, 3 deleted, 9 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 17 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
@@ -31,7 +31,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
   players need the same mod version for multiplayer. There is no "correct"
   value to check a mod's checksum against.
 - **File checksums:** `docs/checksums/mod-files.sha256` lists SHA-256 for all
-  914 mod files. Verified with `sha256sum -c` (all OK). After uploading to
+  920 mod files. Verified with `sha256sum -c` (all OK). After uploading to
   Steam, the Workshop folder can be checked the same way:
   `cd <workshop folder> && sha256sum -c <this file>`. Expect `descriptor.mod`
   and `thumbnail.png` to differ only if Steam rewrites them.
@@ -74,6 +74,13 @@ sits within another git repository (Oscar's home folder). `git apply` then
 silently skipped every path and still reported success. The checksum check
 caught it (21 FAILED). Run it outside other repositories, or set
 `GIT_CEILING_DIRECTORIES`.
+
+## Nero Decree and Werwolf
+
+Check N/W: both decisions at 50 PP; the 4 state modifiers only work under enemy
+control; the capture and monthly hooks; the real resistance threshold (25; the
+check fails if a lowered test value is ever left in); both events; 25 texts with
+BOM. The game loads with error.log identical (115 = 115). **Not tested in play.**
 
 ## Not verified (so no guarantee here)
 

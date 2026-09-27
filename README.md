@@ -24,6 +24,7 @@ git show <commit>                   # one change with its reason
 git diff 253cea1 -- mod/            # everything changed vs. the Workshop version
 ```
 
-Final state (2026-09-27): two bug fixes, the update to HOI4 1.19.3 and one
-flavor event (Slovak National Uprising), verified by 47 checks (`docs/VERIFICATION.md`), not yet play-tested. What was
+Final state (2026-09-27): two bug fixes, the update to HOI4 1.19.3, one
+flavor event (Slovak National Uprising) and the Nero Decree / Werwolf decisions
+(not play-tested yet), verified by 48 checks (`docs/VERIFICATION.md`), not yet play-tested. What was
 sent to the author is described in `docs/READ-ME-FIRST.md`.

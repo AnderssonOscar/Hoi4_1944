@@ -26,9 +26,11 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 - **Final state (2026-09-27):** two bug fixes (A, G) and the update to HOI4
   1.19.3 are applied, plus one flavor event (Slovak National Uprising, commit
   `7de1ce8`, CHANGELOG §4): 27 files differ from the Workshop version (21
-  edited, 3 deleted, 3 new). Every change is its own commit; see `docs/CHANGELOG.md`.
+  edited, 3 deleted, 3 new). Then the Nero Decree and Werwolf decisions (commit
+  `76a0d54`, CHANGELOG §5, 6 new files; loads cleanly but **not play-tested**, because
+  screen control was declined): now 33 files differ (9 new). Every change is its own commit; see `docs/CHANGELOG.md`.
   Git tag `final-2026-09-27` marks the version packaged for the author.
-- **Verified:** `python tools/verify_update.py` gives 47/47 PASS
+- **Verified:** `python tools/verify_update.py` gives 48/48 PASS
   (docs/VERIFICATION.md). That covers integrity, only the intended files
   changed, the author's content byte-identical, and all fixes present. The
   game's own error.log went from 282 to 115 lines (base game alone: 1), and

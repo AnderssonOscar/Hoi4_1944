@@ -75,6 +75,12 @@ expected = {("M", "mod/descriptor.mod"), ("M", "mod/common/scripted_effects/japa
 expected |= {("M", f"mod/history/countries/{c}.txt") for c in SF}
 expected |= {("A", "mod/events/slovak_uprising.txt"), ("A", "mod/common/on_actions/slovak_uprising_on_actions.txt"),
              ("A", "mod/localisation/english/slovak_uprising_l_english.yml")}  # flavor event (CHANGELOG section 4)
+expected |= {("A", "mod/common/decisions/GER_last_stand_decisions.txt"),
+             ("A", "mod/common/dynamic_modifiers/GER_last_stand_dynamic_modifiers.txt"),
+             ("A", "mod/common/ideas/GER_last_stand_ideas.txt"),
+             ("A", "mod/common/on_actions/GER_last_stand_on_actions.txt"),
+             ("A", "mod/events/GER_last_stand_events.txt"),
+             ("A", "mod/localisation/english/GER_last_stand_l_english.yml")}  # Nero Decree + Werwolf (CHANGELOG section 5)
 changed = {tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -180,6 +186,24 @@ evn = next((n for n in ev if n.key == "country_event"), None)
 oa = current("mod/common/on_actions/slovak_uprising_on_actions.txt")
 loc = current("mod/localisation/english/slovak_uprising_l_english.yml")
 loc_lines = loc[3:].decode("utf-8").split("\r\n")
+ls_dec = pdx.parse_file("mod/common/decisions/GER_last_stand_decisions.txt")[0]
+ls_d = {d.key: d for c in ls_dec if c.key == "war_measures" for d in c.value if d.key}
+ls_dm = pdx.parse_file("mod/common/dynamic_modifiers/GER_last_stand_dynamic_modifiers.txt")[0]
+ls_oa = current("mod/common/on_actions/GER_last_stand_on_actions.txt")
+ls_ev = current("mod/events/GER_last_stand_events.txt")
+ls_loc = current("mod/localisation/english/GER_last_stand_l_english.yml")
+def ls_guarded(n):
+    en = next((c for c in n.value if c.key == "enable"), None)
+    return en is not None and "has_war_with" in str([x.key for x, _ in pdx.walk(en.value)]) and any(x.value == "GER" for x, _ in pdx.walk(en.value) if not x.is_block())
+check("N/W  Nero Decree + Werwolf: 2 decisions at 50 PP; 4 state modifiers active only under enemy control; capture + monthly hooks; resistance threshold 25; 2 events; 25 texts with BOM",
+      set(ls_d) == {"GER_nero_decree", "GER_werwolf_decision"}
+      and all(next((c.value for c in d.value if c.key == "cost"), None) == "50" for d in ls_d.values())
+      and len([n for n in ls_dm if n.key]) == 4 and all(ls_guarded(n) for n in ls_dm if n.key)
+      and all(x in ls_oa for x in (b"on_state_control_changed", b"on_monthly_GER", b"resistance > 25", b"GER_nero_state_wrecked"))
+      and b"resistance > -1" not in ls_oa
+      and all(x in ls_ev for x in (b"id = downfall_ger.1", b"id = downfall_ger.2", b"GFX_report_event_GER_speer"))
+      and ls_loc.startswith(bytes.fromhex("efbbbf") + b"l_english:") and ls_loc.count(b":0 ") == 25)
+
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)
               for n, parents in pdx.walk(oar) if n.key == "add_manpower"]

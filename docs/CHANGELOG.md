@@ -120,6 +120,45 @@ Added on Oscar's request: a simple event, about 3,000 manpower lost.
 - **See it quickly in game:** console `event slovak.uprising.1 GER` shows the
   pop-up (the console does not apply the manpower loss; the real trigger does).
 
+### 5. Nero Decree and Werwolf (commit `76a0d54`)
+
+Designed with Oscar; the plan was agreed before building, and every mechanic
+was checked against the 1.19.3 game files first. Six **new** files, no existing
+file changed: `common/decisions/`, `common/dynamic_modifiers/`, `common/ideas/`,
+`common/on_actions/`, `events/` and `localisation/english/`, each named
+`GER_last_stand_*`.
+
+- **Both decisions:** Germany only, 50 political power each, appear once an
+  enemy holds a German core state. The AI takes them then.
+- **Where the effects work:** only in German core states held by an enemy
+  of Germany. Each effect switches off automatically if Germany takes the
+  state back, so German troops are never affected.
+- **Nero Decree:** the occupier moves 10% slower and captures 50% less
+  equipment there. When an enemy takes a German core state from Germany, the
+  state is wrecked once, using the base game's own scorched-earth amounts:
+  factories -2 each, infrastructure -3, rail -1.
+- **Speer event (7 days later):** the AI follows history and usually lets
+  Speer spare the factories. That halves the decree (-5% speed, -25% capture);
+  new captures then lose only infrastructure (-1.5) and rail (-0.5), and the
+  factories are spared.
+- **Werwolf:** a national spirit gives +10% resistance growth, ceiling and
+  garrison damage in occupied German land (the base game's standard values),
+  and the occupier moves 5% slower in German core states.
+- **Rail sabotage:** every month, where resistance is above 25%, the rails
+  are cut for 35 days, so the occupier can't strategically redeploy there,
+  and one rail level is damaged when a campaign starts. It is "repaired"
+  once the occupier gets resistance down to 25% or lower.
+- **Radio Werwolf news:** 14 days after the Werwolf decision, shown to
+  Germany and its enemies.
+- **Checked:** every file parses; no name clashes with the base game or the
+  mod; all pictures and icons exist; the game loads with error.log identical
+  (115 = 115); check N/W in verify_update.py (it also fails if a test
+  threshold is ever left in).
+- **Not tested in play yet.** Screen control was declined, so the capture
+  hook, the Speer event and the rail sabotage haven't run in a game. The
+  equipment-capture modifier is one the base game never uses; if play shows
+  the game doesn't recognise it, it gets dropped (Oscar's decision).
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -145,7 +184,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-27 files differ from the version on Steam: 21 edited, 3 deleted, 3 new (full list:
+33 files differ from the version on Steam: 21 edited, 3 deleted, 9 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.
