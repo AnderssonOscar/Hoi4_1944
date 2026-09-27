@@ -97,7 +97,7 @@ are also clean (0 wrong-state modifiers, 0 duplicate states).
 - The remaining 115 errors were already there before the update and are
   mostly harmless. INVESTIGATION.md §8 has the list.
 
-### 4. Flavor event: Slovak National Uprising (commit `7de1ce8`)
+### 4. Flavor event: Slovak National Uprising (commits `7de1ce8`, `a5982fe`)
 
 Added on Oscar's request: a simple event, about 3,000 manpower lost.
 
@@ -107,9 +107,11 @@ Added on Oscar's request: a simple event, about 3,000 manpower lost.
 - **When:** once, from 29 August 1944, if Slovakia is in Germany's faction, at
   war with the Soviet Union and not capitulated (checked daily for Slovakia
   only, via `on_daily_SLO`).
-- **Effect:** Slovakia loses 3,000 manpower, applied once by the trigger. The
-  event is shown to Slovakia **and Germany**; its single option only shows
-  the loss as a tooltip, so nothing is applied twice.
+- **Effect:** **Germany** loses 3,000 manpower (the troops sent in to crush the
+  uprising), applied once by the trigger. Slovakia loses nothing. The event is
+  shown to Slovakia **and Germany**; its single option only shows the loss as
+  a tooltip, so nothing is applied twice. (The first version, `7de1ce8`, took the
+  manpower from Slovakia; `a5982fe` moved it to Germany, as Oscar intended.)
 - **Picture:** `GFX_report_event_czech_soldiers_02` (base game: Czechoslovak
   soldiers at a machine gun), chosen after viewing six candidates.
 - **Checked:** both script files parse; the text file is UTF-8 with BOM and

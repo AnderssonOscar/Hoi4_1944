@@ -48,7 +48,7 @@ independently (see "Check it yourself").
 | 6 | Special forces: the old doctrine techs no longer exist in 1.19; replaced with the 1.19 sub-doctrines (mapping in patch 0009) | 11 files in history/countries |
 | 7 | Australia and Siam history = 1.19.3 file + your 1943.12.30 block (+ your 4 AST stockpiles) | AST, SIA |
 | 8 | Missing base-game decisions and a news event added; 3 renamed IDs fixed | JAP.txt, SOV.txt, BFTB_NewsEvents.txt, ARG, AST |
-| 9 | New flavor event: the Slovak National Uprising (29 Aug 1944). Slovakia loses 3,000 manpower; Slovakia and Germany see it | 3 new files: events, on_actions, localisation |
+| 9 | New flavor event: the Slovak National Uprising (29 Aug 1944). Germany loses 3,000 manpower crushing it; Slovakia and Germany see it | 3 new files: events, on_actions, localisation |
 
 **Your call** (decisions made for you, easy to change):
 
