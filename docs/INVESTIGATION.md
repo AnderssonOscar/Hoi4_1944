@@ -6,6 +6,11 @@ Started 2026-09-27. Written so the mod author can check every claim himself.
 `git diff 253cea1 -- mod/` is empty. Every proposed fix below is a proposal
 until it has been tested in-game and approved.
 
+The one ready fix is a tested patch in `docs/proposed-fixes/`. Apply it only
+after approval, with
+`git apply docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch`.
+Section 6 records the self-review of everything in this file.
+
 ---
 
 ## 0. What I worked from
@@ -42,6 +47,7 @@ source of truth, and the old `.git` was not used for anything.
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out) | Not yet identified |
 | E | "Playing UK crashes the game" | Clues found in author's own comments, may be the same as A | Not yet identified |
 | F | "D-Day seems broken" | Report too vague, needs a description | Not started |
+| G | *(not reported; found in self-review)* | Three Australian states are defined twice | Certain it's a defect; no known crash link |
 
 The honest summary: reading the scripts produced **one** well-supported bug.
 The other crashes need an in-game reproduction with the crash report HOI4
@@ -82,34 +88,67 @@ writes (see section 4), because the code has no obvious defect.
 
 **Why it matches "crashes at a certain date"**
 
-These scripts run from `on_daily` (`common/scripted_effects/update_daily.txt`,
-`MOD_daily_update2`), for any game where Japan and China are both AI. That covers
-every game where the player is *not* Japan or China, including UK games.
+These scripts run every day from `on_daily` (`common/on_actions/do_on_actions.txt:356`
+→ `MOD_daily_update2` in `common/scripted_effects/update_daily.txt`), once for
+each country. That they run per country is verified, not assumed: the flag
+`GER_operation_margarethe`, which a daily script sets only when the country
+running it is Germany, is present in the Downfall save `GER_1944_04_07_09.hoi4`.
 
-- Phase 2 (`province 7167`): AI Japan can take the decision after **1944-05-11**
-  (`JAP_mod.txt:165`). The script runs the next day.
-- Phase 3 (`province 4028`): after **1944-08-01** (`JAP_mod.txt:330`).
+When the bad lines actually run:
 
-So the game would die at a similar date in each playthrough, whatever the
-player is doing. That's exactly how the reports describe it. It would also
-explain why a crash seems to "happen during" some other event on screen, like
-Romania's or Bulgaria's switch in summer 1944. That link is a possibility, not
-something I've shown.
+- The script requires **China to be AI** (`CHI = { is_ai = yes }`). Japan can
+  be AI or the player.
+- Phase 2 (`province 7167`) runs the day after Japan takes stage 2 of Ichi-Go.
+  AI Japan can do that after **1944-05-11** (`JAP_mod.txt:165`), but only if it
+  first **won stage 1**, taking the Beijing–Wuhan railway within 60 days.
+- Phase 3 (`province 4028`) needs stage 2 won as well, and for AI Japan a date
+  after **1944-08-01** (`JAP_mod.txt:330`).
+
+So in games where Japan's offensive goes well, the game would hit this at a
+similar date each time, whatever the player is doing. That fits the "certain
+date" report. But it isn't guaranteed in every game: if Japan's stage 1 fails,
+these lines never run. It could also explain crashes that seem to "happen
+during" another event on screen, like Romania's or Bulgaria's switch in summer
+1944. That link is a possibility, not something I've shown.
 
 **Not proven yet:** I haven't reproduced the crash. The link between
 "wrong-state province modifier" and "crash" rests on the author's own `#fix`
 edits, not on a crash log.
 
-**Proposed fix (not applied)**
+**Proposed fix (not applied):** `docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch`
 
-- Line 221: comment out `id = 7167`. Phase 1 never adds a modifier to 7167
-  (line 165 is already commented out), so there's nothing to remove. This is
-  the same change the author made at line 371.
-- Line 328: move `id = 4028` into a `594 = { ... }` block so the phase-3 bonus
-  still applies where it was meant to. Then re-enable the matching removal in
-  `JAP_ichi_go_failed_modifiers` under state 594 instead of 599. The
-  alternative, simply commenting it out like line 413, is safer but drops that
-  province's bonus.
+Two lines change, both commented out the same way the author did it himself:
+
+```
+line 221:  id = 7167   →   #id = 7167 # fix: province 7167 is in state 1036, not 620
+line 328:  id = 4028   →   #id = 4028 # fix: province 4028 is in state 594, not 599
+```
+
+- Line 221: nothing ever adds this modifier to 7167 (the phase-1 add at line
+  165 is already commented out), so there's nothing to remove. This is the same
+  change the author made at line 371.
+- Line 328: after this change, phase 3's add (state 599: 1023, 7095, 1597)
+  matches its removal at line 406 exactly. What the modifier does
+  (`mod/common/modifiers/mod_static_modifiers.txt`): `army_defence_factor = -0.75`,
+  `army_speed_factor = 0.2`. So it's a defence penalty for whoever defends that
+  province. Today its removal is disabled (line 413), so if the wrong-state add
+  works at all, province 4028 keeps a permanent −75 % defence penalty after
+  Ichi-Go ends. The fix removes that too. What's lost: during phase 3, province
+  4028 doesn't get the penalty. The state-wide `JAP_offensive_modifier` the
+  phase-3 decision puts on state 594 still applies.
+
+*Changed from my first proposal.* I first suggested moving 4028 into a
+`594 = { ... }` block and re-enabling its removal. I dropped that, because the
+cleanup script also runs when Ichi-Go fails *before* phase 3. That would add
+another removal of a modifier that was never added, and whether that's safe in
+this engine is unknown. Commenting the line out adds no new behaviour.
+
+**Tested so far (without the game):** applied to a scratch copy and ran both
+checkers before and after. Wrong-state references went from 2 to 0, 7167 dropped
+out of "removed but never added", nothing new appeared, and the structure check
+output was byte-identical. `git diff --stat` shows 1 file, 2 lines. Line endings
+are preserved (CRLF: 422 before, 422 after), and the patch applies cleanly to
+the baseline. **Not tested in game.**
 
 **How to verify:** play as any country except Japan or China and run past
 August 1944. Or, faster, with the console on the April 1944 save: set
@@ -183,6 +222,31 @@ airborne template it spawns (`"Airborne Division"`) exists in the USA OOB. Witho
 knowing what "broken" means (no invasion? invasion fails? wrong date?), there's
 nothing specific to check yet.
 
+### G. Three Australian states are defined twice (found in self-review)
+
+A mod file only replaces a base-game file with **exactly the same name**. The
+mod ships these state files, but the base game (files dated 2026-06-11) uses
+different names for the same states, so the game now loads **both**:
+
+| State | Base game file | Mod file | Only difference in content |
+|---|---|---|---|
+| 870 | `870-Pilbara-Kimberley.txt` | `870-North West Australia.txt` | manpower 25000 → 1000, category pastoral → wasteland |
+| 871 | `871-Esperence-Goldfields.txt` | `871-South West Australia.txt` | manpower 105000 → 50000 |
+| 873 | `873-Channel Country.txt` | `873-South West Queensland.txt` | manpower 60000 → 10000 |
+
+(Compared after stripping comments and whitespace. Everything else, including
+the province lists, is identical.)
+
+Most likely the base game renamed these files in a patch, and the mod's
+versions stopped overriding them. Result: two definitions per state, and the
+mod's lower Australian manpower may not apply. I don't know of a crash caused
+by this.
+
+**Proposed fix (not applied, needs approval):** rename the three mod files to
+the base game's names, so they override again as intended. There's no content
+change. `tools/check_province_modifiers.py` now reports this under "State ids
+defined by more than one file".
+
 ---
 
 ## 3. Checks that turned out to be false alarms
@@ -195,8 +259,17 @@ Kept here on purpose. These are things that *looked* like bugs but aren't.
 | Two units in one template slot | 14 cases | 19 cases | Sloppy but harmless. Low priority. |
 | Unbalanced braces | 20 (17 in unused `FIN_1944_old.txt`) | 21 cases | Worth tidying. Not a crash suspect. |
 
-The brace problems are still worth a later look. `history/countries/RAJ - British Raj.txt:662`
-opens a block that is never closed, so anything after it may be ignored.
+The brace problems in files that are actually used (the base game's copies of
+these files have none, so the mod introduced them):
+
+- `history/countries/RAJ - British Raj.txt:662`: `1943.12.30 = {` is never
+  closed. It's the last block and runs to the end of the file (line 981), so
+  the fix is a missing `}` at the end. Probably harmless if the game closes it
+  at end of file, but unverified.
+- `history/countries/AST - Australia.txt:1277` and `SER - Serbia.txt:409`: one
+  extra `}` on the last line of the file. Probably harmless.
+- The other 17 are in `history/units/FIN_1944_old.txt`, which nothing in the mod
+  or base game references (checked), so the game never loads it.
 
 ---
 
@@ -230,3 +303,26 @@ All read-only; they never modify `mod/`.
 - `check_structure.py`: the checks in section 3.
 
 Run from the project folder: `python tools/check_province_modifiers.py`
+
+---
+
+## 6. Self-review (2026-09-27)
+
+Everything above was re-checked before handover. What was checked and what
+changed as a result:
+
+| Check | Result |
+|---|---|
+| Every file:line cited in this document | All correct |
+| "`FIN_1944_old.txt` is unused" | Correct: no reference in mod or base game |
+| Does `on_daily` run per country? (finding A depends on it) | Yes. Evidence in the save (see A) |
+| Calibration re-run, each tree against its own map | Mod: 154 references, 2 wrong. Base game: 82 references, 0 wrong |
+| Parser bug: a `#` between escaped quotes (`\"`) in a string was treated as a comment | Fixed in `tools/pdx.py`. All results unchanged |
+| Duplicate definitions of the same state | **New finding G** |
+| Finding A's trigger conditions | **Corrected**: needs China AI and Japan winning stage 1. Not "every game" |
+| Proposed fix for line 328 | **Changed**: comment out instead of moving (see A) |
+| Proposed fix, dry run on a scratch copy | Only the intended 2 lines change, line endings kept, nothing new flagged, applies cleanly |
+
+Still **not** verified: anything in the running game. In particular, that a
+province modifier in the wrong state actually crashes HOI4. That rests on the
+author's own `#fix` edits, and only an in-game test settles it.

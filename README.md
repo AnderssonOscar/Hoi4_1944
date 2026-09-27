@@ -6,7 +6,9 @@ investigating and fixing reported bugs.
 | Folder | What it is |
 |---|---|
 | `mod/` | The mod. Commit `253cea1` is the Workshop version byte-for-byte. |
+| `docs/HANDOVER.md` | Start here if you're continuing the work (any assistant). |
 | `docs/INVESTIGATION.md` | What was looked at, what was found, how sure, what's proposed. |
+| `docs/proposed-fixes/` | Tested patches waiting for approval. Not applied to `mod/`. |
 | `tools/` | Read-only check scripts used for the findings. |
 
 ## Reviewing changes

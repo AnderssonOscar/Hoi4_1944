@@ -22,19 +22,23 @@ MOD = os.path.join(HERE, "..", "mod")
 VANILLA = sys.argv[1] if len(sys.argv) > 1 else r"C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV"
 
 
-def province_to_state():
+def province_to_state(with_files=False):
+    """Province -> state id, from history/states as the game loads them.
+    With with_files=True also returns state id -> [files defining it]."""
     prov2state = {}
+    state_files = collections.defaultdict(list)
     for name, path in pdx.merged_files(MOD, VANILLA, os.path.join("history", "states")).items():
         root, _ = pdx.parse_file(path)
         for node, _ in pdx.walk(root):
-            if node.key == "state" and node.is_block():
+            if node.key and node.key.lower() == "state" and node.is_block():
                 sid = next((c.value for c in node.value if c.key == "id"), None)
+                state_files[sid].append(name)
                 for c in node.value:
                     if c.key == "provinces" and c.is_block():
                         for p in c.value:
                             if p.key is None and not p.is_block():
                                 prov2state[p.value] = sid
-    return prov2state
+    return (prov2state, state_files) if with_files else prov2state
 
 
 def static_modifier_names():
@@ -54,11 +58,11 @@ def mod_script_files():
 
 
 def main():
-    prov2state = province_to_state()
+    prov2state, state_files = province_to_state(with_files=True)
     modifiers = static_modifier_names()
     adds = collections.defaultdict(list)     # (modifier, province) -> [where]
     removes = collections.defaultdict(list)
-    wrong_state, unknown_mod, dynamic = [], [], 0
+    wrong_state, unknown_mod, dynamic, checked = [], [], 0, 0
 
     for path in mod_script_files():
         rel = os.path.relpath(path, MOD).replace("\\", "/")
@@ -81,13 +85,21 @@ def main():
                 actual = prov2state.get(prov)
                 if state_scope is None:
                     dynamic += 1
-                elif actual != state_scope:
-                    wrong_state.append((f"{rel}:{line}", node.key, prov, state_scope, actual))
+                else:
+                    checked += 1
+                    if actual != state_scope:
+                        wrong_state.append((f"{rel}:{line}", node.key, prov, state_scope, actual))
                 for m in mods:
                     (adds if node.key == "add_province_modifier" else removes)[(m, prov)].append(where)
 
-    print(f"Provinces mapped: {len(prov2state)}   static modifiers known: {len(modifiers)}\n")
-    print(f"== Province not in the state the effect runs in ({len(wrong_state)}) ==")
+    print(f"Provinces mapped: {len(prov2state)}   static modifiers known: {len(modifiers)}"
+          f"   province references checked: {checked}\n")
+    dup_states = {sid: files for sid, files in state_files.items() if len(files) > 1}
+    print(f"== State ids defined by more than one file ({len(dup_states)}) ==")
+    print("   (a mod file only replaces a vanilla file with the exact same name; otherwise both load)")
+    for sid, files in sorted(dup_states.items(), key=lambda kv: int(kv[0]) if kv[0] and kv[0].isdigit() else 0):
+        print(f"  state {sid}: {', '.join(files)}")
+    print(f"\n== Province not in the state the effect runs in ({len(wrong_state)}) ==")
     for where, kind, prov, scope, actual in sorted(wrong_state):
         print(f"  {where}  {kind}: province {prov} used in state {scope}, but it belongs to state {actual}")
     print(f"\n== Unknown static modifiers ({len(unknown_mod)}) ==")

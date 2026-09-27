@@ -30,12 +30,17 @@ class Node:
 def tokenize(text):
     tokens = []
     for lineno, raw in enumerate(text.splitlines(), 1):
-        # strip comments, but not '#' inside quoted strings
-        out, in_str = [], False
+        # strip comments, but not '#' inside quoted strings. Escaped quotes
+        # (\" inside division strings) do not end the string.
+        out, in_str, esc = [], False, False
         for ch in raw:
-            if ch == '"':
+            if esc:
+                esc = False
+            elif ch == "\\" and in_str:
+                esc = True
+            elif ch == '"':
                 in_str = not in_str
-            if ch == "#" and not in_str:
+            elif ch == "#" and not in_str:
                 break
             out.append(ch)
         for m in TOKEN_RE.finditer("".join(out)):

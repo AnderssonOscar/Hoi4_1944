@@ -28,8 +28,15 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
   allows. Results are in `docs/INVESTIGATION.md`.
 - **One strong finding (A):** the Japan "Ichi-Go" scripts put province
   modifiers on provinces outside the state they run in. This is probably
-  behind "the game crashes at a certain date". A fix is proposed but **not
-  applied or tested in game**.
+  behind "the game crashes at a certain date". The fix is a tested 2-line patch,
+  `docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch`. It has been
+  checked with the tools and applies cleanly, but it is **not applied and not
+  tested in game**.
+- **Found in self-review (G):** three Australian states are defined twice
+  because the base game renamed its files. The fix (rename 3 files) is
+  proposed, not applied.
+- Everything was self-reviewed on 2026-09-27. See INVESTIGATION.md §6 for what
+  was checked and corrected.
 - **Four reports have no cause found** (Bulgaria switch, Romania 12-day
   decision, Volkssturm focus, UK). They need a crash report from the game.
   One report ("D-Day seems broken") needs a proper description first.
@@ -102,14 +109,21 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 | D | Crash on completing the Volkssturm focus | No cause found by reading |
 | E | "Playing UK crashes" | Author's comments show earlier UK crashes. May be the same as A. |
 | F | "D-Day seems broken" | Needs a description of what's broken |
+| G | (not reported) | States 870, 871, 873 defined twice. Fix: rename the mod files to the base game's names |
 
 Full evidence, confidence and the proposed fix are in `docs/INVESTIGATION.md`,
 section 2A.
 
 ## 7. Next steps, in order
 
-1. **Ichi-Go fix (A).** Show Oscar the proposed change. Apply it only after he
-   says yes (one commit). Then test it:
+1. **Ichi-Go fix (A).** Show Oscar the patch (INVESTIGATION.md §2A explains
+   it). Only after a yes, apply it as its own commit:
+   ```
+   git apply docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch
+   git diff --stat        # must show 1 file, 2 lines
+   git commit -am "Fix Ichi-Go province modifiers applied in the wrong state"
+   ```
+   Then start `docs/CHANGELOG.md`. Then test it:
    play or observe (console command `observe`) a game as any country except
    Japan or China, past September 1944. Ideally run the same save once
    without the fix (does it crash?) and once with it (does it not?).
@@ -152,6 +166,14 @@ Run from the project folder:
 python tools/check_province_modifiers.py   # finding A: provinces outside their state
 python tools/check_structure.py            # brace balance, template slot clashes
 ```
+
+`check_province_modifiers.py` also reports states defined by more than one
+file (finding G). Expected output on the unpatched baseline: 154 references
+checked, 3 duplicate states, 2 in the wrong state, 0 unknown modifiers, 2
+removed-but-never-added.
+
+Tip: Git Bash's `grep` hides carriage returns in its output. To check line
+endings, count bytes with Python (`data.count(b"\r\n")`), not `grep | cat -A`.
 
 Both are read-only. `tools/pdx.py` is a small, tolerant parser for Paradox
 script. It is **not** a full HOI4 validator: it catches the specific problems
