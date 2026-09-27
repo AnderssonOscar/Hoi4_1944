@@ -4,8 +4,10 @@
 # After the focus GER_form_volksturm (the first levy, autumn 1944), the
 # Volkssturm was called out region by region as the front arrived. Each
 # decision appears on the historical date and can be taken once the front
-# has reached that region (an enemy holds or borders one of its states).
-# Divisions are only raised in states Germany still fully controls.
+# has reached that region (an enemy holds part of one of its states, or a
+# neighbouring state).
+# Divisions are only raised in states Germany still holds (controls);
+# create_unit never places them on enemy-held provinces.
 #
 #   decision                from        divisions (5 militia battalions each)
 #   GER_volkssturm_east     1945.1.12   26  Soviet winter offensive from the Vistula, 12 January 1945
@@ -40,7 +42,7 @@ war_measures = {
 				any_state = {
 					OR = { state = 763 state = 5 state = 85 state = 807 state = 86 state = 66 state = 67 state = 74 }
 					OR = {
-						controller = { has_war_with = ROOT }
+						NOT = { is_fully_controlled_by = ROOT } # the enemy holds part or all of it
 						any_neighbor_state = { controller = { has_war_with = ROOT } }
 					}
 				}
@@ -50,7 +52,7 @@ war_measures = {
 				any_state = {
 					OR = { state = 763 state = 5 state = 85 state = 807 state = 86 state = 66 state = 67 state = 74 }
 					is_core_of = ROOT
-					ROOT = { has_full_control_of_state = PREV }
+					is_controlled_by = ROOT
 				}
 			}
 		}
@@ -70,7 +72,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 5 GER_volkssturm_raise_division = yes }
 					}
@@ -79,7 +81,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 3 GER_volkssturm_raise_division = yes }
 					}
@@ -88,7 +90,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
 					}
@@ -97,7 +99,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
 					}
@@ -106,7 +108,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 5 GER_volkssturm_raise_division = yes }
 					}
@@ -115,7 +117,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 7 GER_volkssturm_raise_division = yes }
 					}
@@ -124,7 +126,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 3 GER_volkssturm_raise_division = yes }
 					}
@@ -133,7 +135,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
 					}
@@ -162,7 +164,7 @@ war_measures = {
 				any_state = {
 					OR = { state = 63 state = 62 state = 64 }
 					OR = {
-						controller = { has_war_with = ROOT }
+						NOT = { is_fully_controlled_by = ROOT } # the enemy holds part or all of it
 						any_neighbor_state = { controller = { has_war_with = ROOT } }
 					}
 				}
@@ -172,7 +174,7 @@ war_measures = {
 				any_state = {
 					OR = { state = 63 state = 62 state = 64 }
 					is_core_of = ROOT
-					ROOT = { has_full_control_of_state = PREV }
+					is_controlled_by = ROOT
 				}
 			}
 		}
@@ -192,7 +194,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 4 GER_volkssturm_raise_division = yes }
 					}
@@ -201,7 +203,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 3 GER_volkssturm_raise_division = yes }
 					}
@@ -210,7 +212,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 3 GER_volkssturm_raise_division = yes }
 					}
@@ -239,7 +241,7 @@ war_measures = {
 				any_state = {
 					OR = { state = 51 state = 57 state = 42 state = 56 }
 					OR = {
-						controller = { has_war_with = ROOT }
+						NOT = { is_fully_controlled_by = ROOT } # the enemy holds part or all of it
 						any_neighbor_state = { controller = { has_war_with = ROOT } }
 					}
 				}
@@ -249,7 +251,7 @@ war_measures = {
 				any_state = {
 					OR = { state = 51 state = 57 state = 42 state = 56 }
 					is_core_of = ROOT
-					ROOT = { has_full_control_of_state = PREV }
+					is_controlled_by = ROOT
 				}
 			}
 		}
@@ -269,7 +271,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 2 GER_volkssturm_raise_division = yes }
 					}
@@ -278,7 +280,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 2 GER_volkssturm_raise_division = yes }
 					}
@@ -287,7 +289,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
 					}
@@ -296,7 +298,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
 					}
@@ -325,7 +327,7 @@ war_measures = {
 				any_state = {
 					OR = { state = 64 }
 					OR = {
-						controller = { has_war_with = ROOT }
+						NOT = { is_fully_controlled_by = ROOT } # the enemy holds part or all of it
 						any_neighbor_state = { controller = { has_war_with = ROOT } }
 					}
 				}
@@ -335,7 +337,7 @@ war_measures = {
 				any_state = {
 					OR = { state = 64 }
 					is_core_of = ROOT
-					ROOT = { has_full_control_of_state = PREV }
+					is_controlled_by = ROOT
 				}
 			}
 		}
@@ -355,7 +357,7 @@ war_measures = {
 					if = {
 						limit = {
 							is_core_of = ROOT
-							ROOT = { has_full_control_of_state = PREV }
+							is_controlled_by = ROOT
 						}
 						for_loop_effect = { end = 5 GER_volkssturm_raise_division = yes }
 					}

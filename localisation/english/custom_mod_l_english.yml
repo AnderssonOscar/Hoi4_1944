@@ -72,7 +72,7 @@ GER_form_volksgrenadier_tooltip:0 "Receive 18 volksgrenadier divisions of varyin
 
 GER_form_volksturm:0 "Form the volksturm"
 GER_form_volksturm_desc:0 "Form the volksturm"
-GER_form_volksturm_tooltip:0 "Every German core state that Germany fully controls raises Volkssturm divisions in proportion to its population: up to §Y42§! divisions (§Y210§! battalions). They are untrained and only §R40–75%§! armed, mostly with captured and obsolete rifles. More can be called up in 1945 by decision."
+GER_form_volksturm_tooltip:0 "Volkssturm divisions are raised in the German core states Germany still holds, about one for every 1.9 million people: up to §Y42§! divisions (§Y210§! battalions). They are untrained and only §R40–75%§! armed, mostly with captured and obsolete rifles. More can be called up in 1945 by decision."
 
 GER_simplify_production:0 "Simplify arms production"
 GER_simplify_production_desc:0 "We can increase our production by lowering our standards."
