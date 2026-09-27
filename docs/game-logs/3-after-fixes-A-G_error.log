@@ -1,0 +1,279 @@
+[14:39:58][no_game_date][pdx_audiomusic_sdl.cpp:74]: For best performance and quality music files should be in 44.1kHz (Njet Molotoff)
+[14:40:19][no_game_date][nationalfocus.cpp:2472]: INSHOL_industrialized_colony: Couldn't find dependency HOL_continue_the_war_in_batavia_taog 
+[14:40:19][no_game_date][nationalfocus.cpp:2472]: INSHOL_autonomous_dominion: Couldn't find dependency HOL_continue_the_war_in_batavia_taog 
+[14:40:21][no_game_date][ai_strategy.cpp:184]: in file common/ai_strategy_plans/HOL_TAOG_alternate_strategy_plan.txt line: 44
+[14:40:21][no_game_date][ai_strategy.cpp:187]: invalid focus for ai strategy HOL_obtain_foreign_colonial_investments_taog
+[14:40:21][no_game_date][ai_strategy.cpp:187]: invalid focus for ai strategy HOL_taog_guarantee_colonial_loyalty
+[14:40:21][no_game_date][ai_strategy.cpp:187]: invalid focus for ai strategy HOL_the_western_possessions_taog
+[14:40:21][no_game_date][ai_strategy.cpp:184]: in file common/ai_strategy_plans/HOL_TAOG_alternate_strategy_plan.txt line: 166
+[14:40:21][no_game_date][ai_strategy.cpp:187]: invalid focus for ai strategy HOL_obtain_foreign_colonial_investments_taog
+[14:40:21][no_game_date][ai_strategy.cpp:187]: invalid focus for ai strategy HOL_taog_guarantee_colonial_loyalty
+[14:40:21][no_game_date][ai_strategy.cpp:187]: invalid focus for ai strategy HOL_the_western_possessions_taog
+[14:40:21][no_game_date][ai_strategy.cpp:184]: in file common/ai_strategy_plans/HOL_TAOG_historical_strategy_plan.txt line: 65
+[14:40:21][no_game_date][ai_strategy.cpp:187]: invalid focus for ai strategy HOL_obtain_foreign_colonial_investments_taog
+[14:40:21][no_game_date][ai_strategy.cpp:187]: invalid focus for ai strategy HOL_the_western_possessions_taog
+[14:40:22][no_game_date][eventmanager.cpp:566]: events/mod_news.txt:8: mod.news.1: Event is set to trigger every day.
+[14:40:22][no_game_date][eventmanager.cpp:566]: events/mod_news.txt:166: mod.news.5: Event is set to trigger every day.
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_marines. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_shore_parties. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_commandoes. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_commandos_demolition. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: ski_troops. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: mountaineers_combat_1. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_paratroopers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: paras_combat_drop. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: paras_airborne_light_armor. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: rangers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: mountaineers_combat_2. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_marines. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_shore_parties. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: rangers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: mountaineers_combat_1. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_marines. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_jungle_troops. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_expeditionary. use var:var_name to explicitly use variables in effects/triggers
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_expand_curacao_oil_refineries_taog (common/ideas/netherlands.txt:2250: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/ideas/netherlands.txt:2250: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/characters/INS.txt:723: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/characters/INS.txt:723: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/characters/INS.txt:779: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/characters/INS.txt:779: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_obtain_foreign_colonial_investments_taog (common/decisions/categories/HOL_decision_categories.txt:17: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/decisions/categories/HOL_decision_categories.txt:17: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_obtain_foreign_colonial_investments_taog (common/decisions/HOL.txt:70: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/decisions/HOL.txt:70: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_obtain_foreign_colonial_investments_taog (common/decisions/HOL.txt:149: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/decisions/HOL.txt:149: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_obtain_foreign_colonial_investments_taog (common/decisions/HOL.txt:191: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/decisions/HOL.txt:191: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_obtain_foreign_colonial_investments_taog (common/decisions/HOL.txt:290: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/decisions/HOL.txt:290: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:12401]: Invalid decision in has_active_timed_decision trigger: has_active_mission = GRE_the_election_of_1936
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/national_focus/greece.txt:30: has_active_mission
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/national_focus/indonesia_joint.txt:8833: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/national_focus/indonesia_joint.txt:8833: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/national_focus/indonesia_joint.txt:10015: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/national_focus/indonesia_joint.txt:10015: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/scripted_triggers/INS_scripted_triggers.txt:73: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/scripted_triggers/INS_scripted_triggers.txt:73: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/scripted_triggers/INS_scripted_triggers.txt:90: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/scripted_triggers/INS_scripted_triggers.txt:90: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/scripted_triggers/INS_scripted_triggers.txt:107: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/scripted_triggers/INS_scripted_triggers.txt:107: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/scripted_triggers/INS_scripted_triggers.txt:115: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/scripted_triggers/INS_scripted_triggers.txt:115: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/scripted_triggers/INS_scripted_triggers.txt:148: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/scripted_triggers/INS_scripted_triggers.txt:148: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/ai_strategy_plans/INS_alternate_strategy_plan.txt:12: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/ai_strategy_plans/INS_alternate_strategy_plan.txt:12: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/ai_strategy_plans/INS_alternate_strategy_plan.txt:78: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/ai_strategy_plans/INS_alternate_strategy_plan.txt:78: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/ai_strategy_plans/INS_alternate_strategy_plan.txt:138: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/ai_strategy_plans/INS_alternate_strategy_plan.txt:138: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/ai_strategy_plans/INS_alternate_strategy_plan.txt:196: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/ai_strategy_plans/INS_alternate_strategy_plan.txt:196: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (common/ai_strategy_plans/INS_historical_strategy_plan.txt:27: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/ai_strategy_plans/INS_historical_strategy_plan.txt:27: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_liberation_taog (common/achievements.txt:2058: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/achievements.txt:2058: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (events/TAOG_Indonesia.txt:317: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: events/TAOG_Indonesia.txt:317: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (events/TAOG_Indonesia.txt:350: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: events/TAOG_Indonesia.txt:350: has_completed_focus
+[14:40:22][no_game_date][triggerimplementation.cpp:3617]: Invalid focus scripted in trigger. has_completed_focus = HOL_taog_guarantee_colonial_loyalty (events/TAOG_Indonesia.txt:535: has_completed_focus)
+[14:40:22][no_game_date][trigger.cpp:117]: Trigger failed to validate: events/TAOG_Indonesia.txt:535: has_completed_focus
+[14:40:22][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip GRE_exploit_errata_in_schachtplan
+[14:40:22][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip GRE_request_italian_assistance_with_industrialisation
+[14:40:22][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip GRE_trade_manufactured_ship_parts_for_investment
+[14:40:22][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip GRE_attend_talks_with_the_presidium
+[14:40:22][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip SOV_cancel_the_japanese_resource_rights_to_sakhalin_decision
+[14:40:22][no_game_date][effectimplementation.cpp:14469]: Invalid Decision ID for activate_mission JAP_tauran_border_incident_forgotten_1
+[14:40:22][no_game_date][effectimplementation.cpp:14469]: Invalid Decision ID for activate_mission JAP_tauran_border_incident_forgotten_1
+[14:40:28][no_game_date][gameapplication.cpp:866]: The game has loc key collisions. Check logs/text.log for more details
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_marines. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_shore_parties. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_commandoes. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_commandos_demolition. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: ski_troops. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: mountaineers_combat_1. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_paratroopers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: paras_combat_drop. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: paras_airborne_light_armor. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: rangers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: mountaineers_combat_2. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_marines. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_shore_parties. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: rangers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: mountaineers_combat_1. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_mountaineers. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: special_forces_marines. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_jungle_troops. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_recon. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][database_scoped_variables.cpp:267]: invalid database object for effect/trigger: marines_expeditionary. use var:var_name to explicitly use variables in effects/triggers
+[14:40:30][1936.01.01.12][effectimplementation.cpp:5544]: history/countries/SIA - Siam.txt:32: recruit_character: Unknown character 
+[14:40:30][1936.01.01.12][country.cpp:7047]: Attempting to set capital state #554 for Syria, they dont own it!
+[14:40:30][1936.01.01.12][effectimplementation.cpp:5554]: history/countries/GDC - Guangdong.txt:57: recruit_character: Character GXC_chen_jitang cannot be assigned to GDC as it is already assigned to GXC
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/GER - Germany.txt:924: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/GER - Germany.txt:924: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/GER - Germany.txt:924: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][equipment_effects.cpp:814]: 'history/countries/ENG - Britain.txt:2051: create_equipment_variant': 'Fairey Swordfish' - Invalid icon 'GFX_ENG_nav_bomber1_medium'.
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ENG - Britain.txt:3132: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ENG - Britain.txt:3132: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ENG - Britain.txt:3132: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ENG - Britain.txt:3132: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ENG - Britain.txt:3132: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/SOV - Soviet union.txt:2453: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/SOV - Soviet union.txt:2453: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/SOV - Soviet union.txt:2453: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/SOV - Soviet union.txt:2453: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][effectimplementation.cpp:10476]: history/countries/HOL - Holland.txt:213: complete_national_focus: Unkown focus scripted HOL_obtain_foreign_colonial_investments_taog
+[14:40:30][1944.01.01.12][effectimplementation.cpp:10476]: history/countries/HOL - Holland.txt:214: complete_national_focus: Unkown focus scripted HOL_the_western_possessions_taog
+[14:40:30][1944.01.01.12][effectimplementation.cpp:10476]: history/countries/HOL - Holland.txt:228: complete_national_focus: Unkown focus scripted HOL_antilles_defenses_taog
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/indonesia_joint.txt:7850: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/indonesia_joint.txt:7854: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][equipmentvariant.cpp:1112]: Country "ENG" does not have any equipment variant for type "jet_fighter_equipment_1" (selecting latest version) created by "ENG".
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/italy.txt:2761: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:5621]: history/countries/ITA - Italy.txt:1795: retire_character: Character ITA_giovanni_messe has already been retired from country ITA
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ITA - Italy.txt:2223: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ITA - Italy.txt:2223: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ITA - Italy.txt:2223: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ITA - Italy.txt:2223: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/romania.txt:1314: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/ROM - Romania.txt:1033: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SOV before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GER before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ENG before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GER before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GER before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ENG before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ENG before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SOV before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GER before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ENG before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SWE before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SPR before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of TUR before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of POR before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of IRE before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of AFG before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ARG before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of BHU before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of CHI before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GUA before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of JAP before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of LIB before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of MEN before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of NEP before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SAU before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SIA before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SIK before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of TIB before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of URG before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of VEN before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of YUN before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of PAR before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of YEM before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GXC before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of PRC before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of XSM before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of COG before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of MAN before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GSM before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of NXM before the latter country is initialized (or otherwise has no neighbors).
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/TUR - Turkey.txt:1035: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][effectimplementation.cpp:12778]: common/national_focus/norway.txt:3268: create_unit -- pBestLocation was not found [reason] Not allowed on enemy provinces
+[14:40:30][1944.01.01.12][effectimplementation.cpp:12778]: common/national_focus/norway.txt:3268: create_unit -- pBestLocation was not found [reason] Not allowed on enemy provinces
+[14:40:30][1944.01.01.12][effectimplementation.cpp:12778]: common/national_focus/norway.txt:3268: create_unit -- pBestLocation was not found [reason] Not allowed on enemy provinces
+[14:40:30][1944.01.01.12][effectimplementation.cpp:12778]: common/national_focus/norway.txt:3268: create_unit -- pBestLocation was not found [reason] Not allowed on enemy provinces
+[14:40:30][1944.01.01.12][effectbase.cpp:751]: *Tried to trigger non-existant event: bftb_news.11
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10808: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10619: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10623: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10222: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10294: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/FIN - Finland.txt:1164: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/FIN - Finland.txt:1164: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/FIN - Finland.txt:1164: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/FIN - Finland.txt:1164: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:15922: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary.txt:3194: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary.txt:3231: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17111: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17115: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17168: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17174: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17181: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17423: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17004: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:11129: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/HUN - Hungary.txt:1275: set_technology: Invalid tech
+[14:40:30][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/AFG - Afghanistan.txt:339: diplomatic_relation: The relation(non_aggression_pact) already exists, between AFG and TUR.
+[14:40:30][1944.01.01.12][effectimplementation.cpp:5554]: history/countries/ARG - Argentina.txt:361: recruit_character: Character ARG_roberto_maria_ortiz cannot be assigned to ARG as it is already assigned to ARG
+[14:40:30][1944.01.01.12][effectimplementation.cpp:5615]: history/countries/ARG - Argentina.txt:363: retire_character: Unknown character 
+[14:40:30][1944.01.01.12][effectimplementation.cpp:10476]: history/countries/AST - Australia.txt:228: complete_national_focus: Unkown focus scripted AST_domestic_industries
+[14:40:30][1944.01.01.12][eventtarget.cpp:357]: tried to use mio CHI_camco_medium_organization as scope, but could not find this mio in country CHI. Check that allowed trigger in mio matches this country.
+[14:40:30][1944.01.01.12][effect.cpp:555]: common/national_focus/china_shared.txt:3066: add_mio_size: Invalid Scope, supported: Military Industrial Organisation, provided: None
+[14:40:30][1944.01.01.12][effect.cpp:555]: common/national_focus/china_shared.txt:3067: add_mio_funds: Invalid Scope, supported: Military Industrial Organisation, provided: None
+[14:40:30][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/iraq.txt:669: add_resource can't be called from a history file!
+[14:40:30][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/IRQ - Iraq.txt:281: diplomatic_relation: The relation(non_aggression_pact) already exists, between IRQ and TUR.
+[14:40:30][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/IRQ - Iraq.txt:293: diplomatic_relation: The relation(non_aggression_pact) already exists, between IRQ and AFG.
+[14:40:30][1944.01.01.12][effectimplementation.cpp:3025]: history/countries/IRQ - Iraq.txt:301: remove_ideas: Invalid idea: IRQ_bakr_sidqi. If you wanted to reference a variable, you need to explicitly prefix it with var: or temp_var:.
+[14:40:30][1944.01.01.12][effectimplementation.cpp:5621]: history/countries/IRQ - Iraq.txt:306: retire_character: Character IRQ_bakr_sidqi has already been retired from country IRQ
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/japan.txt:27181: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/japan.txt:27185: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/japan.txt:27189: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/japan.txt:30189: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/JAP - Japan.txt:3156: set_technology: Invalid tech
+[14:40:31][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/JAP - Japan.txt:3156: set_technology: Invalid tech
+[14:40:31][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/JAP - Japan.txt:3156: set_technology: Invalid tech
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/mexico.txt:966: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/mexico.txt:966: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/mexico.txt:966: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/mexico.txt:966: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][equipment_effects.cpp:814]: 'common/national_focus/new_zealand.txt:512: create_equipment_variant': 'Bristol Blenheim' - Modular type 'medium_plane_airframe_1' appears to not have been unlocked for NZL as no chassis variant exists. Unlocked the tech before creating any variants to avoid bugs.
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/new_zealand.txt:1650: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/new_zealand.txt:1656: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/new_zealand.txt:1537: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/PER - Persia.txt:255: diplomatic_relation: The relation(non_aggression_pact) already exists, between PER and TUR.
+[14:40:31][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/PER - Persia.txt:261: diplomatic_relation: The relation(non_aggression_pact) already exists, between PER and AFG.
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/china_warlord_sea.txt:3024: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/USA - USA.txt:1876: set_technology: Invalid tech
+[14:40:31][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/USA - USA.txt:1876: set_technology: Invalid tech
+[14:40:31][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/USA - USA.txt:1876: set_technology: Invalid tech
+[14:40:31][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/USA - USA.txt:1876: set_technology: Invalid tech
+[14:40:31][1944.01.01.12][equipmentpool.cpp:1540]: Trying to fill variant where none exist from type: anti_air_equipment belonging to British Raj
+[14:40:31][1944.01.01.12][equipmentpool.cpp:1540]: Trying to fill variant where none exist from type: anti_air_equipment belonging to British Raj
+[14:40:31][1944.01.01.12][effectimplementation.cpp:5781]: Character already has a country leader role for ideology: Anti-Revisionism: common/scripted_effects/WTT_warlord_scripted_effects.txt:328: add_country_leader_role
+[14:40:31][1944.01.01.12][effectimplementation.cpp:5781]: Character already has a country leader role for ideology: Socialism: common/scripted_effects/WTT_warlord_scripted_effects.txt:339: add_country_leader_role
+[14:40:31][1944.01.01.12][effectimplementation.cpp:5781]: Character already has a country leader role for ideology: Rexism: common/scripted_effects/WTT_warlord_scripted_effects.txt:350: add_country_leader_role
+[14:40:31][1944.01.01.12][international_market_effect_implementation.cpp:476]: common/national_focus/indonesia.txt:6497: give_market_access: Market access between INS and JAP is not valid
+[14:40:31][1944.01.01.12][international_market_effect_implementation.cpp:476]: common/national_focus/indonesia.txt:6498: give_market_access: Market access between JAP and INS is not valid
+[14:40:31][1944.01.01.12][character_effect_implementation.cpp:1018]: swap_country_leader_traits - Character has several country leader roles, ideology is mandatory: common/national_focus/indonesia.txt:7200: swap_country_leader_traits
+[14:40:31][1944.01.01.12][eventtarget.cpp:357]: tried to use mio HOL_artillerie_inrichtingen_organization as scope, but could not find this mio in country RKN. Check that allowed trigger in mio matches this country.
+[14:40:31][1944.01.01.12][effect.cpp:555]: common/national_focus/netherlands.txt:1372: add_mio_size: Invalid Scope, supported: Military Industrial Organisation, provided: None
+[14:40:31][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/netherlands.txt:147: add_resource can't be called from a history file!
+[14:40:31][1944.01.01.12][technology_effect_implementation.cpp:996]: history/countries/RKN - Reichskommisariat Niederlande.txt:379: set_technology: Invalid tech

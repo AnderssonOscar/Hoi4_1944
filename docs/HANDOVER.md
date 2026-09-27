@@ -34,6 +34,17 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
     deleted.
 - All checks after applying passed (INVESTIGATION.md §7). The Steam Workshop
   folder was never modified.
+- **Updated to HOI4 1.19.3** (2026-09-27, 12 commits `6fa793c` …
+  `d55cf37`; CHANGELOG.md §3, INVESTIGATION.md §8). Checked in the game
+  itself: error.log went from 282 to 115 with all DLCs on; 1 new, harmless
+  error comes from Paradox's own file. **Not verified:** playing without
+  some DLCs (the attempt failed and was discarded), and 3 heavily edited
+  files (GER decisions, germany focus tree, artillery techs) were not merged
+  with 1.19.3.
+- You can run the game's own error check yourself: start `hoi4.exe -debug`
+  with the mod in `dlc_load.json`, wait for the main menu, and read
+  `logs/error.log`. Back up `dlc_load.json` first and restore it afterwards.
+  The logs from 2026-09-27 are saved in `docs/game-logs/`.
 - A local test entry, "1944 - Downfall (local fixes)", points the game at this
   project's `mod\` folder (see CHANGELOG.md, "How to test in game").
 - The five player reports have been investigated as far as reading the code
@@ -119,8 +130,11 @@ section 2A.
 
 ## 7. Next steps, in order
 
-1. **Test fixes A and G in game** (steps in `docs/CHANGELOG.md`, "How to test
-   in game"). Use a playset with only "1944 - Downfall (local fixes)" and
+0. **Test with fewer DLCs** through the Paradox launcher (untick DLCs in
+   the playset), then compare `logs/error.log` with the all-DLC result
+   (115 lines).
+1. **Test fixes A and G and the 1.19.3 update in game** (steps in
+   `docs/CHANGELOG.md`, "How to test in game"). Use a playset with only "1944 - Downfall (local fixes)" and
    observe a game as any country except Japan or China past September 1944.
    Ideally also run the same save with the Workshop version (does it crash?)
    and with the local fixes (does it not?). Record the result in

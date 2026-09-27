@@ -48,6 +48,55 @@ baseline commit `253cea1`. See every change at once with
 - **Checked:** each state now has exactly one definition; the province-to-state
   map is unchanged (10,272 provinces); nothing refers to the deleted file names.
 
+### 3. Update to Hearts of Iron IV 1.19.3 (commits `6fa793c` … `d55cf37`)
+
+The current game is 1.19.3 (released 2026-09-17). The mod said 1.19.2, but
+many files it replaces were older copies from before 1.19 (Thunder at Our
+Gates), so new base-game content broke. **Rule followed throughout: the
+author's own content is kept byte-for-byte; only old base-game text is
+updated, and missing base-game pieces are added.** How each file was
+checked is in INVESTIGATION.md §8.
+
+| Commit | Change |
+|---|---|
+| `6fa793c` | descriptor.mod: supported_version 1.19.2.0 → 1.19.3.0 |
+| `2d80d87` | Netherlands focus tree = 1.19.3 file + the author's only edit (`RKN` may use the Dutch tree). Restores the 15 Thunder at Our Gates focuses (~60 errors) |
+| `f646e4a` | cosmetic.txt = 1.19.3 file + the mod's 17 own tags (84 base-game tags were missing) |
+| `8041896` | Argentina: character ID renamed in 1.19; a duplicate recruit removed. (Its Australia part was undone by `4a17ff6` and redone in `58a1a82`.) |
+| `586de46`, `d55cf37` | JAP/SOV decision files: added base-game decisions they lacked (Tauran border-incident chain; Sakhalin decision) |
+| `0384e82` | Added news event bftb_news.11, which the mod's Bulgaria tree fires |
+| `c8dac21` | Special forces: dead pre-1.19 doctrine techs in 11 countries' 1944 setups → 1.19 sub-doctrines (mapping table in the commit message). Nobody was getting these doctrines before |
+| `4a17ff6` | Australia history = 1.19.3 file + the author's 1944 block + his 4 stockpiles |
+| `d5c3c69` | Siam history = 1.19.3 file + the author's 1944 block |
+| `58a1a82` | Australia: fixes a Paradox bug in the 1.19.3 file (`AST_domestic_industries` → `AST_domestic_industry`) |
+| `368cee9` | tools/rebase_helpers.py, used for the above |
+
+**Gameplay changes to be aware of:** the 11 countries now actually get
+special-forces doctrines (with Arms Against Tyranny, as before). Australia
+and Siam start with the 1.19.3 setup plus the author's 1944 changes.
+
+**Checked in the game** (error.log, all 28 DLCs on): Workshop version 282
+errors → 115 after the update. Only 1 error is new: Paradox's own 1.19.3
+Siam file retires a politician it only hires *without* Thunder at Our
+Gates. It's harmless and left as Paradox wrote it. The mod's own checkers
+are also clean (0 wrong-state modifiers, 0 duplicate states).
+
+**Not done / not verified:**
+- **Playing without some DLCs is not tested.** My attempt to switch DLCs
+  off when starting the game didn't work, so that result was thrown away.
+  Test it through the Paradox launcher.
+- Three heavily edited files that 1.19.3 also changed were **not** merged:
+  `decisions/GER.txt`, `national_focus/germany.txt` and
+  `technologies/artillery.txt`. The relevant 1.19.3 changes (Reichskommissariat
+  Australasien states, Second Treaty of Berlin conditions) are 1936–41
+  content with little effect on a 1944 start, and merging safely needs the
+  author. His versions are unchanged.
+- Base-game Burma oil-field decisions (`BRM_blow_up_the_oil_fields`,
+  `BRM_repair_the_oil_fields`) are missing from the mod's JAP.txt. Not
+  added, because they'd add new 1944 gameplay; the author's call.
+- The remaining 115 errors were already there before the update and are
+  mostly harmless. INVESTIGATION.md §8 has the list.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,

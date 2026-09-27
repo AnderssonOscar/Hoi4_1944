@@ -370,3 +370,73 @@ never-added modifiers from many provinces whenever Ichi-Go fails early.
 
 **Still not verified:** the game itself. CHANGELOG.md explains how to test with
 the local copy.
+
+---
+
+## 8. Update to HOI4 1.19.3 (2026-09-27)
+
+**Target.** Steam reports the install as fully up to date: build 25205862,
+updated 2026-09-17 = 1.19.3. That update rewrote 397 base-game script files,
+which is how the 7 replaced files it touched were found (by file date).
+
+**Method.**
+1. Start the game straight into the mod with `-debug`, wait for the main
+   menu (the 1944 history runs at startup), close it, and keep
+   `logs/error.log`. `dlc_load.json` was backed up first and restored
+   byte-for-byte after each run. Base game alone: 1 error. Workshop mod: 282.
+2. For each error source, find which file is an old base-game copy, and use
+   the author's git history and item-by-item diffs to separate **his edits**
+   from **old base-game text**.
+3. Rebuild only where his edits could be isolated exactly: new file = 1.19.3
+   file + his edits, then verify by parsing that his parts are identical and
+   everything else equals 1.19.3. Otherwise only *add* the missing pieces.
+4. Run the game again and compare logs message by message (line numbers
+   ignored).
+
+**Author edits found and kept.**
+
+| File | Author's edits (kept) | Evidence |
+|---|---|---|
+| national_focus/netherlands.txt | `OR = { tag = HOL tag = RKN #1944 }`, #1944 comment | whole-file diff vs 1.19.3: nothing else |
+| countries/cosmetic.txt | 17 own tags (`*_1944` etc.) | the only other difference was a colour on INS_HOL (1.19 content) |
+| history/countries/AST | 1943.12.30 block, 4 top-level stockpiles | everything else = 1.19.3 plus ~39 lines added by 1.19.3 |
+| history/countries/SIA | 1943.12.30 block | his git commits only touch this block (lines 1–290 = unedited 2023 copy) |
+
+**Results (error.log, all 28 DLCs):**
+
+| Cause | Errors removed |
+|---|---|
+| Special-forces doctrine techs that no longer exist | 93 |
+| Missing Thunder at Our Gates Netherlands focuses | 41 (+ related) |
+| Missing decisions / event, renamed IDs | ~12 |
+| Duplicate states (fix `ce4f33a`) | 3 |
+| **Total** | **282 → 115** |
+
+New: 1 (Paradox's 1.19.3 Siam file, `retire_character =
+SIA_nangklao_suriyawongse` in its 1939 block; with Thunder at Our Gates that
+character is never hired. Harmless; not changed).
+
+**The 115 remaining errors** were all there before the update:
+- ~50 harmless setup noise: "Asking if X is a neighbor ..." ×40, duplicate
+  non-aggression pacts ×5, and similar.
+- 34× "add_resource can't be called from a history file": focuses completed
+  in the 1944 setups can't add resources that way, so those resource rewards
+  are skipped.
+- 6 from the base game's Greek focus tree, which the mod doesn't use (Greece
+  uses the mod's own `greek_focus_hellenic` tree, weight 10).
+- ~25 small ones (MIO scopes, a few characters already retired or assigned,
+  one icon, market access). Worth a look later.
+
+**Mistake caught during the update.** Commit `8041896` said the
+`AST_domestic_industries` line was in the author's 1944 block. It isn't: it's
+in Paradox's own 1.19.3 file (1939 block), so the Australia rebuild brought
+it back. It was caught by the post-update game run and fixed again in
+`58a1a82`.
+
+**DLC compatibility: not verified.** A test with all DLCs disabled was
+attempted by writing `disabled_dlcs` in `dlc_load.json`. The game still
+logged "Active DLC Count: 28" and froze during history loading, so those
+runs were discarded (no conclusions drawn). Test through the Paradox
+launcher's DLC settings instead. Known DLC-sensitive spots: the author's HOL
+history completes Thunder at Our Gates focuses; special-forces sub-doctrines
+are inside `has_dlc = "Arms Against Tyranny"` (as the old techs were).

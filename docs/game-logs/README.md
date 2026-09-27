@@ -1,0 +1,12 @@
+# Game error logs (HOI4 1.19.3, all 28 DLCs on, 2026-09-27)
+
+Each is `Documents\Paradox Interactive\Hearts of Iron IV\logs\error.log` from
+starting `hoi4.exe -debug` and waiting until the main menu (the mod's 1944
+history runs at startup). Compare them with any diff tool.
+
+| File | What was loaded | Lines |
+|---|---|---|
+| 1-base-game-no-mods_error.log | no mods | 1 |
+| 2-workshop-version_error.log | Steam Workshop version (unchanged) | 282 |
+| 3-after-fixes-A-G_error.log | this repo after commits e20698c + ce4f33a | 279 |
+| 4-after-1.19.3-update_error.log | this repo after the 1.19.3 update (d55cf37) | 115 |
