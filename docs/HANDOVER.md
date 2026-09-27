@@ -45,6 +45,10 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
   with the mod in `dlc_load.json`, wait for the main menu, and read
   `logs/error.log`. Back up `dlc_load.json` first and restore it afterwards.
   The logs from 2026-09-27 are saved in `docs/game-logs/`.
+- **Verified 2026-09-27:** `python tools/verify_update.py` gives 46/46 PASS
+  (integrity, scope, author's content preserved, fixes present, error.log).
+  See docs/VERIFICATION.md. Game install = official 1.19.3 (checksum 5632,
+  confirmed from saves). SHA-256 list of all mod files: docs/checksums/.
 - A local test entry, "1944 - Downfall (local fixes)", points the game at this
   project's `mod\` folder (see CHANGELOG.md, "How to test in game").
 - The five player reports have been investigated as far as reading the code
@@ -180,6 +184,8 @@ Run from the project folder:
 ```
 python tools/check_province_modifiers.py   # finding A: provinces outside their state
 python tools/check_structure.py            # brace balance, template slot clashes
+python tools/check_references.py           # events/ideas/characters/tags used in play
+python tools/verify_update.py              # re-checks every claim (46 checks)
 ```
 
 `check_province_modifiers.py` also reports states defined by more than one
