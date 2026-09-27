@@ -1,0 +1,24 @@
+# Slovak National Uprising (29 August 1944) - see events/slovak_uprising.txt
+# on_daily_SLO runs once a day for Slovakia only.
+on_actions = {
+	on_daily_SLO = {
+		effect = {
+			if = {
+				limit = {
+					date > 1944.8.28
+					NOT = { has_global_flag = SLO_slovak_uprising }
+					is_in_faction_with = GER
+					has_war_with = SOV
+					has_capitulated = no
+				}
+				set_global_flag = SLO_slovak_uprising
+				add_manpower = -3000
+				country_event = { id = slovak.uprising.1 }
+				if = {
+					limit = { country_exists = GER }
+					GER = { country_event = { id = slovak.uprising.1 } }
+				}
+			}
+		}
+	}
+}

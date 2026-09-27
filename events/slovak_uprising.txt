@@ -1,0 +1,23 @@
+###########################
+# Slovak National Uprising (29 August 1944)
+#
+# Fired once by common/on_actions/slovak_uprising_on_actions.txt, which also
+# applies the manpower loss (once, to Slovakia) before sending this event to
+# Slovakia and Germany. The option itself has no effect, so nothing is
+# applied twice.
+###########################
+add_namespace = slovak.uprising
+
+country_event = {
+	id = slovak.uprising.1
+	title = slovak.uprising.1.t
+	desc = slovak.uprising.1.d
+	picture = GFX_report_event_czech_soldiers_02
+
+	is_triggered_only = yes
+
+	option = {
+		name = slovak.uprising.1.a
+		custom_effect_tooltip = slovak.uprising.1.tt
+	}
+}
