@@ -62,18 +62,25 @@ base game's own issues:
 
 ## The package rebuilds exactly from the Steam version
 
-Before packaging, a fresh copy of the Steam Workshop folder (914 files,
-without `.git`) had the 14 patches applied with
-`git -c core.autocrlf=false apply`. Result: all 914 files match
-`docs/checksums/mod-files.sha256`, and the file list is identical (3 files
-deleted, 3 added, nothing else). So `mod/` is exactly "Workshop
-version + these patches", with nothing hidden.
+Test: take a fresh copy of the Steam Workshop folder (914 files, without
+`.git`), apply every patch in `patches/` with `git -c core.autocrlf=false apply`,
+then check the result against `docs/checksums/mod-files.sha256`.
 
-A pitfall found while testing: the first attempt ran inside a folder that
-sits within another git repository (Oscar's home folder). `git apply` then
-silently skipped every path and still reported success. The checksum check
-caught it (21 FAILED). Run it outside other repositories, or set
-`GIT_CEILING_DIRECTORIES`.
+| Package | Patches | Result |
+|---|---|---|
+| First package (tag `final-2026-09-27`) | 13 | all 911 files match, file list identical (3 deleted) |
+| Current package (tag `final-2026-09-27-v2`) | 16 | all 920 files match, file list identical (3 deleted, 9 new) |
+
+So `mod/` is exactly "Workshop version + these patches", with nothing hidden.
+
+Correction: when the Slovak event was added, this section was changed to say
+"14 patches, 914 files" without the test being re-run at that point. The
+second row above is a real run, done for the current package.
+
+A pitfall found while testing: the first attempt ran inside a folder that sits
+within another git repository (Oscar's home folder). `git apply` then silently
+skipped every path and still reported success. The checksum check caught it
+(21 FAILED). Run it outside other repositories, or set `GIT_CEILING_DIRECTORIES`.
 
 ## Nero Decree and Werwolf
 

@@ -29,7 +29,8 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
   edited, 3 deleted, 3 new). Then the Nero Decree and Werwolf decisions (commit
   `76a0d54`, CHANGELOG §5, 6 new files; loads cleanly but **not play-tested**, because
   screen control was declined): now 33 files differ (9 new). Every change is its own commit; see `docs/CHANGELOG.md`.
-  Git tag `final-2026-09-27` marks the version packaged for the author.
+  Git tags: `final-2026-09-27` = the first package; `final-2026-09-27-v2` =
+  the current package (adds the Slovak event and Nero/Werwolf).
 - **Verified:** `python tools/verify_update.py` gives 48/48 PASS
   (docs/VERIFICATION.md). That covers integrity, only the intended files
   changed, the author's content byte-identical, and all fixes present. The
