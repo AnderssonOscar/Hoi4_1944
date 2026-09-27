@@ -73,6 +73,8 @@ expected = {("M", "mod/descriptor.mod"), ("M", "mod/common/scripted_effects/japa
             ("M", "mod/history/countries/AST - Australia.txt"), ("M", "mod/history/countries/SIA - Siam.txt"),
             ("M", "mod/common/decisions/JAP.txt"), ("M", "mod/common/decisions/SOV.txt"), ("M", "mod/events/BFTB_NewsEvents.txt")}
 expected |= {("M", f"mod/history/countries/{c}.txt") for c in SF}
+expected |= {("A", "mod/events/slovak_uprising.txt"), ("A", "mod/common/on_actions/slovak_uprising_on_actions.txt"),
+             ("A", "mod/localisation/english/slovak_uprising_l_english.yml")}  # flavor event (CHANGELOG section 4)
 changed = {tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -172,6 +174,20 @@ check("U  event bftb_news.11 defined", re.search(rb"id\s*=\s*bftb_news\.11\b", c
 allmod = b"".join(current(os.path.join(dp, f)) for dp, _, fs in os.walk("mod") for f in fs if f.endswith(".txt"))
 check("U  old IDs gone (accented ARG_agustin_pedro_justo, AST_domestic_industries, SIA_pridi_phanomyong)",
       not any(x.encode() in allmod for x in ("ARG_agustín_pedro_justo", "AST_domestic_industries", "SIA_pridi_phanomyong")))
+
+ev = pdx.parse_file("mod/events/slovak_uprising.txt")[0]
+evn = next((n for n in ev if n.key == "country_event"), None)
+oa = current("mod/common/on_actions/slovak_uprising_on_actions.txt")
+loc = current("mod/localisation/english/slovak_uprising_l_english.yml")
+loc_lines = loc[3:].decode("utf-8").split("\r\n")
+check("F  Slovak uprising: event with its picture, fired once on 29 Aug 1944 for SLO + GER, -3000 manpower, 4 one-line texts with BOM",
+      evn is not None and any(c.key == "id" and c.value == "slovak.uprising.1" for c in evn.value)
+      and any(c.key == "picture" and c.value == "GFX_report_event_czech_soldiers_02" for c in evn.value)
+      and all(s in oa for s in (b"on_daily_SLO", b"date > 1944.8.28", b"SLO_slovak_uprising", b"add_manpower = -3000",
+                                b"GER = { country_event = { id = slovak.uprising.1 } }"))
+      and loc.startswith(b"\xef\xbb\xbfl_english:")
+      and sum(1 for l in loc_lines if l.startswith(" slovak.uprising.1.")) == 4
+      and all(l.count(chr(34)) == 2 for l in loc_lines[1:] if l))
 
 print("\n== 5. The game's own error.log: fixed errors are gone ==")
 before = open("docs/game-logs/2-workshop-version_error.log", encoding="utf-8", errors="replace").read()

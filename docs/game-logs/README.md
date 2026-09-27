@@ -10,3 +10,4 @@ history runs at startup). Compare them with any diff tool.
 | 2-workshop-version_error.log | Steam Workshop version (unchanged) | 282 |
 | 3-after-fixes-A-G_error.log | this repo after commits e20698c + ce4f33a | 279 |
 | 4-after-1.19.3-update_error.log | this repo after the 1.19.3 update (d55cf37) | 115 |
+| 5-after-slovak-uprising_error.log | after adding the Slovak uprising event (7de1ce8); identical to 4 | 115 |

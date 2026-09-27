@@ -9,7 +9,7 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **24 files differ** from that version: 21 edited, 3 deleted. Your own
+- **27 files differ** from that version: 21 edited, 3 deleted, 3 new. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -27,9 +27,9 @@ independently (see "Check it yourself").
 | Item | What it is |
 |---|---|
 | `mod/` | the complete updated mod, ready to test or upload |
-| `patches/` | every change as a patch (13, in order), each with its reason |
+| `patches/` | every change as a patch (14, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 46 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 47 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -48,6 +48,7 @@ independently (see "Check it yourself").
 | 6 | Special forces: the old doctrine techs no longer exist in 1.19; replaced with the 1.19 sub-doctrines (mapping in patch 0009) | 11 files in history/countries |
 | 7 | Australia and Siam history = 1.19.3 file + your 1943.12.30 block (+ your 4 AST stockpiles) | AST, SIA |
 | 8 | Missing base-game decisions and a news event added; 3 renamed IDs fixed | JAP.txt, SOV.txt, BFTB_NewsEvents.txt, ARG, AST |
+| 9 | New flavor event: the Slovak National Uprising (29 Aug 1944). Slovakia loses 3,000 manpower; Slovakia and Germany see it | 3 new files: events, on_actions, localisation |
 
 **Your call** (decisions made for you, easy to change):
 
@@ -70,7 +71,7 @@ independently (see "Check it yourself").
    git -c core.autocrlf=false apply --whitespace=nowarn <package>/patches/*.patch
    sha256sum -c <package>/docs/checksums/mod-files.sha256
    ```
-   All 911 files should say OK, which shows `mod/` is exactly your Steam
+   All 914 files should say OK, which shows `mod/` is exactly your Steam
    version plus these patches. (If `git apply` succeeds but files don't
    change, the folder is inside another git repository and git silently
    skips the paths. Move it, or set `GIT_CEILING_DIRECTORIES`.) This exact

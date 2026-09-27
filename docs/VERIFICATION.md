@@ -1,18 +1,19 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (46 checks,
+Everything below can be re-run: `python tools/verify_update.py` (47 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 46 checks pass
+## Result: all 47 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
-| Integrity | mod/ fully committed; all 911 mod files byte-identical to the commits | PASS |
+| Integrity | mod/ fully committed; all 914 mod files byte-identical to the commits | PASS |
 | Integrity | Steam Workshop copy never touched (914/914 files = baseline) | PASS |
-| Scope | exactly the 24 intended files changed, nothing else | PASS |
+| Scope | exactly the 27 intended files changed (21 edited, 3 deleted, 3 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 17 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
+| New event | Slovak uprising (F): files, trigger and text checked; the game's error.log is identical before and after (115 = 115, 0 new) | PASS |
 | Game's error.log | each fixed error type is gone: duplicate states 3→0, special-forces techs 93→0, Netherlands focuses 39→0, decisions 2→0, event 1→0, renamed IDs 6→0 | PASS |
 
 ## Version and checksum
@@ -30,7 +31,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
   players need the same mod version for multiplayer. There is no "correct"
   value to check a mod's checksum against.
 - **File checksums:** `docs/checksums/mod-files.sha256` lists SHA-256 for all
-  911 mod files. Verified with `sha256sum -c` (all OK). After uploading to
+  914 mod files. Verified with `sha256sum -c` (all OK). After uploading to
   Steam, the Workshop folder can be checked the same way:
   `cd <workshop folder> && sha256sum -c <this file>`. Expect `descriptor.mod`
   and `thumbnail.png` to differ only if Steam rewrites them.
@@ -62,10 +63,10 @@ base game's own issues:
 ## The package rebuilds exactly from the Steam version
 
 Before packaging, a fresh copy of the Steam Workshop folder (914 files,
-without `.git`) had the 13 patches applied with
-`git -c core.autocrlf=false apply`. Result: all 911 files match
-`docs/checksums/mod-files.sha256`, and the file list is identical (the 3
-deleted files are gone, nothing extra). So `mod/` is exactly "Workshop
+without `.git`) had the 14 patches applied with
+`git -c core.autocrlf=false apply`. Result: all 914 files match
+`docs/checksums/mod-files.sha256`, and the file list is identical (3 files
+deleted, 3 added, nothing else). So `mod/` is exactly "Workshop
 version + these patches", with nothing hidden.
 
 A pitfall found while testing: the first attempt ran inside a folder that

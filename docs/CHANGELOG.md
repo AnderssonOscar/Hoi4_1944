@@ -97,6 +97,27 @@ are also clean (0 wrong-state modifiers, 0 duplicate states).
 - The remaining 115 errors were already there before the update and are
   mostly harmless. INVESTIGATION.md §8 has the list.
 
+### 4. Flavor event: Slovak National Uprising (commit `7de1ce8`)
+
+Added on Oscar's request: a simple event, about 3,000 manpower lost.
+
+- **New files only** (nothing existing changed; delete these three to remove it):
+  `events/slovak_uprising.txt`, `common/on_actions/slovak_uprising_on_actions.txt`,
+  `localisation/english/slovak_uprising_l_english.yml`.
+- **When:** once, from 29 August 1944, if Slovakia is in Germany's faction, at
+  war with the Soviet Union and not capitulated (checked daily for Slovakia
+  only, via `on_daily_SLO`).
+- **Effect:** Slovakia loses 3,000 manpower, applied once by the trigger. The
+  event is shown to Slovakia **and Germany**; its single option only shows
+  the loss as a tooltip, so nothing is applied twice.
+- **Picture:** `GFX_report_event_czech_soldiers_02` (base game: Czechoslovak
+  soldiers at a machine gun), chosen after viewing six candidates.
+- **Checked:** both script files parse; the text file is UTF-8 with BOM and
+  every value is on one line; the game loads it, and error.log is identical
+  before and after (115 = 115, 0 new); text.log has nothing about it.
+- **See it quickly in game:** console `event slovak.uprising.1 GER` shows the
+  pop-up (the console does not apply the manpower loss; the real trigger does).
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -122,7 +143,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-24 files differ from the version on Steam: 21 edited, 3 deleted (full list:
+27 files differ from the version on Steam: 21 edited, 3 deleted, 3 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

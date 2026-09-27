@@ -24,10 +24,11 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 ## 2. Status
 
 - **Final state (2026-09-27):** two bug fixes (A, G) and the update to HOI4
-  1.19.3 are applied: 24 files differ from the Workshop version (21 edited,
-  3 deleted). Every change is its own commit; see `docs/CHANGELOG.md`.
+  1.19.3 are applied, plus one flavor event (Slovak National Uprising, commit
+  `7de1ce8`, CHANGELOG §4): 27 files differ from the Workshop version (21
+  edited, 3 deleted, 3 new). Every change is its own commit; see `docs/CHANGELOG.md`.
   Git tag `final-2026-09-27` marks the version packaged for the author.
-- **Verified:** `python tools/verify_update.py` gives 46/46 PASS
+- **Verified:** `python tools/verify_update.py` gives 47/47 PASS
   (docs/VERIFICATION.md). That covers integrity, only the intended files
   changed, the author's content byte-identical, and all fixes present. The
   game's own error.log went from 282 to 115 lines (base game alone: 1), and
