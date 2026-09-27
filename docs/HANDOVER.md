@@ -23,20 +23,21 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 
 ## 2. Status
 
-- **No mod file has been changed.** `git diff 253cea1 -- mod/` is empty.
+- **Two fixes are applied (2026-09-27), neither tested in game yet.** Oscar
+  approved them. They're listed in `docs/CHANGELOG.md`, and
+  `git diff 253cea1 -- mod/` shows 1 file edited (2 lines) and 3 deleted.
+  - **A** (commit `e20698c`): the Japan "Ichi-Go" scripts put province
+    modifiers on provinces outside the state they run in. This is probably
+    behind "the game crashes at a certain date".
+  - **G** (commit `ce4f33a`): three Australian states were defined twice
+    because the base game renamed its files. The mod's stale copies were
+    deleted.
+- All checks after applying passed (INVESTIGATION.md §7). The Steam Workshop
+  folder was never modified.
+- A local test entry, "1944 - Downfall (local fixes)", points the game at this
+  project's `mod\` folder (see CHANGELOG.md, "How to test in game").
 - The five player reports have been investigated as far as reading the code
   allows. Results are in `docs/INVESTIGATION.md`.
-- **One strong finding (A):** the Japan "Ichi-Go" scripts put province
-  modifiers on provinces outside the state they run in. This is probably
-  behind "the game crashes at a certain date". The fix is a tested 2-line patch,
-  `docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch`. It has been
-  checked with the tools and applies cleanly, but it is **not applied and not
-  tested in game**.
-- **Found in self-review (G):** three Australian states are defined twice
-  because the base game renamed its files. The fix (rename 3 files) is
-  proposed, not applied.
-- Everything was self-reviewed on 2026-09-27. See INVESTIGATION.md §6 for what
-  was checked and corrected.
 - **Four reports have no cause found** (Bulgaria switch, Romania 12-day
   decision, Volkssturm focus, UK). They need a crash report from the game.
   One report ("D-Day seems broken") needs a proper description first.
@@ -55,6 +56,8 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 | Game logs | `C:\Users\Ander\Documents\Paradox Interactive\Hearts of Iron IV\logs\` (`error.log`, `game.log`) |
 | Crash reports | `...\Hearts of Iron IV\crashes\` (empty as of 2026-09-27) |
 | A Downfall save | `...\Hearts of Iron IV\save games\GER_1944_04_07_09.hoi4` (Germany, April 1944) |
+| Local test mod entry | `...\Hearts of Iron IV\mod\downfall_local_fixes.mod` (points at this project's `mod\`) |
+| Applied changes | `...\1944-Downfall\docs\CHANGELOG.md` |
 
 ## 4. Rules for continuing
 
@@ -103,30 +106,25 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 
 | # | Report | Status |
 |---|---|---|
-| A | "Crashes at a certain date" | Strong suspect: `mod/common/scripted_effects/japan_scripted_events_mod.txt` lines 221 and 328 |
+| A | "Crashes at a certain date" | Strong suspect: `mod/common/scripted_effects/japan_scripted_events_mod.txt` lines 221 and 328. **Fixed** in `e20698c` (untested in game) |
 | B | Crash when Bulgaria switches sides | No cause found by reading |
 | C | Crash in Romania's 12-day capitulation decision | No cause found by reading |
 | D | Crash on completing the Volkssturm focus | No cause found by reading |
 | E | "Playing UK crashes" | Author's comments show earlier UK crashes. May be the same as A. |
 | F | "D-Day seems broken" | Needs a description of what's broken |
-| G | (not reported) | States 870, 871, 873 defined twice. Fix: rename the mod files to the base game's names |
+| G | (not reported) | States 870, 871, 873 were defined twice. **Fixed** in `ce4f33a` (stale copies deleted) |
 
 Full evidence, confidence and the proposed fix are in `docs/INVESTIGATION.md`,
 section 2A.
 
 ## 7. Next steps, in order
 
-1. **Ichi-Go fix (A).** Show Oscar the patch (INVESTIGATION.md §2A explains
-   it). Only after a yes, apply it as its own commit:
-   ```
-   git apply docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch
-   git diff --stat        # must show 1 file, 2 lines
-   git commit -am "Fix Ichi-Go province modifiers applied in the wrong state"
-   ```
-   Then start `docs/CHANGELOG.md`. Then test it:
-   play or observe (console command `observe`) a game as any country except
-   Japan or China, past September 1944. Ideally run the same save once
-   without the fix (does it crash?) and once with it (does it not?).
+1. **Test fixes A and G in game** (steps in `docs/CHANGELOG.md`, "How to test
+   in game"). Use a playset with only "1944 - Downfall (local fixes)" and
+   observe a game as any country except Japan or China past September 1944.
+   Ideally also run the same save with the Workshop version (does it crash?)
+   and with the local fixes (does it not?). Record the result in
+   CHANGELOG.md and INVESTIGATION.md.
 2. **Crash reports for B–E.** Launch HOI4 with `-debug` (Steam → HOI4 →
    Properties → Launch options), let the game reach the moment that crashes
    (observe mode is fine), then collect the newest folder in `crashes\` plus
@@ -136,7 +134,10 @@ section 2A.
    wrong date)?
 4. **Lower priority:** brace mismatches in `history/countries/RAJ - British Raj.txt`,
    `AST - Australia.txt` and `SER - Serbia.txt` (INVESTIGATION.md §3). Check
-   what each one actually does in game before changing it.
+   what each one actually does in game before changing it. Also for the author
+   to decide: states 520, 523 and 872 (Australia) have manpower that differs
+   from the current base game, probably left over from old syncs. That's a
+   balance question; leave it unless he asks.
 5. **Keeping up with game updates:** mod files with the same path as a vanilla
    file replace it completely. Many are copies of 1.19.2 vanilla files. After
    a HOI4 patch, diff the old and new vanilla versions of each overridden file
@@ -170,7 +171,9 @@ python tools/check_structure.py            # brace balance, template slot clashe
 `check_province_modifiers.py` also reports states defined by more than one
 file (finding G). Expected output on the unpatched baseline: 154 references
 checked, 3 duplicate states, 2 in the wrong state, 0 unknown modifiers, 2
-removed-but-never-added.
+removed-but-never-added. After fixes A and G: 152 checked, 0 duplicates, 0 in
+the wrong state, 0 unknown, 1 removed-but-never-added (province 9982, which
+was already there).
 
 Tip: Git Bash's `grep` hides carriage returns in its output. To check line
 endings, count bytes with Python (`data.count(b"\r\n")`), not `grep | cat -A`.

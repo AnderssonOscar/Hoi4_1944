@@ -8,7 +8,8 @@ investigating and fixing reported bugs.
 | `mod/` | The mod. Commit `253cea1` is the Workshop version byte-for-byte. |
 | `docs/HANDOVER.md` | Start here if you're continuing the work (any assistant). |
 | `docs/INVESTIGATION.md` | What was looked at, what was found, how sure, what's proposed. |
-| `docs/proposed-fixes/` | Tested patches waiting for approval. Not applied to `mod/`. |
+| `docs/CHANGELOG.md` | Every change made to the mod, and how to test it in game. |
+| `docs/proposed-fixes/` | Patch files for proposed fixes. `0001` has been applied (commit `e20698c`). |
 | `tools/` | Read-only check scripts used for the findings. |
 
 ## Reviewing changes
@@ -21,4 +22,4 @@ git show <commit>                   # one change with its reason
 git diff 253cea1 -- mod/            # everything changed vs. the Workshop version
 ```
 
-No mod files have been changed yet.
+Two fixes have been applied so far, not yet tested in game. See `docs/CHANGELOG.md`.

@@ -2,14 +2,14 @@
 
 Started 2026-09-27. Written so the mod author can check every claim himself.
 
-**Status: investigation only. No file in `mod/` has been changed.**
-`git diff 253cea1 -- mod/` is empty. Every proposed fix below is a proposal
-until it has been tested in-game and approved.
+**Status (2026-09-27): two fixes applied, neither tested in game yet.**
+- Finding A: commit `e20698c`
+- Finding G: commit `ce4f33a`
 
-The one ready fix is a tested patch in `docs/proposed-fixes/`. Apply it only
-after approval, with
-`git apply docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch`.
-Section 6 records the self-review of everything in this file.
+Everything else is untouched. `git diff 253cea1 -- mod/` shows the full change
+(1 file edited, 3 deleted). `docs/CHANGELOG.md` summarises the changes and says
+how to test them. Section 6 is the self-review of this document; section 7 is
+the check run after applying the fixes.
 
 ---
 
@@ -41,13 +41,13 @@ source of truth, and the old `.git` was not used for anything.
 
 | # | Reported bug | Status | Confidence |
 |---|---|---|---|
-| A | "Crashes at a certain date" | **Strong suspect found**: Ichi-Go scripts (Japan vs China) | High that it's a bug, medium that it's *this* crash |
+| A | "Crashes at a certain date" | **Strong suspect found and fixed** (commit `e20698c`): Ichi-Go scripts (Japan vs China) | High that it's a bug, medium that it's *this* crash |
 | B | Crash when Bulgaria switches sides | Code read, no definite cause found | Not yet identified |
 | C | Crash in Romania's 12-day capitulation decision | Code read, no definite cause found | Not yet identified |
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out) | Not yet identified |
 | E | "Playing UK crashes the game" | Clues found in author's own comments, may be the same as A | Not yet identified |
 | F | "D-Day seems broken" | Report too vague, needs a description | Not started |
-| G | *(not reported; found in self-review)* | Three Australian states are defined twice | Certain it's a defect; no known crash link |
+| G | *(not reported; found in self-review)* | Three Australian states were defined twice. **Fixed** (commit `ce4f33a`) | Certain it was a defect; no known crash link |
 
 The honest summary: reading the scripts produced **one** well-supported bug.
 The other crashes need an in-game reproduction with the crash report HOI4
@@ -115,7 +115,8 @@ during" another event on screen, like Romania's or Bulgaria's switch in summer
 "wrong-state province modifier" and "crash" rests on the author's own `#fix`
 edits, not on a crash log.
 
-**Proposed fix (not applied):** `docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch`
+**Fix (applied in commit `e20698c`; the same change is kept as
+`docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch`):**
 
 Two lines change, both commented out the same way the author did it himself:
 
@@ -242,10 +243,28 @@ versions stopped overriding them. Result: two definitions per state, and the
 mod's lower Australian manpower may not apply. I don't know of a crash caused
 by this.
 
-**Proposed fix (not applied, needs approval):** rename the three mod files to
-the base game's names, so they override again as intended. There's no content
-change. `tools/check_province_modifiers.py` now reports this under "State ids
-defined by more than one file".
+**Fix (applied in commit `ce4f33a`): the three mod files were deleted**, so each
+state has one definition: the base game's current one.
+`tools/check_province_modifiers.py` reports this kind of problem under "State
+ids defined by more than one file".
+
+Why delete rather than rename (which would have kept the lower values):
+
+- In the author's old git history, the three files arrive in one bulk
+  state-file sync (commit `4ce7056`, 2023-02-19: 78 files added, 126 modified,
+  4 deleted) and are never edited afterwards.
+- Apart from manpower and category, they're identical to the base game's
+  current files, including owner and cores. So they carry no 1944-specific
+  changes.
+- The mod doesn't lower manpower as a design choice: 552 of the 556 state files
+  it shares with the base game have exactly the base game's manpower. Of the
+  four that differ, three are Australian (520 Northern Territory, 523 New Guinea,
+  872 North Queensland), which looks like leftovers from partial syncs. That's
+  a balance question for the author, not a bug, and they're untouched.
+
+So the old values were most likely the 2023 base-game values, not a design
+choice. If the author did want them, restoring the files under the base game's
+names brings them back (command in CHANGELOG.md).
 
 ---
 
@@ -326,3 +345,28 @@ changed as a result:
 Still **not** verified: anything in the running game. In particular, that a
 province modifier in the wrong state actually crashes HOI4. That rests on the
 author's own `#fix` edits, and only an in-game test settles it.
+
+---
+
+## 7. Checks after applying the fixes (2026-09-27)
+
+| Check | Result |
+|---|---|
+| Files changed vs the Workshop version | 1 edited (2 lines), 3 deleted. Nothing else |
+| Province modifiers in the wrong state | 2 → 0 |
+| States defined by more than one file | 3 → 0; each is defined once, by the base game's file |
+| Ichi-Go: every modifier added is removed later | Yes. Before the fix, 4028 was never removed |
+| New brace or template problems, unknown modifiers | None (still 20 brace and 14 template items, all pre-existing) |
+| Line endings of the edited file | Unchanged (422 CRLF, 0 LF) |
+| Province → state map | Unchanged (10,272 provinces) |
+| References to the deleted file names | None |
+| Steam Workshop folder | Still identical to the baseline (914/914 files) |
+| Other scripts using the Ichi-Go modifier | None (only its definition and the Japan script) |
+
+Left as it was: the final Ichi-Go cleanup (`JAP_ichi_go_failed_modifiers`,
+line 379) removes the modifier from province 9982, which nothing ever adds.
+That province is in the correct state, and the same cleanup already removes
+never-added modifiers from many provinces whenever Ichi-Go fails early.
+
+**Still not verified:** the game itself. CHANGELOG.md explains how to test with
+the local copy.
