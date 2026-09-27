@@ -1,0 +1,91 @@
+###########################
+# 1944 - Downfall: Nero Decree and Werwolf decisions
+# (see docs/CHANGELOG.md section 5)
+#
+# Both appear once an enemy of Germany controls at least one German core
+# state. Their lasting effects are state modifiers (common/dynamic_modifiers/
+# GER_last_stand_dynamic_modifiers.txt) that only work while an enemy holds
+# the state; the capture and monthly logic is in
+# common/on_actions/GER_last_stand_on_actions.txt.
+###########################
+war_measures = {
+
+	GER_nero_decree = {
+		icon = generic_scorched_earth
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			has_war = yes
+			any_state = {
+				is_core_of = ROOT
+				controller = { has_war_with = ROOT }
+			}
+		}
+
+		cost = 50
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		complete_effect = {
+			set_country_flag = GER_nero_decree_enacted
+			custom_effect_tooltip = GER_nero_decree_tt
+			hidden_effect = {
+				every_state = {
+					limit = { is_core_of = ROOT }
+					add_dynamic_modifier = { modifier = GER_nero_decree_occupied }
+				}
+				country_event = { id = downfall_ger.1 days = 7 }
+			}
+		}
+	}
+
+	GER_werwolf_decision = {
+		icon = hol_radio_oranje
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			has_war = yes
+			any_state = {
+				is_core_of = ROOT
+				controller = { has_war_with = ROOT }
+			}
+		}
+
+		cost = 50
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		complete_effect = {
+			set_country_flag = GER_werwolf_enacted
+			add_ideas = GER_werwolf
+			custom_effect_tooltip = GER_werwolf_decision_tt
+			hidden_effect = {
+				every_state = {
+					limit = { is_core_of = ROOT }
+					add_dynamic_modifier = { modifier = GER_werwolf_occupied }
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = ROOT
+							has_war_with = ROOT
+						}
+					}
+					news_event = { id = downfall_ger.2 days = 14 }
+				}
+			}
+		}
+	}
+}

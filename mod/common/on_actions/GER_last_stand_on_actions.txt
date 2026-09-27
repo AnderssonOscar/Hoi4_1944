@@ -1,0 +1,77 @@
+###########################
+# 1944 - Downfall: Nero Decree and Werwolf (see docs/CHANGELOG.md section 5)
+###########################
+on_actions = {
+
+	# Nero Decree - "nothing left to capture".
+	# ROOT is the new controller, FROM the old controller, FROM.FROM the state
+	# (as documented in the base game's 00_on_actions.txt).
+	# A German core state taken from Germany is wrecked once. Amounts are the
+	# base game's own Soviet scorched-earth values. After Speer's sabotage
+	# (downfall_ger.1, option b) the factories are spared and the rest is halved.
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					has_war_with = GER
+					FROM = {
+						tag = GER
+						has_country_flag = GER_nero_decree_enacted
+					}
+					FROM.FROM = {
+						is_core_of = GER
+						NOT = { has_state_flag = GER_nero_state_wrecked }
+					}
+				}
+				FROM.FROM = {
+					set_state_flag = GER_nero_state_wrecked
+					if = {
+						limit = {
+							GER = { has_country_flag = GER_nero_speer_spared }
+						}
+						damage_building = { type = infrastructure damage = 1.5 }
+						damage_building = { type = rail_way damage = 0.5 }
+					}
+					else = {
+						damage_building = { type = industrial_complex damage = 2 }
+						damage_building = { type = arms_factory damage = 2 }
+						damage_building = { type = dockyard damage = 2 }
+						damage_building = { type = infrastructure damage = 3 }
+						damage_building = { type = rail_way damage = 1 }
+					}
+				}
+			}
+		}
+	}
+
+	# Werwolf - rail sabotage. Once a month, in every German core state held
+	# by an enemy where resistance is above 25%, the rails are cut for 35 days
+	# (no strategic redeployment for the occupier). One level of railway is
+	# damaged when a sabotage campaign starts in that state. When the occupier
+	# gets resistance down to 25% or lower, the cut is no longer renewed and
+	# ends within 35 days.
+	on_monthly_GER = {
+		effect = {
+			if = {
+				limit = { has_country_flag = GER_werwolf_enacted }
+				every_state = {
+					limit = {
+						is_core_of = GER
+						controller = { has_war_with = GER }
+						resistance > 25
+					}
+					if = {
+						limit = {
+							NOT = { has_dynamic_modifier = GER_werwolf_rails_sabotaged }
+						}
+						damage_building = { type = rail_way damage = 1 }
+					}
+					add_dynamic_modifier = {
+						modifier = GER_werwolf_rails_sabotaged
+						days = 35
+					}
+				}
+			}
+		}
+	}
+}

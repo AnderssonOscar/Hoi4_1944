@@ -1,0 +1,23 @@
+###########################
+# 1944 - Downfall: Werwolf national spirit (see docs/CHANGELOG.md section 5)
+# Values are the base game's standard +10% for these resistance modifiers.
+###########################
+ideas = {
+	country = {
+		GER_werwolf = {
+			removal_cost = -1
+
+			picture = generic_guerilla_warfare
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.1
+				resistance_target_on_our_occupied_states = 0.1
+				resistance_damage_to_garrison_on_our_occupied_states = 0.1
+			}
+		}
+	}
+}
