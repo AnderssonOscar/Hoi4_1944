@@ -5,7 +5,8 @@ preserved exactly; nothing is re-encoded.
 """
 import re
 
-VANILLA = r"C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV"
+import os
+VANILLA = os.environ.get("HOI4_PATH", r"C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV")
 
 
 def eol_of(data):

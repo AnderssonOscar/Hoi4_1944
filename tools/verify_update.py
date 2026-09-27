@@ -15,7 +15,7 @@ import pdx  # noqa: E402
 import rebase_helpers as rh  # noqa: E402
 
 V = rh.VANILLA
-W = r"C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3070639276"
+W = os.environ.get("WORKSHOP_PATH", r"C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3070639276")
 BASE = "253cea1"
 FAILS = []
 

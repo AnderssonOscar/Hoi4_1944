@@ -6,6 +6,7 @@ investigating and fixing reported bugs.
 | Folder | What it is |
 |---|---|
 | `mod/` | The mod. Commit `253cea1` is the Workshop version byte-for-byte. |
+| `docs/READ-ME-FIRST.md` | Start page for the mod author (also at the top of the zip). |
 | `docs/HANDOVER.md` | Start here if you're continuing the work (any assistant). |
 | `docs/INVESTIGATION.md` | What was looked at, what was found, how sure, what's proposed. |
 | `docs/VERIFICATION.md` | Proof that the fixes and the 1.19.3 update are correct (46 checks). |
@@ -23,4 +24,6 @@ git show <commit>                   # one change with its reason
 git diff 253cea1 -- mod/            # everything changed vs. the Workshop version
 ```
 
-Two fixes have been applied so far, not yet tested in game. See `docs/CHANGELOG.md`.
+Final state (2026-09-27): two bug fixes and the update to HOI4 1.19.3,
+verified by 46 checks (`docs/VERIFICATION.md`), not yet play-tested. What was
+sent to the author is described in `docs/READ-ME-FIRST.md`.

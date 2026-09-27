@@ -19,7 +19,7 @@ import pdx  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MOD = os.path.join(HERE, "..", "mod")
-VANILLA = sys.argv[1] if len(sys.argv) > 1 else r"C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV"
+VANILLA = sys.argv[1] if len(sys.argv) > 1 else os.environ.get("HOI4_PATH", r"C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV")
 
 
 def province_to_state(with_files=False):

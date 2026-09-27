@@ -2,14 +2,14 @@
 
 Started 2026-09-27. Written so the mod author can check every claim himself.
 
-**Status (2026-09-27): two fixes applied, neither tested in game yet.**
-- Finding A: commit `e20698c`
-- Finding G: commit `ce4f33a`
+**Status (2026-09-27, final): fixes A and G and the update to HOI4 1.19.3 are
+applied and verified by 46 checks (docs/VERIFICATION.md). Not play-tested.**
+- Finding A: commit `e20698c`. Finding G: commit `ce4f33a`. 1.19.3 update:
+  section 8 and CHANGELOG.md §3.
 
-Everything else is untouched. `git diff 253cea1 -- mod/` shows the full change
-(1 file edited, 3 deleted). `docs/CHANGELOG.md` summarises the changes and says
-how to test them. Section 6 is the self-review of this document; section 7 is
-the check run after applying the fixes.
+`git diff 253cea1 -- mod/` shows the full change (21 files edited, 3 deleted).
+Section 6 is the self-review of this document, section 7 the check after the
+first two fixes, and section 8 the 1.19.3 update.
 
 ---
 

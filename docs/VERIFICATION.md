@@ -59,6 +59,21 @@ base game's own issues:
   These are for the author to decide; none of them can crash the game (the
   line just does nothing).
 
+## The package rebuilds exactly from the Steam version
+
+Before packaging, a fresh copy of the Steam Workshop folder (914 files,
+without `.git`) had the 13 patches applied with
+`git -c core.autocrlf=false apply`. Result: all 911 files match
+`docs/checksums/mod-files.sha256`, and the file list is identical (the 3
+deleted files are gone, nothing extra). So `mod/` is exactly "Workshop
+version + these patches", with nothing hidden.
+
+A pitfall found while testing: the first attempt ran inside a folder that
+sits within another git repository (Oscar's home folder). `git apply` then
+silently skipped every path and still reported success. The checksum check
+caught it (21 FAILED). Run it outside other repositories, or set
+`GIT_CEILING_DIRECTORIES`.
+
 ## Not verified (so no guarantee here)
 
 - **Actual play.** Only loading the game and its 1944 setup was tested. The

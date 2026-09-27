@@ -23,32 +23,26 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 
 ## 2. Status
 
-- **Two fixes are applied (2026-09-27), neither tested in game yet.** Oscar
-  approved them. They're listed in `docs/CHANGELOG.md`, and
-  `git diff 253cea1 -- mod/` shows 1 file edited (2 lines) and 3 deleted.
-  - **A** (commit `e20698c`): the Japan "Ichi-Go" scripts put province
-    modifiers on provinces outside the state they run in. This is probably
-    behind "the game crashes at a certain date".
-  - **G** (commit `ce4f33a`): three Australian states were defined twice
-    because the base game renamed its files. The mod's stale copies were
-    deleted.
-- All checks after applying passed (INVESTIGATION.md §7). The Steam Workshop
-  folder was never modified.
-- **Updated to HOI4 1.19.3** (2026-09-27, 12 commits `6fa793c` …
-  `d55cf37`; CHANGELOG.md §3, INVESTIGATION.md §8). Checked in the game
-  itself: error.log went from 282 to 115 with all DLCs on; 1 new, harmless
-  error comes from Paradox's own file. **Not verified:** playing without
-  some DLCs (the attempt failed and was discarded), and 3 heavily edited
-  files (GER decisions, germany focus tree, artillery techs) were not merged
-  with 1.19.3.
+- **Final state (2026-09-27):** two bug fixes (A, G) and the update to HOI4
+  1.19.3 are applied: 24 files differ from the Workshop version (21 edited,
+  3 deleted). Every change is its own commit; see `docs/CHANGELOG.md`.
+  Git tag `final-2026-09-27` marks the version packaged for the author.
+- **Verified:** `python tools/verify_update.py` gives 46/46 PASS
+  (docs/VERIFICATION.md). That covers integrity, only the intended files
+  changed, the author's content byte-identical, and all fixes present. The
+  game's own error.log went from 282 to 115 lines (base game alone: 1), and
+  the game install is the official 1.19.3 (checksum 5632).
+- **Not verified:** actual play (the Ichi-Go fix, the other crash reports),
+  playing without some DLCs, and 3 heavily edited files not merged with
+  1.19.3 (GER decisions, germany focus tree, artillery techs).
+- **Package for the author:** `1944-Downfall-update-1.19.3.zip` on Oscar's
+  desktop, containing the final mod folder, patches (one per commit), docs
+  and tools. Start page: `docs/READ-ME-FIRST.md`.
 - You can run the game's own error check yourself: start `hoi4.exe -debug`
   with the mod in `dlc_load.json`, wait for the main menu, and read
   `logs/error.log`. Back up `dlc_load.json` first and restore it afterwards.
-  The logs from 2026-09-27 are saved in `docs/game-logs/`.
-- **Verified 2026-09-27:** `python tools/verify_update.py` gives 46/46 PASS
-  (integrity, scope, author's content preserved, fixes present, error.log).
-  See docs/VERIFICATION.md. Game install = official 1.19.3 (checksum 5632,
-  confirmed from saves). SHA-256 list of all mod files: docs/checksums/.
+  Writing `disabled_dlcs` there does **not** disable DLCs. The logs from
+  2026-09-27 are in `docs/game-logs/`.
 - A local test entry, "1944 - Downfall (local fixes)", points the game at this
   project's `mod\` folder (see CHANGELOG.md, "How to test in game").
 - The five player reports have been investigated as far as reading the code
@@ -150,14 +144,15 @@ section 2A.
 3. **Ask for details:** when does the UK game crash (on load, at a date, on an
    action)? What exactly is broken about D-Day (no landing, landing fails,
    wrong date)?
-4. **Lower priority:** brace mismatches in `history/countries/RAJ - British Raj.txt`,
-   `AST - Australia.txt` and `SER - Serbia.txt` (INVESTIGATION.md §3). Check
+4. **Lower priority:** brace mismatches in `history/countries/RAJ - British Raj.txt`
+   and `SER - Serbia.txt` (the AST one was fixed by the 1.19.3 rebuild) (INVESTIGATION.md §3). Check
    what each one actually does in game before changing it. Also for the author
    to decide: states 520, 523 and 872 (Australia) have manpower that differs
    from the current base game, probably left over from old syncs. That's a
    balance question; leave it unless he asks.
 5. **Keeping up with game updates:** mod files with the same path as a vanilla
-   file replace it completely. Many are copies of 1.19.2 vanilla files. After
+   file replace it completely. Many are copies of older base-game versions,
+   some from before 1.19. After
    a HOI4 patch, diff the old and new vanilla versions of each overridden file
    and port the relevant changes.
 
@@ -198,7 +193,10 @@ was already there).
 Tip: Git Bash's `grep` hides carriage returns in its output. To check line
 endings, count bytes with Python (`data.count(b"\r\n")`), not `grep | cat -A`.
 
-Both are read-only. `tools/pdx.py` is a small, tolerant parser for Paradox
+All are read-only, except that `verify_update.py` also rewrites
+`docs/checksums/mod-files.sha256`. Paths default to Oscar's PC: set
+`HOI4_PATH` (game folder) and `WORKSHOP_PATH` (Workshop copy) to override.
+`tools/pdx.py` is a small, tolerant parser for Paradox
 script. It is **not** a full HOI4 validator: it catches the specific problems
 above, nothing more. The province check only covers fixed state scopes
 (`123 = { ... }`), not dynamic ones like `every_state`.

@@ -117,9 +117,23 @@ pointing at this project's `mod\` folder).
 5. Afterwards, switch back to your usual playset. To remove the test entry,
    delete `downfall_local_fixes.mod`.
 
+On another PC, register the `mod/` folder the same way (a `.mod` file with its
+`path`); docs/READ-ME-FIRST.md shows how.
+
 ## For the author (publishing)
 
-The changes are one edited file and three deleted files, listed above. Review
-them with `git show e20698c` and `git show ce4f33a`. To publish, make the same
-changes in your own copy and upload as usual. The three files must be
-**deleted**, not just left out of an edit.
+24 files differ from the version on Steam: 21 edited, 3 deleted (full list:
+`git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
+change is also a patch in the package's `patches/` folder (one per commit,
+with its reason), or can be viewed with `git show <commit>`.
+
+To publish, bring your copy in line with the final `mod/` folder. Either copy
+the changed files over your copy and delete the three state files, or apply
+the patches. If your copy has changes that aren't on Steam yet, use the
+patches so none of your work is overwritten. The three files must be
+**deleted**, not just left out. Then upload as usual: `descriptor.mod`
+already says `supported_version="1.19.3.0"`.
+
+Note: the July 2026 upload contained your old `.git` folder (history up to
+2024, remote github.com/gastav3/Hoi4_1944), so anyone subscribed can read
+that commit history. You may want to leave it out of future uploads.
