@@ -358,9 +358,8 @@ set_popularities = {
 		neutrality = 50
 	}
 
-	recruit_character = ARG_roberto_maria_ortiz
 	promote_character = ARG_roberto_maria_ortiz
-	retire_character = ARG_agustín_pedro_justo
+	retire_character = ARG_agustin_pedro_justo
 }
 
 
