@@ -180,11 +180,15 @@ evn = next((n for n in ev if n.key == "country_event"), None)
 oa = current("mod/common/on_actions/slovak_uprising_on_actions.txt")
 loc = current("mod/localisation/english/slovak_uprising_l_english.yml")
 loc_lines = loc[3:].decode("utf-8").split("\r\n")
-check("F  Slovak uprising: event with its picture, fired once on 29 Aug 1944 for SLO + GER, -3000 manpower, 4 one-line texts with BOM",
+oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
+mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)
+              for n, parents in pdx.walk(oar) if n.key == "add_manpower"]
+check("F  Slovak uprising: event with its picture, fired once on 29 Aug 1944 for SLO + GER, Germany -3000 manpower (Slovakia none), 4 one-line texts with BOM",
       evn is not None and any(c.key == "id" and c.value == "slovak.uprising.1" for c in evn.value)
       and any(c.key == "picture" and c.value == "GFX_report_event_czech_soldiers_02" for c in evn.value)
-      and all(s in oa for s in (b"on_daily_SLO", b"date > 1944.8.28", b"SLO_slovak_uprising", b"add_manpower = -3000",
-                                b"GER = { country_event = { id = slovak.uprising.1 } }"))
+      and all(s in oa for s in (b"on_daily_SLO", b"date > 1944.8.28", b"SLO_slovak_uprising"))
+      and mp_changes == [("GER", "-3000")]
+      and (chr(167) + "YGermany" + chr(167) + "! loses " + chr(167) + "R3,000") in loc.decode("utf-8")
       and loc.startswith(b"\xef\xbb\xbfl_english:")
       and sum(1 for l in loc_lines if l.startswith(" slovak.uprising.1.")) == 4
       and all(l.count(chr(34)) == 2 for l in loc_lines[1:] if l))
