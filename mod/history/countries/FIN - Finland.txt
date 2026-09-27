@@ -1162,11 +1162,11 @@ if = {
 			has_dlc = "Arms Against Tyranny"
 		}
 		set_technology = {
-			special_forces_mountaineers = 1
-			ski_troops = 1
-			special_forces_recon = 1
-			mountaineers_combat_1 = 1
 		}
+		# 1.19 doctrine system: the old special-forces doctrine techs (special_forces_mountaineers, ski_troops, special_forces_recon, mountaineers_combat_1)
+		# no longer exist; these are their nearest 1.19.3 sub-doctrines:
+		set_sub_doctrine = mountaineers_1
+		set_sub_doctrine = mountaineers_2
 	}
 
 	if = {

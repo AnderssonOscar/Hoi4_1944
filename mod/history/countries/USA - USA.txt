@@ -1874,12 +1874,12 @@ if = {
 			has_dlc = "Arms Against Tyranny"
 		}
 		set_technology = {
-			special_forces_marines = 1
-			marines_jungle_troops = 1
-			marines_recon = 1
-			marines_expeditionary = 1
 
 		}
+		# 1.19 doctrine system: the old special-forces doctrine techs (special_forces_marines, marines_jungle_troops, marines_recon, marines_expeditionary)
+		# no longer exist; these are their nearest 1.19.3 sub-doctrines:
+		set_sub_doctrine = marines_1
+		set_sub_doctrine = marines_2
 	}
 
 

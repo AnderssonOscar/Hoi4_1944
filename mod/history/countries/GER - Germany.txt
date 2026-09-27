@@ -922,10 +922,11 @@ set_war_support = 0.3
 			has_dlc = "Arms Against Tyranny"
 		}
 		set_technology = {
-			special_forces_paratroopers = 1
-			paras_combat_drop = 1
-			paras_airborne_light_armor = 1
 		}
+		# 1.19 doctrine system: the old special-forces doctrine techs (special_forces_paratroopers, paras_combat_drop, paras_airborne_light_armor)
+		# no longer exist; these are their nearest 1.19.3 sub-doctrines:
+		set_sub_doctrine = paratroopers_1
+		set_sub_doctrine = paratroopers_2
 	}
 
 		add_tech_bonus = {
