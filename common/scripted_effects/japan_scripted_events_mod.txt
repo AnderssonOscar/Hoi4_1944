@@ -218,7 +218,7 @@ JAP_ichi_go_2_start_script = {
 				province = {
 					id = 7580
 					id = 9934
-					id = 7167
+					#id = 7167 # fix: province 7167 is in state 1036, not 620
 					#id = 4619
 				}
 			}
@@ -325,7 +325,7 @@ JAP_ichi_go_3_start_script = {
 					id = 1023
 					id = 7095
 					id = 1597
-					id = 4028
+					#id = 4028 # fix: province 4028 is in state 594, not 599
 				}
 			}
 		}
