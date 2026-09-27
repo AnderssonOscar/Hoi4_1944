@@ -44,7 +44,7 @@ source of truth, and the old `.git` was not used for anything.
 | A | "Crashes at a certain date" | **Strong suspect found and fixed** (commit `e20698c`): Ichi-Go scripts (Japan vs China) | High that it's a bug, medium that it's *this* crash |
 | B | Crash when Bulgaria switches sides | Code read, no definite cause found | Not yet identified |
 | C | Crash in Romania's 12-day capitulation decision | Code read, no definite cause found | Not yet identified |
-| D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out) | Not yet identified |
+| D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out); focus effect redesigned 2026-09-27 (CHANGELOG §6) | Not yet identified |
 | E | "Playing UK crashes the game" | Clues found in author's own comments, may be the same as A | Not yet identified |
 | F | "D-Day seems broken" | Report too vague, needs a description | Not started |
 | G | *(not reported; found in self-review)* | Three Australian states were defined twice. **Fixed** (commit `ce4f33a`) | Certain it was a defect; no known crash link |
@@ -202,6 +202,19 @@ rifles made by POL, DEN, HOL, FRA or SOV (`force_equipment_variants`).
   completes (after 1944-11-01 or at 10% surrender).
 
 **No definite cause found by reading.** Needs a crash report.
+
+**Correction (2026-09-27):** the claim above that POL owns states at the 1944
+start is wrong. Every Polish state passes to Germany on 1943.12.1 (e.g.
+`history/states/10-Poland.txt`), so POL owns nothing in 1944. It exists only
+as a government in exile, created at game start in
+`common/on_actions/do_on_actions.txt:9`. DEN and HOL do own a state each.
+
+**Update (2026-09-27):** on Oscar's request the focus's unit creation was
+redesigned (CHANGELOG section 6, commit `e6c0034`), and the old 32-division
+block is gone. The new code only uses a foreign rifle maker while that country
+exists (a `country_exists` guard). The reported crash was never reproduced,
+though, so whether it is gone is **unknown** until someone completes the focus
+in a real game.
 
 ### E. Playing as the UK
 

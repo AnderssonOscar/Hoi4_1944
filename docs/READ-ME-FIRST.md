@@ -9,7 +9,7 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **33 files differ** from that version: 21 edited, 3 deleted, 9 new. Your own
+- **38 files differ** from that version: 23 edited, 3 deleted, 12 new. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -20,16 +20,17 @@ independently (see "Check it yourself").
   uses at lines 165, 371 and 413 of `japan_scripted_events_mod.txt`).
 - **Not play-tested.** It was tested by loading the game and its 1944 setup.
   The reported crashes for Bulgaria's switch, Romania's 12-day decision, the
-  Volkssturm focus and the UK are **not** explained yet.
+  Volkssturm focus and the UK are **not** explained yet. (The Volkssturm
+  focus was redesigned, see change 11, but its crash was never reproduced.)
 
 ## What's in this package
 
 | Item | What it is |
 |---|---|
 | `mod/` | the complete updated mod, ready to test or upload |
-| `patches/` | every change as a patch (16, in order), each with its reason |
+| `patches/` | every change as a patch (17, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 48 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 51 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -50,6 +51,7 @@ independently (see "Check it yourself").
 | 8 | Missing base-game decisions and a news event added; 3 renamed IDs fixed | JAP.txt, SOV.txt, BFTB_NewsEvents.txt, ARG, AST |
 | 10 | New: **Nero Decree** and **Werwolf** decisions for Germany's last stand (CHANGELOG section 5). **Not play-tested yet** | 6 new files `GER_last_stand_*` |
 | 9 | New flavor event: the Slovak National Uprising (29 Aug 1944). Germany loses 3,000 manpower crushing it; Slovakia and Germany see it | 3 new files: events, on_actions, localisation |
+| 11 | **Volkssturm redesigned** (CHANGELOG section 6). The focus now raises divisions in every German state by population (42 if all are held), and 4 decisions add more from the historical dates in 1945 (east, Oder/Pomerania, west, Berlin): 89 divisions / 445 battalions in all, about the 700+ real battalions that fought. Rifles follow the Gau Bayreuth list of Jan 1945 (mostly Italian Carcanos), 40–75% equipped, no training. Your template, availability and AI weights are unchanged. **Not play-tested yet** | germany.txt focus block, focus tooltip, 3 new files `GER_volkssturm_*` |
 
 **Your call** (decisions made for you, easy to change):
 
@@ -59,7 +61,13 @@ independently (see "Check it yourself").
   can restore the old files under the new names);
 - the Burma oil decisions were not added;
 - your GER decisions, germany focus tree and artillery techs were **not**
-  merged with 1.19.3 and are unchanged.
+  merged with 1.19.3 and are unchanged (apart from the Volkssturm focus's
+  unit block, change 11);
+- Volkssturm (all set in `GER_volkssturm_effects.txt` and
+  `GER_volkssturm_decisions.txt`): the rifle shares (Oscar widened the
+  Bayreuth mix; the 4% Danish share has no source), Czech rifles counted as
+  German (Czechoslovakia doesn't exist in 1944), 25 political power per
+  decision, and the per-state numbers.
 
 ## Check it yourself
 
@@ -72,7 +80,7 @@ independently (see "Check it yourself").
    git -c core.autocrlf=false apply --whitespace=nowarn <package>/patches/*.patch
    sha256sum -c <package>/docs/checksums/mod-files.sha256
    ```
-   All 920 files should say OK, which shows `mod/` is exactly your Steam
+   All 923 files should say OK, which shows `mod/` is exactly your Steam
    version plus these patches. (If `git apply` succeeds but files don't
    change, the folder is inside another git repository and git silently
    skips the paths. Move it, or set `GIT_CEILING_DIRECTORIES`.) This exact
@@ -115,6 +123,9 @@ You may want to leave it out next time.
 
 - Not play-tested. Playing without some DLCs is not tested either.
 - Nero Decree and Werwolf load cleanly but have not been tested in play yet.
+- The Volkssturm focus and decisions load cleanly and their script ran
+  without errors, but it hasn't been confirmed in play that the divisions
+  appear (CHANGELOG section 6 has the test steps).
 - 4 small issues that were already in your 1944 blocks were left alone:
   GER `wilhelm_keitel` and `joseph_goebbels`, and JAP `JAP_mitsumasa_yonai`,
   used as ideas although they're characters in 1.19; SIA tag

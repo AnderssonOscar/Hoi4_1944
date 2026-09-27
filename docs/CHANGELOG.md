@@ -159,6 +159,159 @@ file changed: `common/decisions/`, `common/dynamic_modifiers/`, `common/ideas/`,
   equipment-capture modifier is one the base game never uses; if play shows
   the game doesn't recognise it, it gets dropped (Oscar's decision).
 
+### 6. Volkssturm: realistic levies, rifles and 1945 call-ups (commit `e6c0034`)
+
+Oscar's request: realistic numbers, a realistic mix of rifles, only 40–75%
+armed, and more call-ups in 1945 at the historical times, up to the real
+maximum. The author's template, focus position, cost, availability, AI
+weights and training-level change are **unchanged**. Only the focus's
+unit-creation block (193 lines) was replaced and its tooltip rewritten.
+
+**Before:** 32 divisions (160 militia battalions) in three stacks of 12, 8
+and 12, each in one random German state. They were 65–100% equipped, 6 of them
+with Germany's 1942-level weapons, and had no Italian rifles.
+
+**Now, the focus (first levy, available from 1 Nov 1944 as before):**
+- Every German core state that Germany fully controls raises Volkssturm
+  divisions by population, about one per 1.9 million people: under 0.95M
+  none, 0.95–2.85M 1, 2.85–4.75M 2, 4.75–6.65M 3, above that 4.
+- With all 38 German core states held, that's 42 divisions (210
+  battalions). States already lost raise none.
+
+**Four decisions** (war measures, 25 political power, once each):
+- Each appears on the date its historical offensive began.
+- Each can be taken once the front has reached its region, i.e. an enemy
+  holds or borders one of its states.
+- Divisions only appear in states Germany still fully controls.
+
+| Decision | From | That day | Divisions (5 battalions each) | Total |
+|---|---|---|---|---|
+| The Eastern Gaue | 12 Jan 1945 | Soviet winter offensive from the Vistula | Königsberg 5, Ermland-Masuren 3, Danzig 1, Gdynia 1, Posen 5, Lower Silesia 7, Upper Silesia 3, Sudeten Silesia 1 | 26 |
+| The Oder and Pomerania | 31 Jan 1945 | Red Army reaches the Oder north of Küstrin | Hinterpommern 4, Vorpommern 3, Brandenburg 3 | 10 |
+| The Western Gaue | 8 Feb 1945 | Allied Rhineland offensive (Veritable) | Rhineland 2, Westphalia 2, Moselland 1, Weser-Ems 1 | 6 |
+| The Battle of Berlin | 16 Apr 1945 | Soviet attack from the Oder on Berlin | Brandenburg (Berlin) 5 | 5 |
+
+**Total:** 89 divisions = 445 battalions of 1,000 men. How it was sized:
+- **The real maximum:** Hans Kissel, chief of the Volkssturm's command
+  staff, estimated that over 700 Volkssturm battalions saw combat [1].
+  - A battalion had 642 men on paper [2], or 576–649 depending on the
+    levy [3]. That's about 450,000 men.
+  - In HOI4 a militia battalion is 1,000 men.
+  - The mod's Germany starts with 286 divisions, about real size, so the
+    scale is roughly 1:1.
+- **Why the larger share comes in 1945, and mostly in the east:**
+  - In the east the Volkssturm fought mainly from mid-January to
+    mid-April 1945: Breslau, Posen, the Oder line, Pomerania, Berlin [1].
+  - Most battalions that saw combat came from the eastern border
+    districts [3].
+  - In the west, Volkssturm battalions gave up very quickly [1], so the
+    western call-up is small.
+- **Per state:** the numbers are split by population. Two places can be
+  compared with sources:
+  - **Lower Silesia** ends up with 9 divisions (45,000 men). That includes
+    Breslau, defended by about 15,000 Volkssturm [1] (25,000 in 38
+    battalions according to [3]).
+  - **Brandenburg** ends up with 12 divisions (60,000 men), matching "about
+    60,000 in the Berlin area, in 92 battalions" [2]. [4] gives 40,000 for
+    the city itself.
+
+**Rifles** (one source per division, drawn at random):
+
+| Share | Rifles | Game equipment (maker, level) | Gau Bayreuth, 15 Jan 1945 [5] |
+|---|---|---|---|
+| 65% | Italian Carcano | Italy, 1918 | 17,562 (77%) |
+| 13% | Gewehr 88 / Gewehr 98 | Germany, 1918 | 2,413 (10.5%) |
+| 5% | Kar98k | Germany, 1936 | 543 (2.4%), plus 5 Gewehr 43 |
+| 8% | French (Lebel, Berthier) | France, 1918 | 1,974 (8.6%) |
+| 4% | Danish Krag-Jørgensen | Denmark, 1918 | none |
+| 2% | Belgian Mauser | Belgium, 1918 | 129 |
+| 1% | Czech vz. 24 | Germany (see below), 1918 | 134 |
+| 1% | Dutch Mannlicher M95 | Netherlands, 1918 | 34 |
+| 1% | Soviet Mosin-Nagant | Soviet Union, 1918 | 64 |
+
+- **The Bayreuth list** (22,908 rifles) is the only complete inventory
+  found. It covers one Gau in the south. Oscar decided the whole Reich gets
+  fewer Carcanos and more Danish, Kar98k, Gewehr 88/98, Belgian, Czech and
+  Dutch rifles.
+- **Danish rifles are an assumption.** No source was found that the
+  Volkssturm received Danish rifles; the Germans did seize and catalogue them.
+- **Equipment levels:** "1918" is `infantry_equipment_0`. These were
+  1880s–1890s designs, and Bayreuth had only 8 machine guns for 22,908
+  rifles. The Kar98k is `infantry_equipment_1`.
+- **Czech rifles count as German.** Czechoslovakia doesn't exist in 1944 in
+  this mod, and no base-game example creates units with equipment from a
+  country that doesn't exist. The Germans had taken these rifles over as
+  Gewehr 24(t).
+- **No rifles from countries that don't exist:** a foreign rifle source is
+  only drawn while that country exists. Otherwise its share goes to the
+  others.
+
+**Equipment and training:**
+- Each division starts 40, 50, 60 or 75% equipped (equal chance), with no
+  training.
+- Later they only get equipment from Germany's stockpile, and they're last
+  in line (the author's template already has the lowest reinforcement
+  priority).
+
+**Technical note:** by default `random_list` uses the scope's seed. Several
+divisions raised in one state on the same day would then all roll the same
+rifles and equipment. Every list therefore uses `seed = random`, as the game's
+effects documentation describes and as the base game does in loops.
+
+**Files:**
+- Changed: `common/national_focus/germany.txt` (focus) and
+  `localisation/english/custom_mod_l_english.yml` (focus tooltip).
+- New: `common/scripted_effects/GER_volkssturm_effects.txt` (template,
+  population rule, rifle tables), `common/decisions/GER_volkssturm_decisions.txt`
+  and `localisation/english/GER_volkssturm_l_english.yml` (20 texts).
+
+**Checked:**
+- **Check V** in verify_update.py covers: the population rule gives 42 with
+  the 38 German cores; the decisions give 26/10/6/5 on the four dates; every
+  rifle table sums to 100; the foreign-country guard; `seed = random`; the texts.
+- A second check confirms, line by line, that everything removed from
+  germany.txt was the old unit block.
+- **Load test:** error.log is identical, 115 = 115 with 0 new lines
+  (`game-logs/6-after-volkssturm_error.log`), and setup.log shows the 4
+  decisions loaded.
+- **Runtime test:** the unit-raising script was also run once while the game
+  set up its history (a temporary line, removed afterwards). It gave no
+  errors.
+- **Inconclusive:** a second attempt to count the divisions it created
+  failed. Germany's division count read 0 before and after, even for its
+  regular army, during history setup.
+- **Not confirmed yet:** that divisions actually appear. That needs a real
+  game (see below).
+
+**Still open:** the reported crash "when completing the focus for the 32
+Volkssturm divisions" was never reproduced or explained. The old
+unit-creation code is gone, but that doesn't prove the crash is.
+
+Sources:
+- [1] de.wikipedia, *Deutscher Volkssturm* (Kissel's estimate, where and
+  when it fought, Breslau, the west).
+- [2] en.wikipedia, *Volkssturm* (642-man battalion; Berlin area: 60,000 in
+  92 battalions).
+- [3] warhistory.org, "Volkssturm I" (levy sizes, battalion strengths,
+  eastern border districts, Breslau).
+- [4] en.wikipedia, *Battle in Berlin* (40,000 elderly Volkssturm men, some
+  First World War veterans; Hitler Youth).
+- [5] ww2-weapons.com, "German Volkssturm Weapons" (Gau Bayreuth
+  inventory, from Klaus Mammach, *Der Volkssturm*).
+- Dates: Britannica, "The Soviet advance to the Oder" (12 Jan; the Oder
+  north of Küstrin on 31 Jan); en.wikipedia, *Operation Veritable* (8 Feb)
+  and *Battle of Berlin* (16 Apr).
+
+**Test it in game:**
+1. Play Germany. Open the console (the key under Esc) and enter
+   `Focus.NoChecks`, `Focus.IgnorePrerequisites` and `Focus.AutoComplete`.
+2. Click the Volkssturm focus. Divisions named "Volkssturm" should appear
+   across Germany.
+3. Open one and look at its equipment: mostly Italian flags, 40–75% strength.
+4. The decisions appear under war measures from 12 Jan 1945 (and so on).
+   `Decision.NoChecks` may let you take them early; it isn't known whether
+   it also shows them before their date.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -184,7 +337,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-33 files differ from the version on Steam: 21 edited, 3 deleted, 9 new (full list:
+38 files differ from the version on Steam: 23 edited, 3 deleted, 12 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

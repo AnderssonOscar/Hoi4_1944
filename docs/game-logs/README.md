@@ -11,3 +11,4 @@ history runs at startup). Compare them with any diff tool.
 | 3-after-fixes-A-G_error.log | this repo after commits e20698c + ce4f33a | 279 |
 | 4-after-1.19.3-update_error.log | this repo after the 1.19.3 update (d55cf37) | 115 |
 | 5-after-slovak-uprising_error.log | after adding the Slovak uprising event (7de1ce8); identical to 4 | 115 |
+| 6-after-volkssturm_error.log | after the Volkssturm redesign (e6c0034; Nero Decree and Werwolf also included); identical to 5 | 115 |

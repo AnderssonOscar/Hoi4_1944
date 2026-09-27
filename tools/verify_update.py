@@ -81,7 +81,11 @@ expected |= {("A", "mod/common/decisions/GER_last_stand_decisions.txt"),
              ("A", "mod/common/on_actions/GER_last_stand_on_actions.txt"),
              ("A", "mod/events/GER_last_stand_events.txt"),
              ("A", "mod/localisation/english/GER_last_stand_l_english.yml")}  # Nero Decree + Werwolf (CHANGELOG section 5)
-changed = {tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
+expected |= {("M", "mod/common/national_focus/germany.txt"), ("M", "mod/localisation/english/custom_mod_l_english.yml"),
+             ("A", "mod/common/scripted_effects/GER_volkssturm_effects.txt"),
+             ("A", "mod/common/decisions/GER_volkssturm_decisions.txt"),
+             ("A", "mod/localisation/english/GER_volkssturm_l_english.yml")}  # Volkssturm (CHANGELOG section 6)
+changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
 
@@ -97,6 +101,24 @@ allowed = {
 }
 for c in SF:
     allowed[f"mod/history/countries/{c}.txt"] = lambda l: bool(SF_LINE.match(l))
+
+
+def old_volkssturm_block(b):
+    """Lines of the author's unit-creation block in the Volkssturm focus (replaced in CHANGELOG section 6)."""
+    t = b.decode("utf-8", "replace").replace("\r", "")
+    h = t.index("hidden_effect = {", t.index("id = GER_form_volksturm"))
+    i, depth = t.index("{", h), 0
+    while True:
+        depth += {"{": 1, "}": -1}.get(t[i], 0)
+        if depth == 0:
+            break
+        i += 1
+    return set(t[t.rindex("\n", 0, h) + 1:t.index("\n", i)].split("\n"))
+
+
+VS_OLD = old_volkssturm_block(at_base("mod/common/national_focus/germany.txt"))
+allowed["mod/common/national_focus/germany.txt"] = lambda l: l in VS_OLD
+allowed["mod/localisation/english/custom_mod_l_english.yml"] = lambda l: l.startswith("GER_form_volksturm_tooltip:0 ")
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
@@ -204,7 +226,57 @@ check("N/W  Nero Decree + Werwolf: 2 decisions at 50 PP; 4 state modifiers activ
       and all(x in ls_ev for x in (b"id = downfall_ger.1", b"id = downfall_ger.2", b"GFX_report_event_GER_speer"))
       and ls_loc.startswith(bytes.fromhex("efbbbf") + b"l_english:") and ls_loc.count(b":0 ") == 25)
 
-oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
+vs_e = current("mod/common/scripted_effects/GER_volkssturm_effects.txt").decode("ascii")
+vs_d = current("mod/common/decisions/GER_volkssturm_decisions.txt").decode("ascii")
+vs_l = current("mod/localisation/english/GER_volkssturm_l_english.yml")
+vs_f = current("mod/common/national_focus/germany.txt").decode("utf-8", "replace").split("id = GER_form_volksturm", 1)[1].split("\tfocus = {", 1)[0]
+DATED = re.compile(r"\d+\.\d+\.\d+(\.\d+)?")
+def state_1944(path):
+    """(id, owner, cores, population) of a state at the 1944 start: undated history plus dated blocks up to 1944.1.1."""
+    st = next(n for n in pdx.parse_file(path)[0] if n.key and n.key.lower() == "state")
+    hist = next((n.value for n in st.value if n.key == "history"), [])
+    blocks = [[n for n in hist if not (n.is_block() and DATED.fullmatch(n.key or ""))]]
+    dated = [(tuple(int(x) for x in n.key.split(".")[:3]), n.value) for n in hist if n.is_block() and DATED.fullmatch(n.key or "")]
+    blocks += [b for d, b in sorted(dated, key=lambda x: x[0]) if d <= (1944, 1, 1)]
+    owner, cores = None, set()
+    for n in (n for b in blocks for n in b):
+        if n.key == "owner":
+            owner = n.value
+        elif n.key == "add_core_of":
+            cores.add(n.value)
+        elif n.key == "remove_core_of":
+            cores.discard(n.value)
+    sid = next(n.value for n in st.value if n.key == "id")
+    return sid, owner, cores, int(float(next(n.value for n in st.value if n.key == "manpower")))
+ger = {sid: pop for sid, owner, cores, pop in (state_1944(p) for p in pdx.merged_files("mod", V, os.path.join("history", "states")).values())
+       if owner == "GER" and "GER" in cores}
+thr = [int(x) for x in re.findall(r"state_population_k > (\d+)", vs_e)]
+first = sum(sum(1 for t in thr if pop / 1000 > t) for pop in ger.values())
+per = {k: sum(int(x) for x in re.findall(r"end = (\d+) GER_volkssturm_raise_division", b))
+       for k, b in re.findall(r"\n\t(GER_volkssturm_\w+) = \{(.*?)\n\t\}", vs_d, re.S)}
+d_states = set(re.findall(r"^\t{4}(\d+) = \{", vs_d, re.M))
+def table_ok(f):
+    body = vs_e.split(f"GER_volkssturm_raise_division_{f} = {{", 1)[1].split("\n}", 1)[0]
+    owners = re.findall(r'owner = \\"([A-Z]{3})\\"', body)
+    return (sum(int(x) for x in re.findall(r"^\t\t(\d+) = \{", body, re.M)) == 100 and len(owners) == 9
+            and body.count(f"start_equipment_factor = 0.{f} ") == 9 and body.count("start_experience_factor = 0 ") == 9
+            and all(t == "GER" or f"country_exists = {t}" in body for t in owners) and "seed = random" in body
+            and set(re.findall(r"infantry_equipment_(\d)", body)) == {"0", "1"})
+vs_keys = set(re.findall(rb"^ (\w+):0 ", vs_l, re.M))
+vs_need = set(re.findall(r"tooltip = (GER_volkssturm_\w+)", vs_d)) | set(per) | {k + "_desc" for k in per}
+check("V  Volkssturm: the focus raises 42 divisions by population (38 German cores); 4 decisions add 26/10/6/5 from their historical dates; "
+      "rifle tables sum to 100 at 40/50/60/75% equipment, no training, foreign rifles only while that country exists, seed = random; 20 texts with BOM",
+      len(ger) == 38 and first == 42
+      and per == {"GER_volkssturm_east": 26, "GER_volkssturm_oder": 10, "GER_volkssturm_west": 6, "GER_volkssturm_berlin": 5}
+      and d_states <= set(ger)
+      and all(f"date > {d}" in vs_d for d in ("1945.1.12", "1945.1.31", "1945.2.8", "1945.4.16"))
+      and vs_d.count("cost = 25") == 4 and vs_d.count("fire_only_once = yes") == 4
+      and all(table_ok(f) for f in ("40", "50", "60", "75"))
+      and "create_unit" not in vs_f and "GER_volkssturm_first_levy = yes" in vs_f and "GER_volkssturm_ensure_template = yes" in vs_f
+      and vs_l.startswith(bytes.fromhex("efbbbf") + b"l_english:") and len(vs_keys) == 20 and {k.encode() for k in vs_need} <= vs_keys,
+      f"German cores {len(ger)}, first levy {first}, decisions {per}")
+
+oar =pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)
               for n, parents in pdx.walk(oar) if n.key == "add_manpower"]
 check("F  Slovak uprising: event with its picture, fired once on 29 Aug 1944 for SLO + GER, Germany -3000 manpower (Slovakia none), 4 one-line texts with BOM",

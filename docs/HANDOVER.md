@@ -54,6 +54,9 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 - **Four reports have no cause found** (Bulgaria switch, Romania 12-day
   decision, Volkssturm focus, UK). They need a crash report from the game.
   One report ("D-Day seems broken") needs a proper description first.
+- Added on Oscar's request: the Slovak uprising event, Nero Decree and
+  Werwolf, and the Volkssturm redesign (CHANGELOG sections 4-6). They load
+  cleanly; none has been play-tested yet.
 
 ## 3. Where everything is
 
@@ -122,7 +125,7 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
 | A | "Crashes at a certain date" | Strong suspect: `mod/common/scripted_effects/japan_scripted_events_mod.txt` lines 221 and 328. **Fixed** in `e20698c` (untested in game) |
 | B | Crash when Bulgaria switches sides | No cause found by reading |
 | C | Crash in Romania's 12-day capitulation decision | No cause found by reading |
-| D | Crash on completing the Volkssturm focus | No cause found by reading |
+| D | Crash on completing the Volkssturm focus | No cause found by reading. The focus's unit creation was redesigned on Oscar's request (`e6c0034`, CHANGELOG section 6); the crash was never reproduced |
 | E | "Playing UK crashes" | Author's comments show earlier UK crashes. May be the same as A. |
 | F | "D-Day seems broken" | Needs a description of what's broken |
 | G | (not reported) | States 870, 871, 873 were defined twice. **Fixed** in `ce4f33a` (stale copies deleted) |
