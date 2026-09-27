@@ -39333,14 +39333,14 @@ focus_tree = {
 			add_to_variable = { GER_military_minimum_training_level = -0.1 tooltip = minimum_training_level_tt }
 			hidden_effect = {
 				# Volkssturm, first levy (docs/CHANGELOG.md section 6): Volkssturm divisions
-				# in every German core state that Germany fully controls, by population.
+				# in every German core state that Germany still holds (controls), by population.
 				# Template, rifles and numbers: common/scripted_effects/GER_volkssturm_effects.txt.
 				# More come in 1945 from common/decisions/GER_volkssturm_decisions.txt.
 				GER_volkssturm_ensure_template = yes
 				every_owned_state = {
 					limit = {
 						is_core_of = ROOT
-						ROOT = { has_full_control_of_state = PREV }
+						is_controlled_by = ROOT
 					}
 					GER_volkssturm_first_levy = yes
 				}

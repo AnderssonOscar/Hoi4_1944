@@ -66,7 +66,9 @@ GER_volkssturm_first_levy = {
 	if = { limit = { state_population_k > 6649 } GER_volkssturm_raise_division = yes }
 }
 
-# One Volkssturm division in this state (state scope; owner Germany).
+# One Volkssturm division in this state (state scope). owner = ROOT: the
+# country that took the focus or decision, i.e. Germany. create_unit never
+# places a unit on an enemy-held province (its default).
 GER_volkssturm_raise_division = {
 	random_list = {
 		seed = random
@@ -83,36 +85,36 @@ GER_volkssturm_raise_division_40 = {
 		seed = random
 		65 = { # Italian Carcano
 			modifier = { factor = 0 NOT = { country_exists = ITA } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }" owner = ROOT }
 		}
 		13 = { # Gewehr 88 / Gewehr 98
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		5 = { # Karabiner 98k
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		8 = { # French rifles (Lebel, Berthier)
 			modifier = { factor = 0 NOT = { country_exists = FRA } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" owner = ROOT }
 		}
 		4 = { # Danish Krag-Jorgensen
 			modifier = { factor = 0 NOT = { country_exists = DEN } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"DEN\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"DEN\" } }" owner = ROOT }
 		}
 		2 = { # Belgian Mauser
 			modifier = { factor = 0 NOT = { country_exists = BEL } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"BEL\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"BEL\" } }" owner = ROOT }
 		}
 		1 = { # Czech vz. 24 (German designation Gewehr 24(t))
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		1 = { # Dutch Mannlicher M95
 			modifier = { factor = 0 NOT = { country_exists = HOL } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"HOL\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"HOL\" } }" owner = ROOT }
 		}
 		1 = { # Soviet Mosin-Nagant
 			modifier = { factor = 0 NOT = { country_exists = SOV } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.40 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" owner = ROOT }
 		}
 	}
 }
@@ -123,36 +125,36 @@ GER_volkssturm_raise_division_50 = {
 		seed = random
 		65 = { # Italian Carcano
 			modifier = { factor = 0 NOT = { country_exists = ITA } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }" owner = ROOT }
 		}
 		13 = { # Gewehr 88 / Gewehr 98
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		5 = { # Karabiner 98k
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		8 = { # French rifles (Lebel, Berthier)
 			modifier = { factor = 0 NOT = { country_exists = FRA } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" owner = ROOT }
 		}
 		4 = { # Danish Krag-Jorgensen
 			modifier = { factor = 0 NOT = { country_exists = DEN } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"DEN\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"DEN\" } }" owner = ROOT }
 		}
 		2 = { # Belgian Mauser
 			modifier = { factor = 0 NOT = { country_exists = BEL } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"BEL\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"BEL\" } }" owner = ROOT }
 		}
 		1 = { # Czech vz. 24 (German designation Gewehr 24(t))
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		1 = { # Dutch Mannlicher M95
 			modifier = { factor = 0 NOT = { country_exists = HOL } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"HOL\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"HOL\" } }" owner = ROOT }
 		}
 		1 = { # Soviet Mosin-Nagant
 			modifier = { factor = 0 NOT = { country_exists = SOV } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" owner = ROOT }
 		}
 	}
 }
@@ -163,36 +165,36 @@ GER_volkssturm_raise_division_60 = {
 		seed = random
 		65 = { # Italian Carcano
 			modifier = { factor = 0 NOT = { country_exists = ITA } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }" owner = ROOT }
 		}
 		13 = { # Gewehr 88 / Gewehr 98
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		5 = { # Karabiner 98k
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		8 = { # French rifles (Lebel, Berthier)
 			modifier = { factor = 0 NOT = { country_exists = FRA } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" owner = ROOT }
 		}
 		4 = { # Danish Krag-Jorgensen
 			modifier = { factor = 0 NOT = { country_exists = DEN } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"DEN\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"DEN\" } }" owner = ROOT }
 		}
 		2 = { # Belgian Mauser
 			modifier = { factor = 0 NOT = { country_exists = BEL } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"BEL\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"BEL\" } }" owner = ROOT }
 		}
 		1 = { # Czech vz. 24 (German designation Gewehr 24(t))
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		1 = { # Dutch Mannlicher M95
 			modifier = { factor = 0 NOT = { country_exists = HOL } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"HOL\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"HOL\" } }" owner = ROOT }
 		}
 		1 = { # Soviet Mosin-Nagant
 			modifier = { factor = 0 NOT = { country_exists = SOV } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" owner = ROOT }
 		}
 	}
 }
@@ -203,36 +205,36 @@ GER_volkssturm_raise_division_75 = {
 		seed = random
 		65 = { # Italian Carcano
 			modifier = { factor = 0 NOT = { country_exists = ITA } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }" owner = ROOT }
 		}
 		13 = { # Gewehr 88 / Gewehr 98
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		5 = { # Karabiner 98k
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		8 = { # French rifles (Lebel, Berthier)
 			modifier = { factor = 0 NOT = { country_exists = FRA } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }" owner = ROOT }
 		}
 		4 = { # Danish Krag-Jorgensen
 			modifier = { factor = 0 NOT = { country_exists = DEN } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"DEN\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"DEN\" } }" owner = ROOT }
 		}
 		2 = { # Belgian Mauser
 			modifier = { factor = 0 NOT = { country_exists = BEL } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"BEL\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"BEL\" } }" owner = ROOT }
 		}
 		1 = { # Czech vz. 24 (German designation Gewehr 24(t))
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }" owner = ROOT }
 		}
 		1 = { # Dutch Mannlicher M95
 			modifier = { factor = 0 NOT = { country_exists = HOL } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"HOL\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"HOL\" } }" owner = ROOT }
 		}
 		1 = { # Soviet Mosin-Nagant
 			modifier = { factor = 0 NOT = { country_exists = SOV } }
-			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" owner = GER }
+			create_unit = { division = "name = \"Volkssturm\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }" owner = ROOT }
 		}
 	}
 }
