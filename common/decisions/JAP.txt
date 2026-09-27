@@ -3978,6 +3978,130 @@ operations = {
 			GER = { country_event = { id = wtt_japan.115 hours = 6 } }
 		}		
 	}
+
+	# Added for 1.19.3: base-game decision(s) missing from this older copy (referenced by base-game content)
+	JAP_tauran_border_incident_forgotten_1 = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		visible = {
+			has_global_flag = tauran_incident_has_begun_flag 
+			OR = {
+				AND = {
+					owns_state = 761
+					is_subject = no
+				}
+				AND = {
+					any_subject_country = {
+						owns_state = 761
+					}
+				}
+			}
+		}
+
+		available = {
+				
+			OR = {
+				has_border_war_with = MON # Japan/MAN shouldn't lose war support if they actually use the window of opportunity
+				has_global_flag = initial_tauran_decision_taken_flag
+			}
+				
+		}
+
+		highlight_states = {
+	 		highlight_state_targets = {
+				state = 819
+				state = 761
+			} 
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		days_mission_timeout = 30
+
+		fire_only_once = yes
+
+		is_good = no
+		
+		timeout_effect = {
+			add_political_power = -25 
+			add_war_support = -0.05 #Shameful Display
+			MON = {
+				country_event = {
+					id = SEA_border_incidents_events.8
+					days = 1
+				}	
+			}
+			hidden_effect = {
+				set_global_flag = failed_to_assault_in_time_flag
+			}
+		}
+	}
+
+	JAP_tauran_border_incident_forgotten = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		available = {
+			
+			hidden_trigger = {
+				OR = {
+					has_border_war_with = MON # Japan shouldn't lose war support if they actually use the window of opportunity
+					has_global_flag = JAP_did_the_tauran_border_war_flag
+				}
+			}
+				
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 819 
+				state = 761
+			} 
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_mission_timeout = 30
+
+		fire_only_once = yes
+
+		is_good = no
+		
+		timeout_effect = {
+			remove_targeted_decision = { target = MON decision = JAP_escalate_incident_to_border_conflict_MON }
+			add_political_power = -50
+			add_war_support = -0.05 #Shameful Display
+			MON = {
+				country_event = {
+					id = SEA_border_incidents_events.8
+					days = 1
+				}	
+			}
+			hidden_effect = {
+				MON = { remove_targeted_decision = { target = ROOT decision = JAP_border_conflict_escalation_warning_MON } }
+				MON = {
+					761 = {
+						clr_state_flag = border_incident_active
+					}
+					819 = {
+						clr_state_flag = border_incident_active
+					}
+				}
+			}
+		}
+	}
 }
 
 prospect_for_resources = {
