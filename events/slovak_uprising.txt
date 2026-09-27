@@ -2,7 +2,7 @@
 # Slovak National Uprising (29 August 1944)
 #
 # Fired once by common/on_actions/slovak_uprising_on_actions.txt, which also
-# applies the manpower loss (once, to Slovakia) before sending this event to
+# applies the manpower loss (once, to Germany) before sending this event to
 # Slovakia and Germany. The option itself has no effect, so nothing is
 # applied twice.
 ###########################

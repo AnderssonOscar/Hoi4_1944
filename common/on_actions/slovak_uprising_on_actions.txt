@@ -12,11 +12,13 @@ on_actions = {
 					has_capitulated = no
 				}
 				set_global_flag = SLO_slovak_uprising
-				add_manpower = -3000
 				country_event = { id = slovak.uprising.1 }
 				if = {
 					limit = { country_exists = GER }
-					GER = { country_event = { id = slovak.uprising.1 } }
+					GER = {
+						add_manpower = -3000	# troops lost crushing the uprising
+						country_event = { id = slovak.uprising.1 }
+					}
 				}
 			}
 		}
