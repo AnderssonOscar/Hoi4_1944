@@ -70,7 +70,8 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | Package | Patches | Result |
 |---|---|---|
 | First package (tag `final-2026-09-27`) | 13 | all 911 files match, file list identical (3 deleted) |
-| Current package (tag `final-2026-09-27-v2`) | 16 | all 920 files match, file list identical (3 deleted, 9 new) |
+| Second package (tag `final-2026-09-27-v2`) | 16 | all 920 files match, file list identical (3 deleted, 9 new) |
+| Current package (tag `final-2026-09-27-v3`) | 17 | all 923 files match, file list identical (3 deleted, 12 new) |
 
 So `mod/` is exactly "Workshop version + these patches", with nothing hidden.
 
