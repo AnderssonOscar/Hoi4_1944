@@ -3130,12 +3130,11 @@ if = {
 			has_dlc = "Arms Against Tyranny"
 		}
 		set_technology = {
-			special_forces_marines = 1
-			marines_shore_parties = 1
-			marines_recon = 1
-			marines_commandoes = 1
-			marines_commandos_demolition = 1
 		}
+		# 1.19 doctrine system: the old special-forces doctrine techs (special_forces_marines, marines_shore_parties, marines_recon, marines_commandoes, marines_commandos_demolition)
+		# no longer exist; these are their nearest 1.19.3 sub-doctrines:
+		set_sub_doctrine = marines_1
+		set_sub_doctrine = marines_2
 	}
 
 	promote_character = ENG_neville_chamberlain

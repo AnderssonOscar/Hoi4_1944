@@ -377,8 +377,10 @@ add_ideas = {
 			has_dlc = "Arms Against Tyranny"
 		}
 		set_technology = {
-			special_forces_mountaineers = 1
 		}
+		# 1.19 doctrine system: the old special-forces doctrine techs (special_forces_mountaineers)
+		# no longer exist; these are their nearest 1.19.3 sub-doctrines:
+		set_sub_doctrine = mountaineers_1
 	}
 
 	if = {
