@@ -1,0 +1,54 @@
+###########################
+# 1944 - Downfall: Nero Decree and Werwolf events
+# (see docs/CHANGELOG.md section 5)
+###########################
+add_namespace = downfall_ger
+
+# Speer undermines the Nero Decree.
+# Fired 7 days after the Nero Decree decision (common/decisions/GER_last_stand_decisions.txt).
+# The AI follows history and usually lets Speer spare the factories.
+country_event = {
+	id = downfall_ger.1
+	title = downfall_ger.1.t
+	desc = downfall_ger.1.d
+	picture = GFX_report_event_GER_speer
+
+	is_triggered_only = yes
+
+	# Enforce the decree: it stays at full strength
+	option = {
+		name = downfall_ger.1.a
+		ai_chance = { base = 20 }
+		custom_effect_tooltip = downfall_ger.1.a.tt
+	}
+
+	# Let Speer spare the factories: half strength, factories spared
+	option = {
+		name = downfall_ger.1.b
+		ai_chance = { base = 80 }
+		set_country_flag = GER_nero_speer_spared
+		custom_effect_tooltip = downfall_ger.1.b.tt
+		hidden_effect = {
+			every_state = {
+				limit = { is_core_of = GER }
+				remove_dynamic_modifier = { modifier = GER_nero_decree_occupied }
+				add_dynamic_modifier = { modifier = GER_nero_decree_spared_occupied }
+			}
+		}
+	}
+}
+
+# Radio Werwolf goes on air.
+# Sent to Germany and its enemies 14 days after the Werwolf decision.
+news_event = {
+	id = downfall_ger.2
+	title = downfall_ger.2.t
+	desc = downfall_ger.2.d
+	picture = GFX_news_event_generic_ruins
+
+	is_triggered_only = yes
+
+	option = {
+		name = downfall_ger.2.a
+	}
+}
