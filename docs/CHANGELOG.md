@@ -159,7 +159,7 @@ file changed: `common/decisions/`, `common/dynamic_modifiers/`, `common/ideas/`,
   equipment-capture modifier is one the base game never uses; if play shows
   the game doesn't recognise it, it gets dropped (Oscar's decision).
 
-### 6. Volkssturm: realistic levies, rifles and 1945 call-ups (commit `e6c0034`)
+### 6. Volkssturm: realistic levies, rifles and 1945 call-ups (commits `e6c0034`, `d9d7888`)
 
 Oscar's request: realistic numbers, a realistic mix of rifles, only 40–75%
 armed, and more call-ups in 1945 at the historical times, up to the real
@@ -172,8 +172,8 @@ and 12, each in one random German state. They were 65–100% equipped, 6 of them
 with Germany's 1942-level weapons, and had no Italian rifles.
 
 **Now, the focus (first levy, available from 1 Nov 1944 as before):**
-- Every German core state that Germany fully controls raises Volkssturm
-  divisions by population, about one per 1.9 million people: under 0.95M
+- Every German core state that Germany still holds (controls) raises
+  Volkssturm divisions by population, about one per 1.9 million people: under 0.95M
   none, 0.95–2.85M 1, 2.85–4.75M 2, 4.75–6.65M 3, above that 4.
 - With all 38 German core states held, that's 42 divisions (210
   battalions). States already lost raise none.
@@ -181,8 +181,9 @@ with Germany's 1942-level weapons, and had no Italian rifles.
 **Four decisions** (war measures, 25 political power, once each):
 - Each appears on the date its historical offensive began.
 - Each can be taken once the front has reached its region, i.e. an enemy
-  holds or borders one of its states.
-- Divisions only appear in states Germany still fully controls.
+  holds part of one of its states, or a neighbouring state.
+- Divisions only appear in states Germany still holds (controls), and
+  never on an enemy-held province (the game's default for `create_unit`).
 
 | Decision | From | That day | Divisions (5 battalions each) | Total |
 |---|---|---|---|---|
@@ -282,6 +283,31 @@ effects documentation describes and as the base game does in loops.
   regular army, during history setup.
 - **Not confirmed yet:** that divisions actually appear. That needs a real
   game (see below).
+
+**Bug check (commit `d9d7888`):** a review of `e6c0034` found one real
+design bug and two smaller issues. All three are fixed:
+- **Bug:** every spawn and the decisions' "held" test required Germany to
+  control *every* province of the state. The Brandenburg state contains
+  Berlin and Seelow, where the Soviet Oder bridgehead was before 16 April
+  1945. So in a historical game the Berlin decision would have been locked
+  exactly when it was needed, and the same goes for partly occupied East
+  Prussia, Silesia or the Rhineland, where the Volkssturm actually fought.
+  Now the state only has to be controlled by Germany.
+- **Front test:** the "front has arrived" test missed an enemy holding only
+  part of a region state. It now counts that too.
+- **Unit owner:** units were created for the tag `GER`; now it's `ROOT`, the
+  country that took the focus or decision (920 uses of that form in the
+  base game). This way units can't go to another or non-existent country
+  if Germany's tag ever changes.
+- **Retested after the fix:** error.log 115 = 115 (`game-logs/7-after-volkssturm-bug-check_error.log`);
+  the runtime test ran again with 0 errors; verify_update.py now also
+  checks that every changed spot in germany.txt is inside the Volkssturm
+  focus (52 checks, all pass).
+- **Also checked, no problem found:** every trigger is valid in the scope
+  where it's used (game documentation); every rifle maker has the needed
+  rifle technology in its 1944 history (`infantry_weapons`, and
+  `infantry_weapons1` for Germany's Kar98k); no other template in the mod
+  is named "Volkssturm".
 
 **Still open:** the reported crash "when completing the focus for the 32
 Volkssturm divisions" was never reproduced or explained. The old

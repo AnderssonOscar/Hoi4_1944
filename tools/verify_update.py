@@ -125,6 +125,15 @@ for path, ok_line in allowed.items():
     bad = [l for l in removed if not ok_line(l)]
     check(f"{path[4:]}: {len(removed)} removed line(s), all expected", not bad, "; ".join(bad[:3]))
 
+# germany.txt: every changed spot lies inside the Volkssturm focus (not just lines that look like it)
+base_g = at_base("mod/common/national_focus/germany.txt").decode("utf-8", "replace").replace("\r", "")
+g_start = base_g.index("id = GER_form_volksturm")
+g_lo, g_hi = base_g.count("\n", 0, g_start) + 1, base_g.count("\n", 0, base_g.index("\tfocus = {", g_start)) + 1
+g_diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", "mod/common/national_focus/germany.txt").decode("utf-8", "replace")
+g_hunks = [(int(a), int(b or 1)) for a, b in re.findall(r"^@@ -(\d+)(?:,(\d+))? ", g_diff, re.M)]
+check(f"common/national_focus/germany.txt: all {len(g_hunks)} changed spot(s) are inside the Volkssturm focus (base lines {g_lo}-{g_hi})",
+      bool(g_hunks) and all(g_lo <= a and a + max(b, 1) - 1 <= g_hi for a, b in g_hunks), str(g_hunks))
+
 # rebuilt files: author's parts identical, everything else identical to 1.19.3
 rel = "common/national_focus/netherlands.txt"
 new_l = current("mod/" + rel).decode("utf-8").splitlines()
@@ -265,6 +274,7 @@ def table_ok(f):
 vs_keys = set(re.findall(rb"^ (\w+):0 ", vs_l, re.M))
 vs_need = set(re.findall(r"tooltip = (GER_volkssturm_\w+)", vs_d)) | set(per) | {k + "_desc" for k in per}
 check("V  Volkssturm: the focus raises 42 divisions by population (38 German cores); 4 decisions add 26/10/6/5 from their historical dates; "
+      "raised in every state Germany still holds (not only fully held ones), owner = ROOT; "
       "rifle tables sum to 100 at 40/50/60/75% equipment, no training, foreign rifles only while that country exists, seed = random; 20 texts with BOM",
       len(ger) == 38 and first == 42
       and per == {"GER_volkssturm_east": 26, "GER_volkssturm_oder": 10, "GER_volkssturm_west": 6, "GER_volkssturm_berlin": 5}
@@ -273,6 +283,9 @@ check("V  Volkssturm: the focus raises 42 divisions by population (38 German cor
       and vs_d.count("cost = 25") == 4 and vs_d.count("fire_only_once = yes") == 4
       and all(table_ok(f) for f in ("40", "50", "60", "75"))
       and "create_unit" not in vs_f and "GER_volkssturm_first_levy = yes" in vs_f and "GER_volkssturm_ensure_template = yes" in vs_f
+      and "has_full_control_of_state" not in vs_f + vs_d and "is_controlled_by = ROOT" in vs_f
+      and vs_d.count("is_controlled_by = ROOT") == 20 and vs_d.count("NOT = { is_fully_controlled_by = ROOT }") == 4
+      and vs_e.count("owner = ROOT }") == 36 and "owner = GER }" not in vs_e
       and vs_l.startswith(bytes.fromhex("efbbbf") + b"l_english:") and len(vs_keys) == 20 and {k.encode() for k in vs_need} <= vs_keys,
       f"German cores {len(ger)}, first levy {first}, decisions {per}")
 
