@@ -7,8 +7,10 @@ Also writes docs/checksums/mod-files.sha256 (SHA-256 of every mod file).
 import hashlib
 import os
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 
 sys.path.insert(0, os.path.dirname(__file__))
 import pdx  # noqa: E402
@@ -63,6 +65,25 @@ ws = subprocess.run(["git", "hash-object", "--no-filters", "--stdin-paths"], cwd
                     input="\n".join(rel).encode()).stdout.split()
 check(f"Steam Workshop copy untouched: all {len(rel)} files identical to the baseline", ws == [m.split()[2] for m, _ in base_tree])
 
+
+def _rm_readonly(func, path, _):
+    os.chmod(path, 0o700)  # git's object files are read-only on Windows
+    func(path)
+
+
+# A fresh clone must get every mod file byte-for-byte: no line-ending conversion on checkout (CHANGELOG section 13).
+clone_dir = tempfile.mkdtemp(prefix="downfall-clone-")
+try:
+    subprocess.run(["git", "clone", "-q", ".", clone_dir], capture_output=True)
+    cloned = subprocess.run(["git", "hash-object", "--no-filters", "--stdin-paths"], cwd=clone_dir, capture_output=True,
+                            input="\n".join(paths).encode()).stdout.split()
+finally:
+    if sys.version_info >= (3, 12):
+        shutil.rmtree(clone_dir, onexc=_rm_readonly)
+    else:
+        shutil.rmtree(clone_dir, onerror=_rm_readonly)
+check(f"a fresh clone reproduces all {len(paths)} mod files byte-for-byte (no line-ending conversion on checkout)", cloned == blobs)
+
 print("\n== 2. Exactly the intended files changed ==")
 SF = ["ENG - Britain", "FIN - Finland", "GER - Germany", "HUN - Hungary", "ITA - Italy", "JAP - Japan",
       "RKN - Reichskommisariat Niederlande", "ROM - Romania", "SOV - Soviet union", "TUR - Turkey", "USA - USA"]
@@ -104,6 +125,7 @@ expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_1945_operations_d
 expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_reserves_decisions.txt", "common/ideas/GER_reserves_ideas.txt",
              "common/on_actions/GER_reserves_on_actions.txt", "common/scripted_effects/GER_reserves_effects.txt",
              "events/GER_reserves_events.txt", "localisation/english/GER_reserves_l_english.yml")}  # last reserves (section 12)
+expected |= {("M", "mod/.gitattributes")}  # no line-ending conversion in clones (section 13)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -145,6 +167,7 @@ allowed["mod/events/mod_events.txt"] = lambda l: l.strip() == "6 = {"
 for f in ("mod/history/units/GER_1944.txt", "mod/history/units/GER_1944_nsb.txt",
           "mod/common/units/names_divisions/GER_names_divisions.txt", "mod/events/ss_recruitment_event.txt"):
     allowed[f] = lambda l: False  # Wiking + Nordland: pure additions, nothing of the author's removed
+allowed["mod/.gitattributes"] = lambda l: l in ("# Auto detect text files and perform LF normalization", "* text=auto")
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]

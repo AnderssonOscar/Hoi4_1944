@@ -1033,6 +1033,60 @@ Sources:
 - [13] en.wikipedia, *Volkssturm*: foreigners inducted in some cases, if
   deemed ideologically acceptable.
 
+### 13. Files kept byte-exact in every clone; the project on GitHub (commit `2a99f40`)
+
+Oscar asked to publish the project to the author's GitHub repository
+(github.com/gastav3/Hoi4_1944), replacing its old content, with detailed
+documentation.
+
+**What was on GitHub:** the author's own history up to 29 June 2026 (branch
+`main`, plus an older branch `states_update`). It was compared file by file,
+ignoring line endings, with the Steam version this project starts from
+(`253cea1`, July 2026):
+- the Steam version already contains everything from GitHub `main`,
+  including the author's last two commits of 29 June 2026 ("STATES",
+  "STATE FIXES");
+- the 28 state files that exist only in the Steam version are new states the
+  author created after June;
+- only two things on GitHub are not in the Steam version: a stray
+  `common/characters/BLR.rar`, and two placeholder lines ("ADD THE REST
+  1944", "ADD LATER 1944") in states 523 and 669, which the author removed
+  himself before his July upload.
+
+So replacing GitHub's content with this project loses none of the author's
+work.
+
+**How it was published:**
+- **No force-push.** One merge commit joins GitHub's history with this
+  project's, so the author's earlier commits stay. The `states_update` branch
+  is untouched.
+- **The layout is this project's:** `mod/` (the mod), `docs/` and `tools/`,
+  with a README as the front page. On GitHub the mod files used to be at the
+  top level, so a game setup or Steam upload that pointed at the repository
+  root must now point at `mod/`. That also keeps `.git` out of the Steam
+  upload.
+
+**The line-ending fix (`mod/.gitattributes`):**
+- The author's `mod/.gitattributes` was the GitHub Desktop template
+  (`* text=auto`, "perform LF normalization").
+- A test clone showed the problem. On Windows, with Git's default
+  `core.autocrlf=true`, it converts the line endings of the mod's 45 LF-only
+  files on checkout (38 state files, `cosmetic.txt`, `descriptor.mod` and
+  others). They then differ from the tested and checksummed files, and
+  `sha256sum -c` fails in a clone.
+- Because the file sits inside `mod/`, it overrides the repository's own
+  `* -text`.
+- Now `mod/.gitattributes` says `* -text`, so git never converts and every
+  clone is byte-exact. The game doesn't read this file.
+
+**Checked:**
+- **A new integrity check** in verify_update.py clones the repository into a
+  temporary folder and compares all 943 mod files with the committed bytes.
+- **Calibrated:** with the old `* text=auto` put back on a temporary branch,
+  the check failed.
+- **The removed lines** of `.gitattributes` are allowed only as exactly the
+  two template lines.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -1058,7 +1112,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-65 files differ from the version on Steam: 30 edited, 3 deleted, 32 new (full list:
+66 files differ from the version on Steam: 31 edited, 3 deleted, 32 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

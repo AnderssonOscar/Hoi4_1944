@@ -1,30 +1,136 @@
-# 1944 - Downfall: bug-fix workspace
+# 1944 - Downfall
 
-Working copy of the Steam Workshop mod *1944 - Downfall* (id 3070639276) for
-investigating and fixing reported bugs.
+A Hearts of Iron IV mod by **gastav3**: the Second World War from 1 January
+1944. On the Steam Workshop:
+[1944 - Downfall](https://steamcommunity.com/sharedfiles/filedetails/?id=3070639276).
+
+This repository holds the mod and its **September 2026 update**: updated for
+HOI4 1.19.3, bug fixes, and new 1944–45 content. Every change is its own
+commit with its reason, and every claim can be checked again (see "Check it
+yourself"). **None of the update has been play-tested yet.**
+
+## What's here
 
 | Folder | What it is |
 |---|---|
-| `mod/` | The mod. Commit `253cea1` is the Workshop version byte-for-byte. |
-| `docs/READ-ME-FIRST.md` | Start page for the mod author (also at the top of the zip). |
-| `docs/HANDOVER.md` | Start here if you're continuing the work (any assistant). |
-| `docs/INVESTIGATION.md` | What was looked at, what was found, how sure, what's proposed. |
-| `docs/VERIFICATION.md` | Proof that the fixes and the 1.19.3 update are correct (46 checks). |
-| `docs/CHANGELOG.md` | Every change made to the mod, and how to test it in game. |
-| `docs/proposed-fixes/` | Patch files for proposed fixes. `0001` has been applied (commit `e20698c`). |
-| `tools/` | Read-only check scripts used for the findings. |
+| `mod/` | The mod itself. This is the folder the game loads and the one to upload to Steam. |
+| `docs/` | The documentation. Start with [READ-ME-FIRST](docs/READ-ME-FIRST.md). |
+| `tools/` | Python 3 scripts that re-check every claim. |
 
-## Reviewing changes
+| Document | What it covers |
+|---|---|
+| [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
+| [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 67 automated checks, the game's error logs, checksums |
+| [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
+| [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
+| [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
 
-Every change to the mod is a separate git commit that explains why.
+## The update in short
+
+- **HOI4 1.19.3.** With the mod loaded, the game's error.log went from 282
+  lines to 115 (the base game alone gives 1).
+- **Fixes:**
+  - Ichi-Go province effects that ran in the wrong states (a suspected crash
+    cause);
+  - three state files defined twice;
+  - "Königsberg in Ruins" removing forts in Africa;
+  - the Stettin fort and the Antwerp sabotage running in the wrong states;
+  - line endings kept byte-exact in every clone.
+- **New content:**
+  - the Slovak National Uprising (flavour event);
+  - the Nero Decree and Werwolf (decisions);
+  - the Volkssturm redesigned (levies by state population, historical 1945
+    call-ups);
+  - Festung Berlin (event chain);
+  - the SS divisions "Wiking" and "Nordland" in the 1944 start;
+  - four 1945 operations: Sonnenwende, Spring Awakening, the Courland
+    evacuation, Sailors to the Front;
+  - Germany's last reserves: six events and a Luftwaffe decision.
+- **Scope:** 66 files differ from the Steam version (31 edited, 3 deleted,
+  32 new). The author's own content was kept byte-for-byte everywhere, and
+  that is checked by script.
+
+The full list is the table in [READ-ME-FIRST](docs/READ-ME-FIRST.md); the
+reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
+
+## Play or test it
+
+1. Clone or download this repository.
+2. In `Documents\Paradox Interactive\Hearts of Iron IV\mod\`, create
+   `downfall_test.mod` containing:
+   ```
+   version="1"
+   name="1944 - Downfall (test)"
+   supported_version="1.19.*"
+   path="C:/full/path/to/Hoi4_1944/mod"
+   ```
+3. In the Paradox launcher, make a playset with only this mod. Never enable it
+   together with the Workshop version: two copies of the same mod at once
+   break the game.
+
+## How it was checked
+
+- **67 automated checks** (`python tools/verify_update.py`): integrity, a
+  fresh clone is byte-exact, exactly the intended files changed, the author's
+  content unchanged, every fix and feature in place. Every check written for
+  new content was shown to fail on deliberately planted errors.
+- **The game's own error.log** after every change: identical to the updated
+  baseline (115 lines). The logs are in `docs/game-logs/`.
+- **In-game runs** of the new effects during the game's setup, with no errors.
+- **Rebuild test:** the Steam version plus the 27 patches reproduces `mod/`
+  exactly (943 files).
+- **Not tested:** actual play, and playing without some DLCs.
+
+## Check it yourself
 
 ```
-git log --oneline -- mod/          # list of mod changes
-git show <commit>                   # one change with its reason
-git diff 253cea1 -- mod/            # everything changed vs. the Workshop version
+git log --oneline -- mod/        # every change to the mod
+git show <commit>                # one change with its full reason
+git diff 253cea1 -- mod/         # everything that differs from the Steam version
+python tools/verify_update.py    # re-runs all 67 checks
+cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 
-Final state (2026-09-27): two bug fixes, the update to HOI4 1.19.3, one
-flavor event (Slovak National Uprising) and the Nero Decree / Werwolf decisions
-(not play-tested yet), verified by 48 checks (`docs/VERIFICATION.md`), not yet play-tested. What was
-sent to the author is described in `docs/READ-ME-FIRST.md`.
+`verify_update.py` needs git, HOI4 1.19.3 and the Steam Workshop copy of the
+mod. Set `HOI4_PATH` and `WORKSHOP_PATH` if they aren't in Steam's default
+folders.
+
+## History of this repository
+
+- **Up to 29 June 2026:** gastav3's own commits, with the mod files at the
+  top level.
+- **Commit `253cea1`:** the mod exactly as published on Steam in July 2026,
+  placed in `mod/`. It already contains everything from the earlier GitHub
+  history; that was checked file by file. The only differences: a stray
+  `common/characters/BLR.rar`, and two "ADD LATER" placeholder lines in
+  states 523 and 669, both removed by the author before his July upload.
+- **After that:** one commit per change, each with its reason, and
+  documentation commits that record the checks.
+- **One merge commit joins the two histories.** Nothing was force-pushed, so
+  the earlier history is intact, and the `states_update` branch is untouched.
+- **Tags** `final-2026-09-27` to `final-2026-09-28-v9` mark each package
+  prepared for the author.
+
+## Status
+
+- **Not play-tested yet.** Each new feature's CHANGELOG section lists console
+  commands to try it.
+- **Crash reports not yet explained:** Bulgaria switching sides, Romania's
+  12-day decision, the Volkssturm focus (redesigned anyway) and the UK.
+  "D-Day seems broken" needs a description. See
+  [INVESTIGATION](docs/INVESTIGATION.md).
+
+## For the author: publishing to Steam
+
+Upload the `mod/` folder, not the repository root. That also keeps the `.git`
+folder out of the Workshop upload (the July 2026 upload included it, so
+subscribers could read the old history). `descriptor.mod` already says
+`supported_version="1.19.3.0"`. If your game setup pointed at the repository
+root, point it at `mod/` instead.
+
+## Credits
+
+*1944 - Downfall* is by gastav3. The September 2026 update was prepared by
+Oscar Andersson with an AI assistant (Claude). Everything is documented so it
+can be checked without trusting the AI.

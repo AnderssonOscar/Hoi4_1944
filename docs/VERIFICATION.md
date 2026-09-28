@@ -1,16 +1,17 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (65 checks,
+Everything below can be re-run: `python tools/verify_update.py` (67 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 65 checks pass
+## Result: all 67 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
 | Integrity | mod/ fully committed; all 943 mod files byte-identical to the commits | PASS |
+| Integrity | a fresh clone reproduces all 943 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
 | Integrity | Steam Workshop copy never touched (914/914 files = baseline) | PASS |
-| Scope | exactly the 65 intended files changed (30 edited, 3 deleted, 32 new), nothing else | PASS |
-| Author's work | every line removed from his files is one of the documented fixes (checked line by line in 26 files) | PASS |
+| Scope | exactly the 66 intended files changed (31 edited, 3 deleted, 32 new), nothing else | PASS |
+| Author's work | every line removed from his files is one of the documented fixes (checked line by line in 27 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
 | New event | Slovak uprising (F): files, trigger and text checked, including that only Germany loses the 3,000 manpower; the game's error.log is identical before and after (115 = 115, 0 new) | PASS |
