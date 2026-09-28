@@ -1,16 +1,16 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (67 checks,
+Everything below can be re-run: `python tools/verify_update.py` (68 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 67 checks pass
+## Result: all 68 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
-| Integrity | mod/ fully committed; all 943 mod files byte-identical to the commits | PASS |
-| Integrity | a fresh clone reproduces all 943 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
+| Integrity | mod/ fully committed; all 948 mod files byte-identical to the commits | PASS |
+| Integrity | a fresh clone reproduces all 948 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
 | Integrity | Steam Workshop copy never touched (914/914 files = baseline) | PASS |
-| Scope | exactly the 66 intended files changed (31 edited, 3 deleted, 32 new), nothing else | PASS |
+| Scope | exactly the 71 intended files changed (31 edited, 3 deleted, 37 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 27 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
@@ -22,6 +22,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | Wiking + Nordland | W: both divisions in both 1944 order-of-battle files (template, position, experience 1.0, equipment), positions German-held on 1 Jan 1944, no SS number twice, name list, event guard; 0 lines of the author's removed. Loaded in the game with `load_oob` (the normal load test does not read the order of battle; a planted broken template was reported as "Invalid division at line 632", the real files gave no German error). error.log 115 = 115 (log 11) | PASS |
 | 1945 operations | O: for Sonnenwende and Spring Awakening, set aside = returned = required, returned at the launch and when called off, never launched when called off; 12/14 days, 50 PP each; the Courland evacuation moves only German armies to the five port states in order; Sailors: +1,000 manpower, −10 convoys, 3 infantry divisions (no marines), 50% equipment, no experience; 10 events, 60 texts. Calibrated with 3 planted errors (each made it fail). Runtime test during the game's setup: no errors (amounts not observable at that moment). error.log 115 = 115 (log 12) | PASS |
 | Last reserves | R: the amounts (Estonia 38,000, West 3,000, Luftwaffe 75,000, eastern workers 15,000, round-ups 15,000); Hungary's transfer (Germany gains exactly what Hungary loses, never more than it has); the three spirits and durations; all 20 aircraft types −13% with instant = yes, compared with the game's equipment files; the decision; the exact conditions of the six daily checks, each firing once; map locations; 7 events, 32 texts. Calibrated with 4 planted errors (each made it fail). Runtime: the 7 effects ran in the game with no errors, and all 3 spirits were confirmed present. error.log 115 = 115 (log 13) | PASS |
+| Home front | H: the eight events' amounts, spirits, date windows and conditions, each once; 8 events, 33 texts; the Courland popup sets its unlock flag. Calibrated with 4 planted errors (each made it fail). Runtime: all eight effects ran with no errors, Rommel gone after, both spirits present. error.log 115 = 115 (log 15) | PASS |
 | Game's error.log | each fixed error type is gone: duplicate states 3→0, special-forces techs 93→0, Netherlands focuses 39→0, decisions 2→0, event 1→0, renamed IDs 6→0 | PASS |
 
 ## Version and checksum
@@ -39,7 +40,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
   players need the same mod version for multiplayer. There is no "correct"
   value to check a mod's checksum against.
 - **File checksums:** `docs/checksums/mod-files.sha256` lists SHA-256 for all
-  943 mod files. Verified with `sha256sum -c` (all OK). After uploading to
+  948 mod files. Verified with `sha256sum -c` (all OK). After uploading to
   Steam, the Workshop folder can be checked the same way:
   `cd <workshop folder> && sha256sum -c <this file>`. Expect `descriptor.mod`
   and `thumbnail.png` to differ only if Steam rewrites them.
@@ -156,6 +157,15 @@ originals; the Siam rebuild counts one more line, the file's last line. A
 fresh clone of the branch with Git's default settings loads with an
 identical error.log (115 = 115,
 `game-logs/14-pull-request-2-clone_error.log`).
+
+## The home front, 1944–45
+
+See CHANGELOG section 14. Check H parses the files and was calibrated with
+four planted errors. The eight effects were run inside the game during its
+setup with no errors; Rommel was in German service before and gone after,
+and both lasting spirits were present. The game loads with error.log
+identical (115 = 115, `game-logs/15-after-home-front_error.log`).
+**Not tested in play.**
 
 ## Not verified (so no guarantee here)
 

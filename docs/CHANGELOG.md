@@ -554,7 +554,7 @@ No Step Back DLC):
 | Division | Template | Position | Experience | Equipment |
 |---|---|---|---|---|
 | 5. SS-Division 'Wiking' | the author's "SS Panzer-Division" | 11424, the author's Cherkassy position (German-held on 1 Jan 1944), next to his Leibstandarte | 1.0 (maximum) | 90% (manpower 95%) |
-| 11. SS-Division 'Nordland' | new "SS-Panzergrenadier-Division" | 11080, the author's Leningrad-front SS position (the Luga state, German-held) | 1.0 (maximum) | 95% (manpower 100%) |
+| 11. SS-Division 'Nordland' | new "SS-Panzergrenadier-Division" | 11080, the author's Leningrad-front SS position: just south-west of Leningrad, directly behind the German line (the mod's state 208, whose file is named Pskov; German-held) | 1.0 (maximum) | 95% (manpower 100%) |
 
 **The Nordland template:** the author's own Panzergrenadier template (4
 motorised and 5 mechanised battalions, artillery, a StuG brigade; he uses it
@@ -806,6 +806,11 @@ under Esc):
    - `event ger_1945.8`.
    - Move a division into Kurzeme (Latvia), then take the decision. After
      30 days, the division should be at Gdynia.
+
+   **Fix, 28 September (commit `96f4a17`):** at first this step didn't work.
+   The decision is unlocked by a flag that only the daily check set, so
+   firing the popup from the console never showed the decision. The popup
+   now sets the flag itself; in normal play nothing changes.
 4. **Sailors to the Front:** the decision appears from 1 February 1945.
    - `event ger_1945.11` creates the 2nd division at Kiel directly.
    - `event ger_1945.12` creates the 3rd in Vorpommern.
@@ -1146,6 +1151,133 @@ pull request #2):**
 - **The removed lines** of `.gitattributes` are allowed only as exactly the
   two template lines.
 
+### 14. The home front, 1944–45: eight events (commits `99c2aa4`, `96f4a17`)
+
+Asked for by Oscar: eight events from the last months of the war, with
+suggested effects, the rest to be decided "creative and realistic".
+- **When they fire:** each event fires once, on its historical date (or
+  later while its window stays open), only while Germany is at war.
+- **The regime must still stand:** the home-front measures also require it
+  (`has_government = fascism`).
+- **Files:** five new files; nothing of the author's was changed.
+
+| Date | Event | Condition | Effect | Source |
+|---|---|---|---|---|
+| 15 Aug 1944 | Women's Labour Service Extended to 50 | until the end of 1944 | +10,000 manpower (men released from industry) | women's labour-service age raised from 45 to 50 [1] |
+| 14 Oct 1944 | The Death of Field Marshal Rommel | until the end of 1944 | Rommel leaves German service. Story only if the author's 20 July event already retired him | [1]; Burgdorf and Maisel, the choice, cyanide, the official "heart failure", the state funeral in Ulm on 18 October, Rundstedt's eulogy [2] |
+| 17 Nov 1944 | RAD Women at the Flak | | +7,500 manpower; lasting +1.5% State AA damage and hit chance | RAD women as Flak helpers, to release soldiers for the front [1] |
+| 19 Dec 1944 | An Air Force for Vlasov | only if Vlasov was recruited (the mod's decision) | a choice: −25 PP for +5,000 manpower, 20 fighters and 10 ground-attack aircraft; or nothing | Göring's order of 19 December 1944; fighter, night-bomber, reconnaissance, liaison and transport squadrons; about 5,000 men and 87 aircraft [3] |
+| 6 Jan 1945 | The Volksopfer | | a choice: −25 PP for 4,000 old rifles (the 1918 infantry equipment) and 1,000 support equipment; or nothing | the call for the "Volksopfer" to equip the Volkssturm [4] |
+| 30 Jan 1945 | The Sinking of the Wilhelm Gustloff | at war with the Soviet Union, Gotenhafen (Gdynia) still ours | −1,500 manpower | 9,000 refugees dead [4]; the details [5] |
+| 12 Feb 1945 | Women and Girls for the Volkssturm | | +5,000 manpower, −2% stability | [4]; girls as young as 14 trained with weapons [6] |
+| 5 Mar 1945 | The Class of 1929 | | lasting: −25% training time, +0.25% recruitable population | all boys born in 1929 called up, sent to the front after a short basic training [4] |
+
+**Design notes:**
+- **Amounts.** Oscar's numbers are used where he gave them: the State AA
+  +1.5%, the Volksopfer's and the air force's −25 PP, the class of 1929's
+  −25% training time and +0.25% recruitable population, the Gustloff's
+  −1,500. The rest are my choices within his ranges:
+  - the Flak women: 7,500 (he said 5–10k);
+  - the labour service: a one-time 10,000 rather than a lasting factor;
+  - the Volkssturm women: 5,000 and −2% stability;
+  - the Volksopfer: 4,000 + 1,000 (he said "perhaps 5k").
+
+  The sources give no figures for these.
+- **Vlasov's air force** only comes if Vlasov was recruited with the mod's
+  decision: without him there is no Russian Liberation Army to give an air
+  force to.
+  - The −25 PP is the political cost Oscar asked for.
+  - The 30 aircraft are the combat part of a formation that had 87 aircraft
+    in all, many of them liaison and training planes.
+  - They are Germany's current fighter and ground-attack designs, given the
+    way the base game does it (`type = small_plane_airframe`).
+- **The Volksopfer** gives old kit (the 1918 rifles), because what was
+  collected was old and mixed.
+- **Rommel.** The author's own 20 July event can already retire Rommel (its
+  option "Let the Gestapo sort this out").
+  - This event then only tells the story; otherwise Rommel leaves service
+    here.
+  - Either way it fires on 14 October, while the regime stands.
+- **The Gustloff.**
+  - **The manpower:** the −1,500 stands for the naval personnel aboard (918
+    U-boat trainees, 373 naval auxiliaries, 162 wounded soldiers and 173
+    crew; almost none survived [5]).
+  - **Oscar's request:** to portray it as a war crime and a horrible act.
+  - **What the event does:** it describes the horror and the civilian death
+    toll, and gives the judgement "nothing less than a crime" as the view of
+    the survivors and the families of the dead.
+  - **The historical assessment:** historians generally do not classify it
+    as a war crime. The ship carried anti-aircraft guns and military
+    personnel and was not a marked hospital ship; Günter Grass called it "a
+    terrible result of war" [5]. The event does not state otherwise as fact.
+- **Pictures:** base-game pictures, chosen by looking at them. The game has
+  none of women, youths or Flak batteries.
+
+**Also in this round, a Courland fix (commit `96f4a17`):** see the note at
+the end of section 11.
+
+**Checked:**
+- **Check H** in verify_update.py. It covers every amount, both spirits,
+  the date window and condition of each of the eight daily checks, each
+  firing once, the 8 events and the 33 texts.
+- **Check H was calibrated.** Four errors were planted one at a time, and
+  each made it fail:
+  - the Gustloff costs 1,000;
+  - Rommel is retired even when he is already gone;
+  - the class of 1929 could be called up in 1944;
+  - the Courland popup no longer unlocks the decision.
+- **Game features:**
+  - `retire_character` "un-assigns a character from a nation", so
+    `has_character` tells whether Rommel is still in German service. The
+    game's own documentation uses Rommel as its example.
+  - The four modifiers are in the game's modifier documentation.
+  - Germany starts with the techs for the equipment given
+    (`infantry_weapons`, `tech_support`).
+- **Runtime test** (temporary test lines in Germany's history file, removed
+  afterwards): all eight effects ran with no errors. Rommel was in service
+  before and gone after, and both spirits were present.
+- **Load test:** error.log identical (115 = 115,
+  `game-logs/15-after-home-front_error.log`). setup.log shows the 8 events
+  and 2 spirits loaded.
+
+**Not play-tested yet.** Console: `event ger_homefront.1` to
+`event ger_homefront.8`.
+
+**Files:**
+- `common/scripted_effects/GER_homefront_effects.txt` (all effects, also
+  used by the runtime test)
+- `common/ideas/GER_homefront_ideas.txt` (the two lasting spirits)
+- `common/on_actions/GER_homefront_on_actions.txt` (the eight daily checks)
+- `events/GER_homefront_events.txt` (8 events)
+- `localisation/english/GER_homefront_l_english.yml` (33 texts)
+
+Sources:
+- [1] Deutsches Historisches Museum, LeMO, *Jahreschronik 1944*: 15 August
+  (women's labour service to 50), 14 October (Rommel), 17 November (RAD
+  women as Flak helpers).
+- [2] de.wikipedia, *Erwin Rommel*:
+  - 14 October 1944, Burgdorf and Maisel at Herrlingen;
+  - the official cause, "Herzschlag, als Folge eines im Westen erlittenen
+    Dienstunfalls";
+  - the state funeral on 18 October 1944 in Ulm, with Rundstedt's eulogy
+    ("Sein Herz gehörte dem Führer").
+- [3] ru.wikipedia, *Военно-воздушные силы Комитета освобождения народов
+  России*: Göring's order of 19 December 1944, the planned squadrons, under
+  Vlasov from 4 February 1945, about 5,000 men and 87 aircraft.
+- [4] Deutsches Historisches Museum, LeMO, *Jahreschronik 1945*: 6 January
+  (Volksopfer), 30 January (Gustloff, 9,000 refugees dead), 12 February
+  (women and girls for the Volkssturm), 5 March (the class of 1929).
+- [5] en.wikipedia, *MV Wilhelm Gustloff*:
+  - she left Gotenhafen on 30 January 1945;
+  - S-13 (Marinesko): three torpedoes struck;
+  - Heinz Schön's figures: 10,582 aboard, including 8,956 civilians; about
+    9,343 dead;
+  - "by far the largest loss of life in maritime history resulting from the
+    sinking of a single vessel";
+  - the war-crime question.
+- [6] en.wikipedia, *Volkssturm*: women and girls from 12 February 1945,
+  girls as young as 14 trained in using weapons.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -1171,7 +1303,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-66 files differ from the version on Steam: 31 edited, 3 deleted, 32 new (full list:
+71 files differ from the version on Steam: 31 edited, 3 deleted, 37 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

@@ -126,6 +126,9 @@ expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_reserves_decision
              "common/on_actions/GER_reserves_on_actions.txt", "common/scripted_effects/GER_reserves_effects.txt",
              "events/GER_reserves_events.txt", "localisation/english/GER_reserves_l_english.yml")}  # last reserves (section 12)
 expected |= {("M", "mod/.gitattributes")}  # no line-ending conversion in clones (section 13)
+expected |= {("A", f"mod/{f}") for f in ("common/ideas/GER_homefront_ideas.txt", "common/on_actions/GER_homefront_on_actions.txt",
+             "common/scripted_effects/GER_homefront_effects.txt", "events/GER_homefront_events.txt",
+             "localisation/english/GER_homefront_l_english.yml")}  # the home front, 1944-45 (section 14)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -598,6 +601,48 @@ check("R  Germany's last reserves: Estonia +38,000 (from 7 Feb 1944, Tallinn hel
       and len(rs_defs) == 7 and rs_calls == set(rs_defs)
       and rs_loc.startswith(b"\xef\xbb\xbfl_english:\r\n") and len(rs_keys) == 32 and rs_need == rs_keys,
       f"aircraft types differing: {sorted(rs_air ^ {b.key for b in rs_bonus.value})}")
+
+hf_ev = current("mod/events/GER_homefront_events.txt").decode("ascii")
+hf_oa = current("mod/common/on_actions/GER_homefront_on_actions.txt").decode("ascii")
+hf_eff = {n.key: n for n in pdx.parse_file("mod/common/scripted_effects/GER_homefront_effects.txt")[0] if n.key}
+hf_ideas = {i.key: i for c in pdx.parse_file("mod/common/ideas/GER_homefront_ideas.txt")[0] if c.key == "ideas"
+            for g in c.value if g.key == "country" for i in g.value if i.key}
+hf_ifs = [canon_op(op_get(b, "limit")) for c in pdx.parse_file("mod/common/on_actions/GER_homefront_on_actions.txt")[0] if c.key == "on_actions"
+          for d in c.value if d.key == "on_daily_GER" for b in op_get(d, "effect").value if b.key == "if"]
+hf_loc = current("mod/localisation/english/GER_homefront_l_english.yml")
+hf_keys = {k.decode() for k in re.findall(rb"^ ([\w.]+):0 ", hf_loc, re.M)}
+hf_need = set(re.findall(r"(?:title|desc|name|custom_effect_tooltip) = (ger_homefront[\w.]+)", hf_ev)) | set(hf_ideas) | {i + "_desc" for i in hf_ideas}
+hf_defs = re.findall(r"^\tid = (ger_homefront\.\d+)", hf_ev, re.M)
+HF_WINDOWS = [("1944.8.14", "1945.1.1", "has_government=fascism"), ("1944.10.13", "1945.1.1", "has_government=fascism"),
+              ("1944.11.16", "1945.5.9", "has_government=fascism"), ("1944.12.18", "1945.5.9", "has_war_with=SOV has_character=SOV_andrey_vlasov"),
+              ("1945.1.5", "1945.5.9", "has_government=fascism"), ("1945.1.29", "1945.5.9", "has_war_with=SOV 807={is_controlled_by=ROOT}"),
+              ("1945.2.11", "1945.5.9", "has_government=fascism"), ("1945.3.4", "1945.5.9", "has_government=fascism")]
+def hf_body(name):
+    return [canon_op(n) for n in hf_eff[name].value]
+check("H  The home front, 1944-45: 8 events, each once from its historical date (15 Aug, 14 Oct, 17 Nov, 19 Dec 1944; 6 Jan, "
+      "30 Jan, 12 Feb, 5 Mar 1945) while at war; labour +10,000; Rommel leaves service only if still in it; Flak +7,500 and "
+      "+1.5% State AA; Vlasov's air force (only if Vlasov was recruited) -25 PP, +5,000, 20 fighters, 10 CAS; Volksopfer -25 PP, "
+      "4,000 old rifles, 1,000 support; Gustloff -1,500 (while Gotenhafen is ours); women +5,000, -2% stability; class of 1929 "
+      "-25% training time, +0.25% recruitable population; 33 texts",
+      hf_body("GER_homefront_female_labour_to_50") == ["add_manpower=10000"]
+      and hf_body("GER_homefront_rommel_dies") == ["if={limit={has_character=GER_erwin_rommel} retire_character=GER_erwin_rommel}"]
+      and hf_body("GER_homefront_flak_auxiliaries") == ["add_manpower=7500", "add_ideas=GER_homefront_flak_auxiliaries"]
+      and hf_body("GER_homefront_vlasov_air_force") == ["add_political_power=-25", "add_manpower=5000",
+          "add_equipment_to_stockpile={type=small_plane_airframe amount=20}", "add_equipment_to_stockpile={type=small_plane_cas_airframe amount=10}"]
+      and hf_body("GER_homefront_volksopfer") == ["add_political_power=-25", "add_equipment_to_stockpile={type=infantry_equipment_0 amount=4000}",
+          "add_equipment_to_stockpile={type=support_equipment_1 amount=1000}"]
+      and hf_body("GER_homefront_gustloff") == ["add_manpower=-1500"]
+      and hf_body("GER_homefront_volkssturm_women") == ["add_manpower=5000", "add_stability=-0.02"]
+      and hf_body("GER_homefront_class_of_1929") == ["add_ideas=GER_homefront_class_of_1929"]
+      and canon_op(op_get(hf_ideas["GER_homefront_flak_auxiliaries"], "modifier")) == "modifier={static_anti_air_damage_factor=0.015 static_anti_air_hit_chance_factor=0.015}"
+      and canon_op(op_get(hf_ideas["GER_homefront_class_of_1929"], "modifier")) == "modifier={training_time_factor=-0.25 conscription=0.0025}"
+      and hf_ifs == ["limit={NOT={has_country_flag=GER_homefront_%d_done} date>%s date<%s has_war=yes %s}" % (i + 1, a, b, c)
+                     for i, (a, b, c) in enumerate(HF_WINDOWS)]
+      and all(hf_oa.count("set_country_flag = GER_homefront_%d_done" % (i + 1)) == 1 for i in range(8))
+      and len(hf_defs) == 8 and set(re.findall(r"country_event = \{ id = (ger_homefront\.\d+)", hf_oa)) == set(hf_defs)
+      and hf_loc.startswith(b"\xef\xbb\xbfl_english:\r\n") and len(hf_keys) == 33 and hf_need == hf_keys
+      and "immediate = {\r\n\t\thidden_effect = { set_country_flag = GER_1945_courland_offered }" in op["ev"],
+      str([l for l, (a, b, c) in zip(hf_ifs, HF_WINDOWS) if a not in l]))
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)

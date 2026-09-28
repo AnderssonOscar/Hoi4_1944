@@ -26,13 +26,13 @@ mod, so every change must be easy for him to check himself.
 
 ## 3. Status (28 September 2026)
 
-- **66 files differ** from the Steam version (31 edited, 3 deleted, 32 new).
-  Every change is in `docs/CHANGELOG.md` (sections 1–13) and summarised in
+- **71 files differ** from the Steam version (31 edited, 3 deleted, 37 new).
+  Every change is in `docs/CHANGELOG.md` (sections 1–14) and summarised in
   `docs/READ-ME-FIRST.md`.
-- **`python tools/verify_update.py`:** 67 checks, all pass.
+- **`python tools/verify_update.py`:** 68 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
-- **Packages:** the tags `final-2026-09-27` to `final-2026-09-28-v10`. Each
+- **Packages:** the tags `final-2026-09-27` to `final-2026-09-28-v11`. Each
   package is `mod/`, the patches (one per commit), `docs/` and `tools/`, in
   a zip.
 - **GitHub:** the same changes are pull request #2 in the author's
@@ -188,7 +188,7 @@ python tools/check_province_modifiers.py   # provinces outside their state, unkn
 python tools/check_structure.py            # brace balance, template slot clashes
 python tools/check_references.py           # events/ideas/characters/tags used in play
 python tools/check_berlin_map.py           # Festung Berlin's map facts (needs Pillow and numpy)
-python tools/verify_update.py              # re-checks every claim (67 checks)
+python tools/verify_update.py              # re-checks every claim (68 checks)
 ```
 
 `check_province_modifiers.py` also reports states defined by more than one

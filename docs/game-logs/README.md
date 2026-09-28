@@ -20,3 +20,4 @@ history runs at startup). Compare them with any diff tool.
 | 12-after-1945-operations_error.log | after the four 1945 operations (97fad47, texts corrected in 9c950e1); identical to 5 | 115 |
 | 13-after-last-reserves_error.log | after Germany's last reserves (70d287a); identical to 5 | 115 |
 | 14-pull-request-2-clone_error.log | a fresh clone of pull request #2's branch (the author's layout, commit 80d1d1c) with Git's default settings (CRLF checkout); identical to 13 | 115 |
+| 15-after-home-front_error.log | after the home front, 1944–45 (99c2aa4) and the Courland popup fix (96f4a17); identical to 13 | 115 |

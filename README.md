@@ -21,7 +21,7 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 67 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 68 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
@@ -46,9 +46,11 @@ yourself"). **None of the update has been play-tested yet.**
   - the SS divisions "Wiking" and "Nordland" in the 1944 start;
   - four 1945 operations: Sonnenwende, Spring Awakening, the Courland
     evacuation, Sailors to the Front;
-  - Germany's last reserves: six events and a Luftwaffe decision.
-- **Scope:** 66 files differ from the Steam version (31 edited, 3 deleted,
-  32 new). The author's own content was kept byte-for-byte everywhere, and
+  - Germany's last reserves: six events and a Luftwaffe decision;
+  - the home front, 1944–45: eight events, from women's labour service to
+    the class of 1929.
+- **Scope:** 71 files differ from the Steam version (31 edited, 3 deleted,
+  37 new). The author's own content was kept byte-for-byte everywhere, and
   that is checked by script.
 
 The full list is the table in [READ-ME-FIRST](docs/READ-ME-FIRST.md); the
@@ -71,15 +73,15 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **67 automated checks** (`python tools/verify_update.py`): integrity, a
+- **68 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
 - **The game's own error.log** after every change: identical to the updated
   baseline (115 lines). The logs are in `docs/game-logs/`.
 - **In-game runs** of the new effects during the game's setup, with no errors.
-- **Rebuild test:** the Steam version plus the 27 patches reproduces `mod/`
-  exactly (943 files).
+- **Rebuild test:** the Steam version plus the 29 patches reproduces `mod/`
+  exactly (948 files).
 - **Not tested:** actual play, and playing without some DLCs.
 
 ## Check it yourself
@@ -88,7 +90,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 67 checks
+python tools/verify_update.py    # re-runs all 68 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 
@@ -103,7 +105,7 @@ folders.
   history; that was checked file by file.
 - **After that:** one commit per change, each with its reason, and
   documentation commits that record the checks.
-- **Tags** `final-2026-09-27` to `final-2026-09-28-v10` mark each package
+- **Tags** `final-2026-09-27` to `final-2026-09-28-v11` mark each package
   prepared for the author.
 - **The author's repository** (github.com/gastav3/Hoi4_1944) receives the
   same changes through pull request #2, in his layout. The mod stays at the
