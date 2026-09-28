@@ -474,3 +474,9 @@ Each was calibrated against the base game's own files and map:
 
 For every one, the base game's own map puts the province in the same
 "wrong" state, so none of them is caused by the mod moving provinces.
+
+Also found while planning Festung Berlin: the author's Festung Cities focus has
+commented-out forts "around Berlin" and at "Küstrin" with IDs 13377-13380.
+In the current map those are in Asia (states 1059, 611, 754), so the code was
+never active. Festung Berlin uses the correct provinces, re-derived from the
+map by `tools/check_berlin_map.py`.

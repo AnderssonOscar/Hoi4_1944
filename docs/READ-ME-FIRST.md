@@ -9,7 +9,7 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **41 files differ** from that version: 26 edited, 3 deleted, 12 new. Your own
+- **47 files differ** from that version: 26 edited, 3 deleted, 18 new. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -28,9 +28,9 @@ independently (see "Check it yourself").
 | Item | What it is |
 |---|---|
 | `mod/` | the complete updated mod, ready to test or upload |
-| `patches/` | every change as a patch (21, in order), each with its reason |
+| `patches/` | every change as a patch (22, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 57 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 58 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -54,6 +54,7 @@ independently (see "Check it yourself").
 | 11 | **Volkssturm redesigned** (CHANGELOG section 6). The focus now raises divisions in every German state by population (42 if all are held), and 4 decisions add more from the historical dates in 1945 (east, Oder/Pomerania, west, Berlin): 89 divisions / 445 battalions in all, about the 700+ real battalions that fought. Rifles follow the Gau Bayreuth list of Jan 1945 (mostly Italian Carcanos), 40–75% equipped, no training. Your template, availability and AI weights are unchanged. **Not play-tested yet** | germany.txt focus block, focus tooltip, 3 new files `GER_volkssturm_*` |
 | 12 | Fix: "Königsberg in Ruins" removed forts from three provinces in Africa (wrong IDs) instead of Königsberg's ring fort; now it removes them from the ring fort your Festung focus builds (11265). | mod_news.txt |
 | 13 | Fix: your Oder–Neisse Defence decision built the Stettin fort in the wrong state (Vorpommern instead of Hinterpommern), and "Destroy Antwerpen" targeted Antwerp's port in Flanders instead of Antwerp's own state. One line each (CHANGELOG section 8) | GER_mod.txt, mod_events.txt |
+| 14 | New: **Festung Berlin**, a five-event chain for the defence of Berlin (Defence Area, Seelow Heights, Clausewitz, Weidling, encirclement): forts built over six weeks, only topped up to at most level 5 so your Festung Cities and Oder–Neisse forts are respected; 3 weak emergency divisions; a Brandenburg bonus; your human-only Berlin bonus rule kept (CHANGELOG section 9). **Not play-tested yet** | 6 new files `GER_festung_berlin_*` |
 
 **Your call** (decisions made for you, easy to change):
 
@@ -128,6 +129,10 @@ You may want to leave it out next time.
 - The Volkssturm focus and decisions load cleanly and their script ran
   without errors, but it hasn't been confirmed in play that the divisions
   appear (CHANGELOG section 6 has the test steps).
+- Festung Berlin loads cleanly and its fort steps were run inside the game
+  (right levels, no errors), but the chain hasn't been played through yet
+  (CHANGELOG section 9 has console test steps).
+- `tools/check_berlin_map.py` needs Pillow and numpy (`pip install pillow numpy`).
 - 4 small issues that were already in your 1944 blocks were left alone:
   GER `wilhelm_keitel` and `joseph_goebbels`, and JAP `JAP_mitsumasa_yonai`,
   used as ideas although they're characters in 1.19; SIA tag

@@ -87,6 +87,12 @@ expected |= {("M", "mod/common/national_focus/germany.txt"), ("M", "mod/localisa
              ("A", "mod/localisation/english/GER_volkssturm_l_english.yml")}  # Volkssturm (CHANGELOG section 6)
 expected |= {("M", "mod/events/mod_news.txt")}  # Konigsberg in Ruins fix (CHANGELOG section 7)
 expected |= {("M", "mod/common/decisions/GER_mod.txt"), ("M", "mod/events/mod_events.txt")}  # Stettin + Antwerp fixes (section 8)
+expected |= {("A", "mod/common/scripted_effects/GER_festung_berlin_effects.txt"),
+             ("A", "mod/common/modifiers/GER_festung_berlin_modifiers.txt"),
+             ("A", "mod/common/dynamic_modifiers/GER_festung_berlin_dynamic_modifiers.txt"),
+             ("A", "mod/common/on_actions/GER_festung_berlin_on_actions.txt"),
+             ("A", "mod/events/GER_festung_berlin_events.txt"),
+             ("A", "mod/localisation/english/GER_festung_berlin_l_english.yml")}  # Festung Berlin (section 9)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -320,6 +326,52 @@ sa = {f: wrong_state_refs(f) for f in ("mod/events/mod_news.txt", "mod/common/de
 check("S/A  Stettin fort built in state 63 and Antwerp sabotage in state 977; no province outside its state in the three fixed files",
       not any(sa.values()) and b"63 = { " in current("mod/common/decisions/GER_mod.txt") and b"977 = { " in current("mod/events/mod_events.txt"),
       str({k: v for k, v in sa.items() if v}))
+
+fb = {k: current("mod/" + f).decode("ascii") for k, f in (
+    ("eff", "common/scripted_effects/GER_festung_berlin_effects.txt"), ("mods", "common/modifiers/GER_festung_berlin_modifiers.txt"),
+    ("dyn", "common/dynamic_modifiers/GER_festung_berlin_dynamic_modifiers.txt"), ("oa", "common/on_actions/GER_festung_berlin_on_actions.txt"),
+    ("ev", "events/GER_festung_berlin_events.txt"))}
+fb_loc = current("mod/localisation/english/GER_festung_berlin_l_english.yml")
+fb_eff = pdx.parse_file("mod/common/scripted_effects/GER_festung_berlin_effects.txt")[0]
+def fb_topups(name):
+    """{province: (target, ok)}: ok = every start level 0-10 ends at max(start, target), simulated branch by branch."""
+    res = {}
+    state = next(n for n in next(n for n in fb_eff if n.key == name).value if n.key == "64")
+    for blk in (b for b in state.value if b.key == "if"):
+        prov = next(c.value for c, _ in pdx.walk(blk.value) if c.key == "controls_province")
+        br = [(int(next(x.value for x, _ in pdx.walk(c.value) if x.key == "level" and x.op == "<")),
+               int(next(x.value for x, _ in pdx.walk(c.value) if x.key == "level" and x.op == "=")))
+              for c in blk.value if c.key in ("if", "else_if")]
+        target = br[-1][0]
+        res[prov] = (target, all(next((s + a for c, a in br if s < c), s) == max(s, target) for s in range(11)))
+    return res
+FB_RING = ["375", "3499", "9428", "11444", "11505"]
+fb_expect = {"GER_festung_berlin_forts_step_1": {"6521": 2, **{x: 1 for x in FB_RING}},
+             "GER_festung_berlin_forts_step_2": {"6521": 4, **{x: 2 for x in FB_RING}},
+             "GER_festung_berlin_forts_step_3": {"6521": 5}, "GER_seelow_forts_step_1": {"9496": 2}, "GER_seelow_forts_step_2": {"9496": 4}}
+fb_sim = {n: fb_topups(n) for n in fb_expect}
+fb_keys = set(re.findall(rb"^ ([\w.]+):0 ", fb_loc, re.M))
+fb_need = set(re.findall(r"(?:title|desc|name|custom_effect_tooltip) = (festung_berlin\.[\w.]+)", fb["ev"]))
+fb_defs = re.findall(r"^\tid = (festung_berlin\.\d+)", fb["ev"], re.M)
+fb_calls = set(re.findall(r"(?:country_event|news_event) = \{ id = (festung_berlin\.\d+)", fb["ev"] + fb["oa"]))
+check("B  Festung Berlin: forts only topped up (simulated for start levels 0-10), Berlin 2/4/5, ring 1/2, Seelow 2/4, never above 5; "
+      "all provinces in Brandenburg; triggers on the 6 bordering states and Seelow's 4 outer neighbours; Brandenburg bonus only while "
+      "Germany owns and controls it; 3 emergency divisions; human-only Berlin bonus unless the author's focus gave it; Weidling guarded; 9 events, 25 texts",
+      all({p: tg for p, (tg, _) in fb_sim[n].items()} == e and all(g for _, g in fb_sim[n].values()) for n, e in fb_expect.items())
+      and max(int(x) for x in re.findall(r"level < (\d+)", fb["eff"])) <= 5
+      and all(p2s.get(x) == "64" for x in FB_RING + ["6521", "9496"])
+      and "OR = { state = 59 state = 60 state = 61 state = 62 state = 65 state = 68 }" in fb["oa"]
+      and all("NOT = { controls_province = %s }" % x in fb["oa"] for x in ("3473", "537", "3572", "3207"))
+      and all(p2s.get(x) != "64" for x in ("3473", "537", "3572", "3207"))
+      and "is_owned_by = GER" in fb["dyn"] and "is_controlled_by = GER" in fb["dyn"]
+      and "enemy_army_speed_factor = -0.1" in fb["dyn"] and "land_bunker_effectiveness_factor = 0.1" in fb["dyn"]
+      and fb["eff"].count("create_unit") == 3 and fb["eff"].count("owner = ROOT") == 3 and fb["eff"].count("prioritize_location = 6521") == 3
+      and "is_ai = no" in fb["ev"] and "NOT = { has_completed_focus = GER_festung_cities }" in fb["ev"]
+      and "has_completed_focus = GER_festung_cities }" in fb["oa"]
+      and "has_character = GER_helmuth_weidling" in fb["ev"] and "NOT = { has_trait = urban_assault_specialist }" in fb["ev"]
+      and len(fb_defs) == 9 and fb_calls == set(fb_defs)
+      and fb_loc.startswith(bytes.fromhex("efbbbf") + b"l_english:") and len(fb_keys) == 25 and {k.encode() for k in fb_need} <= fb_keys,
+      str({n: {p: tg for p, (tg, g) in r.items() if not g} for n, r in fb_sim.items()}))
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)

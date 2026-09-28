@@ -395,6 +395,140 @@ mod's and the base game's state files:
   error.log identical (115 = 115, `game-logs/9-after-stettin-antwerp-fixes_error.log`).
   The province checker now reports only the 22 base-game lines.
 
+### 9. Festung Berlin: an event chain for the defence of Berlin (commit `1fa3c2c`)
+
+Asked for by Oscar: when the enemy approaches Berlin, stronger defences in and
+around the city, a few weak emergency units, noticeably harder to take but
+balanced and realistic, with events for immersion. The plan was agreed and
+reviewed for realism before building. Six **new** files, no existing file
+changed.
+
+**Oscar's decisions:**
+- Keep the author's rule that Berlin's Festung bonus is for a human-led
+  Germany only.
+- No "open city" option.
+- Weidling gets a combat bonus (a game bonus, not history).
+- Enemies 10% slower in Brandenburg.
+- Three emergency divisions.
+
+**The chain** (checked once a day for Germany; each event fires once):
+
+| # | Event | Fires when | Effect |
+|---|---|---|---|
+| 1 | The Berlin Defence Area | an enemy holds part of any state bordering Brandenburg: Hannover, Thüringen, Mecklenburg, Vorpommern, Sachsen, Ostmark | forts built over six weeks: Berlin to level 2, 4, then 5 (every three weeks); the five provinces around Berlin to 1, then 2 |
+| 2 | The Seelow Heights | the enemy holds one of Seelow's neighbours beyond Brandenburg (Küstrin 3473, 537, 3572, 3207) | Seelow to fort level 2, then 4 three weeks later; +10% defence and +50% maximum dig-in there while Germany holds it |
+| 3 | Clausewitz | Seelow falls, or the enemy holds one of the five provinces around Berlin | 3 weak emergency divisions in Berlin (Berlin police, Hitler Youth, other emergency units; untrained, 50–75% equipped); Brandenburg bonus (below); for a human-led Germany without the author's Festung Cities focus, his Festung bonus in Berlin (+20% defence, +75% maximum dig-in, −25% supply use); world news |
+| 4 | Weidling Takes Command | 3 days after Clausewitz, if Berlin still holds | Weidling (in the mod as a corps commander) gains the base game's "urban assault specialist" trait (+10% attack and defence in cities) |
+| 5 | Berlin Is Encircled | the enemy holds all five provinces around Berlin (at the earliest 3 days after Clausewitz) | story only |
+
+- **"Clausewitz"** was the code word Hitler gave on 20 April 1945, the day
+  after the Seelow front broke. It made Berlin a front-line city: Wehrmacht
+  and SS offices were evacuated and files destroyed. In the chain it marks the
+  moment the city itself becomes the battlefield.
+- **The Brandenburg bonus:** in the game "Brandenburg" is one state (64) of 16
+  provinces, including Berlin, Potsdam, Magdeburg and Seelow. While Germany
+  both owns and controls that state, enemy units there move 10% slower and
+  forts there work 10% better. It uses the same kind of state modifier as the
+  base game's `RAJ_fortified_position` (−30% enemy speed),
+  `DEN_home_guard_state_modifier` (−10%) and `FIN_motti_tactics_modifier`
+  (−15%). Requiring both owner and controller guarantees "enemy" can only mean
+  Germany's enemies.
+- **Where it all is, from the game's own map** (`tools/check_berlin_map.py`
+  re-derives it):
+  - Berlin (6521) is ringed by exactly five provinces: 375, Potsdam (3499),
+    9428, 11444 and 11505, all in Brandenburg.
+  - Seelow (9496) borders Küstrin and three more provinces outside
+    Brandenburg.
+  - The states bordering Brandenburg are exactly the six above.
+
+**How it respects the author's work:**
+- **Forts are only topped up**, never added on top. Each province checks its
+  current fort level once and adds exactly the difference. So nothing stacks
+  on the forts from the author's Festung Cities focus (Berlin 5) or his
+  Oder–Neisse Defence decision (Seelow 4).
+- **Nothing goes above level 5.** The game's defines make AI armies in
+  "careful" mode refuse to attack provinces with fort level 5 or more.
+- **No doubled Berlin bonus.** The chain adds its own copy of the author's
+  Festung bonus only if his focus hasn't. If the focus adds his later, the
+  chain's copy is removed.
+- **Province bonuses end with the ground.** The Seelow and Berlin bonuses are
+  removed when the province is lost, as the author does for Königsberg.
+- **Separate units.** The emergency divisions don't overlap with the Berlin
+  Volkssturm decision (section 6) or the author's "Emergency Reserves"
+  decision (Ersatz divisions).
+- **The author's own Berlin plans:** his Festung Cities focus contains
+  commented-out forts "around Berlin" and at "Küstrin" (IDs 13377–13380).
+  Those IDs are in Asia in the current map, so they were never active. The
+  chain uses the correct provinces.
+
+**Realism review:**
+- **Forts are built over weeks, not instantly.** Reymann, who took over the
+  Berlin Defence Area in March 1945, "had inherited almost nothing". If the
+  enemy comes fast, the defences are unfinished.
+- **Clausewitz timing.** It fires on Seelow falling or the enemy next to
+  Berlin (historically 19–20 April). It doesn't fire when the enemy merely
+  enters Brandenburg: Soviet bridgeheads were there from February.
+- **What matches history:** the three emergency groups (police and Hitler
+  Youth are in the sources); the flak towers; Berlin's AA already at the
+  maximum since 1939; the ring closing (25 April); Wenck's failed relief.
+- **Weidling's trait is a deliberate game bonus** (Oscar's choice).
+  Historically his appointment did not strengthen the defence.
+
+**Checked:**
+- **Check B** in verify_update.py:
+  - simulates every fort top-up for start levels 0–10: it always ends
+    exactly at the target or the old level, whichever is higher, and never
+    above 5;
+  - confirms all provinces are in Brandenburg and the triggers use the right
+    states and provinces;
+  - confirms the owner-and-controller condition, the 3 units, the
+    human-only rule and the Weidling guard;
+  - confirms 9 events, all called, and 25 texts.
+- **`tools/check_berlin_map.py`:** ring, Seelow front and bordering states
+  match the map.
+- **Runtime test** (a temporary test line in Germany's history file, removed
+  afterwards). The real fort steps ran inside the game, with step 3 twice.
+  The game then reported Berlin at exactly 5, Potsdam at exactly 2 and
+  Seelow at exactly 4. The emergency units, both bonuses and the Weidling
+  step raised no errors.
+- **Load test:** error.log identical (115 = 115,
+  `game-logs/10-after-festung-berlin_error.log`). setup.log lists both new
+  province bonuses by name.
+
+**Not play-tested yet.** Quick test as Germany with the console (key under
+Esc), province numbers from the table above:
+1. `setcontroller SOV 3473` (Küstrin): events 1 and 2 on the next days.
+2. `setcontroller SOV 9496` (Seelow): Clausewitz, then Weidling 3 days later.
+3. `setcontroller SOV 375`, `3499`, `9428`, `11444`, `11505`: encirclement.
+
+The fort steps follow 21 and 42 days after events 1 and 2.
+
+**Files:**
+- `common/scripted_effects/GER_festung_berlin_effects.txt` (forts, units)
+- `common/modifiers/GER_festung_berlin_modifiers.txt` (Seelow and Berlin
+  bonuses)
+- `common/dynamic_modifiers/GER_festung_berlin_dynamic_modifiers.txt`
+  (Brandenburg bonus)
+- `common/on_actions/GER_festung_berlin_on_actions.txt` (triggers,
+  clean-up)
+- `events/GER_festung_berlin_events.txt`
+- `localisation/english/GER_festung_berlin_l_english.yml`
+
+Sources:
+- de.wikipedia, *Schlacht um Berlin*: the 9 March order "bis zum letzten
+  Mann und zur letzten Patrone"; Clausewitz on 20 April; outer and inner
+  rings and the Zitadelle; encirclement on 25 April; surrender on 2 May.
+- en.wikipedia, *Battle in Berlin*: Clausewitz; about 45,000 soldiers plus
+  police, Hitler Youth and 40,000 Volkssturm; Weidling, an artillery general,
+  commander of the Berlin Defence Area on 23 April (de.wikipedia: 24 April);
+  eight sectors A–H, most commanders without combat experience; Wenck's
+  relief halted south-west of Potsdam.
+- en.wikipedia, *Battle of the Seelow Heights*: 16–19 April; a light screen
+  on the river, three lines behind the heights, the floodplain flooded from a
+  reservoir.
+- en.wikipedia, *Hellmuth Reymann* ("inherited almost nothing").
+- en.wikipedia, *Flak tower*: the three Berlin towers, used as strongpoints.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -420,7 +554,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-41 files differ from the version on Steam: 26 edited, 3 deleted, 12 new (full list:
+47 files differ from the version on Steam: 26 edited, 3 deleted, 18 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.
