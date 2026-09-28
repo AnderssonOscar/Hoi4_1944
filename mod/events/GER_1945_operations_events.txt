@@ -122,6 +122,12 @@ country_event = {
 
 	is_triggered_only = yes
 
+	# Also set here (not only in the daily check), so that the evacuation decision
+	# appears when this event is fired from the console too.
+	immediate = {
+		hidden_effect = { set_country_flag = GER_1945_courland_offered }
+	}
+
 	option = {
 		name = ger_1945.8.a
 		ai_chance = { base = 25 }
