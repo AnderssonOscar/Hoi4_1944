@@ -1,0 +1,110 @@
+###########################
+# 1944 - Downfall: the home front, 1944-45: triggers (docs/CHANGELOG.md section 14)
+###########################
+
+# Checked once a day for Germany. Each event fires once, on its historical
+# date (or later, while its window is open), and only while Germany is at war.
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			# 1. 15 August 1944: women's labour service extended to age 50
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_homefront_1_done }
+					date > 1944.8.14
+					date < 1945.1.1
+					has_war = yes
+					has_government = fascism
+				}
+				set_country_flag = GER_homefront_1_done
+				country_event = { id = ger_homefront.1 }
+			}
+			# 2. 14 October 1944: Rommel's death (story only if the author's July plot event already retired him)
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_homefront_2_done }
+					date > 1944.10.13
+					date < 1945.1.1
+					has_war = yes
+					has_government = fascism
+				}
+				set_country_flag = GER_homefront_2_done
+				country_event = { id = ger_homefront.2 }
+			}
+			# 3. 17 November 1944: RAD women to the Flak
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_homefront_3_done }
+					date > 1944.11.16
+					date < 1945.5.9
+					has_war = yes
+					has_government = fascism
+				}
+				set_country_flag = GER_homefront_3_done
+				country_event = { id = ger_homefront.3 }
+			}
+			# 4. 19 December 1944: an air force for Vlasov (only if Vlasov was recruited: the mod's decision Recruit_Andrey_Vlasov)
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_homefront_4_done }
+					date > 1944.12.18
+					date < 1945.5.9
+					has_war = yes
+					has_war_with = SOV
+					has_character = SOV_andrey_vlasov
+				}
+				set_country_flag = GER_homefront_4_done
+				country_event = { id = ger_homefront.4 }
+			}
+			# 5. 6 January 1945: the Volksopfer
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_homefront_5_done }
+					date > 1945.1.5
+					date < 1945.5.9
+					has_war = yes
+					has_government = fascism
+				}
+				set_country_flag = GER_homefront_5_done
+				country_event = { id = ger_homefront.5 }
+			}
+			# 6. 30 January 1945: the Wilhelm Gustloff (while Gotenhafen/Gdynia, state 807, is ours)
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_homefront_6_done }
+					date > 1945.1.29
+					date < 1945.5.9
+					has_war = yes
+					has_war_with = SOV
+					807 = { is_controlled_by = ROOT }
+				}
+				set_country_flag = GER_homefront_6_done
+				country_event = { id = ger_homefront.6 }
+			}
+			# 7. 12 February 1945: women and girls for the Volkssturm
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_homefront_7_done }
+					date > 1945.2.11
+					date < 1945.5.9
+					has_war = yes
+					has_government = fascism
+				}
+				set_country_flag = GER_homefront_7_done
+				country_event = { id = ger_homefront.7 }
+			}
+			# 8. 5 March 1945: the class of 1929
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_homefront_8_done }
+					date > 1945.3.4
+					date < 1945.5.9
+					has_war = yes
+					has_government = fascism
+				}
+				set_country_flag = GER_homefront_8_done
+				country_event = { id = ger_homefront.8 }
+			}
+		}
+	}
+}
