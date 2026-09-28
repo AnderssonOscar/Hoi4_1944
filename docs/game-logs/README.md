@@ -14,3 +14,4 @@ history runs at startup). Compare them with any diff tool.
 | 6-after-volkssturm_error.log | after the Volkssturm redesign (e6c0034; Nero Decree and Werwolf also included); identical to 5 | 115 |
 | 7-after-volkssturm-bug-check_error.log | after the Volkssturm bug-check fix (d9d7888); identical to 5 | 115 |
 | 8-after-konigsberg-fix_error.log | after the Königsberg in Ruins fix (b88321a); identical to 5 | 115 |
+| 9-after-stettin-antwerp-fixes_error.log | after the Stettin and Antwerp fixes (e13d45d, 5fb4a0b); identical to 5 | 115 |

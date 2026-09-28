@@ -465,8 +465,8 @@ Each was calibrated against the base game's own files and map:
 | Where | Findings | Whose | Status |
 |---|---|---|---|
 | `events/mod_news.txt` (Königsberg in Ruins) | 3 | author | **Fixed** (`b88321a`, CHANGELOG §7) |
-| `common/decisions/GER_mod.txt:280` (Stettin fort in state 62, belongs to 63) | 1 | author | Open, for the author |
-| `events/mod_events.txt:400, :406` (Antwerp naval base in state 6, belongs to 977) | 2 | author | Open, for the author |
+| `common/decisions/GER_mod.txt:280` (Stettin fort in state 62, belongs to 63) | 1 | author | **Fixed** (`e13d45d`, CHANGELOG §8) |
+| `events/mod_events.txt:400, :406` (Antwerp naval base in state 6, belongs to 977) | 2 | author | **Fixed** (`5fb4a0b`, CHANGELOG §8) |
 | `common/national_focus/japan.txt` | 14 | base game (identical lines) | Not the mod's |
 | `common/national_focus/netherlands.txt` | 5 | base game (identical lines) | Not the mod's |
 | `common/decisions/SOV.txt` | 2 | base game (identical lines) | Not the mod's |

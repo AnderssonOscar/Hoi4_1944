@@ -86,6 +86,7 @@ expected |= {("M", "mod/common/national_focus/germany.txt"), ("M", "mod/localisa
              ("A", "mod/common/decisions/GER_volkssturm_decisions.txt"),
              ("A", "mod/localisation/english/GER_volkssturm_l_english.yml")}  # Volkssturm (CHANGELOG section 6)
 expected |= {("M", "mod/events/mod_news.txt")}  # Konigsberg in Ruins fix (CHANGELOG section 7)
+expected |= {("M", "mod/common/decisions/GER_mod.txt"), ("M", "mod/events/mod_events.txt")}  # Stettin + Antwerp fixes (section 8)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -122,6 +123,8 @@ allowed["mod/common/national_focus/germany.txt"] = lambda l: l in VS_OLD
 allowed["mod/localisation/english/custom_mod_l_english.yml"] = lambda l: l.startswith("GER_form_volksturm_tooltip:0 ")
 allowed["mod/events/mod_news.txt"] = lambda l: l.strip() in ("remove_building = {", "type = bunker", "province = 13372",
                                                           "province = 13371", "province = 13370", "level = 5", "}", "")
+allowed["mod/common/decisions/GER_mod.txt"] = lambda l: l.strip() == "62 = {"
+allowed["mod/events/mod_events.txt"] = lambda l: l.strip() == "6 = {"
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
@@ -298,6 +301,25 @@ kb = kb[:kb.index("news_event = {")] if "news_event = {" in kb else kb
 kb_active = re.findall(r"^[ \t]*province = (\d+)", kb, re.M)
 check("K  Konigsberg in Ruins removes forts only in Konigsberg (6332) and its ring fort (11265), no longer in Africa (13370-13372)",
       kb_active == ["6332", "11265"] and all(p2s.get(x) == "763" for x in kb_active), str(kb_active))
+
+PROV_EFFECTS = ("add_province_modifier", "remove_province_modifier", "add_building_construction", "remove_building",
+                "damage_building", "set_building_level")
+def wrong_state_refs(path):
+    """(province, scope state, real state) for every province effect whose province is outside its state scope."""
+    out = []
+    for node, parents in pdx.walk(pdx.parse_file(path)[0]):
+        if node.key in PROV_EFFECTS and node.is_block():
+            scope = next((x.key for x in reversed(parents) if x.key and x.key.isdigit()), None)
+            for c in node.value:
+                if c.key != "province":
+                    continue
+                ids = [x.value for x in c.value if x.key == "id"] if c.is_block() else [c.value]
+                out += [(i, scope, p2s.get(i)) for i in ids if scope and i.isdigit() and p2s.get(i) != scope]
+    return out
+sa = {f: wrong_state_refs(f) for f in ("mod/events/mod_news.txt", "mod/common/decisions/GER_mod.txt", "mod/events/mod_events.txt")}
+check("S/A  Stettin fort built in state 63 and Antwerp sabotage in state 977; no province outside its state in the three fixed files",
+      not any(sa.values()) and b"63 = { " in current("mod/common/decisions/GER_mod.txt") and b"977 = { " in current("mod/events/mod_events.txt"),
+      str({k: v for k, v in sa.items() if v}))
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)

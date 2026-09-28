@@ -357,9 +357,8 @@ building effects. Oscar asked for it to be fixed.
 - **Checked:** check K (only 6332 and 11265, both in state 763); every line
   removed is one of the three old blocks; the game loads with error.log
   identical (115 = 115, `game-logs/8-after-konigsberg-fix_error.log`).
-- **Not changed (for the author to decide):** the same check finds two more
-  places in the author's own code where a province isn't in the state the
-  code runs in:
+- **Two more of the same kind** in the author's own code were fixed next, on
+  Oscar's request (section 8):
   - `common/decisions/GER_mod.txt:280` builds a level-5 fort in Stettin
     (6282) inside Vorpommern (62), but Stettin belongs to Hinterpommern (63).
   - `events/mod_events.txt:400` and `:406` ("Destroy Antwerpen") remove
@@ -368,6 +367,33 @@ building effects. Oscar asked for it to be fixed.
   The other 22 findings are lines copied unchanged from the base game
   (Japan and Netherlands focus trees, GER.txt, SOV.txt), which does the same
   thing itself, so they are not the mod's bugs (INVESTIGATION.md §9).
+
+### 8. Stettin fort and Antwerp sabotage ran in the wrong state (commits `e13d45d`, `5fb4a0b`)
+
+Same kind of bug as sections 1 and 7, found by the same check. Oscar asked
+for them to be fixed only if certain; both were double-checked against the
+mod's and the base game's state files:
+
+- **Stettin** (`common/decisions/GER_mod.txt`, decision "Oder–Neisse
+  Defence"): the level-5 fort for Stettin (province 6282) was built inside
+  state 62 (Vorpommern). Stettin belongs to state 63 (Hinterpommern);
+  state 62's provinces are 349, 3207, 3258, 3312, 3340, 9388 and 13257.
+  The block now runs in state 63. The decision's other forts (3207, Seelow
+  9496, 3572, 9535) were already in the right states.
+- **Antwerp** (`events/mod_events.txt`, event `german.sabotage.ports.8`,
+  "Destroy Antwerpen"): removing 3 naval-base levels and damaging Antwerp's
+  port (province 6598) ran inside state 6, which is Flanders (its only port
+  is province 6560). Antwerp is state 977, with its level-8 naval base on
+  6598. The game's documentation says `damage_building` finds province
+  buildings through the state it runs in, so the sabotage couldn't find
+  Antwerp's port. The block now runs in state 977. The other six port
+  sabotage events were already correct.
+- **Change:** one line each (the state number), plus a comment.
+- **Checked:** check S/A fails if any province effect in the three fixed
+  files points outside its state. Run on the original files, it finds all
+  6 old wrong references; on the fixed files, none. The game loads with
+  error.log identical (115 = 115, `game-logs/9-after-stettin-antwerp-fixes_error.log`).
+  The province checker now reports only the 22 base-game lines.
 
 ## How to test in game
 
@@ -394,7 +420,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-39 files differ from the version on Steam: 24 edited, 3 deleted, 12 new (full list:
+41 files differ from the version on Steam: 26 edited, 3 deleted, 12 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.
