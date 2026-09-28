@@ -7,7 +7,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 
 | Area | What was checked | Result |
 |---|---|---|
-| Integrity | mod/ fully committed; all 923 mod files byte-identical to the commits | PASS |
+| Integrity | mod/ fully committed; all 929 mod files byte-identical to the commits | PASS |
 | Integrity | Steam Workshop copy never touched (914/914 files = baseline) | PASS |
 | Scope | exactly the 47 intended files changed (26 edited, 3 deleted, 18 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 22 files) | PASS |
@@ -35,7 +35,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
   players need the same mod version for multiplayer. There is no "correct"
   value to check a mod's checksum against.
 - **File checksums:** `docs/checksums/mod-files.sha256` lists SHA-256 for all
-  923 mod files. Verified with `sha256sum -c` (all OK). After uploading to
+  929 mod files. Verified with `sha256sum -c` (all OK). After uploading to
   Steam, the Workshop folder can be checked the same way:
   `cd <workshop folder> && sha256sum -c <this file>`. Expect `descriptor.mod`
   and `thumbnail.png` to differ only if Steam rewrites them.
@@ -75,7 +75,8 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | First package (tag `final-2026-09-27`) | 13 | all 911 files match, file list identical (3 deleted) |
 | Second package (tag `final-2026-09-27-v2`) | 16 | all 920 files match, file list identical (3 deleted, 9 new) |
 | Third package (tag `final-2026-09-27-v3`) | 17 | all 923 files match, file list identical (3 deleted, 12 new) |
-| Current package (tag `final-2026-09-27-v4`, after the Volkssturm bug check) | 18 | all 923 files match, file list identical (3 deleted, 12 new) |
+| Fourth package (tag `final-2026-09-27-v4`, after the Volkssturm bug check) | 18 | all 923 files match, file list identical (3 deleted, 12 new) |
+| Current package (tag `final-2026-09-28-v5`: Königsberg, Stettin and Antwerp fixes, Festung Berlin) | 22 | all 929 files match, file list identical (3 deleted, 18 new) |
 
 So `mod/` is exactly "Workshop version + these patches", with nothing hidden.
 

@@ -83,7 +83,7 @@ independently (see "Check it yourself").
    git -c core.autocrlf=false apply --whitespace=nowarn <package>/patches/*.patch
    sha256sum -c <package>/docs/checksums/mod-files.sha256
    ```
-   All 923 files should say OK, which shows `mod/` is exactly your Steam
+   All 929 files should say OK, which shows `mod/` is exactly your Steam
    version plus these patches. (If `git apply` succeeds but files don't
    change, the folder is inside another git repository and git silently
    skips the paths. Move it, or set `GIT_CEILING_DIRECTORIES`.) This exact
