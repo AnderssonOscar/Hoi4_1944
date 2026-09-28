@@ -1,0 +1,133 @@
+###########################
+# 1944 - Downfall: 1945 operations: decisions (docs/CHANGELOG.md section 11)
+###########################
+
+war_measures = {
+
+	GER_1945_sonnenwende = {
+		icon = generic_tank
+		allowed = { original_tag = GER }
+		visible = {
+			has_country_flag = GER_1945_sonnenwende_planned
+			NOT = { has_country_flag = GER_1945_sonnenwende_launched }
+		}
+		available = {
+			controls_province = 6282
+			custom_trigger_tooltip = {
+				tooltip = GER_1945_sonnenwende_front_tt
+				68 = { NOT = { is_fully_controlled_by = ROOT } }
+			}
+			has_fuel > 4999
+			has_equipment = { infantry_equipment > 499 }
+			has_equipment = { artillery_equipment > 49 }
+		}
+		cost = 50
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = { factor = 20 }
+		complete_effect = {
+			custom_effect_tooltip = GER_1945_sonnenwende_tt
+			hidden_effect = { GER_1945_sonnenwende_set_aside = yes }
+		}
+		remove_effect = {
+			hidden_effect = {
+				GER_1945_sonnenwende_return = yes
+				GER_1945_sonnenwende_launch = yes
+				set_country_flag = GER_1945_sonnenwende_launched
+				country_event = { id = ger_1945.2 }
+				country_event = { id = ger_1945.3 days = 12 }
+			}
+		}
+		cancel_trigger = { NOT = { controls_province = 6282 } }
+		cancel_effect = { GER_1945_sonnenwende_return = yes }
+	}
+
+	GER_1945_spring_awakening = {
+		icon = generic_operation
+		allowed = { original_tag = GER }
+		visible = {
+			has_country_flag = GER_1945_spring_awakening_planned
+			NOT = { has_country_flag = GER_1945_spring_awakening_launched }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GER_1945_spring_awakening_front_tt
+				974 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } }
+				155 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } }
+			}
+			has_fuel > 7499
+			has_equipment = { infantry_equipment > 749 }
+			has_equipment = { artillery_equipment > 74 }
+		}
+		cost = 50
+		days_remove = 10
+		fire_only_once = yes
+		ai_will_do = { factor = 20 }
+		complete_effect = {
+			custom_effect_tooltip = GER_1945_spring_awakening_tt
+			hidden_effect = { GER_1945_spring_awakening_set_aside = yes }
+		}
+		remove_effect = {
+			hidden_effect = {
+				GER_1945_spring_awakening_return = yes
+				GER_1945_spring_awakening_launch = yes
+				set_country_flag = GER_1945_spring_awakening_launched
+				country_event = { id = ger_1945.5 }
+				country_event = { id = ger_1945.6 days = 14 }
+			}
+		}
+		cancel_trigger = { NOT = { 974 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } } } }
+		cancel_effect = { GER_1945_spring_awakening_return = yes }
+	}
+
+	GER_1945_courland_evacuation = {
+		icon = generic_naval
+		allowed = { original_tag = GER }
+		visible = {
+			has_country_flag = GER_1945_courland_offered
+			NOT = { has_country_flag = GER_1945_courland_evacuated }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GER_1945_courland_ports_tt
+				OR = { controls_province = 9262 controls_province = 3296 }
+			}
+			divisions_in_state = { state = 190 size > 0 }
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 2
+			modifier = { factor = 25 has_country_flag = GER_1945_courland_evacuate_chosen }
+		}
+		complete_effect = { custom_effect_tooltip = GER_1945_courland_evacuation_tt }
+		remove_effect = {
+			hidden_effect = {
+				GER_1945_courland_evacuate = yes
+				set_country_flag = GER_1945_courland_evacuated
+				country_event = { id = ger_1945.9 }
+			}
+		}
+		cancel_trigger = { NOT = { controls_province = 9262 } NOT = { controls_province = 3296 } }
+	}
+
+	GER_1945_sailors_to_the_front = {
+		icon = generic_military
+		allowed = { original_tag = GER }
+		visible = { date > 1945.1.31 has_war = yes }
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		complete_effect = {
+			add_manpower = 1000
+			add_equipment_to_stockpile = { type = convoy_1 amount = -10 }
+			custom_effect_tooltip = GER_1945_sailors_to_the_front_tt
+			hidden_effect = {
+				GER_1945_marine_division_1 = yes
+				country_event = { id = ger_1945.11 days = 30 }
+				country_event = { id = ger_1945.12 days = 60 }
+			}
+		}
+	}
+}

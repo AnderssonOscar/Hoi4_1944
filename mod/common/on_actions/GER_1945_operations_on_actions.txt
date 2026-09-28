@@ -1,0 +1,61 @@
+###########################
+# 1944 - Downfall: 1945 operations: triggers (docs/CHANGELOG.md section 11)
+###########################
+
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			# Operation Sonnenwende: from 1945, the enemy holds part of Ostmark and we hold Stettin
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_1945_sonnenwende_offered }
+					date > 1944.12.31
+					has_war = yes
+					controls_province = 6282
+					68 = { NOT = { is_fully_controlled_by = ROOT } }
+				}
+				set_country_flag = GER_1945_sonnenwende_offered
+				country_event = { id = ger_1945.1 }
+			}
+			# Operation Spring Awakening: from 1945, the enemy holds part of Northern Hungary
+			# while we or an ally still hold North and South Transdanubia (the oil)
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_1945_spring_awakening_offered }
+					date > 1944.12.31
+					has_war_with = SOV
+					43 = { NOT = { is_fully_controlled_by = ROOT } NOT = { is_fully_controlled_by = HUN } }
+					155 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } }
+					974 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } }
+				}
+				set_country_flag = GER_1945_spring_awakening_offered
+				country_event = { id = ger_1945.4 }
+			}
+			# Courland: we hold Libau or Windau and have divisions in Kurzeme, but the
+			# enemy holds both of its land neighbours (Zemaitija 189, Zemgale 809)
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_1945_courland_offered }
+					has_war = yes
+					OR = { controls_province = 9262 controls_province = 3296 }
+					divisions_in_state = { state = 190 size > 0 }
+					189 = { controller = { has_war_with = ROOT } }
+					809 = { controller = { has_war_with = ROOT } }
+				}
+				set_country_flag = GER_1945_courland_offered
+				country_event = { id = ger_1945.8 }
+			}
+			# Fortress Courland: remove a port's bonus when the port is lost
+			if = {
+				limit = { has_country_flag = GER_1945_courland_fortress_libau NOT = { controls_province = 9262 } }
+				clr_country_flag = GER_1945_courland_fortress_libau
+				190 = { remove_province_modifier = { static_modifiers = { GER_1945_courland_fortress } province = { id = 9262 } } }
+			}
+			if = {
+				limit = { has_country_flag = GER_1945_courland_fortress_windau NOT = { controls_province = 3296 } }
+				clr_country_flag = GER_1945_courland_fortress_windau
+				190 = { remove_province_modifier = { static_modifiers = { GER_1945_courland_fortress } province = { id = 3296 } } }
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+###########################
+# 1944 - Downfall: Operation Spring Awakening (docs/CHANGELOG.md section 11)
+###########################
+
+ideas = {
+	country = {
+		GER_1945_spring_awakening_offensive = {
+			picture = generic_attack_soviet_union
+			allowed = { always = no }
+			removal_cost = -1
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.1
+			}
+		}
+	}
+}

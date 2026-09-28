@@ -1,0 +1,187 @@
+###########################
+# 1944 - Downfall: 1945 operations: events (docs/CHANGELOG.md section 11)
+###########################
+
+add_namespace = ger_1945
+
+# 1. Operation Sonnenwende proposed (the enemy holds part of Ostmark, we hold Stettin)
+country_event = {
+	id = ger_1945.1
+	title = ger_1945.1.t
+	desc = ger_1945.1.d
+	picture = GFX_report_event_generic_panzer_attack
+
+	is_triggered_only = yes
+
+	option = {
+		name = ger_1945.1.a
+		ai_chance = { base = 80 }
+		set_country_flag = GER_1945_sonnenwende_planned
+		custom_effect_tooltip = ger_1945.1.a.tt
+	}
+
+	option = {
+		name = ger_1945.1.b
+		ai_chance = { base = 20 }
+	}
+}
+
+# 2. Sonnenwende begins (end of the 7-day preparation)
+country_event = {
+	id = ger_1945.2
+	title = ger_1945.2.t
+	desc = ger_1945.2.d
+	picture = GFX_report_event_generic_panzer_attack
+
+	is_triggered_only = yes
+
+	option = {
+		name = ger_1945.2.a
+		custom_effect_tooltip = ger_1945.2.a.tt
+	}
+}
+
+# 3. Sonnenwende halted (12 days later)
+country_event = {
+	id = ger_1945.3
+	title = ger_1945.3.t
+	desc = ger_1945.3.d
+	picture = GFX_report_event_soviet_tanks_snow
+
+	is_triggered_only = yes
+
+	option = {
+		name = ger_1945.3.a
+	}
+}
+
+# 4. Operation Spring Awakening proposed (the enemy is deep in Hungary, the Axis holds the oil)
+country_event = {
+	id = ger_1945.4
+	title = ger_1945.4.t
+	desc = ger_1945.4.d
+	picture = GFX_report_event_hungarian_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ger_1945.4.a
+		ai_chance = { base = 80 }
+		set_country_flag = GER_1945_spring_awakening_planned
+		custom_effect_tooltip = ger_1945.4.a.tt
+	}
+
+	option = {
+		name = ger_1945.4.b
+		ai_chance = { base = 20 }
+	}
+}
+
+# 5. Spring Awakening begins (end of the 10-day preparation)
+country_event = {
+	id = ger_1945.5
+	title = ger_1945.5.t
+	desc = ger_1945.5.d
+	picture = GFX_report_event_DEN_german_tanks
+
+	is_triggered_only = yes
+
+	option = {
+		name = ger_1945.5.a
+		custom_effect_tooltip = ger_1945.5.a.tt
+	}
+}
+
+# 6. Spring Awakening ends (14 days later)
+country_event = {
+	id = ger_1945.6
+	title = ger_1945.6.t
+	desc = {
+		text = ger_1945.6.d_held
+		trigger = { 974 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } } }
+	}
+	desc = {
+		text = ger_1945.6.d_lost
+		trigger = { NOT = { 974 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } } } }
+	}
+	picture = GFX_report_event_SOV_tank_column
+
+	is_triggered_only = yes
+
+	option = {
+		name = ger_1945.6.a
+	}
+}
+
+# 8. Courland cut off (we hold Kurzeme, the enemy holds both land neighbours)
+country_event = {
+	id = ger_1945.8
+	title = ger_1945.8.t
+	desc = ger_1945.8.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = ger_1945.8.a
+		ai_chance = { base = 25 }
+		set_country_flag = GER_1945_courland_evacuate_chosen
+		custom_effect_tooltip = ger_1945.8.a.tt
+	}
+
+	option = {
+		name = ger_1945.8.b
+		ai_chance = { base = 75 }
+		custom_effect_tooltip = ger_1945.8.b.tt
+		hidden_effect = { GER_1945_courland_fortress_on = yes }
+	}
+}
+
+# 9. Courland evacuated (end of the 30-day evacuation)
+country_event = {
+	id = ger_1945.9
+	title = ger_1945.9.t
+	desc = ger_1945.9.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = ger_1945.9.a
+	}
+}
+
+# 11. 2nd Naval Infantry Division (30 days after the decision)
+country_event = {
+	id = ger_1945.11
+	title = ger_1945.11.t
+	desc = ger_1945.11.d
+	picture = GFX_report_event_sailors_in_working_rig
+
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = { GER_1945_marine_division_2 = yes }
+	}
+
+	option = {
+		name = ger_1945.11.a
+	}
+}
+
+# 12. 3rd Naval Infantry Division (60 days after the decision)
+country_event = {
+	id = ger_1945.12
+	title = ger_1945.12.t
+	desc = ger_1945.12.d
+	picture = GFX_report_event_sailors_in_working_rig
+
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = { GER_1945_marine_division_3 = yes }
+	}
+
+	option = {
+		name = ger_1945.12.a
+	}
+}
+

@@ -1,0 +1,201 @@
+###########################
+# 1944 - Downfall: 1945 operations: shared effects (docs/CHANGELOG.md section 11)
+###########################
+
+# Supplies set aside while an operation is prepared, and handed back when it
+# is launched or called off. The decisions only allow preparation when the
+# stockpile holds at least this much, so exactly what was taken is returned.
+
+GER_1945_sonnenwende_set_aside = {
+	add_fuel = -5000
+	add_equipment_to_stockpile = { type = infantry_equipment amount = -500 }
+	add_equipment_to_stockpile = { type = artillery_equipment amount = -50 }
+}
+
+GER_1945_sonnenwende_return = {
+	add_fuel = 5000
+	add_equipment_to_stockpile = { type = infantry_equipment amount = 500 }
+	add_equipment_to_stockpile = { type = artillery_equipment amount = 50 }
+}
+
+GER_1945_spring_awakening_set_aside = {
+	add_fuel = -7500
+	add_equipment_to_stockpile = { type = infantry_equipment amount = -750 }
+	add_equipment_to_stockpile = { type = artillery_equipment amount = -75 }
+}
+
+GER_1945_spring_awakening_return = {
+	add_fuel = 7500
+	add_equipment_to_stockpile = { type = infantry_equipment amount = 750 }
+	add_equipment_to_stockpile = { type = artillery_equipment amount = 75 }
+}
+
+# Operation Sonnenwende: 12 days of +15% attack for German troops on German
+# soil in Hinterpommern, Ostmark and Brandenburg (state modifier, see
+# common/dynamic_modifiers/GER_1945_operations_dynamic_modifiers.txt).
+GER_1945_sonnenwende_launch = {
+	63 = { add_dynamic_modifier = { modifier = GER_1945_sonnenwende_attack days = 12 } }
+	68 = { add_dynamic_modifier = { modifier = GER_1945_sonnenwende_attack days = 12 } }
+	64 = { add_dynamic_modifier = { modifier = GER_1945_sonnenwende_attack days = 12 } }
+}
+
+# Operation Spring Awakening: 14 days of +10% attack against the Soviet Union
+# for Germany, and for Hungary if it is still our ally.
+GER_1945_spring_awakening_launch = {
+	add_timed_idea = { idea = GER_1945_spring_awakening_offensive days = 14 }
+	if = {
+		limit = { country_exists = HUN HUN = { is_in_faction_with = ROOT } }
+		HUN = { add_timed_idea = { idea = GER_1945_spring_awakening_offensive days = 14 } }
+	}
+}
+
+# Courland: ship every German division in Kurzeme to the first Baltic port
+# state Germany still holds: Gotenhafen (807), Danzig (85), Stettin (63),
+# Vorpommern (62), Kiel (58); if none, to the capital. Uses the base game's
+# teleport_armies (as in its ICE.txt decisions).
+GER_1945_courland_evacuate = {
+	if = {
+		limit = { 807 = { is_controlled_by = ROOT } }
+		190 = { teleport_armies = { to_state = 807 limit = { original_tag = GER } } }
+	}
+	else_if = {
+		limit = { 85 = { is_controlled_by = ROOT } }
+		190 = { teleport_armies = { to_state = 85 limit = { original_tag = GER } } }
+	}
+	else_if = {
+		limit = { 63 = { is_controlled_by = ROOT } }
+		190 = { teleport_armies = { to_state = 63 limit = { original_tag = GER } } }
+	}
+	else_if = {
+		limit = { 62 = { is_controlled_by = ROOT } }
+		190 = { teleport_armies = { to_state = 62 limit = { original_tag = GER } } }
+	}
+	else_if = {
+		limit = { 58 = { is_controlled_by = ROOT } }
+		190 = { teleport_armies = { to_state = 58 limit = { original_tag = GER } } }
+	}
+	else = {
+		190 = { teleport_armies = { limit = { original_tag = GER } } }
+	}
+	GER_1945_courland_fortress_off = yes
+}
+
+# Courland held: Libau and Windau become fortresses (the author's Festung values).
+GER_1945_courland_fortress_on = {
+	if = {
+		limit = { controls_province = 9262 NOT = { has_country_flag = GER_1945_courland_fortress_libau } }
+		190 = { add_province_modifier = { static_modifiers = { GER_1945_courland_fortress } province = { id = 9262 } } }
+		set_country_flag = GER_1945_courland_fortress_libau
+	}
+	if = {
+		limit = { controls_province = 3296 NOT = { has_country_flag = GER_1945_courland_fortress_windau } }
+		190 = { add_province_modifier = { static_modifiers = { GER_1945_courland_fortress } province = { id = 3296 } } }
+		set_country_flag = GER_1945_courland_fortress_windau
+	}
+}
+
+GER_1945_courland_fortress_off = {
+	if = {
+		limit = { has_country_flag = GER_1945_courland_fortress_libau }
+		clr_country_flag = GER_1945_courland_fortress_libau
+		190 = { remove_province_modifier = { static_modifiers = { GER_1945_courland_fortress } province = { id = 9262 } } }
+	}
+	if = {
+		limit = { has_country_flag = GER_1945_courland_fortress_windau }
+		clr_country_flag = GER_1945_courland_fortress_windau
+		190 = { remove_province_modifier = { static_modifiers = { GER_1945_courland_fortress } province = { id = 3296 } } }
+	}
+}
+
+# Sailors to the Front: naval infantry divisions. Ordinary infantry battalions
+# (not marines), so they do not count towards the special forces limit.
+GER_1945_marine_template = {
+	if = {
+		limit = { NOT = { has_template = "Marine-Infanterie-Division" } }
+		division_template = {
+			name = "Marine-Infanterie-Division"
+			is_locked = yes
+			priority = 0
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+			}
+		}
+	}
+}
+
+# 1. Marine-Infanterie-Division: formed at its historical place if we still hold it, else at the capital.
+GER_1945_marine_division_1 = {
+	GER_1945_marine_template = yes
+	if = {
+		limit = { 63 = { is_controlled_by = ROOT } }
+		63 = {
+			create_unit = {
+				division = "name = \"1. Marine-Infanterie-Division\" division_template = \"Marine-Infanterie-Division\" start_experience_factor = 0 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+				owner = ROOT
+				prioritize_location = 6282
+			}
+		}
+	}
+	else = {
+		capital_scope = {
+			create_unit = {
+				division = "name = \"1. Marine-Infanterie-Division\" division_template = \"Marine-Infanterie-Division\" start_experience_factor = 0 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+				owner = ROOT
+			}
+		}
+	}
+}
+
+# 2. Marine-Infanterie-Division: formed at its historical place if we still hold it, else at the capital.
+GER_1945_marine_division_2 = {
+	GER_1945_marine_template = yes
+	if = {
+		limit = { 58 = { is_controlled_by = ROOT } }
+		58 = {
+			create_unit = {
+				division = "name = \"2. Marine-Infanterie-Division\" division_template = \"Marine-Infanterie-Division\" start_experience_factor = 0 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+				owner = ROOT
+				prioritize_location = 6389
+			}
+		}
+	}
+	else = {
+		capital_scope = {
+			create_unit = {
+				division = "name = \"2. Marine-Infanterie-Division\" division_template = \"Marine-Infanterie-Division\" start_experience_factor = 0 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+				owner = ROOT
+			}
+		}
+	}
+}
+
+# 3. Marine-Infanterie-Division: formed at its historical place if we still hold it, else at the capital.
+GER_1945_marine_division_3 = {
+	GER_1945_marine_template = yes
+	if = {
+		limit = { 62 = { is_controlled_by = ROOT } }
+		62 = {
+			create_unit = {
+				division = "name = \"3. Marine-Infanterie-Division\" division_template = \"Marine-Infanterie-Division\" start_experience_factor = 0 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+				owner = ROOT
+			}
+		}
+	}
+	else = {
+		capital_scope = {
+			create_unit = {
+				division = "name = \"3. Marine-Infanterie-Division\" division_template = \"Marine-Infanterie-Division\" start_experience_factor = 0 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+				owner = ROOT
+			}
+		}
+	}
+}
+

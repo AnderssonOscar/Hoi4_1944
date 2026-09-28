@@ -1,0 +1,12 @@
+###########################
+# 1944 - Downfall: Operation Sonnenwende state modifier (docs/CHANGELOG.md section 11)
+###########################
+
+# Same kind of state modifier as the base game's DEN_home_guard_state_modifier:
+# army_core_attack_factor only helps troops fighting on their own country's core
+# territory, so only German troops benefit, never the enemy in the same state.
+GER_1945_sonnenwende_attack = {
+	icon = GFX_modifiers_generic_military_plans
+	enable = { ROOT = { is_owned_by = GER } }
+	army_core_attack_factor = 0.15
+}
