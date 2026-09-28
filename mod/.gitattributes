@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Keep every file exactly as committed: no line-ending conversion.
+# The mod mixes CRLF and LF files and the game reads both; converting
+# them on checkout (the old '* text=auto' did, for 45 files) makes a
+# clone differ from the tested files. See docs/CHANGELOG.md section 13.
+* -text
