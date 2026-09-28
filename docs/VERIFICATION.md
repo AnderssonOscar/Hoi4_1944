@@ -77,7 +77,8 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | Second package (tag `final-2026-09-27-v2`) | 16 | all 920 files match, file list identical (3 deleted, 9 new) |
 | Third package (tag `final-2026-09-27-v3`) | 17 | all 923 files match, file list identical (3 deleted, 12 new) |
 | Fourth package (tag `final-2026-09-27-v4`, after the Volkssturm bug check) | 18 | all 923 files match, file list identical (3 deleted, 12 new) |
-| Current package (tag `final-2026-09-28-v5`: Königsberg, Stettin and Antwerp fixes, Festung Berlin) | 22 | all 929 files match, file list identical (3 deleted, 18 new) |
+| Fifth package (tag `final-2026-09-28-v5`: Königsberg, Stettin and Antwerp fixes, Festung Berlin) | 22 | all 929 files match, file list identical (3 deleted, 18 new) |
+| Current package (tag `final-2026-09-28-v6`: + Wiking and Nordland) | 23 | all 929 files match, file list identical (3 deleted, 18 new) |
 
 So `mod/` is exactly "Workshop version + these patches", with nothing hidden.
 
