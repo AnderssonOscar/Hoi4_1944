@@ -10,6 +10,7 @@ on_actions = {
 			ETH = { become_exiled_in = { target = ENG legitimacy = 60 } }
 			ICE = { become_exiled_in = { target = ENG legitimacy = 65 } }
 			BRM = { become_exiled_in = { target = ENG legitimacy = 50 } }
+			YUG = { become_exiled_in = { target = ENG legitimacy = 30 } } # moved here from YUG's history: an exile at game start crashed the UK start
 
 			PHI = { become_exiled_in = { target = USA legitimacy = 50 } }
 
