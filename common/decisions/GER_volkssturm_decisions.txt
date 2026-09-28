@@ -1,0 +1,368 @@
+###########################
+# 1944 - Downfall: Volkssturm call-ups in 1945 (see docs/CHANGELOG.md section 6)
+#
+# After the focus GER_form_volksturm (the first levy, autumn 1944), the
+# Volkssturm was called out region by region as the front arrived. Each
+# decision appears on the historical date and can be taken once the front
+# has reached that region (an enemy holds part of one of its states, or a
+# neighbouring state).
+# Divisions are only raised in states Germany still holds (controls);
+# create_unit never places them on enemy-held provinces.
+#
+#   decision                from        divisions (5 militia battalions each)
+#   GER_volkssturm_east     1945.1.12   26  Soviet winter offensive from the Vistula, 12 January 1945
+#   GER_volkssturm_oder     1945.1.31   10  Red Army reaches the Oder north of Kustrin, 31 January 1945
+#   GER_volkssturm_west     1945.2.8     6  Western Allied offensive into the Rhineland (Veritable), 8 February 1945
+#   GER_volkssturm_berlin   1945.4.16    5  Soviet attack from the Oder towards Berlin, 16 April 1945
+#   total                               47  (+42 from the focus = 89 divisions, 445 battalions)
+#
+# 445 battalions of 1,000 men is about the 700+ real Volkssturm battalions
+# (about 640 men each) that saw combat, most of them in the East (Hans Kissel).
+# The units themselves are made in common/scripted_effects/GER_volkssturm_effects.txt.
+###########################
+war_measures = {
+
+	# Soviet winter offensive from the Vistula, 12 January 1945
+	GER_volkssturm_east = {
+		icon = generic_army_support
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			has_completed_focus = GER_form_volksturm
+			date > 1945.1.12
+		}
+
+		available = {
+			has_war = yes
+			custom_trigger_tooltip = {
+				tooltip = GER_volkssturm_east_front_tt
+				any_state = {
+					OR = { state = 763 state = 5 state = 85 state = 807 state = 86 state = 66 state = 67 state = 74 }
+					OR = {
+						NOT = { is_fully_controlled_by = ROOT } # the enemy holds part or all of it
+						any_neighbor_state = { controller = { has_war_with = ROOT } }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GER_volkssturm_east_held_tt
+				any_state = {
+					OR = { state = 763 state = 5 state = 85 state = 807 state = 86 state = 66 state = 67 state = 74 }
+					is_core_of = ROOT
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = GER_volkssturm_east_tt
+			hidden_effect = {
+				GER_volkssturm_ensure_template = yes
+				763 = { # Konigsberg: 5
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 5 GER_volkssturm_raise_division = yes }
+					}
+				}
+				5 = { # Ermland-Masuren: 3
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 3 GER_volkssturm_raise_division = yes }
+					}
+				}
+				85 = { # Danzig: 1
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
+					}
+				}
+				807 = { # Gdynia: 1
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
+					}
+				}
+				86 = { # Poznan (Posen): 5
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 5 GER_volkssturm_raise_division = yes }
+					}
+				}
+				66 = { # Lower Silesia (Breslau): 7
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 7 GER_volkssturm_raise_division = yes }
+					}
+				}
+				67 = { # Upper Silesia: 3
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 3 GER_volkssturm_raise_division = yes }
+					}
+				}
+				74 = { # Sudeten Silesia: 1
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
+					}
+				}
+			}
+		}
+	}
+
+	# Red Army reaches the Oder north of Kustrin, 31 January 1945
+	GER_volkssturm_oder = {
+		icon = generic_army_support
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			has_completed_focus = GER_form_volksturm
+			date > 1945.1.31
+		}
+
+		available = {
+			has_war = yes
+			custom_trigger_tooltip = {
+				tooltip = GER_volkssturm_oder_front_tt
+				any_state = {
+					OR = { state = 63 state = 62 state = 64 }
+					OR = {
+						NOT = { is_fully_controlled_by = ROOT } # the enemy holds part or all of it
+						any_neighbor_state = { controller = { has_war_with = ROOT } }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GER_volkssturm_oder_held_tt
+				any_state = {
+					OR = { state = 63 state = 62 state = 64 }
+					is_core_of = ROOT
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = GER_volkssturm_oder_tt
+			hidden_effect = {
+				GER_volkssturm_ensure_template = yes
+				63 = { # Hinterpommern: 4
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 4 GER_volkssturm_raise_division = yes }
+					}
+				}
+				62 = { # Vorpommern: 3
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 3 GER_volkssturm_raise_division = yes }
+					}
+				}
+				64 = { # Brandenburg (the Oder line): 3
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 3 GER_volkssturm_raise_division = yes }
+					}
+				}
+			}
+		}
+	}
+
+	# Western Allied offensive into the Rhineland (Veritable), 8 February 1945
+	GER_volkssturm_west = {
+		icon = generic_army_support
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			has_completed_focus = GER_form_volksturm
+			date > 1945.2.8
+		}
+
+		available = {
+			has_war = yes
+			custom_trigger_tooltip = {
+				tooltip = GER_volkssturm_west_front_tt
+				any_state = {
+					OR = { state = 51 state = 57 state = 42 state = 56 }
+					OR = {
+						NOT = { is_fully_controlled_by = ROOT } # the enemy holds part or all of it
+						any_neighbor_state = { controller = { has_war_with = ROOT } }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GER_volkssturm_west_held_tt
+				any_state = {
+					OR = { state = 51 state = 57 state = 42 state = 56 }
+					is_core_of = ROOT
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = GER_volkssturm_west_tt
+			hidden_effect = {
+				GER_volkssturm_ensure_template = yes
+				51 = { # Rhineland: 2
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 2 GER_volkssturm_raise_division = yes }
+					}
+				}
+				57 = { # Westfalen: 2
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 2 GER_volkssturm_raise_division = yes }
+					}
+				}
+				42 = { # Moselland: 1
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
+					}
+				}
+				56 = { # Weser-Ems: 1
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 1 GER_volkssturm_raise_division = yes }
+					}
+				}
+			}
+		}
+	}
+
+	# Soviet attack from the Oder towards Berlin, 16 April 1945
+	GER_volkssturm_berlin = {
+		icon = generic_army_support
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			has_completed_focus = GER_form_volksturm
+			date > 1945.4.16
+		}
+
+		available = {
+			has_war = yes
+			custom_trigger_tooltip = {
+				tooltip = GER_volkssturm_berlin_front_tt
+				any_state = {
+					OR = { state = 64 }
+					OR = {
+						NOT = { is_fully_controlled_by = ROOT } # the enemy holds part or all of it
+						any_neighbor_state = { controller = { has_war_with = ROOT } }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GER_volkssturm_berlin_held_tt
+				any_state = {
+					OR = { state = 64 }
+					is_core_of = ROOT
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = GER_volkssturm_berlin_tt
+			hidden_effect = {
+				GER_volkssturm_ensure_template = yes
+				64 = { # Brandenburg (Berlin): 5
+					if = {
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+						}
+						for_loop_effect = { end = 5 GER_volkssturm_raise_division = yes }
+					}
+				}
+			}
+		}
+	}
+}

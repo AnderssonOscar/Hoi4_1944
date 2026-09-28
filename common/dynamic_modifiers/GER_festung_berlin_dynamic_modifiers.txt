@@ -1,0 +1,19 @@
+###########################
+# 1944 - Downfall: Festung Berlin state modifier (docs/CHANGELOG.md section 9)
+###########################
+
+# Added to Brandenburg (state 64) by the Clausewitz event. Same kind of state
+# modifier as the base game's RAJ_fortified_position and DEN_home_guard_state_modifier.
+# Only active while Germany both owns and controls the state, so 'enemy' can
+# only ever mean Germany's enemies. ROOT is the state.
+GER_battle_for_berlin = {
+	icon = GFX_modifiers_generic_defense
+	enable = {
+		ROOT = {
+			is_owned_by = GER
+			is_controlled_by = GER
+		}
+	}
+	enemy_army_speed_factor = -0.1
+	land_bunker_effectiveness_factor = 0.1
+}

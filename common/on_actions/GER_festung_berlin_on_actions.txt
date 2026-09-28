@@ -1,0 +1,91 @@
+###########################
+# 1944 - Downfall: Festung Berlin triggers (docs/CHANGELOG.md section 9)
+# Checked once a day for Germany. Each event fires once (country flags).
+###########################
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			# 1. The enemy holds part of a state bordering Brandenburg
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_festung_berlin_1 }
+					has_war = yes
+					controls_province = 6521
+					any_state = {
+						OR = { state = 59 state = 60 state = 61 state = 62 state = 65 state = 68 }
+						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+				set_country_flag = GER_festung_berlin_1
+				country_event = { id = festung_berlin.1 }
+			}
+			# 2. The enemy stands on the Oder opposite Seelow (holds one of Seelow's
+			#    neighbours outside Brandenburg: Kustrin 3473, 537, 3572, 3207)
+			if = {
+				limit = {
+					has_country_flag = GER_festung_berlin_1
+					NOT = { has_country_flag = GER_festung_berlin_2 }
+					controls_province = 9496
+					OR = {
+						NOT = { controls_province = 3473 }
+						NOT = { controls_province = 537 }
+						NOT = { controls_province = 3572 }
+						NOT = { controls_province = 3207 }
+					}
+				}
+				set_country_flag = GER_festung_berlin_2
+				country_event = { id = festung_berlin.2 }
+			}
+			# 3. Clausewitz: Seelow has fallen or the enemy is next to Berlin
+			if = {
+				limit = {
+					has_country_flag = GER_festung_berlin_1
+					NOT = { has_country_flag = GER_festung_berlin_3 }
+					controls_province = 6521
+					OR = {
+						NOT = { controls_province = 9496 }
+						NOT = { controls_province = 375 }
+						NOT = { controls_province = 3499 }
+						NOT = { controls_province = 9428 }
+						NOT = { controls_province = 11444 }
+						NOT = { controls_province = 11505 }
+					}
+				}
+				set_country_flag = GER_festung_berlin_3
+				country_event = { id = festung_berlin.3 }
+			}
+			# 5. Encircled: the enemy holds all five provinces around Berlin
+			#    (at the earliest 3 days after Clausewitz)
+			if = {
+				limit = {
+					has_country_flag = { flag = GER_festung_berlin_3 value = 1 days > 2 }
+					NOT = { has_country_flag = GER_festung_berlin_5 }
+					controls_province = 6521
+					NOT = { controls_province = 375 }
+					NOT = { controls_province = 3499 }
+					NOT = { controls_province = 9428 }
+					NOT = { controls_province = 11444 }
+					NOT = { controls_province = 11505 }
+				}
+				set_country_flag = GER_festung_berlin_5
+				country_event = { id = festung_berlin.5 }
+			}
+			# Clean-up: remove this chain's province bonuses when the province is lost,
+			# so the enemy never defends with them (as the author does for Konigsberg).
+			# Berlin's is also removed if the author's focus later adds his own.
+			if = {
+				limit = { has_country_flag = GER_seelow_modifier_added NOT = { controls_province = 9496 } }
+				clr_country_flag = GER_seelow_modifier_added
+				64 = { remove_province_modifier = { static_modifiers = { GER_seelow_heights_modifier } province = { id = 9496 } } }
+			}
+			if = {
+				limit = {
+					has_country_flag = GER_festung_berlin_city_added
+					OR = { NOT = { controls_province = 6521 } has_completed_focus = GER_festung_cities }
+				}
+				clr_country_flag = GER_festung_berlin_city_added
+				64 = { remove_province_modifier = { static_modifiers = { GER_festung_berlin_city_modifier } province = { id = 6521 } } }
+			}
+		}
+	}
+}

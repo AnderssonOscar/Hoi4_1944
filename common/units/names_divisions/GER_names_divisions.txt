@@ -1340,6 +1340,7 @@ GER_SS_01 = {
 		2 = { "%d. SS-Division 'Das Reich'" }
 		3 = { "%d. SS-Division 'Totenkopf'" }
 		4 = { "%d. SS-Division 'Polizei'" }
+		5 = { "%d. SS-Division 'Wiking'" } # added: docs/CHANGELOG.md section 10
 		6 = { "%d. SS-Division 'Nord'" }
 		7 = { "%d. SS-Division 'Prinz Eugen'" }
 		8 = { "%d. SS-Division 'Florian Geyer'" }

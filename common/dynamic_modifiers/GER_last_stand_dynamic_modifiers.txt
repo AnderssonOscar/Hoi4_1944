@@ -1,0 +1,48 @@
+###########################
+# 1944 - Downfall: Nero Decree and Werwolf state modifiers
+# (see docs/CHANGELOG.md section 5)
+#
+# The decisions add these to every German core state. `enable` switches each
+# one on only while an enemy of Germany controls that state, so German troops
+# are never affected. As in the base game's own dynamic modifiers, ROOT is the
+# state the modifier sits on.
+###########################
+
+# Nero Decree, full strength
+GER_nero_decree_occupied = {
+	icon = GFX_decision_generic_scorched_earth
+	enable = {
+		ROOT = { controller = { has_war_with = GER } }
+	}
+	army_speed_factor_for_controller = -0.10
+	equipment_capture_factor_for_controller = -0.5
+}
+
+# Nero Decree after Speer's sabotage (half strength)
+GER_nero_decree_spared_occupied = {
+	icon = GFX_decision_generic_scorched_earth
+	enable = {
+		ROOT = { controller = { has_war_with = GER } }
+	}
+	army_speed_factor_for_controller = -0.05
+	equipment_capture_factor_for_controller = -0.25
+}
+
+# Werwolf: occupying troops move slower
+GER_werwolf_occupied = {
+	icon = GFX_decision_hol_radio_oranje
+	enable = {
+		ROOT = { controller = { has_war_with = GER } }
+	}
+	army_speed_factor_for_controller = -0.05
+}
+
+# Werwolf rail sabotage: added for 35 days by the monthly check in
+# common/on_actions/GER_last_stand_on_actions.txt while resistance stays high
+GER_werwolf_rails_sabotaged = {
+	icon = GFX_decision_hol_radio_oranje
+	enable = {
+		ROOT = { controller = { has_war_with = GER } }
+	}
+	disable_strategic_redeployment_for_controller = 1
+}

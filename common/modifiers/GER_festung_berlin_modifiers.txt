@@ -1,0 +1,20 @@
+###########################
+# 1944 - Downfall: Festung Berlin province modifiers (docs/CHANGELOG.md section 9)
+# Added with add_province_modifier, like the author's GER_festung_static_modifier
+# (common/modifiers/mod_static_modifiers.txt) and the base game's 'flooded'.
+###########################
+
+# Seelow Heights (province 9496): the heights and the flooded Oder floodplain.
+GER_seelow_heights_modifier = {
+	army_defence_factor = 0.1
+	max_dig_in_factor = 0.5
+}
+
+# Berlin (province 6521), human-led Germany only, and only if the author's
+# Festung Cities focus has not already given Berlin his identical
+# GER_festung_static_modifier (same values, so the bonus never doubles).
+GER_festung_berlin_city_modifier = {
+	army_defence_factor = 0.2
+	max_dig_in_factor = 0.75
+	supply_consumption_factor = -0.25
+}

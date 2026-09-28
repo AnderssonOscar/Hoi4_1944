@@ -3978,6 +3978,446 @@ operations = {
 			GER = { country_event = { id = wtt_japan.115 hours = 6 } }
 		}		
 	}
+
+	# Added for 1.19.3: base-game decision(s) missing from this older copy (referenced by base-game content)
+	JAP_tauran_border_incident_forgotten_1 = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		visible = {
+			has_global_flag = tauran_incident_has_begun_flag 
+			OR = {
+				AND = {
+					owns_state = 761
+					is_subject = no
+				}
+				AND = {
+					any_subject_country = {
+						owns_state = 761
+					}
+				}
+			}
+		}
+
+		available = {
+				
+			OR = {
+				has_border_war_with = MON # Japan/MAN shouldn't lose war support if they actually use the window of opportunity
+				has_global_flag = initial_tauran_decision_taken_flag
+			}
+				
+		}
+
+		highlight_states = {
+	 		highlight_state_targets = {
+				state = 819
+				state = 761
+			} 
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		days_mission_timeout = 30
+
+		fire_only_once = yes
+
+		is_good = no
+		
+		timeout_effect = {
+			add_political_power = -25 
+			add_war_support = -0.05 #Shameful Display
+			MON = {
+				country_event = {
+					id = SEA_border_incidents_events.8
+					days = 1
+				}	
+			}
+			hidden_effect = {
+				set_global_flag = failed_to_assault_in_time_flag
+			}
+		}
+	}
+
+	JAP_tauran_border_incident_forgotten = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		available = {
+			
+			hidden_trigger = {
+				OR = {
+					has_border_war_with = MON # Japan shouldn't lose war support if they actually use the window of opportunity
+					has_global_flag = JAP_did_the_tauran_border_war_flag
+				}
+			}
+				
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 819 
+				state = 761
+			} 
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_mission_timeout = 30
+
+		fire_only_once = yes
+
+		is_good = no
+		
+		timeout_effect = {
+			remove_targeted_decision = { target = MON decision = JAP_escalate_incident_to_border_conflict_MON }
+			add_political_power = -50
+			add_war_support = -0.05 #Shameful Display
+			MON = {
+				country_event = {
+					id = SEA_border_incidents_events.8
+					days = 1
+				}	
+			}
+			hidden_effect = {
+				MON = { remove_targeted_decision = { target = ROOT decision = JAP_border_conflict_escalation_warning_MON } }
+				MON = {
+					761 = {
+						clr_state_flag = border_incident_active
+					}
+					819 = {
+						clr_state_flag = border_incident_active
+					}
+				}
+			}
+		}
+	}
+
+	# Added for 1.19.3: rest of the base-game Tauran border-incident chain (needed by the decisions above)
+	JAP_assault_tauran_decision = {
+		icon = border_war
+
+		allowed = {
+			OR = {
+				original_tag = JAP
+				original_tag = MAN
+			}
+		}
+
+		visible = {
+			OR = {
+				AND = {
+					761 = {
+						is_owned_and_controlled_by = ROOT
+					}
+					is_subject = no
+				}
+				AND = {
+					any_subject_country = {
+						761 = {
+							is_owned_and_controlled_by = PREV
+						}
+					}
+				}
+			}
+			819 = {
+				is_owned_and_controlled_by = MON
+			}
+			NOT = {
+				has_global_flag = failed_to_assault_in_time_flag 
+			}
+			has_global_flag = tauran_incident_has_begun_flag 
+		}
+
+		available = {
+			NOT = {
+				has_war_with = MON
+				is_in_faction_with = MON
+				has_non_aggression_pact_with = MON
+				MON = { is_puppet_of = ROOT }
+			}
+			761 = {
+				any_neighbor_state = {
+					is_controlled_by = MON
+				}
+			}
+		}
+
+		highlight_states = {
+	 		highlight_state_targets = {
+				state = 819
+				state = 761
+			} 
+		}
+		
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 250
+		}
+
+		cost = 5
+
+		days_remove = 30  
+
+		war_with_on_remove = MON
+
+		complete_effect = {
+			761 = {
+				save_event_target_as = MAN_MON_attacker_state
+				set_state_flag = border_incident_active
+			}
+			819 = {
+				save_event_target_as = MAN_MON_defender_state
+				set_state_flag = border_incident_active
+			}
+			MON = {
+				country_event = { id = SEA_border_incidents_events.4 days = 1 }
+				activate_targeted_decision = { target = ROOT decision = JAP_tauran_border_conflict_warning_MON }
+			}
+			hidden_effect = {
+				set_global_flag = initial_tauran_decision_taken_flag 
+			}
+		}
+		remove_effect = {
+			activate_targeted_decision = { target = MON decision = JAP_tauran_border_incident_forgotten }
+			activate_targeted_decision = { target = MON decision = JAP_escalate_incident_to_border_conflict_MON }
+		}
+	}
+
+	JAP_tauran_border_conflict_warning_MON = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		war_with_target_on_timeout = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_mission_timeout = 30 
+
+		fire_only_once = yes
+
+		is_good = no
+		
+		timeout_effect = {
+			custom_effect_tooltip = escalation_possible_tooltip_for_defender
+			custom_effect_tooltip = effects_if_border_conflict_is_lost
+			effect_tooltip = {
+				add_war_support = -0.05
+				add_political_power = -50
+			}
+			hidden_effect = {
+				IF = {
+					limit = {
+						761 = {
+							is_owned_and_controlled_by = MAN
+						}
+						MAN = {
+							is_subject = no
+						}
+					}
+					remove_targeted_decision = { target = MAN decision = JAP_tauran_border_conflict_warning_MON }
+					activate_targeted_decision = { target = MAN decision = JAP_border_conflict_escalation_warning_MON }
+				}
+				ELSE_IF = {
+					limit = {
+						761 = {
+							is_owned_and_controlled_by = MAN
+						}
+						MAN = {
+							is_subject_of = JAP
+						}
+					}
+					remove_targeted_decision = { target = JAP decision = JAP_tauran_border_conflict_warning_MON }
+					activate_targeted_decision = { target = JAP decision = JAP_border_conflict_escalation_warning_MON }
+				}
+				ELSE_IF = {
+					limit = {
+						761 = {
+							is_owned_and_controlled_by = JAP
+						}
+					}
+					remove_targeted_decision = { target = JAP decision = JAP_tauran_border_conflict_warning_MON }
+					activate_targeted_decision = { target = JAP decision = JAP_border_conflict_escalation_warning_MON }
+				}
+			}
+		}
+	}
+
+	JAP_border_conflict_escalation_warning_MON = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+		visible = { 
+			hidden_trigger = { 
+				NOT = { 
+					has_border_war_with = JAP 
+					has_border_war_with = MAN 
+				} 
+			} 
+		}
+		cancel_if_not_visible = yes 
+
+		available = {
+			#var:ROOT.defender_state_vs_@FROM = {
+			#	has_ROOT_at_least_1_div_in_current_state_scope = yes
+			#}
+			hidden_trigger = { always = no }
+		}
+
+		war_with_target_on_timeout = yes
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_mission_timeout = 30
+
+		fire_only_once = yes
+
+		is_good = no
+
+		timeout_effect = {
+			custom_effect_tooltip = from_cannot_escalate
+			custom_effect_tooltip = effects_if_border_conflict_is_lost
+			effect_tooltip = {
+				add_war_support = -0.05
+				add_political_power = -50
+			}
+		}		
+	}
+
+	JAP_escalate_incident_to_border_conflict_MON = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		available = {
+			761 = {
+				OR = {
+					is_fully_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+					CONTROLLER = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+			divisions_in_border_state = {
+				state = 761
+				border_state = 819
+				size > 0
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 761
+				state = 819	
+			} 
+		}
+
+		ai_will_do = {
+			base = 25 
+			modifier = { 
+				has_war = no
+				factor = 10
+			}
+		}
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		complete_effect = {
+			remove_targeted_decision = { target = MON decision = JAP_tauran_border_incident_forgotten }
+			activate_mission = JAP_tauran_border_conflict_time_until_cancelled
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 761
+					num_provinces = 4
+					on_win = SEA_border_incidents_events.5
+					on_lose = SEA_border_incidents_events.6
+					on_cancel = SEA_border_incidents_events.7
+				}
+				
+				defender = {
+					state = 819
+					num_provinces = 4
+					on_win = SEA_border_incidents_events.6
+					on_lose = SEA_border_incidents_events.5
+					on_cancel = SEA_border_incidents_events.7
+				}
+			}
+		}
+	}
+
+	JAP_tauran_border_conflict_time_until_cancelled = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		available = {
+			819 = { has_border_war = no }
+			761 = { has_border_war = no }
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 819
+				state = 761
+			} 
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_mission_timeout = 90
+		is_good = no
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		complete_effect = {
+
+		}
+
+		timeout_effect = {
+			cancel_border_war = {
+				defender = 819
+				attacker = 761
+			}
+		}
+	}
 }
 
 prospect_for_resources = {

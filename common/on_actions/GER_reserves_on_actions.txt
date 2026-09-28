@@ -1,0 +1,103 @@
+###########################
+# 1944 - Downfall: Germany's last reserves: triggers (docs/CHANGELOG.md section 12)
+###########################
+
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			# 1. The Estonian mobilisation: from 7 February 1944, while we hold Tallinn
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_reserves_estonia_done }
+					date > 1944.2.6
+					date < 1945.1.1
+					has_war_with = SOV
+					controls_province = 3152
+				}
+				set_country_flag = GER_reserves_estonia_done
+				country_event = { id = ger_reserves.1 }
+			}
+			# 2. Collaborators flee east: from June 1944, once an enemy holds Paris
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_reserves_west_done }
+					date > 1944.6.5
+					has_war = yes
+					any_enemy_country = { controls_province = 11506 }
+				}
+				set_country_flag = GER_reserves_west_done
+				country_event = { id = ger_reserves.2 }
+			}
+			# 3. Hungarian SS divisions: 30 days after the Arrow Cross takes power
+			# (the author's events/mod_events.txt, hungary.operation.panzerfaust.1),
+			# while Hungary is still on our side
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_reserves_hungary_done }
+					has_global_flag = { flag = arrow_cross_insurgency_happened days > 29 }
+					has_war_with = SOV
+					country_exists = HUN
+					HUN = {
+						OR = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				set_country_flag = GER_reserves_hungary_done
+				country_event = { id = ger_reserves.3 }
+			}
+			# 5. The last Swedish deliveries: from 28 September 1944, if Sweden is
+			# neither at war with us nor our ally, and we hold Stettin or Kiel
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_reserves_sweden_done }
+					date > 1944.9.27
+					date < 1945.1.1
+					has_war = yes
+					country_exists = SWE
+					SWE = {
+						NOT = { has_war_with = ROOT }
+						NOT = { is_in_faction_with = ROOT }
+					}
+					OR = {
+						controls_province = 6282
+						controls_province = 6389
+					}
+				}
+				set_country_flag = GER_reserves_sweden_done
+				country_event = { id = ger_reserves.5 }
+			}
+			# 6. Eastern workers and prisoners volunteer: from 1 February 1945
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_reserves_eastern_done }
+					date > 1945.1.31
+					has_war_with = SOV
+				}
+				set_country_flag = GER_reserves_eastern_done
+				country_event = { id = ger_reserves.6 }
+			}
+			# 7. Round-ups behind the front: from 1945, once our manpower falls
+			# below 200,000 or the enemy takes one of the five provinces around
+			# Berlin (the same provinces as Festung Berlin), whichever comes first
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_reserves_roundups_done }
+					date > 1944.12.31
+					has_war = yes
+					OR = {
+						has_manpower < 200000
+						NOT = { controls_province = 375 }
+						NOT = { controls_province = 3499 }
+						NOT = { controls_province = 9428 }
+						NOT = { controls_province = 11444 }
+						NOT = { controls_province = 11505 }
+					}
+				}
+				set_country_flag = GER_reserves_roundups_done
+				country_event = { id = ger_reserves.7 }
+			}
+		}
+	}
+}
