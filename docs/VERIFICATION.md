@@ -145,6 +145,17 @@ can't be read at that moment. The game loads with error.log identical
 shows the new decision, 7 events and 3 spirits loaded. **Not tested in
 play.**
 
+## Pull request #2 (the author's repository)
+
+See CHANGELOG section 13. After every commit of the pull request, the files
+were compared with this package at the same step, ignoring only CR at line
+ends. They were identical for all 26 changes, and the sync commit is
+identical to the Steam copy. The line changes per commit match the
+originals; the Siam rebuild counts one more line, the file's last line. A
+fresh clone of the branch with Git's default settings loads with an
+identical error.log (115 = 115,
+`game-logs/14-pull-request-2-clone_error.log`).
+
 ## Not verified (so no guarantee here)
 
 - **Actual play.** Only loading the game and its 1944 setup was tested. The

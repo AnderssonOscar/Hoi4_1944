@@ -19,3 +19,4 @@ history runs at startup). Compare them with any diff tool.
 | 11-after-wiking-nordland_error.log | after adding Wiking and Nordland (00807c5); identical to 5 (this stage does not read the 1944 order of battle; see CHANGELOG section 10 for the load_oob test) | 115 |
 | 12-after-1945-operations_error.log | after the four 1945 operations (97fad47, texts corrected in 9c950e1); identical to 5 | 115 |
 | 13-after-last-reserves_error.log | after Germany's last reserves (70d287a); identical to 5 | 115 |
+| 14-pull-request-2-clone_error.log | a fresh clone of pull request #2's branch (the author's layout, commit 80d1d1c) with Git's default settings (CRLF checkout); identical to 13 | 115 |

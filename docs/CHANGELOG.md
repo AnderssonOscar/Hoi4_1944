@@ -1033,11 +1033,10 @@ Sources:
 - [13] en.wikipedia, *Volkssturm*: foreigners inducted in some cases, if
   deemed ideologically acceptable.
 
-### 13. Files kept byte-exact in every clone; the project on GitHub (commit `2a99f40`)
+### 13. Files kept byte-exact in every clone; the update offered on the author's GitHub (commit `2a99f40`)
 
 Oscar asked to publish the project to the author's GitHub repository
-(github.com/gastav3/Hoi4_1944), replacing its old content, with detailed
-documentation.
+(github.com/gastav3/Hoi4_1944), with detailed documentation.
 
 **What was on GitHub:** the author's own history up to 29 June 2026 (branch
 `main`, plus an older branch `states_update`). It was compared file by file,
@@ -1053,20 +1052,80 @@ ignoring line endings, with the Steam version this project starts from
   1944", "ADD LATER 1944") in states 523 and 669, which the author removed
   himself before his July upload.
 
-So replacing GitHub's content with this project loses none of the author's
-work.
+So building on the Steam version loses none of the author's work on GitHub.
 
-**How it was published:**
-- **No force-push.** One merge commit joins GitHub's history with this
-  project's, so the author's earlier commits stay. The `states_update` branch
-  is untouched.
-- **The layout is this project's:** `mod/` (the mod), `docs/` and `tools/`,
-  with a README as the front page. On GitHub the mod files used to be at the
-  top level, so a game setup or Steam upload that pointed at the repository
-  root must now point at `mod/`. That also keeps `.git` out of the Steam
-  upload.
+**A first attempt, withdrawn (pull request #1).**
+- It put this project on GitHub as it is here, joined to the author's history
+  by a merge commit, with the mod moved into `mod/`.
+- The author pointed out that moving every file breaks the history of his
+  files and makes the commits unusable on his side. He was right: the pull
+  request showed 980 changed files, where 119 really differ. It was closed.
 
-**The line-ending fix (`mod/.gitattributes`):**
+**Pull request #2, in the author's layout:**
+- **It starts from his `main`.** The mod stays at the top level and his
+  line-ending setting (`* text=auto`) is kept. No file is moved.
+- **First commit: the Steam version of July 2026** (`c56a5f1`). This is his
+  own work that never reached GitHub, 62 files:
+  - 33 changed files;
+  - 28 new state files;
+  - the stray `BLR.rar` removed;
+  - the two placeholder lines gone.
+
+  Nothing in it was written by Oscar or the AI.
+- **Then every change of this package as its own commit** on his files, with
+  the same message, author and date. These are 26 commits: all mod commits
+  except `2a99f40`, because his repository keeps its own `.gitattributes`.
+  A README describing the update comes last.
+- **The commit IDs there differ** from the ones in these documents. The
+  table below pairs them, and the README there has the same table.
+
+**Checked (pull request #2):**
+- **Identical files:** after every commit, the files are identical to this
+  package at the same step, ignoring only CR at line ends (his repository
+  stores text with LF). The sync commit is identical to the Steam copy.
+- **Identical line changes:** each commit shows the same line changes as the
+  original, except the Siam history rebuild (`c88694e`). That one counts one
+  more changed line, the file's last line, because the old file had no
+  newline at its end. The resulting file is identical.
+- **Line endings:** text files are stored with LF, like the rest of his
+  repository (0 files with CRLF, before and after).
+- **In the game:** a fresh clone of the branch, with Git's default settings,
+  loads with an identical error.log (115 = 115,
+  `game-logs/14-pull-request-2-clone_error.log`).
+- **Size:** the pull request shows 119 files, the 118 real differences plus
+  the README.
+
+| This package | Pull request #2 | Change |
+|---|---|---|
+| `e20698c` | `7ffb1d5` | Fix Ichi-Go province modifiers applied in the wrong state |
+| `ce4f33a` | `9c0e8b3` | Remove stale duplicate definitions of states 870, 871, 873 |
+| `6fa793c` | `c1dbe61` | Update supported game version to 1.19.3.0 |
+| `2d80d87` | `0417681` | Netherlands focus tree: rebuild on 1.19.3, keep the RKN edit |
+| `f646e4a` | `976e529` | cosmetic.txt: rebuild on 1.19.3, keep the mod's 17 own tags |
+| `8041896` | `5fa14c9` | Fix a character and a focus ID renamed in 1.19 (Argentina, Australia) |
+| `586de46` | `7d9606e` | Add base-game decisions the mod's older decision files lack |
+| `0384e82` | `47bc46e` | Add news event bftb_news.11 missing from the mod's older copy |
+| `c8dac21` | `d101815` | Special forces: replace pre-1.19 doctrine techs with 1.19 sub-doctrines |
+| `4a17ff6` | `5a0f8ef` | Australia history: rebuild on 1.19.3, keep the author's 1944 content |
+| `d5c3c69` | `c88694e` | Siam history: rebuild on 1.19.3, keep the author's 1944 content |
+| `58a1a82` | `cdfb445` | Australia: re-apply the AST_domestic_industry fix (it is a 1.19.3 bug) |
+| `d55cf37` | `18456dd` | JAP decisions: add the rest of the Tauran border-incident chain |
+| `7de1ce8` | `7f5bfe4` | Add flavor event: Slovak National Uprising (29 August 1944) |
+| `a5982fe` | `7c1b146` | Slovak uprising: Germany loses the 3,000 manpower, not Slovakia |
+| `76a0d54` | `b41e8bc` | Add Nero Decree and Werwolf (Germany, last-stand decisions) |
+| `e6c0034` | `059efbb` | Volkssturm: realistic levies, rifle mix and 1945 call-ups |
+| `d9d7888` | `3021967` | Volkssturm bug check: raise units where Germany holds a state, not only where it holds all of it |
+| `b88321a` | `847b39b` | Fix Konigsberg in Ruins: remove the ring fort, not forts in Africa |
+| `e13d45d` | `fc01049` | Fix Oder-Neisse Defence: build the Stettin fort in Stettin's own state |
+| `5fb4a0b` | `eddc310` | Fix "Destroy Antwerpen": hit Antwerp's port in Antwerp's own state |
+| `1fa3c2c` | `3d6e75b` | Add Festung Berlin: a five-event chain for the defence of Berlin |
+| `00807c5` | `10c5712` | Add 5. SS 'Wiking' and 11. SS 'Nordland' to the 1944 start |
+| `97fad47` | `ad8ce09` | Add four 1945 operations for Germany |
+| `9c950e1` | `79d97af` | 1945 operations: correct event texts against the sources |
+| `70d287a` | `f2ba254` | Add Germany's last reserves: six events and a decision |
+
+**The line-ending fix (`mod/.gitattributes`, this package only; not part of
+pull request #2):**
 - The author's `mod/.gitattributes` was the GitHub Desktop template
   (`* text=auto`, "perform LF normalization").
 - A test clone showed the problem. On Windows, with Git's default

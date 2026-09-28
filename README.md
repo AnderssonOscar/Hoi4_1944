@@ -98,19 +98,17 @@ folders.
 
 ## History of this repository
 
-- **Up to 29 June 2026:** gastav3's own commits, with the mod files at the
-  top level.
 - **Commit `253cea1`:** the mod exactly as published on Steam in July 2026,
-  placed in `mod/`. It already contains everything from the earlier GitHub
-  history; that was checked file by file. The only differences: a stray
-  `common/characters/BLR.rar`, and two "ADD LATER" placeholder lines in
-  states 523 and 669, both removed by the author before his July upload.
+  placed in `mod/`. It already contains everything from the author's GitHub
+  history; that was checked file by file.
 - **After that:** one commit per change, each with its reason, and
   documentation commits that record the checks.
-- **One merge commit joins the two histories.** Nothing was force-pushed, so
-  the earlier history is intact, and the `states_update` branch is untouched.
-- **Tags** `final-2026-09-27` to `final-2026-09-28-v9` mark each package
+- **Tags** `final-2026-09-27` to `final-2026-09-28-v10` mark each package
   prepared for the author.
+- **The author's repository** (github.com/gastav3/Hoi4_1944) receives the
+  same changes through pull request #2, in his layout. The mod stays at the
+  top level there, and the commit IDs differ; CHANGELOG section 13 pairs
+  them.
 
 ## Status
 
@@ -123,11 +121,12 @@ folders.
 
 ## For the author: publishing to Steam
 
-Upload the `mod/` folder, not the repository root. That also keeps the `.git`
-folder out of the Workshop upload (the July 2026 upload included it, so
-subscribers could read the old history). `descriptor.mod` already says
-`supported_version="1.19.3.0"`. If your game setup pointed at the repository
-root, point it at `mod/` instead.
+If you merge pull request #2 in your repository, nothing changes in your
+setup or your Steam upload: the mod stays where it was. If you use this
+package instead, upload its `mod/` folder, not the repository root. That
+also keeps the `.git` folder out of the Workshop upload (the July 2026 upload
+included it, so subscribers could read the old history). `descriptor.mod`
+already says `supported_version="1.19.3.0"`.
 
 ## Credits
 

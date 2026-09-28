@@ -58,7 +58,7 @@ independently (see "Check it yourself").
 | 15 | New in the 1944 start: **5. SS 'Wiking'** (your SS Panzer-Division template, at your Cherkassy position) and **11. SS 'Nordland'** (your Panzergrenadier template with SS names, at your Leningrad-front SS position), maximum experience, your elite equipment lines; "5 = Wiking" added to the SS name list; the SS recruitment event no longer makes a second Wiking in 1944 games (CHANGELOG section 10). Only additions, nothing of yours changed | GER_1944.txt, GER_1944_nsb.txt, GER_names_divisions.txt, ss_recruitment_event.txt |
 | 16 | New: **four 1945 operations** for Germany (CHANGELOG section 11). **Operation Sonnenwende** and **Operation Spring Awakening**: a popup when the front makes them relevant; the decision (50 PP) sets fuel, rifles and artillery aside during the preparation (7 / 10 days) and returns exactly that at the launch, then +15% attack on German soil for 12 days / +10% against the Soviet Union for 14 days. **Courland**: a popup when the pocket is cut off, then a decision (50 PP, 30 days, Libau or Windau held) that ships every German division in Kurzeme to the first Baltic port still held; or hold it, with your Festung values on the two ports. **Sailors to the Front** (50 PP, from Feb 1945): +1,000 manpower, 10 convoys laid up, three naval infantry divisions on the historical dates (ordinary infantry, so not counted as special forces; 50% equipped, no experience). **Not play-tested yet** | 8 new files `GER_1945_operations_*` |
 | 17 | New: **Germany's last reserves** (CHANGELOG section 12), each event once and only in its historical window: **Estonian Mobilisation** (Feb 1944, +38,000); **Collaborators Flee East** (once Paris is lost, +3,000, with the neutral volunteers); **Hungarian SS Divisions** (30 days after your Arrow Cross coup, up to 7,500 moved from Hungary to Germany); **Luftwaffe Men to the Front** (decision, 50 PP, from Sept 1944: +75,000, then −10% air missions for 90 days); **The Last Swedish Deliveries** (late Sept 1944: 3 trains, 137 trucks, 1,800 support equipment, 250 fuel, 35 days of aircraft 13% cheaper); **Eastern Workers and Prisoners Volunteer** (Feb 1945, a choice: +15,000 and −1% factory output for 180 days); **Round-ups Behind the Front** (1945, manpower below 200,000 or the enemy at Berlin: +15,000). **Not play-tested yet** | 6 new files `GER_reserves_*` |
-| 18 | `mod/.gitattributes`: `* text=auto` becomes `* -text`, so every clone gets the files byte-for-byte (the old setting converted the line endings of 45 files on Windows). The game doesn't read this file. The project is also on GitHub now, with the mod in `mod/` (CHANGELOG section 13) | .gitattributes |
+| 18 | `mod/.gitattributes`: `* text=auto` becomes `* -text`, so every clone gets the files byte-for-byte (the old setting converted the line endings of 45 files on Windows). The game doesn't read this file. Not part of pull request #2 to your GitHub repository, which keeps your own setting (CHANGELOG section 13) | .gitattributes |
 
 **Your call** (decisions made for you, easy to change):
 
@@ -122,8 +122,11 @@ Bring your copy in line with `mod/`: copy the changed files and delete the
 three state files, or apply the patches. If your copy has changes that
 aren't on Steam yet, use the patches. Then upload as usual.
 
-The whole project is also on GitHub (github.com/gastav3/Hoi4_1944), with
-the mod in `mod/`: upload that folder, not the repository root.
+The same changes are offered to your GitHub repository
+(github.com/gastav3/Hoi4_1944) as pull request #2. It keeps your layout and
+your line-ending setting, with one commit per change and a README
+(CHANGELOG section 13). If you merge it, your setup and your Steam upload
+stay as they are.
 
 Note: the July upload included your old `.git` folder (history to 2024,
 remote github.com/gastav3/Hoi4_1944), so subscribers can read that history.
