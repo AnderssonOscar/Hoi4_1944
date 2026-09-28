@@ -86,7 +86,8 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | Seventh package (tag `final-2026-09-28-v7`: + the four 1945 operations) | 25 | all 937 files match, file list identical (3 deleted, 26 new) |
 | Eighth package (tag `final-2026-09-28-v8`: + Germany's last reserves) | 26 | all 943 files match, file list identical (3 deleted, 32 new) |
 | Ninth package (tag `final-2026-09-28-v9`: + byte-exact clones, GitHub documentation) | 27 | all 943 files match, file list identical (3 deleted, 32 new) |
-| Current package (tag `final-2026-09-28-v10`: + pull request #2 documented, no mod change) | 27 | all 943 files match, file list identical (3 deleted, 32 new) |
+| Tenth package (tag `final-2026-09-28-v10`: + pull request #2 documented, no mod change) | 27 | all 943 files match, file list identical (3 deleted, 32 new) |
+| Current package (tag `final-2026-09-28-v11`: + the home front, the Courland popup fix) | 29 | all 948 files match, file list identical (3 deleted, 37 new) |
 
 So `mod/` is exactly "Workshop version + these patches", with nothing hidden.
 
