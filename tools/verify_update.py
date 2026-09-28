@@ -93,6 +93,9 @@ expected |= {("A", "mod/common/scripted_effects/GER_festung_berlin_effects.txt")
              ("A", "mod/common/on_actions/GER_festung_berlin_on_actions.txt"),
              ("A", "mod/events/GER_festung_berlin_events.txt"),
              ("A", "mod/localisation/english/GER_festung_berlin_l_english.yml")}  # Festung Berlin (section 9)
+expected |= {("M", "mod/history/units/GER_1944.txt"), ("M", "mod/history/units/GER_1944_nsb.txt"),
+             ("M", "mod/common/units/names_divisions/GER_names_divisions.txt"),
+             ("M", "mod/events/ss_recruitment_event.txt")}  # Wiking + Nordland (section 10)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -131,6 +134,9 @@ allowed["mod/events/mod_news.txt"] = lambda l: l.strip() in ("remove_building = 
                                                           "province = 13371", "province = 13370", "level = 5", "}", "")
 allowed["mod/common/decisions/GER_mod.txt"] = lambda l: l.strip() == "62 = {"
 allowed["mod/events/mod_events.txt"] = lambda l: l.strip() == "6 = {"
+for f in ("mod/history/units/GER_1944.txt", "mod/history/units/GER_1944_nsb.txt",
+          "mod/common/units/names_divisions/GER_names_divisions.txt", "mod/events/ss_recruitment_event.txt"):
+    allowed[f] = lambda l: False  # Wiking + Nordland: pure additions, nothing of the author's removed
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
@@ -372,6 +378,53 @@ check("B  Festung Berlin: forts only topped up (simulated for start levels 0-10)
       and len(fb_defs) == 9 and fb_calls == set(fb_defs)
       and fb_loc.startswith(bytes.fromhex("efbbbf") + b"l_english:") and len(fb_keys) == 25 and {k.encode() for k in fb_need} <= fb_keys,
       str({n: {p: tg for p, (tg, g) in r.items() if not g} for n, r in fb_sim.items()}))
+
+def ss_oob(path):
+    """(templates {name: (regiments, support, names group, priority)}, {name_order: (template, location, exp, equip)}, SS name_order counts)."""
+    root = pdx.parse_file(path)[0]
+    tpls = {}
+    for n in root:
+        if n.key == "division_template" and n.is_block():
+            g = lambda k: next((c.value for c in n.value if c.key == k), None)
+            regs = sorted((r.key, next(c.value for c in r.value if c.key == "x"), next(c.value for c in r.value if c.key == "y"))
+                          for b in n.value if b.key == "regiments" for r in b.value if r.key)
+            sup = sorted(r.key for b in n.value if b.key == "support" for r in b.value if r.key)
+            tpls[g("name").strip('"')] = (regs, sup, g("division_names_group"), g("priority"))
+    divs, orders = {}, {}
+    for d in next(n for n in root if n.key == "units").value:
+        if d.key != "division" or not d.is_block():
+            continue
+        g = lambda k: next((c.value for c in d.value if c.key == k), None)
+        tn = (g("division_template") or "").strip('"')
+        dn = next((c for c in d.value if c.key == "division_name"), None)
+        o = next((c.value for c in dn.value if c.key == "name_order"), None) if dn else None
+        if o and tpls.get(tn, (0, 0, None))[2] == "GER_SS_01":
+            orders[o] = orders.get(o, 0) + 1
+            divs[o] = (tn, g("location"), g("start_experience_factor"), g("start_equipment_factor"))
+    return tpls, divs, orders
+ss_ok, ss_detail = True, {}
+for f in ("mod/history/units/GER_1944_nsb.txt", "mod/history/units/GER_1944.txt"):
+    tp, dv, od = ss_oob(f)
+    pg, sp = tp.get("Panzergrenadier"), tp.get("SS-Panzergrenadier-Division")
+    ok = (pg is not None and sp is not None and pg[:2] == sp[:2] and sp[2:] == ("GER_SS_01", "2")
+          and dv.get("5") == ("SS Panzer-Division", "11424", "1.0", "0.9")
+          and dv.get("11") == ("SS-Panzergrenadier-Division", "11080", "1.0", "0.95")
+          and all(v == 1 for v in od.values()))
+    ss_ok = ss_ok and ok
+    ss_detail[f[18:]] = (dv.get("5"), dv.get("11"), od)
+st203 = current("mod/history/states/203-Cherkasy.txt").decode("utf-8-sig").replace("\r", "")
+st208 = current("mod/history/states/208-Pskov.txt").decode("utf-8-sig").replace("\r", "")
+ss_names = current("mod/common/units/names_divisions/GER_names_divisions.txt").decode("utf-8-sig").split("GER_SS_01 =", 1)[1].split("\n}", 1)[0]
+ss_ev = current("mod/events/ss_recruitment_event.txt").decode("utf-8-sig")
+check("W  Wiking (#5, SS Panzer-Division, 11424) and Nordland (#11, SS copy of the Panzergrenadier template, 11080) in both "
+      "1944 OOB files with experience 1.0; both positions German-held on 1 Jan 1944; no SS number twice; name list 5 = Wiking; "
+      "the recruitment event only creates Wiking in games that started before 1944",
+      ss_ok and p2s.get("11424") == "203" and p2s.get("11080") == "208"
+      and "1943.12.30 = {\n\t\t\tcontroller = GER\n\t\t\towner = GER" in st203 and "11424" not in re.findall(r"set_province_controller = (\d+)", st203)
+      and "owner = GER" in st208 and "set_province_controller" not in st208
+      and "5 = { \"%d. SS-Division 'Wiking'\" }" in ss_names and "11 = { \"%d. SS-Division 'Nordland'\" }" in ss_names
+      and ss_ev.count("has_start_date < 1944.1.1") == 2 and ss_ev.count("else_if = { # 1944 start: Wiking already exists") == 2,
+      str(ss_detail))
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)

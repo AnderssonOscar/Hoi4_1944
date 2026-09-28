@@ -55,8 +55,8 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
   decision, Volkssturm focus, UK). They need a crash report from the game.
   One report ("D-Day seems broken") needs a proper description first.
 - Added on Oscar's request: the Slovak uprising event, Nero Decree and
-  Werwolf, the Volkssturm redesign and Festung Berlin (CHANGELOG sections
-  4-6 and 9). They load cleanly; none has been play-tested yet. Sections 7-8
+  Werwolf, the Volkssturm redesign, Festung Berlin and the SS divisions
+  Wiking and Nordland (CHANGELOG sections 4-6, 9 and 10). They load cleanly; none has been play-tested yet. Sections 7-8
   fix three wrong-state province IDs in the author's code.
 
 ## 3. Where everything is

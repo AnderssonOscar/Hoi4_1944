@@ -16,3 +16,4 @@ history runs at startup). Compare them with any diff tool.
 | 8-after-konigsberg-fix_error.log | after the Königsberg in Ruins fix (b88321a); identical to 5 | 115 |
 | 9-after-stettin-antwerp-fixes_error.log | after the Stettin and Antwerp fixes (e13d45d, 5fb4a0b); identical to 5 | 115 |
 | 10-after-festung-berlin_error.log | after Festung Berlin (1fa3c2c); identical to 5 | 115 |
+| 11-after-wiking-nordland_error.log | after adding Wiking and Nordland (00807c5); identical to 5 (this stage does not read the 1944 order of battle; see CHANGELOG section 10 for the load_oob test) | 115 |

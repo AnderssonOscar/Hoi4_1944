@@ -529,6 +529,103 @@ Sources:
 - en.wikipedia, *Hellmuth Reymann* ("inherited almost nothing").
 - en.wikipedia, *Flak tower*: the three Berlin towers, used as strongpoints.
 
+### 10. SS divisions "Wiking" and "Nordland" in the 1944 start (commit `00807c5`)
+
+Oscar's request: both existed on the start date, so add them "with equipment
+realistic for these elite units and with max experience".
+
+**History:**
+- **Wiking** was formally reorganised as a panzer division in October 1943,
+  and moved to the Cherkassy area in December 1943. The Korsun–Cherkassy
+  pocket battle began on 24 January 1944 [1][2].
+- **Nordland** was formed in 1943: SS panzergrenadier regiments "Norge" and
+  "Danmark", SS Panzer Battalion 11 "Hermann von Salza" and Artillery
+  Regiment 11, about 15,000 men [3]. It fought partisans in Croatia in autumn
+  1943 and moved north to the Leningrad front in the winter of 1943/44 [3][4].
+
+**Before:** neither was in the 1944 order of battle.
+- Wiking could only appear later, through the base game's SS recruitment
+  decisions (Denmark and Norway, "historical" option).
+- Nordland existed only as a name in the SS name list.
+
+**Now**, in both of the author's order-of-battle files (with and without the
+No Step Back DLC):
+
+| Division | Template | Position | Experience | Equipment |
+|---|---|---|---|---|
+| 5. SS-Division 'Wiking' | the author's "SS Panzer-Division" | 11424, the author's Cherkassy position (German-held on 1 Jan 1944), next to his Leibstandarte | 1.0 (maximum) | 90% (manpower 95%) |
+| 11. SS-Division 'Nordland' | new "SS-Panzergrenadier-Division" | 11080, the author's Leningrad-front SS position (the Luga state, German-held) | 1.0 (maximum) | 95% (manpower 100%) |
+
+**The Nordland template:** the author's own Panzergrenadier template (4
+motorised and 5 mechanised battalions, artillery, a StuG brigade; he uses it
+for 12 divisions), with the SS name list and SS priority. Nothing else is
+different.
+
+**Equipment**, using the lines the author gives his own SS divisions:
+- **Wiking:** infantry, artillery and AA level 3, StuG III, Wespe, Panzer IV
+  Ausf. H, mechanised level 2.
+- **Nordland:** infantry level 3, artillery level 2, StuG III (for its panzer
+  battalion), mechanised level 2.
+- **Tank designs** (StuG III, Wespe, Panzer IV) appear only in the No Step
+  Back file, as the author does.
+- **Fill level:** Wiking's 90% sits between the author's Totenkopf (81%) and
+  Leibstandarte (98%), for a veteran division in the line. Nordland's 95%
+  fits a fresh division at full strength.
+- **Maximum experience is Oscar's choice.** Historically Nordland was a new
+  division with a veteran cadre.
+
+**Other changes:**
+- **Name list:** the SS list had no number 5; "5. SS-Division 'Wiking'" was
+  added (11 = Nordland was already there). Side effect: the author's four
+  unnamed SS regiments are named by the game from this list. If one of them
+  used to be called "5. SS-Division", it now gets another number.
+- **No second Wiking:** the base game's SS recruitment in Denmark and Norway
+  (`events/ss_recruitment_event.txt`) would otherwise create another Wiking
+  in a 1944 game. It now creates Wiking only if the game started before 1944
+  (`has_start_date`, which the base game uses over 300 times). In a 1944
+  game, the second recruitment gives +5,000 manpower instead, the author's
+  own amount for the first one.
+- **All four files only gain lines.** Nothing of the author's was changed or
+  removed.
+
+**Checked:**
+- **Check W** in verify_update.py: both divisions in both files with the
+  right template, position, experience and equipment; both positions
+  German-held on the start date according to the mod's own state files;
+  no SS number used twice; the new template identical to the author's
+  Panzergrenadier template; the name list; the event guard. A "0 removed
+  lines" check for each of the four files.
+- **The order of battle loads in the game.** The normal load test does *not*
+  read the 1944 order of battle: a deliberately broken template name gave no
+  error there. So a temporary test line loaded it with the game's own
+  `load_oob` during history setup:
+  - With a deliberately broken Wiking template, the game reported
+    "Invalid division at line 632 in history/units/GER_1944_nsb.txt", so
+    the test catches such errors.
+  - With the real files, both versions loaded with no error about any German
+    division. The only new lines were 12 "Country SOV/GRE does not have any
+    equipment variant" messages. They appear identically in every run: the
+    author's order of battle includes units with captured Soviet and Greek
+    weapons, and at that early moment the Soviet and Greek histories haven't
+    run yet. That's an artifact of the test timing, not a real start.
+  - The temporary line was removed afterwards.
+- **Load test** of the committed version: error.log identical (115 = 115,
+  `game-logs/11-after-wiking-nordland_error.log`).
+- **Not yet seen in a started game.** Start as Germany and look near
+  Cherkassy (Ukraine) and south-west of Leningrad.
+
+Sources:
+- [1] de.wikipedia, *5. SS-Panzer-Division "Wiking"*: panzer division
+  October 1943; Cherkassy area December 1943; pocket from 24 January 1944;
+  1943 organisation.
+- [2] en.wikipedia, *5th SS Panzer Division Wiking*: trapped in the
+  Korsun–Cherkassy pocket along the Dnieper, January 1944.
+- [3] de.wikipedia, *11. SS-Freiwilligen-Panzergrenadier-Division
+  "Nordland"*: formed 1943; Croatia in autumn 1943; north in winter
+  1943/44; organisation; 15,000 men.
+- [4] en.wikipedia, *11th SS Volunteer Panzergrenadier Division Nordland*:
+  on the Eastern Front from autumn 1943; action near Leningrad; Berlin 1945.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -554,7 +651,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-47 files differ from the version on Steam: 26 edited, 3 deleted, 18 new (full list:
+51 files differ from the version on Steam: 30 edited, 3 deleted, 18 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

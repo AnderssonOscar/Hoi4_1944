@@ -1,16 +1,16 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (58 checks,
+Everything below can be re-run: `python tools/verify_update.py` (63 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 58 checks pass
+## Result: all 63 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
 | Integrity | mod/ fully committed; all 929 mod files byte-identical to the commits | PASS |
 | Integrity | Steam Workshop copy never touched (914/914 files = baseline) | PASS |
-| Scope | exactly the 47 intended files changed (26 edited, 3 deleted, 18 new), nothing else | PASS |
-| Author's work | every line removed from his files is one of the documented fixes (checked line by line in 22 files) | PASS |
+| Scope | exactly the 51 intended files changed (30 edited, 3 deleted, 18 new), nothing else | PASS |
+| Author's work | every line removed from his files is one of the documented fixes (checked line by line in 26 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
 | New event | Slovak uprising (F): files, trigger and text checked, including that only Germany loses the 3,000 manpower; the game's error.log is identical before and after (115 = 115, 0 new) | PASS |
@@ -18,6 +18,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | Königsberg fix | K: "Königsberg in Ruins" removes forts only in Königsberg (6332) and its ring fort (11265), no longer in Africa; error.log 115 = 115 (log 8) | PASS |
 | Stettin + Antwerp fixes | S/A: the Stettin fort runs in state 63 and the Antwerp sabotage in 977; no province effect in the three fixed files points outside its state (the same scan finds all 6 old errors in the original files); error.log 115 = 115 (log 9) | PASS |
 | Festung Berlin | B: every fort top-up simulated for start levels 0-10 (always ends at max(start, target), never above 5); provinces, triggers, Brandenburg guard, units, human-only rule, Weidling guard, 9 events, 25 texts. `tools/check_berlin_map.py` re-derives the ring, the Seelow front and the six bordering states from the game's map. Runtime test in the game: Berlin exactly 5 (step 3 run twice), Potsdam 2, Seelow 4, no errors. error.log 115 = 115 (log 10) | PASS |
+| Wiking + Nordland | W: both divisions in both 1944 order-of-battle files (template, position, experience 1.0, equipment), positions German-held on 1 Jan 1944, no SS number twice, name list, event guard; 0 lines of the author's removed. Loaded in the game with `load_oob` (the normal load test does not read the order of battle; a planted broken template was reported as "Invalid division at line 632", the real files gave no German error). error.log 115 = 115 (log 11) | PASS |
 | Game's error.log | each fixed error type is gone: duplicate states 3→0, special-forces techs 93→0, Netherlands focuses 39→0, decisions 2→0, event 1→0, renamed IDs 6→0 | PASS |
 
 ## Version and checksum
