@@ -412,10 +412,11 @@ add_ideas = {
 
 
 # DIPLOMACY
-set_autonomy = {
-	target = PHI
-	autonomous_state =  autonomy_colony
-}
+# PHI is not a colony at the start: a subject with no land capitulates at game start and crashes the UK start. It becomes an exile in on_startup (do_on_actions.txt)
+#set_autonomy = {
+#	target = PHI
+#	autonomous_state =  autonomy_colony
+#}
 
 1939.1.1 = {
 	set_politics = {

@@ -485,7 +485,7 @@ if = {
 
 1943.12.30 = {
 
-	become_exiled_in = { target = ENG legitimacy = 30 }
+	#become_exiled_in = { target = ENG legitimacy = 30 } #crashes the UK start; moved to on_startup (do_on_actions.txt)
 
 	oob = ""
 	set_air_oob = ""

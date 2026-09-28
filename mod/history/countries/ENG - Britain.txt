@@ -279,11 +279,12 @@ if = {
 		autonomous_state = autonomy_integrated_puppet
 		freedom_level = 0.5
 	}
-	set_autonomy = {
-		target = BRM
-		autonomous_state = autonomy_colony
-		freedom_level = 0.35
-	}
+	# BRM is not a colony at the start: a subject with no land capitulates at game start and crashes the UK start. It becomes an exile in on_startup (do_on_actions.txt)
+	#set_autonomy = {
+	#	target = BRM
+	#	autonomous_state = autonomy_colony
+	#	freedom_level = 0.35
+	#}
 	set_autonomy = {
 		target = PER
 		autonomous_state = autonomy_colony
@@ -632,7 +633,7 @@ add_to_faction = SAF
 add_to_faction = INS
 add_to_faction = ETH
 add_to_faction = USA
-add_to_faction = PHI
+#add_to_faction = PHI #crashes the UK start: capitulates at game start; becomes an exile in on_startup (do_on_actions.txt)
 add_to_faction = MEX
 
 
@@ -641,10 +642,10 @@ add_to_faction = RAJ		# Must be after puppet
 add_to_faction = MAL
 add_to_faction = NOR
 add_to_faction = DEN
-add_to_faction = POL
+#add_to_faction = POL #crashes the UK start: capitulates at game start; becomes an exile in on_startup (do_on_actions.txt)
 add_to_faction = BRA
 #add_to_faction = GRE
-add_to_faction = YUG
+#add_to_faction = YUG #crashes the UK start: capitulates at game start; becomes an exile in on_startup (do_on_actions.txt)
 
 add_to_faction = HON
 add_to_faction = COL
