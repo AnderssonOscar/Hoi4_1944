@@ -45,12 +45,13 @@ source of truth, and the old `.git` was not used for anything.
 | B | Crash when Bulgaria switches sides | Code read, no definite cause found | Not yet identified |
 | C | Crash in Romania's 12-day capitulation decision | Code read, no definite cause found | Not yet identified |
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out); focus effect redesigned 2026-09-27 (CHANGELOG §6) | Not yet identified |
-| E | "Playing UK crashes the game" | Clues found in author's own comments, may be the same as A | Not yet identified |
+| E | "Playing UK crashes the game" | **Found and fixed** (commit `e578b10`, CHANGELOG §15): Allied countries with no land capitulate during the game setup, and the "government in exile" popup for the UK crashes the game | Certain: reproduced with the Workshop version and gone after the fix |
 | F | "D-Day seems broken" | Report too vague, needs a description | Not started |
 | G | *(not reported; found in self-review)* | Three Australian states were defined twice. **Fixed** (commit `ce4f33a`) | Certain it was a defect; no known crash link |
 
 The honest summary: reading the scripts produced **one** well-supported bug.
-The other crashes need an in-game reproduction with the crash report HOI4
+The UK crash (E) was found later by reproducing it in the game. The other
+crashes need an in-game reproduction with the crash report HOI4
 writes (see section 4), because the code has no obvious defect.
 
 ---
@@ -218,14 +219,126 @@ in a real game.
 
 ### E. Playing as the UK
 
-Clues left by the author:
+**Found and fixed on 2026-09-28** (commit `e578b10`, CHANGELOG section 15).
 
-- `common/on_actions/do_on_actions.txt:50`: `JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation`
+**The clues** left by the author:
+- `common/on_actions/do_on_actions.txt:50`:
+  `JAP = { transfer_state = 336 } # this has to be done here otherwise uk crashes when choosen as nation`
 - `history/countries/ENG - Britain.txt:630`: `#add_to_faction = BEL #crashes`
 
-So UK-specific crashes have happened before and were worked around. The report
-doesn't say *when* the UK game crashes. If it's mid-1944, finding A applies to
-UK games too. **Need to ask:** crash on load, at a date, or on a specific action?
+Before the fix these were only clues. Both turned out to be the same bug as
+the reported crash.
+
+**Reproducing it.** `hoi4.exe` has its own start options:
+- `-start_tag=ENG` starts a single-player 1944 game as the UK, without the
+  menus;
+- `-start_speed=5` unpauses it;
+- `-nofilewatcher` stops debug mode from reloading files.
+
+`tools/start_as_country.ps1` wraps this. Results:
+- **The UK crashed** about a second after "Launching SINGLEPLAYER-game",
+  every time, with a crash folder. The last line in game.log was `dwadw 3`, a
+  leftover log line in the base game's Swedish script that runs on every
+  capitulation.
+- **The unchanged Workshop version** crashed the same way.
+- **The USA, Canada, the Raj and the Soviet Union** started.
+
+**Bisection.** A folder moved out of `mod/` means the game uses its own
+version instead:
+
+| Moved aside | UK start |
+|---|---|
+| decisions, national_focus, events, on_actions, scripted_effects, interface, ideas, characters | crash |
+| ai_*, abilities, modifiers, dynamic_modifiers, special_projects, technologies, units, countries, gfx, localisation | crash |
+| history/units (and, separately, the UK's own unit files emptied) | crash |
+| history/countries (all 44 files) | **no crash** |
+| the UK's own history file only | crash |
+| the files from Albania to Japan | **no crash** |
+| Denmark, Finland, France, Germany, Greece | crash |
+| Guangxi to Japan | crash |
+| Germany + Guangxi to Japan | **no crash** |
+| Germany + Japan | **no crash** |
+| Germany alone; Japan alone | crash |
+
+So Germany's and Japan's files were each enough on their own. In Germany's
+file, removing only its war declarations (with Japan's file aside) stopped
+the crash. Keeping only the declaration on the UK brought it back. So the UK
+only has to be at war. Yet the USA and the Soviet Union at war did not
+crash.
+
+**False leads, tested and ruled out:**
+- the German war on the UK alone (Japan's war still put the UK at war);
+- the UK's units;
+- the UK-occupied state Singapore;
+- a stateless Greek government (created by `scripted_effects/greece.txt`;
+  moving that folder aside still crashed);
+- Yugoslavia's history exile on its own;
+- the base game's Allied faction goals "The Arteries of Trade" and "Rule the
+  Waves", which are UK-only and war-dependent (each hidden in turn; still
+  crashed).
+
+**The crash report.** hoi4.exe has no debug symbols. Its crash report lists
+offsets from a few exported names. `tools/crash_site.py` finds the function
+each offset lies in, using the exe's own function table, and prints the
+texts that function uses:
+- **frame 1:** `...\source\geography\country.cpp`, the message "is trying
+  to become an exile on capitulation, but is not part of a faction.", and
+  the popup texts `NEW_EXILE_POPUP_DESC`, `NEW_EXILE_POPUP_EQ_DESC` and
+  `NEW_EXILE_POPUP_DIV_DESC`;
+- **frame 2:** the capitulation routine ("capitulates home area",
+  `BECAME_EXILE_HEADER`, "Creating peace conference");
+- **frame 3:** the country's daily update;
+- **frame 5:** `CInGameIdler::InitData`, the setup of the running game;
+- **frame 6:** the loading of the in-game interface files.
+
+The Workshop version's crash has the same exception address and the same
+function.
+
+**Who capitulates.** A temporary `on_capitulation` logger showed the order
+during setup:
+1. Belgium, to Japan (not in the faction since the author's fix, so no
+   exile);
+2. Poland, to Germany;
+3. Yugoslavia, to Germany;
+4. the Philippines, to Japan;
+5. the Dutch East Indies, to the UK;
+6. Burma, to Germany.
+
+The UK game died right after Poland's. The base game's `dwadw 3` line is
+the first of these, Belgium's.
+
+The popup is "We now host $NAMEDEF$ as a Government in Exile" (the base
+game's `government_in_exile_l_english.yml`). Only the host sees it, and the
+host is the faction leader. The UK is the only faction leader with such a
+member.
+
+**Fixing it one step at a time:**
+1. Poland, Yugoslavia and the Philippines were taken out of the history
+   faction list. The crash moved to Yugoslavia, because its own history
+   still made it an exile in the UK.
+2. That exile was moved to `on_startup`. The crash moved to the
+   Philippines: as a US colony it is in the faction anyway.
+3. The Philippines' colony status was removed. The crash moved to Burma, a
+   UK colony.
+4. Burma's colony status was removed. No crash.
+
+**Before and after:**
+- The mod's own `on_startup` (`do_on_actions.txt`) already made Poland,
+  Ethiopia, Iceland and Burma exiles in the UK and the Philippines in the
+  USA. Yugoslavia was added there.
+- With the USA as the player, the end state on 2 January 1944 is the same
+  as before the fix, except that the Philippines and Burma are no longer
+  colonies. Making them colonies again in `on_startup` was tried and
+  rejected: it pulls them back into the war, and on 3 January the
+  Philippines' exile moves to the UK.
+- Ethiopia and Iceland were exiles at game start in every run. By 2
+  January they were no longer exiles in the USA runs, before and after the
+  fix alike, but still were in the UK run. That depends on who plays, not
+  on the fix.
+
+**The author's Singapore comment** is the same mechanism. Singapore (state
+336) is the last land of British Malaya, which is in the faction. Taking it
+in history would make Malaya capitulate during setup.
 
 ### F. D-Day
 
@@ -333,6 +446,10 @@ All read-only; they never modify `mod/`.
 - `pdx.py`: a small parser for Paradox script files.
 - `check_province_modifiers.py`: finding A.
 - `check_structure.py`: the checks in section 3.
+- `crash_site.py`: shows which part of the game a crash report points to
+  (finding E). Needs `pip install pefile capstone`.
+- `start_as_country.ps1`: starts the 1944 game directly as one country
+  and reports whether it crashed (finding E).
 
 Run from the project folder: `python tools/check_province_modifiers.py`
 

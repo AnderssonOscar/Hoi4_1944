@@ -9,7 +9,7 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **71 files differ** from that version: 31 edited, 3 deleted, 37 new. Your own
+- **73 files differ** from that version: 33 edited, 3 deleted, 37 new. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -18,9 +18,13 @@ independently (see "Check it yourself").
 - **Fixes a suspected crash cause:** the Ichi-Go scripts still used provinces
   7167 and 4028 in the wrong state (you had already commented out their other
   uses at lines 165, 371 and 413 of `japan_scripted_events_mod.txt`).
+- **Fixes the UK crash:** starting as the United Kingdom crashed at once,
+  also with the Workshop version. Four Allied countries with no land
+  capitulated during the game setup, and the UK's "government in exile"
+  popup crashed the game (change 21, CHANGELOG section 15).
 - **Not play-tested.** It was tested by loading the game and its 1944 setup.
-  The reported crashes for Bulgaria's switch, Romania's 12-day decision, the
-  Volkssturm focus and the UK are **not** explained yet. (The Volkssturm
+  The reported crashes for Bulgaria's switch, Romania's 12-day decision and
+  the Volkssturm focus are **not** explained yet. (The Volkssturm
   focus was redesigned, see change 11, but its crash was never reproduced.)
 
 ## What's in this package
@@ -30,11 +34,11 @@ independently (see "Check it yourself").
 | `mod/` | the complete updated mod, ready to test or upload |
 | `patches/` | every change as a patch (29, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 68 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 71 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
-| `tools/` | the check scripts (Python 3) |
+| `tools/` | the check scripts (Python 3), and a script that starts the game as one country |
 | `docs/HANDOVER.md` | notes for whoever continues the work |
 
 ## What changed
@@ -61,6 +65,7 @@ independently (see "Check it yourself").
 | 18 | `mod/.gitattributes`: `* text=auto` becomes `* -text`, so every clone gets the files byte-for-byte (the old setting converted the line endings of 45 files on Windows). The game doesn't read this file. Not part of pull request #2 to your GitHub repository, which keeps your own setting (CHANGELOG section 13) | .gitattributes |
 | 19 | New: **the home front, 1944–45** (CHANGELOG section 14), eight events on their historical dates: women's labour service to 50 (+10,000); Rommel's forced suicide (he leaves service; only the story if your 20 July event already retired him); RAD women at the Flak (+7,500, +1.5% State AA); an air force for Vlasov (if he was recruited; a choice); the Volksopfer (a choice); the sinking of the Wilhelm Gustloff (−1,500); women and girls for the Volkssturm (+5,000, −2% stability); the class of 1929 (−25% training time, +0.25% recruitable population). **Not play-tested yet** | 5 new files `GER_homefront_*` |
 | 20 | Fix: the Courland popup now unlocks the evacuation decision itself, so the console test in CHANGELOG section 11 works; in normal play nothing changes | GER_1945_operations_events.txt |
+| 21 | Fix: **starting as the UK crashed the game** (also with the Workshop version). Poland, Yugoslavia, the Philippines and Burma control no land in 1944; as faction members or colonies at war they capitulated during the game setup, and the UK's "government in exile" popup crashed. They are no longer in the faction or colonies in history and become exiles in `on_startup` instead, as your own `on_startup` already did for most of them (the same as your Belgium fix). The Philippines and Burma are no longer colonies (CHANGELOG section 15) | ENG, USA and YUG history, do_on_actions.txt |
 
 **Your call** (decisions made for you, easy to change):
 
@@ -69,6 +74,8 @@ independently (see "Check it yourself").
 - the Australian states 870/871/873 now use the base game's manpower (you
   can restore the old files under the new names);
 - the Burma oil decisions were not added;
+- the Philippines and Burma no longer start as US and UK colonies (the UK
+  fix, change 21);
 - your GER decisions, germany focus tree and artillery techs were **not**
   merged with 1.19.3 and are unchanged (apart from the Volkssturm focus's
   unit block, change 11);
@@ -153,6 +160,8 @@ You may want to leave it out next time.
 - Germany's last reserves (six events and a decision) load cleanly and their
   effects ran inside the game without errors, but they haven't been played
   through yet (CHANGELOG section 12 has console test steps).
+- The UK fix was tested by starting the game as the UK and running it into
+  3 January 1944; it hasn't been played further.
 - `tools/check_berlin_map.py` needs Pillow and numpy (`pip install pillow numpy`).
 - 4 small issues that were already in your 1944 blocks were left alone:
   GER `wilhelm_keitel` and `joseph_goebbels`, and JAP `JAP_mitsumasa_yonai`,

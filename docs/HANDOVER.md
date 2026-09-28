@@ -26,10 +26,10 @@ mod, so every change must be easy for him to check himself.
 
 ## 3. Status (28 September 2026)
 
-- **71 files differ** from the Steam version (31 edited, 3 deleted, 37 new).
-  Every change is in `docs/CHANGELOG.md` (sections 1–14) and summarised in
+- **73 files differ** from the Steam version (33 edited, 3 deleted, 37 new).
+  Every change is in `docs/CHANGELOG.md` (sections 1–15) and summarised in
   `docs/READ-ME-FIRST.md`.
-- **`python tools/verify_update.py`:** 68 checks, all pass.
+- **`python tools/verify_update.py`:** 71 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
 - **Packages:** the tags `final-2026-09-27` to `final-2026-09-28-v11`. Each
@@ -44,7 +44,8 @@ mod, so every change must be easy for him to check himself.
   - three heavily edited files not merged with 1.19.3 (GER decisions, the
     germany focus tree, artillery techs).
 - **Open reports:** the crashes for Bulgaria's switch, Romania's 12-day
-  decision, the Volkssturm focus and the UK need crash reports from the game.
+  decision and the Volkssturm focus need crash reports from the game. The
+  UK crash is fixed (CHANGELOG section 15).
   "D-Day seems broken" needs a description.
 
 ## 4. Where everything is
@@ -92,6 +93,11 @@ mod, so every change must be easy for him to check himself.
   Germany.txt`, run the load test, read `game.log`, then restore the file
   with `git checkout`. Building levels and national spirits can be read at
   that moment; unit counts, stockpiles and manpower can't.
+- **Starting as one country:** `tools/start_as_country.ps1 -Tag ENG` starts
+  a new 1944 game directly as that country (the game's `-start_tag` option)
+  and reports whether it crashed. With `-ModFile ugc_3070639276.mod` it runs
+  the Workshop version instead. `tools/crash_site.py <crash folder>` shows
+  which part of the game a crash report points to.
 - **The 1944 order of battle** isn't read by the load test. To test it, load
   it in a temporary block with `load_oob = "GER_1944_nsb"`.
 - **In play:** the console (the key under Esc): `event <id>`,
@@ -122,7 +128,7 @@ mod, so every change must be easy for him to check himself.
 | B | Crash when Bulgaria switches sides | No cause found by reading |
 | C | Crash in Romania's 12-day capitulation decision | No cause found by reading |
 | D | Crash on completing the Volkssturm focus | No cause found by reading. The focus's unit creation was redesigned (`e6c0034`, bug-check fix `d9d7888`, CHANGELOG section 6); the crash was never reproduced |
-| E | "Playing UK crashes" | The author's comments show earlier UK crashes. May be the same as A |
+| E | "Playing UK crashes" | **Fixed** in `e578b10`: Allied countries with no land capitulated during the game setup, and the UK's "government in exile" popup crashed (CHANGELOG section 15) |
 | F | "D-Day seems broken" | Needs a description of what's broken |
 | G | (not reported) | States 870, 871, 873 were defined twice. **Fixed** in `ce4f33a` (stale copies deleted) |
 
@@ -138,12 +144,11 @@ Full evidence, confidence and the proposed fixes are in
    results in CHANGELOG.md and INVESTIGATION.md.
 2. **Test with fewer DLCs** through the Paradox launcher (untick DLCs in the
    playset), and compare `error.log` with the all-DLC result (115 lines).
-3. **Crash reports for B–E.** Launch HOI4 with `-debug`, let the game reach
+3. **Crash reports for B–D.** Launch HOI4 with `-debug`, let the game reach
    the moment that crashes (observe mode is fine), and collect the newest
    folder in `crashes\` plus `logs\error.log` and `logs\game.log`. Read them
    before touching any code.
-4. **Ask for details:** when does the UK game crash (on load, at a date, on
-   an action)? What exactly is broken about D-Day (no landing, the landing
+4. **Ask for details:** what exactly is broken about D-Day (no landing, the landing
    fails, the wrong date)?
 5. **Lower priority:** the brace mismatches in `history/countries/RAJ -
    British Raj.txt` and `SER - Serbia.txt` (INVESTIGATION.md section 3); check
@@ -172,6 +177,12 @@ Full evidence, confidence and the proposed fixes are in
   rule; the mod broke it in finding A. The same kind of mistake with
   buildings (a province outside the state) was fixed in CHANGELOG sections 7
   and 8.
+- A country that controls no land but is at war capitulates while the game
+  is still being set up. If it is in a faction (as a member, or as a
+  member's colony), it becomes an exile in the faction leader, and when
+  the leader is the player the game crashes on the exile popup. So such a
+  country must not be in a faction at the start: make it an exile in
+  `on_startup` instead (CHANGELOG section 15, check E).
 - A decision that is cancelled runs only its `cancel_effect`, not its
   `remove_effect`. This isn't documented, but 309 base-game decisions rely on
   it.
@@ -188,7 +199,8 @@ python tools/check_province_modifiers.py   # provinces outside their state, unkn
 python tools/check_structure.py            # brace balance, template slot clashes
 python tools/check_references.py           # events/ideas/characters/tags used in play
 python tools/check_berlin_map.py           # Festung Berlin's map facts (needs Pillow and numpy)
-python tools/verify_update.py              # re-checks every claim (68 checks)
+python tools/verify_update.py              # re-checks every claim (71 checks)
+python tools/crash_site.py "<crash folder>" # which part of the game a crash report points to
 ```
 
 `check_province_modifiers.py` also reports states defined by more than one

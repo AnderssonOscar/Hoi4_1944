@@ -15,13 +15,13 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | `mod/` | The mod itself. This is the folder the game loads and the one to upload to Steam. |
 | `docs/` | The documentation. Start with [READ-ME-FIRST](docs/READ-ME-FIRST.md). |
-| `tools/` | Python 3 scripts that re-check every claim. |
+| `tools/` | Python 3 scripts that re-check every claim, and a script that starts the game as one country. |
 
 | Document | What it covers |
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 68 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 71 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
@@ -31,6 +31,8 @@ yourself"). **None of the update has been play-tested yet.**
 - **HOI4 1.19.3.** With the mod loaded, the game's error.log went from 282
   lines to 115 (the base game alone gives 1).
 - **Fixes:**
+  - starting as the United Kingdom crashed the game at once (also with the
+    Steam version);
   - Ichi-Go province effects that ran in the wrong states (a suspected crash
     cause);
   - three state files defined twice;
@@ -49,7 +51,7 @@ yourself"). **None of the update has been play-tested yet.**
   - Germany's last reserves: six events and a Luftwaffe decision;
   - the home front, 1944–45: eight events, from women's labour service to
     the class of 1929.
-- **Scope:** 71 files differ from the Steam version (31 edited, 3 deleted,
+- **Scope:** 73 files differ from the Steam version (33 edited, 3 deleted,
   37 new). The author's own content was kept byte-for-byte everywhere, and
   that is checked by script.
 
@@ -73,7 +75,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **68 automated checks** (`python tools/verify_update.py`): integrity, a
+- **71 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
@@ -90,7 +92,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 68 checks
+python tools/verify_update.py    # re-runs all 71 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 
@@ -116,8 +118,10 @@ folders.
 
 - **Not play-tested yet.** Each new feature's CHANGELOG section lists console
   commands to try it.
+- **The UK crash is fixed:** it was reproduced with the Steam version, and
+  the cause is in [CHANGELOG section 15](docs/CHANGELOG.md).
 - **Crash reports not yet explained:** Bulgaria switching sides, Romania's
-  12-day decision, the Volkssturm focus (redesigned anyway) and the UK.
+  12-day decision and the Volkssturm focus (redesigned anyway).
   "D-Day seems broken" needs a description. See
   [INVESTIGATION](docs/INVESTIGATION.md).
 

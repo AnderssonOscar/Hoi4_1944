@@ -1304,6 +1304,129 @@ Sources:
 - [6] en.wikipedia, *Volkssturm*: women and girls from 12 February 1945,
   girls as young as 14 trained in using weapons.
 
+### 15. Starting as the United Kingdom crashed the game (commit `e578b10`)
+
+Reported by the author: choosing the UK crashes the game at once. He thought
+it had to do with wars, because disabling some wars once helped.
+
+**Reproduced.** The game's own start option `-start_tag=ENG` starts a new
+1944 game directly as the UK. It crashed about a second after the game
+launched, before the map appeared, every time. It crashed the same way with
+the **unchanged Steam Workshop version**, so the crash is older than this
+update. The USA, Canada, the Raj, the Soviet Union, Germany, Japan, France
+and the Netherlands all started.
+
+**Cause:**
+- On 1 January 1944 four Allied countries control no land: Poland,
+  Yugoslavia, the Philippines and British Burma. They are at war, because
+  they are in the Allied faction or are colonies of its members. So the game
+  makes them capitulate while it is still setting up the game, before the
+  interface exists.
+- A faction member that capitulates becomes a government in exile in the
+  faction leader, the UK. The game then shows the host a popup: "We now host
+  X as a Government in Exile".
+- When the UK is the player, that popup is made before the interface exists,
+  and the game crashes. With any other country as the player there is no
+  popup, so nothing happens.
+- This matches the author's observation: without the wars nobody
+  capitulates.
+- The author had hit this twice before:
+  - `#add_to_faction = BEL #crashes` in the UK history;
+  - `JAP = { transfer_state = 336 } # ... otherwise uk crashes` in
+    `do_on_actions.txt`. State 336 is Singapore, the last land of British
+    Malaya, which is in the faction.
+
+**How it was found** (details in INVESTIGATION.md, section E):
+1. **Bisection.** Mod folders were moved aside one group at a time, so the
+   game used its own files instead. Only the country history files mattered.
+   Among them, Germany's and Japan's files were each enough on their own:
+   each puts the UK at war.
+2. **The crash report.** `tools/crash_site.py` maps the report's stack to
+   the game's own source-file names and texts. The crashing function is in
+   `geography/country.cpp`. It uses the text "is trying to become an exile on
+   capitulation" and the `NEW_EXILE_POPUP` texts, and it is called from the
+   game setup (`CInGameIdler::InitData`).
+3. **Who capitulates.** A temporary logger (`on_capitulation`) showed who
+   capitulates during setup, in this order: Belgium, Poland, Yugoslavia, the
+   Philippines, the Dutch East Indies, Burma. The UK game died right after
+   Poland.
+4. **One at a time.** Taking the countries out one by one moved the crash to
+   the next one (Yugoslavia, then the Philippines, then Burma), until it was
+   gone.
+
+**Fix (4 files), the same way as the author's Belgium fix:**
+
+| File | Change |
+|---|---|
+| `history/countries/ENG - Britain.txt` | Poland, Yugoslavia and the Philippines are no longer added to the Allied faction; Burma is no longer made a UK colony (lines turned into comments, with the reason) |
+| `history/countries/USA - USA.txt` | the Philippines is no longer made a US colony |
+| `history/countries/YUG - Yugoslavia.txt` | its `become_exiled_in` (UK, legitimacy 30) is turned into a comment... |
+| `common/on_actions/do_on_actions.txt` | ...and moved here, into `on_startup`, which runs after the interface exists. It already made Poland and Burma exiles in the UK and the Philippines in the USA |
+
+The Dutch East Indies also capitulate during setup while in the faction, but
+they don't become an exile, cause no popup and were left as they were.
+
+**Result.** The same logger recorded each country at game start and on
+2 January 1944, before and after the fix. The USA was the player, since
+the UK could not be played before the fix:
+
+| Country | Before | After |
+|---|---|---|
+| Poland, Yugoslavia | exile in the UK, Allied faction | the same |
+| Burma | exile in the UK, Allied faction, UK colony | exile in the UK, Allied faction, **not a colony** |
+| Philippines | exile in the USA, Allied faction, US colony | exile in the USA, Allied faction, **not a colony** |
+| Ethiopia, Iceland | exiles in the UK at game start | the same |
+| Belgium, Dutch East Indies | capitulated, not exiles | the same |
+
+**One difference, your call:** the Philippines and Burma are no longer
+colonies.
+- **Why not make them colonies again in `on_startup`?** That was tried. It
+  pulls them back into the war, they capitulate again on 3 January, and the
+  Philippines' exile moves from the USA to the UK.
+- **Does anything depend on it?** Nothing in the mod checks whether they are
+  Allied colonies. Only Japan's focuses check `has_subject` for Japan's own
+  puppets.
+- **Not tested:** what the difference means later, for example when they are
+  liberated.
+
+**Also seen, unchanged by the fix:** the Greek government ("Kingdom of
+Greece", created by the author's scripts) holds no land either. It
+capitulates on 3 January 1944 in every game, before and after the fix, during
+normal play. In the UK game that popup caused no crash.
+
+**Checked:**
+- **The UK starts** and runs into 3 January 1944 (`-start_speed=5`). Germany,
+  the Soviet Union, Japan, France, the Netherlands and the USA start too.
+- **The Workshop version still crashes** the same way with the same test
+  (the control).
+- **Check E** in verify_update.py:
+  - Poland, Yugoslavia, the Philippines and Belgium are not in the history
+    faction list;
+  - Burma and the Philippines are not colonies in history;
+  - Yugoslavia is not an exile in history;
+  - `on_startup` has all six exiles and the Singapore transfer.
+- **Check E was calibrated.** Four errors were planted one at a time, and
+  each made it fail:
+  - Poland back in the faction;
+  - Yugoslavia's history exile back;
+  - Burma a colony again;
+  - Yugoslavia missing from `on_startup`.
+- **Load test:** error.log identical to log 15, except for one line number
+  (`game-logs/17-after-uk-crash-fix_error.log`). The UK file is one comment
+  line longer, so a warning that was already there moved from line 2051 to
+  line 2052.
+
+**Test it yourself:**
+- In the launcher: start the 1944 game as the United Kingdom.
+- Or from the project folder:
+  `powershell -ExecutionPolicy Bypass -File tools\start_as_country.ps1 -Tag ENG`
+  (it restores the launcher's playset afterwards). Add
+  `-ModFile ugc_3070639276.mod` to run the Workshop version, which crashes.
+
+**A rule for the future** (also in HANDOVER.md): a country that controls no
+land at the game start must not be at war inside a faction, whether as a
+member or as a member's colony. Make it an exile in `on_startup` instead.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -1329,7 +1452,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-71 files differ from the version on Steam: 31 edited, 3 deleted, 37 new (full list:
+73 files differ from the version on Steam: 33 edited, 3 deleted, 37 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

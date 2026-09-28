@@ -129,6 +129,7 @@ expected |= {("M", "mod/.gitattributes")}  # no line-ending conversion in clones
 expected |= {("A", f"mod/{f}") for f in ("common/ideas/GER_homefront_ideas.txt", "common/on_actions/GER_homefront_on_actions.txt",
              "common/scripted_effects/GER_homefront_effects.txt", "events/GER_homefront_events.txt",
              "localisation/english/GER_homefront_l_english.yml")}  # the home front, 1944-45 (section 14)
+expected |= {("M", "mod/common/on_actions/do_on_actions.txt"), ("M", "mod/history/countries/YUG - Yugoslavia.txt")}  # UK start fix (section 15)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -171,6 +172,15 @@ for f in ("mod/history/units/GER_1944.txt", "mod/history/units/GER_1944_nsb.txt"
           "mod/common/units/names_divisions/GER_names_divisions.txt", "mod/events/ss_recruitment_event.txt"):
     allowed[f] = lambda l: False  # Wiking + Nordland: pure additions, nothing of the author's removed
 allowed["mod/.gitattributes"] = lambda l: l in ("# Auto detect text files and perform LF normalization", "* text=auto")
+UK_FIX_REMOVED = {  # the UK start fix (section 15): these lines were turned into comments, nothing else removed
+    "mod/history/countries/ENG - Britain.txt": {"add_to_faction = PHI", "add_to_faction = POL", "add_to_faction = YUG", "\tset_autonomy = {",
+                                                "\t\ttarget = BRM", "\t\tautonomous_state = autonomy_colony", "\t\tfreedom_level = 0.35", "\t}"},
+    "mod/history/countries/USA - USA.txt": {"set_autonomy = {", "\ttarget = PHI", "\tautonomous_state =  autonomy_colony", "}"},
+    "mod/history/countries/YUG - Yugoslavia.txt": {"\tbecome_exiled_in = { target = ENG legitimacy = 30 }"},
+    "mod/common/on_actions/do_on_actions.txt": set(),
+}
+for _f, _ok in UK_FIX_REMOVED.items():
+    allowed[_f] = (lambda prev, ok: lambda l: prev(l) or l in ok)(allowed.get(_f, lambda l: False), _ok)
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
@@ -643,6 +653,27 @@ check("H  The home front, 1944-45: 8 events, each once from its historical date 
       and hf_loc.startswith(b"\xef\xbb\xbfl_english:\r\n") and len(hf_keys) == 33 and hf_need == hf_keys
       and "immediate = {\r\n\t\thidden_effect = { set_country_flag = GER_1945_courland_offered }" in op["ev"],
       str([l for l, (a, b, c) in zip(hf_ifs, HF_WINDOWS) if a not in l]))
+
+def autonomy_targets(nodes):
+    return [c.value for n, _ in pdx.walk(nodes) if n.key == "set_autonomy" and n.is_block() for c in n.value if c.key == "target"]
+uk_eng = pdx.parse_file("mod/history/countries/ENG - Britain.txt")[0]
+uk_faction = [n.value for n in uk_eng if n.key == "add_to_faction"]
+uk_doa = pdx.parse_file("mod/common/on_actions/do_on_actions.txt")[0]
+uk_startup = [(parents[-1].key, canon_op(n)) for n, parents in pdx.walk(uk_doa)
+              if n.key in ("become_exiled_in", "transfer_state") and [p.key for p in parents[:3]] == ["on_actions", "on_startup", "effect"]]
+check("E  UK start: the countries that have no land on 1 Jan 1944 (Poland, Yugoslavia, the Philippines, Belgium) are not put in the "
+      "Allied faction in history, Burma and the Philippines are not made colonies there, Yugoslavia is not made an exile there; "
+      "on_startup makes Poland, Yugoslavia and Burma exiles in the UK (legitimacy 50, 30, 50) and the Philippines in the USA (50), "
+      "and still moves Singapore to Japan",
+      not {"POL", "YUG", "PHI", "BEL"} & set(uk_faction) and {"ENG", "USA", "RAJ", "MAL"} <= set(uk_faction)
+      and "BRM" not in autonomy_targets(uk_eng)
+      and "PHI" not in autonomy_targets(pdx.parse_file("mod/history/countries/USA - USA.txt")[0])
+      and not [n for n, _ in pdx.walk(pdx.parse_file("mod/history/countries/YUG - Yugoslavia.txt")[0]) if n.key == "become_exiled_in"]
+      and {("POL", "become_exiled_in={target=ENG legitimacy=50}"), ("YUG", "become_exiled_in={target=ENG legitimacy=30}"),
+           ("BRM", "become_exiled_in={target=ENG legitimacy=50}"), ("PHI", "become_exiled_in={target=USA legitimacy=50}"),
+           ("ETH", "become_exiled_in={target=ENG legitimacy=60}"), ("ICE", "become_exiled_in={target=ENG legitimacy=65}"),
+           ("JAP", "transfer_state=336")} == set(uk_startup),
+      f"faction: {uk_faction}; on_startup: {uk_startup}")
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)
