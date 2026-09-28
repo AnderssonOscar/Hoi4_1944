@@ -1,0 +1,166 @@
+###########################
+# 1944 - Downfall: Festung Berlin event chain (docs/CHANGELOG.md section 9)
+# Fired from common/on_actions/GER_festung_berlin_on_actions.txt; effects in
+# common/scripted_effects/GER_festung_berlin_effects.txt.
+###########################
+add_namespace = festung_berlin
+
+# 1. The enemy reaches the states around Brandenburg
+country_event = {
+	id = festung_berlin.1
+	title = festung_berlin.1.t
+	desc = festung_berlin.1.d
+	picture = GFX_report_event_generic_defensive_preparations
+
+	is_triggered_only = yes
+
+	option = {
+		name = festung_berlin.1.a
+		custom_effect_tooltip = festung_berlin.1.a.tt
+		hidden_effect = {
+			GER_festung_berlin_forts_step_1 = yes
+			country_event = { id = festung_berlin.10 days = 21 }
+			country_event = { id = festung_berlin.11 days = 42 }
+		}
+	}
+}
+
+# Fortification step 2 (21 days after event 1)
+country_event = {
+	id = festung_berlin.10
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		GER_festung_berlin_forts_step_2 = yes
+	}
+}
+
+# Fortification step 3 (42 days after event 1)
+country_event = {
+	id = festung_berlin.11
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		GER_festung_berlin_forts_step_3 = yes
+	}
+}
+
+# 2. The Seelow Heights
+country_event = {
+	id = festung_berlin.2
+	title = festung_berlin.2.t
+	desc = festung_berlin.2.d
+	picture = GFX_report_event_bunker_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = festung_berlin.2.a
+		custom_effect_tooltip = festung_berlin.2.a.tt
+		hidden_effect = {
+			GER_seelow_forts_step_1 = yes
+			country_event = { id = festung_berlin.12 days = 21 }
+			if = {
+				limit = { controls_province = 9496 }
+				64 = { add_province_modifier = { static_modifiers = { GER_seelow_heights_modifier } province = { id = 9496 } } }
+				set_country_flag = GER_seelow_modifier_added
+			}
+		}
+	}
+}
+
+# Seelow step 2 (21 days after event 2)
+country_event = {
+	id = festung_berlin.12
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		GER_seelow_forts_step_2 = yes
+	}
+}
+
+# 3. Clausewitz: Seelow has fallen or the enemy is next to Berlin
+country_event = {
+	id = festung_berlin.3
+	title = festung_berlin.3.t
+	desc = festung_berlin.3.d
+	picture = GFX_report_event_german_reichstag_bombed
+
+	is_triggered_only = yes
+
+	option = {
+		name = festung_berlin.3.a
+		custom_effect_tooltip = festung_berlin.3.a.tt
+		hidden_effect = {
+			GER_festung_berlin_emergency_units = yes
+			64 = { add_dynamic_modifier = { modifier = GER_battle_for_berlin } }
+			if = {
+				limit = {
+					is_ai = no
+					NOT = { has_completed_focus = GER_festung_cities }
+					controls_province = 6521
+				}
+				64 = { add_province_modifier = { static_modifiers = { GER_festung_berlin_city_modifier } province = { id = 6521 } } }
+				set_country_flag = GER_festung_berlin_city_added
+			}
+			every_country = {
+				limit = { OR = { tag = ROOT has_war_with = ROOT } }
+				news_event = { id = festung_berlin.20 days = 1 }
+			}
+			country_event = { id = festung_berlin.4 days = 3 }
+		}
+	}
+}
+
+# 4. Weidling takes command (3 days after Clausewitz, if Berlin still holds)
+country_event = {
+	id = festung_berlin.4
+	title = festung_berlin.4.t
+	desc = festung_berlin.4.d
+	picture = GFX_report_event_german_inspect_troops
+
+	is_triggered_only = yes
+
+	trigger = {
+		controls_province = 6521
+	}
+
+	option = {
+		name = festung_berlin.4.a
+		if = {
+			limit = {
+				has_character = GER_helmuth_weidling
+				GER_helmuth_weidling = { NOT = { has_trait = urban_assault_specialist } }
+			}
+			GER_helmuth_weidling = { add_unit_leader_trait = urban_assault_specialist }
+		}
+	}
+}
+
+# 5. Berlin is encircled (story only)
+country_event = {
+	id = festung_berlin.5
+	title = festung_berlin.5.t
+	desc = festung_berlin.5.d
+	picture = GFX_report_event_generic_ruins
+
+	is_triggered_only = yes
+
+	option = {
+		name = festung_berlin.5.a
+	}
+}
+
+# World news, 1 day after Clausewitz
+news_event = {
+	id = festung_berlin.20
+	title = festung_berlin.20.t
+	desc = festung_berlin.20.d
+	picture = GFX_news_event_german_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = festung_berlin.20.a
+	}
+}

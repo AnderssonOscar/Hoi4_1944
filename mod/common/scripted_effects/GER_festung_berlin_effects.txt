@@ -1,0 +1,243 @@
+###########################
+# 1944 - Downfall: Festung Berlin (see docs/CHANGELOG.md section 9)
+#
+# Fort top-ups and emergency units for events/GER_festung_berlin_events.txt.
+# Country scope: ROOT is Germany.
+#
+# Forts are only ever topped up to a target level, never added on top: each
+# province checks its current bunker level once and adds exactly the
+# difference. Forts the author's Festung Cities focus or Oder-Neisse Defence
+# decision already built are therefore not stacked on, and nothing goes above
+# the target. Only provinces Germany still controls are built.
+#   Berlin (6521)                               -> 2, 4, 5 (steps 1-3)
+#   around Berlin (375 3499 9428 11444 11505)   -> 1, 2    (steps 1-2)
+#   Seelow (9496)                               -> 2, 4    (Seelow steps 1-2)
+# 5 in Berlin is the author's own Festung level. AI armies in 'careful' mode
+# do not attack provinces with fort level 5 or more, so nothing here goes higher.
+###########################
+
+# Berlin Defence Area, step 1: Berlin to 2, the provinces around it to 1.
+GER_festung_berlin_forts_step_1 = {
+	64 = {
+		if = {
+			limit = { ROOT = { controls_province = 6521 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 2 province = 6521 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 1 province = 6521 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 375 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 375 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 1 province = 375 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 3499 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 3499 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 1 province = 3499 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 9428 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 9428 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 1 province = 9428 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 11444 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 11444 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 1 province = 11444 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 11505 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 11505 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 1 province = 11505 instant_build = yes }
+			}
+		}
+	}
+}
+
+# Step 2 (21 days later): Berlin to 4, the provinces around it to 2.
+GER_festung_berlin_forts_step_2 = {
+	64 = {
+		if = {
+			limit = { ROOT = { controls_province = 6521 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 4 province = 6521 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 3 province = 6521 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 3 } }
+				add_building_construction = { type = bunker level = 2 province = 6521 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 4 } }
+				add_building_construction = { type = bunker level = 1 province = 6521 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 375 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 375 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 2 province = 375 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 375 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 1 province = 375 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 3499 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 3499 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 2 province = 3499 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 3499 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 1 province = 3499 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 9428 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 9428 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 2 province = 9428 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 9428 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 1 province = 9428 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 11444 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 11444 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 2 province = 11444 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 11444 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 1 province = 11444 instant_build = yes }
+			}
+		}
+		if = {
+			limit = { ROOT = { controls_province = 11505 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 11505 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 2 province = 11505 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 11505 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 1 province = 11505 instant_build = yes }
+			}
+		}
+	}
+}
+
+# Step 3 (42 days after step 1): Berlin to 5.
+GER_festung_berlin_forts_step_3 = {
+	64 = {
+		if = {
+			limit = { ROOT = { controls_province = 6521 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 5 province = 6521 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 4 province = 6521 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 3 } }
+				add_building_construction = { type = bunker level = 3 province = 6521 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 4 } }
+				add_building_construction = { type = bunker level = 2 province = 6521 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 6521 } building = bunker level < 5 } }
+				add_building_construction = { type = bunker level = 1 province = 6521 instant_build = yes }
+			}
+		}
+	}
+}
+
+# Seelow Heights, step 1: Seelow to 2.
+GER_seelow_forts_step_1 = {
+	64 = {
+		if = {
+			limit = { ROOT = { controls_province = 9496 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 9496 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 2 province = 9496 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 9496 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 1 province = 9496 instant_build = yes }
+			}
+		}
+	}
+}
+
+# Seelow Heights, step 2 (21 days later): Seelow to 4.
+GER_seelow_forts_step_2 = {
+	64 = {
+		if = {
+			limit = { ROOT = { controls_province = 9496 } }
+			if = {
+				limit = { any_province_building_level = { province = { id = 9496 } building = bunker level < 1 } }
+				add_building_construction = { type = bunker level = 4 province = 9496 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 9496 } building = bunker level < 2 } }
+				add_building_construction = { type = bunker level = 3 province = 9496 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 9496 } building = bunker level < 3 } }
+				add_building_construction = { type = bunker level = 2 province = 9496 instant_build = yes }
+			}
+			else_if = {
+				limit = { any_province_building_level = { province = { id = 9496 } building = bunker level < 4 } }
+				add_building_construction = { type = bunker level = 1 province = 9496 instant_build = yes }
+			}
+		}
+	}
+}
+
+# Clausewitz: three weak emergency divisions in Berlin (Volkssturm template:
+# 5 militia battalions + engineers; untrained; 50-75% equipped).
+GER_festung_berlin_emergency_units = {
+	GER_volkssturm_ensure_template = yes
+	64 = {
+		create_unit = { # the Berlin police
+			division = "name = \"Polizei-Kampfgruppe Berlin\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+			owner = ROOT
+			prioritize_location = 6521
+		}
+		create_unit = { # other emergency units
+			division = "name = \"Alarmeinheiten Berlin\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.60 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+			owner = ROOT
+			prioritize_location = 6521
+		}
+		create_unit = { # the Hitler Youth
+			division = "name = \"Hitlerjugend-Kampfgruppe Berlin\" division_template = \"Volkssturm\" start_experience_factor = 0 start_equipment_factor = 0.50 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }"
+			owner = ROOT
+			prioritize_location = 6521
+		}
+	}
+}
