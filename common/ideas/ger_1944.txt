@@ -117,6 +117,7 @@ ideas = {
 		picture = ETH_conservative_high_command
 		modifier = {
 			consumer_goods_factor = -0.05
+			factory_energy_consumption  = -0.25
 			}
 		}
 
@@ -130,8 +131,8 @@ ideas = {
 	GER_protect_industry = {
 		picture = GFX_idea_man_five_year_plan_air
 		modifier = {
-				static_anti_air_hit_chance_factor = 0.25
-				static_anti_air_damage_factor = 0.25
+				#static_anti_air_hit_chance_factor = 0.25
+				#static_anti_air_damage_factor = 0.25
 
 				repair_speed_industrial_complex_factor = 0.25
 				repair_speed_arms_factory_factor = 0.25

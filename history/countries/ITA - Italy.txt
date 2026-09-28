@@ -1791,8 +1791,10 @@ if = {
 	retire_character = ITA_giovanni_messe 
 	retire_character = ITA_ugo_cavallero
 	retire_character = ITA_alfredo_guzzoni
+	retire_character = ITA_sebastiano_visconti_prasca
+	retire_character = ITA_giovanni_messe # royalist
+	retire_character = ITA_ettore_baldassarre
 
-	
 	remove_ideas = {
 		ITA_stockpiling_fuel
 		ITA_battaglia_per_la_terra

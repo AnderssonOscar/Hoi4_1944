@@ -765,7 +765,7 @@ set_convoys = 40
 		closed_economy
 
 		#ministers
-		CHI_bo_yibo
+		#CHI_bo_yibo
 		CHI_xiao_yisu
 		CHI_chen_shaokuan
 		jiangnan_shipyard_group
@@ -1023,8 +1023,8 @@ if = {
 		#laws
 	#	war_economy
 		tot_economic_mobilisation
-		#service_by_requirement
-		extensive_conscription
+		service_by_requirement
+		#extensive_conscription
 		low_war_casualties
 		mod_boost
 		limited_exports
@@ -1079,6 +1079,41 @@ if = {
 		complete_national_focus = CHI_scorched_earth_tactics
 
 		complete_national_focus = CHI_construction_battalions
+	}
+
+	IF = {
+		limit = {
+			has_dlc = "No Compromise, No Surrender"
+		}	
+		complete_national_focus = CHI_china_reborn
+		complete_national_focus = CHI_revise_the_national_curriculum
+		complete_national_focus = CHI_empower_the_bureau_of_investigation_and_statistics
+
+		complete_national_focus = CHI_the_hump
+		complete_national_focus = CHI_scout_for_air_experts
+		complete_national_focus = CHI_international_squadron
+		complete_national_focus = CHI_allocate_lend_lease
+
+		complete_national_focus = CHI_bog_them_down_in_the_centre
+
+		complete_national_focus = CHI_rely_on_locals
+		complete_national_focus = CHI_focus_on_meritocratic_principles
+
+		complete_national_focus = CHI_rocaf
+
+		unlock_national_focus = CHI_the_three_year_plan
+		unlock_national_focus = CHI_find_foreign_financiers
+		unlock_national_focus = CHI_monopolise_resource_extraction
+
+		complete_national_focus = CHI_introduce_the_baojia_system
+		complete_national_focus = CHI_inspect_the_troops
+
+		complete_national_focus = CHI_from_many_to_one
+		complete_national_focus = CHI_salvage_enemy_equipment
+		complete_national_focus = CHI_train_for_asymmetry
+		complete_national_focus = CHI_utilise_the_terrain
+		complete_national_focus = CHI_empower_those_that_have_lost
+
 	}
 
 

@@ -31,7 +31,7 @@ units= {
 		task_force = {					
 			name = "Carrier Division 1"			# CO: Halsey			
 			location = 9814 # Los Angeles
-			ship = { name = "USS Lexington" definition = carrier equipment = { carrier_1 = { amount = 1 owner = USA } } 
+			ship = { name = "USS Bunker Hill" definition = carrier equipment = { carrier_1 = { amount = 1 owner = USA } } 
 				
 			}
 			ship = { name = "USS Saratoga" definition = carrier equipment = { carrier_1 = { amount = 1 owner = USA } } 

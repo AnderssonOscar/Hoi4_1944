@@ -291,7 +291,7 @@ air_wings = {
 		small_plane_airframe_2 = { owner = "USA" amount = 100 version_name = "P-51 Mustang A" }	
 	}
 
-	"USS Lexington" = {
+	"USS Bunker Hill" = {
 		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
 		cv_small_plane_airframe_2 =  { owner = "USA" amount = 10 version_name = "F6F Hellcat" }	
 		cv_small_plane_cas_airframe_2 =  { owner = "USA" amount = 10 version_name = "SB2C Helldiver" }

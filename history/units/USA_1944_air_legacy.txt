@@ -118,7 +118,7 @@ air_wings = {
 	}
 
 
-	"USS Lexington" = {
+	"USS Bunker Hill" = {
 		cv_fighter_equipment_1 =  { owner = "USA" amount = 10 }				# F3F Grumman
 		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator
 		cv_CAS_equipment_1 =  { owner = "USA" amount = 10 }					# SB2U Vindicator

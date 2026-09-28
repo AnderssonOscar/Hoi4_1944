@@ -291,7 +291,7 @@ economy_decisions = {
 
 		complete_effect = {
 			add_equipment_to_stockpile = {
-				type = train_equipment
+				type = train_equipment_1
 				amount = 30
 			}
 			add_stability = -0.02 #1944
@@ -1940,7 +1940,6 @@ diversify_special_forces = {
 		allowed = {
 		has_dlc = "Arms Against Tyranny"
 		NOT = {
-			OR = {
 				tag = ENG #has a focus
 				tag = USA #has a focus
 				tag = SOV #has a focus
@@ -1948,7 +1947,6 @@ diversify_special_forces = {
 						tag = AST #has a focus
 						tag = FRA #has a focus
 					tag = GER #has a focus
-					}
 				} 
 		}
 
@@ -1963,13 +1961,11 @@ diversify_special_forces = {
 					has_dlc = "Trial of Allegiance"
 				}
 					NOT = {
-						OR = {
 							tag = CHL #has a focus
 							tag = BRA #has a focus
 							tag = ARG #has a focus
 							tag = URG #has a focus
 							tag = PAR #has a focus
-						}
 					}
 				}
 			IF = {
@@ -1977,11 +1973,9 @@ diversify_special_forces = {
             		has_dlc = "Graveyard of Empires"
 				}
 				NOT = {
-					OR = {
 						tag = PER #has a focus
 						tag = IRQ #has a focus
 						tag = RAJ #has a focus
-					}
 				}
 			}
 			IF = {
@@ -1989,13 +1983,26 @@ diversify_special_forces = {
 					has_dlc = "Gotterdammerung"
 				}
 					NOT = {
-						OR = {
 							tag = BEL #has a focus
 							tag = COG #has a focus
 						}
 					}
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				NOT = {
+					tag = PHI #has a focus
+				}
 			}
-			PHI_SEA = no
+			IF = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+				}
+				NOT = {
+					tag = INS #has a focus
+				}
+			}
 	}
 
 	fire_only_once = yes
@@ -2030,10 +2037,14 @@ diversify_special_forces = {
 			modifier = {
 				factor = 0
 				NOT = {
-					has_tech = special_forces_mountaineers
-					has_tech = special_forces_marines
-					has_tech = special_forces_paratroopers
-					has_tech = special_forces_rangers
+					has_doctrine = mountaineers_1
+					has_doctrine = mountaineers_2
+					has_doctrine = marines_1
+					has_doctrine = marines_2
+					has_doctrine = paratroopers_1
+					has_doctrine = paratroopers_2
+					has_doctrine = rangers_1
+					has_doctrine = rangers_2
 				}
 			}
 	}

@@ -37,9 +37,6 @@ state = {
 		1943.12.30 = {
 			controller = JAP
 			owner = JAP
-			AST = {
-				set_province_controller = 1546 #ADD LATER 1944
-
 		}
 
 	}
