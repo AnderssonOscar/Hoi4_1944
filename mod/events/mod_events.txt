@@ -394,7 +394,8 @@ country_event = {
 			add_manpower = -2500 
 			add_political_power = -25
 		}
-		6 = { 
+		# Fix (docs/CHANGELOG.md section 8): Antwerp (6598) is in state 977 (Antwerp), not 6 (Flanders)
+		977 = { 
 			remove_building = {
 				type = naval_base
 				province = 6598
