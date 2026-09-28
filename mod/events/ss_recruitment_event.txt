@@ -27,6 +27,7 @@ country_event = {
 		if = {
 			limit = {
 				has_country_flag = SS_recruitment_NOR # player has already selected historical recruitment in Norway
+				has_start_date < 1944.1.1 # a 1944 game already has Wiking in its order of battle (docs/CHANGELOG.md section 10)
 			}
 			SS_set_templates = yes
 			if = {
@@ -80,6 +81,10 @@ country_event = {
 					}
 				}
 			}
+		}
+		else_if = { # 1944 start: Wiking already exists, so the volunteers join the SS as reinforcements
+			limit = { has_country_flag = SS_recruitment_NOR }
+			add_manpower = 5000
 		}
 		if = {
 			limit = { not = { has_country_flag = SS_recruitment_NOR } }
@@ -190,6 +195,7 @@ country_event = {
 		if = {
 			limit = {
 				has_country_flag = SS_recruitment_DEN # player has already selected historical recruitment in Norway
+				has_start_date < 1944.1.1 # a 1944 game already has Wiking in its order of battle (docs/CHANGELOG.md section 10)
 			}
 			SS_set_templates = yes
 			if = {
@@ -243,6 +249,10 @@ country_event = {
 					}
 				}
 			}
+		}
+		else_if = { # 1944 start: Wiking already exists, so the volunteers join the SS as reinforcements
+			limit = { has_country_flag = SS_recruitment_DEN }
+			add_manpower = 5000
 		}
 		if = {
 			limit = { not = { has_country_flag = SS_recruitment_DEN } }

@@ -187,6 +187,36 @@ division_template = {
 	priority = 1
 }
 
+# Added for 11. SS 'Nordland' (docs/CHANGELOG.md section 10): the author's Panzergrenadier
+# template with the SS division names and SS priority.
+division_template = {
+	name = "SS-Panzergrenadier-Division" 
+	division_names_group = GER_SS_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+	   	motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		mot_artillery_brigade = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		mechanized = { x = 1 y = 1 }
+		mechanized = { x = 1 y = 2 }
+		mechanized = { x = 2 y = 0 }
+    	mechanized = { x = 2 y = 1 }
+		mechanized = { x = 2 y = 2 }
+		medium_tank_destroyer_brigade = { x = 3 y = 0 }
+	}
+	support = {
+    	mot_recon = { x = 0 y = 0 }
+	 	engineer = { x = 0 y = 1 }
+    	#artillery = { x = 0 y = 2 }
+		rocket_artillery = { x = 0 y = 2 }
+		#field_hospital = { x = 0 y = 3 }
+		#logistics_company = { x = 0 y = 4 }		
+	}
+	priority = 2
+}
+
 division_template = {
 	name = "Elite-Panzergrenadier" 
 	division_names_group = GER_MEC_01
@@ -597,6 +627,37 @@ units = {
 		start_experience_factor = 0.59
 		start_equipment_factor = 0.81
 		start_manpower_factor = 0.96
+	}
+
+	division= {	
+
+		division_name = { is_name_ordered = yes name_order = 5 }
+		location = 11424 #cherkasy Wiking (added: docs/CHANGELOG.md section 10)
+		division_template = "SS Panzer-Division"
+		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
+		force_equipment_variants = { anti_air_equipment_3 = { owner = "GER" } }
+		force_equipment_variants = { artillery_equipment_3 = { owner = "GER" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
+		force_equipment_variants = { light_tank_artillery_chassis_2 = { owner = GER version_name = "Wespe" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
+		force_equipment_variants = { medium_tank_chassis_2 = { owner = GER version_name = "Panzer IV Ausf. H" } }
+		start_experience_factor = 1.0
+		start_equipment_factor = 0.9
+		start_manpower_factor = 0.95
+	}
+
+	division= {	
+
+		division_name = { is_name_ordered = yes name_order = 11 }
+		location = 11080 #Leningrad front Nordland (added: docs/CHANGELOG.md section 10)
+		division_template = "SS-Panzergrenadier-Division"
+		force_equipment_variants = { infantry_equipment_3 = { owner = "GER" } }
+		force_equipment_variants = { artillery_equipment_2 = { owner = "GER" } }
+		force_equipment_variants = { medium_tank_destroyer_chassis_2 = { owner = GER version_name = "Sturmgeschutz III" } }
+		force_equipment_variants = { mechanized_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 1.0
+		start_equipment_factor = 0.95
+		start_manpower_factor = 1.0
 	}
 
 
