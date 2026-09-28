@@ -1129,6 +1129,32 @@ So building on the Steam version loses none of the author's work on GitHub.
 | `9c950e1` | `79d97af` | 1945 operations: correct event texts against the sources |
 | `70d287a` | `f2ba254` | Add Germany's last reserves: six events and a decision |
 
+**Merged, 28 September.** The author merged pull request #2 himself
+(merge commit `dd65ca7` on his `main`).
+- **His own commit first:** before merging, he pushed his own commit `79fa453`
+  "fix" and merged his `main` into the branch.
+- **What it contained:** his July work, identical to the Steam version
+  except `descriptor.mod` (`1.17.5.2` there).
+- **The result is exactly what was tested:** his merged `main` equals the
+  pull request's content file by file, ignoring only line endings, with
+  `supported_version="1.19.3.0"`.
+
+**Pull request #3** brings the two later changes (section 14 and the
+Courland popup fix) the same way, on top of his merged `main`:
+
+| This package | Pull request #3 | Change |
+|---|---|---|
+| `99c2aa4` | `90c19a8` | Add the home front, 1944–45: eight events for Germany |
+| `96f4a17` | `bb7c0aa` | Courland: the popup itself unlocks the evacuation decision |
+
+- **Identical files and changes:** after each commit, the files equal this
+  package at the same step (ignoring CR at line ends), and the line changes
+  match.
+- **README:** `58b8bce` updates the README (the commit table, links to tag
+  `final-2026-09-28-v11`).
+- **In the game:** a fresh default clone of the branch loads with an
+  identical error.log (`game-logs/16-pull-request-3-clone_error.log`).
+
 **The line-ending fix (`mod/.gitattributes`, this package only; not part of
 pull request #2):**
 - The author's `mod/.gitattributes` was the GitHub Desktop template
