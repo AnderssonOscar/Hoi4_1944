@@ -273,7 +273,8 @@ special_projects = {
 		remove_effect = {
 
 			if = {	limit = {	GER = { controls_province = 6282 }	} #stettin
-			62 = { 
+			# Fix (docs/CHANGELOG.md section 8): Stettin (6282) is in state 63 (Hinterpommern), not 62
+			63 = { 
 				add_building_construction = {
 						type = bunker
 						level = 5
