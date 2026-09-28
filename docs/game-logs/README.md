@@ -17,3 +17,4 @@ history runs at startup). Compare them with any diff tool.
 | 9-after-stettin-antwerp-fixes_error.log | after the Stettin and Antwerp fixes (e13d45d, 5fb4a0b); identical to 5 | 115 |
 | 10-after-festung-berlin_error.log | after Festung Berlin (1fa3c2c); identical to 5 | 115 |
 | 11-after-wiking-nordland_error.log | after adding Wiking and Nordland (00807c5); identical to 5 (this stage does not read the 1944 order of battle; see CHANGELOG section 10 for the load_oob test) | 115 |
+| 12-after-1945-operations_error.log | after the four 1945 operations (97fad47, texts corrected in 9c950e1); identical to 5 | 115 |

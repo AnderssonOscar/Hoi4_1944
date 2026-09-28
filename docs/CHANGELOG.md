@@ -626,6 +626,231 @@ Sources:
 - [4] en.wikipedia, *11th SS Volunteer Panzergrenadier Division Nordland*:
   on the Eastern Front from autumn 1943; action near Leningrad; Berlin 1945.
 
+### 11. Four 1945 operations: Sonnenwende, Spring Awakening, Courland, Sailors to the Front (commits `97fad47`, `9c950e1`)
+
+Asked for by Oscar:
+- **Operation Sonnenwende** and **Operation Spring Awakening**, offered by a
+  popup when the front makes them relevant. Fuel and equipment are set aside
+  while the attack is prepared and handed back the moment it starts ("not a
+  huge amount").
+- **Courland:** an automatic evacuation, because moving the trapped
+  divisions by hand is tedious. The texts must explain what is required.
+- **Sailors to the Front:** poorly equipped naval infantry with no
+  experience that does not count towards the special forces limit, a few
+  transport ships lost, and about 1,000 manpower.
+- **50 political power each** (Oscar's decision).
+
+Eight **new** files; nothing of the author's was changed.
+
+**How the two operations work** (Oscar's design):
+1. A popup appears once, when the front makes the operation relevant.
+   Accepting only makes a decision available; declining costs nothing.
+2. Taking the decision costs 50 PP and takes the supplies out of the
+   stockpile for the preparation time.
+3. When the preparation ends, everything set aside comes back at once and
+   the bonus starts. If the key place falls first, the operation is called
+   off: everything comes back, and there is no bonus.
+
+This models something real: before Sonnenwende "only three days' ammunition
+and fuel were immediately available" [1]. Supplies committed to an attack
+can't be used elsewhere until it starts.
+
+| | Operation Sonnenwende | Operation Spring Awakening |
+|---|---|---|
+| Popup when | from 1945, at war; the enemy holds part of Ostmark (state 68) while Germany holds Stettin | from 1945, at war with the Soviet Union; the enemy holds part of Northern Hungary (43, Budapest) while Germany or an ally holds North Transdanubia (155) and South Transdanubia (974, the Hungarian oil) |
+| Decision needs | Stettin (6282) held; the enemy in Ostmark; the supplies in stock | both Transdanubia states held by Germany or an ally; the supplies in stock |
+| Set aside (50 PP) | 5,000 fuel, 500 infantry equipment, 50 artillery | 7,500 fuel, 750 infantry equipment, 75 artillery |
+| Preparation | 7 days | 10 days |
+| Called off if | Stettin falls | South Transdanubia falls |
+| Bonus | 12 days: +15% attack for German troops fighting on German soil in Hinterpommern, Ostmark and Brandenburg | 14 days: +10% attack against the Soviet Union, for Germany and for Hungary if it is still an ally |
+| Events | "Begins" at the launch; "Halted" 12 days later | "Begins" at the launch; "Ends" 14 days later, with a text for oil held and one for oil lost |
+| History | 15–18 February 1945, from Stargard in Pomerania; Nordland relieved the garrison of Arnswalde; the attack stalled, but the Soviets cleared Pomerania before attacking Berlin [1] | 6–15 March 1945, the last major German offensive; the 6th Panzer Army from the Ardennes; three prongs; the spring thaw and over 700 anti-tank mines per km of front; aims: the Nagykanizsa oil fields and the Danube [2] |
+
+**Design notes:**
+- **Exactly what was set aside comes back.** The decision can only be taken
+  when the stockpile holds at least the amounts, so the full amount is
+  removed. The return adds the same numbers. Which versions of a rifle or
+  gun are taken and given back is up to the game. If the fuel tank is full
+  when the fuel comes back, the excess is lost, as with any fuel gain.
+- **The Sonnenwende bonus only helps Germans.** It is a state bonus with
+  `army_core_attack_factor`, which only counts for troops fighting on their
+  own country's core territory. Soviet troops in the same states never get
+  it. It also switches off if a state stops being German. This is the same
+  kind of state bonus as the base game's `DEN_home_guard_state_modifier`.
+- **The Spring Awakening bonus** is a national spirit for 14 days with the
+  base game's own "attack bonus against" a country. For example,
+  `ideas/afghanistan.txt` line 514 gives +15% against the Soviet Union the
+  same way.
+- **The AI** accepts each popup 80% of the time.
+
+**Courland:**
+- **Popup when** Germany holds Libau (Liepāja, 9262) or Windau (Ventspils,
+  3296) and has divisions in Kurzeme (190), while the enemy holds both of
+  Kurzeme's land neighbours, Žemaitija (189) and Zemgale (809). That means the
+  pocket is cut off by land. Historically the Red Army reached the coast
+  near Memel on 9 October 1944 [3].
+- **The choice:**
+  - "Bring them home by sea" (Guderian's view).
+  - "Courland will be held" (Hitler's view). Libau and Windau become
+    fortresses while held, with the author's own Festung values
+    (`GER_festung_static_modifier`: +20% defence, +75% maximum dig-in,
+    −25% supply use). A port loses the bonus when it falls.
+  - Either way, the evacuation decision stays available.
+- **The decision** (50 PP, 30 days):
+  - It moves every German division in Kurzeme to the first Baltic port
+    state Germany still holds: Gotenhafen/Gdynia (807), Danzig (85),
+    Hinterpommern with Stettin (63), Vorpommern (62), Holstein with Kiel
+    (58). If Germany holds none of them, the divisions go to the capital.
+  - Libau or Windau must be held the whole time; if both fall, the
+    evacuation fails.
+  - It uses the base game's `teleport_armies`, the same effect as its
+    `ICE.txt` decisions. The game's own documentation says that without a
+    destination, units go to their capital.
+  - Only armies owned by Germany move (`original_tag = GER`), so allied
+    units are not moved.
+- **The AI** holds Courland 75% of the time, as Hitler did. If it chose to
+  evacuate, it takes the decision much more readily.
+- **History:** part of the army group was evacuated by sea from the middle
+  of January 1945 (among others the 4th Panzer Division, the 31st, 32nd and
+  93rd Infantry Divisions and Nordland). The rest surrendered: about 135,000
+  men on 9 May 1945 [3]. The decision lets the player do what Guderian
+  wanted: bring them all home.
+
+**Sailors to the Front** (a decision from 1 February 1945, while at war,
+50 PP):
+- **+1,000 manpower** (specialists moved to the replacement pool) and
+  **10 convoys** laid up. Oscar asked for "a small amount".
+- **Three naval infantry divisions**, on the historical schedule:
+
+| Division | In the game | History |
+|---|---|---|
+| 1. Marine-Infanterie-Division | at once, at Stettin | formed at the start of February 1945 at Angermünde from the Marine-Schützen-Brigade Nord; fought on the Oder and, in March, at the Stettin bridgehead (Greifenhagen–Altdamm) [4] |
+| 2. Marine-Infanterie-Division | 30 days later, at Kiel (Holstein) | formed in March 1945 at Glückstadt and Itzehoe, both in Holstein, mostly from naval personnel; fought the British on the Weser–Aller line in April [5] |
+| 3. Marine-Infanterie-Division | 60 days later, in Vorpommern | formed on 1 April 1945 from the survivors of the 163rd Infantry Division who escaped from Stargard; fought in Pomerania, around Swinemünde [6] |
+
+- **If Germany no longer holds the state,** the division forms at the
+  capital instead.
+- **The template** is "Marine-Infanterie-Division": 6 ordinary infantry
+  battalions and engineers, locked, lowest priority. It is **not** the
+  marine battalion type, so it doesn't count towards the special forces
+  limit (Oscar's condition).
+- **Equipment:** 50% of it, with the 1939 rifle (Infantry Equipment I), and
+  no experience.
+
+**Checked:**
+- **Check O** in verify_update.py parses the files; it doesn't just search
+  the text. It confirms:
+  - for each operation separately: set aside = returned = required;
+    returned both at the launch and when called off; a called-off operation
+    never launches;
+  - 12 and 14 days of bonus, 7, 10 and 30 days of waiting, 50 PP each;
+  - the evacuation only moves German armies, and lists the five port
+    states in order;
+  - Stettin, Kiel, Libau and Windau are in the states the scripts use,
+    according to the mod's own state files;
+  - 6 unit creations, all owned by Germany, 50% equipment, 0 experience;
+    the template has only infantry battalions and no marines;
+  - +1,000 manpower and −10 convoys;
+  - 10 events, each one both defined and called; 60 texts with BOM, and
+    every text used exists.
+- **Check O was calibrated.** Three errors were planted one at a time, and
+  each made it fail:
+  - the return gives 6,000 fuel instead of 5,000;
+  - a called-off operation still launches;
+  - one battalion is a marine battalion.
+- **What a called-off decision does.** The game's documentation doesn't say
+  whether a cancelled decision also runs its `remove_effect`. If it did, the
+  supplies would come back twice and the operation would launch anyway.
+  Paradox's own decisions rely on it not doing so: 309 have both effects.
+  For example, `AFG_claim_state` gives its reward in `remove_effect` and
+  only clears a flag in `cancel_effect`. The operations follow the same
+  pattern.
+- **Documented game features only:** `teleport_armies` (including the
+  capital fallback), `divisions_in_state`, `is_fully_controlled_by`,
+  `has_fuel` and `has_template` are all described in the game's own
+  `documentation/` folder. `divisions_in_state` counts only the country's
+  own divisions, so Soviet units in Courland don't count.
+- **Runtime test.** Temporary test lines in Germany's history file (removed
+  afterwards) ran these inside the game during its 1944 setup: set-aside and
+  return, both launches, the fortress on and off, all three divisions. There
+  were no errors.
+  - The stockpile itself could not be observed. At that early moment the
+    game reads fuel and every equipment stockpile as 0, even right after
+    2,000 rifles were added directly.
+  - So this test proves the effects run without errors, not the amounts
+    (the same limit as the division count in section 6). The amounts rest
+    on check O.
+- **Load test:** error.log identical (115 = 115,
+  `game-logs/12-after-1945-operations_error.log`), and no line mentions the
+  new files. setup.log lists the new "Fortress Courland" bonus by name.
+- **Event texts checked against the sources.** The first version had four
+  claims the sources don't support. They were corrected in `9c950e1`,
+  before packaging:
+  - Nordland at Arnswalde "on the first day";
+  - the Hungarian fields as the Axis's "last oil fields" (the Vienna oil
+    region still existed);
+  - Hitler holding Courland "to tie down Soviet armies" (the source gives
+    the U-boat bases and a bridgehead for a new offensive);
+  - where the 2nd and 3rd naval infantry divisions were formed.
+
+**Not play-tested yet.** Quick tests as Germany, with the console (the key
+under Esc):
+1. **Sonnenwende:**
+   - `event ger_1945.1`, then choose "Prepare the counterattack".
+   - `setcontroller SOV 3473` puts Küstrin, in Ostmark, in Soviet hands.
+   - Take the decision in War Measures. The fuel and equipment go down now,
+     and come back with the "Sonnenwende Begins" event 7 days later.
+2. **Spring Awakening:** `event ger_1945.4`, then take the decision. The
+   offensive begins 10 days later.
+3. **Courland:**
+   - `event ger_1945.8`.
+   - Move a division into Kurzeme (Latvia), then take the decision. After
+     30 days, the division should be at Gdynia.
+4. **Sailors to the Front:** the decision appears from 1 February 1945.
+   - `event ger_1945.11` creates the 2nd division at Kiel directly.
+   - `event ger_1945.12` creates the 3rd in Vorpommern.
+
+The popups themselves only come when the front conditions above are met in
+1945.
+
+**Files:**
+- `common/decisions/GER_1945_operations_decisions.txt` (4 decisions, in
+  War Measures)
+- `common/scripted_effects/GER_1945_operations_effects.txt` (set aside and
+  return, launches, evacuation, fortress, divisions)
+- `common/dynamic_modifiers/GER_1945_operations_dynamic_modifiers.txt`
+  (Sonnenwende state bonus)
+- `common/ideas/GER_1945_operations_ideas.txt` (Spring Awakening spirit)
+- `common/modifiers/GER_1945_operations_modifiers.txt` (Fortress Courland)
+- `common/on_actions/GER_1945_operations_on_actions.txt` (popups, fortress
+  clean-up)
+- `events/GER_1945_operations_events.txt` (10 events)
+- `localisation/english/GER_1945_operations_l_english.yml` (60 texts)
+
+Sources:
+- [1] en.wikipedia, *Operation Solstice*: 15–18 February 1945, launched from
+  Stargard; the Eleventh SS Panzer Army being assembled in Pomerania;
+  Nordland attacked towards Arnswalde and relieved its garrison; "only three
+  days' ammunition and fuel were immediately available"; the Soviets
+  postponed the attack on Berlin to clear Pomerania.
+- [2] en.wikipedia, *Operation Spring Awakening*: 6–15 March 1945, "the last
+  major German offensive"; the 6th Panzer Army withdrawn from the Ardennes;
+  three prongs (Balaton–Velence–Danube, south of Lake Balaton, south of the
+  Drava); the Nagykanizsa oil fields; the spring thaw; over 700 anti-tank
+  mines per km of front; the Vienna offensive from 16 March.
+- [3] en.wikipedia, *Courland Pocket*: the coast reached near Memel on
+  9 October 1944; Libau; evacuation at Windau (photo, 19 October 1944);
+  Guderian urged an evacuation and Hitler refused (U-boat bases, a
+  bridgehead for a new offensive); divisions evacuated by sea from the
+  middle of January 1945; about 135,000 surrendered on 9 May.
+- [4] de.wikipedia, *1. Marine-Infanterie-Division (Wehrmacht)*;
+  en.wikipedia, *1st Marine Division (Wehrmacht)*: "excess naval personnel
+  who no longer had ships or submarines to man".
+- [5] de.wikipedia, *2. Marine-Infanterie-Division (Wehrmacht)*;
+  en.wikipedia, *2nd Marine Division (Wehrmacht)*.
+- [6] de.wikipedia, *3. Marine-Infanterie-Division (Wehrmacht)*;
+  en.wikipedia, *3rd Marine Division (Wehrmacht)*.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -651,7 +876,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-51 files differ from the version on Steam: 30 edited, 3 deleted, 18 new (full list:
+59 files differ from the version on Steam: 30 edited, 3 deleted, 26 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

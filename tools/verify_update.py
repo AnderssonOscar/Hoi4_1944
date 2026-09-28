@@ -96,6 +96,11 @@ expected |= {("A", "mod/common/scripted_effects/GER_festung_berlin_effects.txt")
 expected |= {("M", "mod/history/units/GER_1944.txt"), ("M", "mod/history/units/GER_1944_nsb.txt"),
              ("M", "mod/common/units/names_divisions/GER_names_divisions.txt"),
              ("M", "mod/events/ss_recruitment_event.txt")}  # Wiking + Nordland (section 10)
+expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_1945_operations_decisions.txt",
+             "common/dynamic_modifiers/GER_1945_operations_dynamic_modifiers.txt", "common/ideas/GER_1945_operations_ideas.txt",
+             "common/modifiers/GER_1945_operations_modifiers.txt", "common/on_actions/GER_1945_operations_on_actions.txt",
+             "common/scripted_effects/GER_1945_operations_effects.txt", "events/GER_1945_operations_events.txt",
+             "localisation/english/GER_1945_operations_l_english.yml")}  # 1945 operations (section 11)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -425,6 +430,69 @@ check("W  Wiking (#5, SS Panzer-Division, 11424) and Nordland (#11, SS copy of t
       and "5 = { \"%d. SS-Division 'Wiking'\" }" in ss_names and "11 = { \"%d. SS-Division 'Nordland'\" }" in ss_names
       and ss_ev.count("has_start_date < 1944.1.1") == 2 and ss_ev.count("else_if = { # 1944 start: Wiking already exists") == 2,
       str(ss_detail))
+
+op = {k: current("mod/" + f).decode("ascii") for k, f in (
+    ("eff", "common/scripted_effects/GER_1945_operations_effects.txt"), ("dec", "common/decisions/GER_1945_operations_decisions.txt"),
+    ("dyn", "common/dynamic_modifiers/GER_1945_operations_dynamic_modifiers.txt"), ("idea", "common/ideas/GER_1945_operations_ideas.txt"),
+    ("oa", "common/on_actions/GER_1945_operations_on_actions.txt"), ("ev", "events/GER_1945_operations_events.txt"))}
+op_eff = {n.key: n for n in pdx.parse_file("mod/common/scripted_effects/GER_1945_operations_effects.txt")[0] if n.key}
+op_dec = {d.key: d for c in pdx.parse_file("mod/common/decisions/GER_1945_operations_decisions.txt")[0]
+          if c.key == "war_measures" for d in c.value if d.key}
+def op_get(node, key):
+    return next((c for c in node.value if c.key == key), None)
+def op_amounts(effect):
+    """[fuel, infantry equipment, artillery] added (negative = taken) by a set-aside or return effect."""
+    return [int(n.value) if n.key == "add_fuel" else int(op_get(n, "amount").value)
+            for n in op_eff[effect].value if n.key in ("add_fuel", "add_equipment_to_stockpile")]
+def op_needs(dec):
+    """[fuel, infantry equipment, artillery] the decision requires in stock (its '>' thresholds + 1)."""
+    return [int(n.value) + 1 for n, _ in pdx.walk(op_get(op_dec[dec], "available").value)
+            if n.key in ("has_fuel", "infantry_equipment", "artillery_equipment") and n.op == ">"]
+def op_calls_in(dec, part):
+    return {n.key for n, _ in pdx.walk(op_get(op_dec[dec], part).value) if n.value == "yes"}
+op_res = {o: (op_amounts(f"GER_1945_{o}_set_aside"), op_amounts(f"GER_1945_{o}_return"), op_needs(f"GER_1945_{o}"))
+          for o in ("sonnenwende", "spring_awakening")}
+op_units = [n for n, _ in pdx.walk(list(op_eff.values())) if n.key == "create_unit"]
+op_tpl = next(n for n, _ in pdx.walk(op_eff["GER_1945_marine_template"].value) if n.key == "division_template")
+op_tp = [n for n, _ in pdx.walk(op_eff["GER_1945_courland_evacuate"].value) if n.key == "teleport_armies"]
+op_loc = current("mod/localisation/english/GER_1945_operations_l_english.yml")
+op_keys = {k.decode() for k in re.findall(rb"^ ([\w.]+):0 ", op_loc, re.M)}
+op_need = set(re.findall(r"(?:custom_effect_tooltip|tooltip|title|desc|name|text) = ((?:GER_1945|ger_1945)[\w.]+)", op["dec"] + op["ev"]))
+op_defs = re.findall(r"^\tid = (ger_1945\.\d+)", op["ev"], re.M)
+op_calls = set(re.findall(r"country_event = \{ id = (ger_1945\.\d+)", op["ev"] + op["dec"] + op["oa"]))
+op_ns = sum(open(os.path.join(d, f), "rb").read().count(b"add_namespace = ger_1945\r") + open(os.path.join(d, f), "rb").read().count(b"add_namespace = ger_1945\n")
+            for d in ("mod/events", os.path.join(V, "events")) for f in os.listdir(d) if f.endswith(".txt"))
+sailors = op_get(op_dec["GER_1945_sailors_to_the_front"], "complete_effect")
+check("O  1945 operations: Sonnenwende and Spring Awakening set aside exactly what they require and return exactly that, both when "
+      "launched and when called off (never launched when called off); 12 / 14 days of bonus after 7 / 10 days of preparation; 50 PP each; "
+      "Courland moves only German armies, needs Libau or Windau, 30 days; Sailors: +1,000 manpower, -10 convoys, 3 divisions of plain "
+      "infantry (not marines), 50% equipment, no experience; Stettin/Kiel/Libau/Windau in the right states; 10 events, 60 texts",
+      all(s == [-x for x in r] and r == n and len(r) == 3 for s, r, n in op_res.values())
+      and all({f"GER_1945_{o}_return", f"GER_1945_{o}_launch"} <= op_calls_in(f"GER_1945_{o}", "remove_effect")
+              and op_calls_in(f"GER_1945_{o}", "cancel_effect") == {f"GER_1945_{o}_return"} for o in op_res)
+      and [(s.key, op_get(op_get(s, "add_dynamic_modifier"), "days").value) for s in op_eff["GER_1945_sonnenwende_launch"].value]
+          == [("63", "12"), ("68", "12"), ("64", "12")]
+      and [n.value for n, _ in pdx.walk(op_eff["GER_1945_spring_awakening_launch"].value) if n.key == "days"] == ["14", "14"]
+      and {d: (op_get(v, "cost").value, getattr(op_get(v, "days_remove"), "value", None)) for d, v in op_dec.items()}
+          == {"GER_1945_sonnenwende": ("50", "7"), "GER_1945_spring_awakening": ("50", "10"),
+              "GER_1945_courland_evacuation": ("50", "30"), "GER_1945_sailors_to_the_front": ("50", None)}
+      and "army_core_attack_factor = 0.15" in op["dyn"] and "is_owned_by = GER" in op["dyn"]
+      and [canon(n) for n, _ in pdx.walk(pdx.parse_file("mod/common/ideas/GER_1945_operations_ideas.txt")[0]) if n.key == "targeted_modifier"]
+          == ["targeted_modifier={tag=SOV attack_bonus_against=0.1}"]
+      and len(op_tp) == 6 and all(canon(op_get(t, "limit")) == "limit={original_tag=GER}" for t in op_tp)
+      and [op_get(t, "to_state").value for t in op_tp if op_get(t, "to_state")] == ["807", "85", "63", "62", "58"]
+      and "cancel_trigger = { NOT = { controls_province = 9262 } NOT = { controls_province = 3296 } }" in op["dec"]
+      and op["oa"].count("remove_province_modifier") == 2
+      and p2s.get("6282") == "63" and p2s.get("6389") == "58" and p2s.get("9262") == "190" and p2s.get("3296") == "190"
+      and len(op_units) == 6 and all(op_get(u, "owner").value == "ROOT" for u in op_units)
+      and all("start_experience_factor = 0 start_equipment_factor = 0.5 " in op_get(u, "division").value for u in op_units)
+      and sorted(r.key for b in op_tpl.value if b.key == "regiments" for r in b.value) == ["infantry"] * 6
+      and "marine" not in [r.key for b in op_tpl.value if b.key in ("regiments", "support") for r in b.value]
+      and canon(op_get(sailors, "add_manpower")) == "add_manpower=1000"
+      and canon(op_get(sailors, "add_equipment_to_stockpile")) == "add_equipment_to_stockpile={type=convoy_1 amount=-10}"
+      and len(op_defs) == 10 and op_calls == set(op_defs) and op_ns == 1
+      and op_loc.startswith(b"\xef\xbb\xbfl_english:\r\n") and len(op_keys) == 60 and op_need <= op_keys,
+      str({o: v for o, v in op_res.items()}))
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)

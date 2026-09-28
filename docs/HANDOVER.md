@@ -55,8 +55,9 @@ instead of hiding them. Section 3 of INVESTIGATION.md does this on purpose.
   decision, Volkssturm focus, UK). They need a crash report from the game.
   One report ("D-Day seems broken") needs a proper description first.
 - Added on Oscar's request: the Slovak uprising event, Nero Decree and
-  Werwolf, the Volkssturm redesign, Festung Berlin and the SS divisions
-  Wiking and Nordland (CHANGELOG sections 4-6, 9 and 10). They load cleanly; none has been play-tested yet. Sections 7-8
+  Werwolf, the Volkssturm redesign, Festung Berlin, the SS divisions
+  Wiking and Nordland and four 1945 operations (Sonnenwende, Spring
+  Awakening, Courland, Sailors to the Front) (CHANGELOG sections 4-6 and 9-11). They load cleanly; none has been play-tested yet. Sections 7-8
   fix three wrong-state province IDs in the author's code.
 
 ## 3. Where everything is
@@ -188,7 +189,7 @@ Run from the project folder:
 python tools/check_province_modifiers.py   # finding A: provinces outside their state
 python tools/check_structure.py            # brace balance, template slot clashes
 python tools/check_references.py           # events/ideas/characters/tags used in play
-python tools/verify_update.py              # re-checks every claim (46 checks)
+python tools/verify_update.py              # re-checks every claim (64 checks)
 ```
 
 `check_province_modifiers.py` also reports states defined by more than one
