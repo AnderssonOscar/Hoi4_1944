@@ -1,0 +1,67 @@
+###########################
+# 1944 - Downfall: Germany's last reserves: effects (docs/CHANGELOG.md section 12)
+###########################
+
+# The effects of the events and the decision. They live here so that the
+# in-game test can run exactly the same code as the events.
+
+# 1. The Estonian mobilisation of February 1944: 38,000 men reported.
+GER_reserves_estonian_mobilisation = {
+	add_manpower = 38000
+}
+
+# 2. Collaborators flee east when the West is lost (about 2,500 from the
+# French Milice), and a few volunteers from neutral countries (500).
+GER_reserves_western_volunteers = {
+	add_manpower = 3000
+}
+
+# 3. Hungarian SS divisions: up to 7,500 men move from Hungary's manpower to
+# Germany's, as far as Hungary's pool allows. Germany gains exactly what
+# Hungary loses.
+GER_reserves_hungarian_ss = {
+	if = {
+		limit = { HUN = { has_manpower > 7499 } }
+		HUN = { add_manpower = -7500 }
+		add_manpower = 7500
+	}
+	else_if = {
+		limit = { HUN = { has_manpower > 4999 } }
+		HUN = { add_manpower = -5000 }
+		add_manpower = 5000
+	}
+	else_if = {
+		limit = { HUN = { has_manpower > 2499 } }
+		HUN = { add_manpower = -2500 }
+		add_manpower = 2500
+	}
+}
+
+# 4. Luftwaffe men to the front: 75,000 men; for 90 days air missions are
+# 10% less effective (common/ideas/GER_reserves_ideas.txt).
+GER_reserves_luftwaffe_transfer = {
+	add_manpower = 75000
+	add_timed_idea = { idea = GER_reserves_luftwaffe_men_at_the_front days = 90 }
+}
+
+# 5. The last Swedish deliveries (the amounts Oscar chose); for 35 days every
+# aircraft type is 13% cheaper to build.
+GER_reserves_swedish_deliveries = {
+	add_equipment_to_stockpile = { type = train_equipment_1 amount = 3 }
+	add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 137 }
+	add_equipment_to_stockpile = { type = support_equipment_1 amount = 1800 }
+	add_fuel = 250
+	add_timed_idea = { idea = GER_reserves_swedish_parts days = 35 }
+}
+
+# 6. Eastern workers and prisoners enlist: 15,000 men; for 180 days factory
+# output is 1% lower.
+GER_reserves_eastern_volunteers = {
+	add_manpower = 15000
+	add_timed_idea = { idea = GER_reserves_eastern_workers_enlisted days = 180 }
+}
+
+# 7. Round-ups behind the front: 15,000 men.
+GER_reserves_roundups = {
+	add_manpower = 15000
+}

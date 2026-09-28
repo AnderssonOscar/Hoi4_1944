@@ -1,0 +1,103 @@
+###########################
+# 1944 - Downfall: Germany's last reserves: events (docs/CHANGELOG.md section 12)
+###########################
+
+add_namespace = ger_reserves
+
+# 1. The Estonian mobilisation (7 February 1944)
+country_event = {
+	id = ger_reserves.1
+	title = ger_reserves.1.t
+	desc = ger_reserves.1.d
+	picture = GFX_report_event_latvian_legion
+	is_triggered_only = yes
+	option = {
+		name = ger_reserves.1.a
+		GER_reserves_estonian_mobilisation = yes
+	}
+}
+
+# 2. Collaborators flee east (an enemy holds Paris)
+country_event = {
+	id = ger_reserves.2
+	title = ger_reserves.2.t
+	desc = ger_reserves.2.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = {
+		name = ger_reserves.2.a
+		GER_reserves_western_volunteers = yes
+	}
+}
+
+# 3. Hungarian SS divisions (30 days after the Arrow Cross takes power)
+country_event = {
+	id = ger_reserves.3
+	title = ger_reserves.3.t
+	desc = ger_reserves.3.d
+	picture = GFX_report_event_hungarian_soldiers
+	is_triggered_only = yes
+	option = {
+		name = ger_reserves.3.a
+		GER_reserves_hungarian_ss = yes
+	}
+}
+
+# 4. Luftwaffe men to the front (after the decision, which applies the effects)
+country_event = {
+	id = ger_reserves.4
+	title = ger_reserves.4.t
+	desc = ger_reserves.4.d
+	picture = GFX_report_event_GER_bombers
+	is_triggered_only = yes
+	option = {
+		name = ger_reserves.4.a
+		custom_effect_tooltip = ger_reserves.4.a.tt
+	}
+}
+
+# 5. The last Swedish deliveries (28 September 1944)
+country_event = {
+	id = ger_reserves.5
+	title = ger_reserves.5.t
+	desc = ger_reserves.5.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	option = {
+		name = ger_reserves.5.a
+		GER_reserves_swedish_deliveries = yes
+	}
+}
+
+# 6. Eastern workers and prisoners volunteer (1 February 1945)
+country_event = {
+	id = ger_reserves.6
+	title = ger_reserves.6.t
+	desc = ger_reserves.6.d
+	picture = GFX_report_event_soviet_soldiers
+	is_triggered_only = yes
+	option = {
+		name = ger_reserves.6.a
+		ai_chance = { base = 75 }
+		GER_reserves_eastern_volunteers = yes
+	}
+	option = {
+		name = ger_reserves.6.b
+		ai_chance = { base = 25 }
+		custom_effect_tooltip = ger_reserves.6.b.tt
+	}
+}
+
+# 7. Round-ups behind the front (1945: manpower below 200,000 or the enemy at Berlin)
+country_event = {
+	id = ger_reserves.7
+	title = ger_reserves.7.t
+	desc = ger_reserves.7.d
+	picture = GFX_report_event_generic_destroyed_vehicles
+	is_triggered_only = yes
+	option = {
+		name = ger_reserves.7.a
+		GER_reserves_roundups = yes
+	}
+}
+
