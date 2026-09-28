@@ -1,9 +1,12 @@
-"""Check every add_province_modifier / remove_province_modifier in the mod.
+"""Check every add_province_modifier / remove_province_modifier in the mod,
+and every province-level building effect (add_building_construction,
+remove_building, damage_building, set_building_level with a province).
 
 For each one it reports:
   * provinces that are not part of the state the effect runs in
     (e.g. `593 = { add_province_modifier = { province = { id = 4028 } } }`
-    when province 4028 belongs to another state)
+    when province 4028 belongs to another state, or
+    `763 = { remove_building = { type = bunker province = 13370 } }`)
   * static modifiers that are not defined anywhere (mod or base game)
   * removals of a modifier from a province that no script in the mod ever adds
     it to
@@ -20,6 +23,7 @@ import pdx  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 MOD = os.path.join(HERE, "..", "mod")
 VANILLA = sys.argv[1] if len(sys.argv) > 1 else os.environ.get("HOI4_PATH", r"C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV")
+BUILDING_EFFECTS = ("add_building_construction", "remove_building", "damage_building", "set_building_level")
 
 
 def province_to_state(with_files=False):
@@ -68,7 +72,7 @@ def main():
         rel = os.path.relpath(path, MOD).replace("\\", "/")
         root, _ = pdx.parse_file(path)
         for node, parents in pdx.walk(root):
-            if node.key not in ("add_province_modifier", "remove_province_modifier") or not node.is_block():
+            if node.key not in ("add_province_modifier", "remove_province_modifier") + BUILDING_EFFECTS or not node.is_block():
                 continue
             state_scope = next((p.key for p in reversed(parents) if p.key and p.key.isdigit()), None)
             mods, provs = [], []
@@ -77,6 +81,8 @@ def main():
                     mods += [m.value for m in c.value if m.key is None and not m.is_block()]
                 if c.key == "province" and c.is_block():
                     provs += [(p.value, p.line) for p in c.value if p.key == "id"]
+                elif c.key == "province" and c.value.isdigit():
+                    provs.append((c.value, c.line))
             where = f"{rel}:{node.line}"
             for m in mods:
                 if m not in modifiers:

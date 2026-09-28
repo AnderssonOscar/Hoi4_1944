@@ -85,6 +85,7 @@ expected |= {("M", "mod/common/national_focus/germany.txt"), ("M", "mod/localisa
              ("A", "mod/common/scripted_effects/GER_volkssturm_effects.txt"),
              ("A", "mod/common/decisions/GER_volkssturm_decisions.txt"),
              ("A", "mod/localisation/english/GER_volkssturm_l_english.yml")}  # Volkssturm (CHANGELOG section 6)
+expected |= {("M", "mod/events/mod_news.txt")}  # Konigsberg in Ruins fix (CHANGELOG section 7)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -119,6 +120,8 @@ def old_volkssturm_block(b):
 VS_OLD = old_volkssturm_block(at_base("mod/common/national_focus/germany.txt"))
 allowed["mod/common/national_focus/germany.txt"] = lambda l: l in VS_OLD
 allowed["mod/localisation/english/custom_mod_l_english.yml"] = lambda l: l.startswith("GER_form_volksturm_tooltip:0 ")
+allowed["mod/events/mod_news.txt"] = lambda l: l.strip() in ("remove_building = {", "type = bunker", "province = 13372",
+                                                          "province = 13371", "province = 13370", "level = 5", "}", "")
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
@@ -289,7 +292,14 @@ check("V  Volkssturm: the focus raises 42 divisions by population (38 German cor
       and vs_l.startswith(bytes.fromhex("efbbbf") + b"l_english:") and len(vs_keys) == 20 and {k.encode() for k in vs_need} <= vs_keys,
       f"German cores {len(ger)}, first levy {first}, decisions {per}")
 
-oar =pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
+kb = current("mod/events/mod_news.txt").decode("utf-8", "replace").replace("\r", "")
+kb = kb[kb.index("id = mod.news.5"):]
+kb = kb[:kb.index("news_event = {")] if "news_event = {" in kb else kb
+kb_active = re.findall(r"^[ \t]*province = (\d+)", kb, re.M)
+check("K  Konigsberg in Ruins removes forts only in Konigsberg (6332) and its ring fort (11265), no longer in Africa (13370-13372)",
+      kb_active == ["6332", "11265"] and all(p2s.get(x) == "763" for x in kb_active), str(kb_active))
+
+oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)
               for n, parents in pdx.walk(oar) if n.key == "add_manpower"]
 check("F  Slovak uprising: event with its picture, fired once on 29 Aug 1944 for SLO + GER, Germany -3000 manpower (Slovakia none), 4 one-line texts with BOM",

@@ -13,3 +13,4 @@ history runs at startup). Compare them with any diff tool.
 | 5-after-slovak-uprising_error.log | after adding the Slovak uprising event (7de1ce8); identical to 4 | 115 |
 | 6-after-volkssturm_error.log | after the Volkssturm redesign (e6c0034; Nero Decree and Werwolf also included); identical to 5 | 115 |
 | 7-after-volkssturm-bug-check_error.log | after the Volkssturm bug-check fix (d9d7888); identical to 5 | 115 |
+| 8-after-konigsberg-fix_error.log | after the Königsberg in Ruins fix (b88321a); identical to 5 | 115 |

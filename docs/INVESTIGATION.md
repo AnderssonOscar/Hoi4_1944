@@ -453,3 +453,24 @@ runs were discarded (no conclusions drawn). Test through the Paradox
 launcher's DLC settings instead. Known DLC-sensitive spots: the author's HOL
 history completes Thunder at Our Gates focuses; special-forces sub-doctrines
 are inside `has_dlc = "Arms Against Tyranny"` (as the old techs were).
+
+## 9. Province IDs in building effects (2026-09-28)
+
+`tools/check_province_modifiers.py` now also checks building effects that
+name a province (`add_building_construction`, `remove_building`,
+`damage_building`, `set_building_level`), not only province modifiers. It
+found 28 places where the province isn't in the state the code runs in.
+Each was calibrated against the base game's own files and map:
+
+| Where | Findings | Whose | Status |
+|---|---|---|---|
+| `events/mod_news.txt` (Königsberg in Ruins) | 3 | author | **Fixed** (`b88321a`, CHANGELOG §7) |
+| `common/decisions/GER_mod.txt:280` (Stettin fort in state 62, belongs to 63) | 1 | author | Open, for the author |
+| `events/mod_events.txt:400, :406` (Antwerp naval base in state 6, belongs to 977) | 2 | author | Open, for the author |
+| `common/national_focus/japan.txt` | 14 | base game (identical lines) | Not the mod's |
+| `common/national_focus/netherlands.txt` | 5 | base game (identical lines) | Not the mod's |
+| `common/decisions/SOV.txt` | 2 | base game (identical lines) | Not the mod's |
+| `common/decisions/GER.txt:3111` | 1 | base game (identical line) | Not the mod's |
+
+For every one, the base game's own map puts the province in the same
+"wrong" state, so none of them is caused by the mod moving provinces.

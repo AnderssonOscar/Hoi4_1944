@@ -9,7 +9,7 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **38 files differ** from that version: 23 edited, 3 deleted, 12 new. Your own
+- **39 files differ** from that version: 24 edited, 3 deleted, 12 new. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -28,9 +28,9 @@ independently (see "Check it yourself").
 | Item | What it is |
 |---|---|
 | `mod/` | the complete updated mod, ready to test or upload |
-| `patches/` | every change as a patch (18, in order), each with its reason |
+| `patches/` | every change as a patch (19, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 52 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 54 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -52,6 +52,7 @@ independently (see "Check it yourself").
 | 10 | New: **Nero Decree** and **Werwolf** decisions for Germany's last stand (CHANGELOG section 5). **Not play-tested yet** | 6 new files `GER_last_stand_*` |
 | 9 | New flavor event: the Slovak National Uprising (29 Aug 1944). Germany loses 3,000 manpower crushing it; Slovakia and Germany see it | 3 new files: events, on_actions, localisation |
 | 11 | **Volkssturm redesigned** (CHANGELOG section 6). The focus now raises divisions in every German state by population (42 if all are held), and 4 decisions add more from the historical dates in 1945 (east, Oder/Pomerania, west, Berlin): 89 divisions / 445 battalions in all, about the 700+ real battalions that fought. Rifles follow the Gau Bayreuth list of Jan 1945 (mostly Italian Carcanos), 40–75% equipped, no training. Your template, availability and AI weights are unchanged. **Not play-tested yet** | germany.txt focus block, focus tooltip, 3 new files `GER_volkssturm_*` |
+| 12 | Fix: "Königsberg in Ruins" removed forts from three provinces in Africa (wrong IDs) instead of Königsberg's ring fort; now it removes them from the ring fort your Festung focus builds (11265). Two similar spots in your code (Stettin fort, Antwerp sabotage) are listed in CHANGELOG section 7 for you to decide | mod_news.txt |
 
 **Your call** (decisions made for you, easy to change):
 

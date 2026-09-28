@@ -338,6 +338,37 @@ Sources:
    `Decision.NoChecks` may let you take them early; it isn't known whether
    it also shows them before their date.
 
+### 7. "Königsberg in Ruins" removed forts in Africa (commit `b88321a`)
+
+Found on 2026-09-28 by extending `tools/check_province_modifiers.py` to
+building effects. Oscar asked for it to be fixed.
+
+- **The bug:** news event `mod.news.5` ("Königsberg in Ruins") fires when the
+  Soviets take Königsberg. Inside the Königsberg state (763) it removed 5 fort
+  levels from the city (6332, correct) and from provinces 13372, 13371 and
+  13370. In the current map those are in **Zambezi, Angola and Congo** (states
+  891, 540 and 295), so the fortress's ring fort was never removed. The
+  game's documentation doesn't say what a province outside the scope state
+  does; at best nothing, at worst it acts on the African province.
+- **The fix:** the author's `GER_festung_cities` focus builds exactly one ring
+  fort next to Königsberg: province 11265, level 6. The map confirms it
+  borders the city. The event now removes the author's 5 levels there. The
+  three old blocks are kept, commented out, in the author's style.
+- **Checked:** check K (only 6332 and 11265, both in state 763); every line
+  removed is one of the three old blocks; the game loads with error.log
+  identical (115 = 115, `game-logs/8-after-konigsberg-fix_error.log`).
+- **Not changed (for the author to decide):** the same check finds two more
+  places in the author's own code where a province isn't in the state the
+  code runs in:
+  - `common/decisions/GER_mod.txt:280` builds a level-5 fort in Stettin
+    (6282) inside Vorpommern (62), but Stettin belongs to Hinterpommern (63).
+  - `events/mod_events.txt:400` and `:406` ("Destroy Antwerpen") remove
+    and damage Antwerp's naval base (6598) inside state 6, but Antwerp is
+    in state 977 in the current map.
+  The other 22 findings are lines copied unchanged from the base game
+  (Japan and Netherlands focus trees, GER.txt, SOV.txt), which does the same
+  thing itself, so they are not the mod's bugs (INVESTIGATION.md §9).
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -363,7 +394,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-38 files differ from the version on Steam: 23 edited, 3 deleted, 12 new (full list:
+39 files differ from the version on Steam: 24 edited, 3 deleted, 12 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.
