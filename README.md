@@ -18,8 +18,9 @@ this repository's line-ending setting (`* text=auto`) is unchanged.
    reached GitHub (62 files, for example the new states in the Dutch East
    Indies, Malaya and Indochina). Nothing in it was written by Oscar or the
    AI assistant.
-2. **26 commits, one per change**, each with its full reason in the commit
-   message:
+2. **One commit per change**, each with its full reason in the commit
+   message: 26 in pull request #2, and 2 more in pull request #3 (the home
+   front, 1944–45, and a fix for the Courland popup):
 
 | Commit here | Change | CHANGELOG section | Update package |
 |---|---|---|---|
@@ -49,44 +50,46 @@ this repository's line-ending setting (`* text=auto`) is unchanged.
 | [`ad8ce09`](https://github.com/gastav3/Hoi4_1944/commit/ad8ce09) | Add four 1945 operations for Germany | 11 | [`97fad47`](https://github.com/AnderssonOscar/Hoi4_1944/commit/97fad47) |
 | [`79d97af`](https://github.com/gastav3/Hoi4_1944/commit/79d97af) | 1945 operations: correct event texts against the sources | 11 | [`9c950e1`](https://github.com/AnderssonOscar/Hoi4_1944/commit/9c950e1) |
 | [`f2ba254`](https://github.com/gastav3/Hoi4_1944/commit/f2ba254) | Add Germany's last reserves: six events and a decision | 12 | [`70d287a`](https://github.com/AnderssonOscar/Hoi4_1944/commit/70d287a) |
+| [`90c19a8`](https://github.com/gastav3/Hoi4_1944/commit/90c19a8) | Add the home front, 1944-45: eight events for Germany | 14 | [`99c2aa4`](https://github.com/AnderssonOscar/Hoi4_1944/commit/99c2aa4) |
+| [`bb7c0aa`](https://github.com/gastav3/Hoi4_1944/commit/bb7c0aa) | Courland: the popup itself unlocks the evacuation decision | 11 | [`96f4a17`](https://github.com/AnderssonOscar/Hoi4_1944/commit/96f4a17) |
 
 ## Documentation
 
 The update package holds the same changes plus the full documentation and
-the check scripts, at tag `final-2026-09-28-v10` of
-[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v10). There the mod sits
+the check scripts, at tag `final-2026-09-28-v11` of
+[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v11). There the mod sits
 in a `mod/` folder, and the commit IDs are the ones in the right-hand column
 above; the documents refer to those.
 
 | Document | What it covers |
 |---|---|
-| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v10/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
-| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v10/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v10/docs/VERIFICATION.md) | How it was checked: 67 automated checks, the game's error logs, checksums |
-| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v10/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
-| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v10/docs/HANDOVER.md) | How to maintain and extend the project |
-| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v10/docs/game-logs) | The game's error.log after each step |
-| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v10/tools) | The check scripts (Python 3) |
+| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
+| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
+| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/VERIFICATION.md) | How it was checked: 68 automated checks, the game's error logs, checksums |
+| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
+| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/HANDOVER.md) | How to maintain and extend the project |
+| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v11/docs/game-logs) | The game's error.log after each step |
+| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v11/tools) | The check scripts (Python 3) |
 
 ## How it was checked
 
 - **In the update package:**
-  - 67 automated checks;
+  - 68 automated checks;
   - the game's error.log after every change (115 lines, unchanged by every
     addition since the 1.19.3 update);
   - in-game runs of the new effects during the game's setup;
   - a rebuild test: the Steam version plus the patches reproduces the mod
     exactly.
-- **For this branch:** after every commit here, the files are identical to
-  the tested package at the same step, ignoring only line endings (which
+- **For this repository:** after every commit here, the files are identical
+  to the tested package at the same step, ignoring only line endings (which
   this repository normalises).
   - Each commit shows the same line changes as the original, with one
     exception: the Siam history rebuild (`c88694e`) counts one more changed
     line. That's the file's last line, because the old file had no newline
     at its end.
   - The sync commit is identical to the Steam copy.
-  - A fresh clone of this branch loads in the game with the same error.log
-    as the tested version.
+  - A fresh clone loads in the game with the same error.log as the tested
+    version.
 - **Not tested:** actual play, and playing without some DLCs.
 
 ## Status
