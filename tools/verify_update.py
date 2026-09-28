@@ -101,6 +101,9 @@ expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_1945_operations_d
              "common/modifiers/GER_1945_operations_modifiers.txt", "common/on_actions/GER_1945_operations_on_actions.txt",
              "common/scripted_effects/GER_1945_operations_effects.txt", "events/GER_1945_operations_events.txt",
              "localisation/english/GER_1945_operations_l_english.yml")}  # 1945 operations (section 11)
+expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_reserves_decisions.txt", "common/ideas/GER_reserves_ideas.txt",
+             "common/on_actions/GER_reserves_on_actions.txt", "common/scripted_effects/GER_reserves_effects.txt",
+             "events/GER_reserves_events.txt", "localisation/english/GER_reserves_l_english.yml")}  # last reserves (section 12)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -493,6 +496,85 @@ check("O  1945 operations: Sonnenwende and Spring Awakening set aside exactly wh
       and len(op_defs) == 10 and op_calls == set(op_defs) and op_ns == 1
       and op_loc.startswith(b"\xef\xbb\xbfl_english:\r\n") and len(op_keys) == 60 and op_need <= op_keys,
       str({o: v for o, v in op_res.items()}))
+
+def canon_op(n):
+    """Like canon, but keeps comparison operators (date > 1944.2.6 stays date>1944.2.6)."""
+    return (f"{n.key}{n.op}" if n.key else "") + ("{" + " ".join(canon_op(c) for c in n.value) + "}" if n.is_block() else n.value)
+rs = {k: current("mod/" + f).decode("ascii") for k, f in (
+    ("dec", "common/decisions/GER_reserves_decisions.txt"), ("oa", "common/on_actions/GER_reserves_on_actions.txt"),
+    ("ev", "events/GER_reserves_events.txt"))}
+rs_eff = {n.key: n for n in pdx.parse_file("mod/common/scripted_effects/GER_reserves_effects.txt")[0] if n.key}
+rs_dec = next(d for c in pdx.parse_file("mod/common/decisions/GER_reserves_decisions.txt")[0] if c.key == "war_measures" for d in c.value if d.key)
+rs_ideas = {i.key: i for c in pdx.parse_file("mod/common/ideas/GER_reserves_ideas.txt")[0] if c.key == "ideas"
+            for g in c.value if g.key == "country" for i in g.value if i.key}
+rs_ifs = [canon_op(op_get(b, "limit")) for c in pdx.parse_file("mod/common/on_actions/GER_reserves_on_actions.txt")[0] if c.key == "on_actions"
+          for d in c.value if d.key == "on_daily_GER" for b in op_get(d, "effect").value if b.key == "if"]
+RS_AIR_TYPES = {"fighter", "interceptor", "cas", "naval_bomber", "tactical_bomber", "strategic_bomber", "suicide", "scout_plane",
+                "air_transport", "heavy_fighter", "maritime_patrol_plane"}
+rs_air = set()  # every aircraft type in the game, from its equipment files
+for f in pdx.merged_files("mod", V, r"common\units\equipment").values():
+    for t in pdx.parse_file(f)[0]:
+        if t.key in ("equipments", "duplicate_archetypes") and t.is_block():
+            for e in (e for e in t.value if e.key and e.is_block()):
+                ty, arch = op_get(e, "type"), op_get(e, "is_archetype")
+                tv = {x.value for x in ty.value} if ty is not None and ty.is_block() else ({ty.value} if ty is not None else set())
+                if tv & RS_AIR_TYPES and (t.key == "duplicate_archetypes" or (arch is not None and arch.value == "yes")):
+                    rs_air.add(e.key)
+rs_bonus = op_get(rs_ideas["GER_reserves_swedish_parts"], "equipment_bonus")
+rs_loc = current("mod/localisation/english/GER_reserves_l_english.yml")
+rs_keys = {k.decode() for k in re.findall(rb"^ ([\w.]+):0 ", rs_loc, re.M)}
+rs_need = (set(re.findall(r"(?:title|desc|name|custom_effect_tooltip) = (ger_reserves[\w.]+)", rs["ev"]))
+           | {rs_dec.key, rs_dec.key + "_desc"} | set(rs_ideas) | {i + "_desc" for i in rs_ideas})
+rs_defs = re.findall(r"^\tid = (ger_reserves\.\d+)", rs["ev"], re.M)
+rs_calls = set(re.findall(r"country_event = \{ id = (ger_reserves\.\d+)", rs["oa"] + rs["dec"]))
+RS_RING = ["375", "3499", "9428", "11444", "11505"]  # the five provinces around Berlin (as in Festung Berlin)
+def rs_body(name):
+    return [canon_op(n) for n in rs_eff[name].value]
+check("R  Germany's last reserves: Estonia +38,000 (from 7 Feb 1944, Tallinn held); West +3,000 (an enemy holds Paris); up to 7,500 "
+      "moved from Hungary to Germany, never more than Hungary has (30 days after the author's Arrow Cross flag); Luftwaffe decision "
+      "(50 PP, from Sep 1944) +75,000 and 90 days of -10% air missions, then a story event; Sweden (28 Sep-31 Dec 1944): 3 trains, "
+      "137 trucks, 1,800 support equipment, 250 fuel, 35 days of every aircraft type 13% cheaper; eastern workers +15,000 and 180 days "
+      "of -1% factory output; round-ups +15,000 (from 1945, manpower < 200,000 or an enemy at Berlin's ring); each event once; "
+      "7 events, 32 texts",
+      rs_body("GER_reserves_estonian_mobilisation") == ["add_manpower=38000"]
+      and rs_body("GER_reserves_western_volunteers") == ["add_manpower=3000"]
+      and rs_body("GER_reserves_hungarian_ss") == [
+          "if={limit={HUN={has_manpower>7499}} HUN={add_manpower=-7500} add_manpower=7500}",
+          "else_if={limit={HUN={has_manpower>4999}} HUN={add_manpower=-5000} add_manpower=5000}",
+          "else_if={limit={HUN={has_manpower>2499}} HUN={add_manpower=-2500} add_manpower=2500}"]
+      and rs_body("GER_reserves_luftwaffe_transfer") == ["add_manpower=75000",
+                                                         "add_timed_idea={idea=GER_reserves_luftwaffe_men_at_the_front days=90}"]
+      and rs_body("GER_reserves_swedish_deliveries") == [
+          "add_equipment_to_stockpile={type=train_equipment_1 amount=3}", "add_equipment_to_stockpile={type=motorized_equipment_1 amount=137}",
+          "add_equipment_to_stockpile={type=support_equipment_1 amount=1800}", "add_fuel=250",
+          "add_timed_idea={idea=GER_reserves_swedish_parts days=35}"]
+      and rs_body("GER_reserves_eastern_volunteers") == ["add_manpower=15000",
+                                                         "add_timed_idea={idea=GER_reserves_eastern_workers_enlisted days=180}"]
+      and rs_body("GER_reserves_roundups") == ["add_manpower=15000"]
+      and canon_op(op_get(rs_ideas["GER_reserves_luftwaffe_men_at_the_front"], "modifier")) == "modifier={air_mission_efficiency=-0.1}"
+      and canon_op(op_get(rs_ideas["GER_reserves_eastern_workers_enlisted"], "modifier")) == "modifier={industrial_capacity_factory=-0.01}"
+      and len(rs_air) == 20 and {b.key for b in rs_bonus.value} == rs_air
+      and all(canon_op(b) == b.key + "={build_cost_ic=-0.13 instant=yes}" for b in rs_bonus.value)
+      and canon_op(op_get(rs_dec, "visible")) == "visible={date>1944.8.31 has_war=yes}" and op_get(rs_dec, "cost").value == "50"
+      and op_get(rs_dec, "fire_only_once").value == "yes"
+      and canon_op(op_get(rs_dec, "complete_effect")) == "complete_effect={GER_reserves_luftwaffe_transfer=yes hidden_effect={country_event={id=ger_reserves.4}}}"
+      and rs_ifs == [
+          "limit={NOT={has_country_flag=GER_reserves_estonia_done} date>1944.2.6 date<1945.1.1 has_war_with=SOV controls_province=3152}",
+          "limit={NOT={has_country_flag=GER_reserves_west_done} date>1944.6.5 has_war=yes any_enemy_country={controls_province=11506}}",
+          "limit={NOT={has_country_flag=GER_reserves_hungary_done} has_global_flag={flag=arrow_cross_insurgency_happened days>29} "
+          "has_war_with=SOV country_exists=HUN HUN={OR={is_in_faction_with=ROOT is_subject_of=ROOT}}}",
+          "limit={NOT={has_country_flag=GER_reserves_sweden_done} date>1944.9.27 date<1945.1.1 has_war=yes country_exists=SWE "
+          "SWE={NOT={has_war_with=ROOT} NOT={is_in_faction_with=ROOT}} OR={controls_province=6282 controls_province=6389}}",
+          "limit={NOT={has_country_flag=GER_reserves_eastern_done} date>1945.1.31 has_war_with=SOV}",
+          "limit={NOT={has_country_flag=GER_reserves_roundups_done} date>1944.12.31 has_war=yes OR={has_manpower<200000 "
+          + " ".join("NOT={controls_province=%s}" % p for p in RS_RING) + "}}"]
+      and all(rs["oa"].count("set_country_flag = GER_reserves_%s_done" % f) == 1 for f in ("estonia", "west", "hungary", "sweden", "eastern", "roundups"))
+      and "set_global_flag = arrow_cross_insurgency_happened" in current("mod/events/mod_events.txt").decode("utf-8", "replace")
+      and p2s.get("3152") == "812" and p2s.get("11506") == "16" and p2s.get("6282") == "63" and p2s.get("6389") == "58"
+      and all(p2s.get(p) == "64" for p in RS_RING)
+      and len(rs_defs) == 7 and rs_calls == set(rs_defs)
+      and rs_loc.startswith(b"\xef\xbb\xbfl_english:\r\n") and len(rs_keys) == 32 and rs_need == rs_keys,
+      f"aircraft types differing: {sorted(rs_air ^ {b.key for b in rs_bonus.value})}")
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)

@@ -851,6 +851,188 @@ Sources:
 - [6] de.wikipedia, *3. Marine-Infanterie-Division (Wehrmacht)*;
   en.wikipedia, *3rd Marine Division (Wehrmacht)*.
 
+### 12. Germany's last reserves: six events and a decision (commit `70d287a`)
+
+Asked for by Oscar: events adding manpower for these groups:
+- the foreign volunteers of 1944;
+- the Baltic "selective conscription" (he suggested exactly 38,000);
+- the 1945 semi-volunteers, as a choice with a very small factory
+  penalty;
+- round-ups once manpower runs low or Berlin is threatened;
+- a Luftwaffe transfer (about 75,000 men, a slight temporary air
+  penalty).
+
+He also asked for a flavour event for the last Swedish deliveries, with
+his exact rewards.
+
+The plan was agreed first. Oscar's decisions:
+- Hungary's men are taken from Hungary and given to Germany.
+- The Luftwaffe transfer is a decision followed by a story event.
+- The fuel stays at 250.
+- The neutral volunteers are folded into the Western event.
+
+Six **new** files; nothing of the author's was changed.
+
+**What happens.** Each event fires once, from a daily check for Germany,
+and only inside its historical window:
+
+| # | Event | When | Effect | History |
+|---|---|---|---|---|
+| 1 | The Estonian Mobilisation | 7 Feb to 31 Dec 1944, at war with the Soviet Union, while Germany holds Tallinn | +38,000 manpower | Jüri Uluots' radio appeal (7 Feb 1944) to men born 1904–1923: 38,000 reported, forming seven border guard regiments and the 20th Estonian division [1][2] |
+| 2 | Collaborators Flee East | from 6 June 1944, once an enemy holds Paris | +3,000 | about 2,500 members of the French Milice went into the SS unit "Charlemagne" [3]; Dutch collaborators fled to Germany in September 1944 [4]; Spaniards stayed on after the Blue Legion was recalled [5]; Oscar's 500 neutral volunteers are included |
+| 3 | Hungarian SS Divisions | 30 days after the author's Arrow Cross coup (his event `hungary.operation.panzerfaust.1`, or his Hungarian decision), with Hungary still allied or subject | up to 7,500 moved from Hungary to Germany | "Hunyadi", formed in November 1944 from the Hungarian 13th Division and a ski battalion; trained at Neuhammer; short of weapons [6] |
+| 4 | Luftwaffe Men to the Front | a decision (War Measures, 50 PP) from 1 September 1944, then a story event | +75,000; −10% air mission efficiency for 90 days | the Luftwaffe field divisions went to the army at the end of 1943 [7]; the 1st Parachute Army was formed in September 1944, 30,000 men [8]. 75,000 is Oscar's figure; no source found gives a total |
+| 5 | The Last Swedish Deliveries | 28 Sep to 31 Dec 1944, if Sweden is neither at war with Germany nor its ally, and Germany holds Stettin or Kiel | 3 trains, 137 trucks, 1,800 support equipment, 250 fuel; for 35 days every aircraft type 13% cheaper | the transit of German soldiers on leave ended in 1943, and Sweden kept selling steel and machine parts [9]; Sweden's decision to close its Baltic ports to German shipping was reported on 28 September 1944 [10]. The amounts are Oscar's |
+| 6 | Eastern Workers and Prisoners Volunteer | from 1 Feb 1945, at war with the Soviet Union | a choice: +15,000 and −1% factory output for 180 days, or nothing (AI: 75% / 25%) | Vlasov's committee (KONR) from November 1944; Soviet prisoners volunteered to escape camps where they were starving; the 2nd division nearly doubled with eastern workers [11] |
+| 7 | Round-ups Behind the Front | from 1945, once manpower falls below 200,000 or an enemy takes one of the five provinces around Berlin (the same five as Festung Berlin) | +15,000 | the Feldjägerkorps (from January 1944) hunted stragglers and deserters with flying courts-martial, which executed an estimated 7,000–8,000 in the last four months of the war [12]; the Volkssturm took in foreigners in some cases [13] |
+
+**Design notes:**
+- **Date windows.** Every event is tied to its historical period, so none
+  can fire at an absurd time. For example, the Western event can only come
+  after June 1944.
+- **Hungary.** Germany gains exactly what Hungary loses:
+  - 7,500 if Hungary has at least that much;
+  - otherwise 5,000 or 2,500;
+  - nothing if Hungary has less than 2,500.
+
+  The author's coup event requires an AI-run Hungary, so no human player
+  loses men to this.
+- **The aircraft bonus.** The game has no "aircraft production output"
+  modifier. Instead, the spirit makes every aircraft type 13% cheaper to
+  build for 35 days, so the same factories make about 15% more
+  (1 / 0.87 = 1.149).
+  - `instant = yes` makes it apply to production lines already running,
+    as in the base game's Austrian air production spirit
+    (`common/ideas/austria.txt`).
+  - The CAS, naval bomber, heavy fighter and jet types are separate
+    "duplicate archetypes" in 1.19 (`x_plane_airframes.txt`). So all 20
+    aircraft types are listed one by one, as Paradox does in 24 of its own
+    bonus blocks. Check R compares the list with the game's equipment
+    files.
+- **Pictures.** All are base-game pictures, chosen by looking at them. Two
+  names that looked right were unusable: `GER_goring` is an empty
+  silhouette, and `desertion_poster` is an American "A.W.O.L." poster.
+- **Already in the game:**
+  - The base game's SS recruitment decisions (25 PP,
+    `common/decisions/SS.txt`) still create the historical Baltic and
+    Western SS divisions or give 1,000–2,000 manpower. These events are
+    separate from them.
+  - The mod's "Recruit Andrey Vlasov" decision creates Vlasov's units;
+    event 6 only adds the manpower.
+  - "Sailors to the Front" (section 11) covers the navy.
+
+**What was not taken from the pasted history.** The plan said so in
+advance, and the texts only say what the sources support:
+- **"Aktion Göring" and "Marine-Hilfe":** no source uses these names.
+- **The Swedish "stranded property"** (locomotives at Storlien, bonded
+  warehouses, Köping machinery, a negotiated release): not found in any
+  source. The event uses the documented facts and Oscar's rewards.
+- **"Hunyadi"** was built mainly from a Hungarian army division, not from
+  volunteers [6].
+- **Press-gangs by "SS-Jagdkommandos"**, and "any foreign worker handed a
+  rifle, refusal meant execution": not supported by the sources. The event
+  describes the documented Feldjäger round-ups instead.
+- **Belgian collaborators fleeing:** not found in the source checked, so
+  the text names only the French and the Dutch.
+
+**Checked:**
+- **Check R** in verify_update.py parses the files and confirms:
+  - every amount;
+  - Hungary's transfer: Germany gains exactly what Hungary loses, never
+    more than Hungary has;
+  - the three spirits and their durations;
+  - all 20 aircraft types, each −13% with `instant = yes`, compared with
+    the game's own equipment files;
+  - the decision: 50 PP, once, from September 1944, then the story event;
+  - the exact conditions of each of the six daily checks, and that each
+    fires once;
+  - Tallinn, Paris, Stettin, Kiel and the five Berlin provinces are in the
+    states the scripts assume;
+  - the author's Arrow Cross flag exists;
+  - 7 events, all called; 32 texts, all used.
+- **Check R was calibrated.** Four errors were planted one at a time, and
+  each made it fail:
+  - Estonia gives 39,000;
+  - Germany gains 8,000 while Hungary loses 7,500;
+  - the Me 262 type is left out of the aircraft bonus;
+  - the Western event is allowed from 1940.
+- **Game features.** Each one is described in the game's own
+  `documentation/` folder or used by the base game:
+  - `any_enemy_country`, `has_global_flag` with `days`, `has_manpower`,
+    `add_manpower`, `add_timed_idea`;
+  - `equipment_bonus` with `build_cost_ic` in a spirit (44 base-game idea
+    files);
+  - the trains, trucks and support equipment: Germany starts with the
+    techs for them (`basic_train`, `motorised_infantry`, `tech_support`).
+- **Runtime test.** Temporary test lines in Germany's history file (removed
+  afterwards) ran all seven effects inside the game, with no errors.
+  - The game then reported all three spirits as present (`has_idea`),
+    including the aircraft one.
+  - As in section 11, stockpile and manpower amounts can't be read at that
+    early moment; the amounts rest on check R.
+- **Load test:** error.log identical (115 = 115,
+  `game-logs/13-after-last-reserves_error.log`). setup.log shows that the
+  game loaded 1 decision, 7 events and 3 spirits from the new files.
+- **Project checkers:**
+  - province references: 544 checked, the same 22 base-game hits,
+    0 unknown modifiers;
+  - structure: no problem in the new files;
+  - references: the same 4 old issues, nothing new.
+
+**Not play-tested yet.** Quick tests as Germany, with the console (the key
+under Esc):
+1. `event ger_reserves.1` through `event ger_reserves.7` each show their
+   text and apply their effect. Event 4 is only the story part of the
+   decision: its effects come from the decision itself.
+2. The decision "Luftwaffe Men to the Front" appears in War Measures from
+   1 September 1944.
+3. The automatic triggers need the dates and conditions in the table.
+
+**Files:**
+- `common/scripted_effects/GER_reserves_effects.txt` (all effects, shared
+  by the events, the decision and the runtime test)
+- `common/ideas/GER_reserves_ideas.txt` (the three timed spirits)
+- `common/decisions/GER_reserves_decisions.txt` (Luftwaffe decision, in
+  War Measures)
+- `common/on_actions/GER_reserves_on_actions.txt` (the six daily checks)
+- `events/GER_reserves_events.txt` (7 events)
+- `localisation/english/GER_reserves_l_english.yml` (32 texts)
+
+Sources:
+- [1] en.wikipedia, *Battle of Narva (1944)*: Uluots' radio speech of
+  7 February 1944; 38,000 men; seven border guard regiments and the 20th
+  Estonian division.
+- [2] en.wikipedia, *Jüri Uluots*: prime minister 12 October 1939 to
+  20 June 1940; a radio address urging men born 1904–1923 to report;
+  38,000 draftees. This article places the address in January 1944.
+- [3] en.wikipedia, *33rd Waffen Grenadier Division of the SS
+  Charlemagne*: formed in September 1944, including French collaborators
+  fleeing the Allied advance; 2,500 from the Milice.
+- [4] en.wikipedia, *Dolle Dinsdag*: "many Germans and Dutch collaborators
+  fled to Germany, fearing reprisals".
+- [5] en.wikipedia, *Blue Legion*: Spaniards who refused to return; the
+  101st SS Spanish Volunteer Company (140 men).
+- [6] en.wikipedia, *25th Waffen Grenadier Division of the SS Hunyadi (1st
+  Hungarian)*: November 1944; the 13th Honvéd Division and a ski
+  battalion; Neuhammer; 20,000 men; few weapons.
+- [7] en.wikipedia, *Luftwaffe Field Divisions*: handed over to the army
+  late in 1943.
+- [8] en.wikipedia, *1st Parachute Army*: formed in September 1944,
+  30,000 men.
+- [9] en.wikipedia, *Sweden during World War II*: the permittenttrafik
+  until 1943; steel and machine parts sold at inflated rates.
+- [10] FRUS 1944 vol. IV, telegram of 28 September 1944
+  (history.state.gov): "the decision of the Swedish Government to close
+  the Baltic ports to German shipping"; Malmö and Göteborg still open.
+- [11] en.wikipedia, *Russian Liberation Army*: KONR from 14 November 1944;
+  prisoners volunteering to escape starvation; the 2nd division nearly
+  doubled with eastern workers; 50,000–60,000 men by February 1945.
+- [12] en.wikipedia, *Feldjägerkorps*: created in January 1944; hunted
+  deserters and stragglers; flying courts-martial; an estimated
+  7,000–8,000 executed in the last four months.
+- [13] en.wikipedia, *Volkssturm*: foreigners inducted in some cases, if
+  deemed ideologically acceptable.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -876,7 +1058,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-59 files differ from the version on Steam: 30 edited, 3 deleted, 26 new (full list:
+65 files differ from the version on Steam: 30 edited, 3 deleted, 32 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.
