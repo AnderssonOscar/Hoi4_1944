@@ -1,0 +1,126 @@
+###########################
+# 1944 - Downfall: the home front, 1944-45: events (docs/CHANGELOG.md section 14)
+###########################
+
+add_namespace = ger_homefront
+
+# 1. 15 August 1944: women's labour service extended to age 50
+country_event = {
+	id = ger_homefront.1
+	title = ger_homefront.1.t
+	desc = ger_homefront.1.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	option = {
+		name = ger_homefront.1.a
+		GER_homefront_female_labour_to_50 = yes
+	}
+}
+
+# 2. 14 October 1944: the death of Field Marshal Rommel
+country_event = {
+	id = ger_homefront.2
+	title = ger_homefront.2.t
+	desc = ger_homefront.2.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = ger_homefront.2.a
+		if = {
+			limit = { has_character = GER_erwin_rommel }
+			custom_effect_tooltip = ger_homefront.2.a.tt
+			hidden_effect = { GER_homefront_rommel_dies = yes }
+		}
+	}
+}
+
+# 3. 17 November 1944: RAD women to the Flak
+country_event = {
+	id = ger_homefront.3
+	title = ger_homefront.3.t
+	desc = ger_homefront.3.d
+	picture = GFX_report_event_FIN_helsinki_bombed
+	is_triggered_only = yes
+	option = {
+		name = ger_homefront.3.a
+		GER_homefront_flak_auxiliaries = yes
+	}
+}
+
+# 4. 19 December 1944: an air force for Vlasov
+country_event = {
+	id = ger_homefront.4
+	title = ger_homefront.4.t
+	desc = ger_homefront.4.d
+	picture = GFX_report_event_SOV_purge_aircraft_1
+	is_triggered_only = yes
+	option = {
+		name = ger_homefront.4.a
+		ai_chance = { base = 60 }
+		GER_homefront_vlasov_air_force = yes
+	}
+	option = {
+		name = ger_homefront.4.b
+		ai_chance = { base = 40 }
+		custom_effect_tooltip = ger_homefront.4.b.tt
+	}
+}
+
+# 5. 6 January 1945: the Volksopfer
+country_event = {
+	id = ger_homefront.5
+	title = ger_homefront.5.t
+	desc = ger_homefront.5.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {
+		name = ger_homefront.5.a
+		ai_chance = { base = 70 }
+		GER_homefront_volksopfer = yes
+	}
+	option = {
+		name = ger_homefront.5.b
+		ai_chance = { base = 30 }
+		custom_effect_tooltip = ger_homefront.5.b.tt
+	}
+}
+
+# 6. 30 January 1945: the sinking of the Wilhelm Gustloff
+country_event = {
+	id = ger_homefront.6
+	title = ger_homefront.6.t
+	desc = ger_homefront.6.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	option = {
+		name = ger_homefront.6.a
+		GER_homefront_gustloff = yes
+	}
+}
+
+# 7. 12 February 1945: women and girls for the Volkssturm
+country_event = {
+	id = ger_homefront.7
+	title = ger_homefront.7.t
+	desc = ger_homefront.7.d
+	picture = GFX_report_event_german_reichstag_gathering
+	is_triggered_only = yes
+	option = {
+		name = ger_homefront.7.a
+		GER_homefront_volkssturm_women = yes
+	}
+}
+
+# 8. 5 March 1945: the class of 1929
+country_event = {
+	id = ger_homefront.8
+	title = ger_homefront.8.t
+	desc = ger_homefront.8.d
+	picture = GFX_report_event_german_volunteers
+	is_triggered_only = yes
+	option = {
+		name = ger_homefront.8.a
+		GER_homefront_class_of_1929 = yes
+	}
+}
+

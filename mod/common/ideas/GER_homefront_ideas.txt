@@ -1,0 +1,29 @@
+###########################
+# 1944 - Downfall: the home front, 1944-45: national spirits (docs/CHANGELOG.md section 14)
+###########################
+
+ideas = {
+	country = {
+		# From 17 November 1944: RAD women serve in the home Flak batteries.
+		GER_homefront_flak_auxiliaries = {
+			picture = generic_anti_air
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				static_anti_air_damage_factor = 0.015
+				static_anti_air_hit_chance_factor = 0.015
+			}
+		}
+
+		# From 5 March 1945: the class of 1929 is called up.
+		GER_homefront_class_of_1929 = {
+			picture = extensive_conscription
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				training_time_factor = -0.25
+				conscription = 0.0025
+			}
+		}
+	}
+}
