@@ -1,0 +1,21 @@
+###########################
+# 1944 - Downfall: the first German atomic bomb: daily check (docs/CHANGELOG.md section 22)
+#
+# Fires once, the first day Germany has an atomic bomb in its stockpile
+# (from the nuclear special projects or a reactor).
+###########################
+
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_bomb_done }
+					num_of_nukes > 0
+				}
+				set_country_flag = GER_bomb_done
+				country_event = { id = ger_bomb.1 }
+			}
+		}
+	}
+}
