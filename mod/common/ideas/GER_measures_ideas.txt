@@ -1,0 +1,18 @@
+###########################
+# 1944 - Downfall: five war measures for Germany: national spirit (docs/CHANGELOG.md section 16)
+###########################
+
+ideas = {
+	country = {
+		# After "Send the Student Companies to the Front".
+		GER_measures_student_companies_spirit = {
+			picture = generic_research_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.05
+				stability_factor = -0.01
+			}
+		}
+	}
+}

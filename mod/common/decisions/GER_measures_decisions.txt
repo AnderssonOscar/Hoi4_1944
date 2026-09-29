@@ -1,0 +1,132 @@
+###########################
+# 1944 - Downfall: five war measures for Germany: decisions (docs/CHANGELOG.md section 16)
+#
+#   decision                              category                    from         cost
+#   GER_measures_konr_expand              collaborationist_formation  23 Nov 1944  50 PP (+ rifles and guns, option A)
+#   GER_measures_railway_repair           war_measures                1 Sep 1944   50 PP
+#   GER_measures_student_companies        war_measures                1 Oct 1944   50 PP
+#   GER_measures_weapons_appeal           war_measures                18 Oct 1944  25 PP
+#   GER_measures_weapons_confiscation     war_measures                1 Dec 1944   50 PP (only after the appeal)
+###########################
+
+collaborationist_formation = {
+
+	# Expand the KONR: after the author's "Recruit Andrey Vlasov" (which creates
+	# the "Russische Befreiungsarmee" template). The author's own "Russian
+	# Liberation Army" decision raises the 600th, 650th and 700th divisions;
+	# this one adds a 4th and 5th, or manpower (event ger_measures.1).
+	GER_measures_konr_expand = {
+		icon = generic_army_support
+		allowed = { original_tag = GER }
+		visible = {
+			date > 1944.11.22
+			has_war_with = SOV
+			has_capitulated = no
+			has_template = "Russische Befreiungsarmee"
+		}
+		available = {
+			has_war_with = SOV
+			has_template = "Russische Befreiungsarmee"
+		}
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			custom_effect_tooltip = GER_measures_konr_expand_tt
+			hidden_effect = { country_event = { id = ger_measures.1 } }
+		}
+	}
+}
+
+war_measures = {
+
+	# Emergency Railway Repair Programme: 120 days.
+	GER_measures_railway_repair = {
+		icon = generic_train
+		allowed = { original_tag = GER }
+		visible = {
+			date > 1944.8.31
+			has_war = yes
+			has_capitulated = no
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 120
+		modifier = {
+			repair_speed_rail_way_factor = 0.30
+			repair_speed_infrastructure_factor = 0.20
+			production_speed_buildings_factor = -0.10
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	# Send the Student Companies to the Front: the popup ger_measures.3 tells the story.
+	GER_measures_student_companies = {
+		icon = generic_research
+		allowed = { original_tag = GER }
+		visible = {
+			date > 1944.9.30
+			has_war = yes
+			has_capitulated = no
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+			modifier = { factor = 5 has_manpower < 100000 }
+		}
+		complete_effect = {
+			GER_measures_student_companies = yes
+			hidden_effect = { country_event = { id = ger_measures.3 } }
+		}
+	}
+
+	# Call on Citizens to Hand In Their Weapons: from the public proclamation of
+	# the Volkssturm (18 October 1944).
+	GER_measures_weapons_appeal = {
+		icon = generic_civil_support
+		allowed = { original_tag = GER }
+		visible = {
+			date > 1944.10.17
+			has_war = yes
+			has_capitulated = no
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			GER_measures_weapons_appeal = yes
+			hidden_effect = { set_country_flag = GER_measures_weapons_appealed }
+		}
+	}
+
+	# Confiscate Civilian Firearms: only after the appeal, from December 1944.
+	GER_measures_weapons_confiscation = {
+		icon = generic_police_action
+		allowed = { original_tag = GER }
+		visible = {
+			date > 1944.11.30
+			has_war = yes
+			has_capitulated = no
+			has_country_flag = GER_measures_weapons_appealed
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			GER_measures_weapons_confiscation = yes
+		}
+	}
+}

@@ -1,0 +1,13 @@
+# 1944 - Downfall: equipment types whose stock is read with num_equipment@<type>
+# (common/scripted_effects/GER_measures_effects.txt, docs/CHANGELOG.md section 16;
+# common/scripted_effects/GER_1945_operations_effects.txt, section 17). Listed
+# here so the game keeps them in sync in multiplayer; without this list it
+# warns that they "can cause OOS".
+infantry_equipment_0
+infantry_equipment_1
+infantry_equipment_2
+infantry_equipment_3
+artillery_equipment_1
+artillery_equipment_2
+artillery_equipment_3
+support_equipment_1

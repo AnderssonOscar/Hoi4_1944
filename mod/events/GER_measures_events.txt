@@ -1,0 +1,65 @@
+###########################
+# 1944 - Downfall: five war measures for Germany: events (docs/CHANGELOG.md section 16)
+###########################
+
+add_namespace = ger_measures
+
+# 1. Expand the KONR: two more divisions, or the men as replacements.
+country_event = {
+	id = ger_measures.1
+	title = ger_measures.1.t
+	desc = ger_measures.1.d
+	picture = GFX_report_event_SWI_enlisting_recruitment
+	is_triggered_only = yes
+	option = {
+		name = ger_measures.1.a
+		trigger = {
+			has_equipment = { infantry_equipment > 804 }
+			has_equipment = { support_equipment > 14 }
+			has_equipment = { artillery_equipment > 5 }
+		}
+		ai_chance = { base = 50 }
+		GER_measures_konr_divisions = yes
+		custom_effect_tooltip = ger_measures.1.a.tt
+	}
+	option = {
+		name = ger_measures.1.b
+		ai_chance = { base = 50 }
+		GER_measures_konr_manpower = yes
+	}
+}
+
+# 2. The 5th KONR division, 60 days after option A (hidden), if we can still pay for its equipment.
+country_event = {
+	id = ger_measures.2
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		has_war_with = SOV
+		has_capitulated = no
+		has_template = "Russische Befreiungsarmee"
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_equipment = { infantry_equipment > 804 }
+				has_equipment = { support_equipment > 14 }
+				has_equipment = { artillery_equipment > 5 }
+			}
+			GER_measures_konr_pay = yes
+			GER_measures_konr_5th_division = yes
+		}
+	}
+}
+
+# 3. The student companies go to the front (the story; the decision applies the effects).
+country_event = {
+	id = ger_measures.3
+	title = ger_measures.3.t
+	desc = ger_measures.3.d
+	picture = GFX_report_event_german_troops
+	is_triggered_only = yes
+	option = {
+		name = ger_measures.3.a
+	}
+}
