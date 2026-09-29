@@ -26,10 +26,10 @@ mod, so every change must be easy for him to check himself.
 
 ## 3. Status (28 September 2026)
 
-- **73 files differ** from the Steam version (33 edited, 3 deleted, 37 new).
-  Every change is in `docs/CHANGELOG.md` (sections 1–15) and summarised in
+- **79 files differ** from the Steam version (33 edited, 3 deleted, 43 new).
+  Every change is in `docs/CHANGELOG.md` (sections 1–17) and summarised in
   `docs/READ-ME-FIRST.md`.
-- **`python tools/verify_update.py`:** 71 checks, all pass.
+- **`python tools/verify_update.py`:** 72 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
 - **Packages:** the tags `final-2026-09-27` to `final-2026-09-28-v11`. Each
@@ -88,6 +88,14 @@ mod, so every change must be easy for him to check himself.
   `game.log`, then compare `error.log` with the latest file in
   `docs/game-logs/`. Writing `disabled_dlcs` in `dlc_load.json` does **not**
   disable DLCs.
+- **Measuring an effect in a running game:** add a temporary
+  `on_daily_GER` script (in its own file in `common/on_actions/`) that runs
+  the effect once and logs values such as `[?ROOT.manpower_k]`,
+  `[?ROOT.num_divisions]` or `[?ROOT.num_equipment@infantry_equipment_1]`,
+  then start `tools/start_as_country.ps1 -Tag GER -Speed 5`. Unlike the
+  history-file trick below, stockpiles and units are real here. Dates in
+  triggers take no hour (`date > 1944.1.2`, not `1944.1.2.18`). Delete the
+  file afterwards.
 - **Running an effect in the game:** temporarily append a dated block with
   the effect and a `log = "..."` line to `mod/history/countries/GER -
   Germany.txt`, run the load test, read `game.log`, then restore the file
@@ -183,6 +191,14 @@ Full evidence, confidence and the proposed fixes are in
   the leader is the player the game crashes on the exile popup. So such a
   country must not be in a faction at the start: make it an exile in
   `on_startup` instead (CHANGELOG section 15, check E).
+- Equipment by its general type (`add_equipment_to_stockpile = { type =
+  infantry_equipment ... }`): a negative amount is taken from **every** type
+  in stock, and a positive amount arrives as the **newest** type. Name a
+  specific type (and `variant_name` for a particular design). Measured in
+  CHANGELOG section 17.
+- Reading a stockpile in script (`num_equipment@<type>`) needs the type in
+  `common/synchronized_dynamic_tokens/`, or the game warns about
+  multiplayer desyncs (OOS).
 - A decision that is cancelled runs only its `cancel_effect`, not its
   `remove_effect`. This isn't documented, but 309 base-game decisions rely on
   it.
@@ -199,7 +215,7 @@ python tools/check_province_modifiers.py   # provinces outside their state, unkn
 python tools/check_structure.py            # brace balance, template slot clashes
 python tools/check_references.py           # events/ideas/characters/tags used in play
 python tools/check_berlin_map.py           # Festung Berlin's map facts (needs Pillow and numpy)
-python tools/verify_update.py              # re-checks every claim (71 checks)
+python tools/verify_update.py              # re-checks every claim (72 checks)
 python tools/crash_site.py "<crash folder>" # which part of the game a crash report points to
 ```
 

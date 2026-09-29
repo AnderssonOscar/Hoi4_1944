@@ -1,0 +1,115 @@
+[09:39:27][no_game_date][pdx_audiomusic_sdl.cpp:74]: For best performance and quality music files should be in 44.1kHz (Njet Molotoff)
+[09:39:36][no_game_date][eventmanager.cpp:566]: events/mod_news.txt:8: mod.news.1: Event is set to trigger every day.
+[09:39:36][no_game_date][eventmanager.cpp:566]: events/mod_news.txt:166: mod.news.5: Event is set to trigger every day.
+[09:39:36][no_game_date][triggerimplementation.cpp:12401]: Invalid decision in has_active_timed_decision trigger: has_active_mission = GRE_the_election_of_1936
+[09:39:36][no_game_date][trigger.cpp:117]: Trigger failed to validate: common/national_focus/greece.txt:30: has_active_mission
+[09:39:36][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip GRE_exploit_errata_in_schachtplan
+[09:39:36][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip GRE_request_italian_assistance_with_industrialisation
+[09:39:36][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip GRE_trade_manufactured_ship_parts_for_investment
+[09:39:36][no_game_date][effectimplementation.cpp:14171]: Invalid Decision ID for unlock_decision_tooltip GRE_attend_talks_with_the_presidium
+[09:39:39][no_game_date][gameapplication.cpp:866]: The game has loc key collisions. Check logs/text.log for more details
+[09:39:40][1936.01.01.12][country.cpp:7047]: Attempting to set capital state #554 for Syria, they dont own it!
+[09:39:40][1936.01.01.12][effectimplementation.cpp:5554]: history/countries/GDC - Guangdong.txt:57: recruit_character: Character GXC_chen_jitang cannot be assigned to GDC as it is already assigned to GXC
+[09:39:41][1944.01.01.12][equipment_effects.cpp:814]: 'history/countries/ENG - Britain.txt:2052: create_equipment_variant': 'Fairey Swordfish' - Invalid icon 'GFX_ENG_nav_bomber1_medium'.
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/indonesia_joint.txt:7850: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/indonesia_joint.txt:7854: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][equipmentvariant.cpp:1112]: Country "ENG" does not have any equipment variant for type "jet_fighter_equipment_1" (selecting latest version) created by "ENG".
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/italy.txt:2761: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:5621]: history/countries/ITA - Italy.txt:1795: retire_character: Character ITA_giovanni_messe has already been retired from country ITA
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/romania.txt:1314: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SOV before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GER before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ENG before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GER before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GER before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ENG before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ENG before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SOV before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GER before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ENG before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SWE before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SPR before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of TUR before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of POR before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of IRE before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of AFG before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of ARG before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of BHU before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of CHI before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GUA before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of JAP before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of LIB before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of MEN before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of NEP before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SAU before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SIA before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of SIK before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of TIB before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of URG before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of VEN before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of YUN before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of PAR before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of YEM before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GXC before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of PRC before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of XSM before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of COG before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of MAN before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of GSM before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][country.h:1776]: Asking if SWI is a neighbor of NXM before the latter country is initialized (or otherwise has no neighbors).
+[09:39:41][1944.01.01.12][effectimplementation.cpp:12778]: common/national_focus/norway.txt:3268: create_unit -- pBestLocation was not found [reason] Not allowed on enemy provinces
+[09:39:41][1944.01.01.12][effectimplementation.cpp:12778]: common/national_focus/norway.txt:3268: create_unit -- pBestLocation was not found [reason] Not allowed on enemy provinces
+[09:39:41][1944.01.01.12][effectimplementation.cpp:12778]: common/national_focus/norway.txt:3268: create_unit -- pBestLocation was not found [reason] Not allowed on enemy provinces
+[09:39:41][1944.01.01.12][effectimplementation.cpp:12778]: common/national_focus/norway.txt:3268: create_unit -- pBestLocation was not found [reason] Not allowed on enemy provinces
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10808: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10619: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10623: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10222: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/finland.txt:10294: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:15922: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary.txt:3194: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary.txt:3231: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17111: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17115: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17168: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17174: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17181: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17423: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:17004: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/hungary_wuw.txt:11129: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/AFG - Afghanistan.txt:339: diplomatic_relation: The relation(non_aggression_pact) already exists, between AFG and TUR.
+[09:39:41][1944.01.01.12][eventtarget.cpp:357]: tried to use mio CHI_camco_medium_organization as scope, but could not find this mio in country CHI. Check that allowed trigger in mio matches this country.
+[09:39:41][1944.01.01.12][effect.cpp:555]: common/national_focus/china_shared.txt:3066: add_mio_size: Invalid Scope, supported: Military Industrial Organisation, provided: None
+[09:39:41][1944.01.01.12][effect.cpp:555]: common/national_focus/china_shared.txt:3067: add_mio_funds: Invalid Scope, supported: Military Industrial Organisation, provided: None
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/iraq.txt:669: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/IRQ - Iraq.txt:281: diplomatic_relation: The relation(non_aggression_pact) already exists, between IRQ and TUR.
+[09:39:41][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/IRQ - Iraq.txt:293: diplomatic_relation: The relation(non_aggression_pact) already exists, between IRQ and AFG.
+[09:39:41][1944.01.01.12][effectimplementation.cpp:3025]: history/countries/IRQ - Iraq.txt:301: remove_ideas: Invalid idea: IRQ_bakr_sidqi. If you wanted to reference a variable, you need to explicitly prefix it with var: or temp_var:.
+[09:39:41][1944.01.01.12][effectimplementation.cpp:5621]: history/countries/IRQ - Iraq.txt:306: retire_character: Character IRQ_bakr_sidqi has already been retired from country IRQ
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/japan.txt:27181: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/japan.txt:27185: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/japan.txt:27189: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/japan.txt:30189: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/mexico.txt:966: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/mexico.txt:966: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/mexico.txt:966: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/mexico.txt:966: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][equipment_effects.cpp:814]: 'common/national_focus/new_zealand.txt:512: create_equipment_variant': 'Bristol Blenheim' - Modular type 'medium_plane_airframe_1' appears to not have been unlocked for NZL as no chassis variant exists. Unlocked the tech before creating any variants to avoid bugs.
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/new_zealand.txt:1650: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/new_zealand.txt:1656: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/new_zealand.txt:1537: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/PER - Persia.txt:255: diplomatic_relation: The relation(non_aggression_pact) already exists, between PER and TUR.
+[09:39:41][1944.01.01.12][effectimplementation.cpp:10719]: history/countries/PER - Persia.txt:261: diplomatic_relation: The relation(non_aggression_pact) already exists, between PER and AFG.
+[09:39:41][1944.01.01.12][effectimplementation.cpp:5615]: history/countries/SIA - Siam.txt:345: retire_character: Unknown character SIA_nangklao_suriyawongse
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/china_warlord_sea.txt:3024: add_resource can't be called from a history file!
+[09:39:41][1944.01.01.12][equipmentpool.cpp:1540]: Trying to fill variant where none exist from type: anti_air_equipment belonging to British Raj
+[09:39:41][1944.01.01.12][equipmentpool.cpp:1540]: Trying to fill variant where none exist from type: anti_air_equipment belonging to British Raj
+[09:39:41][1944.01.01.12][effectimplementation.cpp:5781]: Character already has a country leader role for ideology: Anti-Revisionism: common/scripted_effects/WTT_warlord_scripted_effects.txt:328: add_country_leader_role
+[09:39:41][1944.01.01.12][effectimplementation.cpp:5781]: Character already has a country leader role for ideology: Socialism: common/scripted_effects/WTT_warlord_scripted_effects.txt:339: add_country_leader_role
+[09:39:41][1944.01.01.12][effectimplementation.cpp:5781]: Character already has a country leader role for ideology: Rexism: common/scripted_effects/WTT_warlord_scripted_effects.txt:350: add_country_leader_role
+[09:39:41][1944.01.01.12][international_market_effect_implementation.cpp:476]: common/national_focus/indonesia.txt:6497: give_market_access: Market access between INS and JAP is not valid
+[09:39:41][1944.01.01.12][international_market_effect_implementation.cpp:476]: common/national_focus/indonesia.txt:6498: give_market_access: Market access between JAP and INS is not valid
+[09:39:41][1944.01.01.12][character_effect_implementation.cpp:1018]: swap_country_leader_traits - Character has several country leader roles, ideology is mandatory: common/national_focus/indonesia.txt:7200: swap_country_leader_traits
+[09:39:41][1944.01.01.12][eventtarget.cpp:357]: tried to use mio HOL_artillerie_inrichtingen_organization as scope, but could not find this mio in country RKN. Check that allowed trigger in mio matches this country.
+[09:39:41][1944.01.01.12][effect.cpp:555]: common/national_focus/netherlands.txt:2330: add_mio_size: Invalid Scope, supported: Military Industrial Organisation, provided: None
+[09:39:41][1944.01.01.12][effectimplementation.cpp:11368]: common/national_focus/netherlands.txt:167: add_resource can't be called from a history file!

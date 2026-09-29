@@ -130,6 +130,9 @@ expected |= {("A", f"mod/{f}") for f in ("common/ideas/GER_homefront_ideas.txt",
              "common/scripted_effects/GER_homefront_effects.txt", "events/GER_homefront_events.txt",
              "localisation/english/GER_homefront_l_english.yml")}  # the home front, 1944-45 (section 14)
 expected |= {("M", "mod/common/on_actions/do_on_actions.txt"), ("M", "mod/history/countries/YUG - Yugoslavia.txt")}  # UK start fix (section 15)
+expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_measures_decisions.txt", "common/ideas/GER_measures_ideas.txt",
+             "common/scripted_effects/GER_measures_effects.txt", "common/synchronized_dynamic_tokens/GER_equipment_tokens.txt",
+             "events/GER_measures_events.txt", "localisation/english/GER_measures_l_english.yml")}  # five war measures (section 16)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -479,17 +482,29 @@ op_dec = {d.key: d for c in pdx.parse_file("mod/common/decisions/GER_1945_operat
           if c.key == "war_measures" for d in c.value if d.key}
 def op_get(node, key):
     return next((c for c in node.value if c.key == key), None)
+OP_TYPES = [f"infantry_equipment_{i}" for i in range(4)] + [f"artillery_equipment_{i}" for i in (1, 2, 3)]
 def op_amounts(effect):
-    """[fuel, infantry equipment, artillery] added (negative = taken) by a set-aside or return effect."""
-    return [int(n.value) if n.key == "add_fuel" else int(op_get(n, "amount").value)
-            for n in op_eff[effect].value if n.key in ("add_fuel", "add_equipment_to_stockpile")]
+    """(fuel, [needs set], [(type, amount) of every stockpile change], [variables added to], [variables reset]) of a set-aside or
+    return effect. Since section 17 rifles and guns are taken type by type and the amount taken is stored per type."""
+    nodes = [n for n, _ in pdx.walk(op_eff[effect].value)]
+    return (int(next(n.value for n in op_eff[effect].value if n.key == "add_fuel")),
+            [int(c.value) for n in op_eff[effect].value if n.key == "set_temp_variable" for c in n.value if c.key == "GER_1945_need"],
+            [(op_get(n, "type").value, op_get(n, "amount").value) for n in nodes if n.key == "add_equipment_to_stockpile"],
+            [(c.key, c.value) for n in nodes if n.key == "add_to_variable" for c in n.value],
+            [(c.key, c.value) for n in nodes if n.key == "set_variable" for c in n.value])
+def op_round_trip(o):
+    (sf, sn, sp, sv, _), (rf, rn, rp, _, rr) = op_amounts(f"GER_1945_{o}_set_aside"), op_amounts(f"GER_1945_{o}_return")
+    store = [f"GER_1945_{o}_{t}" for t in OP_TYPES]
+    return (sf == -rf and [rf] + sn == op_needs(f"GER_1945_{o}") and not rn
+            and sp == [(t, "GER_1945_amount") for t in OP_TYPES] and sv == [(v, "GER_1945_taken") for v in store]
+            and rp == list(zip(OP_TYPES, store)) and rr == [(v, "0") for v in store])
 def op_needs(dec):
     """[fuel, infantry equipment, artillery] the decision requires in stock (its '>' thresholds + 1)."""
     return [int(n.value) + 1 for n, _ in pdx.walk(op_get(op_dec[dec], "available").value)
             if n.key in ("has_fuel", "infantry_equipment", "artillery_equipment") and n.op == ">"]
 def op_calls_in(dec, part):
     return {n.key for n, _ in pdx.walk(op_get(op_dec[dec], part).value) if n.value == "yes"}
-op_res = {o: (op_amounts(f"GER_1945_{o}_set_aside"), op_amounts(f"GER_1945_{o}_return"), op_needs(f"GER_1945_{o}"))
+op_res = {o: (op_amounts(f"GER_1945_{o}_set_aside")[:2], op_needs(f"GER_1945_{o}"), op_round_trip(o))
           for o in ("sonnenwende", "spring_awakening")}
 op_units = [n for n, _ in pdx.walk(list(op_eff.values())) if n.key == "create_unit"]
 op_tpl = next(n for n, _ in pdx.walk(op_eff["GER_1945_marine_template"].value) if n.key == "division_template")
@@ -502,11 +517,12 @@ op_calls = set(re.findall(r"country_event = \{ id = (ger_1945\.\d+)", op["ev"] +
 op_ns = sum(open(os.path.join(d, f), "rb").read().count(b"add_namespace = ger_1945\r") + open(os.path.join(d, f), "rb").read().count(b"add_namespace = ger_1945\n")
             for d in ("mod/events", os.path.join(V, "events")) for f in os.listdir(d) if f.endswith(".txt"))
 sailors = op_get(op_dec["GER_1945_sailors_to_the_front"], "complete_effect")
-check("O  1945 operations: Sonnenwende and Spring Awakening set aside exactly what they require and return exactly that, both when "
+check("O  1945 operations: Sonnenwende and Spring Awakening set aside exactly the fuel, rifles and guns they require, the rifles and "
+      "guns type by type with what left the stockpile stored per type, and return exactly those types and amounts, both when "
       "launched and when called off (never launched when called off); 12 / 14 days of bonus after 7 / 10 days of preparation; 50 PP each; "
       "Courland moves only German armies, needs Libau or Windau, 30 days; Sailors: +1,000 manpower, -10 convoys, 3 divisions of plain "
       "infantry (not marines), 50% equipment, no experience; Stettin/Kiel/Libau/Windau in the right states; 10 events, 60 texts",
-      all(s == [-x for x in r] and r == n and len(r) == 3 for s, r, n in op_res.values())
+      all(ok for _, _, ok in op_res.values())
       and all({f"GER_1945_{o}_return", f"GER_1945_{o}_launch"} <= op_calls_in(f"GER_1945_{o}", "remove_effect")
               and op_calls_in(f"GER_1945_{o}", "cancel_effect") == {f"GER_1945_{o}_return"} for o in op_res)
       and [(s.key, op_get(op_get(s, "add_dynamic_modifier"), "days").value) for s in op_eff["GER_1945_sonnenwende_launch"].value]
@@ -631,14 +647,17 @@ def hf_body(name):
     return [canon_op(n) for n in hf_eff[name].value]
 check("H  The home front, 1944-45: 8 events, each once from its historical date (15 Aug, 14 Oct, 17 Nov, 19 Dec 1944; 6 Jan, "
       "30 Jan, 12 Feb, 5 Mar 1945) while at war; labour +10,000; Rommel leaves service only if still in it; Flak +7,500 and "
-      "+1.5% State AA; Vlasov's air force (only if Vlasov was recruited) -25 PP, +5,000, 20 fighters, 10 CAS; Volksopfer -25 PP, "
+      "+1.5% State AA; Vlasov's air force (only if Vlasov was recruited) -25 PP, +5,000, 20 Bf 109 G, 10 Ju 87 (named designs); Volksopfer -25 PP, "
       "4,000 old rifles, 1,000 support; Gustloff -1,500 (while Gotenhafen is ours); women +5,000, -2% stability; class of 1929 "
       "-25% training time, +0.25% recruitable population; 33 texts",
       hf_body("GER_homefront_female_labour_to_50") == ["add_manpower=10000"]
       and hf_body("GER_homefront_rommel_dies") == ["if={limit={has_character=GER_erwin_rommel} retire_character=GER_erwin_rommel}"]
       and hf_body("GER_homefront_flak_auxiliaries") == ["add_manpower=7500", "add_ideas=GER_homefront_flak_auxiliaries"]
       and hf_body("GER_homefront_vlasov_air_force") == ["add_political_power=-25", "add_manpower=5000",
-          "add_equipment_to_stockpile={type=small_plane_airframe amount=20}", "add_equipment_to_stockpile={type=small_plane_cas_airframe amount=10}"]
+          'add_equipment_to_stockpile={type=small_plane_airframe_2 amount=20 producer=GER variant_name="Bf 109 G"}',
+          'add_equipment_to_stockpile={type=small_plane_cas_airframe_1 amount=10 producer=GER variant_name="Ju 87"}']
+      and all(re.search(r'name = "%s"\s*\r?\n\s*type = %s\r?\n' % (v, t), current("mod/history/countries/GER - Germany.txt").decode("utf-8", "replace"))
+              for v, t in (("Bf 109 G", "small_plane_airframe_2"), ("Ju 87", "small_plane_cas_airframe_1")))
       and hf_body("GER_homefront_volksopfer") == ["add_political_power=-25", "add_equipment_to_stockpile={type=infantry_equipment_0 amount=4000}",
           "add_equipment_to_stockpile={type=support_equipment_1 amount=1000}"]
       and hf_body("GER_homefront_gustloff") == ["add_manpower=-1500"]
@@ -674,6 +693,81 @@ check("E  UK start: the countries that have no land on 1 Jan 1944 (Poland, Yugos
            ("ETH", "become_exiled_in={target=ENG legitimacy=60}"), ("ICE", "become_exiled_in={target=ENG legitimacy=65}"),
            ("JAP", "transfer_state=336")} == set(uk_startup),
       f"faction: {uk_faction}; on_startup: {uk_startup}")
+
+ms_dec = {d.key: (c.key, d) for c in pdx.parse_file("mod/common/decisions/GER_measures_decisions.txt")[0] if c.key for d in c.value if d.key}
+ms_eff = {n.key: n for n in pdx.parse_file("mod/common/scripted_effects/GER_measures_effects.txt")[0] if n.key}
+ms_ev = current("mod/events/GER_measures_events.txt").decode("ascii")
+ms_idea = next(i for c in pdx.parse_file("mod/common/ideas/GER_measures_ideas.txt")[0] if c.key == "ideas"
+               for g in c.value if g.key == "country" for i in g.value if i.key)
+ms_loc = current("mod/localisation/english/GER_measures_l_english.yml")
+ms_keys = {k.decode() for k in re.findall(rb"^ ([\w.]+):0 ", ms_loc, re.M)}
+ms_need = (set(ms_dec) | {d + "_desc" for d in ms_dec} | {ms_idea.key, ms_idea.key + "_desc"}
+           | set(re.findall(r"(?:title|desc|name|custom_effect_tooltip) = (ger_measures[\w.]+)", ms_ev))
+           | set(re.findall(r"custom_effect_tooltip = (\w+)", current("mod/common/decisions/GER_measures_decisions.txt").decode("ascii"))))
+ms_tokens = [l.strip() for l in current("mod/common/synchronized_dynamic_tokens/GER_equipment_tokens.txt").decode("ascii").splitlines()
+             if l.strip() and not l.startswith("#")]
+ms_read = set(re.findall(r"num_equipment@(\w+)", current("mod/common/scripted_effects/GER_measures_effects.txt").decode("ascii")
+                         + current("mod/common/scripted_effects/GER_1945_operations_effects.txt").decode("ascii")))
+def ms_body(name):
+    return [canon_op(n) for n in ms_eff[name].value]
+def ms_part(dec, part):
+    return canon_op(op_get(ms_dec[dec][1], part))
+ms_pay = ms_eff["GER_measures_konr_pay"].value
+ms_pay_needs = [int(c.value) for n in ms_pay if n.key == "set_temp_variable" for c in n.value if c.key == "GER_measures_need"]
+ms_pay_types = [op_get(n, "type").value for n, _ in pdx.walk(ms_pay) if n.key == "add_equipment_to_stockpile"]
+ms_units = [op_get(n, "division").value for k in ("GER_measures_konr_4th_division", "GER_measures_konr_5th_division")
+            for n, _ in pdx.walk(ms_eff[k].value) if n.key == "create_unit"]
+MS_STOCK = "has_equipment={infantry_equipment>804} has_equipment={support_equipment>14} has_equipment={artillery_equipment>5}"
+check("M  Five war measures: KONR (collaborationist tab, from 23 Nov 1944, needs the author's ROA template): a choice of 2 divisions "
+      "(4th at once, 5th after 60 days; low experience, half equipment, each paying 805/15/6 infantry/support/artillery type by type, "
+      "only with that in stock) or 12,000 manpower; railway repair 120 days +30% / +20% / -10%; student companies +20,000 and a spirit "
+      "-5% research, -1% stability, with a popup; weapons appeal 25 PP +2,000 Basic Infantry Equipment; confiscation (only after the "
+      "appeal, from Dec 1944) +7,500 and -1% stability; 50 PP otherwise, each once; every equipment type read is in the synchronized "
+      "token list; 3 events, 21 texts",
+      {d: (c, ms_part(d, "cost"), ms_part(d, "fire_only_once")) for d, (c, _) in ms_dec.items()}
+          == {"GER_measures_konr_expand": ("collaborationist_formation", "cost=50", "fire_only_once=yes"),
+              "GER_measures_railway_repair": ("war_measures", "cost=50", "fire_only_once=yes"),
+              "GER_measures_student_companies": ("war_measures", "cost=50", "fire_only_once=yes"),
+              "GER_measures_weapons_appeal": ("war_measures", "cost=25", "fire_only_once=yes"),
+              "GER_measures_weapons_confiscation": ("war_measures", "cost=50", "fire_only_once=yes")}
+      and ms_part("GER_measures_konr_expand", "visible") == 'visible={date>1944.11.22 has_war_with=SOV has_capitulated=no has_template="Russische Befreiungsarmee"}'
+      and ms_part("GER_measures_konr_expand", "available") == 'available={has_war_with=SOV has_template="Russische Befreiungsarmee"}'
+      and "country_event={id=ger_measures.1}" in ms_part("GER_measures_konr_expand", "complete_effect")
+      and ms_part("GER_measures_railway_repair", "visible").startswith("visible={date>1944.8.31 ")
+      and ms_part("GER_measures_railway_repair", "days_remove") == "days_remove=120"
+      and ms_part("GER_measures_railway_repair", "modifier") == ("modifier={repair_speed_rail_way_factor=0.30 "
+                                                                 "repair_speed_infrastructure_factor=0.20 production_speed_buildings_factor=-0.10}")
+      and ms_part("GER_measures_student_companies", "visible").startswith("visible={date>1944.9.30 ")
+      and ms_part("GER_measures_student_companies", "complete_effect")
+          == "complete_effect={GER_measures_student_companies=yes hidden_effect={country_event={id=ger_measures.3}}}"
+      and ms_part("GER_measures_weapons_appeal", "visible").startswith("visible={date>1944.10.17 ")
+      and ms_part("GER_measures_weapons_appeal", "complete_effect")
+          == "complete_effect={GER_measures_weapons_appeal=yes hidden_effect={set_country_flag=GER_measures_weapons_appealed}}"
+      and ms_part("GER_measures_weapons_confiscation", "visible")
+          == "visible={date>1944.11.30 has_war=yes has_capitulated=no has_country_flag=GER_measures_weapons_appealed}"
+      and ms_body("GER_measures_konr_divisions") == ["GER_measures_konr_pay=yes", "GER_measures_konr_4th_division=yes",
+                                                      "hidden_effect={country_event={id=ger_measures.2 days=60}}"]
+      and ms_pay_needs == [805, 15, 6]
+      and ms_pay_types == [f"infantry_equipment_{i}" for i in range(4)] + ["support_equipment_1"] + [f"artillery_equipment_{i}" for i in (1, 2, 3)]
+      and ms_units == [f'"name = \\"{n}th KONR Infantry Division\\" division_template = \\"Russische Befreiungsarmee\\" start_experience_factor = 0.1 '
+                       'start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \\"GER\\" } }"' for n in (4, 5)]
+      and all("prioritize={52 50}" in canon_op(ms_eff[k]) and "owner=ROOT" in canon_op(ms_eff[k])
+              for k in ("GER_measures_konr_4th_division", "GER_measures_konr_5th_division"))
+      and re.sub(r"\s+", " ", ms_ev).count("trigger = { has_equipment = { infantry_equipment > 804 } has_equipment = { support_equipment > 14 } "
+                                           "has_equipment = { artillery_equipment > 5 } }") == 1
+      and re.sub(r"\s+", " ", ms_ev).count("limit = { has_equipment = { infantry_equipment > 804 } has_equipment = { support_equipment > 14 } "
+                                           "has_equipment = { artillery_equipment > 5 } } GER_measures_konr_pay = yes GER_measures_konr_5th_division = yes") == 1
+      and ms_body("GER_measures_konr_manpower") == ["add_manpower=12000"]
+      and ms_body("GER_measures_student_companies") == ["add_manpower=20000", "add_ideas=GER_measures_student_companies_spirit"]
+      and ms_idea.key == "GER_measures_student_companies_spirit"
+      and canon_op(op_get(ms_idea, "modifier")) == "modifier={research_speed_factor=-0.05 stability_factor=-0.01}"
+      and ms_body("GER_measures_weapons_appeal") == ["add_equipment_to_stockpile={type=infantry_equipment_0 amount=2000}"]
+      and ms_body("GER_measures_weapons_confiscation") == ["add_equipment_to_stockpile={type=infantry_equipment_0 amount=7500}", "add_stability=-0.01"]
+      and ms_read == set(ms_tokens) and len(ms_tokens) == 8
+      and re.findall(r"^\tid = (ger_measures\.\d+)", ms_ev, re.M) == ["ger_measures.1", "ger_measures.2", "ger_measures.3"]
+      and ms_loc.startswith(b"\xef\xbb\xbfl_english:\r\n") and len(ms_keys) == 21 and ms_need == ms_keys
+      and sf.get("52", [""])[0].endswith("52-Wuttemberg.txt") and sf.get("50", [""])[0].endswith("50-Baden.txt"),
+      f"texts missing: {sorted(ms_need - ms_keys)}; extra: {sorted(ms_keys - ms_need)}; tokens: {sorted(set(ms_tokens) ^ ms_read)}")
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)

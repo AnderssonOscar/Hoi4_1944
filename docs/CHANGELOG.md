@@ -672,6 +672,10 @@ can't be used elsewhere until it starts.
   removed. The return adds the same numbers. Which versions of a rifle or
   gun are taken and given back is up to the game. If the fuel tank is full
   when the fuel comes back, the excess is lost, as with any fuel gain.
+  - **Corrected in section 17:** this was wrong for rifles and guns. The
+    game took the amount from every type in stock and gave it back as the
+    newest type, so each use lost about 500 / 750 rifles. They are now
+    taken and returned type by type, and that was measured in the game.
 - **The Sonnenwende bonus only helps Germans.** It is a state bonus with
   `army_core_attack_factor`, which only counts for troops fighting on their
   own country's core territory. Soviet troops in the same states never get
@@ -1217,6 +1221,9 @@ suggested effects, the rest to be decided "creative and realistic".
     in all, many of them liaison and training planes.
   - They are Germany's current fighter and ground-attack designs, given the
     way the base game does it (`type = small_plane_airframe`).
+  - **Corrected in section 17:** this was wrong. The game gave Ta 152
+    fighters and pre-war ground-attack planes. The event now gives the
+    types the KONR air force flew, Bf 109 G and Ju 87.
 - **The Volksopfer** gives old kit (the 1918 rifles), because what was
   collected was old and mixed.
 - **Rommel.** The author's own 20 July event can already retire Rommel (its
@@ -1427,6 +1434,258 @@ normal play. In the UK game that popup caused no crash.
 land at the game start must not be at war inside a faction, whether as a
 member or as a member's colony. Make it an exile in `on_startup` instead.
 
+### 16. Five war measures for Germany (commit `ddda13e`)
+
+Asked for by Oscar, with the effects he gave; 50 political power each unless
+stated, each once. Sources are listed at the end of the section.
+
+| Decision (tab) | From | Cost | Effect |
+|---|---|---|---|
+| **Expand the KONR Armed Forces** (Collaborationist) | 23 Nov 1944, the order that began the first KONR division at Münsingen [1] | 50 PP | A popup with a choice: **two more KONR divisions** at low experience and half equipment (the 4th at once, the 5th after 60 days), each paying the equipment it arrives with, 805 infantry equipment, 15 support equipment and 6 artillery, from the stockpile; **or 12,000 manpower** |
+| **Emergency Railway Repair Programme** (War Measures) | 1 Sep 1944 | 50 PP | 120 days: Railway Repair Speed +30%, Infrastructure Repair Speed +20%, Construction Speed −10% |
+| **Send the Student Companies to the Front** (War Measures) | 1 Oct 1944, the winter semester 1944/45 [7] | 50 PP | +20,000 manpower; a lasting spirit, −5% research speed and −1% stability; a popup |
+| **Call on Citizens to Hand In Their Weapons** (War Measures) | 18 Oct 1944, the Volkssturm's public launch [10] | 25 PP | +2,000 Basic Infantry Equipment; no stability cost |
+| **Confiscate Civilian Firearms** (War Measures) | 1 Dec 1944, only after the call | 50 PP | +7,500 Basic Infantry Equipment, −1% stability |
+
+**The KONR decision and the author's own:**
+- **What the author already has.** The "Collaborationist" tab has "Recruit
+  Andrey Vlasov" (it creates the "Russische Befreiungsarmee" division
+  template) and "Russian Liberation Army" (25 PP, human players only). The
+  latter raises the 600th, 650th and 700th divisions, the KONR's historical
+  1st, 2nd and 3rd.
+- **So this decision adds a 4th and a 5th.** Himmler had won Hitler's
+  permission for ten Russian divisions [3], but only three were formed, all
+  incomplete. The new decision needs the author's template, so Vlasov must
+  have been recruited first.
+- **Your call:** with both decisions a player can have five KONR divisions,
+  more than ever existed. The manpower option avoids that.
+- **Why each division pays for its equipment.** In a running game Germany's
+  army drew almost the whole rifle stockpile in the first five days of 1944
+  (about 29,000 rifles). A division that started empty would therefore stay
+  empty for a long time. So the divisions arrive half equipped, like the
+  author's, and exactly that half is taken from the stockpile.
+  - A full division of the author's template needs 1,610 rifles, 30 support
+    equipment and 12 guns (16 infantry battalions, an engineer company and
+    an artillery company).
+  - The payment is taken type by type, oldest rifles first (see section 17
+    for why).
+  - The option is only offered with that much in stock. The 5th division is
+    raised after 60 days only if Germany is still at war with the Soviet
+    Union and can still pay; otherwise it is not raised and nothing is paid.
+- **Where they appear:** in Württemberg or Baden if held (Münsingen and
+  Heuberg, where the KONR divisions formed [1]), otherwise in another German
+  core state that Germany holds.
+- **The manpower option (12,000)** is about the strength of the KONR's 2nd
+  division in April 1945 (11,856 men [4]).
+- **The popup says why many joined:** to get out of the prisoner-of-war
+  camps, where millions of Soviet prisoners had died.
+
+**The other four:**
+- **Railway repair.** These are the game's own modifiers with exactly
+  Oscar's names ("Railway Repair Speed" is `repair_speed_rail_way_factor`).
+  The −10% applies to all construction, as the base game has no modifier
+  for "building elsewhere". The text names who did the work:
+  - Reichsbahn repair gangs, the Organisation Todt and forced labourers;
+  - the SS railway construction brigades, formed in autumn 1944 from
+    concentration camp prisoners, about 500 each, kept in freight wagons
+    and moved from one bombed station to the next [5].
+- **The student companies.** Oscar asked for better wording and research, a
+  popup and a second small penalty.
+  - **The history:** since 1941/42 most male students were
+    "soldier-students", soldiers detached to study war-important subjects
+    such as medicine, chemistry and engineering, under military discipline
+    [7]. They went to the front in the vacations [9]. In the winter
+    semester 1944/45 the student companies were sent to the front for good
+    [8].
+  - **The 20,000 men:** there were 19,123 male medical students in 1943
+    alone [8]. Oscar gave a range of 10,000–30,000.
+  - **The second penalty** is −1% stability. The obvious medical penalty,
+    fewer wounded returning (`casualty_trickleback`), was rejected: the base
+    game never uses it below zero, so what a negative value does is
+    unknown.
+- **The weapons.**
+  - **The call:** by 18 November 1944 the Gauleiters had to report which
+    weapons could be issued to the Volkssturm, private ones included, down
+    to shotguns and small-bore rifles. One Party district in Upper Franconia
+    counted 107 hunting weapons in private hands on 25 November [11].
+  - **The confiscation:** in December 1944, households were to be checked
+    for weapons still kept at home [11].
+  - **"Infantry Equipment I (worst)":** in the game, "Infantry Equipment I"
+    is the second rifle type; the worst is **Basic Infantry Equipment**
+    (`infantry_equipment_0`). The decisions give the worst, as Oscar
+    intended, and as the home front's Volksopfer does. Easy to change.
+  - **The Volksopfer event (6 January 1945, section 14)** is the later
+    collection of clothes and equipment. Both can happen.
+
+**Checked:**
+- **Check M** in verify_update.py covers:
+  - costs, tabs and start dates;
+  - the confiscation needing the call;
+  - the 120-day modifier;
+  - every amount, the spirit and the payment (needs and types);
+  - both divisions (template, experience, equipment, place);
+  - the stock the option and the 5th division require;
+  - the events and the 21 texts;
+  - that every equipment type the effects read is in the synchronized
+    token list.
+- **Check M was calibrated.** Five errors were planted one at a time, and
+  each made it fail:
+  - the call costs 50;
+  - the confiscation without the call;
+  - a division pays 800 rifles;
+  - the railway programme lasts 60 days;
+  - a type is missing from the token list.
+- **Runtime test** (a temporary daily script in a running German game,
+  started directly as Germany; removed afterwards). Each effect ran and was
+  measured:
+  - KONR option A: +1 division, and exactly 805 rifles, 15 support
+    equipment and 6 guns left the stockpile. The same for the 5th
+    division's path.
+  - Option B: +12,000 manpower.
+  - The students: +20,000 manpower, and the spirit is present.
+  - The call: +2,000 Basic Infantry Equipment.
+  - The confiscation: +7,500.
+  - Stability read 100% before and after the confiscation: Germany's
+    stability starts above the cap, so the −1% does not show.
+- **Synchronized tokens:** reading an equipment stockpile in a script made
+  the game warn 24 times that the types "can cause OOS" (multiplayer out of
+  sync). The new file `common/synchronized_dynamic_tokens/GER_equipment_tokens.txt`
+  lists them, as the base game's `tokens.txt` does for its own; the warnings
+  are gone.
+- **Load test:** error.log identical to log 17
+  (`game-logs/18-after-war-measures_error.log`). setup.log shows 5
+  decisions, 3 events and 1 spirit loaded.
+
+**Not play-tested yet.** Console: `event ger_measures.1` (the KONR choice),
+`event ger_measures.3` (the students' popup). For the KONR decision, first
+take the author's "Recruit Andrey Vlasov".
+
+**Files (all new):**
+- `common/decisions/GER_measures_decisions.txt`
+- `common/scripted_effects/GER_measures_effects.txt`
+- `common/ideas/GER_measures_ideas.txt`
+- `events/GER_measures_events.txt`
+- `localisation/english/GER_measures_l_english.yml` (21 texts)
+- `common/synchronized_dynamic_tokens/GER_equipment_tokens.txt`
+
+Sources:
+- [1] ru.wikipedia, *1-я пехотная дивизия (РОА)*: formation began under an
+  order of 23 November 1944 at the Münsingen training area; 18,000 men.
+  The source does not say who issued the order (Oscar's "OKH" could not be
+  confirmed).
+- [2] en.wikipedia, *600th Infantry Division*: established on 1 December
+  1944; handed over to the KONR on 28 January 1945. *650th Infantry
+  Division*: established on 10 January 1945, never at full strength, no
+  real combat.
+- [3] en.wikipedia, *Russian Liberation Army*: "Heinrich Himmler persuaded a
+  very reluctant Hitler to permit the formation of 10 Russian Liberation
+  Army divisions"; three incomplete divisions, about 50,000–60,000 men.
+- [4] ru.wikipedia, *Комитет освобождения народов России*: strength on
+  22 April 1945: 1st division about 20,000, 2nd 11,856, 3rd 10,000, reserve
+  brigade 7,000, air force over 5,000.
+- [5] KZ-Gedenkstätte Neuengamme, *Bad Sassendorf (11. SS-Eisenbahnbaubrigade)*:
+  set up in autumn 1944 by the SS Economic and Administrative Main Office
+  to repair destroyed tracks and stations; as a rule 500 prisoners each,
+  living in railway wagons, "concentration camps on rails".
+- [6] eisenbahn-stolberg.de, the Stolberg–Walheim line 1920–1949: the
+  railway near Aachen was largely spared until mid-1944; strafing attacks
+  on trains from 5 September 1944; passenger service stopped on
+  10 September 1944 (a local example of the September 1944 turn).
+- [7] Deutsches Historisches Museum, LeMO, *Universitäten und Studierende im
+  Zweiten Weltkrieg*: from 1941/42 soldier-students dominated the lecture
+  halls, under military rather than academic authority, detached "zum
+  Studium kriegswichtiger Fächer wie Medizin, Chemie oder Technik".
+- [8] Themenportal Europäische Geschichte (clio-online): a medical student's
+  letter in the Frankfurter Rundschau, 1 February 1946 ("when the student
+  companies were sent to the front in the winter semester 1944/1945"), with
+  Karin Hausen's commentary: 13,821 male medical students in 1941, 19,123
+  in 1943.
+- [9] de.wikipedia, *Studentenkompanie*: students studied normally and were
+  sent to the front in the vacations (the Munich medical company, 1942).
+- [10] en.wikipedia, *Volkssturm*: established on 25 September 1944; the
+  official launch on 18 October 1944, a date Himmler chose for the Battle
+  of Leipzig in 1813.
+- [11] weltkrieg2.de, *Volkssturm-Waffen*, citing Klaus Mammach, *Der
+  Volkssturm: Das letzte Aufgebot 1944/45*: the report deadline of
+  18 November 1944 (including private weapons, shotguns and small-bore
+  rifles); the Lichtenfels-Staffelstein report of 25 November; the checks
+  of households in December 1944.
+
+### 17. Two equipment mistakes of mine, found while testing section 16 (commit `470916b`)
+
+Found by reading the stockpile per equipment type in a running game (the
+earlier tests ran during the game's setup, when every stockpile reads 0).
+
+**How the game handles equipment by its general type** (measured with
+Germany on 1 January 1944):
+- **Removing by the general type takes the amount from every type in
+  stock.** `add_equipment_to_stockpile = { type = infantry_equipment amount
+  = -1600 }` took 1,600 Basic Infantry Equipment **and** 1,600 Infantry
+  Equipment I: 3,200 in all.
+  - For artillery, −50 took 50 from the one gun type that had at least 50,
+    and left the other (6 guns) alone.
+  - The game's documentation says that without a producer the effect "will
+    be applied to all creators".
+- **Adding by the general type gives the newest type:** +50
+  `artillery_equipment` came back as the newest gun, and +500
+  `infantry_equipment` as Infantry Equipment III.
+- **Removing one specific type takes exactly that amount.**
+- **Removing with `producer = GER` removed nothing.**
+
+**Mistake 1: the 1945 operations (section 11) lost rifles.**
+- **What went wrong.** Sonnenwende and Spring Awakening set aside 500 / 750
+  rifles and 50 / 75 guns by the general type and gave them back the same
+  way. With two rifle types in stock, each use cost Germany about 500 / 750
+  rifles for good, and the guns came back as a newer model.
+- **Section 11 was wrong.** Its note "exactly what was set aside comes back"
+  and check O both looked at the numbers in the script, not at what the
+  game does with them.
+- **The fix.** Rifles and guns are now taken type by type, oldest first. The
+  amount that actually left the stockpile is stored per type (for example
+  `GER_1945_sonnenwende_infantry_equipment_0`), and exactly those types and
+  amounts are handed back.
+- **Measured:** after the set-aside and the return, every rifle and gun type
+  and the fuel were back at their starting numbers, for both operations.
+  The set-aside took 500 / 750 rifles and 50 / 75 guns, and fuel was already
+  exact.
+
+**Mistake 2: Vlasov's air force (section 14) got the wrong planes.**
+- **What went wrong.** The home-front event gave 20 fighters and 10
+  ground-attack planes by the general type. The game handed out Ta 152 A
+  fighters (Germany's newest design) and ground-attack planes on the pre-war
+  airframe (Do 17, Hs 123).
+- **Section 14 was wrong.** It said "Germany's current designs".
+- **The fix.** The event now names the types the KONR air force flew:
+  **Bf 109 G** fighters and **Ju 87** dive bombers. Its fighter squadron had
+  16 Bf 109s and its bomber squadron 12 Ju 87s [1]. This uses
+  `variant_name`, as the base game does.
+- **Measured:** +20 on the Bf 109 G airframe and +10 on the Ju 87 airframe.
+
+**Checked:**
+- **Check O** now parses the set-aside and the return: fuel, the amounts
+  required, every rifle and gun type taken, what is stored and what is
+  handed back.
+- **Check H** now requires the two named designs, and that Germany's history
+  creates them.
+- **Both were calibrated.** Each failed with a planted error: a return by
+  the general type, and the ground-attack planes by the general type.
+- **Load test:** error.log identical
+  (`game-logs/18-after-war-measures_error.log`).
+- **Other stockpile changes checked:**
+  - the reserves' deliveries (section 12) and the Sailors' convoys
+    (section 11) already name a specific type;
+  - the author's own content wasn't changed.
+
+**Files:**
+- `common/scripted_effects/GER_1945_operations_effects.txt` (set-aside and
+  return)
+- `common/scripted_effects/GER_homefront_effects.txt` (Vlasov's air force)
+
+Source:
+- [1] ru.wikipedia, *Военно-воздушные силы КОНР*: 5th fighter squadron with
+  16 Bf 109, 8th bomber squadron with 12 Ju 87, a training squadron; 87
+  aircraft in all.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -1452,7 +1711,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-73 files differ from the version on Steam: 33 edited, 3 deleted, 37 new (full list:
+79 files differ from the version on Steam: 33 edited, 3 deleted, 43 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

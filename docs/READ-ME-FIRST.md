@@ -9,7 +9,7 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **73 files differ** from that version: 33 edited, 3 deleted, 37 new. Your own
+- **79 files differ** from that version: 33 edited, 3 deleted, 43 new. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -34,7 +34,7 @@ independently (see "Check it yourself").
 | `mod/` | the complete updated mod, ready to test or upload |
 | `patches/` | every change as a patch (29, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 71 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 72 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -66,6 +66,8 @@ independently (see "Check it yourself").
 | 19 | New: **the home front, 1944–45** (CHANGELOG section 14), eight events on their historical dates: women's labour service to 50 (+10,000); Rommel's forced suicide (he leaves service; only the story if your 20 July event already retired him); RAD women at the Flak (+7,500, +1.5% State AA); an air force for Vlasov (if he was recruited; a choice); the Volksopfer (a choice); the sinking of the Wilhelm Gustloff (−1,500); women and girls for the Volkssturm (+5,000, −2% stability); the class of 1929 (−25% training time, +0.25% recruitable population). **Not play-tested yet** | 5 new files `GER_homefront_*` |
 | 20 | Fix: the Courland popup now unlocks the evacuation decision itself, so the console test in CHANGELOG section 11 works; in normal play nothing changes | GER_1945_operations_events.txt |
 | 21 | Fix: **starting as the UK crashed the game** (also with the Workshop version). Poland, Yugoslavia, the Philippines and Burma control no land in 1944; as faction members or colonies at war they capitulated during the game setup, and the UK's "government in exile" popup crashed. They are no longer in the faction or colonies in history and become exiles in `on_startup` instead, as your own `on_startup` already did for most of them (the same as your Belgium fix). The Philippines and Burma are no longer colonies (CHANGELOG section 15) | ENG, USA and YUG history, do_on_actions.txt |
+| 22 | New: **five war measures** for Germany (CHANGELOG section 16), each once: **Expand the KONR** (Collaborationist tab, from 23 Nov 1944, after your "Recruit Andrey Vlasov"): two more KONR divisions paying their half equipment from the stockpile, or 12,000 manpower; **Emergency Railway Repair Programme** (120 days: railway repair +30%, infrastructure repair +20%, construction −10%); **Send the Student Companies to the Front** (+20,000, −5% research, −1% stability, a popup); **Call on Citizens to Hand In Their Weapons** (25 PP, +2,000 old rifles); **Confiscate Civilian Firearms** (after the call, +7,500 old rifles, −1% stability) | 6 new files `GER_measures_*`, `GER_equipment_tokens.txt` |
+| 23 | Fix of my own mistakes (CHANGELOG section 17): Sonnenwende and Spring Awakening lost about 500 / 750 rifles each time (the game takes an amount from every rifle type in stock), now exact type by type; Vlasov's air force gave Ta 152s and pre-war ground-attack planes, now Bf 109 G and Ju 87 | GER_1945_operations_effects.txt, GER_homefront_effects.txt |
 
 **Your call** (decisions made for you, easy to change):
 
@@ -76,6 +78,10 @@ independently (see "Check it yourself").
 - the Burma oil decisions were not added;
 - the Philippines and Burma no longer start as US and UK colonies (the UK
   fix, change 21);
+- the war measures (change 22): the new KONR decision and your own "Russian
+  Liberation Army" can both be taken (five KONR divisions in all); the
+  weapons decisions give Basic Infantry Equipment, the worst rifle type;
+  the students' second penalty is −1% stability;
 - your GER decisions, germany focus tree and artillery techs were **not**
   merged with 1.19.3 and are unchanged (apart from the Volkssturm focus's
   unit block, change 11);
@@ -96,7 +102,7 @@ independently (see "Check it yourself").
    git -c core.autocrlf=false apply --whitespace=nowarn <package>/patches/*.patch
    sha256sum -c <package>/docs/checksums/mod-files.sha256
    ```
-   All 948 files should say OK, which shows `mod/` is exactly your Steam
+   All 954 files should say OK, which shows `mod/` is exactly your Steam
    version plus these patches. (If `git apply` succeeds but files don't
    change, the folder is inside another git repository and git silently
    skips the paths. Move it, or set `GIT_CEILING_DIRECTORIES`.) This exact
@@ -160,6 +166,9 @@ You may want to leave it out next time.
 - Germany's last reserves (six events and a decision) load cleanly and their
   effects ran inside the game without errors, but they haven't been played
   through yet (CHANGELOG section 12 has console test steps).
+- The five war measures load cleanly and each effect ran and was measured in
+  a running game, but they haven't been played through (CHANGELOG
+  section 16 has console test steps).
 - The UK fix was tested by starting the game as the UK and running it into
   3 January 1944; it hasn't been played further.
 - `tools/check_berlin_map.py` needs Pillow and numpy (`pip install pillow numpy`).

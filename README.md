@@ -21,7 +21,7 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 71 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 72 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
@@ -38,7 +38,9 @@ yourself"). **None of the update has been play-tested yet.**
   - three state files defined twice;
   - "Königsberg in Ruins" removing forts in Africa;
   - the Stettin fort and the Antwerp sabotage running in the wrong states;
-  - line endings kept byte-exact in every clone.
+  - line endings kept byte-exact in every clone;
+  - two equipment mistakes in the update's own 1945 operations and home
+    front (lost rifles, wrong aircraft).
 - **New content:**
   - the Slovak National Uprising (flavour event);
   - the Nero Decree and Werwolf (decisions);
@@ -50,9 +52,11 @@ yourself"). **None of the update has been play-tested yet.**
     evacuation, Sailors to the Front;
   - Germany's last reserves: six events and a Luftwaffe decision;
   - the home front, 1944–45: eight events, from women's labour service to
-    the class of 1929.
-- **Scope:** 73 files differ from the Steam version (33 edited, 3 deleted,
-  37 new). The author's own content was kept byte-for-byte everywhere, and
+    the class of 1929;
+  - five war measures: expanding the KONR, emergency railway repairs, the
+    student companies to the front, and two decisions on civilian weapons.
+- **Scope:** 79 files differ from the Steam version (33 edited, 3 deleted,
+  43 new). The author's own content was kept byte-for-byte everywhere, and
   that is checked by script.
 
 The full list is the table in [READ-ME-FIRST](docs/READ-ME-FIRST.md); the
@@ -75,7 +79,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **71 automated checks** (`python tools/verify_update.py`): integrity, a
+- **72 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
@@ -92,7 +96,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 71 checks
+python tools/verify_update.py    # re-runs all 72 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 

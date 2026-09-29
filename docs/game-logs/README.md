@@ -21,5 +21,6 @@ history runs at startup). Compare them with any diff tool.
 | 13-after-last-reserves_error.log | after Germany's last reserves (70d287a); identical to 5 | 115 |
 | 14-pull-request-2-clone_error.log | a fresh clone of pull request #2's branch (the author's layout, commit 80d1d1c) with Git's default settings (CRLF checkout); identical to 13 | 115 |
 | 16-pull-request-3-clone_error.log | a fresh clone of pull request #3's branch (the author's layout, commit 58b8bce) with Git's default settings; identical to 15. A first run logged 15 extra lines, all from a debug-mode database reload ("Reloading Database: common/decisions", then the base game's CHL.txt): the freshly created files were still being touched. The rerun on the same clone had no reload and is identical; this file is the rerun | 115 |
+| 18-after-war-measures_error.log | after the five war measures (ddda13e) and the equipment fixes (470916b); identical to 17. Also identical with only ddda13e applied | 115 |
 | 17-after-uk-crash-fix_error.log | after the UK start fix (e578b10); identical to 15 except one line number: the UK history file is one comment line longer, so the old Swordfish icon warning moved from line 2051 to 2052 | 115 |
 | 15-after-home-front_error.log | after the home front, 1944–45 (99c2aa4) and the Courland popup fix (96f4a17); identical to 13 | 115 |
