@@ -9,7 +9,7 @@
 on_actions = {
 	on_daily_GER = {
 		effect = {
-			# 1. The landing: from 1 June 1944, at war with the UK or the USA, an
+			# 1. The landing: from 1 June 1944, at war with the UK or the USA, a western Allied
 			# enemy holds part of the invasion coast.
 			if = {
 				limit = {
@@ -19,11 +19,52 @@ on_actions = {
 						has_war_with = ENG
 						has_war_with = USA
 					}
-					OR = {
-						NOT = { 15 = { is_fully_controlled_by = ROOT } }
-						NOT = { 14 = { is_fully_controlled_by = ROOT } }
-						NOT = { 29 = { is_fully_controlled_by = ROOT } }
-						NOT = { 6 = { is_fully_controlled_by = ROOT } }
+					any_enemy_country = {
+						OR = {
+							tag = ENG
+							tag = USA
+							is_in_faction_with = ENG
+							is_in_faction_with = USA
+						}
+						OR = {
+							controls_province = 485
+							controls_province = 539
+							controls_province = 553
+							controls_province = 3534
+							controls_province = 3549
+							controls_province = 3579
+							controls_province = 6449
+							controls_province = 6569
+							controls_province = 6599
+							controls_province = 9434
+							controls_province = 9550
+							controls_province = 9578
+							controls_province = 11521
+							controls_province = 11535
+							controls_province = 11563
+							controls_province = 542
+							controls_province = 3552
+							controls_province = 3758
+							controls_province = 6536
+							controls_province = 6548
+							controls_province = 6572
+							controls_province = 9495
+							controls_province = 9510
+							controls_province = 9525
+							controls_province = 11508
+							controls_province = 575
+							controls_province = 3476
+							controls_province = 3536
+							controls_province = 6504
+							controls_province = 9500
+							controls_province = 11483
+							controls_province = 11548
+							controls_province = 11606
+							controls_province = 516
+							controls_province = 3576
+							controls_province = 6446
+							controls_province = 6560
+						}
 					}
 				}
 				set_country_flag = GER_dday_landed
