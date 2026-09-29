@@ -1,0 +1,81 @@
+###########################
+# 1944 - Downfall: foreign legions and two SS divisions: daily checks (docs/CHANGELOG.md section 19)
+#
+# Each event fires once, on or after its historical date, only while its
+# situation still holds.
+###########################
+
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			# 1. From 15 August 1944: the Indian Legion leaves the Atlantic coast
+			# once the Allies are in France in strength (an enemy holds Paris).
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_legions_1_done }
+					date > 1944.8.14
+					date < 1945.5.9
+					has_war = yes
+					OR = {
+						has_war_with = ENG
+						has_war_with = USA
+					}
+					NOT = { controls_province = 11506 }
+				}
+				set_country_flag = GER_legions_1_done
+				country_event = { id = ger_legions.1 }
+			}
+			# 2. From 5 October 1944: the Handschar falls apart (after Janja, 3-4 October).
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_legions_2_done }
+					date > 1944.10.4
+					date < 1945.5.9
+					has_war = yes
+					country_exists = CRO
+				}
+				set_country_flag = GER_legions_2_done
+				country_event = { id = ger_legions.2 }
+			}
+			# 3. From 30 December 1944: the Eastern Legions pass to the SS.
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_legions_3_done }
+					date > 1944.12.29
+					date < 1945.5.9
+					has_war_with = SOV
+				}
+				set_country_flag = GER_legions_3_done
+				country_event = { id = ger_legions.3 }
+			}
+			# 4. From 17 February 1944 (the breakout from the Korsun-Cherkassy pocket):
+			# Wiking. The text depends on whether Cherkassy (state 203) still holds.
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_legions_4_done }
+					date > 1944.2.16
+					date < 1945.1.1
+					has_war_with = SOV
+				}
+				set_country_flag = GER_legions_4_done
+				country_event = { id = ger_legions.4 }
+			}
+			# 5. From 10 August 1944 (the end of the battle for the Tannenberg Line):
+			# Nordland, while northern Estonia (Narva-Rakvere 813 or Tallinn 812) holds.
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_legions_5_done }
+					date > 1944.8.9
+					date < 1945.1.1
+					has_war_with = SOV
+					OR = {
+						813 = { is_controlled_by = ROOT }
+						812 = { is_controlled_by = ROOT }
+					}
+				}
+				set_country_flag = GER_legions_5_done
+				country_event = { id = ger_legions.5 }
+			}
+		}
+	}
+}
