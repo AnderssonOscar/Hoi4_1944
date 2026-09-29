@@ -163,7 +163,6 @@ expected |= {("A", f"mod/{f}") for f in ("interface/GER_dday.gfx", "gfx/events/r
 expected |= {("A", f"mod/{f}") for f in ("gfx/events/report_event_GER_remagen_bridge.dds", "interface/GER_remagen.gfx",
              "common/scripted_effects/GER_remagen_effects.txt", "common/on_actions/GER_remagen_on_actions.txt",
              "events/GER_remagen_events.txt", "localisation/english/GER_remagen_l_english.yml")}  # the bridge at Remagen (section 20)
-expected.add(("M", "mod/common/decisions/Allies_1944.txt"))
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -215,8 +214,6 @@ UK_FIX_REMOVED = {  # the UK start fix (section 15): these lines were turned int
 }
 for _f, _ok in UK_FIX_REMOVED.items():
     allowed[_f] = (lambda prev, ok: lambda l: prev(l) or l in ok)(allowed.get(_f, lambda l: False), _ok)
-allowed["mod/common/decisions/Allies_1944.txt"] = lambda line: line.strip() in {
-    "date < 1945.5.10", "ENG = { surrender_progress < 0.01 }", "USA = { surrender_progress < 0.01 }"}
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
@@ -974,11 +971,8 @@ check("C  The Crimea: the popup fires once when we hold Sevastopol (3686) with d
       and cr_bom and len(cr_keys) == 14 and cr_need == cr_keys,
       f"texts: {sorted(cr_need ^ cr_keys)}")
 
-import check_overlord
-ol_text = current("mod/common/decisions/Allies_1944.txt").decode("utf-8-sig")
-ol_cases = check_overlord.scenarios(ol_text) + check_overlord.calibration(ol_text)
-check("OL Overlord: preparation expires before launch; minor Allied losses do not block launch; AI, war, coast, date and capitulation guards preserved; planted defects rejected",
-      all(ok for _, ok in ol_cases), f"{sum(ok for _, ok in ol_cases)}/{len(ol_cases)} scenarios")
+check("OL The author's D-Day decisions (common/decisions/Allies_1944.txt) are his own, byte for byte (Codex's change was reverted at Oscar's request)",
+      git("rev-parse", "HEAD:mod/common/decisions/Allies_1944.txt") == git("rev-parse", f"{BASE}:mod/common/decisions/Allies_1944.txt"))
 
 import check_dday
 dd_cases = check_dday.scenarios(current("mod/common/on_actions/GER_dday_on_actions.txt").decode()) + check_dday.calibration(current("mod/common/on_actions/GER_dday_on_actions.txt").decode())
