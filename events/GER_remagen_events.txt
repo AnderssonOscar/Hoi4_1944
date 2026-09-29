@@ -1,0 +1,41 @@
+###########################
+# 1944 - Downfall: the bridge at Remagen: events (docs/CHANGELOG.md section 20)
+###########################
+
+add_namespace = ger_remagen
+
+# 1. The bridge is taken (GER_remagen_captor: the country that holds the east bank)
+country_event = {
+	id = ger_remagen.1
+	title = ger_remagen.1.t
+	desc = ger_remagen.1.d
+	picture = GFX_report_event_GER_remagen_bridge
+	is_triggered_only = yes
+	option = {
+		name = ger_remagen.1.a
+		ai_chance = { base = 70 }
+		GER_remagen_destroy_the_bridge = yes
+		custom_effect_tooltip = ger_remagen.1.a.tt
+	}
+	option = {
+		name = ger_remagen.1.b
+		ai_chance = { base = 30 }
+		custom_effect_tooltip = ger_remagen.1.b.tt
+	}
+}
+
+# 2. Ten days later: the bridge collapses (only after option A)
+country_event = {
+	id = ger_remagen.2
+	title = ger_remagen.2.t
+	desc = ger_remagen.2.d
+	picture = GFX_report_event_GER_remagen_bridge
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = { GER_remagen_collapse = yes }
+	}
+	option = {
+		name = ger_remagen.2.a
+		custom_effect_tooltip = ger_remagen.2.a.tt
+	}
+}

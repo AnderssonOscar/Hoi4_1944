@@ -1,0 +1,24 @@
+###########################
+# 1944 - Downfall: the bridge at Remagen: effects (docs/CHANGELOG.md section 20)
+###########################
+
+# Option A (what Hitler did): the Flying Court-Martial West, and the bridge to
+# be destroyed at any cost (bombers, jets, V-2 rockets, frogmen). The political
+# price, the fuel, the fear; the bridge collapses 10 days later (event
+# ger_remagen.2), as it did on 17 March 1945, ten days after its capture.
+GER_remagen_destroy_the_bridge = {
+	add_political_power = -25
+	add_fuel = -2000
+	add_stability = -0.02
+	hidden_effect = { country_event = { id = ger_remagen.2 days = 10 } }
+}
+
+# The collapse: the railway in the bridgehead (province 529, the east bank at
+# Erpel) is damaged. The Ludendorff Bridge was a railway bridge.
+GER_remagen_collapse = {
+	damage_building = {
+		type = rail_way
+		province = 529
+		damage = 2
+	}
+}

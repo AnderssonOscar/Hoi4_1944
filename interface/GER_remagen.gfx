@@ -1,0 +1,11 @@
+# 1944 - Downfall: the bridge at Remagen (docs/CHANGELOG.md section 20)
+# Picture: "U.S. First Army at Remagen Bridge before four hours before it collapsed
+# into the Rhine", about 17 March 1945, U.S. National Archives, NAID 195341.
+# Public domain (work of the U.S. Federal Government). Via Wikimedia Commons.
+# Cut to 210 x 176 in the style of the game's event pictures.
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_event_GER_remagen_bridge"
+		texturefile = "gfx/events/report_event_GER_remagen_bridge.dds"
+	}
+}

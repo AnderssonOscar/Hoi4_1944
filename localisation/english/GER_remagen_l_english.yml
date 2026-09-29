@@ -1,0 +1,11 @@
+﻿l_english:
+ ger_remagen.1.t:0 "The Bridge at Remagen"
+ ger_remagen.1.d:0 "[GER_remagen_captor.GetAdjective] troops have crossed the Rhine at Remagen. The Ludendorff railway bridge was wired for demolition, but the charges, weak industrial explosive, only damaged it, and the bridge is still standing. The enemy is pouring men and tanks across it onto the east bank.\n\nThe Führer is beside himself. He demands a flying court-martial for the officers responsible, and the destruction of the bridge by any means: bombers, the new jets, V-2 rockets, frogmen."
+ ger_remagen.1.a:0 "Court-martial them, and destroy the bridge at any cost."
+ ger_remagen.1.a.tt:0 "The Flying Court-Martial West sentences five officers to death, and four are shot. In §Y10 days§! the battered bridge collapses into the Rhine, damaging the railway in the bridgehead."
+ ger_remagen.1.b:0 "Contain the bridgehead. The Luftwaffe has better targets."
+ ger_remagen.1.b.tt:0 "No court-martial, and the bridge stays standing."
+ ger_remagen.2.t:0 "The Bridge at Remagen Collapses"
+ ger_remagen.2.d:0 "Ten days after its capture, the Ludendorff Bridge has collapsed into the Rhine under the weight of traffic and repair work, taking dozens of enemy engineers with it. In those ten days 367 of our aircraft attacked it, among them the new jet bombers; eleven V-2 rockets were fired at it, and naval frogmen swam down the Rhine to blow it up. None of them brought it down.\n\nThe enemy has long since built pontoon bridges beside it. The bridgehead remains."
+ ger_remagen.2.a:0 "At least it is gone."
+ ger_remagen.2.a.tt:0 "The railway in the bridgehead east of Remagen is damaged."
