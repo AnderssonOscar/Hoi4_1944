@@ -114,7 +114,7 @@ operations = {
 		available = {
 			has_war_with = GER
 			date > 1944.5.1
-			date < 1945.5.10
+			date < 1944.5.29
 
 			16 = {is_fully_controlled_by = GER}
 		}
@@ -145,6 +145,15 @@ operations = {
 			#naval_speed_factor = +1.0 #only works for ships, not convoy
 		}
 
+
+		# Preparation must end before the launch window, even if selected late.
+		cancel_trigger = {
+			OR = {
+				date > 1944.5.28
+				has_decision = operation_overlord
+				NOT = { has_war_with = GER }
+			}
+		}
 
 		days_remove = 28
 	
@@ -351,8 +360,8 @@ operation_cross_the_rhine= {
 
 				15 = {is_fully_controlled_by = GER}
 
-				ENG = { surrender_progress < 0.01 }
-				USA = { surrender_progress < 0.01 }
+				ENG = { has_capitulated = no }
+				USA = { has_capitulated = no }
 
 			GER = {
 
