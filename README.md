@@ -31,8 +31,8 @@ yourself"). **None of the update has been play-tested yet.**
 The interrupted September 29 work is complete locally: the selected pictures,
 Wiking before Warsaw, the first bomb, Leningrad, the Crimea evacuation fix,
 and the invasion-repelled event. Two Overlord decision blockers are corrected.
-See [continuation and test limits](docs/CODEX-CONTINUATION.md). PR #4 is
-prepared for publication; the package tag is `final-2026-09-29-v16-codex`.
+See [continuation and test limits](docs/CODEX-CONTINUATION.md). PR #4 has
+been updated; the package tag is `final-2026-09-29-v16-codex`.
 
 ## The update in short
 

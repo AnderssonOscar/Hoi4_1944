@@ -150,13 +150,13 @@ IV\crashes\` shows why.
 
 You already uploaded changes 1–23 on 29 September, with pull request #3
 (all except 18, the line-ending setting of this package, which your
-repository keeps as it is). Pull request #4 currently contains changes 24–26; changes 27–32 are prepared locally
+repository keeps as it is). Pull request #4 contains changes 24–32 (updated to 23b6824)
 (Oscar's review round, the flavour events, the bridge at Remagen). Merge
 it and upload as usual, or copy the changed files from `mod/`.
 
 The same changes went to your GitHub repository
 (github.com/gastav3/Hoi4_1944) as pull requests #2 and #3, which you merged,
-and #4 (changes 24–26, open; 27–32 prepared locally). They keep your layout and your
+and #4 (changes 24–32, open). They keep your layout and your
 line-ending setting, with one commit per change and a README (CHANGELOG
 section 13). Merging them leaves your setup and your Steam upload as they
 are.

@@ -39,7 +39,7 @@ mod, so every change must be easy for him to check himself.
 - **GitHub:** the same changes go to the author's repository in his layout
   (the mod at the top level, his line-ending setting): pull requests #2 and
   #3 (both merged by the author; #3 covers sections 14 to 17 and the
-  Courland fix) and pull request #4 (open: sections 18–20; 21–27 prepared locally). The commit IDs there differ; CHANGELOG section 13 pairs
+  Courland fix) and pull request #4 (open: sections 18–27, updated to 23b6824). The commit IDs there differ; CHANGELOG section 13 pairs
   them.
 - **Not verified:**
   - actual play: none of the new content has been played through;

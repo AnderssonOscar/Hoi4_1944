@@ -51,9 +51,10 @@ restored byte for byte and the previous logs were backed up.
 
 ## GitHub handoff
 
-PR #4 currently ends at `d4e1359`. The ten newer mod commits are prepared
-locally in the author's repository layout, with a commit mapping in
-`docs/PR4-COMMIT-MAPPING.tsv`. Publishing this continuation is pending.
+PR #4 was updated from `d4e1359` to `23b6824` with the user's approval.
+It contains the ten newer mod commits and the revised README in the author's
+repository layout. `docs/PR4-COMMIT-MAPPING.tsv` pairs the mod commits.
+The package tag is `final-2026-09-29-v16-codex`. The author decides when to merge.
 The author's Steam Workshop files have not been changed.
 
 ## Repeat the relevant game test

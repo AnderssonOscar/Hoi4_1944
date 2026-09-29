@@ -2519,9 +2519,9 @@ far enough to observe cancellation or a landing. A full AI invasion is
 naval plans, troops and sea control still determine execution. The old
 D-Day news popup remains disabled.
 
-The ten newer mod commits are prepared for PR #4 in the author's layout;
-[PR4-COMMIT-MAPPING.tsv](PR4-COMMIT-MAPPING.tsv) pairs them. Publication is
-pending. Earlier runtime claims in sections 21–26 are recovered records.
+The ten newer mod commits and README were pushed to PR #4 with the user's
+approval (head `23b6824`), in the author's layout.
+[PR4-COMMIT-MAPPING.tsv](PR4-COMMIT-MAPPING.tsv) pairs the mod commits. Earlier runtime claims in sections 21–26 are recovered records.
 
 ## How to test in game
 
