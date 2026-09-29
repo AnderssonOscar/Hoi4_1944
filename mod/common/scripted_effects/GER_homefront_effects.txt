@@ -28,13 +28,15 @@ GER_homefront_flak_auxiliaries = {
 }
 
 # 4. 19 December 1944: an air force for Vlasov's army. The political price,
-# its men (about 5,000) and a small formation of fighters and ground-attack
-# aircraft of Germany's current designs.
+# its men (about 5,000) and a small formation of the types it flew: Bf 109 G
+# fighters and Ju 87 dive bombers. The design is named (variant_name): given
+# by the general type, the game handed out Ta 152 fighters and pre-war
+# ground-attack planes (CHANGELOG section 17).
 GER_homefront_vlasov_air_force = {
 	add_political_power = -25
 	add_manpower = 5000
-	add_equipment_to_stockpile = { type = small_plane_airframe amount = 20 }
-	add_equipment_to_stockpile = { type = small_plane_cas_airframe amount = 10 }
+	add_equipment_to_stockpile = { type = small_plane_airframe_2 amount = 20 producer = GER variant_name = "Bf 109 G" }
+	add_equipment_to_stockpile = { type = small_plane_cas_airframe_1 amount = 10 producer = GER variant_name = "Ju 87" }
 }
 
 # 5. 6 January 1945: the Volksopfer collection for the Volkssturm. Old,
