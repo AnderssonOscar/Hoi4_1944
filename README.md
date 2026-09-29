@@ -19,8 +19,10 @@ this repository's line-ending setting (`* text=auto`) is unchanged.
    Indies, Malaya and Indochina). Nothing in it was written by Oscar or the
    AI assistant.
 2. **One commit per change**, each with its full reason in the commit
-   message: 26 in pull request #2, and 2 more in pull request #3 (the home
-   front, 1944–45, and a fix for the Courland popup):
+   message: 26 in pull request #2, and 5 more in pull request #3: the home
+   front 1944–45, a fix for the Courland popup, the fix for the crash when
+   starting as the UK, five war measures for Germany, and a fix for two
+   equipment mistakes in the update's own features:
 
 | Commit here | Change | CHANGELOG section | Update package |
 |---|---|---|---|
@@ -52,32 +54,36 @@ this repository's line-ending setting (`* text=auto`) is unchanged.
 | [`f2ba254`](https://github.com/gastav3/Hoi4_1944/commit/f2ba254) | Add Germany's last reserves: six events and a decision | 12 | [`70d287a`](https://github.com/AnderssonOscar/Hoi4_1944/commit/70d287a) |
 | [`90c19a8`](https://github.com/gastav3/Hoi4_1944/commit/90c19a8) | Add the home front, 1944-45: eight events for Germany | 14 | [`99c2aa4`](https://github.com/AnderssonOscar/Hoi4_1944/commit/99c2aa4) |
 | [`bb7c0aa`](https://github.com/gastav3/Hoi4_1944/commit/bb7c0aa) | Courland: the popup itself unlocks the evacuation decision | 11 | [`96f4a17`](https://github.com/AnderssonOscar/Hoi4_1944/commit/96f4a17) |
+| [`08d8589`](https://github.com/gastav3/Hoi4_1944/commit/08d8589) | Fix the crash when starting the 1944 game as the United Kingdom | 15 | [`e578b10`](https://github.com/AnderssonOscar/Hoi4_1944/commit/e578b10) |
+| [`45d728e`](https://github.com/gastav3/Hoi4_1944/commit/45d728e) | Add five war measures for Germany: KONR, railways, students, weapons | 16 | [`ddda13e`](https://github.com/AnderssonOscar/Hoi4_1944/commit/ddda13e) |
+| [`e126956`](https://github.com/gastav3/Hoi4_1944/commit/e126956) | Fix: 1945 operations lost rifles; Vlasov's air force got the wrong planes | 17 | [`470916b`](https://github.com/AnderssonOscar/Hoi4_1944/commit/470916b) |
 
 ## Documentation
 
 The update package holds the same changes plus the full documentation and
-the check scripts, at tag `final-2026-09-28-v11` of
-[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v11). There the mod sits
+the check scripts, at tag `final-2026-09-29-v12` of
+[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v12). There the mod sits
 in a `mod/` folder, and the commit IDs are the ones in the right-hand column
 above; the documents refer to those.
 
 | Document | What it covers |
 |---|---|
-| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
-| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/VERIFICATION.md) | How it was checked: 68 automated checks, the game's error logs, checksums |
-| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
-| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-28-v11/docs/HANDOVER.md) | How to maintain and extend the project |
-| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v11/docs/game-logs) | The game's error.log after each step |
-| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-28-v11/tools) | The check scripts (Python 3) |
+| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
+| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
+| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/VERIFICATION.md) | How it was checked: 72 automated checks, the game's error logs, checksums |
+| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
+| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/HANDOVER.md) | How to maintain and extend the project |
+| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v12/docs/game-logs) | The game's error.log after each step |
+| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v12/tools) | The check scripts (Python 3) |
 
 ## How it was checked
 
 - **In the update package:**
-  - 68 automated checks;
+  - 72 automated checks;
   - the game's error.log after every change (115 lines, unchanged by every
     addition since the 1.19.3 update);
-  - in-game runs of the new effects during the game's setup;
+  - in-game runs of the new effects, during the game's setup and, since the
+    war measures, in a running game with the stockpile measured;
   - a rebuild test: the Steam version plus the patches reproduces the mod
     exactly.
 - **For this repository:** after every commit here, the files are identical
@@ -96,9 +102,11 @@ above; the documents refer to those.
 
 - **Not play-tested yet.** Each feature's CHANGELOG section lists console
   commands to try it.
+- **The UK crash is fixed:** starting as the United Kingdom crashed the game
+  at once, also with the Steam version ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/CHANGELOG.md) section 15).
 - **Crash reports not yet explained:** Bulgaria switching sides, Romania's
-  12-day decision, the Volkssturm focus (redesigned anyway) and the UK.
-  "D-Day seems broken" needs a description.
+  12-day decision and the Volkssturm focus (redesigned anyway). "D-Day seems
+  broken" needs a description.
 
 ## Credits
 
