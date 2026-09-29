@@ -114,9 +114,9 @@ folders.
 - **Tags** `final-2026-09-27` to `final-2026-09-29-v12` mark each package
   prepared for the author.
 - **The author's repository** (github.com/gastav3/Hoi4_1944) receives the
-  same changes through pull request #2, in his layout. The mod stays at the
-  top level there, and the commit IDs differ; CHANGELOG section 13 pairs
-  them.
+  same changes in his layout: pull request #2 (merged by the author) and
+  pull request #3 (open). The mod stays at the top level there, and the
+  commit IDs differ; CHANGELOG section 13 pairs them.
 
 ## Status
 
@@ -131,7 +131,7 @@ folders.
 
 ## For the author: publishing to Steam
 
-If you merge pull request #2 in your repository, nothing changes in your
+If you merge the pull requests in your repository, nothing changes in your
 setup or your Steam upload: the mod stays where it was. If you use this
 package instead, upload its `mod/` folder, not the repository root. That
 also keeps the `.git` folder out of the Workshop upload (the July 2026 upload

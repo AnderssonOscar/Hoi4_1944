@@ -1159,6 +1159,27 @@ Courland popup fix) the same way, on top of his merged `main`:
 - **In the game:** a fresh default clone of the branch loads with an
   identical error.log (`game-logs/16-pull-request-3-clone_error.log`).
 
+**Pull request #3, extended (29 September 2026).** It wasn't merged yet, so
+the next three changes were added to the same branch rather than opened as a
+second pull request. The equipment fix (section 17) changes a file that pull
+request #3 itself adds.
+
+| This package | Pull request #3 | Change |
+|---|---|---|
+| `e578b10` | `08d8589` | Fix the crash when starting the 1944 game as the United Kingdom (section 15) |
+| `ddda13e` | `45d728e` | Add five war measures for Germany (section 16) |
+| `470916b` | `e126956` | Fix: 1945 operations lost rifles; Vlasov's air force got the wrong planes (section 17) |
+
+- **Identical files and changes:** checked the same way as above, for all
+  three.
+- **Line endings:** stored with LF, as the repository's `* text=auto`
+  setting does for every file (no CRLF files in the branch).
+- **README:** `66adcd0` adds the three commits to the table, links to tag
+  `final-2026-09-29-v12`, and notes that the UK crash is fixed.
+- **In the game:** a fresh default clone of the branch (CRLF checkout) loads
+  with an identical error.log
+  (`game-logs/19-pull-request-3-extended-clone_error.log`).
+
 **The line-ending fix (`mod/.gitattributes`, this package only; not part of
 pull request #2):**
 - The author's `mod/.gitattributes` was the GitHub Desktop template

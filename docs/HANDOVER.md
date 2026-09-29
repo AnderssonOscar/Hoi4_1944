@@ -35,9 +35,11 @@ mod, so every change must be easy for him to check himself.
 - **Packages:** the tags `final-2026-09-27` to `final-2026-09-29-v12`. Each
   package is `mod/`, the patches (one per commit), `docs/` and `tools/`, in
   a zip.
-- **GitHub:** the same changes are pull request #2 in the author's
-  repository, in his layout (the mod at the top level, his line-ending
-  setting). The commit IDs there differ; CHANGELOG section 13 pairs them.
+- **GitHub:** the same changes go to the author's repository in his layout
+  (the mod at the top level, his line-ending setting): pull request #2 (merged
+  by the author) and pull request #3 (open: sections 14 to 17 and the
+  Courland fix). The commit IDs there differ; CHANGELOG section 13 pairs
+  them.
 - **Not verified:**
   - actual play: none of the new content has been played through;
   - playing without some DLCs;
