@@ -14,9 +14,9 @@ country_event = {
 	option = {
 		name = ger_measures.1.a
 		trigger = {
-			has_equipment = { infantry_equipment > 804 }
-			has_equipment = { support_equipment > 14 }
-			has_equipment = { artillery_equipment > 5 }
+			has_equipment = { infantry_equipment > 452 }
+			has_equipment = { support_equipment > 8 }
+			has_equipment = { artillery_equipment > 3 }
 		}
 		ai_chance = { base = 50 }
 		GER_measures_konr_divisions = yes
@@ -42,9 +42,9 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				has_equipment = { infantry_equipment > 804 }
-				has_equipment = { support_equipment > 14 }
-				has_equipment = { artillery_equipment > 5 }
+				has_equipment = { infantry_equipment > 452 }
+				has_equipment = { support_equipment > 8 }
+				has_equipment = { artillery_equipment > 3 }
 			}
 			GER_measures_konr_pay = yes
 			GER_measures_konr_5th_division = yes

@@ -6,10 +6,15 @@
 # test runs exactly the same code as the decisions and events.
 
 # KONR, option A: two more divisions of the author's Russian Liberation Army
-# template, at low experience and half equipment, like the author's own
-# divisions. The equipment they arrive with is paid from our stockpile: a full
-# division needs 1,610 rifles, 30 support equipment and 12 guns (16 infantry
-# battalions, an engineer and an artillery company), so half is 805, 15 and 6.
+# template, at low experience and poorly armed: 30% of their equipment, with
+# old or captured rifles. The game gives a division only one rifle model, so
+# each division rolls it: German rifles from old depot stocks 50%, captured
+# Soviet 40%, captured Italian 5%, captured French 5%.
+# The equipment they arrive with is paid from our stockpile: a full division
+# needs 1,510 rifles, 30 support equipment and 12 guns (15 infantry battalions,
+# an engineer and an artillery company; the template lists 16 battalions, but
+# two share the slot x = 1, y = 2, so the game builds 15), so 30% is 453, 9 and
+# 4 (rounded up). Measured in the game: 453 rifles per division.
 # The 4th division is raised at once, the 5th after 60 days (event
 # ger_measures.2), each paid when it is raised.
 #
@@ -25,8 +30,8 @@ GER_measures_konr_divisions = {
 }
 
 GER_measures_konr_pay = {
-	# infantry equipment: 805
-	set_temp_variable = { GER_measures_need = 805 }
+	# infantry equipment: 453
+	set_temp_variable = { GER_measures_need = 453 }
 	if = {
 		limit = { check_variable = { GER_measures_need > 0 } }
 		set_temp_variable = { GER_measures_take = num_equipment@infantry_equipment_0 }
@@ -95,8 +100,8 @@ GER_measures_konr_pay = {
 			add_to_temp_variable = { GER_measures_need = num_equipment@infantry_equipment_3 }
 		}
 	}
-	# support equipment: 15
-	set_temp_variable = { GER_measures_need = 15 }
+	# support equipment: 9
+	set_temp_variable = { GER_measures_need = 9 }
 	if = {
 		limit = { check_variable = { GER_measures_need > 0 } }
 		set_temp_variable = { GER_measures_take = num_equipment@support_equipment_1 }
@@ -114,8 +119,8 @@ GER_measures_konr_pay = {
 			add_to_temp_variable = { GER_measures_need = num_equipment@support_equipment_1 }
 		}
 	}
-	# artillery: 6
-	set_temp_variable = { GER_measures_need = 6 }
+	# artillery: 4
+	set_temp_variable = { GER_measures_need = 4 }
 	if = {
 		limit = { check_variable = { GER_measures_need > 0 } }
 		set_temp_variable = { GER_measures_take = num_equipment@artillery_equipment_1 }
@@ -173,9 +178,35 @@ GER_measures_konr_4th_division = {
 	random_owned_controlled_state = {
 		limit = { is_core_of = ROOT }
 		prioritize = { 52 50 }
-		create_unit = {
-			division = "name = \"4th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
-			owner = ROOT
+		random_list = {
+			seed = random
+			50 = { # German rifles from old depot stocks (Gewehr 98)
+				create_unit = {
+					division = "name = \"4th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.3 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }"
+					owner = ROOT
+				}
+			}
+			40 = { # captured Soviet rifles (Mosin-Nagant)
+				modifier = { factor = 0 NOT = { country_exists = SOV } }
+				create_unit = {
+					division = "name = \"4th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.3 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }"
+					owner = ROOT
+				}
+			}
+			5 = { # captured Italian rifles (Carcano)
+				modifier = { factor = 0 NOT = { country_exists = ITA } }
+				create_unit = {
+					division = "name = \"4th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.3 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }"
+					owner = ROOT
+				}
+			}
+			5 = { # captured French rifles (Lebel, Berthier)
+				modifier = { factor = 0 NOT = { country_exists = FRA } }
+				create_unit = {
+					division = "name = \"4th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.3 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }"
+					owner = ROOT
+				}
+			}
 		}
 	}
 }
@@ -184,9 +215,35 @@ GER_measures_konr_5th_division = {
 	random_owned_controlled_state = {
 		limit = { is_core_of = ROOT }
 		prioritize = { 52 50 }
-		create_unit = {
-			division = "name = \"5th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
-			owner = ROOT
+		random_list = {
+			seed = random
+			50 = { # German rifles from old depot stocks (Gewehr 98)
+				create_unit = {
+					division = "name = \"5th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.3 force_equipment_variants = { infantry_equipment_0 = { owner = \"GER\" } }"
+					owner = ROOT
+				}
+			}
+			40 = { # captured Soviet rifles (Mosin-Nagant)
+				modifier = { factor = 0 NOT = { country_exists = SOV } }
+				create_unit = {
+					division = "name = \"5th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.3 force_equipment_variants = { infantry_equipment_0 = { owner = \"SOV\" } }"
+					owner = ROOT
+				}
+			}
+			5 = { # captured Italian rifles (Carcano)
+				modifier = { factor = 0 NOT = { country_exists = ITA } }
+				create_unit = {
+					division = "name = \"5th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.3 force_equipment_variants = { infantry_equipment_0 = { owner = \"ITA\" } }"
+					owner = ROOT
+				}
+			}
+			5 = { # captured French rifles (Lebel, Berthier)
+				modifier = { factor = 0 NOT = { country_exists = FRA } }
+				create_unit = {
+					division = "name = \"5th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.3 force_equipment_variants = { infantry_equipment_0 = { owner = \"FRA\" } }"
+					owner = ROOT
+				}
+			}
 		}
 	}
 }
@@ -197,7 +254,7 @@ GER_measures_konr_manpower = {
 	add_manpower = 12000
 }
 
-# Emergency Railway Repair Programme: the 120-day bonus is the decision's own
+# Emergency Railway Repair Programme: the 90-day bonus is the decision's own
 # modifier (GER_measures_decisions.txt); nothing else happens.
 
 # Send the Student Companies to the Front: 20,000 men, and a lasting spirit

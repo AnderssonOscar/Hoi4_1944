@@ -28,23 +28,29 @@ GER_homefront_flak_auxiliaries = {
 }
 
 # 4. 19 December 1944: an air force for Vlasov's army. The political price,
-# its men (about 5,000) and a small formation of the types it flew: Bf 109 G
-# fighters and Ju 87 dive bombers. The design is named (variant_name): given
-# by the general type, the game handed out Ta 152 fighters and pre-war
-# ground-attack planes (CHANGELOG section 17).
+# a small formation of the types it flew (Bf 109 G fighters and Ju 87 dive
+# bombers) and the men to fly and service them: 600, the game's 20 per
+# aircraft. The KONR air force had about 5,000 men in all, but most served in
+# its anti-aircraft regiment, parachute battalion and ground units, which
+# this event does not create (CHANGELOG section 18). The design is named
+# (variant_name): given by the general type, the game handed out Ta 152
+# fighters and pre-war ground-attack planes (CHANGELOG section 17).
 GER_homefront_vlasov_air_force = {
 	add_political_power = -25
-	add_manpower = 5000
+	add_manpower = 600
 	add_equipment_to_stockpile = { type = small_plane_airframe_2 amount = 20 producer = GER variant_name = "Bf 109 G" }
 	add_equipment_to_stockpile = { type = small_plane_cas_airframe_1 amount = 10 producer = GER variant_name = "Ju 87" }
 }
 
-# 5. 6 January 1945: the Volksopfer collection for the Volkssturm. Old,
-# mixed kit rather than new weapons.
+# 5. 6 January 1945: the Volksopfer collection for the Volkssturm and the
+# Wehrmacht: clothing and equipment (80,000 tonnes of textiles), not weapons.
+# Field equipment, and 90 days of warmer clothing for the winter. Rifles come
+# from the decision "Call on Citizens to Hand In Their Weapons", which runs
+# alongside it (CHANGELOG section 18).
 GER_homefront_volksopfer = {
 	add_political_power = -25
-	add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 4000 }
 	add_equipment_to_stockpile = { type = support_equipment_1 amount = 1000 }
+	add_timed_idea = { idea = GER_homefront_volksopfer_clothing days = 90 }
 }
 
 # 6. 30 January 1945: the Wilhelm Gustloff. About 1,600 naval personnel,

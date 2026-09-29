@@ -15,6 +15,16 @@ ideas = {
 			}
 		}
 
+		# 90 days after the Volksopfer (6 January 1945): donated coats, boots and blankets.
+		GER_homefront_volksopfer_clothing = {
+			picture = generic_logistics
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.1
+			}
+		}
+
 		# From 5 March 1945: the class of 1929 is called up.
 		GER_homefront_class_of_1929 = {
 			picture = extensive_conscription
