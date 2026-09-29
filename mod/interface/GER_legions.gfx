@@ -1,0 +1,11 @@
+# 1944 - Downfall: Wiking before Warsaw (docs/CHANGELOG.md section 21)
+# Picture supplied by Oscar Andersson; its source is not recorded. It appears to
+# be a wartime photograph: a Panzer III with Waffen-SS soldiers in camouflage
+# smocks, date and unit unknown. Cropped (without the tank's front plate) and
+# cut to 210 x 176 in the style of the game's event pictures.
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_event_GER_wiking_panzer"
+		texturefile = "gfx/events/report_event_GER_wiking_panzer.dds"
+	}
+}

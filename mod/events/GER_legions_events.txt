@@ -75,3 +75,16 @@ country_event = {
 		GER_legions_nordland = yes
 	}
 }
+
+# 6. Wiking before Warsaw (August 1944)
+country_event = {
+	id = ger_legions.6
+	title = ger_legions.6.t
+	desc = ger_legions.6.d
+	picture = GFX_report_event_GER_wiking_panzer
+	is_triggered_only = yes
+	option = {
+		name = ger_legions.6.a
+		GER_legions_wiking = yes
+	}
+}

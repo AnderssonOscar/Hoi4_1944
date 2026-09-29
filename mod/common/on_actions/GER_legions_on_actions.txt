@@ -76,6 +76,21 @@ on_actions = {
 				set_country_flag = GER_legions_5_done
 				country_event = { id = ger_legions.5 }
 			}
+			# 6. From 4 August 1944 (the end of the Battle of Radzymin, 1-4 August):
+			# Wiking before Warsaw, while we hold Warsaw (3544) and the enemy has
+			# come up from the east (it holds Lublin, state 92).
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_legions_6_done }
+					date > 1944.8.3
+					date < 1945.1.1
+					has_war_with = SOV
+					controls_province = 3544
+					92 = { controller = { has_war_with = ROOT } }
+				}
+				set_country_flag = GER_legions_6_done
+				country_event = { id = ger_legions.6 }
+			}
 		}
 	}
 }
