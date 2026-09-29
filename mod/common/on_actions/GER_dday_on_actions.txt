@@ -1,0 +1,47 @@
+###########################
+# 1944 - Downfall: the invasion beaten back: daily checks (docs/CHANGELOG.md section 26)
+#
+# The invasion coast is Normandy (15), Brittany (14), Nord-Pas-de-Calais (29)
+# and Flanders (6): the states the author's own D-Day news event (mod.news.1)
+# watches. We hold all four on 1 January 1944.
+###########################
+
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			# 1. The landing: from 1 June 1944, at war with the UK or the USA, an
+			# enemy holds part of the invasion coast.
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_dday_landed }
+					date > 1944.5.31
+					OR = {
+						has_war_with = ENG
+						has_war_with = USA
+					}
+					OR = {
+						NOT = { 15 = { is_fully_controlled_by = ROOT } }
+						NOT = { 14 = { is_fully_controlled_by = ROOT } }
+						NOT = { 29 = { is_fully_controlled_by = ROOT } }
+						NOT = { 6 = { is_fully_controlled_by = ROOT } }
+					}
+				}
+				set_country_flag = GER_dday_landed
+			}
+			# 2. Beaten back: after a landing we hold the whole coast again. The
+			# event follows one day later (Oscar's request). Once only.
+			if = {
+				limit = {
+					has_country_flag = GER_dday_landed
+					NOT = { has_country_flag = GER_dday_repelled }
+					15 = { is_fully_controlled_by = ROOT }
+					14 = { is_fully_controlled_by = ROOT }
+					29 = { is_fully_controlled_by = ROOT }
+					6 = { is_fully_controlled_by = ROOT }
+				}
+				set_country_flag = GER_dday_repelled
+				country_event = { id = ger_dday.1 days = 1 }
+			}
+		}
+	}
+}

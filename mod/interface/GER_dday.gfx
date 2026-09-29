@@ -1,0 +1,9 @@
+# 1944 - Downfall: the invasion beaten back (CHANGELOG section 26).
+# Picture supplied by Oscar Andersson; source not recorded. Uses the
+# already prepared 210 x 176 DDS, preserving his chosen beach illustration.
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_event_GER_dday_repelled"
+		texturefile = "gfx/events/report_event_GER_dday_repelled.dds"
+	}
+}
