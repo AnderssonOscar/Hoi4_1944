@@ -1180,6 +1180,18 @@ request #3 itself adds.
   with an identical error.log
   (`game-logs/19-pull-request-3-extended-clone_error.log`).
 
+**Pull request #3, Oscar's review round (29 September 2026):**
+
+| This package | Pull request #3 | Change |
+|---|---|---|
+| `807249b` | `11aa2b9` | Oscar's review: Vlasov's airmen, railway 90 days, weapons with the Volksopfer, KONR later and poorly armed (section 18) |
+
+- **Identical files and changes:** checked as above; stored with LF.
+- **README:** `3435bbb` adds the commit and links to tag
+  `final-2026-09-29-v13`.
+- **In the game:** a fresh default clone of the branch loads with an
+  identical error.log (`game-logs/21-pull-request-3-review-clone_error.log`).
+
 **The line-ending fix (`mod/.gitattributes`, this package only; not part of
 pull request #2):**
 - The author's `mod/.gitattributes` was the GitHub Desktop template

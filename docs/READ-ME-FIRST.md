@@ -32,7 +32,7 @@ independently (see "Check it yourself").
 | Item | What it is |
 |---|---|
 | `mod/` | the complete updated mod, ready to test or upload |
-| `patches/` | every change as a patch (32, in order), each with its reason |
+| `patches/` | every change as a patch (33, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
 | `docs/VERIFICATION.md` | how it was checked: 72 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |

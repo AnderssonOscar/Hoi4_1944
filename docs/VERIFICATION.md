@@ -90,7 +90,8 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | Ninth package (tag `final-2026-09-28-v9`: + byte-exact clones, GitHub documentation) | 27 | all 943 files match, file list identical (3 deleted, 32 new) |
 | Tenth package (tag `final-2026-09-28-v10`: + pull request #2 documented, no mod change) | 27 | all 943 files match, file list identical (3 deleted, 32 new) |
 | Eleventh package (tag `final-2026-09-28-v11`: + the home front, the Courland popup fix) | 29 | all 948 files match, file list identical (3 deleted, 37 new) |
-| Current package (tag `final-2026-09-29-v12`: + the UK start fix, the five war measures, the equipment fixes) | 32 | all 954 files match, file list identical (3 deleted, 43 new) |
+| Twelfth package (tag `final-2026-09-29-v12`: + the UK start fix, the five war measures, the equipment fixes) | 32 | all 954 files match, file list identical (3 deleted, 43 new) |
+| Current package (tag `final-2026-09-29-v13`: + Oscar's review round) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
 
 So `mod/` is exactly "Workshop version + these patches", with nothing hidden.
 
