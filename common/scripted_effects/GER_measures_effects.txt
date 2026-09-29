@@ -1,0 +1,221 @@
+###########################
+# 1944 - Downfall: five war measures for Germany: effects (docs/CHANGELOG.md section 16)
+###########################
+
+# The effects of the decisions and events. They live here so that the in-game
+# test runs exactly the same code as the decisions and events.
+
+# KONR, option A: two more divisions of the author's Russian Liberation Army
+# template, at low experience and half equipment, like the author's own
+# divisions. The equipment they arrive with is paid from our stockpile: a full
+# division needs 1,610 rifles, 30 support equipment and 12 guns (16 infantry
+# battalions, an engineer and an artillery company), so half is 805, 15 and 6.
+# The 4th division is raised at once, the 5th after 60 days (event
+# ger_measures.2), each paid when it is raised.
+#
+# The payment is taken type by type (oldest first): removing by the general
+# type (infantry_equipment) would take the amount from every type in stock
+# (measured in the game, CHANGELOG section 17).
+# Raised in Wuerttemberg (52) or Baden (50), where the KONR divisions were
+# formed (Muensingen, Heuberg), else in any other German core state we hold.
+GER_measures_konr_divisions = {
+	GER_measures_konr_pay = yes
+	GER_measures_konr_4th_division = yes
+	hidden_effect = { country_event = { id = ger_measures.2 days = 60 } }
+}
+
+GER_measures_konr_pay = {
+	# infantry equipment: 805
+	set_temp_variable = { GER_measures_need = 805 }
+	if = {
+		limit = { check_variable = { GER_measures_need > 0 } }
+		set_temp_variable = { GER_measures_take = num_equipment@infantry_equipment_0 }
+		if = {
+			limit = { check_variable = { GER_measures_take > GER_measures_need } }
+			set_temp_variable = { GER_measures_take = GER_measures_need }
+		}
+		if = {
+			limit = { check_variable = { GER_measures_take > 0 } }
+			set_temp_variable = { GER_measures_before = num_equipment@infantry_equipment_0 }
+			set_temp_variable = { GER_measures_amount = GER_measures_take }
+			multiply_temp_variable = { GER_measures_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = GER_measures_amount }
+			subtract_from_temp_variable = { GER_measures_need = GER_measures_before }
+			add_to_temp_variable = { GER_measures_need = num_equipment@infantry_equipment_0 }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_measures_need > 0 } }
+		set_temp_variable = { GER_measures_take = num_equipment@infantry_equipment_1 }
+		if = {
+			limit = { check_variable = { GER_measures_take > GER_measures_need } }
+			set_temp_variable = { GER_measures_take = GER_measures_need }
+		}
+		if = {
+			limit = { check_variable = { GER_measures_take > 0 } }
+			set_temp_variable = { GER_measures_before = num_equipment@infantry_equipment_1 }
+			set_temp_variable = { GER_measures_amount = GER_measures_take }
+			multiply_temp_variable = { GER_measures_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = GER_measures_amount }
+			subtract_from_temp_variable = { GER_measures_need = GER_measures_before }
+			add_to_temp_variable = { GER_measures_need = num_equipment@infantry_equipment_1 }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_measures_need > 0 } }
+		set_temp_variable = { GER_measures_take = num_equipment@infantry_equipment_2 }
+		if = {
+			limit = { check_variable = { GER_measures_take > GER_measures_need } }
+			set_temp_variable = { GER_measures_take = GER_measures_need }
+		}
+		if = {
+			limit = { check_variable = { GER_measures_take > 0 } }
+			set_temp_variable = { GER_measures_before = num_equipment@infantry_equipment_2 }
+			set_temp_variable = { GER_measures_amount = GER_measures_take }
+			multiply_temp_variable = { GER_measures_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_2 amount = GER_measures_amount }
+			subtract_from_temp_variable = { GER_measures_need = GER_measures_before }
+			add_to_temp_variable = { GER_measures_need = num_equipment@infantry_equipment_2 }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_measures_need > 0 } }
+		set_temp_variable = { GER_measures_take = num_equipment@infantry_equipment_3 }
+		if = {
+			limit = { check_variable = { GER_measures_take > GER_measures_need } }
+			set_temp_variable = { GER_measures_take = GER_measures_need }
+		}
+		if = {
+			limit = { check_variable = { GER_measures_take > 0 } }
+			set_temp_variable = { GER_measures_before = num_equipment@infantry_equipment_3 }
+			set_temp_variable = { GER_measures_amount = GER_measures_take }
+			multiply_temp_variable = { GER_measures_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_3 amount = GER_measures_amount }
+			subtract_from_temp_variable = { GER_measures_need = GER_measures_before }
+			add_to_temp_variable = { GER_measures_need = num_equipment@infantry_equipment_3 }
+		}
+	}
+	# support equipment: 15
+	set_temp_variable = { GER_measures_need = 15 }
+	if = {
+		limit = { check_variable = { GER_measures_need > 0 } }
+		set_temp_variable = { GER_measures_take = num_equipment@support_equipment_1 }
+		if = {
+			limit = { check_variable = { GER_measures_take > GER_measures_need } }
+			set_temp_variable = { GER_measures_take = GER_measures_need }
+		}
+		if = {
+			limit = { check_variable = { GER_measures_take > 0 } }
+			set_temp_variable = { GER_measures_before = num_equipment@support_equipment_1 }
+			set_temp_variable = { GER_measures_amount = GER_measures_take }
+			multiply_temp_variable = { GER_measures_amount = -1 }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = GER_measures_amount }
+			subtract_from_temp_variable = { GER_measures_need = GER_measures_before }
+			add_to_temp_variable = { GER_measures_need = num_equipment@support_equipment_1 }
+		}
+	}
+	# artillery: 6
+	set_temp_variable = { GER_measures_need = 6 }
+	if = {
+		limit = { check_variable = { GER_measures_need > 0 } }
+		set_temp_variable = { GER_measures_take = num_equipment@artillery_equipment_1 }
+		if = {
+			limit = { check_variable = { GER_measures_take > GER_measures_need } }
+			set_temp_variable = { GER_measures_take = GER_measures_need }
+		}
+		if = {
+			limit = { check_variable = { GER_measures_take > 0 } }
+			set_temp_variable = { GER_measures_before = num_equipment@artillery_equipment_1 }
+			set_temp_variable = { GER_measures_amount = GER_measures_take }
+			multiply_temp_variable = { GER_measures_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = GER_measures_amount }
+			subtract_from_temp_variable = { GER_measures_need = GER_measures_before }
+			add_to_temp_variable = { GER_measures_need = num_equipment@artillery_equipment_1 }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_measures_need > 0 } }
+		set_temp_variable = { GER_measures_take = num_equipment@artillery_equipment_2 }
+		if = {
+			limit = { check_variable = { GER_measures_take > GER_measures_need } }
+			set_temp_variable = { GER_measures_take = GER_measures_need }
+		}
+		if = {
+			limit = { check_variable = { GER_measures_take > 0 } }
+			set_temp_variable = { GER_measures_before = num_equipment@artillery_equipment_2 }
+			set_temp_variable = { GER_measures_amount = GER_measures_take }
+			multiply_temp_variable = { GER_measures_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_2 amount = GER_measures_amount }
+			subtract_from_temp_variable = { GER_measures_need = GER_measures_before }
+			add_to_temp_variable = { GER_measures_need = num_equipment@artillery_equipment_2 }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_measures_need > 0 } }
+		set_temp_variable = { GER_measures_take = num_equipment@artillery_equipment_3 }
+		if = {
+			limit = { check_variable = { GER_measures_take > GER_measures_need } }
+			set_temp_variable = { GER_measures_take = GER_measures_need }
+		}
+		if = {
+			limit = { check_variable = { GER_measures_take > 0 } }
+			set_temp_variable = { GER_measures_before = num_equipment@artillery_equipment_3 }
+			set_temp_variable = { GER_measures_amount = GER_measures_take }
+			multiply_temp_variable = { GER_measures_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_3 amount = GER_measures_amount }
+			subtract_from_temp_variable = { GER_measures_need = GER_measures_before }
+			add_to_temp_variable = { GER_measures_need = num_equipment@artillery_equipment_3 }
+		}
+	}
+}
+
+GER_measures_konr_4th_division = {
+	random_owned_controlled_state = {
+		limit = { is_core_of = ROOT }
+		prioritize = { 52 50 }
+		create_unit = {
+			division = "name = \"4th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+			owner = ROOT
+		}
+	}
+}
+
+GER_measures_konr_5th_division = {
+	random_owned_controlled_state = {
+		limit = { is_core_of = ROOT }
+		prioritize = { 52 50 }
+		create_unit = {
+			division = "name = \"5th KONR Infantry Division\" division_template = \"Russische Befreiungsarmee\" start_experience_factor = 0.1 start_equipment_factor = 0.5 force_equipment_variants = { infantry_equipment_1 = { owner = \"GER\" } }"
+			owner = ROOT
+		}
+	}
+}
+
+# KONR, option B: the volunteers go to German units as replacements
+# (about the strength of the KONR's 2nd division, 11,856 men in April 1945).
+GER_measures_konr_manpower = {
+	add_manpower = 12000
+}
+
+# Emergency Railway Repair Programme: the 120-day bonus is the decision's own
+# modifier (GER_measures_decisions.txt); nothing else happens.
+
+# Send the Student Companies to the Front: 20,000 men, and a lasting spirit
+# (-5% research speed, -1% stability).
+GER_measures_student_companies = {
+	add_manpower = 20000
+	add_ideas = GER_measures_student_companies_spirit
+}
+
+# Call on Citizens to Hand In Their Weapons: old and mixed private weapons
+# (Basic Infantry Equipment, the worst rifle type in the game).
+GER_measures_weapons_appeal = {
+	add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 2000 }
+}
+
+# Confiscate Civilian Firearms: searches of households; more weapons, and
+# people resent it.
+GER_measures_weapons_confiscation = {
+	add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 7500 }
+	add_stability = -0.01
+}
