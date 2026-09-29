@@ -19,10 +19,11 @@ this repository's line-ending setting (`* text=auto`) is unchanged.
    Indies, Malaya and Indochina). Nothing in it was written by Oscar or the
    AI assistant.
 2. **One commit per change**, each with its full reason in the commit
-   message: 26 in pull request #2, and 5 more in pull request #3: the home
+   message: 26 in pull request #2, 5 more in pull request #3 (the home
    front 1944–45, a fix for the Courland popup, the fix for the crash when
    starting as the UK, five war measures for Germany, and a fix for two
-   equipment mistakes in the update's own features:
+   equipment mistakes in the update's own features), and 1 more in pull
+   request #4 (Oscar's review of the new features):
 
 | Commit here | Change | CHANGELOG section | Update package |
 |---|---|---|---|
@@ -57,24 +58,25 @@ this repository's line-ending setting (`* text=auto`) is unchanged.
 | [`08d8589`](https://github.com/gastav3/Hoi4_1944/commit/08d8589) | Fix the crash when starting the 1944 game as the United Kingdom | 15 | [`e578b10`](https://github.com/AnderssonOscar/Hoi4_1944/commit/e578b10) |
 | [`45d728e`](https://github.com/gastav3/Hoi4_1944/commit/45d728e) | Add five war measures for Germany: KONR, railways, students, weapons | 16 | [`ddda13e`](https://github.com/AnderssonOscar/Hoi4_1944/commit/ddda13e) |
 | [`e126956`](https://github.com/gastav3/Hoi4_1944/commit/e126956) | Fix: 1945 operations lost rifles; Vlasov's air force got the wrong planes | 17 | [`470916b`](https://github.com/AnderssonOscar/Hoi4_1944/commit/470916b) |
+| [`11aa2b9`](https://github.com/gastav3/Hoi4_1944/commit/11aa2b9) | Oscar's review: Vlasov's airmen, railway 90 days, weapons with the Volksopfer, KONR later and poorly armed | 18 | [`807249b`](https://github.com/AnderssonOscar/Hoi4_1944/commit/807249b) |
 
 ## Documentation
 
 The update package holds the same changes plus the full documentation and
-the check scripts, at tag `final-2026-09-29-v12` of
-[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v12). There the mod sits
+the check scripts, at tag `final-2026-09-29-v14` of
+[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v14). There the mod sits
 in a `mod/` folder, and the commit IDs are the ones in the right-hand column
 above; the documents refer to those.
 
 | Document | What it covers |
 |---|---|
-| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
-| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/VERIFICATION.md) | How it was checked: 72 automated checks, the game's error logs, checksums |
-| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
-| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/HANDOVER.md) | How to maintain and extend the project |
-| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v12/docs/game-logs) | The game's error.log after each step |
-| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v12/tools) | The check scripts (Python 3) |
+| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v14/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
+| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v14/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
+| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v14/docs/VERIFICATION.md) | How it was checked: 72 automated checks, the game's error logs, checksums |
+| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v14/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
+| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v14/docs/HANDOVER.md) | How to maintain and extend the project |
+| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v14/docs/game-logs) | The game's error.log after each step |
+| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v14/tools) | The check scripts (Python 3) |
 
 ## How it was checked
 
@@ -103,7 +105,7 @@ above; the documents refer to those.
 - **Not play-tested yet.** Each feature's CHANGELOG section lists console
   commands to try it.
 - **The UK crash is fixed:** starting as the United Kingdom crashed the game
-  at once, also with the Steam version ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v12/docs/CHANGELOG.md) section 15).
+  at once, also with the Steam version ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v14/docs/CHANGELOG.md) section 15).
 - **Crash reports not yet explained:** Bulgaria switching sides, Romania's
   12-day decision and the Volkssturm focus (redesigned anyway). "D-Day seems
   broken" needs a description.
