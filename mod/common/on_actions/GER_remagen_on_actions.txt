@@ -1,0 +1,40 @@
+###########################
+# 1944 - Downfall: the bridge at Remagen: daily check (docs/CHANGELOG.md section 20)
+#
+# Fires once, the first day a western enemy (at war with Germany, not the
+# Soviet Union) holds province 529: the east bank of the Rhine opposite Remagen
+# (Erpel), where the Ludendorff Bridge ended. The province is one of the
+# author's own Rhine-crossing provinces (GER_rhine_crossing in
+# germany_scripted_events_mod.txt). The captor is saved as the global event
+# target GER_remagen_captor, which the event's text names. (Firing the event
+# from inside the captor's scope does not make it FROM: tested, FROM stays GER.)
+###########################
+
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_remagen_done }
+					has_war = yes
+					NOT = { controls_province = 529 }
+					any_country = {
+						controls_province = 529
+						has_war_with = ROOT
+						NOT = { original_tag = SOV }
+					}
+				}
+				set_country_flag = GER_remagen_done
+				random_country = {
+					limit = {
+						controls_province = 529
+						has_war_with = ROOT
+						NOT = { original_tag = SOV }
+					}
+					save_global_event_target_as = GER_remagen_captor
+				}
+				country_event = { id = ger_remagen.1 }
+			}
+		}
+	}
+}
