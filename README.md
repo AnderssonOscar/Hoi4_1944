@@ -86,8 +86,8 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 - **The game's own error.log** after every change: identical to the updated
   baseline (115 lines). The logs are in `docs/game-logs/`.
 - **In-game runs** of the new effects during the game's setup, with no errors.
-- **Rebuild test:** the Steam version plus the 29 patches reproduces `mod/`
-  exactly (948 files).
+- **Rebuild test:** the Steam version plus the 32 patches reproduces `mod/`
+  exactly (954 files).
 - **Not tested:** actual play, and playing without some DLCs.
 
 ## Check it yourself
@@ -111,7 +111,7 @@ folders.
   history; that was checked file by file.
 - **After that:** one commit per change, each with its reason, and
   documentation commits that record the checks.
-- **Tags** `final-2026-09-27` to `final-2026-09-28-v11` mark each package
+- **Tags** `final-2026-09-27` to `final-2026-09-29-v12` mark each package
   prepared for the author.
 - **The author's repository** (github.com/gastav3/Hoi4_1944) receives the
   same changes through pull request #2, in his layout. The mod stays at the

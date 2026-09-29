@@ -32,7 +32,7 @@ mod, so every change must be easy for him to check himself.
 - **`python tools/verify_update.py`:** 72 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
-- **Packages:** the tags `final-2026-09-27` to `final-2026-09-28-v11`. Each
+- **Packages:** the tags `final-2026-09-27` to `final-2026-09-29-v12`. Each
   package is `mod/`, the patches (one per commit), `docs/` and `tools/`, in
   a zip.
 - **GitHub:** the same changes are pull request #2 in the author's
