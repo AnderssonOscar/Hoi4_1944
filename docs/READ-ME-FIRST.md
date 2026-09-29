@@ -138,11 +138,12 @@ Bring your copy in line with `mod/`: copy the changed files and delete the
 three state files, or apply the patches. If your copy has changes that
 aren't on Steam yet, use the patches. Then upload as usual.
 
-The same changes are offered to your GitHub repository
-(github.com/gastav3/Hoi4_1944) as pull request #2. It keeps your layout and
-your line-ending setting, with one commit per change and a README
-(CHANGELOG section 13). If you merge it, your setup and your Steam upload
-stay as they are.
+The same changes went to your GitHub repository
+(github.com/gastav3/Hoi4_1944) as pull requests #2 and #3, which you merged,
+and #4 (Oscar's review round, open). They keep your layout and your
+line-ending setting, with one commit per change and a README (CHANGELOG
+section 13). Merging them leaves your setup and your Steam upload as they
+are.
 
 Note: the July upload included your old `.git` folder (history to 2024,
 remote github.com/gastav3/Hoi4_1944), so subscribers can read that history.

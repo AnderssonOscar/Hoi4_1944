@@ -111,11 +111,11 @@ folders.
   history; that was checked file by file.
 - **After that:** one commit per change, each with its reason, and
   documentation commits that record the checks.
-- **Tags** `final-2026-09-27` to `final-2026-09-29-v13` mark each package
+- **Tags** `final-2026-09-27` to `final-2026-09-29-v14` mark each package
   prepared for the author.
 - **The author's repository** (github.com/gastav3/Hoi4_1944) receives the
-  same changes in his layout: pull request #2 (merged by the author) and
-  pull request #3 (open). The mod stays at the top level there, and the
+  same changes in his layout: pull requests #2 and #3 (both merged by the
+  author) and pull request #4 (open, Oscar's review round). The mod stays at the top level there, and the
   commit IDs differ; CHANGELOG section 13 pairs them.
 
 ## Status

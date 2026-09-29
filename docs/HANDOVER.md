@@ -32,13 +32,13 @@ mod, so every change must be easy for him to check himself.
 - **`python tools/verify_update.py`:** 72 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
-- **Packages:** the tags `final-2026-09-27` to `final-2026-09-29-v13`. Each
+- **Packages:** the tags `final-2026-09-27` to `final-2026-09-29-v14`. Each
   package is `mod/`, the patches (one per commit), `docs/` and `tools/`, in
   a zip.
 - **GitHub:** the same changes go to the author's repository in his layout
-  (the mod at the top level, his line-ending setting): pull request #2 (merged
-  by the author) and pull request #3 (open: sections 14 to 18 and the
-  Courland fix). The commit IDs there differ; CHANGELOG section 13 pairs
+  (the mod at the top level, his line-ending setting): pull requests #2 and
+  #3 (both merged by the author; #3 covers sections 14 to 17 and the
+  Courland fix) and pull request #4 (open: section 18). The commit IDs there differ; CHANGELOG section 13 pairs
   them.
 - **Not verified:**
   - actual play: none of the new content has been played through;

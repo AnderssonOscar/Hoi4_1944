@@ -1180,17 +1180,32 @@ request #3 itself adds.
   with an identical error.log
   (`game-logs/19-pull-request-3-extended-clone_error.log`).
 
-**Pull request #3, Oscar's review round (29 September 2026):**
+**Pull request #3 merged.** The author merged pull request #3 on
+29 September 2026 at 10:15 (merge commit `c267d4f`), at `66adcd0`. That
+covers sections 14 to 17 and the Courland fix. His `main` now equals
+`66adcd0` file by file.
 
-| This package | Pull request #3 | Change |
+**Pull request #4: Oscar's review round.**
+- **Why a new pull request:** the review commit was pushed to the same
+  branch about 25 minutes after that merge, so it is not part of it. It is
+  now pull request #4, on its own branch `update-2026-09-review`, which
+  starts at `66adcd0`.
+- **Correction:** tag `final-2026-09-29-v13` still said the commit was in
+  pull request #3. It was pushed before the merge was noticed; this
+  paragraph replaces that.
+
+| This package | Pull request #4 | Change |
 |---|---|---|
 | `807249b` | `11aa2b9` | Oscar's review: Vlasov's airmen, railway 90 days, weapons with the Volksopfer, KONR later and poorly armed (section 18) |
 
 - **Identical files and changes:** checked as above; stored with LF.
-- **README:** `3435bbb` adds the commit and links to tag
-  `final-2026-09-29-v13`.
-- **In the game:** a fresh default clone of the branch loads with an
+- **README:** `8ecc7ba` adds the commit, names pull request #4, and links to
+  tag `final-2026-09-29-v14`. `3435bbb` is a README for pull request #3
+  pushed after the merge. It is left unused on the old branch.
+- **In the game:** a fresh default clone of `3435bbb` loads with an
   identical error.log (`game-logs/21-pull-request-3-review-clone_error.log`).
+  Its mod files are identical to pull request #4's `8ecc7ba`; only the
+  README differs.
 
 **The line-ending fix (`mod/.gitattributes`, this package only; not part of
 pull request #2):**
