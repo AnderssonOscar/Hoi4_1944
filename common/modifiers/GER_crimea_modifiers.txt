@@ -1,0 +1,11 @@
+###########################
+# 1944 - Downfall: Fortress Sevastopol province modifier (docs/CHANGELOG.md section 24)
+###########################
+
+# The author's Festung values (common/modifiers/mod_static_modifiers.txt),
+# the same as Fortress Courland (section 11).
+GER_crimea_fortress = {
+	army_defence_factor = 0.2
+	max_dig_in_factor = 0.75
+	supply_consumption_factor = -0.25
+}

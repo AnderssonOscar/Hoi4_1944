@@ -1,0 +1,46 @@
+###########################
+# 1944 - Downfall: the Crimea: events (docs/CHANGELOG.md section 24)
+###########################
+
+add_namespace = ger_crimea
+
+# 1. The 17th Army is cut off in the Crimea: evacuate, or hold Sevastopol
+country_event = {
+	id = ger_crimea.1
+	title = ger_crimea.1.t
+	desc = ger_crimea.1.d
+	picture = GFX_report_event_romanian_soldiers
+	is_triggered_only = yes
+
+	# Also set here (not only in the daily check), so that the evacuation decision
+	# appears when this event is fired from the console too.
+	immediate = {
+		hidden_effect = { set_country_flag = GER_crimea_offered }
+	}
+
+	option = {
+		name = ger_crimea.1.a
+		ai_chance = { base = 25 }
+		set_country_flag = GER_crimea_evacuate_chosen
+		custom_effect_tooltip = ger_crimea.1.a.tt
+	}
+
+	option = {
+		name = ger_crimea.1.b
+		ai_chance = { base = 75 }
+		custom_effect_tooltip = ger_crimea.1.b.tt
+		hidden_effect = { GER_crimea_fortress_on = yes }
+	}
+}
+
+# 2. The Crimea evacuated (end of the 30-day evacuation)
+country_event = {
+	id = ger_crimea.2
+	title = ger_crimea.2.t
+	desc = ger_crimea.2.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	option = {
+		name = ger_crimea.2.a
+	}
+}
