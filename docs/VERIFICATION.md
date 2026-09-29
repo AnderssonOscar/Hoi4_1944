@@ -95,9 +95,10 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | Eleventh package (tag `final-2026-09-28-v11`: + the home front, the Courland popup fix) | 29 | all 948 files match, file list identical (3 deleted, 37 new) |
 | Twelfth package (tag `final-2026-09-29-v12`: + the UK start fix, the five war measures, the equipment fixes) | 32 | all 954 files match, file list identical (3 deleted, 43 new) |
 | Thirteenth package (tag `final-2026-09-29-v13`: + Oscar's review round) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
-| Current package (tag `final-2026-09-29-v14`: pull request #4 documented, no mod change) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
+| Fourteenth package (tag `final-2026-09-29-v14`: pull request #4 documented, no mod change) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
+| Current package (tag `final-2026-09-29-v15`: + five flavour events, the bridge at Remagen; built from `253cea1` with `git archive`, since the Workshop folder now holds the author's published update) | 35 | all 964 files match, file list identical (3 deleted, 53 new) |
 
-So `mod/` is exactly "Workshop version + these patches", with nothing hidden.
+So `mod/` is exactly "July Workshop version + these patches", with nothing hidden.
 
 Correction: when the Slovak event was added, this section was changed to say
 "14 patches, 914 files" without the test being re-run at that point. The

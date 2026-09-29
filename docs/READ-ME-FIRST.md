@@ -34,7 +34,7 @@ independently (see "Check it yourself").
 | Item | What it is |
 |---|---|
 | `mod/` | the complete updated mod, ready to test or upload |
-| `patches/` | every change as a patch (33, in order), each with its reason |
+| `patches/` | every change as a patch (35, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
 | `docs/VERIFICATION.md` | how it was checked: 74 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
@@ -142,13 +142,15 @@ IV\crashes\` shows why.
 
 ## Publish
 
-Bring your copy in line with `mod/`: copy the changed files and delete the
-three state files, or apply the patches. If your copy has changes that
-aren't on Steam yet, use the patches. Then upload as usual.
+You already uploaded changes 1–23 on 29 September, with pull request #3
+(all except 18, the line-ending setting of this package, which your
+repository keeps as it is). What is new since then is in pull request #4: changes 24–26
+(Oscar's review round, the flavour events, the bridge at Remagen). Merge
+it and upload as usual, or copy the changed files from `mod/`.
 
 The same changes went to your GitHub repository
 (github.com/gastav3/Hoi4_1944) as pull requests #2 and #3, which you merged,
-and #4 (Oscar's review round, open). They keep your layout and your
+and #4 (changes 24–26, open). They keep your layout and your
 line-ending setting, with one commit per change and a README (CHANGELOG
 section 13). Merging them leaves your setup and your Steam upload as they
 are.

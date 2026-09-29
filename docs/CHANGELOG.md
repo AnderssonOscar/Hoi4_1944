@@ -1221,6 +1221,25 @@ Workshop himself: Steam records the update at 29 September 2026, 10:18
   Its mod files are identical to pull request #4's `8ecc7ba`; only the
   README differs.
 
+**Pull request #4, extended (29 September 2026).** It wasn't merged yet, so
+sections 19 and 20 were added to the same branch, as was done for pull
+request #3.
+
+| This package | Pull request #4 | Change |
+|---|---|---|
+| `04f75bb` | `12fa932` | Add five flavour events: the Indian Legion, the Handschar, the Eastern Legions, Wiking, Nordland (section 19) |
+| `222caf2` | `d9785e3` | Add the bridge at Remagen: an event with a real photo, and the collapse (section 20) |
+
+- **Identical files and changes:** checked as above; stored with LF. The
+  photograph (`report_event_GER_remagen_bridge.dds`) is byte-identical,
+  both in the branch and in a fresh clone.
+- **README:** `d4e1359` adds the two commits, links to tag
+  `final-2026-09-29-v15`, and credits the photograph.
+- **In the game:** a fresh default clone of `d4e1359` (CRLF checkout) loads
+  with an identical error.log
+  (`game-logs/23-pull-request-4-extended-clone_error.log`), and setup.log
+  shows the 5 + 2 new events loaded.
+
 **The line-ending fix (`mod/.gitattributes`, this package only; not part of
 pull request #2):**
 - The author's `mod/.gitattributes` was the GitHub Desktop template
