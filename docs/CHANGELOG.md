@@ -1185,6 +1185,20 @@ request #3 itself adds.
 covers sections 14 to 17 and the Courland fix. His `main` now equals
 `66adcd0` file by file.
 
+**Published on Steam.** The author then uploaded the update to the Steam
+Workshop himself: Steam records the update at 29 September 2026, 10:18
+(`timeupdated` in `appworkshop_394360.acf`), three minutes after the merge.
+- **What was published:** the Workshop copy now equals his GitHub `main`
+  at `c267d4f` file by file, ignoring line endings (955 files). That is
+  this package at `470916b` plus his README.md and his `.gitattributes`.
+- **Not yet published:** Oscar's review round (section 18) and sections
+  19–20.
+- **The Workshop check** in verify_update.py now accepts either the July
+  baseline or this published version.
+- **The rebuild test** now starts from the baseline commit `253cea1`,
+  which is identical to the July Workshop copy (914/914 files, checked
+  on 27 Sep).
+
 **Pull request #4: Oscar's review round.**
 - **Why a new pull request:** the review commit was pushed to the same
   branch about 25 minutes after that merge, so it is not part of it. It is
@@ -1877,6 +1891,230 @@ Sources:
   first half of February 1945 at Münsingen; about 10,000 men by the end of
   the war, not armed.
 
+### 19. Five flavour events: the Indian Legion, the Handschar, the Eastern Legions, Wiking, Nordland (commit `04f75bb`)
+
+Asked for by Oscar. Each event fires once for Germany, on or after its
+historical date, and only while its situation still holds.
+
+| Event | From | Condition | Effect |
+|---|---|---|---|
+| The Indian Legion Comes Home | 15 Aug 1944 [1] | at war with the UK or the USA, and an enemy holds Paris (11506) | none |
+| The Handschar Falls Apart | 5 Oct 1944, after the fighting at Janja on 3–4 October [2] | Croatia exists | −2,000 manpower |
+| The Eastern Legions Pass to the SS | 30 Dec 1944 [4] | at war with the Soviet Union | +3,500 manpower |
+| Wiking at Cherkassy | 17 Feb 1944, the night of the breakout [5] | at war with the Soviet Union | +10 army experience, +2% war support |
+| The Blue Hills (Nordland) | 10 Aug 1944, the end of the battle for the Tannenberg Line | at war with the Soviet Union; Germany holds state 813 (with Narva, 4640) or 812 (Tallinn) | +10 army experience, +2% war support |
+
+**Design notes:**
+- **The Indian Legion (Legion Freies Indien, Infanterie-Regiment 950):**
+  - Raised by Subhas Chandra Bose from Indian prisoners of war, up to
+    4,500 men [1].
+  - Transferred to the Waffen-SS on 8 August 1944 [1].
+  - Left Lacanau for Germany on 15 August, fighting on the way; three
+    officers were killed and 25 men went over to the Resistance [1].
+  - Alleged crimes in the Médoc and around Ruffec [1].
+  - It then trained at Camp Heuberg until March 1945 and never fought
+    again as a unit [1], so the event has no effect.
+  - The trigger (an enemy holds Paris) stands for the Allied advance that
+    made the coast untenable.
+- **The Handschar:**
+  - Tito's amnesty came on 17 August 1944. Over 2,000 Bosnians deserted in
+    the first three weeks of September, many with their weapons, and over
+    700 joined the Partisans by early October [2].
+  - After Janja (3–4 October), Army Group F judged the division's combat
+    value "minimal" [2]. The remnant became Kampfgruppe Hanke.
+  - Its crimes against Serb and Jewish civilians [2] are named in the text.
+  - The division is not in the mod's 1944 order of battle; only its name
+    is in the division-name list. So the loss is manpower (−2,000, the
+    deserters), not a unit.
+- **The Eastern Legions:**
+  - The Army's legions had 53 field battalions, about 53,000 men [3].
+  - On 20 October 1944 the East Muslim SS Regiment became the
+    "Osttürkischer Waffen-Verband der SS" in Slovakia, 5,000 strong.
+  - On 30 December its Azerbaijani group passed to the new "Kaukasischer
+    Waffen-Verband der SS".
+  - On Christmas Eve 450 men deserted and 300 came back [4].
+  - The East Turkic unit grew to 8,500 by February 1945 [4]. The +3,500
+    is that growth, as remnants were gathered in.
+- **Wiking:**
+  - About 60,000 men were trapped in the Korsun–Cherkassy pocket, and
+    about half broke out on 16–17 February 1944. Wiking lost nearly all
+    its heavy equipment [5].
+  - In the mod's 1944 start Wiking stands at Cherkassy (province 11424,
+    state 203; section 10). The event has two texts: the breakout if an
+    enemy holds state 203, or holding the line if Germany still does.
+- **Nordland:**
+  - From 27 July 1944 it fought at the Tannenberg Line, in the Blue Hills
+    (Sinimäed) west of Narva, alongside the Estonian 20th SS Division and
+    elements of "Großdeutschland" [6].
+  - Its commander, Fritz von Scholz, was killed on 28 July [6].
+  - Its regiments were named "Norge" and "Danmark", although about 80% of
+    its men were Germans [6].
+- **"Positive, about how good they are" (Oscar):** the texts stay factual
+  about the fighting and the losses; the effect is a small army-experience
+  and war-support gain.
+  - **The historical record:** both divisions belonged to the Waffen-SS,
+    which the Nuremberg tribunal declared a criminal organisation.
+  - **Wiking:** a former member described civilians burned in a church in
+    Ukraine in autumn 1941 [5].
+  - **Nordland:** its "Danmark" regiment took part in burning villages in
+    the Banija region of Croatia in October 1943 [6].
+  - The events do not glorify this.
+- **Pictures:** base-game pictures, chosen by looking at them:
+  - the Indian Legion: turbaned soldiers (`indian_parade`);
+  - the Handschar: Yugoslav partisans;
+  - the Eastern Legions: foreign volunteers in German uniform (the
+    picture is of the Latvian Legion; the game has none of these legions);
+  - Wiking: soldiers in the snow;
+  - Nordland: German troops (the same picture as the student-companies
+    event, section 16).
+
+**Checked:**
+- **Check L** in verify_update.py covers the five date windows and
+  conditions, each event once, the effects, Wiking's two texts, that the
+  pictures exist in the base game, the province-to-state facts (11424 in
+  203, 4640 in 813, 3152 in 812) and the 17 texts.
+- **Calibrated:** two planted errors each made it fail (the Handschar
+  costs 3,000; Nordland fires without Estonia held).
+- **Runtime test** (a temporary daily script in a running German game,
+  removed afterwards):
+  - the Handschar gave −2,000 manpower and the Eastern Legions +3,500;
+  - Wiking and Nordland each gave +9 army experience, not 10: Germany's
+    own experience modifiers apply;
+  - there were no errors.
+- **Load test:** error.log identical (log 22); setup.log shows the 5
+  events loaded.
+
+**Not play-tested yet.** Console: `event ger_legions.1` to
+`event ger_legions.5`. For Wiking's other text: `setcontroller SOV 11424`,
+then `event ger_legions.4`.
+
+**Files (all new):**
+- `common/scripted_effects/GER_legions_effects.txt`
+- `common/on_actions/GER_legions_on_actions.txt`
+- `events/GER_legions_events.txt`
+- `localisation/english/GER_legions_l_english.yml` (17 texts)
+
+Sources:
+- [1] en.wikipedia, *Indian Legion*.
+- [2] en.wikipedia, *13th Waffen Mountain Division of the SS Handschar (1st
+  Croatian)*, section "August 1944 – May 1945".
+- [3] de.wikipedia, *Ostlegionen*: 53 field battalions, 53,000 men.
+- [4] en.wikipedia, *Azerbaijani SS volunteer formations*:
+  - 20 October 1944, the move to Slovakia and the renaming;
+  - 30 December 1944, the Azerbaijani group transferred;
+  - the Christmas Eve desertions;
+  - strengths (from a search summary of the same page: 5,000 from October
+    1944 to January 1945, 8,500 from February 1945).
+- [5] en.wikipedia, *5th SS Panzer Division Wiking*.
+- [6] en.wikipedia, *11th SS Volunteer Panzergrenadier Division Nordland*.
+
+### 20. The bridge at Remagen (commit `222caf2`)
+
+Asked for by Oscar: an event when the Remagen bridgehead is taken, as
+happened historically, with options, and a real photograph.
+
+**When it fires:** once, on the first day a western enemy of Germany (at
+war with it, not the Soviet Union) holds **province 529**, the east bank of
+the Rhine opposite Remagen (Erpel), where the Ludendorff Bridge ended.
+- **How 529 was found:**
+  - The game map was fitted to the real coordinates of nine cities: the
+    victory points of Köln, Bonn, Koblenz, Düsseldorf, Frankfurt,
+    Wiesbaden, Mainz, Trier and Aachen, with residuals of 1–8 map pixels.
+  - Remagen falls on the west bank south of Bonn, in 3547/11494. The
+    game's own river layer (`map/rivers.bmp`) shows the Rhine between
+    11494 (west, state 42) and 529 (east, state 51).
+- **It links to the author's own Rhine events:** 529 is one of the
+  east-bank provinces in his "Rhine crossing" effect (GER_rhine_crossing in
+  `germany_scripted_events_mod.txt`). His "Defence of the Rhine" event
+  orders the bridges blown; Remagen is the bridge that wasn't.
+- **The text names the captor** ("American troops have crossed the
+  Rhine..."). The captor is saved as the global event target
+  `GER_remagen_captor`.
+  - Tested: firing the event from inside the captor's scope did **not**
+    make it `FROM` (FROM stayed Germany).
+  - With the event target, a test event named the United States
+    correctly.
+
+**The options:**
+
+| Option | Effect |
+|---|---|
+| Court-martial them, and destroy the bridge at any cost (what Hitler did) | −25 PP, −2,000 fuel, −2% stability; 10 days later the bridge collapses (event 2): the railway in province 529 is damaged by 2 |
+| Contain the bridgehead; the Luftwaffe has better targets | nothing: no court-martial, and the bridge stands |
+
+**History** [1], [2], [3]:
+- **7 March 1945:** the US 9th Armored Division found the bridge standing.
+  Its demolition charges, weak civilian explosive, damaged it but did not
+  bring it down.
+- **Troops across:** six divisions, about 125,000 men.
+- **Hitler's reaction:** on 9 March he set up the Flying Court-Martial
+  West under Generalleutnant Rudolf Hübner. On 13–14 March it sentenced
+  five officers to death, and four were shot in the Westerwald; Hauptmann
+  Bratge, already a prisoner, was sentenced in absentia. Rundstedt was
+  replaced by Kesselring.
+- **The attempts to destroy the bridge:**
+  - 367 Luftwaffe aircraft attacked it in ten days, including Arado Ar 234
+    jet bombers;
+  - 11 V-2 rockets were fired at it, killing six Americans;
+  - seven naval frogmen were sent;
+  - the 600 mm Karl-Gerät mortar shelled it.
+- **17 March 1945:** the bridge collapsed. 28 US engineers were killed
+  according to the English source, 32 according to the German one; the
+  text says "dozens".
+- **Pontoon bridges** had already been built beside it.
+
+**The −2% stability** stands for the terror of the court-martial. The
+**rail damage** stands for the loss of the railway bridge; the Ludendorff
+Bridge was a railway bridge.
+
+**The photograph:**
+- "U.S. First Army at Remagen Bridge before four hours before it collapsed
+  into the Rhine", about 17 March 1945. U.S. National Archives, NAID
+  195341, via Wikimedia Commons [4].
+- **Public domain:** a work of the US Federal Government.
+- **Downloaded with Oscar's permission** (3.2 MB, 3000 × 2426).
+- **Cut to the game's format:** 210 × 176, a sepia tone, a paper border,
+  tilted 2°, in the same uncompressed DDS format (and the identical file
+  header) as the author's own event pictures in `gfx/events/`.
+- **Sprite:** defined in a new file, `interface/GER_remagen.gfx`, so the
+  author's `1944.gfx` is unchanged. The credit is in that file too.
+
+**Checked:**
+- **Check X** covers the trigger, the effects, both events, the picture
+  (its size and a header identical to the author's DDS), the sprite, the
+  province-to-state facts and the 10 texts.
+- **Calibrated:** two planted errors each made it fail (watching 11494
+  instead of 529; rail damage 5).
+- **Runtime test:**
+  - option A: −25 PP and −2,000 fuel, exact;
+  - the collapse ran without errors;
+  - the captor's name in a fired event: "United States / American".
+- **Load test:** error.log identical (`game-logs/22-after-legions-and-remagen_error.log`);
+  setup.log shows the 2 events loaded.
+
+**Not play-tested yet.** Console: `setcontroller USA 529`, and the event
+fires on the next day. Or `event ger_remagen.1`, but the captor's name is
+then empty, because the console doesn't set it.
+
+**Files (all new):**
+- `events/GER_remagen_events.txt`
+- `common/on_actions/GER_remagen_on_actions.txt`
+- `common/scripted_effects/GER_remagen_effects.txt`
+- `localisation/english/GER_remagen_l_english.yml` (10 texts)
+- `interface/GER_remagen.gfx`
+- `gfx/events/report_event_GER_remagen_bridge.dds`
+
+Sources:
+- [1] en.wikipedia, *Ludendorff Bridge*.
+- [2] en.wikipedia, *Battle of Remagen*: 367 aircraft, Ar 234, 11 V-2s,
+  seven frogmen, the Karl-Gerät.
+- [3] de.wikipedia, *Ludendorff-Brücke*: the Flying Court-Martial West,
+  the sentences and executions, Kesselring, the collapse (32 dead, 63
+  injured).
+- [4] Wikimedia Commons, *File:WWII, Europe, Germany, "U.S. First Army at
+  Remagen Bridge before four hours before it collapsed into the Rhine" -
+  NARA - 195341.jpg*.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -1902,7 +2140,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-79 files differ from the version on Steam: 33 edited, 3 deleted, 43 new (full list:
+89 files differ from the July 2026 Steam version: 33 edited, 3 deleted, 53 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

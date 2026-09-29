@@ -1,16 +1,16 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (72 checks,
+Everything below can be re-run: `python tools/verify_update.py` (74 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 72 checks pass
+## Result: all 74 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
-| Integrity | mod/ fully committed; all 954 mod files byte-identical to the commits | PASS |
-| Integrity | a fresh clone reproduces all 954 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
-| Integrity | Steam Workshop copy never touched (914/914 files = baseline) | PASS |
-| Scope | exactly the 79 intended files changed (33 edited, 3 deleted, 43 new), nothing else | PASS |
+| Integrity | mod/ fully committed; all 964 mod files byte-identical to the commits | PASS |
+| Integrity | a fresh clone reproduces all 964 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
+| Integrity | Steam Workshop copy never touched: either the July baseline (914/914 files) or, since 29 Sep 2026, the author's own published update (= this package at 470916b plus his README, ignoring line endings; calibrated: it fails against the wrong version) | PASS |
+| Scope | exactly the 89 intended files changed (33 edited, 3 deleted, 53 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 29 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
@@ -24,6 +24,8 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | Last reserves | R: the amounts (Estonia 38,000, West 3,000, Luftwaffe 75,000, eastern workers 15,000, round-ups 15,000); Hungary's transfer (Germany gains exactly what Hungary loses, never more than it has); the three spirits and durations; all 20 aircraft types −13% with instant = yes, compared with the game's equipment files; the decision; the exact conditions of the six daily checks, each firing once; map locations; 7 events, 32 texts. Calibrated with 4 planted errors (each made it fail). Runtime: the 7 effects ran in the game with no errors, and all 3 spirits were confirmed present. error.log 115 = 115 (log 13) | PASS |
 | Home front | H: the eight events' amounts, spirits, date windows and conditions, each once; 8 events, 33 texts; the Courland popup sets its unlock flag. Calibrated with 4 planted errors (each made it fail). Runtime: all eight effects ran with no errors, Rommel gone after, both spirits present. error.log 115 = 115 (log 15) | PASS |
 | War measures | M: the five decisions' costs, tabs, dates and effects; the KONR choice, both divisions and their exact type-by-type payment; the stock required; the students' spirit; the weapons amounts and the confiscation needing the call; every equipment type read listed as a synchronized token; 3 events, 21 texts. Calibrated with 5 planted errors (each made it fail). Runtime: every effect ran and was measured in a running game (for example exactly 453 rifles, 9 support equipment and 4 guns per KONR division after section 18) | PASS |
+| Flavour events | L: five events (Indian Legion, Handschar, Eastern Legions, Wiking, Nordland): date windows, conditions, each once, effects, Wiking's two texts, base-game pictures, 17 texts. Calibrated with 2 planted errors. Runtime: −2,000 / +3,500 manpower, +9 army experience each for Wiking and Nordland | PASS |
+| Remagen | X: the trigger on province 529 (east bank, state 51), the captor as a named event target, option A's costs and the collapse 10 days later (railway in 529), the photograph (210 × 176 DDS, header identical to the author's), the sprite, 10 texts. Calibrated with 2 planted errors. Runtime: −25 PP, −2,000 fuel; the captor named correctly | PASS |
 | UK start | E: Poland, Yugoslavia, the Philippines and Belgium not in the history faction list; Burma and the Philippines not colonies and Yugoslavia not an exile in history; `on_startup` has the six exiles and the Singapore transfer. Calibrated with 4 planted errors (each made it fail). In the game: the UK starts and runs into 3 Jan 1944; the Workshop version still crashes | PASS |
 | Game's error.log | each fixed error type is gone: duplicate states 3→0, special-forces techs 93→0, Netherlands focuses 39→0, decisions 2→0, event 1→0, renamed IDs 6→0 | PASS |
 
@@ -73,8 +75,9 @@ base game's own issues:
 
 ## The package rebuilds exactly from the Steam version
 
-Test: take a fresh copy of the Steam Workshop folder (914 files, without
-`.git`), apply every patch in `patches/` with `git -c core.autocrlf=false apply`,
+Test: take a fresh copy of the July 2026 Steam version (914 files, without
+`.git`; since the author published his update, the copy kept in commit
+`253cea1`, `git archive 253cea1 mod`), apply every patch in `patches/` with `git -c core.autocrlf=false apply`,
 then check the result against `docs/checksums/mod-files.sha256`.
 
 | Package | Patches | Result |

@@ -21,7 +21,7 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 72 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 74 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
@@ -54,9 +54,14 @@ yourself"). **None of the update has been play-tested yet.**
   - the home front, 1944–45: eight events, from women's labour service to
     the class of 1929;
   - five war measures: expanding the KONR, emergency railway repairs, the
-    student companies to the front, and two decisions on civilian weapons.
-- **Scope:** 79 files differ from the Steam version (33 edited, 3 deleted,
-  43 new). The author's own content was kept byte-for-byte everywhere, and
+    student companies to the front, and two decisions on civilian weapons;
+  - five flavour events (the Indian Legion, the Handschar, the Eastern
+    Legions, Wiking, Nordland);
+  - the bridge at Remagen, with a real photograph.
+- **Scope:** 89 files differ from the July 2026 Steam version (33 edited,
+  3 deleted, 53 new).
+- **On Steam:** the author published pull request #3's content on 29 Sep
+  2026. The author's own content was kept byte-for-byte everywhere, and
   that is checked by script.
 
 The full list is the table in [READ-ME-FIRST](docs/READ-ME-FIRST.md); the
@@ -79,7 +84,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **72 automated checks** (`python tools/verify_update.py`): integrity, a
+- **74 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
@@ -96,7 +101,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 72 checks
+python tools/verify_update.py    # re-runs all 74 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 

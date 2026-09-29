@@ -9,7 +9,9 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **79 files differ** from that version: 33 edited, 3 deleted, 43 new. Your own
+- **89 files differ** from that version: 33 edited, 3 deleted, 53 new.
+- **You published part of it on Steam** on 29 Sep 2026 (pull request #3's
+  content, CHANGELOG section 13). Changes 24–26 came after that. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -34,7 +36,7 @@ independently (see "Check it yourself").
 | `mod/` | the complete updated mod, ready to test or upload |
 | `patches/` | every change as a patch (33, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 72 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 74 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -67,6 +69,8 @@ independently (see "Check it yourself").
 | 20 | Fix: the Courland popup now unlocks the evacuation decision itself, so the console test in CHANGELOG section 11 works; in normal play nothing changes | GER_1945_operations_events.txt |
 | 21 | Fix: **starting as the UK crashed the game** (also with the Workshop version). Poland, Yugoslavia, the Philippines and Burma control no land in 1944; as faction members or colonies at war they capitulated during the game setup, and the UK's "government in exile" popup crashed. They are no longer in the faction or colonies in history and become exiles in `on_startup` instead, as your own `on_startup` already did for most of them (the same as your Belgium fix). The Philippines and Burma are no longer colonies (CHANGELOG section 15) | ENG, USA and YUG history, do_on_actions.txt |
 | 22 | New: **five war measures** for Germany (CHANGELOG section 16), each once: **Expand the KONR** (Collaborationist tab, from 23 Nov 1944, after your "Recruit Andrey Vlasov"): two more KONR divisions paying their half equipment from the stockpile, or 12,000 manpower; **Emergency Railway Repair Programme** (120 days: railway repair +30%, infrastructure repair +20%, construction −10%); **Send the Student Companies to the Front** (+20,000, −5% research, −1% stability, a popup); **Call on Citizens to Hand In Their Weapons** (25 PP, +2,000 old rifles); **Confiscate Civilian Firearms** (after the call, +7,500 old rifles, −1% stability) | 6 new files `GER_measures_*`, `GER_equipment_tokens.txt` |
+| 26 | New: **the bridge at Remagen** (CHANGELOG section 20). When a western enemy first holds the east bank opposite Remagen (province 529, one of your own Rhine-crossing provinces), an event with a **real photograph** (U.S. National Archives, public domain): court-martial the officers and destroy the bridge at any cost (−25 PP, −2,000 fuel, −2% stability; 10 days later it collapses and the railway in the bridgehead is damaged), or contain the bridgehead (nothing) | 6 new files `GER_remagen_*`, `report_event_GER_remagen_bridge.dds` |
+| 25 | New: **five flavour events** (CHANGELOG section 19), each once on its historical date: the Indian Legion comes home (Aug 1944, no effect); the Handschar falls apart (Oct 1944, −2,000 manpower); the Eastern Legions pass to the SS (Dec 1944, +3,500); Wiking at Cherkassy (Feb 1944: broke out or held; +10 army experience, +2% war support); Nordland at the Blue Hills (Aug 1944, if Estonia holds; the same) | 4 new files `GER_legions_*` |
 | 24 | Oscar's review (CHANGELOG section 18): Vlasov's air force +600 manpower (not 5,000: most of its 5,000 men were anti-aircraft, paratroop and ground units); railway repair 90 days; the call for weapons from 7 Jan 1945 alongside the Volksopfer, and the confiscation from 29 Jan 1945; the Volksopfer event now gives field equipment and warmer clothing instead of rifles (the sources name clothing and equipment); the KONR expansion from 27 Feb 1945, at 30% equipment with old German, captured Soviet, Italian or French rifles, paying 453 rifles, 9 support equipment and 4 guns per division | GER_measures_*, GER_homefront_* |
 | 23 | Fix of my own mistakes (CHANGELOG section 17): Sonnenwende and Spring Awakening lost about 500 / 750 rifles each time (the game takes an amount from every rifle type in stock), now exact type by type; Vlasov's air force gave Ta 152s and pre-war ground-attack planes, now Bf 109 G and Ju 87 | GER_1945_operations_effects.txt, GER_homefront_effects.txt |
 
@@ -96,15 +100,19 @@ independently (see "Check it yourself").
 
 1. **Read the patches.** Each one is one change with the full explanation
    and the exact diff.
-2. **Rebuild it from your Steam version.** Copy the Workshop folder
-   (without its `.git`) somewhere that is *not* inside another git
+2. **Rebuild it from the July 2026 Steam version.** Your Steam copy is
+   now the update you published, so start from the July version as it is
+   kept in the package repository (github.com/AnderssonOscar/Hoi4_1944,
+   branch `update-package`, commit `253cea1`, identical to the July
+   Workshop copy). In a clone of it, `git archive 253cea1 mod` gives that
+   version; unpack it somewhere that is *not* inside another git
    repository, then:
    ```
    git -c core.autocrlf=false apply --whitespace=nowarn <package>/patches/*.patch
    sha256sum -c <package>/docs/checksums/mod-files.sha256
    ```
-   All 954 files should say OK, which shows `mod/` is exactly your Steam
-   version plus these patches. (If `git apply` succeeds but files don't
+   All 964 files should say OK, which shows `mod/` is exactly the July
+   Steam version plus these patches. (If `git apply` succeeds but files don't
    change, the folder is inside another git repository and git silently
    skips the paths. Move it, or set `GIT_CEILING_DIRECTORIES`.) This exact
    test was run before packaging and passed.

@@ -61,9 +61,22 @@ disk = git("hash-object", "--no-filters", "--stdin-paths", inp="\n".join(paths).
 check(f"all {len(paths)} mod files on disk are byte-identical to the committed version", disk == blobs)
 base_tree = [l.split(b"\t", 1) for l in git("ls-tree", "-r", BASE, "--", "mod").splitlines()]
 rel = [p.decode()[4:] for _, p in base_tree]
+ws_files = sorted(os.path.relpath(os.path.join(dp, f), W).replace(os.sep, "/")
+                  for dp, dn, fn in os.walk(W) if not dn.__setitem__(slice(None), [d for d in dn if d != ".git"]) for f in fn)
 ws = subprocess.run(["git", "hash-object", "--no-filters", "--stdin-paths"], cwd=W, capture_output=True,
                     input="\n".join(rel).encode()).stdout.split()
-check(f"Steam Workshop copy untouched: all {len(rel)} files identical to the baseline", ws == [m.split()[2] for m, _ in base_tree])
+ws_is_baseline = sorted(rel) == ws_files and ws == [m.split()[2] for m, _ in base_tree]
+# On 29 Sep 2026 the author published the update himself: his GitHub main at the merge of pull request #3
+# (c267d4f), which is this package at 470916b plus his README.md and his .gitattributes (CHANGELOG section 13).
+PUBLISHED = "470916b"
+pub_rel = [p[4:] for p in git("ls-tree", "-r", "--name-only", PUBLISHED, "--", "mod").decode("utf-8").splitlines()]
+ws_is_published = (not ws_is_baseline and ws_files == sorted(pub_rel + ["README.md"])
+                   and all(git("show", f"{PUBLISHED}:mod/{f}").replace(b"\r\n", b"\n")
+                           == open(os.path.join(W, f), "rb").read().replace(b"\r\n", b"\n")
+                           for f in pub_rel if f != ".gitattributes"))
+check("Steam Workshop copy never edited here: it is either the July 2026 baseline (914 files) or the author's own published update "
+      "of 29 Sep 2026 (this package at 470916b plus his README, ignoring line endings)",
+      ws_is_baseline or ws_is_published, "baseline" if ws_is_baseline else ("published update" if ws_is_published else "neither"))
 
 
 def _rm_readonly(func, path, _):
@@ -133,6 +146,11 @@ expected |= {("M", "mod/common/on_actions/do_on_actions.txt"), ("M", "mod/histor
 expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_measures_decisions.txt", "common/ideas/GER_measures_ideas.txt",
              "common/scripted_effects/GER_measures_effects.txt", "common/synchronized_dynamic_tokens/GER_equipment_tokens.txt",
              "events/GER_measures_events.txt", "localisation/english/GER_measures_l_english.yml")}  # five war measures (section 16)
+expected |= {("A", f"mod/{f}") for f in ("common/scripted_effects/GER_legions_effects.txt", "common/on_actions/GER_legions_on_actions.txt",
+             "events/GER_legions_events.txt", "localisation/english/GER_legions_l_english.yml")}  # legions, Wiking, Nordland (section 19)
+expected |= {("A", f"mod/{f}") for f in ("gfx/events/report_event_GER_remagen_bridge.dds", "interface/GER_remagen.gfx",
+             "common/scripted_effects/GER_remagen_effects.txt", "common/on_actions/GER_remagen_on_actions.txt",
+             "events/GER_remagen_events.txt", "localisation/english/GER_remagen_l_english.yml")}  # the bridge at Remagen (section 20)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -778,6 +796,89 @@ check("M  Five war measures: KONR (collaborationist tab, from 27 Feb 1945, needs
       and ms_loc.startswith(b"\xef\xbb\xbfl_english:\r\n") and len(ms_keys) == 21 and ms_need == ms_keys
       and sf.get("52", [""])[0].endswith("52-Wuttemberg.txt") and sf.get("50", [""])[0].endswith("50-Baden.txt"),
       f"texts missing: {sorted(ms_need - ms_keys)}; extra: {sorted(ms_keys - ms_need)}; tokens: {sorted(set(ms_tokens) ^ ms_read)}")
+
+def eff_bodies(path):
+    return {n.key: [canon_op(c) for c in n.value] for n in pdx.parse_file(path)[0] if n.key}
+def daily_ifs(path, oa="on_daily_GER"):
+    """[(limit, flags set, events fired)] of each top-level if in an on_action's effect."""
+    out = []
+    for c in pdx.parse_file(path)[0]:
+        if c.key != "on_actions":
+            continue
+        for d in c.value:
+            if d.key != oa:
+                continue
+            for blk in op_get(d, "effect").value:
+                if blk.key == "if":
+                    nodes = [n for n, _ in pdx.walk(blk.value)]
+                    out.append((canon_op(op_get(blk, "limit")),
+                                [n.value for n in nodes if n.key == "set_country_flag"],
+                                [op_get(n, "id").value for n in nodes if n.key == "country_event"]))
+    return out
+def loc_keys(path):
+    raw = current(path)
+    return raw.startswith(b"\xef\xbb\xbfl_english:\r\n"), {k.decode() for k in re.findall(rb"^ ([\w.]+):0 ", raw, re.M)}
+BASE_PICS = set(re.findall(r'name\s*=\s*"(GFX_report_event_\w+)"', "".join(
+    open(os.path.join(V, "interface", f), encoding="utf-8", errors="replace").read() for f in os.listdir(os.path.join(V, "interface")) if f.endswith(".gfx"))))
+lg_eff = eff_bodies("mod/common/scripted_effects/GER_legions_effects.txt")
+lg_ifs = daily_ifs("mod/common/on_actions/GER_legions_on_actions.txt")
+lg_ev = current("mod/events/GER_legions_events.txt").decode("ascii")
+lg_bom, lg_keys = loc_keys("mod/localisation/english/GER_legions_l_english.yml")
+lg_need = set(re.findall(r"(?:title|desc|name|custom_effect_tooltip|text) = (ger_legions[\w.]+)", lg_ev))
+LG_LIMITS = [
+    "limit={NOT={has_country_flag=GER_legions_1_done} date>1944.8.14 date<1945.5.9 has_war=yes OR={has_war_with=ENG has_war_with=USA} NOT={controls_province=11506}}",
+    "limit={NOT={has_country_flag=GER_legions_2_done} date>1944.10.4 date<1945.5.9 has_war=yes country_exists=CRO}",
+    "limit={NOT={has_country_flag=GER_legions_3_done} date>1944.12.29 date<1945.5.9 has_war_with=SOV}",
+    "limit={NOT={has_country_flag=GER_legions_4_done} date>1944.2.16 date<1945.1.1 has_war_with=SOV}",
+    "limit={NOT={has_country_flag=GER_legions_5_done} date>1944.8.9 date<1945.1.1 has_war_with=SOV OR={813={is_controlled_by=ROOT} 812={is_controlled_by=ROOT}}}"]
+check("L  Five flavour events, each once on or after its historical date: the Indian Legion (15 Aug 1944, an enemy holds Paris; no effect), "
+      "the Handschar (5 Oct 1944, Croatia exists; -2,000 manpower), the Eastern Legions (30 Dec 1944; +3,500), Wiking at Cherkassy "
+      "(17 Feb 1944; broke out or held, by who holds state 203; +10 army experience, +2% war support), Nordland at the Blue Hills "
+      "(10 Aug 1944, northern Estonia held; the same); base-game pictures; 17 texts",
+      lg_eff == {"GER_legions_handschar": ["add_manpower=-2000"], "GER_legions_eastern_legions": ["add_manpower=3500"],
+                 "GER_legions_wiking": ["army_experience=10", "add_war_support=0.02"],
+                 "GER_legions_nordland": ["army_experience=10", "add_war_support=0.02"]}
+      and [l for l, _, _ in lg_ifs] == LG_LIMITS
+      and [(f, e) for _, f, e in lg_ifs] == [([f"GER_legions_{i}_done"], [f"ger_legions.{i}"]) for i in range(1, 6)]
+      and re.findall(r"^\tid = (ger_legions\.\d+)", lg_ev, re.M) == [f"ger_legions.{i}" for i in range(1, 6)]
+      and re.sub(r"\s+", " ", lg_ev).count("desc = { text = ger_legions.4.d.breakout trigger = { NOT = { 203 = { is_controlled_by = ROOT } } } } "
+                                          "desc = { text = ger_legions.4.d.held trigger = { 203 = { is_controlled_by = ROOT } } }") == 1
+      and re.sub(r"\s+", " ", lg_ev).count("option = { name = ger_legions.1.a custom_effect_tooltip = ger_legions.1.a.tt }") == 1
+      and all(f"GER_legions_{k} = yes" in lg_ev for k in ("handschar", "eastern_legions", "wiking", "nordland"))
+      and set(re.findall(r"picture = (GFX_\w+)", lg_ev)) <= BASE_PICS
+      and p2s.get("11506") is not None and p2s.get("11424") == "203" and p2s.get("4640") == "813" and p2s.get("3152") == "812"
+      and lg_bom and len(lg_keys) == 17 and lg_need == lg_keys,
+      f"limits differing: {[l for l in [x for x, _, _ in lg_ifs] if l not in LG_LIMITS]}; texts: {sorted(lg_need ^ lg_keys)}")
+
+rm_eff = eff_bodies("mod/common/scripted_effects/GER_remagen_effects.txt")
+rm_oa = current("mod/common/on_actions/GER_remagen_on_actions.txt").decode("ascii")
+rm_ifs = daily_ifs("mod/common/on_actions/GER_remagen_on_actions.txt")
+rm_ev = current("mod/events/GER_remagen_events.txt").decode("ascii")
+rm_gfx = current("mod/interface/GER_remagen.gfx").decode("ascii")
+rm_dds = current("mod/gfx/events/report_event_GER_remagen_bridge.dds")
+rm_ref = current("mod/gfx/events/report_event_rhine_defence.dds")
+rm_bom, rm_keys = loc_keys("mod/localisation/english/GER_remagen_l_english.yml")
+rm_loc = current("mod/localisation/english/GER_remagen_l_english.yml").decode("utf-8")
+rm_need = set(re.findall(r"(?:title|desc|name|custom_effect_tooltip) = (ger_remagen[\w.]+)", rm_ev))
+check("X  The bridge at Remagen: fires once when a western enemy (not the Soviet Union) holds province 529 (the east bank opposite "
+      "Remagen, state 51; the west bank 11494 is in state 42), naming the captor; option A -25 PP, -2,000 fuel, -2% stability and the "
+      "collapse 10 days later (railway in 529 damaged by 2), option B nothing; the picture is a 210 x 176 DDS in the same format as the "
+      "author's own; 10 texts",
+      [l for l, _, _ in rm_ifs] == ["limit={NOT={has_country_flag=GER_remagen_done} has_war=yes NOT={controls_province=529} "
+                                    "any_country={controls_province=529 has_war_with=ROOT NOT={original_tag=SOV}}}"]
+      and [(f, e) for _, f, e in rm_ifs] == [(["GER_remagen_done"], ["ger_remagen.1"])]
+      and "save_global_event_target_as = GER_remagen_captor" in rm_oa and "[GER_remagen_captor.GetAdjective]" in rm_loc
+      and rm_eff == {"GER_remagen_destroy_the_bridge": ["add_political_power=-25", "add_fuel=-2000", "add_stability=-0.02",
+                                                        "hidden_effect={country_event={id=ger_remagen.2 days=10}}"],
+                     "GER_remagen_collapse": ["damage_building={type=rail_way province=529 damage=2}"]}
+      and re.findall(r"^\tid = (ger_remagen\.\d+)", rm_ev, re.M) == ["ger_remagen.1", "ger_remagen.2"]
+      and rm_ev.count("GER_remagen_destroy_the_bridge = yes") == 1 and "hidden_effect = { GER_remagen_collapse = yes }" in rm_ev
+      and rm_ev.count("picture = GFX_report_event_GER_remagen_bridge") == 2
+      and 'name = "GFX_report_event_GER_remagen_bridge"' in rm_gfx and 'texturefile = "gfx/events/report_event_GER_remagen_bridge.dds"' in rm_gfx
+      and len(rm_dds) == 128 + 210 * 176 * 4 and rm_dds[:128] == rm_ref[:128]
+      and p2s.get("529") == "51" and p2s.get("11494") == "42"
+      and rm_bom and len(rm_keys) == 10 and rm_need == rm_keys,
+      f"texts: {sorted(rm_need ^ rm_keys)}")
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)
