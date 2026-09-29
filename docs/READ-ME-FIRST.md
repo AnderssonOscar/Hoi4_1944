@@ -9,9 +9,9 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **89 files differ** from that version: 33 edited, 3 deleted, 53 new.
+- **113 files differ** from that version: 34 edited, 3 deleted, 76 new.
 - **You published part of it on Steam** on 29 Sep 2026 (pull request #3's
-  content, CHANGELOG section 13). Changes 24–26 came after that. Your own
+  content, CHANGELOG section 13). Changes 24–31 came after that. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -36,7 +36,7 @@ independently (see "Check it yourself").
 | `mod/` | the complete updated mod, ready to test or upload |
 | `patches/` | every change as a patch (35, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 74 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 80 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -69,6 +69,12 @@ independently (see "Check it yourself").
 | 20 | Fix: the Courland popup now unlocks the evacuation decision itself, so the console test in CHANGELOG section 11 works; in normal play nothing changes | GER_1945_operations_events.txt |
 | 21 | Fix: **starting as the UK crashed the game** (also with the Workshop version). Poland, Yugoslavia, the Philippines and Burma control no land in 1944; as faction members or colonies at war they capitulated during the game setup, and the UK's "government in exile" popup crashed. They are no longer in the faction or colonies in history and become exiles in `on_startup` instead, as your own `on_startup` already did for most of them (the same as your Belgium fix). The Philippines and Burma are no longer colonies (CHANGELOG section 15) | ENG, USA and YUG history, do_on_actions.txt |
 | 22 | New: **five war measures** for Germany (CHANGELOG section 16), each once: **Expand the KONR** (Collaborationist tab, from 23 Nov 1944, after your "Recruit Andrey Vlasov"): two more KONR divisions paying their half equipment from the stockpile, or 12,000 manpower; **Emergency Railway Repair Programme** (120 days: railway repair +30%, infrastructure repair +20%, construction −10%); **Send the Student Companies to the Front** (+20,000, −5% research, −1% stability, a popup); **Call on Citizens to Hand In Their Weapons** (25 PP, +2,000 old rifles); **Confiscate Civilian Firearms** (after the call, +7,500 old rifles, −1% stability) | 6 new files `GER_measures_*`, `GER_equipment_tokens.txt` |
+| 32 | Fix: **Overlord decision gates**: preparation ends before the launch window; minor Allied territorial losses no longer block launch. Full AI landing still unverified | Allies_1944.txt; CHANGELOG 27 |
+| 31 | New: **the invasion beaten back** (CHANGELOG section 26), Oscar's picture: one day after an Allied landing on the coast of France (Normandy, Brittany, Nord-Pas-de-Calais, Flanders) is thrown back, a flavour event; no effect | 5 new files `GER_dday_*` |
+| 30 | New: **the Crimea** (CHANGELOG sections 24–25): on day one of the 1944 start, a popup: evacuate the 17th Army (starts at once: 50 PP, 30 days, the divisions are shipped to Constanta, Romanians with them) or hold Sevastopol (a fortress with your Festung values). Fixed after Oscar's play-test: the "Evacuate" option first only unlocked the decision | 6 new files `GER_crimea_*` |
+| 29 | New: **Leningrad taken** (CHANGELOG section 23), Oscar's picture: a flavour event when we take the city; no effect. (The game can't tell where a battle is, so an event for the attack itself isn't possible.) | 5 new files `GER_leningrad_*` |
+| 28 | New: **the first German atomic bomb** (CHANGELOG section 22), Oscar's picture: a flavour event the first time Germany has a bomb; no effect | 5 new files `GER_bomb_*` |
+| 27 | New: **Wiking before Warsaw** (CHANGELOG section 21), Oscar's photograph: from 4 August 1944, the Battle of Radzymin; +10 army experience, +2% war support | GER_legions_*, 2 new files |
 | 26 | New: **the bridge at Remagen** (CHANGELOG section 20). When a western enemy first holds the east bank opposite Remagen (province 529, one of your own Rhine-crossing provinces), an event with a **real photograph** (U.S. National Archives, public domain): court-martial the officers and destroy the bridge at any cost (−25 PP, −2,000 fuel, −2% stability; 10 days later it collapses and the railway in the bridgehead is damaged), or contain the bridgehead (nothing) | 6 new files `GER_remagen_*`, `report_event_GER_remagen_bridge.dds` |
 | 25 | New: **five flavour events** (CHANGELOG section 19), each once on its historical date: the Indian Legion comes home (Aug 1944, no effect); the Handschar falls apart (Oct 1944, −2,000 manpower); the Eastern Legions pass to the SS (Dec 1944, +3,500); Wiking at Cherkassy (Feb 1944: broke out or held; +10 army experience, +2% war support); Nordland at the Blue Hills (Aug 1944, if Estonia holds; the same) | 4 new files `GER_legions_*` |
 | 24 | Oscar's review (CHANGELOG section 18): Vlasov's air force +600 manpower (not 5,000: most of its 5,000 men were anti-aircraft, paratroop and ground units); railway repair 90 days; the call for weapons from 7 Jan 1945 alongside the Volksopfer, and the confiscation from 29 Jan 1945; the Volksopfer event now gives field equipment and warmer clothing instead of rifles (the sources name clothing and equipment); the KONR expansion from 27 Feb 1945, at 30% equipment with old German, captured Soviet, Italian or French rifles, paying 453 rifles, 9 support equipment and 4 guns per division | GER_measures_*, GER_homefront_* |
@@ -111,7 +117,7 @@ independently (see "Check it yourself").
    git -c core.autocrlf=false apply --whitespace=nowarn <package>/patches/*.patch
    sha256sum -c <package>/docs/checksums/mod-files.sha256
    ```
-   All 964 files should say OK, which shows `mod/` is exactly the July
+   All 987 files should say OK, which shows `mod/` is exactly the July
    Steam version plus these patches. (If `git apply` succeeds but files don't
    change, the folder is inside another git repository and git silently
    skips the paths. Move it, or set `GIT_CEILING_DIRECTORIES`.) This exact
@@ -144,13 +150,13 @@ IV\crashes\` shows why.
 
 You already uploaded changes 1–23 on 29 September, with pull request #3
 (all except 18, the line-ending setting of this package, which your
-repository keeps as it is). What is new since then is in pull request #4: changes 24–26
+repository keeps as it is). Pull request #4 currently contains changes 24–26; changes 27–32 are prepared locally
 (Oscar's review round, the flavour events, the bridge at Remagen). Merge
 it and upload as usual, or copy the changed files from `mod/`.
 
 The same changes went to your GitHub repository
 (github.com/gastav3/Hoi4_1944) as pull requests #2 and #3, which you merged,
-and #4 (changes 24–26, open). They keep your layout and your
+and #4 (changes 24–26, open; 27–32 prepared locally). They keep your layout and your
 line-ending setting, with one commit per change and a README (CHANGELOG
 section 13). Merging them leaves your setup and your Steam upload as they
 are.

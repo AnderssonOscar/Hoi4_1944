@@ -148,9 +148,22 @@ expected |= {("A", f"mod/{f}") for f in ("common/decisions/GER_measures_decision
              "events/GER_measures_events.txt", "localisation/english/GER_measures_l_english.yml")}  # five war measures (section 16)
 expected |= {("A", f"mod/{f}") for f in ("common/scripted_effects/GER_legions_effects.txt", "common/on_actions/GER_legions_on_actions.txt",
              "events/GER_legions_events.txt", "localisation/english/GER_legions_l_english.yml")}  # legions, Wiking, Nordland (section 19)
+expected |= {("A", f"mod/{f}") for f in ("interface/GER_legions.gfx", "gfx/events/report_event_GER_wiking_panzer.dds")}  # Wiking before Warsaw (section 21)
+expected |= {("A", f"mod/{f}") for f in ("interface/GER_bomb.gfx", "gfx/events/report_event_GER_first_bomb.dds", "common/on_actions/GER_bomb_on_actions.txt",
+             "events/GER_bomb_events.txt", "localisation/english/GER_bomb_l_english.yml")}  # the first German bomb (section 22)
+expected |= {("A", f"mod/{f}") for f in ("interface/GER_leningrad.gfx", "gfx/events/report_event_GER_leningrad.dds",
+             "common/on_actions/GER_leningrad_on_actions.txt", "events/GER_leningrad_events.txt",
+             "localisation/english/GER_leningrad_l_english.yml")}  # Leningrad taken (sections 23, 25)
+expected |= {("A", f"mod/{f}") for f in ("common/modifiers/GER_crimea_modifiers.txt", "common/scripted_effects/GER_crimea_effects.txt",
+             "common/on_actions/GER_crimea_on_actions.txt", "common/decisions/GER_crimea_decisions.txt", "events/GER_crimea_events.txt",
+             "localisation/english/GER_crimea_l_english.yml")}  # the Crimea (section 24)
+expected |= {("A", f"mod/{f}") for f in ("interface/GER_dday.gfx", "gfx/events/report_event_GER_dday_repelled.dds",
+             "common/on_actions/GER_dday_on_actions.txt", "events/GER_dday_events.txt",
+             "localisation/english/GER_dday_l_english.yml")}  # the invasion beaten back (section 26)
 expected |= {("A", f"mod/{f}") for f in ("gfx/events/report_event_GER_remagen_bridge.dds", "interface/GER_remagen.gfx",
              "common/scripted_effects/GER_remagen_effects.txt", "common/on_actions/GER_remagen_on_actions.txt",
              "events/GER_remagen_events.txt", "localisation/english/GER_remagen_l_english.yml")}  # the bridge at Remagen (section 20)
+expected.add(("M", "mod/common/decisions/Allies_1944.txt"))
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -202,6 +215,8 @@ UK_FIX_REMOVED = {  # the UK start fix (section 15): these lines were turned int
 }
 for _f, _ok in UK_FIX_REMOVED.items():
     allowed[_f] = (lambda prev, ok: lambda l: prev(l) or l in ok)(allowed.get(_f, lambda l: False), _ok)
+allowed["mod/common/decisions/Allies_1944.txt"] = lambda line: line.strip() in {
+    "date < 1945.5.10", "ENG = { surrender_progress < 0.01 }", "USA = { surrender_progress < 0.01 }"}
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
@@ -820,6 +835,11 @@ def loc_keys(path):
     return raw.startswith(b"\xef\xbb\xbfl_english:\r\n"), {k.decode() for k in re.findall(rb"^ ([\w.]+):0 ", raw, re.M)}
 BASE_PICS = set(re.findall(r'name\s*=\s*"(GFX_report_event_\w+)"', "".join(
     open(os.path.join(V, "interface", f), encoding="utf-8", errors="replace").read() for f in os.listdir(os.path.join(V, "interface")) if f.endswith(".gfx"))))
+def photo_ok(name, gfx):
+    """A new event picture: sprite GFX_<name> in the given .gfx, a 210 x 176 DDS with the same header as the author's own pictures."""
+    g, dds = current(gfx).decode("ascii"), current(f"mod/gfx/events/{name}.dds")
+    return (f'name = "GFX_{name}"' in g and f'texturefile = "gfx/events/{name}.dds"' in g
+            and len(dds) == 128 + 210 * 176 * 4 and dds[:128] == current("mod/gfx/events/report_event_rhine_defence.dds")[:128])
 lg_eff = eff_bodies("mod/common/scripted_effects/GER_legions_effects.txt")
 lg_ifs = daily_ifs("mod/common/on_actions/GER_legions_on_actions.txt")
 lg_ev = current("mod/events/GER_legions_events.txt").decode("ascii")
@@ -830,24 +850,28 @@ LG_LIMITS = [
     "limit={NOT={has_country_flag=GER_legions_2_done} date>1944.10.4 date<1945.5.9 has_war=yes country_exists=CRO}",
     "limit={NOT={has_country_flag=GER_legions_3_done} date>1944.12.29 date<1945.5.9 has_war_with=SOV}",
     "limit={NOT={has_country_flag=GER_legions_4_done} date>1944.2.16 date<1945.1.1 has_war_with=SOV}",
-    "limit={NOT={has_country_flag=GER_legions_5_done} date>1944.8.9 date<1945.1.1 has_war_with=SOV OR={813={is_controlled_by=ROOT} 812={is_controlled_by=ROOT}}}"]
-check("L  Five flavour events, each once on or after its historical date: the Indian Legion (15 Aug 1944, an enemy holds Paris; no effect), "
+    "limit={NOT={has_country_flag=GER_legions_5_done} date>1944.8.9 date<1945.1.1 has_war_with=SOV OR={813={is_controlled_by=ROOT} 812={is_controlled_by=ROOT}}}",
+    "limit={NOT={has_country_flag=GER_legions_6_done} date>1944.8.3 date<1945.1.1 has_war_with=SOV controls_province=3544 92={controller={has_war_with=ROOT}}}"]
+check("L  Six flavour events, each once on or after its historical date: the Indian Legion (15 Aug 1944, an enemy holds Paris; no effect), "
       "the Handschar (5 Oct 1944, Croatia exists; -2,000 manpower), the Eastern Legions (30 Dec 1944; +3,500), Wiking at Cherkassy "
       "(17 Feb 1944; broke out or held, by who holds state 203; +10 army experience, +2% war support), Nordland at the Blue Hills "
-      "(10 Aug 1944, northern Estonia held; the same); base-game pictures; 17 texts",
+      "(10 Aug 1944, northern Estonia held; the same), Wiking before Warsaw (4 Aug 1944, Warsaw held, the enemy holds Lublin; the same, "
+      "with Oscar's photo); the other pictures from the base game; 20 texts",
       lg_eff == {"GER_legions_handschar": ["add_manpower=-2000"], "GER_legions_eastern_legions": ["add_manpower=3500"],
                  "GER_legions_wiking": ["army_experience=10", "add_war_support=0.02"],
                  "GER_legions_nordland": ["army_experience=10", "add_war_support=0.02"]}
       and [l for l, _, _ in lg_ifs] == LG_LIMITS
-      and [(f, e) for _, f, e in lg_ifs] == [([f"GER_legions_{i}_done"], [f"ger_legions.{i}"]) for i in range(1, 6)]
-      and re.findall(r"^\tid = (ger_legions\.\d+)", lg_ev, re.M) == [f"ger_legions.{i}" for i in range(1, 6)]
+      and [(f, e) for _, f, e in lg_ifs] == [([f"GER_legions_{i}_done"], [f"ger_legions.{i}"]) for i in range(1, 7)]
+      and re.findall(r"^\tid = (ger_legions\.\d+)", lg_ev, re.M) == [f"ger_legions.{i}" for i in range(1, 7)]
       and re.sub(r"\s+", " ", lg_ev).count("desc = { text = ger_legions.4.d.breakout trigger = { NOT = { 203 = { is_controlled_by = ROOT } } } } "
                                           "desc = { text = ger_legions.4.d.held trigger = { 203 = { is_controlled_by = ROOT } } }") == 1
       and re.sub(r"\s+", " ", lg_ev).count("option = { name = ger_legions.1.a custom_effect_tooltip = ger_legions.1.a.tt }") == 1
-      and all(f"GER_legions_{k} = yes" in lg_ev for k in ("handschar", "eastern_legions", "wiking", "nordland"))
-      and set(re.findall(r"picture = (GFX_\w+)", lg_ev)) <= BASE_PICS
+      and all(f"GER_legions_{k} = yes" in lg_ev for k in ("handschar", "eastern_legions", "wiking", "nordland")) and lg_ev.count("GER_legions_wiking = yes") == 2
+      and re.findall(r"picture = (GFX_\w+)", lg_ev)[5] == "GFX_report_event_GER_wiking_panzer"
+      and set(re.findall(r"picture = (GFX_\w+)", lg_ev)[:5]) <= BASE_PICS and photo_ok("report_event_GER_wiking_panzer", "mod/interface/GER_legions.gfx")
       and p2s.get("11506") is not None and p2s.get("11424") == "203" and p2s.get("4640") == "813" and p2s.get("3152") == "812"
-      and lg_bom and len(lg_keys) == 17 and lg_need == lg_keys,
+      and p2s.get("3544") == "10" and p2s.get("11399") == "92"
+      and lg_bom and len(lg_keys) == 20 and lg_need == lg_keys,
       f"limits differing: {[l for l in [x for x, _, _ in lg_ifs] if l not in LG_LIMITS]}; texts: {sorted(lg_need ^ lg_keys)}")
 
 rm_eff = eff_bodies("mod/common/scripted_effects/GER_remagen_effects.txt")
@@ -879,6 +903,114 @@ check("X  The bridge at Remagen: fires once when a western enemy (not the Soviet
       and p2s.get("529") == "51" and p2s.get("11494") == "42"
       and rm_bom and len(rm_keys) == 10 and rm_need == rm_keys,
       f"texts: {sorted(rm_need ^ rm_keys)}")
+
+def flat(path):
+    return re.sub(r"\s+", " ", re.sub(r"#[^\n]*", "", current(path).decode("utf-8-sig", errors="replace")))
+bq_ifs = daily_ifs("mod/common/on_actions/GER_bomb_on_actions.txt")
+bq_ev = flat("mod/events/GER_bomb_events.txt")
+bq_bom, bq_keys = loc_keys("mod/localisation/english/GER_bomb_l_english.yml")
+check("Q  The first German atomic bomb: fires once, the first day Germany has a bomb in its stockpile (num_of_nukes > 0); flavour only (no "
+      "effect); Oscar's alt-history illustration, described as such in its .gfx; 3 texts",
+      [(l, f, e) for l, f, e in bq_ifs] == [("limit={NOT={has_country_flag=GER_bomb_done} num_of_nukes>0}", ["GER_bomb_done"], ["ger_bomb.1"])]
+      and re.findall(r"id = (ger_bomb\.\d+)", bq_ev) == ["ger_bomb.1"]
+      and "picture = GFX_report_event_GER_first_bomb is_triggered_only = yes option = { name = ger_bomb.1.a } }" in bq_ev
+      and photo_ok("report_event_GER_first_bomb", "mod/interface/GER_bomb.gfx") and b"not a historical photograph" in current("mod/interface/GER_bomb.gfx")
+      and bq_bom and bq_keys == {"ger_bomb.1.t", "ger_bomb.1.d", "ger_bomb.1.a"})
+
+ld_ifs = daily_ifs("mod/common/on_actions/GER_leningrad_on_actions.txt")
+ld_ev = flat("mod/events/GER_leningrad_events.txt")
+ld_bom, ld_keys = loc_keys("mod/localisation/english/GER_leningrad_l_english.yml")
+ld_news = flat("mod/events/NewsEvents.txt")
+check("D  Leningrad taken: fires once, from 1944, the first day we hold the city itself (province 3151, state 195) at war with the Soviet "
+      "Union (the game can't tell where a battle is, so the attack itself can't be the trigger); the game's own news event news.103 "
+      "also fires; flavour only; Oscar's alt-history illustration, described as such; 3 texts",
+      [(l, f, e) for l, f, e in ld_ifs] == [("limit={NOT={has_country_flag=GER_leningrad_done} date>1943.12.31 has_war_with=SOV "
+                                              "controls_province=3151}", ["GER_leningrad_done"], ["ger_leningrad.1"])]
+      and p2s.get("3151") == "195"
+      and "id = news.103" in ld_news and "195 = { is_controlled_by = GER }" in ld_news
+      and re.findall(r"id = (ger_leningrad\.\d+)", ld_ev) == ["ger_leningrad.1"]
+      and "picture = GFX_report_event_GER_leningrad is_triggered_only = yes option = { name = ger_leningrad.1.a } }" in ld_ev
+      and photo_ok("report_event_GER_leningrad", "mod/interface/GER_leningrad.gfx") and b"not a historical photograph" in current("mod/interface/GER_leningrad.gfx")
+      and ld_bom and ld_keys == {"ger_leningrad.1.t", "ger_leningrad.1.d", "ger_leningrad.1.a"})
+
+cr_ifs = daily_ifs("mod/common/on_actions/GER_crimea_on_actions.txt")
+cr_eff = flat("mod/common/scripted_effects/GER_crimea_effects.txt")
+cr_dec = flat("mod/common/decisions/GER_crimea_decisions.txt")
+cr_ev = flat("mod/events/GER_crimea_events.txt")
+cr_bom, cr_keys = loc_keys("mod/localisation/english/GER_crimea_l_english.yml")
+cr_need = set(re.findall(r"(?:title|desc|name|custom_effect_tooltip|tooltip) = ((?:ger|GER)_crimea[\w.]+)", cr_ev + cr_dec)) | {
+    "GER_crimea_evacuation", "GER_crimea_evacuation_desc", "GER_crimea_fortress"}
+cr_mods = {n.key: [canon_op(c) for c in n.value] for f in ("GER_crimea_modifiers.txt", "GER_1945_operations_modifiers.txt")
+           for n in pdx.parse_file("mod/common/modifiers/" + f)[0] if n.key}
+check("C  The Crimea: the popup fires once when we hold Sevastopol (3686) with divisions in the Crimea (137) and an enemy holds Perekop (568; "
+      "true on 1 Jan 1944); evacuate (the popup starts the decision at once: 50 PP, 30 days, Sevastopol held: German divisions to "
+      "Constanta 971, else Odessa 192, Mykolaiv 197, else the capital; allied Romanians with them) or hold (Fortress Sevastopol, the "
+      "author's Festung values as for Courland, removed when Sevastopol falls or on evacuation; the decision stays available); AI 25/75, "
+      "and the AI never evacuates after holding; 14 texts",
+      [(l, f, e) for l, f, e in cr_ifs] == [
+          ("limit={NOT={has_country_flag=GER_crimea_offered} has_war=yes controls_province=3686 divisions_in_state={state=137 size>0} "
+           "any_country={controls_province=568 has_war_with=ROOT}}", ["GER_crimea_offered"], ["ger_crimea.1"]),
+          ("limit={has_country_flag=GER_crimea_fortress NOT={controls_province=3686}}", [], [])]
+      and p2s.get("3686") == "137" and p2s.get("568") == "196" and p2s.get("657") == "971"
+      and re.findall(r"limit = \{ (\d+) = \{ controller = \{ OR = \{ tag = ROOT is_in_faction_with = ROOT \} \} \} \} "
+                     r"137 = \{ teleport_armies = \{ to_state = (\d+) limit = \{ original_tag = GER \}", cr_eff) == [
+          ("971", "971"), ("192", "192"), ("197", "197")]
+      and "else = { 137 = { teleport_armies = { limit = { original_tag = GER } } } }" in cr_eff
+      and "limit = { country_exists = ROM ROM = { is_in_faction_with = ROOT } }" in cr_eff
+      and "137 = { teleport_armies = { to_state = 971 limit = { original_tag = ROM } } }" in cr_eff
+      and "137 = { teleport_armies = { limit = { original_tag = ROM } } }" in cr_eff
+      and cr_eff.rstrip().endswith("GER_crimea_fortress_off = yes }")
+      and "137 = { add_province_modifier = { static_modifiers = { GER_crimea_fortress } province = { id = 3686 } } }" in cr_eff
+      and "137 = { remove_province_modifier = { static_modifiers = { GER_crimea_fortress } province = { id = 3686 } } }" in cr_eff
+      and cr_mods["GER_crimea_fortress"] == cr_mods["GER_1945_courland_fortress"]
+      and "controls_province = 3686 } divisions_in_state = { state = 137 size > 0 } } cost = 50 days_remove = 30 fire_only_once = yes" in cr_dec
+      and "remove_effect = { hidden_effect = { GER_crimea_evacuate = yes set_country_flag = GER_crimea_evacuated country_event = { id = ger_crimea.2 } } }" in cr_dec
+      and "cancel_trigger = { NOT = { controls_province = 3686 } }" in cr_dec
+      and re.findall(r"id = (ger_crimea\.\d+)", cr_ev) == ["ger_crimea.1", "ger_crimea.2"]
+      and "immediate = { hidden_effect = { set_country_flag = GER_crimea_offered } }" in cr_ev
+      and "ai_chance = { base = 25 } set_country_flag = GER_crimea_evacuate_chosen activate_decision = GER_crimea_evacuation" in cr_ev
+      and "political_power" not in cr_ev and "ai_will_do = { factor = 0 }" in cr_dec
+      and "ai_chance = { base = 75 } custom_effect_tooltip = ger_crimea.1.b.tt hidden_effect = { GER_crimea_fortress_on = yes }" in cr_ev
+      and cr_bom and len(cr_keys) == 14 and cr_need == cr_keys,
+      f"texts: {sorted(cr_need ^ cr_keys)}")
+
+import check_overlord
+ol_text = current("mod/common/decisions/Allies_1944.txt").decode("utf-8-sig")
+ol_cases = check_overlord.scenarios(ol_text) + check_overlord.calibration(ol_text)
+check("OL Overlord: preparation expires before launch; minor Allied losses do not block launch; AI, war, coast, date and capitulation guards preserved; planted defects rejected",
+      all(ok for _, ok in ol_cases), f"{sum(ok for _, ok in ol_cases)}/{len(ol_cases)} scenarios")
+
+import check_dday
+dd_cases = check_dday.scenarios(current("mod/common/on_actions/GER_dday_on_actions.txt").decode()) + check_dday.calibration(current("mod/common/on_actions/GER_dday_on_actions.txt").decode())
+dd_ifs = daily_ifs("mod/common/on_actions/GER_dday_on_actions.txt")
+dd_oa = flat("mod/common/on_actions/GER_dday_on_actions.txt")
+dd_ev = flat("mod/events/GER_dday_events.txt")
+dd_bom, dd_keys = loc_keys("mod/localisation/english/GER_dday_l_english.yml")
+dd_news = flat("mod/events/mod_news.txt")
+DD_COAST = ("15", "14", "29", "6")
+dd_states = {s: flat("mod/history/states/" + next(f for f in os.listdir("mod/history/states") if f.split("-")[0].strip() == s)) for s in DD_COAST}
+dd_provinces = {}
+for sid in DD_COAST:
+    path = "mod/history/states/" + next(f for f in os.listdir("mod/history/states") if f.split("-")[0].strip() == sid)
+    state = next(n for n in pdx.parse_file(path)[0] if n.key == "state")
+    dd_provinces[sid] = [n.value for n in next(n for n in state.value if n.key == "provinces").value]
+check("Y  The invasion beaten back: after 1 June 1944, at war with the UK or the USA, a landing is noted when a western Allied enemy holds part of "
+      "Normandy, Brittany, Nord-Pas-de-Calais or Flanders (the states the author's own D-Day news event watches; all German at the "
+      "start); once we hold all four again, the event follows one day later; once only; flavour only; Oscar's picture; 3 texts",
+      [(l, f, e) for l, f, e in dd_ifs] == [
+          ("limit={NOT={has_country_flag=GER_dday_landed} date>1944.5.31 OR={has_war_with=ENG has_war_with=USA} any_enemy_country={"
+           + "OR={tag=ENG tag=USA is_in_faction_with=ENG is_in_faction_with=USA} OR={"
+           + " ".join("controls_province=" + p for s in DD_COAST for p in dd_provinces[s]) + "}}}", ["GER_dday_landed"], []),
+          ("limit={has_country_flag=GER_dday_landed NOT={has_country_flag=GER_dday_repelled} "
+           + " ".join(f"{s}={{is_fully_controlled_by=ROOT}}" for s in DD_COAST) + "}", ["GER_dday_repelled"], ["ger_dday.1"])]
+      and "country_event = { id = ger_dday.1 days = 1 }" in dd_oa
+      and all(f"{s} = {{ is_fully_controlled_by = GER }}" in dd_news for s in DD_COAST) and "id = mod.news.1" in dd_news
+      and all("owner = GER controller = GER" in t for t in dd_states.values()) and p2s.get("6449") == "15"
+      and re.findall(r"id = (ger_dday\.\d+)", dd_ev) == ["ger_dday.1"]
+      and "picture = GFX_report_event_GER_dday_repelled is_triggered_only = yes option = { name = ger_dday.1.a } }" in dd_ev
+      and photo_ok("report_event_GER_dday_repelled", "mod/interface/GER_dday.gfx")
+      and dd_bom and dd_keys == {"ger_dday.1.t", "ger_dday.1.d", "ger_dday.1.a"}
+      and all(ok for _, ok in dd_cases), f"{sum(ok for _, ok in dd_cases)}/{len(dd_cases)} scenarios")
 
 oar = pdx.parse_file("mod/common/on_actions/slovak_uprising_on_actions.txt")[0]
 mp_changes = [(next((p.key for p in reversed(parents) if p.key in ("GER", "SLO")), "SLO (event scope)"), n.value)

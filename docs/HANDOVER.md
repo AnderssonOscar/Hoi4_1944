@@ -24,13 +24,13 @@ mod, so every change must be easy for him to check himself.
 - **Agree changes before making them.** A plan that was discussed is not a
   go-ahead; wait for an explicit yes.
 
-## 3. Status (28 September 2026)
+## 3. Status (29 September 2026, Codex continuation)
 
-- **89 files differ** from the July 2026 Steam version (33 edited, 3 deleted,
-  53 new). The author published pull request #3's content on Steam on
-  29 Sep 2026. Every change is in `docs/CHANGELOG.md` (sections 1–20) and summarised in
+- **113 files differ** from the July 2026 Steam version (34 edited, 3 deleted,
+  76 new). The author published pull request #3's content on Steam on
+  29 Sep 2026. Every change is in `docs/CHANGELOG.md` (sections 1–27) and summarised in
   `docs/READ-ME-FIRST.md`.
-- **`python tools/verify_update.py`:** 74 checks, all pass.
+- **`python tools/verify_update.py`:** 80 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
 - **Packages:** the tags `final-2026-09-27` to `final-2026-09-29-v15`. Each
@@ -39,7 +39,7 @@ mod, so every change must be easy for him to check himself.
 - **GitHub:** the same changes go to the author's repository in his layout
   (the mod at the top level, his line-ending setting): pull requests #2 and
   #3 (both merged by the author; #3 covers sections 14 to 17 and the
-  Courland fix) and pull request #4 (open: sections 18–20). The commit IDs there differ; CHANGELOG section 13 pairs
+  Courland fix) and pull request #4 (open: sections 18–20; 21–27 prepared locally). The commit IDs there differ; CHANGELOG section 13 pairs
   them.
 - **Not verified:**
   - actual play: none of the new content has been played through;
@@ -49,7 +49,7 @@ mod, so every change must be easy for him to check himself.
 - **Open reports:** the crashes for Bulgaria's switch, Romania's 12-day
   decision and the Volkssturm focus need crash reports from the game. The
   UK crash is fixed (CHANGELOG section 15).
-  "D-Day seems broken" needs a description.
+  D-Day decision blockers are corrected (section 27); the full AI landing remains unverified.
 
 ## 4. Where everything is
 
@@ -140,7 +140,7 @@ mod, so every change must be easy for him to check himself.
 | C | Crash in Romania's 12-day capitulation decision | No cause found by reading |
 | D | Crash on completing the Volkssturm focus | No cause found by reading. The focus's unit creation was redesigned (`e6c0034`, bug-check fix `d9d7888`, CHANGELOG section 6); the crash was never reproduced |
 | E | "Playing UK crashes" | **Fixed** in `e578b10`: Allied countries with no land capitulated during the game setup, and the UK's "government in exile" popup crashed (CHANGELOG section 15) |
-| F | "D-Day seems broken" | Needs a description of what's broken |
+| F | Sometimes no Allied D-Day | Decision blockers corrected; full AI landing unverified (CHANGELOG 27) |
 | G | (not reported) | States 870, 871, 873 were defined twice. **Fixed** in `ce4f33a` (stale copies deleted) |
 
 Full evidence, confidence and the proposed fixes are in
@@ -159,8 +159,8 @@ Full evidence, confidence and the proposed fixes are in
    the moment that crashes (observe mode is fine), and collect the newest
    folder in `crashes\` plus `logs\error.log` and `logs\game.log`. Read them
    before touching any code.
-4. **Ask for details:** what exactly is broken about D-Day (no landing, the landing
-   fails, the wrong date)?
+4. **D-Day campaign test:** compare the same save before and after the section 27
+   fixes. Observe an AI landing; retain the save and logs if none occurs.
 5. **Lower priority:** the brace mismatches in `history/countries/RAJ -
    British Raj.txt` and `SER - Serbia.txt` (INVESTIGATION.md section 3); check
    what each does in game before changing it. States 520, 523 and 872
@@ -213,6 +213,16 @@ Full evidence, confidence and the proposed fixes are in
 - Event pictures are 210 × 176 uncompressed 32-bit DDS files with the
   tilted-photo frame drawn into the picture. The author keeps his in
   `gfx/events/`.
+- `activate_decision` starts a timed decision from script and charges its
+  cost; it runs even when the country can't afford it (tested: 20 political
+  power became −30). Used by the Crimea popup (CHANGELOG section 25).
+- `teleport_armies` moves the divisions in a state, whether or not they
+  are in armies (tested with the player's and the AI's divisions).
+- The game can't tell where a battle is fought: there is no such trigger,
+  and the combat on_actions give the general, not the place.
+- In tests, `set_province_controller` on a province with enemy divisions
+  is undone before the next day. Files in `common/on_actions` run in
+  case-sensitive name order (capitals first).
 - A decision that is cancelled runs only its `cancel_effect`, not its
   `remove_effect`. This isn't documented, but 309 base-game decisions rely on
   it.
@@ -229,7 +239,7 @@ python tools/check_province_modifiers.py   # provinces outside their state, unkn
 python tools/check_structure.py            # brace balance, template slot clashes
 python tools/check_references.py           # events/ideas/characters/tags used in play
 python tools/check_berlin_map.py           # Festung Berlin's map facts (needs Pillow and numpy)
-python tools/verify_update.py              # re-checks every claim (74 checks)
+python tools/verify_update.py              # re-checks every claim (80 checks)
 python tools/crash_site.py "<crash folder>" # which part of the game a crash report points to
 ```
 

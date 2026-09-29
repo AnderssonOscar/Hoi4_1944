@@ -21,10 +21,18 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 74 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 80 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
+
+## Latest local continuation
+
+The interrupted September 29 work is complete locally: the selected pictures,
+Wiking before Warsaw, the first bomb, Leningrad, the Crimea evacuation fix,
+and the invasion-repelled event. Two Overlord decision blockers are corrected.
+See [continuation and test limits](docs/CODEX-CONTINUATION.md). PR #4 is
+prepared for publication; the package tag is `final-2026-09-29-v16-codex`.
 
 ## The update in short
 
@@ -55,11 +63,14 @@ yourself"). **None of the update has been play-tested yet.**
     the class of 1929;
   - five war measures: expanding the KONR, emergency railway repairs, the
     student companies to the front, and two decisions on civilian weapons;
-  - five flavour events (the Indian Legion, the Handschar, the Eastern
-    Legions, Wiking, Nordland);
-  - the bridge at Remagen, with a real photograph.
-- **Scope:** 89 files differ from the July 2026 Steam version (33 edited,
-  3 deleted, 53 new).
+  - six flavour events (the Indian Legion, the Handschar, the Eastern
+    Legions, Wiking at Cherkassy and before Warsaw, Nordland);
+  - the bridge at Remagen, with a real photograph;
+  - flavour events for the first German atomic bomb, Leningrad taken and
+    the invasion beaten back, with Oscar's pictures;
+  - the Crimea: evacuate the 17th Army by sea, or hold Sevastopol.
+- **Scope:** 113 files differ from the July 2026 Steam version (34 edited,
+  3 deleted, 76 new).
 - **On Steam:** the author published pull request #3's content on 29 Sep
   2026. The author's own content was kept byte-for-byte everywhere, and
   that is checked by script.
@@ -84,15 +95,15 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **74 automated checks** (`python tools/verify_update.py`): integrity, a
+- **80 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
 - **The game's own error.log** after every change: identical to the updated
   baseline (115 lines). The logs are in `docs/game-logs/`.
 - **In-game runs** of the new effects during the game's setup, with no errors.
-- **Rebuild test:** the July Steam version (commit `253cea1`) plus the 35
-  patches reproduces `mod/` exactly (964 files).
+- **Rebuild test:** the July Steam version (commit `253cea1`) plus the 45
+  patches reproduces `mod/` exactly (987 files).
 - **Not tested:** actual play, and playing without some DLCs.
 
 ## Check it yourself
@@ -101,7 +112,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 74 checks
+python tools/verify_update.py    # re-runs all 80 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 
@@ -132,8 +143,8 @@ folders.
   the cause is in [CHANGELOG section 15](docs/CHANGELOG.md).
 - **Crash reports not yet explained:** Bulgaria switching sides, Romania's
   12-day decision and the Volkssturm focus (redesigned anyway).
-  "D-Day seems broken" needs a description. See
-  [INVESTIGATION](docs/INVESTIGATION.md).
+  Two Overlord scripting blockers are corrected; a full AI landing still needs
+  campaign testing. See [INVESTIGATION](docs/INVESTIGATION.md).
 
 ## For the author: publishing to Steam
 
@@ -147,5 +158,5 @@ already says `supported_version="1.19.3.0"`.
 ## Credits
 
 *1944 - Downfall* is by gastav3. The September 2026 update was prepared by
-Oscar Andersson with an AI assistant (Claude). Everything is documented so it
+Oscar Andersson with AI assistants (Claude, continued with Codex). Everything is documented so it
 can be checked without trusting the AI.

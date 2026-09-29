@@ -46,7 +46,7 @@ source of truth, and the old `.git` was not used for anything.
 | C | Crash in Romania's 12-day capitulation decision | Code read, no definite cause found | Not yet identified |
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out); focus effect redesigned 2026-09-27 (CHANGELOG §6) | Not yet identified |
 | E | "Playing UK crashes the game" | **Found and fixed** (commit `e578b10`, CHANGELOG §15): Allied countries with no land capitulate during the game setup, and the "government in exile" popup for the UK crashes the game | Certain: reproduced with the Workshop version and gone after the fix |
-| F | "D-Day seems broken" | Report too vague, needs a description | Not started |
+| F | Sometimes the Allies do not launch D-Day | Late preparation and 1% surrender gates corrected; actual AI landing remains unverified (CHANGELOG 27) |
 | G | *(not reported; found in self-review)* | Three Australian states were defined twice. **Fixed** (commit `ce4f33a`) | Certain it was a defect; no known crash link |
 
 The honest summary: reading the scripts produced **one** well-supported bug.
@@ -597,3 +597,10 @@ commented-out forts "around Berlin" and at "Küstrin" with IDs 13377-13380.
 In the current map those are in Asia (states 1059, 611, 754), so the code was
 never active. Festung Berlin uses the correct provinces, re-derived from the
 map by `tools/check_berlin_map.py`.
+
+## Continuation: the D-Day report (29 September 2026)
+
+Oscar clarified that the Allies sometimes do not land. This is separate
+from the disabled news popup. Two decision blockers and an event-detection
+false positive are corrected in CHANGELOG section 27. See
+[CODEX-CONTINUATION.md](CODEX-CONTINUATION.md) for exact scope and verification.

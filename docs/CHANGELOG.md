@@ -2134,6 +2134,395 @@ Sources:
   Remagen Bridge before four hours before it collapsed into the Rhine" -
   NARA - 195341.jpg*.
 
+**Recovery note (29 September 2026).** Sections 21–26 were recovered from
+Claude's unfinished local draft. Their earlier runtime results are records
+from that session, not newly repeated tests. The Codex checks and limitations
+are recorded in section 27.
+
+**About Oscar's pictures (sections 21, 22, 23 and 26).** Oscar chose four
+pictures for these events; their sources are not recorded. Three events are
+alternate history, and their pictures are illustrations of it:
+
+| Event | Picture |
+|---|---|
+| Wiking before Warsaw | a wartime photograph: a Panzer III with Waffen-SS soldiers in camouflage smocks, in summer; date, place and unit unknown |
+| The first German bomb | an illustration: German officers watching a nuclear explosion near a tower |
+| Leningrad taken | an illustration: soldiers with "Nordland" cuff titles on the Nevsky Prospect, St Isaac's Cathedral behind |
+| The invasion beaten back | German machine-gunners on a cliff above a beach full of landing craft, a plane falling in flames |
+
+- Each is converted the same way as the Remagen photograph (section 20):
+  cut to 210 × 176, a sepia tone, a paper border, a slight tilt, in the
+  DDS format (and with the same file header) as the author's own pictures
+  in `gfx/events/`. Each `.gfx` file says what its picture is.
+- The Wiking photograph shows the whole tank, as Oscar asked (a first
+  version left out its front plate; commit `df4cc07` restored it).
+
+### 21. Wiking before Warsaw (commit `a2790cb`)
+
+Oscar asked for his photograph of Wiking to be used for an SS Wiking event.
+It shows a tank and its crew in summer, so it doesn't fit the Cherkassy
+event (section 19: a February breakout in the snow, in which Wiking lost
+its tanks). It gets its own event instead, a sixth in the legions file.
+
+- **When:** once, from 4 August 1944 to the end of 1944, at war with the
+  Soviet Union, while we hold Warsaw (province 3544, state 10) and an enemy
+  holds Lublin (state 92), i.e. the front has come up from the east.
+- **Effect:** the same as Wiking at Cherkassy (+10 army experience, +2% war
+  support; the existing effect `GER_legions_wiking`).
+- **History:**
+  - The Battle of Radzymin, 1–4 August 1944: the 4th and 19th Panzer
+    Divisions, the "Hermann Göring" Division and the 5th SS Panzer
+    Division "Wiking" counterattacked the Soviet 2nd Tank Army north-east
+    of Warsaw. The 3rd Tank Corps was pocketed and destroyed near Wołomin
+    on 3 August [1].
+  - From 1 to 10 August the 2nd Tank Army lost 284 tanks and
+    self-propelled guns [1].
+  - The German counterattacks halted the Soviet offensive, and the front
+    stabilised for the rest of the year [2].
+  - The Warsaw Uprising began on 1 August 1944 [3]; the text mentions it.
+    Wiking fought east of the city; its source does not mention it in the
+    suppression of the Uprising [2]. In 1943 elements of the division took
+    part in suppressing the Warsaw Ghetto Uprising [2].
+- **The picture:** Oscar's (see above). Wiking had Panzer IIIs in 1942–43
+  (two of its three tank companies from June 1942 [2]); by 1944 it had
+  Panthers and Panzer IVs [2], so the picture is probably older than the
+  event.
+
+**Checked:**
+- **Check L** now covers six events: the new date window and conditions,
+  the effect, Oscar's picture (sprite and DDS format) and 20 texts.
+- **Calibrated:** two planted errors each made it fail (the event without
+  the Lublin condition; a base-game picture instead of Oscar's).
+- **Runtime:** at the start we hold Warsaw and Lublin, so it cannot fire
+  then (logged). It was not run in August 1944.
+
+**Console:** `event ger_legions.6`.
+
+**Files:**
+- changed: `GER_legions_on_actions.txt`, `GER_legions_events.txt`,
+  `GER_legions_l_english.yml`
+- new: `interface/GER_legions.gfx`, `gfx/events/report_event_GER_wiking_panzer.dds`
+
+Sources:
+- [1] en.wikipedia, *Battle of Radzymin (1944)*.
+- [2] en.wikipedia, *5th SS Panzer Division Wiking*.
+- [3] en.wikipedia, *Warsaw Uprising*.
+
+### 22. The first German atomic bomb (commit `ef9dbce`)
+
+Oscar asked for a flavour event, with his picture, when Germany first has an
+atomic bomb in its stockpile.
+
+- **When:** once, the first day `num_of_nukes > 0`. Germany can get bombs
+  through the author's Uranverein focus and the nuclear special projects.
+- **Effect:** none (flavour only, as asked).
+- **The text** follows the real Uranverein up to 1942 [1] and then departs
+  from history:
+  - in 1939 physicists reported the military potential of uranium fission;
+  - in 1942 it became clear that the project would not decide the war in
+    the near term. A conference called by Speer on 4 June 1942 continued it
+    only for energy production;
+  - in reality it never came close to a bomb: the last reactor experiment,
+    at Haigerloch in 1945, never reached criticality, and historians agree
+    that Germany was never close to a nuclear weapon [1].
+- **The picture:** Oscar's illustration (see above).
+
+**Checked:**
+- **Check Q:** the trigger, one event with no effect, the picture (and its
+  note in the `.gfx`), 3 texts.
+- **Calibrated:** two planted errors each made it fail (two bombs needed;
+  the `.gfx` note removed).
+- **Runtime:** no event at the start (0 bombs). A test script gave Germany one
+  bomb (`add_nuclear_bombs = 1`), and the event fired the next day. No
+  error in error.log for the picture.
+
+**Console:** `event ger_bomb.1`, or `nuke` (adds bombs) and wait a day.
+
+**Files (all new):** `GER_bomb_on_actions.txt`, `GER_bomb_events.txt`,
+`GER_bomb_l_english.yml`, `interface/GER_bomb.gfx`,
+`gfx/events/report_event_GER_first_bomb.dds`.
+
+Sources:
+- [1] en.wikipedia, *German nuclear program during World War II*.
+
+### 23. Leningrad taken (commits `a9a793d`, `97a806f`)
+
+Oscar asked for an event, with his picture, when German troops attack the
+city of Leningrad, or, if that can't be done, when they take it.
+
+- **The attack can't be detected:**
+  - HOI4 has no trigger for where a battle is fought;
+  - the combat on_actions (`on_army_leader_won_combat` and
+    `on_army_leader_lost_combat`) give the general, not the place;
+  - a general's position (`is_in_state`) is his headquarters, not the
+    battle.
+- **The first version** (`a9a793d`) fired when we held province 149 and
+  6174, the city's neighbours inside state 195, with the city still Soviet.
+  In the 1944 start we already hold 6174 and 79 (the siege line), so "our
+  troops near Leningrad" alone would fire on day one. Oscar rejected this:
+  only the city itself should count.
+- **Now** (`97a806f`, Oscar's fallback): once, from 1944, the first day
+  we hold the city itself (province 3151) at war with the Soviet Union.
+- **The game's own news event** "The Fall of Leningrad" (news.103) also
+  fires, for every country, when Germany controls the state.
+- **Effect:** none (flavour only).
+- **The text** says that in September 1941 Hitler ordered the city starved
+  into ruin rather than taken, and that hundreds of thousands of its people
+  died, most of them of hunger [1]. Historians class the siege as a
+  genocide [1]. The event can only fire from 1944, so the text's "since
+  September 1941" holds.
+- **The picture:** Oscar's illustration (see above).
+
+**Checked:**
+- **Check D:** the trigger, province 3151 in state 195, the news event,
+  the picture (and its note in the `.gfx`), 3 texts.
+- **Calibrated:** before 1944, and holding 149 instead of the city: both
+  made it fail. The first version was calibrated too (11068 instead of 149).
+- **Runtime:**
+  - first version: not fired at the start. When a test script gave us 149,
+    the Soviet divisions there took it back before the next day's check
+    (see the testing note below). With the province given just before the
+    check, it fired;
+  - now: not fired on day one; fired on the day a test script gave us the
+    city.
+
+**Console:** `event ger_leningrad.1`, or `setcontroller GER 3151` and wait a
+day.
+
+**Files (all new):** `GER_leningrad_on_actions.txt`, `GER_leningrad_events.txt`,
+`GER_leningrad_l_english.yml`, `interface/GER_leningrad.gfx`,
+`gfx/events/report_event_GER_leningrad.dds`.
+
+Sources:
+- [1] en.wikipedia, *Siege of Leningrad*: 8 September 1941 to 27 January
+  1944; the directive of 29 September 1941; the death toll; the genocide
+  classification.
+
+### 24. The Crimea: evacuate the 17th Army, or hold Sevastopol (commits `204d7de`, `b244eab`)
+
+Proposed on 28 September as the Crimean counterpart of the Courland
+evacuation (section 11); Oscar agreed on 29 September. Built the same way.
+
+**The situation in the 1944 start:**
+- The Crimea is state 137: nine provinces, with Sevastopol (3686, victory
+  points 20) and Kerch (9680, Soviet-held, as the real Kerch bridgehead).
+- Its only land link is the Perekop isthmus: province 568, in Kherson
+  (state 196), which the mod leaves to the Soviet Union.
+- Three German divisions (two mountain, one infantry) and two Romanian
+  divisions stand there.
+- The author's AI strategy `ROM_hold_crimea_1944` has Romania keep units in
+  the Crimea while Germany holds Sevastopol.
+
+**The popup** (once): when we hold Sevastopol, have divisions in the Crimea
+and an enemy holds Perekop. In the 1944 start that is day one: the Crimea
+had been cut off since November 1943 [1].
+- **Evacuate** (AI 25%): the decision "Evacuate the Crimea" starts at once
+  (50 political power, 30 days).
+- **Hold** (AI 75%; what Hitler did): Sevastopol becomes a fortress with the
+  author's Festung values, the same as Fortress Courland: +20% defence, +75%
+  maximum dig-in, −25% supply use. It is removed when Sevastopol falls or
+  the Crimea is evacuated. The decision stays available.
+
+**The decision** "Evacuate the Crimea":
+- **Available:** we hold Sevastopol and have divisions in the Crimea.
+- **Cost:** 50 political power.
+- **Time:** 30 days; the real evacuation ran from 15 April to 14 May 1944
+  [1]. If Sevastopol falls, it is cancelled.
+- **At the end:** every German division in the Crimea is shipped:
+  - to Constanta (state 971), the historical destination [1], if we or an
+    ally hold it;
+  - else to Odessa (192), then Mykolaiv (197);
+  - else to the capital.
+- **The Romanians:** if Romania is our ally, its divisions in the Crimea go
+  too: to Constanta, or home to its capital.
+- **The effect used:** `teleport_armies`, as for Courland.
+- **The AI** takes it only by choosing "Evacuate" in the popup; after
+  "Hold" it keeps holding.
+
+**History** [1], [2]:
+- **Advice:** Manstein, Kleist, Zeitzler and Antonescu repeatedly urged
+  Hitler to evacuate; he refused. Dönitz argued that the Crimea shielded
+  the Balkans "like a shield".
+- **Strength:** five German and six Romanian divisions, about 200,000
+  soldiers.
+- **The offensive:** the Soviet attack began on 8 April 1944. Sevastopol
+  was declared a fortress to be held at all costs, and fell on 9 May; the
+  last pockets were destroyed on 12 May.
+- **The evacuation:** over 113,000 men were evacuated by sea between
+  Sevastopol and Constanta, 15 April to 14 May. The sinking of the Totila
+  and Teja on 10 May alone caused up to 10,000 deaths.
+- **Losses:** 60 ships; 31,700 Germans and 25,800 Romanians died.
+- **Command:** on 1 May, Jaenecke was replaced by Allmendinger.
+
+The event doesn't model losses at sea. The Courland evacuation doesn't
+either, and an early evacuation is the orderly one the generals asked for.
+
+**Oscar's play-test** found that the evacuation did not happen: see section
+25. The fix is `b244eab`.
+
+**Checked:**
+- **Check C** covers:
+  - the popup's trigger and the fortress clean-up;
+  - the destination order, each destination's condition naming the same
+    state it ships to (strengthened after calibration found a gap);
+  - the Romanian part;
+  - the fortress modifier, equal to the author's Festung values (as used
+    for Courland);
+  - the decision (cost, 30 days, cancel);
+  - both options (the first starts the decision itself, without an extra
+    charge) and the AI weights;
+  - 14 texts.
+- **Calibrated:** 7 planted errors. The first run missed one: a
+  destination whose condition checked Odessa but shipped to Constanta.
+  The check now pairs each condition with its destination, and that error
+  makes it fail.
+- **Runtime** (German games started with `-start_tag`):
+  - the popup fired on 1 January 1944;
+  - the evacuation, run directly: the German (more than two) and Romanian
+    divisions left the Crimea and were in Northern Dobruja (Constanta) the
+    same day. The fortress flag was set, then cleared;
+  - the decision, with its 30 days shortened to 1 for the test: with
+    Germany run by the AI (divisions in armies), it took the decision on
+    day 2 under the old AI weight. On day 3 its divisions were in Northern
+    Dobruja. A few days later the AI shipped divisions back into the
+    Crimea, since Sevastopol was still its port. That is the AI's own
+    choice;
+  - the popup's first option (the same effects): the decision ran and the
+    divisions were out the next day; 50 political power charged;
+  - with only 20 political power, the decision still ran (political power
+    went to −30).
+- **Load test:** error.log identical (logs 24 and 25).
+
+**Console:** `event ger_crimea.1`.
+
+**Files (all new):** `GER_crimea_on_actions.txt`, `GER_crimea_decisions.txt`,
+`GER_crimea_effects.txt`, `GER_crimea_events.txt`,
+`common/modifiers/GER_crimea_modifiers.txt`, `GER_crimea_l_english.yml`.
+
+Sources:
+- [1] en.wikipedia, *Crimean offensive*: the cut-off in November 1943, 8
+  April to 12 May 1944, the evacuation of over 113,000 (15 April to 14
+  May, Sevastopol–Constanta), the Totila and Teja, the fall of Sevastopol
+  on 9 May.
+- [2] de.wikipedia, *Schlacht um die Krim*: the advice to evacuate and
+  Hitler's refusal, Dönitz, the strength, Sevastopol as a fortress,
+  Jaenecke and Allmendinger, the losses.
+
+### 25. Oscar's play-test and answers (29 September 2026)
+
+- **The Crimea evacuation did not happen.** Oscar held Sevastopol for more
+  than 30 days, and the divisions stayed.
+  - **The evacuation itself works:** it was tested directly, through the
+    decision, and with AI Germany (section 24).
+  - **The cause:** choosing "Evacuate" in the popup only unlocked the
+    decision; nothing happened until it was clicked in the decisions tab.
+    His game's logs weren't available to confirm this.
+  - **The fix** (`b244eab`): the popup's "Evacuate" option now
+    starts the decision itself with `activate_decision`, as the base game
+    does for timed decisions.
+    - Tested: this charges the decision's 50 political power. With an
+      extra −50 in the option it charged 100, so that line was removed.
+    - It runs even with too little political power (tested with 20).
+  - **The AI weight** is now 0: before, AI Germany took the decision on day
+    2 whatever it had chosen.
+  - **The Courland evacuation** (section 11) has the same design: its
+    popup also only unlocks a decision. Not changed here; the same fix
+    would apply.
+- **Leningrad** (`97a806f`): only the city itself should count; the
+  event now fires when we take it (section 23).
+- **The KONR divisions take no German manpower**, by Oscar's decision (they
+  were raised from Soviet prisoners of war and volunteers). Nothing changed;
+  see section 18.
+- **New:** the event for a beaten-back invasion (section 26).
+
+**Testing notes:**
+- **Setting a province's controller doesn't hold** when the enemy has
+  divisions there. `set_province_controller` on a province with Soviet
+  divisions was undone before the next day's check.
+- **The order of on_action files:** files in `common/on_actions` run in
+  case-sensitive name order, so capital letters come first. A test file
+  named `aa_...` ran after `GER_...`; one named `AA_...` ran before it.
+
+### 26. The invasion beaten back (commit `c0f1767`)
+
+Oscar asked for a flavour event, with his picture, one day after D-Day is
+pushed back.
+
+- **The author's own D-Day logic** (`common/scripted_effects/war.txt`,
+  `ALL_DDAY_FAILED`) sets a global flag whenever, after 25 June 1944, the
+  Axis fully holds northern and southern France. It does not check that
+  a landing happened. His D-Day news event (`mod.news.1`) is never fired:
+  the line that fired it is commented out. So this event keeps its own
+  record.
+- **The landing:** from 1 June 1944, at war with the UK or the USA, the
+  first day a western Allied enemy holds any of the 37 provinces in Normandy (state 15), Brittany (14),
+  Nord-Pas-de-Calais (29) or Flanders (6). These are the four states the
+  author's news event watches, and all four are German in the 1944 start.
+- **Beaten back:** after a landing, the first day we hold all four again.
+  The event follows **one day later**, as Oscar asked. It fires only once;
+  the author's Overlord decision can bring the Allied AI back every 80
+  days.
+- **Effect:** none (flavour only, as asked).
+- **The picture:** Oscar's (see above).
+
+**Checked:**
+- **Check Y** covers:
+  - both triggers and the one-day delay;
+  - that the author's news event watches the same four states;
+  - that all four are German at the start;
+  - the event with no effect, the picture, 3 texts.
+- **Calibrated:** see VERIFICATION.
+- **Earlier-session runtime** (the initial detection logic, with the 1 June date lowered for the test only):
+  - all four states were ours on day one;
+  - a test script gave the UK a Normandy province: the landing was noted;
+  - taking it back the next day: "beaten back" was noted and the event
+    scheduled for the day after.
+
+**Console:** `event ger_dday.1`.
+
+**Files (all new):** `GER_dday_on_actions.txt`, `GER_dday_events.txt`,
+`GER_dday_l_english.yml`, `interface/GER_dday.gfx`,
+`gfx/events/report_event_GER_dday_repelled.dds`.
+
+### 27. Finish the D-Day content and remove Overlord decision blockers
+
+Commits `c0f1767` (picture and event), `1296bb8` (decision gates), and
+`46c665a` (western Allied landing detection), continued with Codex.
+
+- Preparation was available until May 1945 and applied its -1000 invasion
+  preparation-speed modifier for 28 days without a cancellation condition.
+  A late selection could overlap or outlast the 18-day launch bonus. It is
+  now selectable only on 2–28 May 1944 and cancels from 29 May, when the
+  launch decision is active, or on peace with Germany.
+- The launch required both Britain and the USA to have less than 1%
+  surrender progress. A small territorial loss could therefore block the
+  scripted operation. Both must now be uncapitulated. All other launch
+  conditions and all of the author's effects are preserved.
+- The recovered event's original test counted any loss of German coastal
+  control as a landing, including friendly transfers. It now checks all 37
+  provinces in the four coast states and requires a western Allied enemy.
+- The selected picture was recovered from the earlier session's finished
+  DDS; its source image was not recreated or edited.
+
+**Evidence and checks:** see [CODEX-CONTINUATION](CODEX-CONTINUATION.md).
+The main verification has 80 passing checks, incorporating 29 Overlord and
+52 D-Day scenario/calibration checks. The unmodified game's installed
+`documentation/triggers_documentation.md` documents `has_capitulated`,
+`has_decision`, `any_enemy_country`, `controls_province`, and
+`is_fully_controlled_by`. The change is 12 added and three removed lines in
+`common/decisions/Allies_1944.txt`, with its original line endings retained.
+
+A fresh HOI4 startup logs 115 lines, identical to log 22 after wall-clock
+normalization. Short live runs activated preparation but did not advance
+far enough to observe cancellation or a landing. A full AI invasion is
+**not yet verified**; these fixes remove identified script barriers, while
+naval plans, troops and sea control still determine execution. The old
+D-Day news popup remains disabled.
+
+The ten newer mod commits are prepared for PR #4 in the author's layout;
+[PR4-COMMIT-MAPPING.tsv](PR4-COMMIT-MAPPING.tsv) pairs them. Publication is
+pending. Earlier runtime claims in sections 21–26 are recovered records.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -2159,7 +2548,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-89 files differ from the July 2026 Steam version: 33 edited, 3 deleted, 53 new (full list:
+113 files differ from the July 2026 Steam version: 34 edited, 3 deleted, 76 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

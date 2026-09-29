@@ -1,0 +1,11 @@
+package_commit	pr_commit	subject
+a2790cbf4d20ee31ea446bc0432a22385f654c47	7bd3cffa0f1c2f842db62580833145561729126a	Add Wiking before Warsaw: a sixth flavour event, with Oscar's photo
+ef9dbce629e9ae15aee289e6ee7798fa40f5f185	c55a9a66678cc8560a84ad07c0fde68af4424cd8	Add the first German atomic bomb: a flavour event, with Oscar's picture
+a9a793dc5d957cff15cc7688756fcabb049d2350	d77c64b92baaa00000d917448dfd4e23f3bf29f4	Add "Into Leningrad": a flavour event when the battle for the city begins
+204d7de461e703e3a67f1c29d1f966efec5d410d	658638b93b3f981a1025a78053a47dfad1db6162	Add the Crimea: evacuate the 17th Army by sea, or hold Sevastopol
+b244eab9b94ffb7e34a9fb3760cee185b66d7e25	6ca6af2f9ec0784aa050a169abc4d5b73d661a90	Fix the Crimea: choosing "Evacuate" now starts the evacuation
+97a806f65cff6b2c18ee144d3323760fc94faed2	c981f77071575e8732a7bbbecc242f60199fce5e	Leningrad: fire when we take the city itself, as Oscar asked
+df4cc074610d21aba0c06017de5d079b005937a2	5c7f4680578698ac820ba63a0f1145a91f63c599	Oscar's pictures: keep the whole Wiking photo; plain notes on the others
+c0f176764bb648666e23921b13ae0cef4f3401c5	4fd3bb4f9ba91bea69c59c757dbe060a14f78914	Complete the recovered D-Day repelled event with the prepared picture
+1296bb82feeb16a0ed518a692d6d16d05044ceee	4fc5eec68aab98061829f996daa823620fc68bf3	End Overlord preparation before launch and allow minor Allied territorial losses
+46c665a33feac18dababde42fcf72983682d268a	bc4018d23c25865bc98127239316388d6ffbd7b1	Recognize D-Day only when a western Allied enemy holds a coast province

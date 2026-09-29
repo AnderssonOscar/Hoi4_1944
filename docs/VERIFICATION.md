@@ -1,16 +1,16 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (74 checks,
+Everything below can be re-run: `python tools/verify_update.py` (80 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 74 checks pass
+## Result: all 80 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
-| Integrity | mod/ fully committed; all 964 mod files byte-identical to the commits | PASS |
-| Integrity | a fresh clone reproduces all 964 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
+| Integrity | mod/ fully committed; all 987 mod files byte-identical to the commits | PASS |
+| Integrity | a fresh clone reproduces all 987 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
 | Integrity | Steam Workshop copy never touched: either the July baseline (914/914 files) or, since 29 Sep 2026, the author's own published update (= this package at 470916b plus his README, ignoring line endings; calibrated: it fails against the wrong version) | PASS |
-| Scope | exactly the 89 intended files changed (33 edited, 3 deleted, 53 new), nothing else | PASS |
+| Scope | exactly the 113 intended files changed (34 edited, 3 deleted, 76 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 29 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
@@ -24,8 +24,12 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | Last reserves | R: the amounts (Estonia 38,000, West 3,000, Luftwaffe 75,000, eastern workers 15,000, round-ups 15,000); Hungary's transfer (Germany gains exactly what Hungary loses, never more than it has); the three spirits and durations; all 20 aircraft types −13% with instant = yes, compared with the game's equipment files; the decision; the exact conditions of the six daily checks, each firing once; map locations; 7 events, 32 texts. Calibrated with 4 planted errors (each made it fail). Runtime: the 7 effects ran in the game with no errors, and all 3 spirits were confirmed present. error.log 115 = 115 (log 13) | PASS |
 | Home front | H: the eight events' amounts, spirits, date windows and conditions, each once; 8 events, 33 texts; the Courland popup sets its unlock flag. Calibrated with 4 planted errors (each made it fail). Runtime: all eight effects ran with no errors, Rommel gone after, both spirits present. error.log 115 = 115 (log 15) | PASS |
 | War measures | M: the five decisions' costs, tabs, dates and effects; the KONR choice, both divisions and their exact type-by-type payment; the stock required; the students' spirit; the weapons amounts and the confiscation needing the call; every equipment type read listed as a synchronized token; 3 events, 21 texts. Calibrated with 5 planted errors (each made it fail). Runtime: every effect ran and was measured in a running game (for example exactly 453 rifles, 9 support equipment and 4 guns per KONR division after section 18) | PASS |
-| Flavour events | L: five events (Indian Legion, Handschar, Eastern Legions, Wiking, Nordland): date windows, conditions, each once, effects, Wiking's two texts, base-game pictures, 17 texts. Calibrated with 2 planted errors. Runtime: −2,000 / +3,500 manpower, +9 army experience each for Wiking and Nordland | PASS |
+| Flavour events | L: six events (Indian Legion, Handschar, Eastern Legions, Wiking at Cherkassy, Nordland, Wiking before Warsaw): date windows, conditions, each once, effects, Wiking's two texts, base-game pictures and Oscar's photograph, 20 texts. Calibrated with 2 + 2 planted errors. Runtime: −2,000 / +3,500 manpower, +9 army experience each for Wiking and Nordland | PASS |
 | Remagen | X: the trigger on province 529 (east bank, state 51), the captor as a named event target, option A's costs and the collapse 10 days later (railway in 529), the photograph (210 × 176 DDS, header identical to the author's), the sprite, 10 texts. Calibrated with 2 planted errors. Runtime: −25 PP, −2,000 fuel; the captor named correctly | PASS |
+| The first German bomb | Q: fires once when Germany first has a bomb; no effect; Oscar's illustration, described as such in its .gfx; 3 texts. Calibrated with 2 planted errors. Runtime: none at the start; fired the day after a test gave Germany one bomb | PASS |
+| Leningrad taken | D: fires once, from 1944, when we hold the city (3151); the game's news event news.103 also fires; Oscar's illustration, described as such in its .gfx; 3 texts. Calibrated with 3 planted errors (1 for the first version). Runtime: not on day one; fired the day a test gave us the city | PASS |
+| The Crimea | C: the popup on day one; evacuate (the popup starts the decision: 50 PP, 30 days, to Constanta, Odessa, Mykolaiv or the capital, each condition naming its destination; Romanian allies too) or hold (Fortress Sevastopol, the author's Festung values); AI 25/75, never after holding; 14 texts. Calibrated with 7 planted errors (one missed by the first version; the check was strengthened). Runtime: all German and Romanian divisions moved from the Crimea to Constanta, also through the decision and with AI Germany; the popup's option charges 50 PP and works with 20 | PASS |
+| The invasion beaten back | Y (52 scenario/calibration checks): a landing is noted when, from 1 June 1944, an enemy holds part of Normandy, Brittany, Nord-Pas-de-Calais or Flanders (the author's D-Day states, all German at the start); when we hold all four again the event follows a day later; once; no effect; Oscar's picture; 3 texts. Runtime (date lowered for the test): landing noted, beaten back noted the next day | PASS |
 | UK start | E: Poland, Yugoslavia, the Philippines and Belgium not in the history faction list; Burma and the Philippines not colonies and Yugoslavia not an exile in history; `on_startup` has the six exiles and the Singapore transfer. Calibrated with 4 planted errors (each made it fail). In the game: the UK starts and runs into 3 Jan 1944; the Workshop version still crashes | PASS |
 | Game's error.log | each fixed error type is gone: duplicate states 3→0, special-forces techs 93→0, Netherlands focuses 39→0, decisions 2→0, event 1→0, renamed IDs 6→0 | PASS |
 
@@ -44,7 +48,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
   players need the same mod version for multiplayer. There is no "correct"
   value to check a mod's checksum against.
 - **File checksums:** `docs/checksums/mod-files.sha256` lists SHA-256 for all
-  948 mod files. Verified with `sha256sum -c` (all OK). After uploading to
+  987 mod files. Verified with `sha256sum -c` (all OK). After uploading to
   Steam, the Workshop folder can be checked the same way:
   `cd <workshop folder> && sha256sum -c <this file>`. Expect `descriptor.mod`
   and `thumbnail.png` to differ only if Steam rewrites them.
@@ -96,7 +100,8 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | Twelfth package (tag `final-2026-09-29-v12`: + the UK start fix, the five war measures, the equipment fixes) | 32 | all 954 files match, file list identical (3 deleted, 43 new) |
 | Thirteenth package (tag `final-2026-09-29-v13`: + Oscar's review round) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
 | Fourteenth package (tag `final-2026-09-29-v14`: pull request #4 documented, no mod change) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
-| Current package (tag `final-2026-09-29-v15`: + five flavour events, the bridge at Remagen; built from `253cea1` with `git archive`, since the Workshop folder now holds the author's published update) | 35 | all 964 files match, file list identical (3 deleted, 53 new) |
+| Fifteenth package (tag `final-2026-09-29-v15`: + five flavour events, the bridge at Remagen; built from `253cea1` with `git archive`, since the Workshop folder now holds the author's published update) | 35 | all 964 files match, file list identical (3 deleted, 53 new) |
+| Current package (tag `final-2026-09-29-v16-codex`: + Oscar's four pictures, the Crimea, the invasion beaten back, the play-test fixes) | 45 | all 987 files match, file list identical (3 deleted, 76 new) |
 
 So `mod/` is exactly "July Workshop version + these patches", with nothing hidden.
 
@@ -229,3 +234,13 @@ rifles). error.log identical to log 18
   claim is made. Test through the Paradox launcher.
 - **Three heavily edited files not merged with 1.19.3:** decisions/GER.txt,
   national_focus/germany.txt, technologies/artillery.txt (see CHANGELOG §3).
+
+## Codex continuation (29 September 2026)
+
+All 80 main checks pass. Check OL contains 29 Overlord scenario/calibration
+checks; check Y also contains 52 event scenario/calibration checks. Seven
+planted defects are rejected. The final startup log has the same 115 lines
+as log 22 after removing wall-clock timestamps. The timed live campaign did
+not reach the launch window, so actual AI execution remains unverified.
+The package has 987 mod files and 45 mod patches; reconstruction is checked
+against every file hash. See [CODEX-CONTINUATION.md](CODEX-CONTINUATION.md).
