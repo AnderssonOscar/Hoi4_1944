@@ -1247,6 +1247,9 @@ suggested effects, the rest to be decided "creative and realistic".
     types the KONR air force flew, Bf 109 G and Ju 87.
 - **The Volksopfer** gives old kit (the 1918 rifles), because what was
   collected was old and mixed.
+  - **Changed in section 18:** the sources name clothing and equipment,
+    not weapons. The event now gives field equipment and warmer clothing;
+    the rifles come from the call for weapons.
 - **Rommel.** The author's own 20 July event can already retire Rommel (its
   option "Let the Gestapo sort this out").
   - This event then only tells the story; otherwise Rommel leaves service
@@ -1266,6 +1269,13 @@ suggested effects, the rest to be decided "creative and realistic".
     terrible result of war" [5]. The event does not state otherwise as fact.
 - **Pictures:** base-game pictures, chosen by looking at them. The game has
   none of women, youths or Flak batteries.
+
+**Changed in section 18 (Oscar's review):**
+- **Vlasov's air force** gives +600 manpower instead of +5,000.
+- **The Volksopfer** no longer gives rifles. It gives 1,000 support equipment
+  and 90 days of −10% winter attrition. The rifles now come from the
+  decision "Call on Citizens to Hand In Their Weapons", which runs
+  alongside it.
 
 **Also in this round, a Courland fix (commit `96f4a17`):** see the note at
 the end of section 11.
@@ -1468,6 +1478,13 @@ stated, each once. Sources are listed at the end of the section.
 | **Call on Citizens to Hand In Their Weapons** (War Measures) | 18 Oct 1944, the Volkssturm's public launch [10] | 25 PP | +2,000 Basic Infantry Equipment; no stability cost |
 | **Confiscate Civilian Firearms** (War Measures) | 1 Dec 1944, only after the call | 50 PP | +7,500 Basic Infantry Equipment, −1% stability |
 
+**Changed in section 18 (Oscar's review):**
+- **Expand the KONR** from 27 Feb 1945, at 30% equipment with old rifles
+  rolled per division, paying 453 rifles, 9 support equipment and 4 guns.
+- **The railway programme** lasts 90 days.
+- **The call for weapons** opens on 7 Jan 1945, with the Volksopfer.
+- **The confiscation** opens on 29 Jan 1945.
+
 **The KONR decision and the author's own:**
 - **What the author already has.** The "Collaborationist" tab has "Recruit
   Andrey Vlasov" (it creates the "Russische Befreiungsarmee" division
@@ -1488,6 +1505,9 @@ stated, each once. Sources are listed at the end of the section.
   - A full division of the author's template needs 1,610 rifles, 30 support
     equipment and 12 guns (16 infantry battalions, an engineer company and
     an artillery company).
+    - **Corrected in section 18:** the template has 15 battalions (two share
+      a slot), so a full division needs 1,510 rifles. That was measured in
+      the game.
   - The payment is taken type by type, oldest rifles first (see section 17
     for why).
   - The option is only offered with that much in stock. The 5th division is
@@ -1706,6 +1726,129 @@ Source:
 - [1] ru.wikipedia, *Военно-воздушные силы КОНР*: 5th fighter squadron with
   16 Bf 109, 8th bomber squadron with 12 Ju 87, a training squadron; 87
   aircraft in all.
+
+### 18. Oscar's review of sections 14 and 16 (commit `807249b`)
+
+Oscar asked for these changes after reading sections 14 and 16:
+
+| What | Before | Now |
+|---|---|---|
+| Vlasov's air force (home-front event, 19 Dec 1944) | +5,000 manpower | **+600 manpower** |
+| Emergency Railway Repair Programme | 120 days | **90 days** |
+| Call on Citizens to Hand In Their Weapons | from 18 Oct 1944 | **from 7 Jan 1945**, alongside the Volksopfer collection |
+| Confiscate Civilian Firearms (still only after the call) | from 1 Dec 1944 | **from 29 Jan 1945**, after the Volksopfer collection closed |
+| The Volksopfer (home-front event, 6 Jan 1945) | −25 PP: 4,000 rifles and 1,000 support equipment | **−25 PP: 1,000 support equipment and 90 days of −10% winter attrition** (spirit "The Volksopfer") |
+| Expand the KONR | from 23 Nov 1944; half equipment; German Infantry Equipment I | **from 27 Feb 1945**; **30% equipment**; old rifles rolled per division |
+| The KONR payment per division | 805 rifles, 15 support equipment, 6 guns | **453 rifles, 9 support equipment, 4 guns** |
+
+**Vlasov's air force: why 600.**
+- **The real figure:** Oscar asked how many men it had. About 5,000 in all
+  [1], but most of them served in its anti-aircraft regiment, parachute
+  battalion, signals company and airfield units [1].
+- **What the event creates:** only the flying part, 20 fighters and 10
+  ground-attack planes.
+- **So 600:** the game counts 20 men per small aircraft
+  (`common/units/equipment/plane_airframes.txt`), so these 30 aircraft need
+  600 men to deploy.
+
+**The weapons and the Volksopfer.**
+- **Timing:** Oscar asked for the call to come with the Volksopfer.
+  Goebbels, Himmler and Funk called for it on 5 January 1945. From 7 to 28
+  January (later extended to 11 February) the population handed in
+  clothing and equipment at 60,000 Party collection points [2]. The
+  posters read "Volksopfer! Gib alles für die Front!" [3].
+- **The call now opens on 7 January.** Its text ties it to the collection
+  and to the Party's registration of private weapons since November
+  (section 16).
+- **The sources name clothing and equipment for the Volksopfer, not
+  weapons** [2], [4]. It brought in 80,000 tonnes of textiles.
+  - My home-front event (section 14) had it give 4,000 rifles. With the
+    call now running alongside it, that would count the same rifles twice.
+  - So the event keeps its 1,000 support equipment (the equipment part)
+    and now adds 90 days of −10% winter attrition for the donated coats,
+    boots and blankets. The base game uses the same modifier in Finnish
+    and Czechoslovak spirits.
+  - **The rifles now come from the call.**
+- **The confiscation** opens on 29 January, after the collection closed on
+  28 January. Its text mentions the household checks the Party had ordered
+  in December (section 16).
+
+**Expand the KONR.**
+- **27 February 1945 is Oscar's date** for the plans to expand the KONR. My
+  sources don't name an event on that day. They do say that the 3rd KONR
+  division began forming in the first half of February 1945 and never got
+  weapons [5], so a 4th and 5th after that follows on.
+- **It still needs the author's "Recruit Andrey Vlasov" first.**
+- **Poorly armed, as Oscar asked.** The divisions arrive with 30% of their
+  equipment and old rifles.
+  - The game gives a division only one rifle model, so each division rolls
+    it, as the author's Volkssturm does. The weights are Oscar's mix:
+    German rifles from depot stocks 50, captured Soviet 40, captured
+    Italian 5, captured French 5.
+  - All are Basic Infantry Equipment of that maker. Italian and French
+    rifles are only rolled while those countries exist.
+- **The payment is 30% of a division's equipment:** 453 rifles, 9 support
+  equipment and 4 guns.
+  - The game makes 3.6 guns; 4 is rounded up.
+  - **The rifle figure was wrong before.** The author's template lists 16
+    infantry battalions, but two share the slot `x = 1, y = 2`, so the game
+    builds 15. A full division therefore needs 1,510 rifles, not 1,610.
+  - Measured in the game: 453 rifles, 9 support equipment and 3.6 guns per
+    division.
+  - The author's template was left as it is; his own three ROA divisions
+    have 15 battalions too.
+- **Still open, your call:** the new divisions take no manpower from the
+  pool. Measured: manpower was the same before and after creating them.
+  Oscar was offered a fix but hasn't chosen yet.
+
+**Checked:**
+- **Checks H and M** now cover all of this:
+  - the dates, the 90 days and the 600 manpower;
+  - the Volksopfer's new effect and spirit;
+  - the rifle roll's weights, makers and guards;
+  - the 453/9/4 payment and the stock the option requires.
+- **Calibrated:** five planted errors each made the right check fail.
+  - Check M: the KONR from 23 Nov 1944; the railway programme 120 days; the
+    Soviet weight 50.
+  - Check H: Vlasov's air force +5,000; the Volksopfer's 4,000 rifles.
+- **Runtime test** (a temporary daily script in a running German game,
+  removed afterwards):
+  - the payment was exactly 453 / 9 / 4;
+  - eight rolled KONR divisions were created without errors, each with 453
+    rifles;
+  - Vlasov's air force gave +600 manpower, 20 Bf 109 G and 10 Ju 87;
+  - the Volksopfer gave +1,000 support equipment and its spirit, and no
+    rifles.
+- **Load test:** error.log identical to log 18
+  (`game-logs/20-after-review-round-2_error.log`).
+
+**Files:**
+- `common/decisions/GER_measures_decisions.txt`
+- `common/scripted_effects/GER_measures_effects.txt`
+- `events/GER_measures_events.txt`
+- `localisation/english/GER_measures_l_english.yml`
+- `common/scripted_effects/GER_homefront_effects.txt`
+- `common/ideas/GER_homefront_ideas.txt` (the new spirit)
+- `localisation/english/GER_homefront_l_english.yml`
+
+Sources:
+- [1] ru.wikipedia, *Военно-воздушные силы КОНР*: strength 5,000; besides
+  the aviation regiment, an anti-aircraft artillery regiment, a parachute
+  battalion and a signals company.
+- [2] de.wikipedia, *Volksopfer für Wehrmacht und Volkssturm*:
+  - the call by Goebbels, Himmler and Funk on 5 January 1945;
+  - clothing and equipment from 7 to 28 January, extended to 11 February;
+  - 60,000 collection points and 80,000 tonnes of textiles;
+  - no weapons are named.
+- [3] Hoover Institution Library & Archives, poster "Volksopfer! Gib alles
+  für die Front! Bis 28. Januar 1945. Annahmestellen in allen Ortsgruppen
+  der NSDAP."
+- [4] Deutsches Historisches Museum, LeMO, *Jahreschronik 1945*, 6 January:
+  the call for the "Volksopfer" to collect for the equipment of the
+  Volkssturm.
+- [5] ru.wikipedia, *3-я пехотная дивизия (РОА)*: formation began in the
+  first half of February 1945 at Münsingen; about 10,000 men by the end of
+  the war, not armed.
 
 ## How to test in game
 

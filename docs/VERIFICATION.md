@@ -23,7 +23,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | 1945 operations | O: for Sonnenwende and Spring Awakening, set aside = returned = required, returned at the launch and when called off, never launched when called off; 12/14 days, 50 PP each; the Courland evacuation moves only German armies to the five port states in order; Sailors: +1,000 manpower, −10 convoys, 3 infantry divisions (no marines), 50% equipment, no experience; 10 events, 60 texts. Calibrated with 3 planted errors (each made it fail). Runtime test during the game's setup: no errors (amounts not observable at that moment). error.log 115 = 115 (log 12) | PASS |
 | Last reserves | R: the amounts (Estonia 38,000, West 3,000, Luftwaffe 75,000, eastern workers 15,000, round-ups 15,000); Hungary's transfer (Germany gains exactly what Hungary loses, never more than it has); the three spirits and durations; all 20 aircraft types −13% with instant = yes, compared with the game's equipment files; the decision; the exact conditions of the six daily checks, each firing once; map locations; 7 events, 32 texts. Calibrated with 4 planted errors (each made it fail). Runtime: the 7 effects ran in the game with no errors, and all 3 spirits were confirmed present. error.log 115 = 115 (log 13) | PASS |
 | Home front | H: the eight events' amounts, spirits, date windows and conditions, each once; 8 events, 33 texts; the Courland popup sets its unlock flag. Calibrated with 4 planted errors (each made it fail). Runtime: all eight effects ran with no errors, Rommel gone after, both spirits present. error.log 115 = 115 (log 15) | PASS |
-| War measures | M: the five decisions' costs, tabs, dates and effects; the KONR choice, both divisions and their exact type-by-type payment; the stock required; the students' spirit; the weapons amounts and the confiscation needing the call; every equipment type read listed as a synchronized token; 3 events, 21 texts. Calibrated with 5 planted errors (each made it fail). Runtime: every effect ran and was measured in a running game (for example exactly 805 rifles, 15 support equipment and 6 guns per KONR division) | PASS |
+| War measures | M: the five decisions' costs, tabs, dates and effects; the KONR choice, both divisions and their exact type-by-type payment; the stock required; the students' spirit; the weapons amounts and the confiscation needing the call; every equipment type read listed as a synchronized token; 3 events, 21 texts. Calibrated with 5 planted errors (each made it fail). Runtime: every effect ran and was measured in a running game (for example exactly 453 rifles, 9 support equipment and 4 guns per KONR division after section 18) | PASS |
 | UK start | E: Poland, Yugoslavia, the Philippines and Belgium not in the history faction list; Burma and the Philippines not colonies and Yugoslavia not an exile in history; `on_startup` has the six exiles and the Singapore transfer. Calibrated with 4 planted errors (each made it fail). In the game: the UK starts and runs into 3 Jan 1944; the Workshop version still crashes | PASS |
 | Game's error.log | each fixed error type is gone: duplicate states 3→0, special-forces techs 93→0, Netherlands focuses 39→0, decisions 2→0, event 1→0, renamed IDs 6→0 | PASS |
 
@@ -203,6 +203,16 @@ See CHANGELOG sections 16 and 17.
   measures commit applied.
 
 **Not tested in play.**
+
+## Oscar's review round
+
+See CHANGELOG section 18. Checks H and M were updated and calibrated with
+five planted errors. A runtime test measured the KONR payment (exactly
+453 / 9 / 4), what each division receives (453 rifles, 9 support
+equipment, 3.6 guns), eight rolled divisions, Vlasov's air force (+600
+manpower) and the Volksopfer (+1,000 support equipment, its spirit, no
+rifles). error.log identical to log 18
+(`game-logs/20-after-review-round-2_error.log`).
 
 ## Not verified (so no guarantee here)
 

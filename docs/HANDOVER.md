@@ -27,7 +27,7 @@ mod, so every change must be easy for him to check himself.
 ## 3. Status (28 September 2026)
 
 - **79 files differ** from the Steam version (33 edited, 3 deleted, 43 new).
-  Every change is in `docs/CHANGELOG.md` (sections 1–17) and summarised in
+  Every change is in `docs/CHANGELOG.md` (sections 1–18) and summarised in
   `docs/READ-ME-FIRST.md`.
 - **`python tools/verify_update.py`:** 72 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
@@ -198,6 +198,9 @@ Full evidence, confidence and the proposed fixes are in
   in stock, and a positive amount arrives as the **newest** type. Name a
   specific type (and `variant_name` for a particular design). Measured in
   CHANGELOG section 17.
+- In a division template, two sub-units at the same `x`/`y` count as one. The
+  author's "Russische Befreiungsarmee" lists 16 infantry battalions but
+  builds 15 (measured, CHANGELOG section 18).
 - Reading a stockpile in script (`num_equipment@<type>`) needs the type in
   `common/synchronized_dynamic_tokens/`, or the game warns about
   multiplayer desyncs (OOS).
