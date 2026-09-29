@@ -1,0 +1,77 @@
+###########################
+# 1944 - Downfall: foreign legions and two SS divisions: events (docs/CHANGELOG.md section 19)
+###########################
+
+add_namespace = ger_legions
+
+# 1. The Indian Legion comes home (August 1944)
+country_event = {
+	id = ger_legions.1
+	title = ger_legions.1.t
+	desc = ger_legions.1.d
+	picture = GFX_report_event_indian_parade
+	is_triggered_only = yes
+	option = {
+		name = ger_legions.1.a
+		custom_effect_tooltip = ger_legions.1.a.tt
+	}
+}
+
+# 2. The Handschar falls apart (October 1944)
+country_event = {
+	id = ger_legions.2
+	title = ger_legions.2.t
+	desc = ger_legions.2.d
+	picture = GFX_report_event_yugoslavia_partisans
+	is_triggered_only = yes
+	option = {
+		name = ger_legions.2.a
+		GER_legions_handschar = yes
+	}
+}
+
+# 3. The Eastern Legions pass to the SS (December 1944)
+country_event = {
+	id = ger_legions.3
+	title = ger_legions.3.t
+	desc = ger_legions.3.d
+	picture = GFX_report_event_latvian_legion
+	is_triggered_only = yes
+	option = {
+		name = ger_legions.3.a
+		GER_legions_eastern_legions = yes
+	}
+}
+
+# 4. Wiking at Cherkassy (February 1944): broke out, or held the line
+country_event = {
+	id = ger_legions.4
+	title = ger_legions.4.t
+	desc = {
+		text = ger_legions.4.d.breakout
+		trigger = { NOT = { 203 = { is_controlled_by = ROOT } } }
+	}
+	desc = {
+		text = ger_legions.4.d.held
+		trigger = { 203 = { is_controlled_by = ROOT } }
+	}
+	picture = GFX_report_event_finnish_soldiers_snow
+	is_triggered_only = yes
+	option = {
+		name = ger_legions.4.a
+		GER_legions_wiking = yes
+	}
+}
+
+# 5. Nordland at the Blue Hills (July-August 1944)
+country_event = {
+	id = ger_legions.5
+	title = ger_legions.5.t
+	desc = ger_legions.5.d
+	picture = GFX_report_event_german_troops
+	is_triggered_only = yes
+	option = {
+		name = ger_legions.5.a
+		GER_legions_nordland = yes
+	}
+}

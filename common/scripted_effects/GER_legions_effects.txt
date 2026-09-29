@@ -1,0 +1,30 @@
+###########################
+# 1944 - Downfall: foreign legions and two SS divisions: effects (docs/CHANGELOG.md section 19)
+###########################
+
+# The effects of the events. They live here so that the in-game test runs
+# exactly the same code as the events. The Indian Legion's event has no effect.
+
+# 2. The Handschar falls apart: over 2,000 Bosnians deserted in September 1944.
+GER_legions_handschar = {
+	add_manpower = -2000
+}
+
+# 3. The Eastern Legions pass to the SS: the East Turkic Waffen-Verband grew
+# from 5,000 (October 1944 - January 1945) to 8,500 (February 1945) as the
+# remnants of the Army's Eastern Legions were gathered into it.
+GER_legions_eastern_legions = {
+	add_manpower = 3500
+}
+
+# 4. Wiking at Cherkassy, 5. Nordland at the Blue Hills: a battle-hardened
+# division's example.
+GER_legions_wiking = {
+	army_experience = 10
+	add_war_support = 0.02
+}
+
+GER_legions_nordland = {
+	army_experience = 10
+	add_war_support = 0.02
+}
