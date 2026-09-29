@@ -1,0 +1,17 @@
+###########################
+# 1944 - Downfall: the first German atomic bomb: event (docs/CHANGELOG.md section 22)
+###########################
+
+add_namespace = ger_bomb
+
+# 1. The first bomb is ready (flavour only)
+country_event = {
+	id = ger_bomb.1
+	title = ger_bomb.1.t
+	desc = ger_bomb.1.d
+	picture = GFX_report_event_GER_first_bomb
+	is_triggered_only = yes
+	option = {
+		name = ger_bomb.1.a
+	}
+}
