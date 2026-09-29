@@ -18,10 +18,13 @@ country_event = {
 		hidden_effect = { set_country_flag = GER_crimea_offered }
 	}
 
+	# Evacuate: the evacuation starts at once (the decision runs for 30 days;
+	# activate_decision charges its 50 political power, tested).
 	option = {
 		name = ger_crimea.1.a
 		ai_chance = { base = 25 }
 		set_country_flag = GER_crimea_evacuate_chosen
+		activate_decision = GER_crimea_evacuation
 		custom_effect_tooltip = ger_crimea.1.a.tt
 	}
 
