@@ -1,5 +1,10 @@
 # Continuation from the interrupted Claude session
 
+**Update, 29 September 2026 (evening):** checked again by Claude at Oscar's
+request (CHANGELOG section 28). The Overlord change below was reverted
+(`5ac05e9`), and `tools/check_overlord.py` and `tools/run_game_check.ps1`
+were removed (`2f73be4`). Everything else here stands.
+
 Recovered on 29 September 2026 from the Desktop project and the matching
 local Claude session. The original checkout was left intact. This working
 copy includes its seven newer mod commits and its uncommitted D-Day files.

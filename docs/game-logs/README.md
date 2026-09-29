@@ -21,6 +21,7 @@ history runs at startup). Compare them with any diff tool.
 | 13-after-last-reserves_error.log | after Germany's last reserves (70d287a); identical to 5 | 115 |
 | 14-pull-request-2-clone_error.log | a fresh clone of pull request #2's branch (the author's layout, commit 80d1d1c) with Git's default settings (CRLF checkout); identical to 13 | 115 |
 | 16-pull-request-3-clone_error.log | a fresh clone of pull request #3's branch (the author's layout, commit 58b8bce) with Git's default settings; identical to 15. A first run logged 15 extra lines, all from a debug-mode database reload ("Reloading Database: common/decisions", then the base game's CHL.txt): the freshly created files were still being touched. The rerun on the same clone had no reload and is identical; this file is the rerun | 115 |
+| 26-after-overlord-revert_error.log | after Codex's Overlord change was reverted (5ac05e9); identical to 25 | 115 |
 | 25-after-dday-and-play-test-fixes_error.log | Codex startup check of the completed content, Overlord gates and Allied landing detection (46c665a); identical to 22 after removing wall-clock timestamps | 115 |
 | 24-after-four-additions_error.log | after Wiking before Warsaw, the first bomb, Leningrad and the Crimea (a2790cb to 204d7de); identical to 22 | 115 |
 | 23-pull-request-4-extended-clone_error.log | a fresh clone of pull request #4's branch after it was extended (the author's layout, commit d4e1359) with Git's default settings; identical to 22 | 115 |

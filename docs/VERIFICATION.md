@@ -1,16 +1,16 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (80 checks,
+Everything below can be re-run: `python tools/verify_update.py` (79 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 80 checks pass
+## Result: all 79 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
 | Integrity | mod/ fully committed; all 987 mod files byte-identical to the commits | PASS |
 | Integrity | a fresh clone reproduces all 987 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
 | Integrity | Steam Workshop copy never touched: either the July baseline (914/914 files) or, since 29 Sep 2026, the author's own published update (= this package at 470916b plus his README, ignoring line endings; calibrated: it fails against the wrong version) | PASS |
-| Scope | exactly the 113 intended files changed (34 edited, 3 deleted, 76 new), nothing else | PASS |
+| Scope | exactly the 112 intended files changed (33 edited, 3 deleted, 76 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 29 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
@@ -30,6 +30,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | Leningrad taken | D: fires once, from 1944, when we hold the city (3151); the game's news event news.103 also fires; Oscar's illustration, described as such in its .gfx; 3 texts. Calibrated with 3 planted errors (1 for the first version). Runtime: not on day one; fired the day a test gave us the city | PASS |
 | The Crimea | C: the popup on day one; evacuate (the popup starts the decision: 50 PP, 30 days, to Constanta, Odessa, Mykolaiv or the capital, each condition naming its destination; Romanian allies too) or hold (Fortress Sevastopol, the author's Festung values); AI 25/75, never after holding; 14 texts. Calibrated with 7 planted errors (one missed by the first version; the check was strengthened). Runtime: all German and Romanian divisions moved from the Crimea to Constanta, also through the decision and with AI Germany; the popup's option charges 50 PP and works with 20 | PASS |
 | The invasion beaten back | Y (52 scenario/calibration checks): a landing is noted when, from 1 June 1944, an enemy holds part of Normandy, Brittany, Nord-Pas-de-Calais or Flanders (the author's D-Day states, all German at the start); when we hold all four again the event follows a day later; once; no effect; Oscar's picture; 3 texts. Runtime (date lowered for the test): landing noted, beaten back noted the next day | PASS |
+| The author's D-Day decisions | OL: `common/decisions/Allies_1944.txt` byte-identical to the July 2026 version (Codex's change reverted at Oscar's request). Calibrated: an edited date line makes it fail | PASS |
 | UK start | E: Poland, Yugoslavia, the Philippines and Belgium not in the history faction list; Burma and the Philippines not colonies and Yugoslavia not an exile in history; `on_startup` has the six exiles and the Singapore transfer. Calibrated with 4 planted errors (each made it fail). In the game: the UK starts and runs into 3 Jan 1944; the Workshop version still crashes | PASS |
 | Game's error.log | each fixed error type is gone: duplicate states 3→0, special-forces techs 93→0, Netherlands focuses 39→0, decisions 2→0, event 1→0, renamed IDs 6→0 | PASS |
 
@@ -101,7 +102,8 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | Thirteenth package (tag `final-2026-09-29-v13`: + Oscar's review round) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
 | Fourteenth package (tag `final-2026-09-29-v14`: pull request #4 documented, no mod change) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
 | Fifteenth package (tag `final-2026-09-29-v15`: + five flavour events, the bridge at Remagen; built from `253cea1` with `git archive`, since the Workshop folder now holds the author's published update) | 35 | all 964 files match, file list identical (3 deleted, 53 new) |
-| Current package (tag `final-2026-09-29-v16-codex`: + Oscar's four pictures, the Crimea, the invasion beaten back, the play-test fixes) | 45 | all 987 files match, file list identical (3 deleted, 76 new) |
+| Sixteenth package (tag `final-2026-09-29-v16-codex`, made by Codex: + Oscar's four pictures, the Crimea, the invasion beaten back, the play-test fixes, an Overlord change) | 45 | all 987 files match, file list identical (3 deleted, 76 new) |
+| Current package (tag `final-2026-09-29-v17`: the Overlord change reverted, everything checked again) | 46 | all 987 files match, file list identical (3 deleted, 76 new); Allies_1944.txt is the author's |
 
 So `mod/` is exactly "July Workshop version + these patches", with nothing hidden.
 
@@ -237,10 +239,27 @@ rifles). error.log identical to log 18
 
 ## Codex continuation (29 September 2026)
 
-All 80 main checks pass. Check OL contains 29 Overlord scenario/calibration
-checks; check Y also contains 52 event scenario/calibration checks. Seven
+(Superseded in part: the Overlord change and its check were removed; see the
+next section.) At the time: all 80 main checks passed. Check OL contained 29
+Overlord scenario/calibration checks; check Y also contains 52 event
+scenario/calibration checks. Seven
 planted defects are rejected. The final startup log has the same 115 lines
 as log 22 after removing wall-clock timestamps. The timed live campaign did
 not reach the launch window, so actual AI execution remains unverified.
 The package has 987 mod files and 45 mod patches; reconstruction is checked
 against every file hash. See [CODEX-CONTINUATION.md](CODEX-CONTINUATION.md).
+
+## Checked again after the handover (29 September 2026, evening)
+
+See CHANGELOG section 28.
+- **Every event, fired at once** for an AI Germany: error.log compared
+  with a control run. The only difference was the KONR expansion fired
+  without the author's template, which the decision requires; with the
+  template, the division is raised without errors.
+- **The triggers** fired in a running game: Remagen (captor named),
+  Leningrad, the bomb, the Crimea (the AI's evacuation started), and the
+  landing and beaten-back record of the invasion event.
+- **The pictures:** shown to a German player without errors.
+- **The UK start:** no crash.
+- **Load test:** error.log identical (log 26).
+- **Checks:** 79, all pass.

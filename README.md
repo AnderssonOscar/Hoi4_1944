@@ -21,18 +21,23 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 80 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 79 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
 
-## Latest local continuation
+## Latest changes (29 September 2026)
 
-The interrupted September 29 work is complete locally: the selected pictures,
-Wiking before Warsaw, the first bomb, Leningrad, the Crimea evacuation fix,
-and the invasion-repelled event. Two Overlord decision blockers are corrected.
-See [continuation and test limits](docs/CODEX-CONTINUATION.md). PR #4 has
-been updated; the package tag is `final-2026-09-29-v16-codex`.
+- **Complete:** Oscar's pictures, Wiking before Warsaw, the first bomb,
+  Leningrad, the Crimea evacuation (with the fix from Oscar's play-test) and
+  the invasion-beaten-back event.
+- **Codex finished it** after Claude reached its usage limit
+  ([CODEX-CONTINUATION](docs/CODEX-CONTINUATION.md)).
+- **The author's D-Day mechanics are untouched:** Codex's change to the
+  Overlord decisions was reverted at Oscar's request.
+- **Checked again** in a running game ([CHANGELOG](docs/CHANGELOG.md)
+  section 28).
+- **Package tag:** `final-2026-09-29-v17`.
 
 ## The update in short
 
@@ -69,7 +74,7 @@ been updated; the package tag is `final-2026-09-29-v16-codex`.
   - flavour events for the first German atomic bomb, Leningrad taken and
     the invasion beaten back, with Oscar's pictures;
   - the Crimea: evacuate the 17th Army by sea, or hold Sevastopol.
-- **Scope:** 113 files differ from the July 2026 Steam version (34 edited,
+- **Scope:** 112 files differ from the July 2026 Steam version (33 edited,
   3 deleted, 76 new).
 - **On Steam:** the author published pull request #3's content on 29 Sep
   2026. The author's own content was kept byte-for-byte everywhere, and
@@ -95,7 +100,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **80 automated checks** (`python tools/verify_update.py`): integrity, a
+- **79 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
@@ -112,7 +117,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 80 checks
+python tools/verify_update.py    # re-runs all 79 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 
@@ -127,7 +132,7 @@ folders.
   history; that was checked file by file.
 - **After that:** one commit per change, each with its reason, and
   documentation commits that record the checks.
-- **Tags** `final-2026-09-27` to `final-2026-09-29-v15` mark each package
+- **Tags** `final-2026-09-27` to `final-2026-09-29-v17` mark each package
   prepared for the author.
 - **The author's repository** (github.com/gastav3/Hoi4_1944) receives the
   same changes in his layout: pull requests #2 and #3 (both merged by the
@@ -143,8 +148,8 @@ folders.
   the cause is in [CHANGELOG section 15](docs/CHANGELOG.md).
 - **Crash reports not yet explained:** Bulgaria switching sides, Romania's
   12-day decision and the Volkssturm focus (redesigned anyway).
-  Two Overlord scripting blockers are corrected; a full AI landing still needs
-  campaign testing. See [INVESTIGATION](docs/INVESTIGATION.md).
+  "The Allies sometimes skip D-Day" is not explained; the author's D-Day
+  decisions are left as they are. See [INVESTIGATION](docs/INVESTIGATION.md).
 
 ## For the author: publishing to Steam
 

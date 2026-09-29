@@ -2486,6 +2486,10 @@ pushed back.
 
 ### 27. Finish the D-Day content and remove Overlord decision blockers
 
+**Partly reverted (29 September, evening):** the Overlord change below (`1296bb8`)
+was reverted in `5ac05e9` at Oscar's request; the author's D-Day decisions
+are unchanged. The rest stands. See section 28.
+
 Commits `c0f1767` (picture and event), `1296bb8` (decision gates), and
 `46c665a` (western Allied landing detection), continued with Codex.
 
@@ -2523,6 +2527,62 @@ The ten newer mod commits and README were pushed to PR #4 with the user's
 approval (head `23b6824`), in the author's layout.
 [PR4-COMMIT-MAPPING.tsv](PR4-COMMIT-MAPPING.tsv) pairs the mod commits. Earlier runtime claims in sections 21–26 are recovered records.
 
+### 28. Checked again after the handover (29 September 2026, evening)
+
+Claude reached its usage limit during section 26, and Oscar continued with
+Codex (sections 26–27, `CODEX-CONTINUATION.md`). Oscar then asked for all of
+it to be checked again, and for the author's D-Day mechanics to be left
+alone.
+
+**Codex's commits, reviewed one by one:**
+
+| Commit | What | Result |
+|---|---|---|
+| `c0f1767` | the invasion event, with the picture and its sprite | kept: byte-identical to the files Claude had prepared, plus the sprite file |
+| `1296bb8` | changes to the author's Overlord decisions | **reverted** in `5ac05e9` |
+| `46c665a` | the invasion event counts only a western Allied enemy, in any of the 37 provinces of the four states | kept: the list is exactly those states' provinces; tested in the game |
+| `782a805`, `5d8e704` | documentation, checks | kept, except the Overlord check and Codex's game runner (removed in `2f73be4`) |
+
+**Why the Overlord change was reverted** (`5ac05e9`):
+- Oscar's decision: the author's D-Day mechanics are not to be touched.
+- It wasn't shown to fix anything.
+  - It replaced "Britain and the USA below 1% surrender progress" with
+    "neither has capitulated". Measured in a German game on 1 January
+    1944, both were at 0.
+  - It limited the preparation decision to 2–28 May 1944. No game was seen
+    where a late preparation blocked the landing.
+- `common/decisions/Allies_1944.txt` is again the author's file, byte for
+  byte. The new check OL guards this; calibrated: an edited date line
+  makes it fail.
+- The report that the Allies sometimes skip D-Day remains unexplained.
+
+**Re-checked in the game** (HOI4 1.19.3, `-start_tag`; temporary test files
+removed afterwards):
+- **Every event of the update, fired at once** for an AI Germany (Hungary
+  played): the 50 events of sections 5–26. After 4 days, error.log was
+  compared with a control run on the same setup without them.
+  - The only new lines came from the KONR expansion (section 16). Its
+    event was fired directly, without the author's "Recruit Andrey Vlasov"
+    and its "Russische Befreiungsarmee" template. The decision that fires
+    it in play requires that template.
+  - Repeated with the author's template created first: the 4th KONR
+    division was raised (302 → 303 divisions), with no errors.
+- **Triggers in a running game** (the invasion event's 1 June date lowered
+  for the test only):
+  - a US-held east bank at Remagen fired the event and named the captor
+    ("American");
+  - holding the city fired the Leningrad event;
+  - one bomb fired the bomb event;
+  - the Crimea popup came on day one; the AI chose "Evacuate", and the
+    decision was running the next day;
+  - a British-held Normandy province noted the landing, and taking it back
+    noted the invasion as beaten back the next day.
+- **The pictures:** six events with our pictures were shown to a German
+  player, with no picture or sprite errors.
+- **The UK start** (section 15): still no crash.
+- **Load test:** error.log identical (115 lines, `game-logs/26-after-overlord-revert_error.log`).
+- **Checks:** 79, all pass (the Overlord check OL now guards the author's file).
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -2548,7 +2608,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-113 files differ from the July 2026 Steam version: 34 edited, 3 deleted, 76 new (full list:
+112 files differ from the July 2026 Steam version: 33 edited, 3 deleted, 76 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

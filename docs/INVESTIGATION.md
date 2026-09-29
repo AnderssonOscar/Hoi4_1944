@@ -46,7 +46,7 @@ source of truth, and the old `.git` was not used for anything.
 | C | Crash in Romania's 12-day capitulation decision | Code read, no definite cause found | Not yet identified |
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out); focus effect redesigned 2026-09-27 (CHANGELOG §6) | Not yet identified |
 | E | "Playing UK crashes the game" | **Found and fixed** (commit `e578b10`, CHANGELOG §15): Allied countries with no land capitulate during the game setup, and the "government in exile" popup for the UK crashes the game | Certain: reproduced with the Workshop version and gone after the fix |
-| F | Sometimes the Allies do not launch D-Day | Late preparation and 1% surrender gates corrected; actual AI landing remains unverified (CHANGELOG 27) |
+| F | Sometimes the Allies do not launch D-Day | Not explained. Codex's changes to the Overlord gates were reverted at Oscar's request; Britain's and the USA's surrender progress measured 0 on 1 January 1944 (CHANGELOG 27–28) |
 | G | *(not reported; found in self-review)* | Three Australian states were defined twice. **Fixed** (commit `ce4f33a`) | Certain it was a defect; no known crash link |
 
 The honest summary: reading the scripts produced **one** well-supported bug.
