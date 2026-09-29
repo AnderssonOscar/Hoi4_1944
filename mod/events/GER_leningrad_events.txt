@@ -1,0 +1,17 @@
+###########################
+# 1944 - Downfall: into Leningrad: event (docs/CHANGELOG.md section 23)
+###########################
+
+add_namespace = ger_leningrad
+
+# 1. The battle for the city begins (flavour only)
+country_event = {
+	id = ger_leningrad.1
+	title = ger_leningrad.1.t
+	desc = ger_leningrad.1.d
+	picture = GFX_report_event_GER_leningrad_spearhead
+	is_triggered_only = yes
+	option = {
+		name = ger_leningrad.1.a
+	}
+}
