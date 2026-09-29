@@ -1,0 +1,54 @@
+###########################
+# 1944 - Downfall: the Crimea: effects (docs/CHANGELOG.md section 24)
+###########################
+
+# Sevastopol held: Sevastopol (province 3686) becomes a fortress.
+GER_crimea_fortress_on = {
+	if = {
+		limit = { controls_province = 3686 NOT = { has_country_flag = GER_crimea_fortress } }
+		137 = { add_province_modifier = { static_modifiers = { GER_crimea_fortress } province = { id = 3686 } } }
+		set_country_flag = GER_crimea_fortress
+	}
+}
+
+GER_crimea_fortress_off = {
+	if = {
+		limit = { has_country_flag = GER_crimea_fortress }
+		clr_country_flag = GER_crimea_fortress
+		137 = { remove_province_modifier = { static_modifiers = { GER_crimea_fortress } province = { id = 3686 } } }
+	}
+}
+
+# The evacuation: German divisions in the Crimea (state 137) are shipped to
+# Constanta (Northern Dobruja, state 971) if we or an ally hold it, as in
+# April-May 1944; else to Odessa (192) or Mykolaiv (197); else to the capital.
+# Romanian divisions go with them if Romania is our ally: to Constanta, or
+# home to their capital. Uses teleport_armies, as the Courland evacuation does.
+GER_crimea_evacuate = {
+	if = {
+		limit = { 971 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } } }
+		137 = { teleport_armies = { to_state = 971 limit = { original_tag = GER } } }
+	}
+	else_if = {
+		limit = { 192 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } } }
+		137 = { teleport_armies = { to_state = 192 limit = { original_tag = GER } } }
+	}
+	else_if = {
+		limit = { 197 = { controller = { OR = { tag = ROOT is_in_faction_with = ROOT } } } }
+		137 = { teleport_armies = { to_state = 197 limit = { original_tag = GER } } }
+	}
+	else = {
+		137 = { teleport_armies = { limit = { original_tag = GER } } }
+	}
+	if = {
+		limit = { country_exists = ROM ROM = { is_in_faction_with = ROOT } }
+		if = {
+			limit = { 971 = { is_controlled_by = ROM } }
+			137 = { teleport_armies = { to_state = 971 limit = { original_tag = ROM } } }
+		}
+		else = {
+			137 = { teleport_armies = { limit = { original_tag = ROM } } }
+		}
+	}
+	GER_crimea_fortress_off = yes
+}

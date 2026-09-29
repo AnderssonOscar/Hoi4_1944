@@ -1,0 +1,32 @@
+###########################
+# 1944 - Downfall: the Crimea: daily checks (docs/CHANGELOG.md section 24)
+###########################
+
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			# The 17th Army cut off: we hold Sevastopol (3686) and have divisions in
+			# the Crimea (state 137), but an enemy holds the Perekop isthmus
+			# (province 568, Kherson). True on 1 January 1944, as in history.
+			if = {
+				limit = {
+					NOT = { has_country_flag = GER_crimea_offered }
+					has_war = yes
+					controls_province = 3686
+					divisions_in_state = { state = 137 size > 0 }
+					any_country = {
+						controls_province = 568
+						has_war_with = ROOT
+					}
+				}
+				set_country_flag = GER_crimea_offered
+				country_event = { id = ger_crimea.1 }
+			}
+			# Fortress Sevastopol: remove the bonus when Sevastopol is lost
+			if = {
+				limit = { has_country_flag = GER_crimea_fortress NOT = { controls_province = 3686 } }
+				GER_crimea_fortress_off = yes
+			}
+		}
+	}
+}

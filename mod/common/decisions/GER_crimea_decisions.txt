@@ -1,0 +1,38 @@
+###########################
+# 1944 - Downfall: the Crimea: evacuation decision (docs/CHANGELOG.md section 24)
+###########################
+
+war_measures = {
+
+	GER_crimea_evacuation = {
+		icon = generic_naval
+		allowed = { original_tag = GER }
+		visible = {
+			has_country_flag = GER_crimea_offered
+			NOT = { has_country_flag = GER_crimea_evacuated }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GER_crimea_port_tt
+				controls_province = 3686
+			}
+			divisions_in_state = { state = 137 size > 0 }
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 2
+			modifier = { factor = 25 has_country_flag = GER_crimea_evacuate_chosen }
+		}
+		complete_effect = { custom_effect_tooltip = GER_crimea_evacuation_tt }
+		remove_effect = {
+			hidden_effect = {
+				GER_crimea_evacuate = yes
+				set_country_flag = GER_crimea_evacuated
+				country_event = { id = ger_crimea.2 }
+			}
+		}
+		cancel_trigger = { NOT = { controls_province = 3686 } }
+	}
+}
