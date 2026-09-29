@@ -1,14 +1,11 @@
 ###########################
-# 1944 - Downfall: into Leningrad: daily check (docs/CHANGELOG.md section 23)
+# 1944 - Downfall: Leningrad taken: daily check (docs/CHANGELOG.md sections 23 and 25)
 #
-# The game cannot tell where a battle is fought, so this uses the map instead.
-# Leningrad (state 195) is the city province 3151 and four around it. On
-# 1 January 1944 we hold two of them (6174 and 79, the siege line). The event
-# fires once, the first day we also hold 149, between the city and Lake
-# Ladoga, and still hold 6174, while the Soviet Union holds the city: the
-# city's land neighbours south of the Neva are then all ours, and the next
-# step is the city itself. Its fall is announced by the game's own news
-# event "The Fall of Leningrad" (news.103).
+# Fires once, the first day we hold the city itself (province 3151, state 195)
+# while at war with the Soviet Union, from the 1944 start on. The game cannot
+# tell where a battle is fought, so an event for the attack on the city is not
+# possible; this is the fallback Oscar asked for. The game's own news event
+# "The Fall of Leningrad" (news.103) also fires, for every country.
 ###########################
 
 on_actions = {
@@ -17,10 +14,9 @@ on_actions = {
 			if = {
 				limit = {
 					NOT = { has_country_flag = GER_leningrad_done }
+					date > 1943.12.31
 					has_war_with = SOV
-					controls_province = 149
-					controls_province = 6174
-					SOV = { controls_province = 3151 }
+					controls_province = 3151
 				}
 				set_country_flag = GER_leningrad_done
 				country_event = { id = ger_leningrad.1 }

@@ -1,4 +1,4 @@
-# 1944 - Downfall: into Leningrad (docs/CHANGELOG.md section 23)
+# 1944 - Downfall: Leningrad taken (docs/CHANGELOG.md sections 23 and 25)
 # Picture supplied by Oscar Andersson; its source is not recorded. It is NOT a
 # historical photograph: German troops never entered Leningrad. It shows
 # soldiers with 'Nordland' cuff titles on the Nevsky Prospect, with St Isaac's
@@ -6,7 +6,7 @@
 # 210 x 176 in the style of the game's event pictures.
 spriteTypes = {
 	spriteType = {
-		name = "GFX_report_event_GER_leningrad_spearhead"
-		texturefile = "gfx/events/report_event_GER_leningrad_spearhead.dds"
+		name = "GFX_report_event_GER_leningrad"
+		texturefile = "gfx/events/report_event_GER_leningrad.dds"
 	}
 }
