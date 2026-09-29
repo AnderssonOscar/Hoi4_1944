@@ -1,9 +1,9 @@
 # 1944 - Downfall: Leningrad taken (docs/CHANGELOG.md sections 23 and 25)
-# Picture supplied by Oscar Andersson; its source is not recorded. It is NOT a
-# historical photograph: German troops never entered Leningrad. It shows
-# soldiers with 'Nordland' cuff titles on the Nevsky Prospect, with St Isaac's
-# Cathedral behind, and is probably a montage or AI-generated. Cut to
-# 210 x 176 in the style of the game's event pictures.
+# Picture supplied by Oscar Andersson; its source is not recorded. An
+# illustration for an alternate-history event, not a historical photograph
+# (German troops never entered Leningrad): soldiers with 'Nordland' cuff titles
+# on the Nevsky Prospect, with St Isaac's Cathedral behind. Cut to 210 x 176
+# in the style of the game's event pictures.
 spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_GER_leningrad"
