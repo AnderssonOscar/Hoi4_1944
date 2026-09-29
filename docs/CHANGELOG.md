@@ -1240,6 +1240,39 @@ request #3.
   (`game-logs/23-pull-request-4-extended-clone_error.log`), and setup.log
   shows the 5 + 2 new events loaded.
 
+**Pull request #4 after the handover (29 September 2026, evening).**
+- **Codex's update** pushed eleven more commits (`d4e1359` to `23b6824`): the
+  seven of sections 21–25, and sections 26–27.
+- **Checked here:**
+  - each commit's files equal this package at the same step (ignoring CR),
+    with the same line changes;
+  - no text file stored with CRLF;
+  - the branch only added to its history.
+- **Then added:** the revert of the Overlord change and a new README.
+
+| This package | Pull request #4 | Change |
+|---|---|---|
+| `a2790cb` | `7bd3cff` | Wiking before Warsaw (section 21) |
+| `ef9dbce` | `c55a9a6` | The first German atomic bomb (section 22) |
+| `a9a793d` | `d77c64b` | Leningrad, first version (section 23) |
+| `204d7de` | `658638b` | The Crimea (section 24) |
+| `b244eab` | `6ca6af2` | The Crimea fix after Oscar's play-test (sections 24–25) |
+| `97a806f` | `c981f77` | Leningrad fires when the city is taken (sections 23, 25) |
+| `df4cc07` | `5c7f468` | Oscar's pictures: the whole Wiking photo (section 21) |
+| `c0f1767` | `4fd3bb4` | The invasion beaten back (section 26) |
+| `1296bb8` | `4fc5eec` | Codex's Overlord change (section 27; reverted) |
+| `46c665a` | `bc4018d` | The invasion event: western Allies only (sections 26–27) |
+| `5ac05e9` | `010eac5` | The revert of the Overlord change (section 28) |
+
+- **Identical files and changes:** checked as above; stored with LF. The
+  author's `common/decisions/Allies_1944.txt` on the branch is again his
+  own version (as at `d4e1359`).
+- **README:** `30f5990` puts all fourteen commits of pull request #4 into
+  its commit table and links to tag `final-2026-09-29-v17`. It replaces the
+  README text Codex wrote (`23b6824`), which still said 74 checks.
+- **In the game:** a fresh default clone of `30f5990` loads with an identical
+  error.log (`game-logs/27-pull-request-4-v17-clone_error.log`).
+
 **The line-ending fix (`mod/.gitattributes`, this package only; not part of
 pull request #2):**
 - The author's `mod/.gitattributes` was the GitHub Desktop template
