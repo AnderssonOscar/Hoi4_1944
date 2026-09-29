@@ -1,0 +1,17 @@
+###########################
+# 1944 - Downfall: the invasion beaten back: event (docs/CHANGELOG.md section 26)
+###########################
+
+add_namespace = ger_dday
+
+# 1. The invasion beaten back (flavour only)
+country_event = {
+	id = ger_dday.1
+	title = ger_dday.1.t
+	desc = ger_dday.1.d
+	picture = GFX_report_event_GER_dday_repelled
+	is_triggered_only = yes
+	option = {
+		name = ger_dday.1.a
+	}
+}
