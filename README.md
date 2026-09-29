@@ -63,23 +63,36 @@ this repository's line-ending setting (`* text=auto`) is unchanged.
 | [`12fa932`](https://github.com/gastav3/Hoi4_1944/commit/12fa932) | Add five flavour events: the Indian Legion, the Handschar, the Eastern Legions, Wiking, Nordland | 19 | [`04f75bb`](https://github.com/AnderssonOscar/Hoi4_1944/commit/04f75bb) |
 | [`d9785e3`](https://github.com/gastav3/Hoi4_1944/commit/d9785e3) | Add the bridge at Remagen: an event with a real photo, and the collapse | 20 | [`222caf2`](https://github.com/AnderssonOscar/Hoi4_1944/commit/222caf2) |
 
+## September 29 continuation
+
+The remaining Wiking, first German bomb, Leningrad and Crimea changes,
+Oscar's four pictures, and the invasion-repelled event are now included.
+Overlord preparation ends before the launch window and minor Allied
+territorial losses no longer block the launch decision. The new event
+recognizes a western Allied enemy's beachhead, excluding friendly transfers.
+
+The package checks pass (80 checks, including 29 Overlord and 52 invasion
+event scenarios/calibrations). HOI4 1.19.3 starts with the same 115-line
+error log as the previous version. An actual AI landing still needs a
+complete campaign test. The news popup remains as the author left it.
+
 ## Documentation
 
 The update package holds the same changes plus the full documentation and
-the check scripts, at tag `final-2026-09-29-v15` of
-[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v15). There the mod sits
+the check scripts, at tag `final-2026-09-29-v16-codex` of
+[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v16-codex). There the mod sits
 in a `mod/` folder, and the commit IDs are the ones in the right-hand column
 above; the documents refer to those.
 
 | Document | What it covers |
 |---|---|
-| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v15/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
-| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v15/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v15/docs/VERIFICATION.md) | How it was checked: 74 automated checks, the game's error logs, checksums |
-| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v15/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
-| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v15/docs/HANDOVER.md) | How to maintain and extend the project |
-| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v15/docs/game-logs) | The game's error.log after each step |
-| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v15/tools) | The check scripts (Python 3) |
+| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v16-codex/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
+| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v16-codex/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
+| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v16-codex/docs/VERIFICATION.md) | How it was checked: 74 automated checks, the game's error logs, checksums |
+| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v16-codex/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
+| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v16-codex/docs/HANDOVER.md) | How to maintain and extend the project |
+| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v16-codex/docs/game-logs) | The game's error.log after each step |
+| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-29-v16-codex/tools) | The check scripts (Python 3) |
 
 ## How it was checked
 
@@ -108,7 +121,7 @@ above; the documents refer to those.
 - **Not play-tested yet.** Each feature's CHANGELOG section lists console
   commands to try it.
 - **The UK crash is fixed:** starting as the United Kingdom crashed the game
-  at once, also with the Steam version ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v15/docs/CHANGELOG.md) section 15).
+  at once, also with the Steam version ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-29-v16-codex/docs/CHANGELOG.md) section 15).
 - **Crash reports not yet explained:** Bulgaria switching sides, Romania's
   12-day decision and the Volkssturm focus (redesigned anyway). "D-Day seems
   broken" needs a description.
@@ -123,3 +136,18 @@ The Remagen event picture is made from the photograph "U.S. First Army at
 Remagen Bridge" (about 17 March 1945), U.S. National Archives, NAID 195341,
 via Wikimedia Commons; a work of the US Federal Government, in the public
 domain.
+
+## Continuation commit mapping
+
+| This branch | Change | Package commit |
+|---|---|---|
+| `7bd3cff` | Add Wiking before Warsaw: a sixth flavour event, with Oscar's photo | `a2790cb` |
+| `c55a9a6` | Add the first German atomic bomb: a flavour event, with Oscar's picture | `ef9dbce` |
+| `d77c64b` | Add "Into Leningrad": a flavour event when the battle for the city begins | `a9a793d` |
+| `658638b` | Add the Crimea: evacuate the 17th Army by sea, or hold Sevastopol | `204d7de` |
+| `6ca6af2` | Fix the Crimea: choosing "Evacuate" now starts the evacuation | `b244eab` |
+| `c981f77` | Leningrad: fire when we take the city itself, as Oscar asked | `97a806f` |
+| `5c7f468` | Oscar's pictures: keep the whole Wiking photo; plain notes on the others | `df4cc07` |
+| `4fd3bb4` | Complete the recovered D-Day repelled event with the prepared picture | `c0f1767` |
+| `4fc5eec` | End Overlord preparation before launch and allow minor Allied territorial losses | `1296bb8` |
+| `bc4018d` | Recognize D-Day only when a western Allied enemy holds a coast province | `46c665a` |
