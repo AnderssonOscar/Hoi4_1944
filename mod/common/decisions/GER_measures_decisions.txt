@@ -2,24 +2,25 @@
 # 1944 - Downfall: five war measures for Germany: decisions (docs/CHANGELOG.md section 16)
 #
 #   decision                              category                    from         cost
-#   GER_measures_konr_expand              collaborationist_formation  23 Nov 1944  50 PP (+ rifles and guns, option A)
+#   GER_measures_konr_expand              collaborationist_formation  27 Feb 1945  50 PP (+ rifles and guns, option A)
 #   GER_measures_railway_repair           war_measures                1 Sep 1944   50 PP
 #   GER_measures_student_companies        war_measures                1 Oct 1944   50 PP
-#   GER_measures_weapons_appeal           war_measures                18 Oct 1944  25 PP
-#   GER_measures_weapons_confiscation     war_measures                1 Dec 1944   50 PP (only after the appeal)
+#   GER_measures_weapons_appeal           war_measures                7 Jan 1945   25 PP
+#   GER_measures_weapons_confiscation     war_measures                29 Jan 1945  50 PP (only after the appeal)
 ###########################
 
 collaborationist_formation = {
 
-	# Expand the KONR: after the author's "Recruit Andrey Vlasov" (which creates
-	# the "Russische Befreiungsarmee" template). The author's own "Russian
-	# Liberation Army" decision raises the 600th, 650th and 700th divisions;
-	# this one adds a 4th and 5th, or manpower (event ger_measures.1).
+	# Expand the KONR: from 27 February 1945 (Oscar's date for the plans to
+	# expand it), and only after the author's "Recruit Andrey Vlasov" (which
+	# creates the "Russische Befreiungsarmee" template). The author's own
+	# "Russian Liberation Army" decision raises the 600th, 650th and 700th
+	# divisions; this one adds a 4th and 5th, or manpower (event ger_measures.1).
 	GER_measures_konr_expand = {
 		icon = generic_army_support
 		allowed = { original_tag = GER }
 		visible = {
-			date > 1944.11.22
+			date > 1945.2.26
 			has_war_with = SOV
 			has_capitulated = no
 			has_template = "Russische Befreiungsarmee"
@@ -40,7 +41,7 @@ collaborationist_formation = {
 
 war_measures = {
 
-	# Emergency Railway Repair Programme: 120 days.
+	# Emergency Railway Repair Programme: 90 days.
 	GER_measures_railway_repair = {
 		icon = generic_train
 		allowed = { original_tag = GER }
@@ -54,7 +55,7 @@ war_measures = {
 		}
 		cost = 50
 		fire_only_once = yes
-		days_remove = 120
+		days_remove = 90
 		modifier = {
 			repair_speed_rail_way_factor = 0.30
 			repair_speed_infrastructure_factor = 0.20
@@ -87,13 +88,13 @@ war_measures = {
 		}
 	}
 
-	# Call on Citizens to Hand In Their Weapons: from the public proclamation of
-	# the Volkssturm (18 October 1944).
+	# Call on Citizens to Hand In Their Weapons: alongside the Volksopfer
+	# collection (7 to 28 January 1945).
 	GER_measures_weapons_appeal = {
 		icon = generic_civil_support
 		allowed = { original_tag = GER }
 		visible = {
-			date > 1944.10.17
+			date > 1945.1.6
 			has_war = yes
 			has_capitulated = no
 		}
@@ -109,12 +110,13 @@ war_measures = {
 		}
 	}
 
-	# Confiscate Civilian Firearms: only after the appeal, from December 1944.
+	# Confiscate Civilian Firearms: only after the appeal, once the Volksopfer
+	# collection has closed (28 January 1945).
 	GER_measures_weapons_confiscation = {
 		icon = generic_police_action
 		allowed = { original_tag = GER }
 		visible = {
-			date > 1944.11.30
+			date > 1945.1.28
 			has_war = yes
 			has_capitulated = no
 			has_country_flag = GER_measures_weapons_appealed
