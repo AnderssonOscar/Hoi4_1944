@@ -4,30 +4,372 @@
 
 # Supplies set aside while an operation is prepared, and handed back when it
 # is launched or called off. The decisions only allow preparation when the
-# stockpile holds at least this much, so exactly what was taken is returned.
+# stockpile holds at least this much.
+#
+# Rifles and guns are taken type by type (oldest first), and the amount that
+# actually left the stockpile is stored per type, so exactly the same types
+# and amounts are handed back. Measured in the game (CHANGELOG section 17):
+# removing by the general type (infantry_equipment) takes the amount from
+# every type in stock, and adding by the general type gives the newest type.
 
 GER_1945_sonnenwende_set_aside = {
 	add_fuel = -5000
-	add_equipment_to_stockpile = { type = infantry_equipment amount = -500 }
-	add_equipment_to_stockpile = { type = artillery_equipment amount = -50 }
+	# infantry: 500
+	set_temp_variable = { GER_1945_need = 500 }
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@infantry_equipment_0 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@infantry_equipment_0 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@infantry_equipment_0 }
+			add_to_variable = { GER_1945_sonnenwende_infantry_equipment_0 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@infantry_equipment_1 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@infantry_equipment_1 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@infantry_equipment_1 }
+			add_to_variable = { GER_1945_sonnenwende_infantry_equipment_1 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@infantry_equipment_2 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@infantry_equipment_2 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_2 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@infantry_equipment_2 }
+			add_to_variable = { GER_1945_sonnenwende_infantry_equipment_2 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@infantry_equipment_3 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@infantry_equipment_3 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_3 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@infantry_equipment_3 }
+			add_to_variable = { GER_1945_sonnenwende_infantry_equipment_3 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	# artillery: 50
+	set_temp_variable = { GER_1945_need = 50 }
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@artillery_equipment_1 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@artillery_equipment_1 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@artillery_equipment_1 }
+			add_to_variable = { GER_1945_sonnenwende_artillery_equipment_1 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@artillery_equipment_2 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@artillery_equipment_2 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_2 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@artillery_equipment_2 }
+			add_to_variable = { GER_1945_sonnenwende_artillery_equipment_2 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@artillery_equipment_3 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@artillery_equipment_3 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_3 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@artillery_equipment_3 }
+			add_to_variable = { GER_1945_sonnenwende_artillery_equipment_3 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
 }
 
 GER_1945_sonnenwende_return = {
 	add_fuel = 5000
-	add_equipment_to_stockpile = { type = infantry_equipment amount = 500 }
-	add_equipment_to_stockpile = { type = artillery_equipment amount = 50 }
+	if = {
+		limit = { check_variable = { GER_1945_sonnenwende_infantry_equipment_0 > 0 } }
+		add_equipment_to_stockpile = { type = infantry_equipment_0 amount = GER_1945_sonnenwende_infantry_equipment_0 }
+		set_variable = { GER_1945_sonnenwende_infantry_equipment_0 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_sonnenwende_infantry_equipment_1 > 0 } }
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = GER_1945_sonnenwende_infantry_equipment_1 }
+		set_variable = { GER_1945_sonnenwende_infantry_equipment_1 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_sonnenwende_infantry_equipment_2 > 0 } }
+		add_equipment_to_stockpile = { type = infantry_equipment_2 amount = GER_1945_sonnenwende_infantry_equipment_2 }
+		set_variable = { GER_1945_sonnenwende_infantry_equipment_2 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_sonnenwende_infantry_equipment_3 > 0 } }
+		add_equipment_to_stockpile = { type = infantry_equipment_3 amount = GER_1945_sonnenwende_infantry_equipment_3 }
+		set_variable = { GER_1945_sonnenwende_infantry_equipment_3 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_sonnenwende_artillery_equipment_1 > 0 } }
+		add_equipment_to_stockpile = { type = artillery_equipment_1 amount = GER_1945_sonnenwende_artillery_equipment_1 }
+		set_variable = { GER_1945_sonnenwende_artillery_equipment_1 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_sonnenwende_artillery_equipment_2 > 0 } }
+		add_equipment_to_stockpile = { type = artillery_equipment_2 amount = GER_1945_sonnenwende_artillery_equipment_2 }
+		set_variable = { GER_1945_sonnenwende_artillery_equipment_2 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_sonnenwende_artillery_equipment_3 > 0 } }
+		add_equipment_to_stockpile = { type = artillery_equipment_3 amount = GER_1945_sonnenwende_artillery_equipment_3 }
+		set_variable = { GER_1945_sonnenwende_artillery_equipment_3 = 0 }
+	}
 }
 
 GER_1945_spring_awakening_set_aside = {
 	add_fuel = -7500
-	add_equipment_to_stockpile = { type = infantry_equipment amount = -750 }
-	add_equipment_to_stockpile = { type = artillery_equipment amount = -75 }
+	# infantry: 750
+	set_temp_variable = { GER_1945_need = 750 }
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@infantry_equipment_0 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@infantry_equipment_0 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@infantry_equipment_0 }
+			add_to_variable = { GER_1945_spring_awakening_infantry_equipment_0 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@infantry_equipment_1 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@infantry_equipment_1 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@infantry_equipment_1 }
+			add_to_variable = { GER_1945_spring_awakening_infantry_equipment_1 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@infantry_equipment_2 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@infantry_equipment_2 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_2 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@infantry_equipment_2 }
+			add_to_variable = { GER_1945_spring_awakening_infantry_equipment_2 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@infantry_equipment_3 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@infantry_equipment_3 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_3 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@infantry_equipment_3 }
+			add_to_variable = { GER_1945_spring_awakening_infantry_equipment_3 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	# artillery: 75
+	set_temp_variable = { GER_1945_need = 75 }
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@artillery_equipment_1 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@artillery_equipment_1 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@artillery_equipment_1 }
+			add_to_variable = { GER_1945_spring_awakening_artillery_equipment_1 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@artillery_equipment_2 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@artillery_equipment_2 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_2 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@artillery_equipment_2 }
+			add_to_variable = { GER_1945_spring_awakening_artillery_equipment_2 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
+	if = {
+		limit = { check_variable = { GER_1945_need > 0 } }
+		set_temp_variable = { GER_1945_take = num_equipment@artillery_equipment_3 }
+		if = {
+			limit = { check_variable = { GER_1945_take > GER_1945_need } }
+			set_temp_variable = { GER_1945_take = GER_1945_need }
+		}
+		if = {
+			limit = { check_variable = { GER_1945_take > 0 } }
+			set_temp_variable = { GER_1945_before = num_equipment@artillery_equipment_3 }
+			set_temp_variable = { GER_1945_amount = GER_1945_take }
+			multiply_temp_variable = { GER_1945_amount = -1 }
+			add_equipment_to_stockpile = { type = artillery_equipment_3 amount = GER_1945_amount }
+			set_temp_variable = { GER_1945_taken = GER_1945_before }
+			subtract_from_temp_variable = { GER_1945_taken = num_equipment@artillery_equipment_3 }
+			add_to_variable = { GER_1945_spring_awakening_artillery_equipment_3 = GER_1945_taken }
+			subtract_from_temp_variable = { GER_1945_need = GER_1945_taken }
+		}
+	}
 }
 
 GER_1945_spring_awakening_return = {
 	add_fuel = 7500
-	add_equipment_to_stockpile = { type = infantry_equipment amount = 750 }
-	add_equipment_to_stockpile = { type = artillery_equipment amount = 75 }
+	if = {
+		limit = { check_variable = { GER_1945_spring_awakening_infantry_equipment_0 > 0 } }
+		add_equipment_to_stockpile = { type = infantry_equipment_0 amount = GER_1945_spring_awakening_infantry_equipment_0 }
+		set_variable = { GER_1945_spring_awakening_infantry_equipment_0 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_spring_awakening_infantry_equipment_1 > 0 } }
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = GER_1945_spring_awakening_infantry_equipment_1 }
+		set_variable = { GER_1945_spring_awakening_infantry_equipment_1 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_spring_awakening_infantry_equipment_2 > 0 } }
+		add_equipment_to_stockpile = { type = infantry_equipment_2 amount = GER_1945_spring_awakening_infantry_equipment_2 }
+		set_variable = { GER_1945_spring_awakening_infantry_equipment_2 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_spring_awakening_infantry_equipment_3 > 0 } }
+		add_equipment_to_stockpile = { type = infantry_equipment_3 amount = GER_1945_spring_awakening_infantry_equipment_3 }
+		set_variable = { GER_1945_spring_awakening_infantry_equipment_3 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_spring_awakening_artillery_equipment_1 > 0 } }
+		add_equipment_to_stockpile = { type = artillery_equipment_1 amount = GER_1945_spring_awakening_artillery_equipment_1 }
+		set_variable = { GER_1945_spring_awakening_artillery_equipment_1 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_spring_awakening_artillery_equipment_2 > 0 } }
+		add_equipment_to_stockpile = { type = artillery_equipment_2 amount = GER_1945_spring_awakening_artillery_equipment_2 }
+		set_variable = { GER_1945_spring_awakening_artillery_equipment_2 = 0 }
+	}
+	if = {
+		limit = { check_variable = { GER_1945_spring_awakening_artillery_equipment_3 > 0 } }
+		add_equipment_to_stockpile = { type = artillery_equipment_3 amount = GER_1945_spring_awakening_artillery_equipment_3 }
+		set_variable = { GER_1945_spring_awakening_artillery_equipment_3 = 0 }
+	}
 }
 
 # Operation Sonnenwende: 12 days of +15% attack for German troops on German
