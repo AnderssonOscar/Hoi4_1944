@@ -10,3 +10,4 @@ c0f176764bb648666e23921b13ae0cef4f3401c5	4fd3bb4f9ba91bea69c59c757dbe060a14f7891
 1296bb82feeb16a0ed518a692d6d16d05044ceee	4fc5eec68aab98061829f996daa823620fc68bf3	End Overlord preparation before launch and allow minor Allied territorial losses
 46c665a33feac18dababde42fcf72983682d268a	bc4018d23c25865bc98127239316388d6ffbd7b1	Recognize D-Day only when a western Allied enemy holds a coast province
 5ac05e96885fb4bb98b428e71a291c21cc45bc9d	010eac5bb10a4407163d3d8c7269f063d46cea44	Revert "End Overlord preparation before launch and allow minor Allied territorial losses"
+bb94b9e0b3af84a5a9b49ec9a924fab2d3d3f5ca	44cb8d3313a63e15a0350ac76c84617611c60726	Fix: SS divisions in the 1944 start had the wrong names (Nordland in Berlin)

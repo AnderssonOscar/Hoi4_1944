@@ -24,22 +24,22 @@ mod, so every change must be easy for him to check himself.
 - **Agree changes before making them.** A plan that was discussed is not a
   go-ahead; wait for an explicit yes.
 
-## 3. Status (29 September 2026, Codex continuation)
+## 3. Status (30 September 2026)
 
-- **112 files differ** from the July 2026 Steam version (33 edited, 3 deleted,
-  76 new). The author published pull request #3's content on Steam on
-  29 Sep 2026. Every change is in `docs/CHANGELOG.md` (sections 1–27) and summarised in
+- **113 files differ** from the July 2026 Steam version (33 edited, 3 deleted,
+  77 new). The author published pull request #3's content on Steam on
+  29 Sep 2026. Every change is in `docs/CHANGELOG.md` (sections 1–29) and summarised in
   `docs/READ-ME-FIRST.md`.
-- **`python tools/verify_update.py`:** 79 checks, all pass.
+- **`python tools/verify_update.py`:** 80 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
-- **Packages:** the tags `final-2026-09-27` to `final-2026-09-29-v15`. Each
+- **Packages:** the tags `final-2026-09-27` to `final-2026-09-30-v18`. Each
   package is `mod/`, the patches (one per commit), `docs/` and `tools/`, in
   a zip.
 - **GitHub:** the same changes go to the author's repository in his layout
   (the mod at the top level, his line-ending setting): pull requests #2 and
   #3 (both merged by the author; #3 covers sections 14 to 17 and the
-  Courland fix) and pull request #4 (open: sections 18–27, updated to 23b6824). The commit IDs there differ; CHANGELOG section 13 pairs
+  Courland fix) and pull request #4 (open: sections 18–29, head `ae5135e`). The commit IDs there differ; CHANGELOG section 13 pairs
   them.
 - **Not verified:**
   - actual play: none of the new content has been played through;
@@ -126,6 +126,9 @@ mod, so every change must be easy for him to check himself.
   git diff 253cea1 -- mod/           # everything changed vs. the Steam version
   git show <commit>                  # one change and its reason
   ```
+- **Checksums:** `verify_update.py` rewrites
+  `docs/checksums/mod-files.sha256` on every run. After calibrating a check
+  with planted errors, run it once more on the clean files.
 - **Patches for a package:** `git format-patch --relative=mod 253cea1..HEAD
   -- mod`. Apply them with `git -c core.autocrlf=false apply` in a folder
   that is not inside another git repository; otherwise git silently skips the
@@ -140,7 +143,7 @@ mod, so every change must be easy for him to check himself.
 | C | Crash in Romania's 12-day capitulation decision | No cause found by reading |
 | D | Crash on completing the Volkssturm focus | No cause found by reading. The focus's unit creation was redesigned (`e6c0034`, bug-check fix `d9d7888`, CHANGELOG section 6); the crash was never reproduced |
 | E | "Playing UK crashes" | **Fixed** in `e578b10`: Allied countries with no land capitulated during the game setup, and the UK's "government in exile" popup crashed (CHANGELOG section 15) |
-| F | Sometimes no Allied D-Day | Decision blockers corrected; full AI landing unverified (CHANGELOG 27) |
+| F | Sometimes no Allied D-Day | Not explained. Codex's change to the Overlord decisions was reverted at Oscar's request (CHANGELOG 27–28) |
 | G | (not reported) | States 870, 871, 873 were defined twice. **Fixed** in `ce4f33a` (stale copies deleted) |
 
 Full evidence, confidence and the proposed fixes are in
@@ -239,7 +242,7 @@ python tools/check_province_modifiers.py   # provinces outside their state, unkn
 python tools/check_structure.py            # brace balance, template slot clashes
 python tools/check_references.py           # events/ideas/characters/tags used in play
 python tools/check_berlin_map.py           # Festung Berlin's map facts (needs Pillow and numpy)
-python tools/verify_update.py              # re-checks every claim (79 checks)
+python tools/verify_update.py              # re-checks every claim (80 checks)
 python tools/crash_site.py "<crash folder>" # which part of the game a crash report points to
 ```
 

@@ -21,7 +21,7 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 79 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 80 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
@@ -37,7 +37,11 @@ yourself"). **None of the update has been play-tested yet.**
   Overlord decisions was reverted at Oscar's request.
 - **Checked again** in a running game ([CHANGELOG](docs/CHANGELOG.md)
   section 28).
-- **Package tag:** `final-2026-09-29-v17`.
+- **Fixed on 30 September:** the SS divisions in the 1944 start had the
+  wrong names (Nordland in Berlin, the Leibstandarte at Cherkassy called
+  "Hitlerjugend"). Two SS focuses now complete at game start, after the
+  order of battle is loaded ([CHANGELOG](docs/CHANGELOG.md) section 29).
+- **Package tag:** `final-2026-09-30-v18`.
 
 ## The update in short
 
@@ -74,8 +78,8 @@ yourself"). **None of the update has been play-tested yet.**
   - flavour events for the first German atomic bomb, Leningrad taken and
     the invasion beaten back, with Oscar's pictures;
   - the Crimea: evacuate the 17th Army by sea, or hold Sevastopol.
-- **Scope:** 112 files differ from the July 2026 Steam version (33 edited,
-  3 deleted, 76 new).
+- **Scope:** 113 files differ from the July 2026 Steam version (33 edited,
+  3 deleted, 77 new).
 - **On Steam:** the author published pull request #3's content on 29 Sep
   2026. The author's own content was kept byte-for-byte everywhere, and
   that is checked by script.
@@ -100,15 +104,15 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **79 automated checks** (`python tools/verify_update.py`): integrity, a
+- **80 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
 - **The game's own error.log** after every change: identical to the updated
   baseline (115 lines). The logs are in `docs/game-logs/`.
 - **In-game runs** of the new effects during the game's setup, with no errors.
-- **Rebuild test:** the July Steam version (commit `253cea1`) plus the 45
-  patches reproduces `mod/` exactly (987 files).
+- **Rebuild test:** the July Steam version (commit `253cea1`) plus the 47
+  patches reproduces `mod/` exactly (988 files).
 - **Not tested:** actual play, and playing without some DLCs.
 
 ## Check it yourself
@@ -117,7 +121,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 79 checks
+python tools/verify_update.py    # re-runs all 80 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 
@@ -132,12 +136,13 @@ folders.
   history; that was checked file by file.
 - **After that:** one commit per change, each with its reason, and
   documentation commits that record the checks.
-- **Tags** `final-2026-09-27` to `final-2026-09-29-v17` mark each package
+- **Tags** `final-2026-09-27` to `final-2026-09-30-v18` mark each package
   prepared for the author.
 - **The author's repository** (github.com/gastav3/Hoi4_1944) receives the
   same changes in his layout: pull requests #2 and #3 (both merged by the
   author) and pull request #4 (open: Oscar's review round, the flavour
-  events, the bridge at Remagen). The mod stays at the top level there, and the
+  events, the bridge at Remagen, Oscar's pictures, the Crimea, the invasion
+  event, the SS names fix). The mod stays at the top level there, and the
   commit IDs differ; CHANGELOG section 13 pairs them.
 
 ## Status

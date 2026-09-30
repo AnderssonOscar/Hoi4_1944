@@ -1,0 +1,23 @@
+save_base.hoi4: date 1944.2.1.1, 22 divisions on GER_SS_01 templates
+  #  1  1. SS-Division 'Leibstandarte Adolf Hitler'      Waffen-SS Division             province 6521   64-Brandenburg
+  #  2  2. SS-Division 'Das Reich'                       Waffen-SS Division             province 6521   64-Brandenburg
+  #  3  3. SS-Division 'Totenkopf'                       Waffen-SS Division             province 6521   64-Brandenburg
+  #  4  4. SS-Division 'Polizei'                         Waffen-SS Division             province 3522   64-Brandenburg
+  #  5  5. SS-Division 'Wiking'                          SS-Verfügungstruppe            province 9496   64-Brandenburg
+  #  6  6. SS-Division 'Nord'                            SS-Verfügungstruppe            province 11359  64-Brandenburg
+  #  7  7. SS-Division 'Prinz Eugen'                     Waffen-SS Division             province 3367   64-Brandenburg
+  #  8  8. SS-Division 'Florian Geyer'                   Waffen-SS Division             province 478    64-Brandenburg
+  #  9  9. SS-Division 'Hohenstaufen'                    SS-Verfügungstruppe            province 3499   64-Brandenburg
+  # 10  10. SS-Division 'Frundsberg'                     Waffen-SS Panzer Division      province 6487   64-Brandenburg
+  # 11  11. SS-Division 'Nordland'                       Waffen-SS Panzer Division      province 6521   64-Brandenburg
+  # 12  12. SS-Division 'Hitlerjugend'                   SS Panzer-Division             province 11424  203-Cherkasy
+  # 13  13. SS-Division 'Handschar'                      SS Panzer-Division             province 13068  977 - Antwerp
+  # 14  14. SS-Division (ukrain. Nr. 1)                  SS Panzer-Division             province 9734   25-Limousin
+  # 16  16. SS-Division 'Reichsführer-SS'                SS Panzer-Division             province 11715  196-Kherson
+  # 17  17. SS-Division 'Götz von Berlichingen'          SS Panzer-Division             province 3533   18-Champagne
+  # 18  18. SS-Division 'Horst Wessel'                   SS Panzer-Division             province 11424  203-Cherkasy
+  # 21  21. SS-Division 'Skanderbeg'                     SS-Panzergrenadier-Division    province 11080  208-Pskov
+  # 22  22. SS-Division 'Maria Theresia'                 SS-Regiment                    province 80     215-Eastern Karelia
+  # 24  24. SS-Division 'Karstjäger'                     SS-Regiment                    province 11080  208-Pskov
+  # 25  25. SS-Division 'Hunyadi' (ungarische Nr. 1)     SS-Regiment                    province 516    6-Belgium
+  # 26  26. SS-Division (ungarische Nr. 2)               SS-Regiment                    province 692    52-Wuttemberg

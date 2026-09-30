@@ -1273,6 +1273,22 @@ request #3.
 - **In the game:** a fresh default clone of `30f5990` loads with an identical
   error.log (`game-logs/27-pull-request-4-v17-clone_error.log`).
 
+**Pull request #4 with the SS names fix (30 September 2026).**
+
+| This package | Pull request #4 | Change |
+|---|---|---|
+| `bb94b9e` | `44cb8d3` | SS division names in the 1944 start (section 29) |
+
+- **Identical files:** checked as above; stored with LF; the branch only
+  added to its history.
+- **Fresh clone:** a default clone of the branch has the package's 988 mod
+  files (ignoring CR), plus the README. The only file that differs is
+  `.gitattributes`, which keeps the author's setting.
+- **README:** `ae5135e` adds `44cb8d3` to its commit table and links to tag
+  `final-2026-09-30-v18`.
+- **In the game:** the fresh clone loads with an identical error.log
+  (`game-logs/29-pull-request-4-v18-clone_error.log`).
+
 **The line-ending fix (`mod/.gitattributes`, this package only; not part of
 pull request #2):**
 - The author's `mod/.gitattributes` was the GitHub Desktop template
@@ -2616,6 +2632,101 @@ removed afterwards):
 - **Load test:** error.log identical (115 lines, `game-logs/26-after-overlord-revert_error.log`).
 - **Checks:** 79, all pass (the Overlord check OL now guards the author's file).
 
+### 29. SS divisions in the 1944 start had the wrong names (commit `bb94b9e`)
+
+Oscar started a German game and, without moving anything, found
+"11. SS-Division 'Nordland'" in Berlin and "5. SS-Division 'Wiking'" at
+Seelow. Our Wiking and Nordland (section 10) should be at Cherkassy and on
+the Leningrad front.
+
+**The cause:**
+- Germany's 1944 history (`history/countries/GER - Germany.txt`, the
+  1943.12.30 block) completes two of the author's focuses, "Expand SS
+  Recruitment" and "Strengthen the Waffen-SS".
+- Their rewards create 11 SS divisions in Brandenburg: 6 "Waffen-SS
+  Division", 3 "SS-Verfügungstruppe" and 2 "Waffen-SS Panzer Division".
+  Their names come from the SS name list.
+- The game loads the 1944 order of battle only after all the history has
+  run. So those 11 took the numbers 1–11 first.
+- The SS divisions of the order of battle ask for their own numbers
+  (Leibstandarte 1, Das Reich 2 and so on). Those numbers were taken, so
+  they got the next free numbers that have a name in the list.
+- This comes from the author's setup, not from a recent change: the
+  numbers 1, 2, 3, 11 and 12 were affected as well. Section 10 added the
+  list entry "5 = Wiking", which is why the number-5 division at Seelow was
+  called Wiking. The author's version itself was not run.
+
+**Read from a save of a German game** (`game-logs/28-ss-division-names-before.txt`
+and `-after.txt`):
+
+| The order of battle's division | Where | Before (shown in the game) | Now |
+|---|---|---|---|
+| 1. Leibstandarte Adolf Hitler | Cherkassy | 12. 'Hitlerjugend' | 1. 'Leibstandarte Adolf Hitler' |
+| 2. Das Reich | Limousin | 14. (ukrain. Nr. 1) | 2. 'Das Reich' |
+| 3. Totenkopf | Kherson | 16. 'Reichsführer-SS' | 3. 'Totenkopf' |
+| 5. Wiking (section 10) | Cherkassy | 18. 'Horst Wessel' | 5. 'Wiking' |
+| 11. Nordland (section 10) | Leningrad front (Pskov) | 21. 'Skanderbeg' | 11. 'Nordland' |
+| 12. Hitlerjugend | Antwerp | 13. 'Handschar' | 12. 'Hitlerjugend' |
+| 17. Götz von Berlichingen | Champagne | 17. (correct) | 17. 'Götz von Berlichingen' |
+
+**The fix** (`bb94b9e`):
+- The two history lines are commented out, each with a note.
+- The new file `common/on_actions/GER_ss_names_on_actions.txt` completes
+  the same two focuses when the game starts (`on_startup`). That comes
+  after the order of battle is loaded.
+- Only for starts from 1943.12.30, the date of the history block they came
+  from; games that start in 1936 or 1939 are not affected.
+- In the same order, and only if not completed already.
+
+**Tried first, did not work:** moving the two lines below `set_oob` in the
+history file. A save showed exactly the same numbers: the order of battle
+is loaded after the history, wherever the line is.
+
+**What stays the same:**
+- The 11 divisions are still created in Brandenburg, with the same
+  templates. They now take the free numbers (9, 10, 13, 14, 16, 18, 21, 22,
+  24, 25, 26), so they still get names from the list, for example
+  "9. SS-Division 'Hohenstaufen'".
+- The author's four SS-Regiments have no number of their own. They now get
+  4, 6, 7 and 8 instead of 22, 24, 25 and 26.
+
+**Checked:**
+- **In the game** (HOI4 1.19.3, a German game via `-start_tag`):
+  - plain-text saves of the version before (`e09019a`) and after,
+    read with the new `tools/list_ss_divisions.py`;
+  - to get a save quickly, the test copy's 1944 bookmark was moved to 31
+    January 1944 (test copy only), so the monthly autosave came after one
+    day. No history is dated between 1 and 31 January 1944, so the start
+    is the same.
+- **Result:**
+  - all seven SS divisions of the order of battle have their own numbers
+    and names (the table above);
+  - still 22 SS divisions and 302 German divisions, in the same states,
+    with the same templates;
+  - the same 101 completed focuses and 17 ideas (Himmler as
+    Reichsführer-SS), political power (1826.78), experience, stability and
+    war support;
+  - the same doctrine discounts: Strengthen the Waffen-SS, 50% for 2 uses.
+- **error.log of the two runs:** the same lines. The only difference is
+  how often the game's own "AI tried to post an invalid command:
+  unlock_trait_command" line appears (605 and 621 times); it also appears
+  in Oscar's own play logs.
+- **Load test:** error.log identical to log 26 (115 lines,
+  `game-logs/28-after-ss-names_error.log`).
+- **Check Z** (new):
+  - the two history lines are only commented, and the history file is
+    otherwise byte-identical to `e09019a`;
+  - the new file's structure and date;
+  - nothing else completes the two focuses.
+  - Calibrated: five planted errors, and each made it fail (a history line
+    active again, another history line changed, the start date moved, the
+    comparison flipped, the wrong focus).
+- **Checks:** 80, all pass.
+
+**To see it:** start a German game. Cherkassy has 1. 'Leibstandarte Adolf
+Hitler' and 5. 'Wiking', the Leningrad front 11. 'Nordland'. Berlin and
+Seelow have other SS numbers.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -2651,7 +2762,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-112 files differ from the July 2026 Steam version: 33 edited, 3 deleted, 76 new (full list:
+113 files differ from the July 2026 Steam version: 33 edited, 3 deleted, 77 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

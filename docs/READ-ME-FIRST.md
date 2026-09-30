@@ -9,9 +9,9 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **112 files differ** from that version: 33 edited, 3 deleted, 76 new.
+- **113 files differ** from that version: 33 edited, 3 deleted, 77 new.
 - **You published part of it on Steam** on 29 Sep 2026 (pull request #3's
-  content, CHANGELOG section 13). Changes 24–31 came after that. Your own
+  content, CHANGELOG section 13). Changes 24–33 came after that. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
 - **Updated for HOI4 1.19.3** (released 17 Sep 2026). With the mod loaded,
   the game's own `error.log` went from 282 lines to 115; the base game alone
@@ -34,9 +34,9 @@ independently (see "Check it yourself").
 | Item | What it is |
 |---|---|
 | `mod/` | the complete updated mod, ready to test or upload |
-| `patches/` | every change as a patch (35, in order), each with its reason |
+| `patches/` | every change as a patch (47, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 79 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 80 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -69,6 +69,7 @@ independently (see "Check it yourself").
 | 20 | Fix: the Courland popup now unlocks the evacuation decision itself, so the console test in CHANGELOG section 11 works; in normal play nothing changes | GER_1945_operations_events.txt |
 | 21 | Fix: **starting as the UK crashed the game** (also with the Workshop version). Poland, Yugoslavia, the Philippines and Burma control no land in 1944; as faction members or colonies at war they capitulated during the game setup, and the UK's "government in exile" popup crashed. They are no longer in the faction or colonies in history and become exiles in `on_startup` instead, as your own `on_startup` already did for most of them (the same as your Belgium fix). The Philippines and Burma are no longer colonies (CHANGELOG section 15) | ENG, USA and YUG history, do_on_actions.txt |
 | 22 | New: **five war measures** for Germany (CHANGELOG section 16), each once: **Expand the KONR** (Collaborationist tab, from 23 Nov 1944, after your "Recruit Andrey Vlasov"): two more KONR divisions paying their half equipment from the stockpile, or 12,000 manpower; **Emergency Railway Repair Programme** (120 days: railway repair +30%, infrastructure repair +20%, construction −10%); **Send the Student Companies to the Front** (+20,000, −5% research, −1% stability, a popup); **Call on Citizens to Hand In Their Weapons** (25 PP, +2,000 old rifles); **Confiscate Civilian Firearms** (after the call, +7,500 old rifles, −1% stability) | 6 new files `GER_measures_*`, `GER_equipment_tokens.txt` |
+| 33 | Fix: **the SS divisions in the 1944 start had the wrong names** (CHANGELOG section 29). The 11 SS divisions your two SS focuses create in Brandenburg took the numbers 1–11 before the 1944 order of battle was loaded, so Nordland was in Berlin and the Leibstandarte at Cherkassy was called "12. SS-Division 'Hitlerjugend'". The two focuses now complete at game start, after the order of battle: all seven SS divisions of your order of battle get their own names; the 11 divisions are still created, with the free numbers | GER history (2 lines commented), 1 new file `GER_ss_names_on_actions.txt` |
 | 32 | Withdrawn: Codex changed your Overlord decisions; the change was reverted at Oscar's request, so your `Allies_1944.txt` is unchanged, byte for byte | CHANGELOG 27–28 |
 | 31 | New: **the invasion beaten back** (CHANGELOG section 26), Oscar's picture: one day after an Allied landing on the coast of France (Normandy, Brittany, Nord-Pas-de-Calais, Flanders) is thrown back, a flavour event; no effect | 5 new files `GER_dday_*` |
 | 30 | New: **the Crimea** (CHANGELOG sections 24–25): on day one of the 1944 start, a popup: evacuate the 17th Army (starts at once: 50 PP, 30 days, the divisions are shipped to Constanta, Romanians with them) or hold Sevastopol (a fortress with your Festung values). Fixed after Oscar's play-test: the "Evacuate" option first only unlocked the decision | 6 new files `GER_crimea_*` |
@@ -117,7 +118,7 @@ independently (see "Check it yourself").
    git -c core.autocrlf=false apply --whitespace=nowarn <package>/patches/*.patch
    sha256sum -c <package>/docs/checksums/mod-files.sha256
    ```
-   All 987 files should say OK, which shows `mod/` is exactly the July
+   All 988 files should say OK, which shows `mod/` is exactly the July
    Steam version plus these patches. (If `git apply` succeeds but files don't
    change, the folder is inside another git repository and git silently
    skips the paths. Move it, or set `GIT_CEILING_DIRECTORIES`.) This exact
@@ -150,14 +151,14 @@ IV\crashes\` shows why.
 
 You already uploaded changes 1–23 on 29 September, with pull request #3
 (all except 18, the line-ending setting of this package, which your
-repository keeps as it is). Pull request #4 contains changes 24–31: Oscar's
-review round, the flavour events, Remagen, Oscar's pictures, the Crimea and
-the invasion event. Merge it and upload as usual, or copy the changed files
+repository keeps as it is). Pull request #4 contains changes 24–31 and 33:
+Oscar's review round, the flavour events, Remagen, Oscar's pictures, the
+Crimea, the invasion event and the SS names fix. Merge it and upload as usual, or copy the changed files
 from `mod/`.
 
 The same changes went to your GitHub repository
 (github.com/gastav3/Hoi4_1944) as pull requests #2 and #3, which you merged,
-and #4 (changes 24–31, open). They keep your layout and your
+and #4 (changes 24–31 and 33, open). They keep your layout and your
 line-ending setting, with one commit per change and a README (CHANGELOG
 section 13). Merging them leaves your setup and your Steam upload as they
 are.

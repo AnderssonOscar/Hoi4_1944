@@ -163,6 +163,7 @@ expected |= {("A", f"mod/{f}") for f in ("interface/GER_dday.gfx", "gfx/events/r
 expected |= {("A", f"mod/{f}") for f in ("gfx/events/report_event_GER_remagen_bridge.dds", "interface/GER_remagen.gfx",
              "common/scripted_effects/GER_remagen_effects.txt", "common/on_actions/GER_remagen_on_actions.txt",
              "events/GER_remagen_events.txt", "localisation/english/GER_remagen_l_english.yml")}  # the bridge at Remagen (section 20)
+expected |= {("A", "mod/common/on_actions/GER_ss_names_on_actions.txt")}  # SS names at the 1944 start (section 29)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -214,6 +215,10 @@ UK_FIX_REMOVED = {  # the UK start fix (section 15): these lines were turned int
 }
 for _f, _ok in UK_FIX_REMOVED.items():
     allowed[_f] = (lambda prev, ok: lambda l: prev(l) or l in ok)(allowed.get(_f, lambda l: False), _ok)
+# SS names at the 1944 start (section 29): these two lines were turned into comments (check Z), nothing else removed
+_ger = "mod/history/countries/GER - Germany.txt"
+allowed[_ger] = (lambda prev: lambda l: prev(l) or l in ("\t\tcomplete_national_focus = GER_expand_ss_recruitment",
+                                                         "\t\tcomplete_national_focus = GER_strengthen_the_waffen_ss"))(allowed[_ger])
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]

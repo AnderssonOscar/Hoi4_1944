@@ -1,16 +1,16 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (79 checks,
+Everything below can be re-run: `python tools/verify_update.py` (80 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 79 checks pass
+## Result: all 80 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
-| Integrity | mod/ fully committed; all 987 mod files byte-identical to the commits | PASS |
-| Integrity | a fresh clone reproduces all 987 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
+| Integrity | mod/ fully committed; all 988 mod files byte-identical to the commits | PASS |
+| Integrity | a fresh clone reproduces all 988 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
 | Integrity | Steam Workshop copy never touched: either the July baseline (914/914 files) or, since 29 Sep 2026, the author's own published update (= this package at 470916b plus his README, ignoring line endings; calibrated: it fails against the wrong version) | PASS |
-| Scope | exactly the 112 intended files changed (33 edited, 3 deleted, 76 new), nothing else | PASS |
+| Scope | exactly the 113 intended files changed (33 edited, 3 deleted, 77 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 29 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
@@ -20,6 +20,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | Stettin + Antwerp fixes | S/A: the Stettin fort runs in state 63 and the Antwerp sabotage in 977; no province effect in the three fixed files points outside its state (the same scan finds all 6 old errors in the original files); error.log 115 = 115 (log 9) | PASS |
 | Festung Berlin | B: every fort top-up simulated for start levels 0-10 (always ends at max(start, target), never above 5); provinces, triggers, Brandenburg guard, units, human-only rule, Weidling guard, 9 events, 25 texts. `tools/check_berlin_map.py` re-derives the ring, the Seelow front and the six bordering states from the game's map. Runtime test in the game: Berlin exactly 5 (step 3 run twice), Potsdam 2, Seelow 4, no errors. error.log 115 = 115 (log 10) | PASS |
 | Wiking + Nordland | W: both divisions in both 1944 order-of-battle files (template, position, experience 1.0, equipment), positions German-held on 1 Jan 1944, no SS number twice, name list, event guard; 0 lines of the author's removed. Loaded in the game with `load_oob` (the normal load test does not read the order of battle; a planted broken template was reported as "Invalid division at line 632", the real files gave no German error). error.log 115 = 115 (log 11) | PASS |
+| SS names at the 1944 start | Z: the two SS focuses whose rewards create 11 SS divisions are completed at game start (`on_startup`, after the order of battle is loaded) instead of in the 1944 history; the history file otherwise byte-identical; only for starts from 1943.12.30, once each, same order; nothing else completes them. Calibrated with five planted errors. In the game: saves before and after, all seven SS divisions of the order of battle with their own names, nothing else changed (CHANGELOG section 29) | PASS |
 | 1945 operations | O: for Sonnenwende and Spring Awakening, set aside = returned = required, returned at the launch and when called off, never launched when called off; 12/14 days, 50 PP each; the Courland evacuation moves only German armies to the five port states in order; Sailors: +1,000 manpower, −10 convoys, 3 infantry divisions (no marines), 50% equipment, no experience; 10 events, 60 texts. Calibrated with 3 planted errors (each made it fail). Runtime test during the game's setup: no errors (amounts not observable at that moment). error.log 115 = 115 (log 12) | PASS |
 | Last reserves | R: the amounts (Estonia 38,000, West 3,000, Luftwaffe 75,000, eastern workers 15,000, round-ups 15,000); Hungary's transfer (Germany gains exactly what Hungary loses, never more than it has); the three spirits and durations; all 20 aircraft types −13% with instant = yes, compared with the game's equipment files; the decision; the exact conditions of the six daily checks, each firing once; map locations; 7 events, 32 texts. Calibrated with 4 planted errors (each made it fail). Runtime: the 7 effects ran in the game with no errors, and all 3 spirits were confirmed present. error.log 115 = 115 (log 13) | PASS |
 | Home front | H: the eight events' amounts, spirits, date windows and conditions, each once; 8 events, 33 texts; the Courland popup sets its unlock flag. Calibrated with 4 planted errors (each made it fail). Runtime: all eight effects ran with no errors, Rommel gone after, both spirits present. error.log 115 = 115 (log 15) | PASS |
@@ -49,7 +50,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
   players need the same mod version for multiplayer. There is no "correct"
   value to check a mod's checksum against.
 - **File checksums:** `docs/checksums/mod-files.sha256` lists SHA-256 for all
-  987 mod files. Verified with `sha256sum -c` (all OK). After uploading to
+  988 mod files. Verified with `sha256sum -c` (all OK). After uploading to
   Steam, the Workshop folder can be checked the same way:
   `cd <workshop folder> && sha256sum -c <this file>`. Expect `descriptor.mod`
   and `thumbnail.png` to differ only if Steam rewrites them.
@@ -103,7 +104,8 @@ then check the result against `docs/checksums/mod-files.sha256`.
 | Fourteenth package (tag `final-2026-09-29-v14`: pull request #4 documented, no mod change) | 33 | all 954 files match, file list identical (3 deleted, 43 new) |
 | Fifteenth package (tag `final-2026-09-29-v15`: + five flavour events, the bridge at Remagen; built from `253cea1` with `git archive`, since the Workshop folder now holds the author's published update) | 35 | all 964 files match, file list identical (3 deleted, 53 new) |
 | Sixteenth package (tag `final-2026-09-29-v16-codex`, made by Codex: + Oscar's four pictures, the Crimea, the invasion beaten back, the play-test fixes, an Overlord change) | 45 | all 987 files match, file list identical (3 deleted, 76 new) |
-| Current package (tag `final-2026-09-29-v17`: the Overlord change reverted, everything checked again) | 46 | all 987 files match, file list identical (3 deleted, 76 new); Allies_1944.txt is the author's |
+| Seventeenth package (tag `final-2026-09-29-v17`: the Overlord change reverted, everything checked again) | 46 | all 987 files match, file list identical (3 deleted, 76 new); Allies_1944.txt is the author's |
+| Current package (tag `final-2026-09-30-v18`: + the SS names fix) | 47 | all 988 files match, file list identical (3 deleted, 77 new) |
 
 So `mod/` is exactly "July Workshop version + these patches", with nothing hidden.
 
@@ -263,3 +265,23 @@ See CHANGELOG section 28.
 - **The UK start:** no crash.
 - **Load test:** error.log identical (log 26).
 - **Checks:** 79, all pass.
+
+## SS names at the 1944 start (30 September 2026)
+
+See CHANGELOG section 29.
+- **Saves of a German game**, before and after, read division by division
+  (`tools/list_ss_divisions.py`, `game-logs/28-ss-division-names-*.txt`):
+  the seven SS divisions of the order of battle now have their own names.
+- **Nothing else changed:** the same 22 SS divisions and 302 German
+  divisions, in the same states and templates; the same focuses, ideas,
+  political power, experience and doctrine discounts. A control pair of
+  runs of the same version differs in the same ordinary ways (production,
+  equipment, day-one battles).
+- **error.log:** the same lines in both runs; load test identical to log 26
+  (log 28); a fresh clone of pull request #4 too (log 29).
+- **Check Z**, calibrated with five planted errors.
+- **Checks:** 80, all pass.
+- **Note:** `verify_update.py` rewrites `docs/checksums/mod-files.sha256`
+  on every run. The calibration runs had planted errors on disk, so the
+  list was written once more afterwards, on the clean files. The rebuild
+  test found the stale entry before that.
