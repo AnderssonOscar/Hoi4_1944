@@ -2620,8 +2620,18 @@ removed afterwards):
 
 A local copy of the fixed mod is registered as a separate mod,
 **"1944 - Downfall (local fixes)"** (file
-`Documents\Paradox Interactive\Hearts of Iron IV\mod\downfall_local_fixes.mod`,
-pointing at this project's `mod\` folder).
+`Documents\Paradox Interactive\Hearts of Iron IV\mod\downfall_local_fixes.mod`).
+
+- **It points at its own copy:** `Documents\...\Hearts of Iron IV\mod\1944-Downfall-local`,
+  refreshed from this project's `mod\` folder.
+- **That copy's `descriptor.mod` has its own name and no `remote_file_id`.**
+  The Paradox launcher rewrites every `.mod` file from the `descriptor.mod`
+  inside the mod's folder. A local copy that keeps the author's
+  `remote_file_id="3070639276"` becomes a second "1944 - Downfall" with the
+  Workshop item's ID, and the game then loads neither.
+- **Found on 30 September 2026:** the Workshop version stopped loading on
+  Oscar's PC ("Active Mod Count: 0" in `logs\system.log`) for exactly this
+  reason. Steam players were not affected.
 
 1. In the Paradox launcher, create a new playset with **only** "1944 - Downfall
    (local fixes)". Never enable it together with the Workshop "1944 - Downfall";
