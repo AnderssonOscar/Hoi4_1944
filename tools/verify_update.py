@@ -502,6 +502,28 @@ check("W  Wiking (#5, SS Panzer-Division, 11424) and Nordland (#11, SS copy of t
       and "5 = { \"%d. SS-Division 'Wiking'\" }" in ss_names and "11 = { \"%d. SS-Division 'Nordland'\" }" in ss_names
       and ss_ev.count("has_start_date < 1944.1.1") == 2 and ss_ev.count("else_if = { # 1944 start: Wiking already exists") == 2,
       str(ss_detail))
+# Section 29: the game loads the 1944 order of battle only after all the history has run, so the 11 SS divisions that
+# these two focus rewards create took SS numbers 1-11 first. They are now completed at game start instead.
+ger_hist = current("mod/history/countries/GER - Germany.txt")
+ss_start = current("mod/common/on_actions/GER_ss_names_on_actions.txt")
+ss_foci = ("GER_expand_ss_recruitment", "GER_strengthen_the_waffen_ss")
+ss_note = b" # now completed at game start: common/on_actions/GER_ss_names_on_actions.txt (docs/CHANGELOG.md section 29)"
+ss_hist_prev = ger_hist
+for f in ss_foci:
+    ss_hist_prev = ss_hist_prev.replace(b"\t\t#complete_national_focus = " + f.encode() + ss_note + b"\r\n",
+                                        b"\t\tcomplete_national_focus = " + f.encode() + b"\r\n")
+ss_expect = ("on_actions={on_startup={effect={GER={" + " ".join(
+    f"if={{limit={{NOT={{has_start_date=1943.12.30}} NOT={{has_completed_focus={f}}}}} complete_national_focus={f}}}" for f in ss_foci) + "}}}}")
+ss_callers = [p for p in paths if p.endswith(".txt") and any(
+    re.search(rb"^[ \t]*complete_national_focus = " + f.encode() + rb"\b", current(p), re.M) for f in ss_foci)]
+check("Z  SS names at the 1944 start: the two SS focuses whose rewards create 11 SS divisions are completed at game start "
+      "(on_startup, after the order of battle is loaded) instead of in the 1944 history; the history file is otherwise "
+      "byte-identical to e09019a; once each, same order, only for starts from 1943.12.30; nothing else completes them; ASCII, CRLF",
+      ss_hist_prev == git("show", "e09019a:mod/history/countries/GER - Germany.txt") and ss_hist_prev != ger_hist
+      and ss_start.isascii() and ss_start.count(b"\n") == ss_start.count(b"\r\n")
+      and canon(parse_bytes(ss_start)[0]) == ss_expect and ss_start.count(b"NOT = { has_start_date < 1943.12.30 }") == 2
+      and ss_callers == ["mod/common/on_actions/GER_ss_names_on_actions.txt"],
+      str(ss_callers))
 
 op = {k: current("mod/" + f).decode("ascii") for k, f in (
     ("eff", "common/scripted_effects/GER_1945_operations_effects.txt"), ("dec", "common/decisions/GER_1945_operations_decisions.txt"),

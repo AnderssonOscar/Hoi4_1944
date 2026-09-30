@@ -2985,7 +2985,7 @@ if = {
 		unlock_national_focus = GER_trade_deal_with_sweden
 
 		complete_national_focus = GER_uplift_the_rosenberg_office
-		complete_national_focus = GER_expand_ss_recruitment
+		#complete_national_focus = GER_expand_ss_recruitment # now completed at game start: common/on_actions/GER_ss_names_on_actions.txt (docs/CHANGELOG.md section 29)
 
 		complete_national_focus = GER_zentrale_planung
 		complete_national_focus = GER_create_rustungsstab
@@ -3000,7 +3000,7 @@ if = {
 
 		complete_national_focus = GER_ascension_of_himmler
 		complete_national_focus = GER_expand_ss_security_duties
-		complete_national_focus = GER_strengthen_the_waffen_ss
+		#complete_national_focus = GER_strengthen_the_waffen_ss # now completed at game start: common/on_actions/GER_ss_names_on_actions.txt (docs/CHANGELOG.md section 29)
 		complete_national_focus = GER_plenipotentiary_of_armaments
 
 		unlock_national_focus = GER_war_with_france	

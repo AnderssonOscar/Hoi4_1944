@@ -1,0 +1,39 @@
+###########################
+# 1944 - Downfall: SS division names at the 1944 start (docs/CHANGELOG.md section 29)
+#
+# Germany's 1944 history completed the focuses "Expand SS Recruitment" and
+# "Strengthen the Waffen-SS". Their rewards create 11 SS divisions in Brandenburg.
+# The game loads the 1944 order of battle only after all the history has run,
+# so those 11 took the SS name list's numbers 1-11 (Leibstandarte, Das Reich,
+# Totenkopf, Wiking, Nordland ...) and the real SS divisions in the order of
+# battle got the numbers that were left (the Leibstandarte at Cherkassy was
+# named "12. SS-Division 'Hitlerjugend'").
+#
+# The two focuses are now completed here instead, when the game starts, which
+# is after the order of battle is loaded: the same focuses, the same rewards,
+# in the same order. Only for the 1944 start (the history block they came from
+# is dated 1943.12.30); earlier starts are not affected.
+###########################
+
+on_actions = {
+	on_startup = {
+		effect = {
+			GER = {
+				if = {
+					limit = {
+						NOT = { has_start_date < 1943.12.30 }
+						NOT = { has_completed_focus = GER_expand_ss_recruitment }
+					}
+					complete_national_focus = GER_expand_ss_recruitment
+				}
+				if = {
+					limit = {
+						NOT = { has_start_date < 1943.12.30 }
+						NOT = { has_completed_focus = GER_strengthen_the_waffen_ss }
+					}
+					complete_national_focus = GER_strengthen_the_waffen_ss
+				}
+			}
+		}
+	}
+}
