@@ -238,8 +238,44 @@ publication, but the later two reports do not.
 
 ### 5.5 Results added after the first draft of this file
 
-(Claude appends here if more runs finish. If this section is empty, start
-with section 6, step 1.)
+(Claude appends here if more runs finish. Start with section 6, step 1
+unless a result below says otherwise.)
+
+**3 October, about 15:25 local time:**
+
+- The first observed game (published version, player Switzerland) reached
+  15 January 1944: AI Germany still fascist "German Reich", AI Soviet Union
+  still communist, no civil war in either, `SS_anger` and
+  `wehrmacht_anger` 0, Germany's subjects unchanged (Albania, Croatia,
+  Greece, Italy/RSI, RKG, RKN, Serbia, Slovakia). So with AI majors the
+  problem does **not** appear in the first two weeks. It is probably tied
+  to something a **human** player does or sees (decisions, event choices,
+  a peace-conference screen), or to DLC or game-rule settings.
+- **A plain-text save lists every fired event**: top-level block
+  `fired_event_names={ … }`. It also has `faction={ … members={ … } }`
+  blocks and `pending_events`. Use this on a save from an affected game,
+  or on test saves, to see exactly which events ran.
+- From the save of 30 September (German player, one game day, v18 mod;
+  Claude's scratch file `save_fix2.hoi4`):
+  - fired at start: `mod.start.1`, `mod.start.options.1`,
+    `wuw_GER_reichskommissariats.3` ("The Leadership of Norwegen", from the
+    author's `on_startup` line `activate_decision = GER_reichskommissariat_norwegen`),
+    `ger_crimea.1` (our Crimea popup);
+  - the Allied faction's members include `ICE POL BRM YUG PHI D04 COG`
+    and **`HOL`**. So after our UK fix Poland, Yugoslavia, Burma and the
+    Philippines still end up in the Allies as exiles (they are not
+    annexed), and the Netherlands (HOL) ends up in the Allies after the
+    setup peace conference;
+  - the Axis faction: `GER SLO ALB HUN ROM BUL FIN SER ITA CRO GRE RKN RKG`.
+- `wuw_GER_reichskommissariats.*` events only ask Germany who leads a
+  Reichskommissariat. Not related.
+- Claude tried to stop the test game early to save time; the harness
+  refused to kill the process, so the run was left to finish. If a
+  `hoi4.exe` is still running when you start, it may be that test game:
+  check `tools/investigation` backups before anything else, and do not
+  kill a game Oscar may be playing.
+- **Still not done: the baseline run (section 6, step 1).** It is the next
+  thing to do.
 
 ## 6. Next steps, in order
 
