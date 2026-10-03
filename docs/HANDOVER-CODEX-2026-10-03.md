@@ -380,9 +380,23 @@ Switzerland).
   events that mention a democratic ideology): the first is a flavour event
   limited to before 1944; neither sets Germany's government.
 
+**Checked right after (about 16:00): the Soviet opposition branches are
+closed too.** The mod does not override the Soviet focus tree (the base
+game's `common/national_focus/soviet.txt` is used). The mod's
+`history/countries/SOV - Soviet union.txt` completes `SOV_the_centre`
+(mutually exclusive with `SOV_the_left_opposition` and
+`SOV_the_right_opposition`) and `SOV_the_path_of_marxism_leninism`
+(mutually exclusive with `SOV_beaten_but_not_defeated`, the exiles'
+branch). The focuses that fire the civil-war events
+(`SOV_left_opposition_coup`, `SOV_the_vanguard_of_the_true_revolution`,
+`SOV_organize_uprisings_in_the_country`, `SOV_the_hands_do`) all sit behind
+those. So the first bullet below is answered: **no**. What "the soviet
+civil war" in the 2 October report refers to is still unknown; ask the
+player what he played and what the popup said.
+
 **Not checked yet, worth doing:**
 
-- **The Soviet tree with historical focuses off.** Is an opposition focus
+- (Answered above.) **The Soviet tree with historical focuses off.** Is an opposition focus
   (left, right, exiles) open for the Soviet Union at the 1944 start, as
   `GER_oppose_hitler` would have been for Germany? Look in the mod's
   `common/national_focus/soviet.txt` for the focuses that fire
