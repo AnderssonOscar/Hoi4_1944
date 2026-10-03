@@ -277,6 +277,35 @@ unless a result below says otherwise.)
 - **Still not done: the baseline run (section 6, step 1).** It is the next
   thing to do.
 
+**3 October, about 15:45: the published-version run finished (31 game days).**
+Files: Claude's scratch folder `smoke\run_pol_published\` (game.log,
+error.log, save.hoi4; not in the repository, 84 MB).
+
+- AI Germany on 31 January: still fascist, stability unchanged, political
+  power 1974 → 358, **`SS_anger` 20, `wehrmacht_anger` −10**.
+- The save shows Germany's flags `SS_recruitment_denmark`, `_norway`,
+  `_netherlands`, `_belgium` and SS templates created. So **the AI takes
+  the SS recruitment decisions within the first month**, and the SS anger
+  chain of section 5.2 item 1 is running in every game. At `SS_anger` 30
+  "Himmler plots" starts; at 40 and above assassination attempts become
+  possible (10–15% each time the check runs). A human who takes all eight
+  decisions in the first days and picks the third option reaches 40 after
+  four of them.
+- This chain is in the author's July files too (the event file is his
+  older copy; the focus was already completed in his history), so it is
+  **not new with the update**. It may still be what players hit now that
+  the game no longer crashes early. Its outcomes are non-aligned or
+  fascist civil wars, not "democratic", so it does not explain the wording
+  of the reports by itself.
+- AI Soviet Union on 31 January: communist, no civil war, political power
+  1884 → 126.
+- No `GER_*_influence` spirit anywhere in the save.
+- `fired_event_names` in a save holds only some events (42 here; probably
+  the fire-only-once ones), so it is a partial record.
+- Only civil war in the whole month: the mod's own Greek one.
+- The baseline run (July version, about ten game days) was started right
+  after this; its result follows below if Claude got that far.
+
 ## 6. Next steps, in order
 
 1. **Baseline comparison (most important).**
