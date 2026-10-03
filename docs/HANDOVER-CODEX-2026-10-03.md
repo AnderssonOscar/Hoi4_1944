@@ -416,7 +416,28 @@ player what he played and what the popup said.
   focuses on). There is no known command-line switch for the other
   setting; a human has to start that game.
 
-**State of the machine when Claude stopped:** the baseline run
+**Final comparison (about 16:05), `politics_summary.py pol_baseline pol_published`:**
+the baseline ran to 9 January 1944. In those nine days the two versions
+differ only in these lines:
+
+- only in the baseline: `on_government_exiled` for Burma, the Philippines
+  and Poland (exile during setup), and Burma capitulating "to Germany";
+- only in the published version: Burma capitulating "to Japan".
+
+Every other political event is the same in both, including the peace
+conference against "German Netherlands" (36 winners) and the government
+changes of Bulgaria (2 Jan), Guangxi (3 Jan), Mexico (5 Jan) and Yunnan
+(6 Jan). Germany fascist and the Soviet Union communist in both, no civil
+war in either, `SS_anger` 0 on 9 January in both.
+
+**State of the machine when Claude stopped:** both test games have ended
+and their scripts reported everything restored (playset
+`mod/ugc_3070639276.mod`, `autosave="HALFYEAR"`, `save_as_binary=yes`,
+Oscar's autosave of 29 Sep, the test copy mirrored from the package with
+no temporary file left). HOI4 was not running. The notes below are only
+for checking.
+
+Earlier note, kept for reference: the baseline run
 (`pol_baseline`) was in its last minutes. Its script restores the playset,
 settings, autosave and the test copy by itself. If in doubt, check:
 `dlc_load.json` should enable only `mod/ugc_3070639276.mod`; `settings.txt`
