@@ -366,6 +366,51 @@ Switzerland).
 4. The players' answers (country, date, DLCs, what they clicked) would
    decide it faster than anything else.
 
+**More ruled out (3 October, about 15:55):**
+
+- **Germany's alt-history branch.** `GER_oppose_hitler` (which starts the
+  German civil war and leads to "The Return of Democracy",
+  `wuw_GER_german_politics.01`) is mutually exclusive with
+  `GER_remilitarize_the_rhineland`, and the 1944 history unlocks that focus
+  (`unlock_national_focus`, history line about 570; the run's save lists
+  it as completed). So neither a player nor a non-historical AI can take
+  the branch. Germany's current focus in the AI run was
+  `GER_hand_out_panzerfausts`.
+- `wuw_GER_military_events.2` and `wuw_GER_releasable.2` (self-firing
+  events that mention a democratic ideology): the first is a flavour event
+  limited to before 1944; neither sets Germany's government.
+
+**Not checked yet, worth doing:**
+
+- **The Soviet tree with historical focuses off.** Is an opposition focus
+  (left, right, exiles) open for the Soviet Union at the 1944 start, as
+  `GER_oppose_hitler` would have been for Germany? Look in the mod's
+  `common/national_focus/soviet.txt` for the focuses that fire
+  `NSB_soviet_communist_civil_war.001/.004/.005/.007` and
+  `NSB_Soviet_fascist_civil_war.001`, their `mutually_exclusive` and
+  `available` blocks, and whether the 1944 history completes or unlocks the
+  focus that excludes them. If the branch is open, an AI Soviet Union with
+  historical focuses off (a lobby setting many players use) can start its
+  civil war early, which would explain "the soviet civil war popped off
+  after a few days" without any change of ours. The fix would be one
+  `unlock_national_focus` line in the Soviet 1944 history, as the author
+  did for Germany.
+- **The same question for the Axis minors' trees** (Hungary, Romania,
+  Bulgaria, Italy, Finland): a democratic branch open at the 1944 start
+  would explain "Why I became democratic?".
+- The test games here ran with the default lobby settings (historical AI
+  focuses on). There is no known command-line switch for the other
+  setting; a human has to start that game.
+
+**State of the machine when Claude stopped:** the baseline run
+(`pol_baseline`) was in its last minutes. Its script restores the playset,
+settings, autosave and the test copy by itself. If in doubt, check:
+`dlc_load.json` should enable only `mod/ugc_3070639276.mod`; `settings.txt`
+should say `save_as_binary=yes` and `autosave="HALFYEAR"`;
+`save games\autosave.hoi4` should be Oscar's (29 Sep 2026 15:55,
+63,423,717 bytes); backups are in Claude's scratch folder
+`smoke\politics-backup\`.
+
 ## 6. Next steps, in order
 
 1. **Baseline comparison (most important).**
