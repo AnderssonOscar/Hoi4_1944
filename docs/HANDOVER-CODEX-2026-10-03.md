@@ -306,6 +306,66 @@ error.log, save.hoi4; not in the repository, 84 MB).
 - The baseline run (July version, about ten game days) was started right
   after this; its result follows below if Claude got that far.
 
+**3 October, about 15:50: the baseline (July version, `253cea1`) at setup.**
+Read from the live game.log of the run `pol_baseline` (same logger, player
+Switzerland).
+
+- **The setup is almost the same as in the published version.** Present in
+  both: the capitulations of Belgium, Poland, Yugoslavia, the Philippines,
+  the Dutch East Indies and Burma; the Greek civil war; **the peace
+  conference with loser HOL "German Netherlands" and 36 winners**, HOL and
+  the Dutch East Indies leaving Germany's faction; Japan annexing Malaya;
+  the Italian civil war ending at 13:00 with the RSI annexing the Kingdom
+  of Italy.
+- **The only differences:** in the baseline Poland, the Philippines and
+  Burma go into exile in the UK during setup (`on_government_exiled`, the
+  cause of the UK crash); in the published version they do so in
+  `on_startup`. Burma capitulates "to Germany" in the baseline and "to
+  Japan" in the published version.
+- **Conclusion: the strange day-one events are the author's own setup, not
+  something the update introduced.** This largely clears the UK start fix
+  (section 5.4) as the cause. Section 6 step 2 (bisecting the UK fix) is
+  therefore low priority.
+
+**Also checked and ruled out on 3 October:**
+
+- **The author's start popup** (`mod.start.options.1`): Normal Mode, Easy
+  Mode, Disable Soviet Offensives. Nothing political.
+- **Operation Panzerfaust** (`GER_operation_panzerfaust_events.01/.02`,
+  "[Hitler] Demands Horthy's Resignation", Hungary becomes a German
+  puppet): this would match "the German Reich demands me be his puppet" for
+  someone playing **Hungary**, but in the mod's `events/WUW_Germany.txt`
+  the author added `date < 1944.1.1` to its trigger, so it cannot fire in
+  a 1944 game.
+- **The author's Operation Margarethe** (`GER_operation_margarethe` in
+  `common/scripted_effects/germany_scripted_events_mod.txt`, event
+  `operation.margarethe.1`): after 18 March 1944, **only if Hungary is
+  AI**; makes Hungary a German satellite with a non-aligned government.
+  Not democratic, and not for a human Hungary.
+- **`wuw_GER_diplomacy.76` "Demands We Subjugate"**: only on the communist
+  Germany path.
+
+**Where this leaves the question (Claude's view):**
+
+1. The update did not change the day-one politics. With AI majors nothing
+   goes wrong in the first month.
+2. The only mechanism seen moving in a real game is the SS anger chain
+   (section 5.2 item 1), which is older than the update. It can kill
+   Hitler and start a civil war, but its results are non-aligned or
+   fascist, not democratic.
+3. "Playing with Germany" (ALİ) may mean playing an Axis minor, and the
+   1 October report names no country. The reports may be about the
+   author's side-switch scripts for Romania, Bulgaria, Finland or Italy
+   (those do change governments), which were not examined in this
+   session. **Next: read the author's Romania/Bulgaria/Finland/Hungary
+   scripts in `events/mod_events.txt`, `common/scripted_effects/*_mod.txt`
+   and `common/scripted_effects/update_daily.txt`, and run
+   `politics_run.ps1 -Tag ROM`, `-Tag BUL`, `-Tag HUN`, `-Tag FIN` with the
+   logger** (popups stay unanswered for the played country, but scripted
+   government changes are logged).
+4. The players' answers (country, date, DLCs, what they clicked) would
+   decide it faster than anything else.
+
 ## 6. Next steps, in order
 
 1. **Baseline comparison (most important).**
