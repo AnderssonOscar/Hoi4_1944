@@ -1,0 +1,43 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			log = "PL startup [GetDateText]"
+			GER = { log = "PL startup GER: [ROOT.GetName] ruling [ROOT.GetRulingIdeology] stability [?ROOT.stability] pp [?ROOT.political_power] SS_anger [?ROOT.SS_anger] wehrmacht_anger [?ROOT.wehrmacht_anger]" }
+			SOV = { log = "PL startup SOV: [ROOT.GetName] ruling [ROOT.GetRulingIdeology] stability [?ROOT.stability] pp [?ROOT.political_power]" }
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "PL day [GetDateText] GER: [ROOT.GetName] ruling [ROOT.GetRulingIdeology] stab [?ROOT.stability] pp [?ROOT.political_power] SS_anger [?ROOT.SS_anger] wehrmacht_anger [?ROOT.wehrmacht_anger]"
+			every_country = {
+				limit = { has_civil_war = yes }
+				log = "PL day [GetDateText] CIVIL WAR in [THIS.GetTag] [THIS.GetName] ruling [THIS.GetRulingIdeology]"
+			}
+			every_country = {
+				limit = { is_subject_of = GER }
+				log = "PL day [GetDateText] subject of GER: [THIS.GetTag] [THIS.GetName] ruling [THIS.GetRulingIdeology]"
+			}
+		}
+	}
+	on_daily_SOV = {
+		effect = {
+			log = "PL day [GetDateText] SOV: [ROOT.GetName] ruling [ROOT.GetRulingIdeology] stab [?ROOT.stability] pp [?ROOT.political_power]"
+		}
+	}
+	on_government_change = { effect = { log = "PL [GetDateText] on_government_change: [ROOT.GetTag] [ROOT.GetName] now ruling [ROOT.GetRulingIdeology]" } }
+	on_ruling_party_change = { effect = { log = "PL [GetDateText] on_ruling_party_change: [ROOT.GetTag] [ROOT.GetName] now ruling [ROOT.GetRulingIdeology]" } }
+	on_coup_succeeded = { effect = { log = "PL [GetDateText] on_coup_succeeded: [ROOT.GetTag] [ROOT.GetName]" } }
+	on_capitulation = { effect = { log = "PL [GetDateText] on_capitulation: [ROOT.GetTag] [ROOT.GetName] capitulated to [FROM.GetTag] [FROM.GetName]" } }
+	on_declare_war = { effect = { log = "PL [GetDateText] on_declare_war: [ROOT.GetTag] [ROOT.GetName] on [FROM.GetTag] [FROM.GetName]" } }
+	on_peaceconference_started = { effect = { log = "PL [GetDateText] on_peaceconference_started: winner [ROOT.GetTag] [ROOT.GetName] loser [FROM.GetTag] [FROM.GetName]" } }
+	on_peaceconference_ended = { effect = { log = "PL [GetDateText] on_peaceconference_ended: winner [ROOT.GetTag] [ROOT.GetName] loser [FROM.GetTag] [FROM.GetName] (loser exists: [FROM.GetRulingIdeology])" } }
+	on_puppet = { effect = { log = "PL [GetDateText] on_puppet: [ROOT.GetTag] [ROOT.GetName] puppeted by [FROM.GetTag] [FROM.GetName]; now ruling [ROOT.GetRulingIdeology]" } }
+	on_release_as_puppet = { effect = { log = "PL [GetDateText] on_release_as_puppet: [ROOT.GetTag] [ROOT.GetName] by [FROM.GetTag] [FROM.GetName]" } }
+	on_annex = { effect = { log = "PL [GetDateText] on_annex: [ROOT.GetTag] [ROOT.GetName] annexed [FROM.GetTag] [FROM.GetName]" } }
+	on_civil_war_end = { effect = { log = "PL [GetDateText] on_civil_war_end: winner [ROOT.GetTag] [ROOT.GetName] loser [FROM.GetTag] [FROM.GetName]" } }
+	on_force_government = { effect = { log = "PL [GetDateText] on_force_government: [ROOT.GetTag] [ROOT.GetName] by [FROM.GetTag] [FROM.GetName]" } }
+	on_liberate = { effect = { log = "PL [GetDateText] on_liberate: [ROOT.GetTag] [ROOT.GetName] by [FROM.GetTag] [FROM.GetName]" } }
+	on_government_exiled = { effect = { log = "PL [GetDateText] on_government_exiled: [ROOT.GetTag] [ROOT.GetName] from [FROM.GetTag] [FROM.GetName]" } }
+	on_join_faction = { effect = { log = "PL [GetDateText] on_join_faction: [ROOT.GetTag] [ROOT.GetName] joins [FROM.GetTag] [FROM.GetName]" } }
+	on_leave_faction = { effect = { log = "PL [GetDateText] on_leave_faction: [ROOT.GetTag] [ROOT.GetName] leaves [FROM.GetTag] [FROM.GetName]" } }
+}
