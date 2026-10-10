@@ -702,3 +702,32 @@ Germany to August 1944; short games played as Italy, Hungary, Romania,
 Bulgaria and Finland to see what a human player of an Axis partner gets
 ("playing with Germany" in the first report may mean that).
 The SS fix has its load test (log 30, 115 lines, identical to log 28).
+
+**10 October, late: more ruled out.**
+
+- **Played as Italy and as Hungary** (4 game days each, popups
+  unanswered): Italy stays the fascist RSI, a subject of Germany; Hungary
+  stays non-aligned in Germany's faction. No government change, no peace
+  conference involving them, no demand event resolved by itself.
+- **The base game's crisis events** (`events/stability_events.txt`,
+  selector `stability.3`; the only outcome that changes anything is
+  `stability.33`, a failed crackdown on draft dodging: a fascist or
+  communist country gets a civil war against a democratic breakaway of
+  45%): the selector needs stability or war support below 50%. Tested with
+  the game's own triggers on day one for GER, SOV, ITA, HUN, ROM, BUL, FIN,
+  JAP, ENG, USA, SLO, CRO, FRA, CHI: **none** is below 50% in either, so
+  the crisis cannot start early. (Its mean time is also a year or more.)
+- **A logging mistake to avoid:** `[?TAG.war_support]` is not a variable
+  the game knows; it prints 0 for every country. Use the triggers
+  `has_war_support` / `has_stability`. `[?TAG.stability]` does work.
+- **State of the three "politics" reports:** not reproduced, and every
+  mechanism found in the scripts is either unreachable in a 1944 game or
+  now switched off (the SS chain, section 30). What is left untested:
+  things a player clicks that were not thought of, games continued from
+  saves made before the update, other mods running alongside, and the
+  later months of a game (all tests here end in February 1944 at the
+  latest, apart from the Romania tests in September).
+- **Local commits not yet pushed or offered to the author:** `6a1dad4`
+  (the SS fix) and `11faa47` (docs). Oscar decides when they go to GitHub
+  and into a pull request (PR #4 is merged, so it needs a new one, built
+  like the earlier ones).
