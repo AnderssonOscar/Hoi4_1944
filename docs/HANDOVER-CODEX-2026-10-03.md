@@ -561,3 +561,86 @@ Then the load test (error.log 115 lines), the rebuild test (July version +
 checked with `docs/checksums/mod-files.sha256`), and for a pull request a
 fresh clone compared file by file with `mod/` (ignoring CR). CHANGELOG
 sections 13, 28 and 29 show each step with its evidence.
+
+---
+
+## 10. Update, 10 October 2026 (new reports; work in progress)
+
+**New Steam comments (3–9 October), verbatim:**
+
+- Tasukete! (3 Oct): "I got a pop-up that said free elections are back in
+  Germany and gave me 2 choises borh making me democratic. Idk why why this
+  happened :/"
+- Officer Thundercock (3 Oct): "game crashes when romania switches sides";
+  razen3737 (8 Oct): "whenever romania decides to change sides it crashes
+  and there's no way to fix it"
+- Sak (4 Oct): "when the game reaches 1946 or a bit later ,it will crash."
+- bog (4 Oct, answering the author's DLC question): "all dlc, I disabled
+  the event locally"
+- Justin Bieber (9 Oct): "broken"
+
+**What this settles:**
+
+- The popup is `wuw_GER_german_politics.01` "The Return of Democracy"
+  (mod `events/WUW_Germany.txt`, about line 20760; both options set
+  `ruling_party = democratic`). It is `is_triggered_only`, and **the only
+  thing that fires it is the completion reward of the focus
+  `GER_re_establish_free_elections_ww`** (mod
+  `common/national_focus/germany.txt`, about lines 25772–25863). No script
+  in the mod or the base game completes that focus.
+- Its chain: `GER_oppose_hitler_ww` (mutually exclusive with
+  `GER_remilitarize_the_rhineland`, which the 1944 history unlocks) →
+  `GER_tend_to_the_future_of_germany` → `GER_monarchist_sentiment` →
+  `GER_the_monarchy_compromise_ww` (needs a democratic government or
+  democrats above 40%) → `GER_re_establish_free_elections_ww` (needs a
+  government that is not fascist or communist). With the default lobby
+  rule the branch is visible but locked. **So in the affected games
+  Germany was already non-fascist, or the branch was reopened. How is
+  not found yet.**
+- bog has all DLCs, so missing DLCs do not explain his Soviet civil war.
+  Oscar asked whether missing DLCs could be the cause: the DLC-dependent
+  parts of Germany's history (lines 450, 725, 1316, 1353, 3130, 3168,
+  3352) and of the German and Soviet trees were read; none changes a
+  government. A sweep of all `has_dlc` checks next to political effects in
+  `history/countries` found 91 places; Romania, Hungary and Germany were
+  read and are not affected; the others were not read.
+- Event namespaces: every namespace used in the mod's events is declared
+  (no ID collision).
+
+**A chain found on 10 October, not shown to be the cause:** the Dutch
+"Wilhelminism" path. The update replaced the Netherlands focus tree with
+the 1.19.3 file plus the author's RKN edit (CHANGELOG section 3), and the
+Netherlands leaves Germany's faction at setup and joins the Allies.
+`HOL_wilhelminism` (mod `common/national_focus/netherlands.txt` line
+7250; `ai_will_do = 200`, allowed while capitulated; needs
+`HOL_a_new_dutch_unity`) gives Germany the spirit `HOL_german_defectors_2`.
+Base game `common/on_actions/04_mtg_on_actions.txt` (about line 3210):
+when a Netherlands with that focus takes control of a state that is a
+German core from a fascist Germany, event `mtg_netherlands.73` starts a
+German civil war (`ruling_party = fascism ideology = neutrality size =
+0.05`) and the Kaiser's breakaway state becomes a Dutch puppet; later
+`mtg_netherlands.76` reloads that state's focus tree
+(`keep_completed = no`) and unlocks the alt-history focuses. The player's
+Germany stays fascist in this chain. Not checked: whether the 1944 history
+lets the Dutch AI reach `HOL_a_new_dutch_unity`.
+
+**Runs on 10 October** (scripts as in section 7; the logger now also
+records the alt-history focuses and the influence spirits:
+`zz_TEMP_combined_log.txt` in Claude's scratch folder `smoke\politics\`):
+
+- `pol_ger_player`: the published version **played as Germany** (popups
+  unanswered) to the 1 February autosave. In progress when this was
+  written; on 2 January nothing unusual.
+- Prepared, not yet run: `zz_TEMP_rom_switch_test.txt`, which runs the
+  `remove_effect` of the author's decision `ROM_surrender_soviet`
+  (`common/decisions/ROM_mod.txt` lines 127–318, copied verbatim) on 3
+  January, to reproduce the "Romania switches sides" crash. That effect
+  makes white peace, removes Romania from the Axis, sets a communist
+  government, makes Romania a Soviet puppet, deletes the "Divizia
+  Infanterie" divisions and creates eight "Sov Divizia Infanterie" in
+  state 46 (Bucharest) whoever controls it. Its template lists the slots
+  `x = 0 y = 0..3` twice.
+
+**Still open:** how Germany gets to the free-elections focus; what bog's
+"Soviet civil war" event was (ask him which event he disabled: that
+answers it at once); the Romania crash; the 1946 crash.
