@@ -68,15 +68,20 @@ ws = subprocess.run(["git", "hash-object", "--no-filters", "--stdin-paths"], cwd
 ws_is_baseline = sorted(rel) == ws_files and ws == [m.split()[2] for m, _ in base_tree]
 # On 29 Sep 2026 the author published the update himself: his GitHub main at the merge of pull request #3
 # (c267d4f), which is this package at 470916b plus his README.md and his .gitattributes (CHANGELOG section 13).
-PUBLISHED = "470916b"
-pub_rel = [p[4:] for p in git("ls-tree", "-r", "--name-only", PUBLISHED, "--", "mod").decode("utf-8").splitlines()]
-ws_is_published = (not ws_is_baseline and ws_files == sorted(pub_rel + ["README.md"])
-                   and all(git("show", f"{PUBLISHED}:mod/{f}").replace(b"\r\n", b"\n")
-                           == open(os.path.join(W, f), "rb").read().replace(b"\r\n", b"\n")
-                           for f in pub_rel if f != ".gitattributes"))
-check("Steam Workshop copy never edited here: it is either the July 2026 baseline (914 files) or the author's own published update "
-      "of 29 Sep 2026 (this package at 470916b plus his README, ignoring line endings)",
-      ws_is_baseline or ws_is_published, "baseline" if ws_is_baseline else ("published update" if ws_is_published else "neither"))
+# On 30 Sep 2026 he published again, minutes after merging pull request #4 (afa6dc8): this package at bb94b9e plus
+# his README.md and his .gitattributes (docs/HANDOVER-CODEX-2026-10-03.md section 1).
+ws_published = None
+for PUBLISHED in ("470916b", "bb94b9e"):
+    pub_rel = [p[4:] for p in git("ls-tree", "-r", "--name-only", PUBLISHED, "--", "mod").decode("utf-8").splitlines()]
+    if (not ws_is_baseline and ws_files == sorted(pub_rel + ["README.md"])
+            and all(git("show", f"{PUBLISHED}:mod/{f}").replace(b"\r\n", b"\n")
+                    == open(os.path.join(W, f), "rb").read().replace(b"\r\n", b"\n")
+                    for f in pub_rel if f != ".gitattributes")):
+        ws_published = PUBLISHED
+ws_is_published = ws_published is not None
+check("Steam Workshop copy never edited here: it is either the July 2026 baseline (914 files) or one of the author's own published "
+      "updates (29 Sep 2026 = this package at 470916b, 30 Sep 2026 = this package at bb94b9e; plus his README, ignoring line endings)",
+      ws_is_baseline or ws_is_published, "baseline" if ws_is_baseline else (f"published update {ws_published}" if ws_is_published else "neither"))
 
 
 def _rm_readonly(func, path, _):

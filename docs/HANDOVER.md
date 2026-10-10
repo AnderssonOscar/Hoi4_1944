@@ -28,9 +28,9 @@ mod, so every change must be easy for him to check himself.
 
 - **113 files differ** from the July 2026 Steam version (33 edited, 3 deleted,
   77 new). The author published pull request #3's content on Steam on
-  29 Sep 2026. Every change is in `docs/CHANGELOG.md` (sections 1–29) and summarised in
+  29 Sep 2026. Every change is in `docs/CHANGELOG.md` (sections 1–30) and summarised in
   `docs/READ-ME-FIRST.md`.
-- **`python tools/verify_update.py`:** 80 checks, all pass.
+- **`python tools/verify_update.py`:** 81 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
 - **Packages:** the tags `final-2026-09-27` to `final-2026-09-30-v18`. Each
@@ -242,7 +242,7 @@ python tools/check_province_modifiers.py   # provinces outside their state, unkn
 python tools/check_structure.py            # brace balance, template slot clashes
 python tools/check_references.py           # events/ideas/characters/tags used in play
 python tools/check_berlin_map.py           # Festung Berlin's map facts (needs Pillow and numpy)
-python tools/verify_update.py              # re-checks every claim (80 checks)
+python tools/verify_update.py              # re-checks every claim (81 checks)
 python tools/crash_site.py "<crash folder>" # which part of the game a crash report points to
 ```
 

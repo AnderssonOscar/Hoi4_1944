@@ -644,3 +644,61 @@ records the alt-history focuses and the influence spirits:
 **Still open:** how Germany gets to the free-elections focus; what bog's
 "Soviet civil war" event was (ask him which event he disabled: that
 answers it at once); the Romania crash; the 1946 crash.
+
+**10 October, afternoon (Oscar: "fix and continue investigation"):**
+
+- **Fixed locally, not pushed, not in a pull request:** commit `6a1dad4`,
+  the SS / Wehrmacht "anger" system switched off in
+  `events/ss_recruitment_event.txt` (CHANGELOG section 30, check AA, 81
+  checks). Tested in an observed game to 1 February: the AI still takes
+  the recruitment decisions, both counters stay 0 (before: 20 and -10).
+  `tools/verify_update.py` now also accepts the author's Workshop upload
+  of 30 September (`bb94b9e`).
+- **The Germany-player game** (published version, popups unanswered, to
+  8 February): Germany fascist throughout, none of the alt-history focuses
+  completed or in progress, no influence spirit on any country. The game
+  paused itself once and Oscar unpaused it. So nothing happens to a human
+  Germany who does nothing.
+- **Systematic checks, all negative:** from the focuses completed at the
+  1944 start, 72 more are reachable and none of them has a political
+  effect; no decision usable by a fascist Germany at the start changes the
+  government, apart from the SS chain now fixed; no self-firing event
+  kills or replaces a fascist Germany's leader (the author's 20 July event
+  only costs stability or retires three generals; Operation Panzerfaust is
+  limited to before 1944 by the author); the Dutch Wilhelminism branch is
+  closed for both HOL and RKN (each has completed a focus that excludes
+  `HOL_maintain_trade_neutrality`).
+- **Romania's side switch, three test games** with the author's
+  `remove_effect` run on 2 January 1944:
+  - AI-only world (played as Switzerland): no crash; the game ran on to
+    1 February; Romania communist with the new "Sov Divizia Infanterie".
+  - Human Germany: the effect ran, the game went on (checked to 3
+    January).
+  - The `white_peace = ROM` lines show up as peace conferences with the
+    whole Allied side and the Soviet side as winners against Romania (the
+    same thing explains the Netherlands "peace conference" at setup).
+  - Still to run: the variant with the Soviets holding states 78, 766 and
+    46 (Bucharest) first (`zz_TEMP_rom_switch_test_B.txt`). If that does
+    not crash either, the crash needs the real August 1944 situation
+    (battles on Romanian soil, Romanian divisions lent to a human
+    Germany, German units inside Romania). Untested ideas for that: the
+    effect deletes every "Divizia Infanterie" division
+    (`delete_units ... disband = yes`), also ones in battle or under the
+    player's command.
+- **"Crashes when the game reaches 1946":** many of the author's AI
+  strategies end with `date < 1946.1.1` (`common/ai_strategy/ALLIES.txt`,
+  `AXIS.txt`, `ENG.txt`, `USA.txt`, `GER.txt`, `SOV.txt` and others), which
+  fits the timing. No crash file, nothing tested.
+
+**10 October, evening: Romania crash not reproduced in six setups.** The
+full table is in `docs/INVESTIGATION.md` section C. The last one ran the
+real flow (start moved to 2 September 1944, both real decisions, the 12
+days, the switch on 14 September, played as Germany) and did not crash.
+The test files are in Claude's scratch folder `smoke/politics/`
+(`zz_TEMP_rom_switch_test.txt` and `_B` to `_F`); the pattern is easy to
+rebuild from `tools/investigation/zz_TEMP_politics_log.txt` and the
+description in INVESTIGATION. Next ideas, untested: a long game played as
+Germany to August 1944; short games played as Italy, Hungary, Romania,
+Bulgaria and Finland to see what a human player of an Axis partner gets
+("playing with Germany" in the first report may mean that).
+The SS fix has its load test (log 30, 115 lines, identical to log 28).

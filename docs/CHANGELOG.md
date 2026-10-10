@@ -2727,6 +2727,95 @@ is loaded after the history, wherever the line is.
 Hitler' and 5. 'Wiking', the Leningrad front 11. 'Nordland'. Berlin and
 Seelow have other SS numbers.
 
+### 30. The SS / Wehrmacht "anger" system switched off (commit `6a1dad4`)
+
+Players reported after the update that Germany changes its government in
+a 1944 game ("Why I became democratic?", "free elections are back in
+Germany"). The cause of those reports is **not proven** (see the end of
+this section). While looking for it, one mechanism was found that does
+take a 1944 Germany off its course, and it is fixed here.
+
+**What was wrong:**
+- `events/ss_recruitment_event.txt` in the mod is an older copy of the
+  base game's file (with the author's own changes to the divisions it
+  gives).
+- In that older copy every "SS recruitment" event still moves two
+  counters, `wehrmacht_anger` and `SS_anger`, and the third option calls
+  `SS_resolve_effects_ss`.
+- The base game's `common/decisions/SS.txt` (not overridden by the mod)
+  offers the eight recruitment decisions (Denmark, Norway, the
+  Netherlands, Belgium, France, Estonia, Latvia, Lithuania; 25 PP each) as
+  soon as `GER_expand_ss_recruitment` is completed, which it is in the
+  1944 start.
+- With `SS_anger` at 30 the base game's `SS_resolve_effects_ss` starts
+  "The Himmler Plot"; from 40 an assassination attempt on Hitler becomes
+  possible each time (10–15%); if it succeeds, "The Himmler-Putsch"
+  (`ss_recruitment_event.26`) follows, whose options start a civil war or
+  hand the government to the Wehrmacht (non-aligned).
+- A player who takes the decisions in the first days and picks the third
+  option ("Allow the OKW to recruit a small number of specialists") four
+  times is at 40.
+- **Measured:** in an observed game with the published version, the AI
+  Germany took four of the decisions in January 1944 and stood at
+  `SS_anger` 20, `wehrmacht_anger` −10 on 31 January.
+
+**Why it is an error and not a feature:** the current base game (1.19.3)
+has exactly these lines commented out in its own copy of the file, and its
+`SS.txt` says of the old demands system "this can never be achieved with
+the Inner Circle". The mod's copy simply predates that change.
+
+**The fix** (one file, 77 lines):
+- In the recruitment events (`ss_recruitment_event.1`–`.8` and
+  `ss_recruitment_alternate.1`–`.3`) the seven kinds of line that change
+  `wehrmacht_anger` or `SS_anger` or call `SS_resolve_effects_ss` are now
+  comments, 11 of each, each with a note.
+- The base game has the same lines commented out. (It left three of them
+  active by oversight; here all are off, so the chain cannot start.)
+- Nothing else in the file changed: the decisions, the divisions and
+  manpower they give, the author's equipment values and the Wiking guard
+  of section 10 are as before.
+- **Not copied from the base game:** it now charges command power for
+  these options (−10 / −20 / +10). That would be a balance change, so it
+  is left out.
+- The later events (`.10`–`.26`) are still in the file, as in the base
+  game, but nothing calls them any more.
+
+**Your call:** if the Himmler plot was wanted in 1944 games, revert this
+one commit.
+
+**Checked:**
+- **In the game** (HOI4 1.19.3; an observed game played as Switzerland, so
+  Germany is AI, to 1 February 1944; a temporary logger in the test copy
+  wrote both counters to game.log every day):
+  - **before** (the published version): flags for four recruitment
+    decisions (Denmark, Norway, the Netherlands, Belgium) and SS templates
+    in the save; on 31 January `SS_anger` 20, `wehrmacht_anger` −10;
+  - **after:** the AI still takes the decisions (flags for Denmark and
+    Norway in the save on 1 February); on 31 January both counters are 0;
+    Germany fascist, no civil war.
+- **Check AA** (new): in the recruitment events no line changes either
+  counter or calls `SS_resolve_effects_ss`; 7 kinds × 11 comment lines
+  with the note; with the 77 comments undone the file is byte-identical to
+  the version before; the base game's own file has the same lines
+  commented out. Calibrated: three planted errors, each made it fail (one
+  call active again, one counter line active again, another line of the
+  file changed).
+- **The Workshop check** now also knows the author's upload of 30
+  September (this package at `bb94b9e` plus his README); it reports the
+  Workshop copy as exactly that.
+- **Load test:** error.log identical to log 28 (115 lines,
+  `game-logs/30-after-ss-anger-off_error.log`).
+- **Checks:** 81, all pass.
+
+**Not explained by this fix:** the "free elections" popup is
+`wuw_GER_german_politics.01`, and the only thing that fires it is the
+focus `GER_re_establish_free_elections_ww`, which a fascist Germany cannot
+select at the 1944 start (the investigation is in
+`docs/HANDOVER-CODEX-2026-10-03.md`, sections 5 and 10). After the
+Himmler-Putsch Germany can be non-aligned, which is the only way found so
+far for Germany to stop being fascist in a 1944 game. Whether that is what
+the players met is not known.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,

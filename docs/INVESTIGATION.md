@@ -190,6 +190,43 @@ Things I noticed in `remove_effect`, none proven to crash:
 
 **No definite cause found by reading.** Needs a crash report.
 
+**Tested in the game on 10 October 2026, not reproduced.** Three more
+players reported this crash in October ("game crashes when romania switches
+sides"). The `remove_effect` of `ROM_surrender_soviet` was run in real
+games (HOI4 1.19.3, all DLCs; a temporary on_actions file in the test copy
+ran the author's effect, copied verbatim, or activated his decisions):
+
+| Setup | Result |
+|---|---|
+| The effect on 2 Jan 1944, all countries AI (played as Switzerland) | no crash; ran on to 1 February; Romania communist, 9 "Sov Divizia Infanterie" |
+| The same, played as Germany (popups unanswered) | no crash; ran on to 6 January |
+| + the Soviets given control of states 78, 766 and 46 (Bucharest) first; Romania at 79% surrender progress | no crash |
+| + 16 German divisions teleported into state 82 first | no crash |
+| + the Soviet decision `SOV_take_romania` active (its targeted modifier against Romania) | no crash |
+| **The real flow**, start moved to 2 Sep 1944 (test copy only), Axis armies moved out of states 78, 766, 192, 834, 198 and the Soviets given control, then `ROM_surrender_soviet` and `SOV_take_romania` activated: the 12 days ran (3–14 September), Romania switched on 14 September at 18:00, played as Germany | no crash; ran on to 21 September |
+
+Findings on the way:
+- `white_peace = ROM` is reported by the game as peace conferences
+  (`on_peaceconference_started`) with the whole Allied side and the Soviet
+  side as winners against Romania. The same thing happens at game setup
+  with the Netherlands. It did not crash.
+- Creating the eight divisions in Bucharest while the Soviets control it
+  does not crash.
+- If Romania's surrender progress falls below 2% during the 12 days, the
+  decision cancels itself (the author's `cancel_trigger`); a first attempt
+  at the real flow ended that way.
+- Bulgaria's switch (`BUL_mod.txt`) is built the same way; Finland's
+  (`FIN_mod.txt`) too but without becoming a Soviet puppet, and Finland has
+  no crash reports.
+
+**So the effect and the decisions do not crash by themselves.** What a
+real game has and these tests did not: battles going on in Romania, German
+and Romanian divisions mixed in them, possibly Romanian divisions lent to
+the player, and whatever the player clicked. A crash folder from an
+affected game (`Documents/Paradox Interactive/Hearts of Iron IV/crashes`),
+read with `tools/crash_site.py`, would show the place; or a test game
+played on to August 1944.
+
 ### D. Volkssturm focus: `common/national_focus/germany.txt:39306`
 
 `GER_form_volksturm` creates a template and 32 divisions. Some divisions force

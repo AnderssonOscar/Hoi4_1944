@@ -1,15 +1,15 @@
 # Verification of the fixes and the 1.19.3 update (2026-09-27)
 
-Everything below can be re-run: `python tools/verify_update.py` (80 checks,
+Everything below can be re-run: `python tools/verify_update.py` (81 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 80 checks pass
+## Result: all 81 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
 | Integrity | mod/ fully committed; all 988 mod files byte-identical to the commits | PASS |
 | Integrity | a fresh clone reproduces all 988 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
-| Integrity | Steam Workshop copy never touched: either the July baseline (914/914 files) or, since 29 Sep 2026, the author's own published update (= this package at 470916b plus his README, ignoring line endings; calibrated: it fails against the wrong version) | PASS |
+| Integrity | Steam Workshop copy never touched: either the July baseline (914/914 files) or, since 29 Sep 2026, one of the author's own published updates (29 Sep = this package at 470916b, 30 Sep = this package at bb94b9e, each plus his README, ignoring line endings; calibrated: it fails against the wrong version) | PASS |
 | Scope | exactly the 113 intended files changed (33 edited, 3 deleted, 77 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 29 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
@@ -31,6 +31,7 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | Leningrad taken | D: fires once, from 1944, when we hold the city (3151); the game's news event news.103 also fires; Oscar's illustration, described as such in its .gfx; 3 texts. Calibrated with 3 planted errors (1 for the first version). Runtime: not on day one; fired the day a test gave us the city | PASS |
 | The Crimea | C: the popup on day one; evacuate (the popup starts the decision: 50 PP, 30 days, to Constanta, Odessa, Mykolaiv or the capital, each condition naming its destination; Romanian allies too) or hold (Fortress Sevastopol, the author's Festung values); AI 25/75, never after holding; 14 texts. Calibrated with 7 planted errors (one missed by the first version; the check was strengthened). Runtime: all German and Romanian divisions moved from the Crimea to Constanta, also through the decision and with AI Germany; the popup's option charges 50 PP and works with 20 | PASS |
 | The invasion beaten back | Y (52 scenario/calibration checks): a landing is noted when, from 1 June 1944, an enemy holds part of Normandy, Brittany, Nord-Pas-de-Calais or Flanders (the author's D-Day states, all German at the start); when we hold all four again the event follows a day later; once; no effect; Oscar's picture; 3 texts. Runtime (date lowered for the test): landing noted, beaten back noted the next day | PASS |
+| SS anger switched off | AA: in the SS recruitment events no line changes `wehrmacht_anger` or `SS_anger` or calls `SS_resolve_effects_ss` (77 comment lines, as in the base game's current file); the file otherwise byte-identical. Calibrated with three planted errors. In the game: both counters stay 0 through January 1944 while the AI still takes the decisions (before: 20 and −10) (CHANGELOG section 30) | PASS |
 | The author's D-Day decisions | OL: `common/decisions/Allies_1944.txt` byte-identical to the July 2026 version (Codex's change reverted at Oscar's request). Calibrated: an edited date line makes it fail | PASS |
 | UK start | E: Poland, Yugoslavia, the Philippines and Belgium not in the history faction list; Burma and the Philippines not colonies and Yugoslavia not an exile in history; `on_startup` has the six exiles and the Singapore transfer. Calibrated with 4 planted errors (each made it fail). In the game: the UK starts and runs into 3 Jan 1944; the Workshop version still crashes | PASS |
 | Game's error.log | each fixed error type is gone: duplicate states 3→0, special-forces techs 93→0, Netherlands focuses 39→0, decisions 2→0, event 1→0, renamed IDs 6→0 | PASS |

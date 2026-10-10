@@ -25,6 +25,7 @@ history runs at startup). Compare them with any diff tool.
 | 28-after-ss-names_error.log | after the SS names fix (CHANGELOG section 29: two SS focuses completed at game start instead of in the 1944 history); identical to 26 | 115 |
 | 28-ss-division-names-before.txt, 28-ss-division-names-after.txt | not error logs: every division on the SS name list in a German game's save, read with `tools/list_ss_divisions.py`, before (e09019a) and after the fix (CHANGELOG section 29) | 22 divisions each |
 | 29-pull-request-4-v18-clone_error.log | a fresh clone of pull request #4's branch with the SS names fix (the author's layout, commit ae5135e) with Git's default settings; identical to 28 | 115 |
+| 30-after-ss-anger-off_error.log | after the SS / Wehrmacht anger system was switched off (6a1dad4, CHANGELOG section 30); identical to 28 | 115 |
 | 26-after-overlord-revert_error.log | after Codex's Overlord change was reverted (5ac05e9); identical to 25 | 115 |
 | 25-after-dday-and-play-test-fixes_error.log | Codex startup check of the completed content, Overlord gates and Allied landing detection (46c665a); identical to 22 after removing wall-clock timestamps | 115 |
 | 24-after-four-additions_error.log | after Wiking before Warsaw, the first bomb, Leningrad and the Crimea (a2790cb to 204d7de); identical to 22 | 115 |
