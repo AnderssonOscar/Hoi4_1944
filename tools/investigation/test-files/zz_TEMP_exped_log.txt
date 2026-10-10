@@ -1,0 +1,14 @@
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			if = { limit = { received_expeditionary_forces = { sender = ROM value > 0 } } log = "XP day [GetDateText] GER commands divisions lent by ROM" }
+			if = { limit = { received_expeditionary_forces = { sender = HUN value > 0 } } log = "XP day [GetDateText] GER commands divisions lent by HUN" }
+			if = { limit = { received_expeditionary_forces = { sender = BUL value > 0 } } log = "XP day [GetDateText] GER commands divisions lent by BUL" }
+			if = { limit = { received_expeditionary_forces = { sender = ITA value > 0 } } log = "XP day [GetDateText] GER commands divisions lent by ITA" }
+			if = { limit = { received_expeditionary_forces = { sender = FIN value > 0 } } log = "XP day [GetDateText] GER commands divisions lent by FIN" }
+			if = { limit = { received_expeditionary_forces = { sender = SLO value > 0 } } log = "XP day [GetDateText] GER commands divisions lent by SLO" }
+			if = { limit = { received_expeditionary_forces = { sender = CRO value > 0 } } log = "XP day [GetDateText] GER commands divisions lent by CRO" }
+			log = "XP day [GetDateText] checked for lent divisions"
+		}
+	}
+}

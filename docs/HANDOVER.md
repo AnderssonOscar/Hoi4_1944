@@ -139,8 +139,8 @@ mod, so every change must be easy for him to check himself.
 | # | Report | Status |
 |---|---|---|
 | A | "Crashes at a certain date" | **Not explained.** The first suspect (`mod/common/scripted_effects/japan_scripted_events_mod.txt` lines 221 and 328, corrected in `e20698c`) was tested in the game on 10 October 2026: the old lines do not crash |
-| B | Crash when Bulgaria switches sides | No cause found by reading |
-| C | Crash in Romania's 12-day capitulation decision | No cause found by reading |
+| B | Crash when Bulgaria switches sides | No cause found by reading; the real decision run in the game on 10 October 2026: no crash (INVESTIGATION section 10) |
+| C | Crash in Romania's 12-day capitulation decision | No cause found by reading; nine setups run in the game on 10 October 2026: no crash (INVESTIGATION sections 2C and 10) |
 | D | Crash on completing the Volkssturm focus | No cause found by reading. The focus's unit creation was redesigned (`e6c0034`, bug-check fix `d9d7888`, CHANGELOG section 6); the crash was never reproduced |
 | E | "Playing UK crashes" | **Fixed** in `e578b10`: Allied countries with no land capitulated during the game setup, and the UK's "government in exile" popup crashed (CHANGELOG section 15) |
 | F | Sometimes no Allied D-Day | Not explained. Codex's change to the Overlord decisions was reverted at Oscar's request (CHANGELOG 27–28) |

@@ -731,3 +731,59 @@ The SS fix has its load test (log 30, 115 lines, identical to log 28).
   (the SS fix) and `11faa47` (docs). Oscar decides when they go to GitHub
   and into a pull request (PR #4 is merged, so it needs a new one, built
   like the earlier ones).
+
+**10 October, night: the old crash reports, tested one by one.** Oscar's
+instruction was: keep the SS fix local ("we will push later") and go on
+looking for bugs. Everything below is written up with its tables in
+`docs/INVESTIGATION.md` section 10; the test files are in
+`tools/investigation/test-files/`. Nothing in `mod/` changed.
+
+| Report | What was run | Result |
+|---|---|---|
+| "Crashes at a certain date" | the two original Ichi-Go lines, and the base game's wrong-state fort lines | no crash, nothing in error.log. **The Ichi-Go change (CHANGELOG section 1) is a correction, not a crash fix.** All documents that said otherwise are corrected |
+| "Crashes every time Germany loses" (a Japan player) | Germany made to capitulate for real (armies moved to Budapest, all its states to the Soviets), as Switzerland and as Japan; then the author's `SOV_attack_japan` effect, with and without Manchukuo | no crash |
+| "Crashes in 1946 or a bit later" | a game from 20 January to 1 February 1946 | no crash |
+| "Crashes when Romania switches sides" | the switch on a day of heavy fighting; Germany's answer "Launch Operation Margarethe II" (all AI, and in the real September flow played as Germany) | no crash |
+| "Crashes when Bulgaria switches sides" | Finland's switch, Romania's switch, then Bulgaria's real decision and its 6 days, played as Germany | no crash |
+
+Things found on the way and **left as they are** (the author's design,
+not crashes):
+
+- `SOV_attack_japan` declares war on Manchukuo, not Japan. If Manchukuo is
+  gone, the news is shown and no war starts.
+- Germany's "Operation Margarethe II" answer hands half of Romania's army,
+  three quarters of its air force and its navy to the Soviet Union
+  (`transfer_units_fraction`, `target = SOV`).
+- Bulgaria turns fascist at 04:00 on the second day of every game, in the
+  author's version too.
+- De Gaulle's `expire = "1946.1.26.1"` does nothing; the game ignores it.
+
+How to make Germany capitulate by script, for the next test: move every
+non-Soviet army out of the German-held states first (`teleport_armies` to
+a state of an ally, here Budapest, state 43), then give every German-held
+state to the Soviets (`set_state_controller_to`). Without the first step
+the divisions take their provinces back within the hour and nothing
+happens. The capitulation and the peace conference then come at 01:00.
+
+**The one idea left for the Romania and Bulgaria crashes** is divisions
+lent to the player (expeditionary forces) at the moment the switch deletes
+or transfers them. It cannot be set up by script, and in 15 game days no
+AI partner lent Germany a division by itself. It needs a person: start as
+Germany, ask Romania for divisions in the diplomacy screen, let
+`zz_TEMP_rom_switch_test_G.txt` (or a copy with a fixed date) run the
+switch. Not asked of Oscar yet.
+
+**Use the runner in the package, not a copy in a temp folder.** During the
+last-but-two run of this evening the session's temp folder was cleaned
+while the game was running: files with an old date were deleted, among
+them the runner's backup of Oscar's `autosave.hoi4` and the old logger
+file. His real autosave was **not** harmed (the game had written no
+autosave in that run; checked: 63,423,717 bytes, 29 September, as
+before), and the run's logs were saved by hand. From then on the runs used
+`tools/investigation/politics_run.ps1`, which keeps its backups and
+output in `tools/investigation/out/` (ignored by git, not a temp folder).
+
+**Local commits not yet pushed or offered to the author** (branch `main`;
+the fork's `update-package` is at `08dc45c`): `6a1dad4` the SS fix,
+`11faa47`, `5d774a0`, `3d3a994`, `cfc5d2b` and the commit that adds this
+text (all documents and test files). Oscar decides when they go out.

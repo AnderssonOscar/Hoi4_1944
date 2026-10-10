@@ -42,8 +42,8 @@ source of truth, and the old `.git` was not used for anything.
 | # | Reported bug | Status | Confidence |
 |---|---|---|---|
 | A | "Crashes at a certain date" | **Not explained.** The first suspect, the Ichi-Go scripts (Japan vs China), was corrected in commit `e20698c`, but a test in the game on 10 October 2026 showed the old lines do not crash | It is a script mistake; it is not this crash |
-| B | Crash when Bulgaria switches sides | Code read, no definite cause found | Not yet identified |
-| C | Crash in Romania's 12-day capitulation decision | Code read, no definite cause found | Not yet identified |
+| B | Crash when Bulgaria switches sides | Code read, no definite cause found. The real decision was run in the game on 10 October 2026 after Finland's and Romania's switches (section 10): no crash | Not reproduced |
+| C | Crash in Romania's 12-day capitulation decision (three more reports in October) | Code read, no definite cause found. Run in the game in nine setups on 10 October 2026 (sections 2C and 10), also during fighting and with Germany's "Operation Margarethe II" answer: no crash | Not reproduced |
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out); focus effect redesigned 2026-09-27 (CHANGELOG §6) | Not yet identified |
 | E | "Playing UK crashes the game" | **Found and fixed** (commit `e578b10`, CHANGELOG §15): Allied countries with no land capitulate during the game setup, and the "government in exile" popup for the UK crashes the game | Certain: reproduced with the Workshop version and gone after the fix |
 | F | Sometimes the Allies do not launch D-Day | Not explained. Codex's changes to the Overlord gates were reverted at Oscar's request; Britain's and the USA's surrender progress measured 0 on 1 January 1944 (CHANGELOG 27–28) |
@@ -796,3 +796,41 @@ switch deletes or transfers them (`delete_units` in the decision,
 `transfer_units_fraction` in the event). That only happens in a real game
 with a person in Germany's faction. The reports do not say which country
 was played.
+
+**Lent divisions were looked for and did not appear by themselves.** In
+the Bulgaria game below (played as Germany, 15 game days) a daily check
+with the game's own trigger `received_expeditionary_forces` found no
+division lent to Germany by Romania, Hungary, Bulgaria, Italy, Finland,
+Slovakia or Croatia (`zz_TEMP_exped_log.txt`). So an AI partner does not
+lend on its own in two weeks; a player has to ask for the divisions in
+the diplomacy screen. A test of that needs a person: start as Germany, ask
+Romania for divisions, and let a test file run the switch.
+
+**Romania's switch on a day of fighting.** One more thing the six setups
+of section 2C did not have was a battle. `zz_TEMP_rom_switch_test_G.txt`
+runs the same `remove_effect` on the first day on which Romania loses more
+than 150 men (played as Switzerland, all countries AI). That was
+10 January 1944: 4,127 Romanian casualties since the day before. The
+effect ran, Romania went from 46 divisions to 17 (its "Divizia Infanterie"
+deleted, the eight new ones created) and became communist. **No crash**;
+ran on to 16 January.
+
+### B, continued. Bulgaria: the real decision, after Finland and Romania
+
+`zz_TEMP_bul_switch_test_H.txt`, start moved to 2 September 1944, **played
+as Germany**. The order of a real autumn 1944:
+
+| Game day | What was run | Result |
+|---|---|---|
+| 3 Sep | the `remove_effect` of `FIN_surrender_soviet`, copied from `FIN_mod.txt` | Finland at war with Germany from then on |
+| 4 Sep | the `remove_effect` of `ROM_surrender_soviet`, copied from `ROM_mod.txt` | Romania a subject of the Soviet Union |
+| 5 Sep | the author's real decision `BUL_surrender_soviet` activated | ran its 6 days (6 to 10 Sep) |
+| 11 Sep | (the decision's own `remove_effect`) | Bulgaria became the "Socialist Republic of Bulgaria", communist, a subject of the Soviet Union, at war with Germany |
+
+**No crash**; the game ran on to 16 September. Not covered, as for
+Romania: divisions lent to a player, and whatever the player clicked.
+
+Seen in every game, also in the author's own version (baseline `253cea1`):
+Bulgaria starts non-aligned and becomes fascist ("Legionnaires Bulgaria")
+at 04:00 on the second day. Not looked into further; nobody has reported
+it.
