@@ -205,6 +205,12 @@ allowed["mod/events/mod_events.txt"] = lambda l: l.strip() == "6 = {"
 for f in ("mod/history/units/GER_1944.txt", "mod/history/units/GER_1944_nsb.txt",
           "mod/common/units/names_divisions/GER_names_divisions.txt", "mod/events/ss_recruitment_event.txt"):
     allowed[f] = lambda l: False  # Wiking + Nordland: pure additions, nothing of the author's removed
+# SS anger switched off (section 30): these lines of the author's older copy were turned into comments (check AA)
+allowed["mod/events/ss_recruitment_event.txt"] = lambda l: l.strip() in (
+    "add_to_variable = { var = wehrmacht_anger value = 5}", "add_to_variable = { var = wehrmacht_anger value = 10}",
+    "subtract_from_variable = { var = SS_anger value = 5}", "subtract_from_variable = { var = SS_anger value = 10}",
+    "subtract_from_variable = { var = wehrmacht_anger value = 5}", "add_to_variable = { var = SS_anger value = 10}",
+    "SS_resolve_effects_ss = yes")
 allowed["mod/.gitattributes"] = lambda l: l in ("# Auto detect text files and perform LF normalization", "* text=auto")
 UK_FIX_REMOVED = {  # the UK start fix (section 15): these lines were turned into comments, nothing else removed
     "mod/history/countries/ENG - Britain.txt": {"add_to_faction = PHI", "add_to_faction = POL", "add_to_faction = YUG", "\tset_autonomy = {",
@@ -529,6 +535,41 @@ check("Z  SS names at the 1944 start: the two SS focuses whose rewards create 11
       and canon(parse_bytes(ss_start)[0]) == ss_expect and ss_start.count(b"NOT = { has_start_date < 1943.12.30 }") == 2
       and ss_callers == ["mod/common/on_actions/GER_ss_names_on_actions.txt"],
       str(ss_callers))
+# Section 30: the SS / Wehrmacht "anger" system is switched off in the recruitment events of the mod's older copy of
+# events/ss_recruitment_event.txt, as it is in the base game's current file (it could end in Hitler's assassination
+# and a civil war). 77 lines became comments; nothing else in the file changed.
+SS_ANGER_PATTERNS = (rb"add_to_variable = \{ var = wehrmacht_anger value = 5\}", rb"add_to_variable = \{ var = wehrmacht_anger value = 10\}",
+                     rb"subtract_from_variable = \{ var = SS_anger value = 5\}", rb"subtract_from_variable = \{ var = SS_anger value = 10\}",
+                     rb"subtract_from_variable = \{ var = wehrmacht_anger value = 5\}", rb"add_to_variable = \{ var = SS_anger value = 10\}",
+                     rb"SS_resolve_effects_ss = yes")
+SS_ANGER_NOTE = b" # switched off as in the base game's current file (docs/CHANGELOG.md section 30)"
+
+
+def ss_recruitment_part(raw):
+    """The recruitment events of the file: everything before the 'resolution' events, plus the alt-history part."""
+    ls = raw.replace(b"\r\n", b"\n").split(b"\n")
+    a = next(i for i, l in enumerate(ls) if l.startswith(b"# wehrmacht resolution events"))
+    b = next(i for i, l in enumerate(ls) if l.startswith(b"# for alt-history stuff"))
+    return ls[:a] + ls[b:]
+
+
+ss_evr = current("mod/events/ss_recruitment_event.txt")
+ss_part = ss_recruitment_part(ss_evr)
+ss_active = [sum(1 for l in ss_part if re.fullmatch(rb"\s*" + p + rb"\s*", l)) for p in SS_ANGER_PATTERNS]
+ss_off = [sum(1 for l in ss_part if re.fullmatch(rb"\s*#" + p + re.escape(SS_ANGER_NOTE), l)) for p in SS_ANGER_PATTERNS]
+ss_prev = re.sub(rb"(?m)^([ \t]*)#(" + b"|".join(SS_ANGER_PATTERNS) + rb")" + re.escape(SS_ANGER_NOTE) + rb"(\r?)$", rb"\1\2\3", ss_evr)
+van_ss = ss_recruitment_part(vanilla("events/ss_recruitment_event.txt"))
+van_wehr_calls = sum(1 for l in van_ss if re.fullmatch(rb"\s*SS_resolve_effects_wehrmacht = yes\s*", l))
+van_off = [sum(1 for l in van_ss if re.fullmatch(rb"\s*#\s*" + p + rb"\s*", l)) for p in SS_ANGER_PATTERNS]
+check("AA SS anger switched off: in the recruitment events (ss_recruitment_event.1-.8, ss_recruitment_alternate.1-.3) no line "
+      "changes wehrmacht_anger or SS_anger or calls SS_resolve_effects_ss any more (7 kinds x 11 lines are comments with a note); "
+      "with those 77 comments undone the file is byte-identical to 08dc45c; the base game's own file has the same lines "
+      "commented out (at least 10 of each) and no active SS_resolve_effects_wehrmacht call; braces balanced, CRLF",
+      ss_active == [0] * 7 and ss_off == [11] * 7
+      and ss_prev == git("show", "08dc45c:mod/events/ss_recruitment_event.txt") and ss_prev != ss_evr
+      and all(n >= 10 for n in van_off) and van_wehr_calls == 0
+      and ss_evr.count(b"{") == ss_evr.count(b"}") and ss_evr.count(b"\n") == ss_evr.count(b"\r\n"),
+      f"active {ss_active}, commented {ss_off}, base game commented {van_off}")
 
 op = {k: current("mod/" + f).decode("ascii") for k, f in (
     ("eff", "common/scripted_effects/GER_1945_operations_effects.txt"), ("dec", "common/decisions/GER_1945_operations_decisions.txt"),
