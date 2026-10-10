@@ -138,7 +138,7 @@ mod, so every change must be easy for him to check himself.
 
 | # | Report | Status |
 |---|---|---|
-| A | "Crashes at a certain date" | Strong suspect: `mod/common/scripted_effects/japan_scripted_events_mod.txt` lines 221 and 328. **Fixed** in `e20698c` (untested in game) |
+| A | "Crashes at a certain date" | **Not explained.** The first suspect (`mod/common/scripted_effects/japan_scripted_events_mod.txt` lines 221 and 328, corrected in `e20698c`) was tested in the game on 10 October 2026: the old lines do not crash |
 | B | Crash when Bulgaria switches sides | No cause found by reading |
 | C | Crash in Romania's 12-day capitulation decision | No cause found by reading |
 | D | Crash on completing the Volkssturm focus | No cause found by reading. The focus's unit creation was redesigned (`e6c0034`, bug-check fix `d9d7888`, CHANGELOG section 6); the crash was never reproduced |

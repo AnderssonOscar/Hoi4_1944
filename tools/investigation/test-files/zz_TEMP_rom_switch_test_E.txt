@@ -1,0 +1,31 @@
+on_actions = {
+	on_daily_ROM = {
+		effect = {
+			if = {
+				limit = { NOT = { has_global_flag = RT_rom_switch_test_e } }
+				set_global_flag = RT_rom_switch_test_e
+				# variant E: the real decisions, taken the real way. The Soviets get Bessarabia and northern Bukovina
+				# (Romania's surrender progress rises) and the three Ukrainian states their own decision asks for;
+				# then both decisions are activated as the AI would: Romania's 12-day decision and the Soviet offensive.
+				SOV = { set_state_controller = 78 }
+				SOV = { set_state_controller = 766 }
+				SOV = { set_state_controller = 197 }
+				SOV = { set_state_controller = 203 }
+				SOV = { set_state_controller = 202 }
+				log = "RT [GetDateText] variant E: Soviets given states 78, 766, 197, 203, 202; ROM surrender progress [?ROM.surrender_progress]"
+				SOV = { activate_decision = SOV_take_romania }
+				ROM = { activate_decision = ROM_surrender_soviet }
+				log = "RT [GetDateText] variant E: both decisions activated"
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "RT day [GetDateText] ROM ruling [ROM.GetRulingIdeology], surrender progress [?ROM.surrender_progress]"
+			if = { limit = { ROM = { has_decision = ROM_surrender_soviet } } log = "RT day [GetDateText]   ROM_surrender_soviet is running" }
+			if = { limit = { SOV = { has_decision = SOV_take_romania } } log = "RT day [GetDateText]   SOV_take_romania is running" }
+			if = { limit = { ROM = { is_subject_of = SOV } } log = "RT day [GetDateText]   ROM is a subject of SOV" }
+			if = { limit = { ROM = { is_in_faction_with = GER } } log = "RT day [GetDateText]   ROM is in Germany's faction" }
+		}
+	}
+}

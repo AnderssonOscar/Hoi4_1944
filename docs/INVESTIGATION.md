@@ -41,13 +41,15 @@ source of truth, and the old `.git` was not used for anything.
 
 | # | Reported bug | Status | Confidence |
 |---|---|---|---|
-| A | "Crashes at a certain date" | **Strong suspect found and fixed** (commit `e20698c`): Ichi-Go scripts (Japan vs China) | High that it's a bug, medium that it's *this* crash |
+| A | "Crashes at a certain date" | **Not explained.** The first suspect, the Ichi-Go scripts (Japan vs China), was corrected in commit `e20698c`, but a test in the game on 10 October 2026 showed the old lines do not crash | It is a script mistake; it is not this crash |
 | B | Crash when Bulgaria switches sides | Code read, no definite cause found | Not yet identified |
 | C | Crash in Romania's 12-day capitulation decision | Code read, no definite cause found | Not yet identified |
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out); focus effect redesigned 2026-09-27 (CHANGELOG §6) | Not yet identified |
 | E | "Playing UK crashes the game" | **Found and fixed** (commit `e578b10`, CHANGELOG §15): Allied countries with no land capitulate during the game setup, and the "government in exile" popup for the UK crashes the game | Certain: reproduced with the Workshop version and gone after the fix |
 | F | Sometimes the Allies do not launch D-Day | Not explained. Codex's changes to the Overlord gates were reverted at Oscar's request; Britain's and the USA's surrender progress measured 0 on 1 January 1944 (CHANGELOG 27–28) |
 | G | *(not reported; found in self-review)* | Three Australian states were defined twice. **Fixed** (commit `ce4f33a`) | Certain it was a defect; no known crash link |
+| H | "The game crashes every time Germany loses" (played as Japan) | Tested in the game on 10 October 2026 (section 10): Germany's capitulation, the peace conference and the Soviet attack on Manchukuo that follows all ran without a crash | Not reproduced |
+| I | "When the game reaches 1946 or a bit later, it will crash" | Looked at what is dated 1946 in the mod and tested the weeks around it (section 10) | Not reproduced |
 
 The honest summary: reading the scripts produced **one** well-supported bug.
 The UK crash (E) was found later by reproducing it in the game. The other
@@ -116,6 +118,27 @@ during" another event on screen, like Romania's or Bulgaria's switch in summer
 "wrong-state province modifier" and "crash" rests on the author's own `#fix`
 edits, not on a crash log.
 
+**Tested in the game on 10 October 2026: the lines do not crash.** A
+temporary on_actions file in the test copy ran the two original lines,
+copied from the baseline, on game days of their own (HOI4 1.19.3, all
+DLCs, played as Switzerland), with a log line before and after each:
+
+| Game day | What was run | Result |
+|---|---|---|
+| 1 Jan 1944 | control: the same modifier in the right state (state 599, province 1023) | runs |
+| 2 Jan | `599 = { add_province_modifier = { ... id = 4028 } }` (the old line 328) | no crash, no line in error.log |
+| 3 Jan | `620 = { remove_province_modifier = { ... id = 7167 } }` (the old line 221) | no crash, no line in error.log |
+| 4 Jan | the base game's `HOL_reinforce_java` forts (state 335, provinces 7381 and 4608 of other states; section 9) | no crash, no line in error.log |
+| 5 Jan | the base game's Japanese focus forts (states 611 and 609, provinces of states 1039 and 610; section 9) | no crash, no line in error.log |
+
+The game ran on to 6 January. So in this version of the game, an effect
+that names a province outside its state is silently accepted or ignored.
+**The Ichi-Go change is therefore a correction, not a crash fix**, and the
+"crashes at a certain date" report has no explanation. The reasoning
+under "Why it matches" above is kept as it was written, but its
+conclusion did not hold. Not covered by the test: a battle going on in the
+province at that moment.
+
 **Fix (applied in commit `e20698c`; the same change is kept as
 `docs/proposed-fixes/0001-ichi-go-wrong-state-provinces.patch`):**
 
@@ -150,7 +173,8 @@ checkers before and after. Wrong-state references went from 2 to 0, 7167 dropped
 out of "removed but never added", nothing new appeared, and the structure check
 output was byte-identical. `git diff --stat` shows 1 file, 2 lines. Line endings
 are preserved (CRLF: 422 before, 422 after), and the patch applies cleanly to
-the baseline. **Not tested in game.**
+the baseline. **Not tested in game** (at that time; see "Tested in the
+game on 10 October 2026" above).
 
 **How to verify:** play as any country except Japan or China and run past
 August 1944. Or, faster, with the console on the April 1944 save: set
@@ -641,3 +665,58 @@ Oscar clarified that the Allies sometimes do not land. This is separate
 from the disabled news popup. Two decision blockers and an event-detection
 false positive are corrected in CHANGELOG section 27. See
 [CODEX-CONTINUATION.md](CODEX-CONTINUATION.md) for exact scope and verification.
+
+## 10. More scripted test games (10 October 2026)
+
+Same method as in section 2C: HOI4 1.19.3 with all DLCs, the test copy of
+the mod (never the Steam folder), speed 5, popups left unanswered. A
+temporary on_actions file in the test copy runs the thing to be tested and
+writes one log line a day, so the log shows whether the game went on. The
+files are kept in `tools/investigation/test-files/`; the runner is
+`tools/investigation/politics_run.ps1`. "No crash" below always means: the
+daily line kept coming until the run was stopped, and no new folder
+appeared under `Documents/Paradox Interactive/Hearts of Iron IV/crashes`.
+
+### H. "The game crashes every time Germany loses"
+
+Reported on 2 August by someone playing Japan, so against the author's
+version, before any of the changes in this package.
+
+| Test file | Setup | Result |
+|---|---|---|
+| `zz_TEMP_germany_loses_test.txt` | 2 Jan 1944: every state Germany controls is handed to the Soviets (played as Switzerland) | Surrender progress 100% for a moment, but **no capitulation**: the divisions standing there took their provinces back within the hour (72% the next day). No crash; ran to 7 Jan |
+| `zz_TEMP_germany_loses_test2.txt` | The same, but all non-Soviet armies are first moved to Brandenburg, which Germany keeps | 95.5%, no capitulation. No crash; ran to 7 Jan |
+| `zz_TEMP_germany_loses_test3.txt` | All non-Soviet armies in German-held states are first moved to Budapest, then every German-held state goes to the Soviets (played as Switzerland) | **Germany capitulated** on 3 Jan at 01:00; the peace conference ran in the same hour. No crash; ran to 8 Jan |
+| the same, with `zz_TEMP_human_log.txt` | The same, **played as Japan** | Germany capitulated on 3 Jan. No crash; ran to 8 Jan |
+| + `zz_TEMP_manchuria_test.txt` | As Japan: Germany capitulates on 3 Jan; on 5 Jan the `remove_effect` of the author's decision `SOV_attack_japan` is run, copied from `SOV_mod.txt` | The Soviets declared war on Manchukuo; Japan and Manchukuo were at war with them from then on. No crash; ran to 9 Jan |
+| + `zz_TEMP_manchuria_annex.txt` | The same, but Japan annexes Manchukuo the day before | The effect ran and **no war started** (see below). No crash; ran to 9 Jan |
+
+What was seen on the way:
+
+- In this mod Japan is not in Germany's faction. A Japanese player takes
+  no part in Germany's peace conference.
+- The conference in these tests was the game's own, with the AI deciding:
+  the Soviet side annexed Slovakia, Albania, Croatia and the two
+  Reichskommissariats, and Germany was left in existence under a communist
+  government. The mod has no peace conference files of its own.
+- The scripts added in this package that react to a collapsing Germany
+  (Festung Berlin, the Nero Decree, the 1945 operations) were loaded in
+  all six games; the game evaluated them once a day and on every change
+  of state control.
+- **`SOV_attack_japan` (the author's, `SOV_mod.txt` line 614).** An AI
+  Soviet Union takes it after 1 January 1945 once it is no longer at war
+  with Germany; 90 days later it cancels the non-aggression pacts, declares
+  war on **Manchukuo** and shows the news "Soviet invasion of Manchuria".
+  The war reaches Japan only because Manchukuo is Japan's subject. If
+  Manchukuo no longer exists on that day, the game does not crash, but no
+  war starts at all: the news is shown and the Soviets stay at peace with
+  Japan. That is a gap in the script, not a crash, and it is **left as it
+  is** (the author's design; the smallest repair would be to declare the
+  war on Japan when Manchukuo does not exist).
+
+**Not reproduced.** What a real game has and these tests did not: a Germany
+that collapses through fighting, with battles going on when the
+capitulation comes; a Japanese player far into the game, with other
+focuses, puppets and wars; and the months after the peace (the tests ran
+on for five or six days). A crash folder from an affected game is still
+the quickest way to the place (`tools/crash_site.py`).

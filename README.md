@@ -50,8 +50,8 @@ yourself"). **None of the update has been play-tested yet.**
 - **Fixes:**
   - starting as the United Kingdom crashed the game at once (also with the
     Steam version);
-  - Ichi-Go province effects that ran in the wrong states (a suspected crash
-    cause);
+  - Ichi-Go province effects that ran in the wrong states (a correction;
+    tested on 10 October 2026, the old lines did not crash the game);
   - three state files defined twice;
   - "Königsberg in Ruins" removing forts in Africa;
   - the Stettin fort and the Antwerp sabotage running in the wrong states;

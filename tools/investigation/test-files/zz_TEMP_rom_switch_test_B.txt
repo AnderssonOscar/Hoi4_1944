@@ -1,0 +1,217 @@
+on_actions = {
+	on_daily_ROM = {
+		effect = {
+			if = {
+				limit = {
+					date > 1944.1.2
+					NOT = { has_global_flag = RT_rom_switch_test_b }
+				}
+				set_global_flag = RT_rom_switch_test_b
+				# variant B: the Soviets already hold Bessarabia, northern Bukovina and Bucharest (as in August 1944)
+				SOV = { set_state_controller = 78 }
+				SOV = { set_state_controller = 766 }
+				SOV = { set_state_controller = 46 }
+				log = "RT [GetDateText] variant B: Soviets given control of states 78, 766 and 46 (Bucharest); ROM surrender progress [?ROM.surrender_progress]"
+				log = "RT [GetDateText] ROM switch test: BEFORE (ROM ruling [ROOT.GetRulingIdeology], capitulated or not is checked by the effect)"
+
+
+			if = {
+				limit = {
+					has_capitulated = no
+				}
+				
+			every_country = {
+				limit = {
+					 has_war_with = ROM 
+				OR = { 
+					is_faction_leader = yes 
+					is_in_faction = no
+				}
+			 }
+				white_peace = ROM 
+			}
+
+			GER = { remove_from_faction = ROM }
+
+			SOV = { transfer_state = 78 }
+			SOV = { transfer_state = 766 }
+
+			SOV = { transfer_state = 192 }
+			SOV = { transfer_state = 834 }
+			SOV = { transfer_state = 198 }
+		
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 82 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 82 }
+		}
+
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 84 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 84 }
+		}
+
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 83 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 83 }
+		}
+
+			set_politics = {
+				ruling_party = communism
+				last_election = "1940.12.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+
+			set_popularities = {
+				neutrality = 20
+				democratic = 20
+				fascism = 20
+				communism = 40
+			}
+
+			set_cosmetic_tag = ROM_communism_1944
+
+			add_timed_idea = { idea = mod_switched_side days = 60 }
+
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
+				}
+				SOV = {
+					set_autonomy = {
+						target = ROM
+						autonomous_state = autonomy_integrated_puppet
+						end_wars  = no 
+						end_civil_wars = no
+					}
+				}
+				else = {
+					SOV = {
+					set_autonomy = {
+							target = ROM
+							autonomous_state = autonomy_puppet
+							end_wars  = no 
+							end_civil_wars = no
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					is_ai = yes
+					ROM = { has_template = "Divizia Infanterie" }
+				}
+
+				ROM = { delete_units = { division_template = "Divizia Infanterie" disband = yes } }
+			}
+
+			add_stability = -0.21
+			add_war_support = -0.50
+
+			division_template = {
+				name = "Sov Divizia Infanterie"
+				is_locked = no
+				priority = 2
+				division_names_group = ROM_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+
+
+			46 = {
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.21 start_equipment_factor = 1" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 1" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.91" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+				
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.12 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+			}
+
+
+
+
+
+			GER = { remove_resource_rights = 46 } 
+			
+			SOV = { add_to_faction = ROM }
+			
+
+		#ROM = {
+		#	add_to_war = {
+		#		targeted_alliance = SOV
+		#		enemy = GER
+		#		}
+		#	}
+		}
+	
+				log = "RT [GetDateText] ROM switch test: AFTER (ROM ruling [ROOT.GetRulingIdeology])"
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "RT day [GetDateText] alive; ROM ruling [ROM.GetRulingIdeology]"
+		}
+	}
+}

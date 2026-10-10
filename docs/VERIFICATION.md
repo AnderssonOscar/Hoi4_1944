@@ -232,9 +232,12 @@ rifles). error.log identical to log 18
 
 ## Not verified (so no guarantee here)
 
-- **Actual play.** Only loading the game and its 1944 setup was tested. The
-  Ichi-Go fix and the reported crashes (Bulgaria, Romania, Volkssturm) can
-  only be confirmed by playing.
+- **Actual play.** Loading the game and its 1944 setup was tested, and
+  since 10 October 2026 a number of short scripted games (INVESTIGATION.md
+  sections 2A, 2C and 10). None of the reported crashes (a certain date,
+  Bulgaria, Romania, Volkssturm, Germany losing, 1946) was reproduced, so
+  none of them can be called fixed. The Ichi-Go change is a correction,
+  not a crash fix: its old lines did not crash when run.
 - **Playing without some DLCs.** An attempt to switch DLCs off failed, so no
   claim is made. Test through the Paradox launcher.
 - **Three heavily edited files not merged with 1.19.3:** decisions/GER.txt,

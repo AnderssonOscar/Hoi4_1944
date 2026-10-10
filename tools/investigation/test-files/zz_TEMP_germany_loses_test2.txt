@@ -1,0 +1,21 @@
+on_actions = {
+	on_daily_SOV = {
+		effect = {
+			log = "GL day [GetDateText] alive; GER surrender progress [?GER.surrender_progress]"
+			if = { limit = { GER = { has_capitulated = yes } } log = "GL day [GetDateText]   GER has capitulated" }
+			if = { limit = { NOT = { country_exists = GER } } log = "GL day [GetDateText]   GER no longer exists" }
+			if = { limit = { GER = { has_war_with = SOV } } log = "GL day [GetDateText]   GER is at war with SOV" }
+			if = {
+				limit = { date > 1944.1.2 NOT = { has_global_flag = GL_done2 } }
+				set_global_flag = GL_done2
+				log = "GL [GetDateText] before: every state Germany controls except Brandenburg: armies moved to Brandenburg, control to the Soviet Union"
+				every_state = {
+					limit = { is_controlled_by = GER NOT = { state = 64 } }
+					teleport_armies = { to_state = 64 limit = { NOT = { original_tag = SOV } } }
+					set_state_controller_to = SOV
+				}
+				log = "GL [GetDateText] after: GER surrender progress [?GER.surrender_progress]"
+			}
+		}
+	}
+}

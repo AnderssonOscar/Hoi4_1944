@@ -1,0 +1,12 @@
+on_actions = {
+	on_daily_SOV = {
+		effect = {
+			log = "Y46 day [GetDateText] alive"
+		}
+	}
+	on_daily_FRA = {
+		effect = {
+			log = "Y46 day [GetDateText] FRA leader [FRA.GetLeader], ruling [FRA.GetRulingIdeology], party [FRA.GetRulingParty]"
+		}
+	}
+}

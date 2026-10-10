@@ -17,9 +17,11 @@ independently (see "Check it yourself").
   the game's own `error.log` went from 282 lines to 115; the base game alone
   gives 1. The update itself adds no new errors (1 new line comes from
   Paradox's own Siam file and is harmless).
-- **Fixes a suspected crash cause:** the Ichi-Go scripts still used provinces
-  7167 and 4028 in the wrong state (you had already commented out their other
-  uses at lines 165, 371 and 413 of `japan_scripted_events_mod.txt`).
+- **Corrects the Ichi-Go scripts:** they still used provinces 7167 and 4028
+  in the wrong state (you had already commented out their other uses at
+  lines 165, 371 and 413 of `japan_scripted_events_mod.txt`). This was
+  first suspected as a crash cause. Tested in the game on 10 October 2026:
+  the old lines do not crash, so it is a correction and nothing more.
 - **Fixes the UK crash:** starting as the United Kingdom crashed at once,
   also with the Workshop version. Four Allied countries with no land
   capitulated during the game setup, and the UK's "government in exile"

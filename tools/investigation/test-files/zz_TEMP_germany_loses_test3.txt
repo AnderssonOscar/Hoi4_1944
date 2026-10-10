@@ -1,0 +1,28 @@
+on_actions = {
+	on_daily_SOV = {
+		effect = {
+			log = "GL day [GetDateText] alive; GER surrender progress [?GER.surrender_progress]"
+			if = { limit = { GER = { has_capitulated = yes } } log = "GL day [GetDateText]   GER has capitulated" }
+			if = { limit = { NOT = { country_exists = GER } } log = "GL day [GetDateText]   GER no longer exists" }
+			if = { limit = { country_exists = GER GER = { has_war_with = SOV } } log = "GL day [GetDateText]   GER is at war with SOV" }
+			if = { limit = { JAP = { is_in_faction_with = GER } } log = "GL day [GetDateText]   JAP is in Germany's faction" }
+			if = { limit = { 43 = { is_controlled_by = HUN } } log = "GL day [GetDateText]   state 43 (Budapest) is controlled by HUN" }
+			if = { limit = { 64 = { is_controlled_by = SOV } } log = "GL day [GetDateText]   state 64 (Brandenburg) is controlled by SOV" }
+			if = { limit = { 64 = { is_controlled_by = GER } } log = "GL day [GetDateText]   state 64 (Brandenburg) is controlled by GER" }
+			if = {
+				limit = { date > 1944.1.2 NOT = { has_global_flag = GL_done } }
+				set_global_flag = GL_done
+				log = "GL [GetDateText] before: every state Germany controls: armies moved to Budapest (state 43), control to the Soviet Union"
+				every_state = {
+					limit = { is_controlled_by = GER }
+					teleport_armies = { to_state = 43 limit = { NOT = { original_tag = SOV } } }
+				}
+				every_state = {
+					limit = { is_controlled_by = GER }
+					set_state_controller_to = SOV
+				}
+				log = "GL [GetDateText] after: GER surrender progress [?GER.surrender_progress]"
+			}
+		}
+	}
+}

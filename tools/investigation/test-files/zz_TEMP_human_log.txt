@@ -1,0 +1,24 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = { is_ai = no }
+				log = "HU startup: the human plays [THIS.GetTag] [THIS.GetName], ruling [THIS.GetRulingIdeology]"
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			every_country = {
+				limit = { is_ai = no }
+				log = "HU day [GetDateText] human is [THIS.GetTag] [THIS.GetName], ruling [THIS.GetRulingIdeology], stability [?THIS.stability], war support [?THIS.war_support]"
+				if = { limit = { is_subject = yes } log = "HU day [GetDateText]   human is a subject" }
+				if = { limit = { is_subject_of = GER } log = "HU day [GetDateText]   human is a subject of GER" }
+				if = { limit = { has_civil_war = yes } log = "HU day [GetDateText]   human has a civil war" }
+				if = { limit = { has_capitulated = yes } log = "HU day [GetDateText]   human has capitulated" }
+				if = { limit = { is_in_faction_with = GER } log = "HU day [GetDateText]   human is in Germany's faction" }
+				if = { limit = { has_war_with = GER } log = "HU day [GetDateText]   human is AT WAR WITH GER" }
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			log = "WT day [GetDateText] alive"
+			if = {
+				limit = { date > 1944.1.1 NOT = { has_global_flag = WT_1 } }
+				set_global_flag = WT_1
+				log = "WT 1 before: province modifier in the RIGHT state (control): state 599, province 1023"
+				599 = { add_province_modifier = { static_modifiers = { JAP_offensive_static_modifier } province = { id = 1023 } } }
+				log = "WT 1 after"
+			}
+			else_if = {
+				limit = { date > 1944.1.2 NOT = { has_global_flag = WT_2 } }
+				set_global_flag = WT_2
+				log = "WT 2 before: the author's original Ichi-Go line: add_province_modifier in state 599 for province 4028 (belongs to another state)"
+				599 = { add_province_modifier = { static_modifiers = { JAP_offensive_static_modifier } province = { id = 4028 } } }
+				log = "WT 2 after"
+			}
+			else_if = {
+				limit = { date > 1944.1.3 NOT = { has_global_flag = WT_3 } }
+				set_global_flag = WT_3
+				log = "WT 3 before: the author's original Ichi-Go line: remove_province_modifier in state 620 for province 7167 (belongs to another state)"
+				620 = { remove_province_modifier = { static_modifiers = { JAP_offensive_static_modifier } province = { id = 7167 } } }
+				log = "WT 3 after"
+			}
+			else_if = {
+				limit = { date > 1944.1.4 NOT = { has_global_flag = WT_4 } }
+				set_global_flag = WT_4
+				log = "WT 4 before: HOL_reinforce_java: bunkers in state 335 for provinces 7381 and 4608 (belong to states 1058 and 1051)"
+				335 = {
+					add_building_construction = { type = coastal_bunker level = 3 province = 7381 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 7381 instant_build = yes }
+					add_building_construction = { type = coastal_bunker level = 3 province = 4608 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4608 instant_build = yes }
+				}
+				log = "WT 4 after"
+			}
+			else_if = {
+				limit = { date > 1944.1.5 NOT = { has_global_flag = WT_5 } }
+				set_global_flag = WT_5
+				log = "WT 5 before: Japanese focus: bunkers in state 611 for provinces 1137, 6904, 9776 (belong to state 1039) and state 609 for province 6969 (state 610)"
+				611 = { add_building_construction = { type = bunker level = 3 province = { id = 1137 id = 6904 id = 9776 } instant_build = yes } }
+				609 = { add_building_construction = { type = bunker level = 3 province = { id = 6969 } instant_build = yes } }
+				log = "WT 5 after"
+			}
+		}
+	}
+}

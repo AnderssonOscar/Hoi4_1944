@@ -4,7 +4,11 @@ Compared with the Steam Workshop version (id 3070639276), stored unmodified in
 baseline commit `253cea1`. See every change at once with
 `git diff 253cea1 -- mod/`.
 
-## Not yet released (not on Steam, **not yet tested in game**)
+## The changes, in the order they were made
+
+Sections 1 to 29 are in the Steam version (pull requests #2, #3 and #4,
+merged by the author). Section 30 is not: it exists only in this package
+until Oscar sends it on.
 
 ### 1. Ichi-Go province modifiers applied in the wrong state (commit `e20698c`)
 
@@ -14,8 +18,13 @@ baseline commit `253cea1`. See every change at once with
 - **Why:** these were the only 2 of 154 province references in the mod that
   point at a province outside the state they run in. The base game never does
   this (0 of 82). The author had already commented out the other uses of these
-  two provinces (lines 165, 371, 413). Suspected cause of the "crashes at a
-  certain date" report. Details: INVESTIGATION.md §2A.
+  two provinces (lines 165, 371, 413). Details: INVESTIGATION.md §2A.
+- **Not a crash fix (corrected 10 October 2026).** This was first written
+  up as the suspected cause of the "crashes at a certain date" report.
+  The two original lines were then run in a real game, and nothing
+  happened: no crash and no line in the error log (INVESTIGATION.md §2A,
+  "Tested in the game"). The change stays as a correction; the report is
+  unexplained again.
 - **Gameplay effect:** Ichi-Go stage 3 no longer puts its defence penalty on
   province 4028. It still applies to provinces 1023, 7095 and 1597, and the
   state-wide bonus on state 594 still applies. It also no longer leaves that
