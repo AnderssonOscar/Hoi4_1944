@@ -1,0 +1,311 @@
+on_actions = {
+	on_daily_FIN = {
+		effect = {
+			if = {
+				limit = { date > 1944.9.3 NOT = { has_global_flag = BT_fin_done } }
+				set_global_flag = BT_fin_done
+				log = "BT [GetDateText] before: the remove_effect of the author's decision FIN_surrender_soviet, copied from FIN_mod.txt"
+
+			every_country = {
+				limit = { has_war_with = FIN is_faction_leader = yes }
+
+				add_opinion_modifier = {
+					target = FIN
+					modifier = faction_traitor
+				}
+
+				white_peace = FIN 
+			}
+		
+			remove_state_claim = 722
+
+			SOV = { transfer_state = 146 }
+			SOV = { transfer_state = 216 }
+			SOV = { transfer_state = 147 }
+			SOV = { transfer_state = 722 }
+
+			GER = { remove_from_faction = FIN }
+			FIN = {give_military_access = ENG}
+			#ENG = { add_to_faction = FIN }
+
+			#FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
+			#FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
+
+			if = {
+				limit = {
+					FIN = { has_template = "Panssariosasto" }
+				}
+				FIN = { delete_units = { division_template = "Panssariosasto" disband = yes } }
+			}
+
+			if = {
+				limit = {
+					FIN = { has_template = "Erillinen Prikaati" }
+				}
+				FIN = { delete_units = { division_template = "Erillinen Prikaati" disband = yes } }
+			}
+
+
+		FIN = {
+
+			drop_cosmetic_tag = yes
+
+			add_to_war = {
+				targeted_alliance = ENG
+				enemy = GER
+			}
+			add_timed_idea = { idea = dont_surrender_mod days = 90 }
+			add_timed_idea = { idea = FIN_armistice_effect days = 30 }
+		}
+
+		FIN = {
+			diplomatic_relation = {
+				country = SOV
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+
+		FIN = {give_military_access = SOV}
+
+			every_country = { #stop spamming white death
+				limit = {
+					has_variable = FIN_white_death_target_country
+				}
+					clear_variable = FIN_white_death_target_country
+				}
+
+		
+				log = "BT [GetDateText] after the Finnish switch"
+			}
+		}
+	}
+	on_daily_ROM = {
+		effect = {
+			if = {
+				limit = { date > 1944.9.4 NOT = { has_global_flag = BT_rom_done } }
+				set_global_flag = BT_rom_done
+				log = "BT [GetDateText] before: the remove_effect of the author's decision ROM_surrender_soviet, copied from ROM_mod.txt"
+
+
+			if = {
+				limit = {
+					has_capitulated = no
+				}
+				
+			every_country = {
+				limit = {
+					 has_war_with = ROM 
+				OR = { 
+					is_faction_leader = yes 
+					is_in_faction = no
+				}
+			 }
+				white_peace = ROM 
+			}
+
+			GER = { remove_from_faction = ROM }
+
+			SOV = { transfer_state = 78 }
+			SOV = { transfer_state = 766 }
+
+			SOV = { transfer_state = 192 }
+			SOV = { transfer_state = 834 }
+			SOV = { transfer_state = 198 }
+		
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 82 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 82 }
+		}
+
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 84 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 84 }
+		}
+
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 83 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 83 }
+		}
+
+			set_politics = {
+				ruling_party = communism
+				last_election = "1940.12.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+
+			set_popularities = {
+				neutrality = 20
+				democratic = 20
+				fascism = 20
+				communism = 40
+			}
+
+			set_cosmetic_tag = ROM_communism_1944
+
+			add_timed_idea = { idea = mod_switched_side days = 60 }
+
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
+				}
+				SOV = {
+					set_autonomy = {
+						target = ROM
+						autonomous_state = autonomy_integrated_puppet
+						end_wars  = no 
+						end_civil_wars = no
+					}
+				}
+				else = {
+					SOV = {
+					set_autonomy = {
+							target = ROM
+							autonomous_state = autonomy_puppet
+							end_wars  = no 
+							end_civil_wars = no
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					is_ai = yes
+					ROM = { has_template = "Divizia Infanterie" }
+				}
+
+				ROM = { delete_units = { division_template = "Divizia Infanterie" disband = yes } }
+			}
+
+			add_stability = -0.21
+			add_war_support = -0.50
+
+			division_template = {
+				name = "Sov Divizia Infanterie"
+				is_locked = no
+				priority = 2
+				division_names_group = ROM_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+
+
+			46 = {
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.21 start_equipment_factor = 1" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 1" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.91" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+				
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.12 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+			}
+
+
+
+
+
+			GER = { remove_resource_rights = 46 } 
+			
+			SOV = { add_to_faction = ROM }
+			
+
+		#ROM = {
+		#	add_to_war = {
+		#		targeted_alliance = SOV
+		#		enemy = GER
+		#		}
+		#	}
+		}
+	
+				log = "BT [GetDateText] after the Romanian switch"
+			}
+		}
+	}
+	on_daily_BUL = {
+		effect = {
+			log = "BT day [GetDateText] BUL [BUL.GetName], ruling [BUL.GetRulingIdeology], surrender progress [?BUL.surrender_progress]"
+			if = { limit = { has_decision = BUL_surrender_soviet } log = "BT day [GetDateText]   BUL_surrender_soviet is running" }
+			if = { limit = { has_war_with = SOV } log = "BT day [GetDateText]   BUL is at war with SOV" }
+			if = { limit = { has_war_with = GER } log = "BT day [GetDateText]   BUL is at war with GER" }
+			if = { limit = { has_war_with = ROM } log = "BT day [GetDateText]   BUL is at war with ROM" }
+			if = { limit = { has_war_with = FIN } log = "BT day [GetDateText]   BUL is at war with FIN" }
+			if = { limit = { has_war_with = ENG } log = "BT day [GetDateText]   BUL is at war with ENG" }
+			if = { limit = { is_in_faction_with = GER } log = "BT day [GetDateText]   BUL is in Germany's faction" }
+			if = { limit = { is_subject_of = SOV } log = "BT day [GetDateText]   BUL is a subject of SOV" }
+			if = { limit = { FIN = { has_war_with = GER } } log = "BT day [GetDateText]   FIN is at war with GER" }
+			if = { limit = { ROM = { is_subject_of = SOV } } log = "BT day [GetDateText]   ROM is a subject of SOV" }
+			if = {
+				limit = { date > 1944.9.5 NOT = { has_global_flag = BT_bul_done } }
+				set_global_flag = BT_bul_done
+				log = "BT [GetDateText] the author's real decision BUL_surrender_soviet is activated (6 days)"
+				activate_decision = BUL_surrender_soviet
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "BT day [GetDateText] alive"
+		}
+	}
+}

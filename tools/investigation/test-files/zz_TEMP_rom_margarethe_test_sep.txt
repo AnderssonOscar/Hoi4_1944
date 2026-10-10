@@ -1,0 +1,80 @@
+on_actions = {
+	on_daily_GER = {
+		effect = {
+			log = "RM day [GetDateText] alive; ROM [ROM.GetName] ruling [ROM.GetRulingIdeology], ROM divisions [?ROM.num_divisions], SOV divisions [?SOV.num_divisions], ROM casualties [?ROM.casualties]"
+			if = { limit = { ROM = { is_subject_of = GER } } log = "RM day [GetDateText]   ROM is a subject of GER" }
+			if = { limit = { ROM = { has_war_with = SOV } } log = "RM day [GetDateText]   ROM is at war with SOV" }
+			if = { limit = { ROM = { is_in_faction_with = GER } } log = "RM day [GetDateText]   ROM is in Germany's faction" }
+			if = {
+				limit = { date > 1944.9.4 NOT = { has_global_flag = RM_done } }
+				set_global_flag = RM_done
+				log = "RM [GetDateText] before: the second option of the author's event romania.switch.side.2 (Launch Operation Margarethe II), copied from mod_events.txt"
+
+		GER = {
+			add_manpower = -50000
+			add_political_power = -250
+			add_war_support = -0.1
+		}
+				log = "RM step 1 done (Germany's costs)"
+
+		ROM = {
+			add_stability = -0.25
+			add_war_support = -0.4
+			add_manpower = -75000
+				log = "RM step 2 done (Romania's costs); next: transfer_units_fraction to SOV"
+
+			transfer_units_fraction = {
+				target = SOV
+				size = 0.5
+				stockpile_ratio = 0.25
+				army_ratio = 0.5
+				navy_ratio = 1.0
+				air_ratio = 0.75
+		}
+				log = "RM step 3 done (transfer_units_fraction): ROM divisions [?ROM.num_divisions], SOV divisions [?SOV.num_divisions]"
+
+		add_timed_idea = { idea = dont_surrender_mod days = 365 }
+
+		46 = {
+			if = {
+				limit = { controller = { tag = ROM }}
+
+				damage_building = {
+					type = supply_node
+					damage = 0.21
+				}
+
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+
+				damage_building = {
+					type = rail_way
+					damage = 2
+				}
+
+				damage_building = {
+					type = air_base
+					damage = 4
+				}
+
+				add_dynamic_modifier = {
+					modifier = ROM_blown_up_oil_fields days = 90
+				}
+			}
+		}
+	}
+				log = "RM step 4 done (idea, Bucharest damage)"
+
+		ROM = { set_cosmetic_tag = ROM_fascism_puppet_1944 }
+
+		GER = {
+			set_autonomy = { target = ROM autonomy_state = autonomy_integrated_puppet end_wars = no }
+		}
+
+				log = "RM [GetDateText] after: all of the option has run"
+			}
+		}
+	}
+}

@@ -720,3 +720,79 @@ capitulation comes; a Japanese player far into the game, with other
 focuses, puppets and wars; and the months after the peace (the tests ran
 on for five or six days). A crash folder from an affected game is still
 the quickest way to the place (`tools/crash_site.py`).
+
+### I. "When the game reaches 1946 or a bit later, it will crash"
+
+Reported on 4 October.
+
+What in the mod is dated 1946 or later (a search for dates in every script
+file):
+
+- **AI strategies.** 23 conditions in 12 of the author's AI strategy files
+  (19 of them `date < 1946.1.1`), and three of his other triggers
+  (`Allies_1944.txt:187`, `BUL_mod.txt:18`,
+  `national_focus/germany.txt:11437`). From 1946 the AI countries are no
+  longer steered by those blocks. That changes how they behave; a condition
+  turning false does not by itself crash anything.
+- `technologies/artillery.txt:509`: an AI research weight.
+- `history/countries/FRA - France.txt:1443`: de Gaulle's term as leader has
+  `expire = "1946.1.26.1"`. The base game has leaders with an expire date
+  in every year from 1938 to 1949 (12 of them in 1946), so passing such a
+  date is ordinary.
+- **Elections** that the mod's history files put in 1946: Japan 30 April,
+  Ireland 17 June, Turkey 28 June, Mexico 1 July, Sweden 1 September,
+  Argentina 5 September, Australia 23 October. (Germany's and the Soviet
+  Union's dates fall in 1945, and both have elections switched off.) Not
+  tested.
+- The author's `SOV_attack_japan` runs 90 days after Germany's defeat,
+  which in many games is late 1945 or 1946. Tested under H: no crash.
+
+**Test:** the start date was moved to 20 January 1946 in the test copy
+(the 1944 setup, so every "after 1946" condition is in force from the
+first hour), played as Switzerland until 1 February 1946, file
+`zz_TEMP_1946_test.txt`. **No crash.** De Gaulle was still France's leader
+on 31 January: the game ignores the expire date.
+
+**Not reproduced.** Not covered: a game that has really been played for
+two years, with the armies, equipment, templates and peace deals that a
+fresh start does not have.
+
+### C, continued. Romania: Germany's answer "Launch Operation Margarethe II"
+
+Three more players reported "the game crashes when Romania switches sides"
+in October, and the six setups in section 2C all left one path unplayed.
+When Romania's decision starts, Germany gets the author's event
+`romania.switch.side.2` (`events/mod_events.txt:424`) with two answers.
+The first only waits. The second, "Launch Operation Margarethe II",
+is the one a player of Germany will usually click ("Stop romania from
+switching sides"); an AI Germany picks it about once in 141 games (weights
+140 to 1; before 1945, 4 to 1 when Hungary or Bulgaria is played by a
+person). It
+
+- costs Germany and Romania manpower, stability and war support,
+- hands **half of Romania's divisions, three quarters of its air force and
+  all of its navy to the Soviet Union** (`transfer_units_fraction` with
+  `target = SOV`, the country Romania is at war with),
+- damages the buildings of state 46 (Bucharest) while Romania holds it, and
+- makes Romania an integrated puppet of Germany, which also cancels
+  Romania's decision (`cancel_if_not_visible`).
+
+In the earlier tests the popup was left unanswered or Germany was an AI
+that took the first answer, so none of this ran. Now tested, the option's
+effect copied from the event:
+
+| Test file | Setup | Result |
+|---|---|---|
+| `zz_TEMP_rom_margarethe_test.txt` | 3 Jan 1944, all countries AI (played as Switzerland) | 23 of Romania's 46 divisions became Soviet divisions (the Soviet count went from 341 to 364); Romania became "German Romania", a subject of Germany. **No crash**; ran to 9 Jan, with fighting (Romanian casualties 14 to 1,205 on the last day) |
+| `zz_TEMP_rom_switch_test_F.txt` + `zz_TEMP_rom_margarethe_test_sep.txt` | The real flow of section 2C from 2 Sep 1944, **played as Germany**: both real decisions activated on 3 Sep, the option's effect on 4 Sep | The same outcome; Romania's decision stopped running the next day. **No crash**; ran to 13 Sep, with heavy fighting from 10 Sep (Romanian casualties 8 to 15,837) |
+
+So this path does not crash either, at least not without a person at the
+controls. One thing about it is odd and is **left as it is**: the answer
+that stops Romania from changing sides gives half its army to the enemy.
+
+Still not tried, because no script effect can set it up: Romanian
+divisions **lent to the player** as expeditionary forces at the moment the
+switch deletes or transfers them (`delete_units` in the decision,
+`transfer_units_fraction` in the event). That only happens in a real game
+with a person in Germany's faction. The reports do not say which country
+was played.
