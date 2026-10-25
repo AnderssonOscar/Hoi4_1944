@@ -42,8 +42,8 @@ source of truth, and the old `.git` was not used for anything.
 | # | Reported bug | Status | Confidence |
 |---|---|---|---|
 | A | "Crashes at a certain date" | **Not explained.** The first suspect, the Ichi-Go scripts (Japan vs China), was corrected in commit `e20698c`, but a test in the game on 10 October 2026 showed the old lines do not crash | It is a script mistake; it is not this crash |
-| B | Crash when Bulgaria switches sides | Code read, no definite cause found. The real decision was run in the game on 10 October 2026 after Finland's and Romania's switches (section 10): no crash | Not reproduced |
-| C | Crash in Romania's 12-day capitulation decision (three more reports in October) | Code read, no definite cause found. Run in the game in nine setups on 10 October 2026 (sections 2C and 10), also during fighting and with Germany's "Operation Margarethe II" answer: no crash | Not reproduced |
+| B | Crash when Bulgaria switches sides | The same cause as C (section 11); fixed with it in commit `97922cd` | Likely; not yet confirmed in the game |
+| C | Crash when Romania (or Finland, or Bulgaria) changes sides, at "Calculating Peace Conference" (many reports in October) | **Cause found in a player's crash report** (section 11): the switch ran inside the decision's `remove_effect`, in the middle of the game's own update of the country's decisions. Fixed in commit `97922cd` (CHANGELOG section 31). Nine setups without the crash: sections 2C and 10 | High for Finland (the crash report is Finland's); likely for Romania and Bulgaria; not yet confirmed in the game |
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out); focus effect redesigned 2026-09-27 (CHANGELOG §6) | Not yet identified |
 | E | "Playing UK crashes the game" | **Found and fixed** (commit `e578b10`, CHANGELOG §15): Allied countries with no land capitulate during the game setup, and the "government in exile" popup for the UK crashes the game | Certain: reproduced with the Workshop version and gone after the fix |
 | F | Sometimes the Allies do not launch D-Day | Not explained. Codex's changes to the Overlord gates were reverted at Oscar's request; Britain's and the USA's surrender progress measured 0 on 1 January 1944 (CHANGELOG 27–28) |
@@ -834,3 +834,41 @@ Seen in every game, also in the author's own version (baseline `253cea1`):
 Bulgaria starts non-aligned and becomes fascist ("Legionnaires Bulgaria")
 at 04:00 on the second day. Not looked into further; nobody has reported
 it.
+
+## 11. The crash at "Calculating Peace Conference": a crash report (25 October 2026)
+
+After the tests of section 10, more players reported the same thing in
+October: the "Calculating Peace Conference" popup, then the game closes,
+when Romania, Bulgaria or Finland changes sides (dates around 8–11 August,
+September, 5–6 November 1944, and "the end of 1944"; played as Germany,
+Italy, Finland, Bulgaria or Japan; one with no other mods at all). One
+player sent the crash folder HOI4 writes, and Oscar passed it on.
+
+Read with `tools/crash_site.py`, `tools/disasm_function.py` and
+`tools/read_minidump.py` (all read-only; output and explanation in
+`game-logs/31-player-crash-2026-10-11.txt`):
+
+1. The crash is in the hourly update of a country's running (timed)
+   decisions (`decision.hourly`, `country.cpp`), on 8 August 1944 at
+   05:00.
+2. In that loop, when a decision's time runs out, the game runs its
+   `remove_effect`, then writes the decision's next timer into its slot.
+   The slot was empty. The list in the dump shows the reason: another
+   running decision of the same country had been removed during the
+   `remove_effect`, the game had moved the expiring decision into the
+   freed slot and emptied the last one, and the write went to the old,
+   empty slot.
+3. The country is Finland; `FIN_surrender_soviet` and its variable are in
+   the captured memory; that decision runs out on 8 August when it is
+   taken on the first day possible (25 July, 14 days).
+
+That explains why section 10 found nothing: it ran the switch effects from
+on_actions, outside the decision loop, and where the real decisions ran
+out by themselves, there was no other running decision for the switch to
+remove. The change (CHANGELOG section 31) runs the author's three switch
+effects, unchanged, from hidden events one hour later.
+
+**Still to do in the game:** the reproduction stopped on 25 October
+(`tools/investigation/test-files/zz_TEMP_fin_switch_real.txt`: a game from
+2 August 1944 in which Finland's real decision runs out), first with the
+version before the change, then with it; and the load test.

@@ -1,0 +1,166 @@
+Player's crash report, 11 October 2026 (Steam comment: "before the crash I saw calculating peace conference
+effects", with a link to this crash folder). Read on 25 October 2026 with tools/crash_site.py, tools/disasm_function.py
+and tools/read_minidump.py (all read-only). The minidump itself is not stored here: it is a copy of the player's game
+memory. See docs/CHANGELOG.md section 31 and docs/INVESTIGATION.md section 11.
+
+== meta.yml (selected lines) ==
+AppVersion: Operation Postern v1.19.3.0.c01a 
+DateTime: "2026-10-11 08:53:47 +0200" 
+HasMods: true
+Mods: 1944 - Downfall Get Rid of Annoying Puppet‘s Troops More Building Slots Decision No Undeletable Units Player-Led Peace Conferences Toolpack without the Errors
+IsOldSave: false
+
+== exception.txt ==
+Application: HOI4 
+Version: Operation Postern v1.19.3.0.c01a 
+Date/Time: 2026-10-11 08:53:47
+
+Unhandled Exception C0000005 (EXCEPTION_ACCESS_VIOLATION) at address 0x00007FF60C8975DA
+
+Stack Trace: 
+  1    hoi4.exe                 PHYSFS_swapULE64 (+ 5499770)
+  2    hoi4.exe                 PHYSFS_swapULE64 (+ 5469088)
+  3    hoi4.exe                 PHYSFS_swapULE64 (+ 5263037)
+  4    hoi4.exe                 (function-name not available) (+ 0)
+  5    hoi4.exe                 (function-name not available) (+ 0)
+  6    hoi4.exe                 (function-name not available) (+ 0)
+  7    hoi4.exe                 PHYSFS_swapULE64 (+ 13689558)
+  8    hoi4.exe                 PHYSFS_swapULE64 (+ 33925681)
+  9    hoi4.exe                 (function-name not available) (+ 0)
+  10   hoi4.exe                 PHYSFS_swapULE64 (+ 12431956)
+  11   hoi4.exe                 PHYSFS_swapULE64 (+ 33777333)
+  12   hoi4.exe                 PHYSFS_swapULE64 (+ 33775274)
+  13   hoi4.exe                 (function-name not available) (+ 0)
+  14   hoi4.exe                 PHYSFS_writeULE64 (+ 456114)
+  15   hoi4.exe                 PHYSFS_writeULE64 (+ 558)
+  16   KERNEL32.DLL             BaseThreadInitThunk (+ 23)
+  17   ntdll.dll                RtlUserThreadStart (+ 44)
+  18   ntdll.dll                RtlUserThreadStart (+ 44)
+
+== error.log: the lines written on the crash date (game date 1944.08.08, 05:00) ==
+[08:53:47][1944.08.08.05][triggerimplementation.cpp:13858]: common/on_actions/15_mun_on_actions.txt:421: has_border_war_between: No combat between states Kárpátalja Eastern Slovakia
+[08:53:47][1944.08.08.05][triggerimplementation.cpp:13858]: common/on_actions/15_mun_on_actions.txt:421: has_border_war_between: No combat between states Kárpátalja Eastern Slovakia
+(These come from the base game's MUN script, on_war_relation_added, when Hungary or Slovakia gets a new war relation.
+The trigger has_border_war_between writes this line whenever there is no border war; it is noise, not the crash.)
+
+== tools/crash_site.py: the first frames ==
+Unhandled Exception C0000005 (EXCEPTION_ACCESS_VIOLATION) at address 0x00007FF60C8975DA
+
+frame 1: offset 0x7375DA in function 0x7374BC-0x737649
+
+frame 2: offset 0x72FE00 in function 0x72FC90-0x72FE6D
+    'decision.hourly'
+
+frame 3: offset 0x6FD91D in function 0x6FD800-0x6FDB93
+    'C:\\mnt\\gsg\\hoi4\\hoi4_merged\\hoi4\\source\\geography\\country.cpp'
+    'Trying to call CUnitLeader::Recalculate on nonexisting character. Skipping. Related issue: AR-26311'
+    'C:\\mnt\\gsg\\hoi4\\hoi4_merged\\hoi4\\source\\gamestate.h'
+    '_pInstance && "gamestate unitilialized"'
+    '_ThreadForbidCount == 0 && "Current thread is forbidden to access gamestate"'
+
+frame 7: offset 0xF06D36 in function 0xF06BF0-0xF06EF0
+    'C:\\mnt\\gsg\\hoi4\\hoi4_merged\\hoi4\\source\\gamestate.h'
+
+== tools/disasm_function.py 7375DA: the loop over a country's running (timed) decisions ==
+==== function 0x7374BC-0x737649 (mark 0x7375DA)
+00737533  dec     dword ptr [rax + 0x10]
+00737536  mov     rbx, qword ptr [r14]
+00737539  cmp     dword ptr [rbx + 0x10], 1
+0073753D  jge     0x140737626
+00737543  mov     rbx, qword ptr [rbx + 8]
+00737547  test    rbx, rbx
+0073754A  je      0x1407375f8
+00737550  mov     rax, qword ptr [rdi + 0x40]
+00737554  movsxd  rcx, dword ptr [rdi + 0x4c]
+00737558  lea     rdx, [rax + rcx*8]
+0073755C  cmp     rax, rdx
+0073755F  je      0x14073757c
+00737561  cmp     qword ptr [rax], rbx
+00737564  jne     0x140737573
+00737566  mov     rcx, qword ptr [rdx - 8]
+0073756A  sub     rdx, 8
+0073756E  mov     qword ptr [rax], rcx
+00737571  jmp     0x140737577
+00737573  add     rax, 8
+00737577  cmp     rax, rdx
+0073757A  jne     0x140737561
+0073757C  sub     rdx, qword ptr [rdi + 0x40]
+00737580  mov     eax, dword ptr [rdi + 0x4c]
+00737583  sar     rdx, 3
+00737587  sub     eax, edx
+00737589  test    eax, eax
+0073758B  jle     0x140737590
+0073758D  mov     dword ptr [rdi + 0x4c], edx
+00737590  lea     rcx, [rbx + 0x340]
+00737597  call    0x14060cf80   ; call 0x60CF80
+0073759C  test    al, al
+0073759E  jne     0x1407375a5
+007375A0  mov     byte ptr [r12], 1
+007375A5  cmp     dword ptr [rbx + 0x474], r13d
+007375AC  je      0x1407375ba
+007375AE  mov     rdx, qword ptr [rdi + 8]
+007375B2  mov     rcx, rbx
+007375B5  call    0x1407281c0   ; call 0x7281C0
+007375BA  mov     rdx, qword ptr [rdi + 8]
+007375BE  mov     rcx, rbx
+007375C1  add     rdx, 8
+007375C5  call    0x14072b370   ; call 0x72B370
+007375CA  test    eax, eax
+007375CC  jg      0x1407375d7
+007375CE  cmp     byte ptr [rbx + 0x960], r13b
+007375D5  je      0x1407375f8
+007375D7  mov     rcx, qword ptr [r14]
+007375DA  mov     dword ptr [rcx + 0x10], eax  <== CRASH/RET
+
+How to read it: each slot of the list (pointer at r14) holds an entry whose +0x10 is the time left. 737533 counts it
+down; when it reaches 0, the entry's decision (rbx) is taken out of a second list (737550-73758D), then 7375B5 calls
+0x7281C0, the function that runs the decision's "remove" effect (it references the string 'remove'), then 7375C5
+works out a new timer value, and 7375D7/7375DA write it back into the slot: rcx = [r14]; [rcx+0x10] = eax.
+
+== tools/read_minidump.py: registers at the crash ==
+streams: [0, 3, 4, 5, 6, 7, 12, 13, 14, 15, 16, 17, 21, 22, 24]
+memory regions: 1037 total 17930 KB
+hoi4.exe base 0x7ff60c160000 size 0x37ec000
+exception code C0000005 at 0x7ff60c8975da (hoi4.exe+0x7375DA), thread 4168
+  access violation: WRITE address 0x10
+rip 0x7ff60c8975da hoi4.exe+0x7375DA
+  rax  0000000000000000 
+  rcx  0000000000000000 
+  rdx  0000000000000000 
+  rbx  000002631E3D20E0 -> mem d0b3940ef67f0000e8b3940ef67f000074c2000000000000
+  rsp  000000D42FFFC560 -> mem 0000000000000000e0203d1e630200000a00000000000000
+  rbp  0000000000000002 
+  rsi  000000000000000A 
+  rdi  0000026353854060 -> mem c0b5940ef67f0000405cea2d6302000090e2a53263020000
+  r8   000000D42FFFC4A0 -> mem e843930ef67f00001c000000010000009ebaa65ef67f0000
+  r9   0000000000000000 
+  r10  000002631952CFD0 -> mem 5811880ef67f0000b011880ef67f00000000000000000000
+  r11  000000D42FFFC550 -> mem 6040855363020000ca75890cf67f00000000000000000000
+  r12  000000D42FFFC600 -> mem 00bcdbf06302000090bcdbf0630200000000000000000000
+  r13  0000000000000000 
+  r14  0000026397DBA4C0 -> mem 00000000000000006fcc9f90009f02889066155063020000
+  r15  0000000000000010 
+stack from rsp (first 160 qwords that point at something readable):
+(WRITE to address 0x10 with rcx = 0: the slot read at 7375D7 was empty. r14 points at the slot; its first 8 bytes are 0.)
+
+== The country being updated, and the decision name in the captured memory ==
+  rsp+00B8 000002632DEA5C40 -> mem 6073940ef67f00001c0000000000000046696e6c616e6400
+string FIN_surrender_soviet at file 0xF368EB = va 0x2631e34cd50
+string FIN_surrender_soviet at file 0xF369DB = va 0x2631e34ce40
+string FIN_surrender_limit at file 0xF3691B = va 0x2631e34cd80
+string FIN_surrender_limit at file 0xF3694B = va 0x2631e34cdb0
+(rsp+00B8 points at a name object: 46696e6c616e64 = "Finland".)
+
+== The list itself, read from the dump (rdi+0x70 = slots, rdi+0x7c = count; tools/investigation/read_decision_list_from_dump.py) ==
+list object rdi=26353854060: array 0x26397dba4b0, count 2, field+0x78 3
+other list at rdi+0x40: 0x26397c0a370 count 1
+ slot 0 @26397DBA4B0 -> 0x26397dba730
+    timer field +0x10 = 0, decision object +8 = 0x2631e3d20e0
+ slot 1 @26397DBA4B8 -> 0x26397dba7b0
+    timer field +0x10 = None, decision object +8 = 0x26321017490
+ slot 2 @26397DBA4C0 -> 0x0
+(r14 is slot 2, so at least three slots were in use when the loop reached it; the count is now 2. Slot 0 holds the expired decision itself (same object as rbx, timer 0), moved there
+from slot 2, which is now empty. So during the remove effect another running decision of the same country was taken
+out of the list, the game filled its slot with the last entry and emptied the last slot, and then wrote the new timer
+into the old, empty slot. The game's own removal code does exactly this: 7374F1-7374FA in the same function moves the
+last entry into the freed slot and writes 0 into the last slot.)

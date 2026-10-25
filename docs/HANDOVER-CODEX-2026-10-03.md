@@ -787,3 +787,22 @@ output in `tools/investigation/out/` (ignored by git, not a temp folder).
 the fork's `update-package` is at `08dc45c`): `6a1dad4` the SS fix,
 `11faa47`, `5d774a0`, `3d3a994`, `cfc5d2b` and the commit that adds this
 text (all documents and test files). Oscar decides when they go out.
+
+**25 October: the cause of the peace-conference crashes, from a crash
+report.** New Steam reports all describe the same moment: "Calculating
+Peace Conference", then the game closes, when Finland, Romania or Bulgaria
+changes sides. One player's crash folder (11 October) was read with the
+crash tools (`game-logs/31-player-crash-2026-10-11.txt`): the game crashed
+in its hourly update of Finland's running decisions, right after
+`FIN_surrender_soviet` ran out and its `remove_effect` (the whole switch)
+ran; that effect removed another running decision of Finland while the
+game was going through the list, and the game then wrote into an emptied
+slot. Fix `97922cd` (CHANGELOG section 31, check BB): the three switch
+decisions only fire a hidden event one hour later, which holds the
+author's old `remove_effect` line for line. **Not yet confirmed in the
+game**: the reproduction run (`zz_TEMP_fin_switch_real.txt`, start
+2 August 1944, as Switzerland, `-MaxMinutes 17`) and the load test were
+stopped because Oscar needed the PC (he was starting another game); run
+them with `tools/investigation/politics_run.ps1`, first on the version
+before `97922cd` (`-Source` a checkout of `3aaafcd`), then on HEAD.
+Nothing pushed; Oscar decides.

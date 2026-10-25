@@ -21,7 +21,7 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 81 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 82 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
@@ -50,6 +50,10 @@ yourself"). **None of the update has been play-tested yet.**
 - **Fixes:**
   - starting as the United Kingdom crashed the game at once (also with the
     Steam version);
+  - the crash at "Calculating Peace Conference" when Finland, Romania or
+    Bulgaria changes sides (found in a player's crash report; the switch
+    now runs from an event one hour later; not yet confirmed in the game,
+    not yet on Steam);
   - Ichi-Go province effects that ran in the wrong states (a correction;
     tested on 10 October 2026, the old lines did not crash the game);
   - three state files defined twice;
@@ -78,7 +82,7 @@ yourself"). **None of the update has been play-tested yet.**
   - flavour events for the first German atomic bomb, Leningrad taken and
     the invasion beaten back, with Oscar's pictures;
   - the Crimea: evacuate the 17th Army by sea, or hold Sevastopol.
-- **Scope:** 113 files differ from the July 2026 Steam version (33 edited,
+- **Scope:** 116 files differ from the July 2026 Steam version (36 edited,
   3 deleted, 77 new).
 - **On Steam:** the author published pull request #3's content on 29 Sep
   2026. The author's own content was kept byte-for-byte everywhere, and
@@ -104,7 +108,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **81 automated checks** (`python tools/verify_update.py`): integrity, a
+- **82 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
@@ -121,7 +125,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 81 checks
+python tools/verify_update.py    # re-runs all 82 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 

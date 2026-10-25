@@ -7,8 +7,8 @@ baseline commit `253cea1`. See every change at once with
 ## The changes, in the order they were made
 
 Sections 1 to 29 are in the Steam version (pull requests #2, #3 and #4,
-merged by the author). Section 30 is not: it exists only in this package
-until Oscar sends it on.
+merged by the author). Sections 30 and 31 are not: they exist only in this
+package until Oscar sends them on.
 
 ### 1. Ichi-Go province modifiers applied in the wrong state (commit `e20698c`)
 
@@ -2825,6 +2825,84 @@ Himmler-Putsch Germany can be non-aligned, which is the only way found so
 far for Germany to stop being fascist in a 1944 game. Whether that is what
 the players met is not known.
 
+### 31. Finland, Romania and Bulgaria change sides from an event (commit `97922cd`)
+
+**The reports.** From 3 October players reported that the game crashes
+"when Romania switches sides", and from 11 October that it crashes at the
+"Calculating Peace Conference" popup: playing Italy, Finland or Bulgaria
+"around November 5–6 or September"; "5 November 1944 again and again";
+Japan "after the peace conference around 11 August"; "at the end of 1944
+when a peace conference appears"; "when Bulgaria or Romania changes
+sides". One player sent the crash folder HOI4 writes (11 October).
+
+**What the crash folder shows.** Everything below, with the tool output
+and how to read it, is in `game-logs/31-player-crash-2026-10-11.txt`.
+
+- Game date 8 August 1944, 05:00; HOI4 1.19.3, the same build as here.
+  That player also ran five other mods, one of which changes peace
+  conferences; another player reports the same crash with no other mods.
+- The crash is in the game's hourly update of a country's running (timed)
+  decisions. When a decision's time runs out, the game runs the decision's
+  `remove_effect`, then writes the decision's next timer into its slot in
+  the country's list. That slot was empty. The dump shows why: while the
+  `remove_effect` ran, another running decision of the same country was
+  taken out of the list; the game's own removal code moved our entry into
+  the freed slot and emptied the last one; the game then wrote into the
+  old, empty slot (an access violation at address 0x10).
+- The country was **Finland** (its name object sits by the crashing frames
+  on the stack). The captured memory holds the name `FIN_surrender_soviet`
+  and its variable `FIN_surrender_limit`. That decision can be taken from
+  25 July 1944 and lasts 14 days, so it runs out on 8 August.
+- The two error.log lines about Kárpátalja and Eastern Slovakia (a player
+  thought they break the peace conference) come from a base-game script
+  that writes them whenever Hungary or Slovakia gets a new war relation.
+  They are a side effect of the switch, not its cause.
+- Which of Finland's other decisions disappeared cannot be read from the
+  dump (its memory was not captured).
+
+**Why the tests in INVESTIGATION section 10 did not crash.** They ran the
+author's switch effects from an on_action, outside the decision update;
+and in the games where the real decision ran out by itself, the country
+had no other running decision that the switch removed.
+
+**Cause.** The author's three side-switch decisions (`FIN_mod.txt`,
+`ROM_mod.txt`, `BUL_mod.txt`) do the whole switch inside `remove_effect`:
+white peace (which runs a peace conference at once, hence the popup),
+leaving Germany's faction, state transfers, becoming a Soviet subject,
+joining the other side's war. Any of that can end other running decisions
+of the country while the game is still going through that country's list.
+
+**Change.** Each of the three `remove_effect`s now holds only
+`country_event = { id = ... hours = 1 }` and two comment lines. The new
+hidden events `finland.switch.side.2`, `romania.switch.side.3` and
+`bulgaria.switch.side.2` (`events/mod_events.txt`) hold the author's old
+`remove_effect` in their `immediate` block, moved line for line (69, 190
+and 66 lines). Hidden events with only an `immediate` block are what the
+base game uses for the same purpose (for example `BBA_switzerland.99`).
+
+- **Gameplay effect:** the switch happens one hour after the decision runs
+  out instead of at that moment. Nothing else changes.
+- **Romania and Bulgaria:** the crash folder is Finland's. Romania's and
+  Bulgaria's decisions do the same inside their `remove_effect`, and
+  players report the same crash when those countries switch, so they get
+  the same change.
+
+**Checked:**
+- **Check BB** (new): each decision's `remove_effect` only fires its event
+  one hour later; each event's `immediate` block equals the author's old
+  `remove_effect` line for line; the rest of the three decision files is
+  unchanged; `mod_events.txt` minus the three new events is its previous
+  version. Calibrated with four planted one-line errors (a value changed
+  inside the moved Romania effect; Bulgaria's event fired at once instead
+  of after an hour; another line of the Finland decision changed; a line
+  dropped from the moved Finland effect): each made it fail.
+- **Checks:** 82, all pass.
+- **Not yet checked in the game.** The reproduction (a game from 2 August
+  1944 in which Finland's real decision runs out, before and after the
+  change) and the load test were stopped on 25 October because the PC was
+  needed. Until they have run, this is the fix for what the crash report
+  shows, not a fix proven in the game.
+
 ## How to test in game
 
 A local copy of the fixed mod is registered as a separate mod,
@@ -2860,7 +2938,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-113 files differ from the July 2026 Steam version: 33 edited, 3 deleted, 77 new (full list:
+116 files differ from the July 2026 Steam version: 36 edited, 3 deleted, 77 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

@@ -9,7 +9,7 @@ independently (see "Check it yourself").
 
 - **Starting point:** the version currently on the Steam Workshop (id
   3070639276, July 2026), unchanged apart from what is listed here.
-- **113 files differ** from that version: 33 edited, 3 deleted, 77 new.
+- **116 files differ** from that version: 36 edited, 3 deleted, 77 new.
 - **You published part of it on Steam** on 29 Sep 2026 (pull request #3's
   content, CHANGELOG section 13). Changes 24–33 came after that. Your own
   content was kept byte-for-byte everywhere, and that was checked by script.
@@ -22,23 +22,32 @@ independently (see "Check it yourself").
   lines 165, 371 and 413 of `japan_scripted_events_mod.txt`). This was
   first suspected as a crash cause. Tested in the game on 10 October 2026:
   the old lines do not crash, so it is a correction and nothing more.
+- **Fixes the crash when Finland, Romania or Bulgaria changes sides**
+  ("Calculating Peace Conference", then the game closes), found in a
+  player's crash report: your three switch decisions did the whole switch
+  inside `remove_effect`, which the game runs in the middle of its own
+  update of that country's decisions. Your effects now run unchanged from
+  a hidden event one hour later (change 35, CHANGELOG section 31). Not yet
+  confirmed in the game, not yet on Steam.
 - **Fixes the UK crash:** starting as the United Kingdom crashed at once,
   also with the Workshop version. Four Allied countries with no land
   capitulated during the game setup, and the UK's "government in exile"
   popup crashed the game (change 21, CHANGELOG section 15).
-- **Not play-tested.** It was tested by loading the game and its 1944 setup.
-  The reported crashes for Bulgaria's switch, Romania's 12-day decision and
-  the Volkssturm focus are **not** explained yet. (The Volkssturm
-  focus was redesigned, see change 11, but its crash was never reproduced.)
+- **Not play-tested.** It was tested by loading the game and its 1944 setup,
+  and with short scripted games (INVESTIGATION section 10). The crashes when
+  Romania or Bulgaria switches sides now have a cause from a crash report
+  (change 35 above, not yet confirmed in the game). The Volkssturm focus
+  crash is **not** explained. (The focus was redesigned, see change 11, but
+  its crash was never reproduced.)
 
 ## What's in this package
 
 | Item | What it is |
 |---|---|
 | `mod/` | the complete updated mod, ready to test or upload |
-| `patches/` | every change as a patch (47, in order), each with its reason |
+| `patches/` | every change as a patch (49, in order), each with its reason |
 | `docs/CHANGELOG.md` | what changed, why, and the gameplay effects |
-| `docs/VERIFICATION.md` | how it was checked: 81 automated checks, game error logs, checksums |
+| `docs/VERIFICATION.md` | how it was checked: 82 automated checks, game error logs, checksums |
 | `docs/INVESTIGATION.md` | the full investigation log, including mistakes and false alarms |
 | `docs/game-logs/` | the game's error.log: base game, Workshop version, updated version |
 | `docs/checksums/mod-files.sha256` | SHA-256 of every file in `mod/` |
@@ -71,6 +80,7 @@ independently (see "Check it yourself").
 | 20 | Fix: the Courland popup now unlocks the evacuation decision itself, so the console test in CHANGELOG section 11 works; in normal play nothing changes | GER_1945_operations_events.txt |
 | 21 | Fix: **starting as the UK crashed the game** (also with the Workshop version). Poland, Yugoslavia, the Philippines and Burma control no land in 1944; as faction members or colonies at war they capitulated during the game setup, and the UK's "government in exile" popup crashed. They are no longer in the faction or colonies in history and become exiles in `on_startup` instead, as your own `on_startup` already did for most of them (the same as your Belgium fix). The Philippines and Burma are no longer colonies (CHANGELOG section 15) | ENG, USA and YUG history, do_on_actions.txt |
 | 22 | New: **five war measures** for Germany (CHANGELOG section 16), each once: **Expand the KONR** (Collaborationist tab, from 23 Nov 1944, after your "Recruit Andrey Vlasov"): two more KONR divisions paying their half equipment from the stockpile, or 12,000 manpower; **Emergency Railway Repair Programme** (120 days: railway repair +30%, infrastructure repair +20%, construction −10%); **Send the Student Companies to the Front** (+20,000, −5% research, −1% stability, a popup); **Call on Citizens to Hand In Their Weapons** (25 PP, +2,000 old rifles); **Confiscate Civilian Firearms** (after the call, +7,500 old rifles, −1% stability) | 6 new files `GER_measures_*`, `GER_equipment_tokens.txt` |
+| 35 | Fix: **the game crashed when Finland, Romania or Bulgaria changed sides** (CHANGELOG section 31). A player's crash report (8 August 1944, "Calculating Peace Conference" on screen) shows the game crashing in its hourly update of Finland's running decisions, right after `FIN_surrender_soviet` ran out and its `remove_effect` ran: the switch (white peace, leaving the faction, state transfers, joining the other side) removed another running decision of Finland while the game was going through that list. Your three switch decisions now only fire a hidden event one hour later, and the event holds your old `remove_effect` line for line (69, 190 and 66 lines). **Not yet confirmed in the game, not on Steam or in a pull request** | FIN_mod.txt, ROM_mod.txt, BUL_mod.txt, mod_events.txt |
 | 34 | Fix: **the SS / Wehrmacht "anger" system is switched off** (CHANGELOG section 30). Your `ss_recruitment_event.txt` is an older copy of the base game's file in which every SS recruitment event still moves `SS_anger` and `wehrmacht_anger`; from 40 that can end in an assassination attempt on Hitler, the "Himmler-Putsch" and a civil war. The recruitment decisions are open from day one of the 1944 start, and the AI takes them at once. The current base game has these lines commented out; the same 77 lines are comments here. The decisions and the divisions they give are unchanged. **Not yet on Steam or in a pull request.** Your call: revert this commit if the plot was wanted | ss_recruitment_event.txt |
 | 33 | Fix: **the SS divisions in the 1944 start had the wrong names** (CHANGELOG section 29). The 11 SS divisions your two SS focuses create in Brandenburg took the numbers 1–11 before the 1944 order of battle was loaded, so Nordland was in Berlin and the Leibstandarte at Cherkassy was called "12. SS-Division 'Hitlerjugend'". The two focuses now complete at game start, after the order of battle: all seven SS divisions of your order of battle get their own names; the 11 divisions are still created, with the free numbers | GER history (2 lines commented), 1 new file `GER_ss_names_on_actions.txt` |
 | 32 | Withdrawn: Codex changed your Overlord decisions; the change was reverted at Oscar's request, so your `Allies_1944.txt` is unchanged, byte for byte | CHANGELOG 27–28 |

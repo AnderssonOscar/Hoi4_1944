@@ -1,0 +1,23 @@
+on_actions = {
+	on_daily_FIN = {
+		effect = {
+			log = "FS day [GetDateText] FIN [FIN.GetName], ruling [FIN.GetRulingIdeology], surrender progress [?FIN.surrender_progress]"
+			if = { limit = { has_decision = FIN_surrender_soviet } log = "FS day [GetDateText]   FIN_surrender_soviet is running" }
+			if = { limit = { has_war_with = SOV } log = "FS day [GetDateText]   FIN is at war with SOV" }
+			if = { limit = { has_war_with = GER } log = "FS day [GetDateText]   FIN is at war with GER" }
+			if = { limit = { is_in_faction_with = GER } log = "FS day [GetDateText]   FIN is in Germany's faction" }
+			if = { limit = { any_country = { has_variable = FIN_white_death_target_country } } log = "FS day [GetDateText]   a White Death target is set" }
+			if = {
+				limit = { NOT = { has_global_flag = FS_activated } }
+				set_global_flag = FS_activated
+				log = "FS [GetDateText] the author's real decision FIN_surrender_soviet is activated (14 days; its remove_effect then runs inside the game's own decision update)"
+				activate_decision = FIN_surrender_soviet
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "FS day [GetDateText] alive"
+		}
+	}
+}
