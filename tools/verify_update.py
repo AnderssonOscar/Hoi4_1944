@@ -169,6 +169,7 @@ expected |= {("A", f"mod/{f}") for f in ("gfx/events/report_event_GER_remagen_br
              "common/scripted_effects/GER_remagen_effects.txt", "common/on_actions/GER_remagen_on_actions.txt",
              "events/GER_remagen_events.txt", "localisation/english/GER_remagen_l_english.yml")}  # the bridge at Remagen (section 20)
 expected |= {("A", "mod/common/on_actions/GER_ss_names_on_actions.txt")}  # SS names at the 1944 start (section 29)
+expected |= {("M", f"mod/common/decisions/{c}_mod.txt") for c in ("FIN", "ROM", "BUL")}  # side switches from events (section 31)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -230,6 +231,39 @@ for _f, _ok in UK_FIX_REMOVED.items():
 _ger = "mod/history/countries/GER - Germany.txt"
 allowed[_ger] = (lambda prev: lambda l: prev(l) or l in ("\t\tcomplete_national_focus = GER_expand_ss_recruitment",
                                                          "\t\tcomplete_national_focus = GER_strengthen_the_waffen_ss"))(allowed[_ger])
+# Side switches (section 31): the remove_effect of three decisions was moved unchanged into hidden events (check BB)
+SWITCH_DECISIONS = (("FIN", "FIN_surrender_soviet", "finland.switch.side.2"), ("ROM", "ROM_surrender_soviet", "romania.switch.side.3"),
+                    ("BUL", "BUL_surrender_soviet", "bulgaria.switch.side.2"))
+
+
+def block_end(lines, start):
+    """Index of the line that closes the block opened on lines[start]; braces after a # are ignored."""
+    depth = 0
+    for i in range(start, len(lines)):
+        for ch in lines[i].split("#", 1)[0]:
+            depth += {"{": 1, "}": -1}.get(ch, 0)
+            if ch == "}" and depth == 0:
+                return i
+    raise ValueError("unclosed block")
+
+
+def remove_effect_span(lines, decision):
+    """(first, last) line index of the remove_effect block of a decision."""
+    d0 = next(i for i, l in enumerate(lines) if re.match(r"\s*" + decision + r"\s*=\s*\{", l))
+    r0 = next(i for i in range(d0, block_end(lines, d0)) if re.match(r"\s*remove_effect\s*=\s*\{\s*$", lines[i]))
+    return r0, block_end(lines, r0)
+
+
+def text_lines(raw):
+    return raw.decode("utf-8-sig").replace("\r", "").split("\n")
+
+
+SWITCH_BODY = {}
+for _c, _d, _e in SWITCH_DECISIONS:
+    _bl = text_lines(at_base(f"mod/common/decisions/{_c}_mod.txt"))
+    _r0, _r1 = remove_effect_span(_bl, _d)
+    SWITCH_BODY[_d] = _bl[_r0 + 1:_r1]
+    allowed[f"mod/common/decisions/{_c}_mod.txt"] = (lambda ok: lambda l: l in ok)(set(SWITCH_BODY[_d]))
 for path, ok_line in allowed.items():
     diff = git("diff", "-U0", "--no-color", BASE, "HEAD", "--", path).decode("utf-8", "replace").replace("\r", "")
     removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
@@ -575,6 +609,42 @@ check("AA SS anger switched off: in the recruitment events (ss_recruitment_event
       and all(n >= 10 for n in van_off) and van_wehr_calls == 0
       and ss_evr.count(b"{") == ss_evr.count(b"}") and ss_evr.count(b"\n") == ss_evr.count(b"\r\n"),
       f"active {ss_active}, commented {ss_off}, base game commented {van_off}")
+# Section 31: the switch of Finland, Romania and Bulgaria no longer runs inside the decision's remove_effect, which the game runs
+# inside its own update of that country's timed decisions (a player's crash dump shows Finland's switch crashing there). The
+# remove_effect now only fires a hidden event one hour later, and that event's immediate block is the old remove_effect, line for
+# line. Nothing else in the decision files changed; mod_events.txt is its previous version plus the three new events.
+sw_ev = text_lines(current("mod/events/mod_events.txt"))
+sw_prev = text_lines(git("show", "3aaafcd:mod/events/mod_events.txt"))
+sw_res, sw_cut = [], list(sw_ev)
+for c, d, e in SWITCH_DECISIONS:
+    cur_raw = current(f"mod/common/decisions/{c}_mod.txt")
+    cl, bl = text_lines(cur_raw), text_lines(at_base(f"mod/common/decisions/{c}_mod.txt"))
+    (c0, c1), (b0, b1) = remove_effect_span(cl, d), remove_effect_span(bl, d)
+    code = [l.split("#", 1)[0].strip() for l in cl[c0 + 1:c1] if l.split("#", 1)[0].strip()]
+    rest_same = cl[:c0 + 1] + cl[c1:] == bl[:b0 + 1] + bl[b1:]
+    ids = [i for i, l in enumerate(sw_ev) if l == f"\tid = {e}"]
+    e0 = max(i for i in range(ids[0]) if sw_ev[i] == "country_event = {") if len(ids) == 1 else 0
+    ev = sw_ev[e0:block_end(sw_ev, e0) + 1] if ids else []
+    im = ev.index("\timmediate = {") if "\timmediate = {" in ev else 0
+    imm = ev[im + 1:block_end(ev, im)] if im else None
+    head = [l for l in ev[1:im] if l.strip()]
+    ok = (code == [f"country_event = {{ id = {e} hours = 1 }}"] and rest_same and len(ids) == 1 and imm == SWITCH_BODY[d]
+          and head == [f"\tid = {e}", "\thidden = yes", "\tis_triggered_only = yes"] and block_end(ev, im) == len(ev) - 2
+          and cur_raw.count(b"\n") == cur_raw.count(b"\r\n"))
+    sw_res.append((d, ok, len(SWITCH_BODY[d])))
+    i = sw_cut.index(f"\tid = {e}")
+    k = j0 = max(j for j in range(i) if sw_cut[j] == "country_event = {")
+    while sw_cut[k - 1].startswith("#"):
+        k -= 1
+    del sw_cut[k - (sw_cut[k - 1] == ""):block_end(sw_cut, j0) + 1]
+ev_raw = current("mod/events/mod_events.txt")
+check("BB side switches from events: FIN_surrender_soviet, ROM_surrender_soviet and BUL_surrender_soviet only fire a hidden event "
+      "(finland.switch.side.2, romania.switch.side.3, bulgaria.switch.side.2) one hour later; each event's immediate block is the "
+      "author's old remove_effect line for line (69 / 190 / 66 lines); the rest of the three decision files is unchanged; "
+      "mod_events.txt minus the three events (with their comment and blank line) = its previous version (3aaafcd); CRLF",
+      all(ok for _, ok, _ in sw_res) and [n for _, _, n in sw_res] == [69, 190, 66] and sw_cut == sw_prev
+      and ev_raw.count(b"\n") == ev_raw.count(b"\r\n"),
+      str(sw_res))
 
 op = {k: current("mod/" + f).decode("ascii") for k, f in (
     ("eff", "common/scripted_effects/GER_1945_operations_effects.txt"), ("dec", "common/decisions/GER_1945_operations_decisions.txt"),

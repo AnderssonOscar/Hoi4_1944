@@ -593,6 +593,208 @@ country_event = {
 	}
 }
 
+# 1944 - Downfall: Romania changes sides. This is the remove_effect of the decision ROM_surrender_soviet
+# (common/decisions/ROM_mod.txt), moved here unchanged, so that it runs one hour after the decision ends and not inside
+# the game's own update of Romania's timed decisions, where an effect like this can crash the game (docs/CHANGELOG.md section 31).
+country_event = {
+	id = romania.switch.side.3
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+
+			if = {
+				limit = {
+					has_capitulated = no
+				}
+				
+			every_country = {
+				limit = {
+					 has_war_with = ROM 
+				OR = { 
+					is_faction_leader = yes 
+					is_in_faction = no
+				}
+			 }
+				white_peace = ROM 
+			}
+
+			GER = { remove_from_faction = ROM }
+
+			SOV = { transfer_state = 78 }
+			SOV = { transfer_state = 766 }
+
+			SOV = { transfer_state = 192 }
+			SOV = { transfer_state = 834 }
+			SOV = { transfer_state = 198 }
+		
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 82 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 82 }
+		}
+
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 84 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 84 }
+		}
+
+		random_country = {
+			limit = { 
+				is_in_faction_with = GER
+				has_war_with = SOV
+				army_manpower_in_state = { amount > 10000 state = 83 }
+				84 = {is_fully_controlled_by = ROM}
+			}
+			GER = { transfer_state = 83 }
+		}
+
+			set_politics = {
+				ruling_party = communism
+				last_election = "1940.12.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+
+			set_popularities = {
+				neutrality = 20
+				democratic = 20
+				fascism = 20
+				communism = 40
+			}
+
+			set_cosmetic_tag = ROM_communism_1944
+
+			add_timed_idea = { idea = mod_switched_side days = 60 }
+
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
+				}
+				SOV = {
+					set_autonomy = {
+						target = ROM
+						autonomous_state = autonomy_integrated_puppet
+						end_wars  = no 
+						end_civil_wars = no
+					}
+				}
+				else = {
+					SOV = {
+					set_autonomy = {
+							target = ROM
+							autonomous_state = autonomy_puppet
+							end_wars  = no 
+							end_civil_wars = no
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					is_ai = yes
+					ROM = { has_template = "Divizia Infanterie" }
+				}
+
+				ROM = { delete_units = { division_template = "Divizia Infanterie" disband = yes } }
+			}
+
+			add_stability = -0.21
+			add_war_support = -0.50
+
+			division_template = {
+				name = "Sov Divizia Infanterie"
+				is_locked = no
+				priority = 2
+				division_names_group = ROM_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+
+
+			46 = {
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.21 start_equipment_factor = 1" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 1" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.22 start_equipment_factor = 0.91" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.32 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+				
+				create_unit = {
+					division = "name = \"Sov Divizia Infanterie\" division_template = \"Sov Divizia Infanterie\" start_experience_factor = 0.12 start_equipment_factor = 0.96" 
+					owner = ROM
+				}
+			}
+
+
+
+
+
+			GER = { remove_resource_rights = 46 } 
+			
+			SOV = { add_to_faction = ROM }
+			
+
+		#ROM = {
+		#	add_to_war = {
+		#		targeted_alliance = SOV
+		#		enemy = GER
+		#		}
+		#	}
+		}
+	}
+}
+
 
 # Finland switch side
 country_event = {
@@ -613,6 +815,87 @@ country_event = {
 	}
 }
 
+# 1944 - Downfall: Finland changes sides. This is the remove_effect of the decision FIN_surrender_soviet
+# (common/decisions/FIN_mod.txt), moved here unchanged, so that it runs one hour after the decision ends and not inside
+# the game's own update of Finland's timed decisions, where an effect like this can crash the game (docs/CHANGELOG.md section 31).
+country_event = {
+	id = finland.switch.side.2
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+			every_country = {
+				limit = { has_war_with = FIN is_faction_leader = yes }
+
+				add_opinion_modifier = {
+					target = FIN
+					modifier = faction_traitor
+				}
+
+				white_peace = FIN 
+			}
+		
+			remove_state_claim = 722
+
+			SOV = { transfer_state = 146 }
+			SOV = { transfer_state = 216 }
+			SOV = { transfer_state = 147 }
+			SOV = { transfer_state = 722 }
+
+			GER = { remove_from_faction = FIN }
+			FIN = {give_military_access = ENG}
+			#ENG = { add_to_faction = FIN }
+
+			#FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
+			#FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
+
+			if = {
+				limit = {
+					FIN = { has_template = "Panssariosasto" }
+				}
+				FIN = { delete_units = { division_template = "Panssariosasto" disband = yes } }
+			}
+
+			if = {
+				limit = {
+					FIN = { has_template = "Erillinen Prikaati" }
+				}
+				FIN = { delete_units = { division_template = "Erillinen Prikaati" disband = yes } }
+			}
+
+
+		FIN = {
+
+			drop_cosmetic_tag = yes
+
+			add_to_war = {
+				targeted_alliance = ENG
+				enemy = GER
+			}
+			add_timed_idea = { idea = dont_surrender_mod days = 90 }
+			add_timed_idea = { idea = FIN_armistice_effect days = 30 }
+		}
+
+		FIN = {
+			diplomatic_relation = {
+				country = SOV
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+
+		FIN = {give_military_access = SOV}
+
+			every_country = { #stop spamming white death
+				limit = {
+					has_variable = FIN_white_death_target_country
+				}
+					clear_variable = FIN_white_death_target_country
+				}
+
+	}
+}
+
 
 # Bulgaria switch side
 country_event = {
@@ -630,6 +913,84 @@ country_event = {
 			var = bul_switch
 			value = 1
 		}
+	}
+}
+
+# 1944 - Downfall: Bulgaria changes sides. This is the remove_effect of the decision BUL_surrender_soviet
+# (common/decisions/BUL_mod.txt), moved here unchanged, so that it runs one hour after the decision ends and not inside
+# the game's own update of Bulgaria's timed decisions, where an effect like this can crash the game (docs/CHANGELOG.md section 31).
+country_event = {
+	id = bulgaria.switch.side.2
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+			every_country = {
+				limit = {
+					 has_war_with = BUL 
+				OR = { 
+					is_faction_leader = yes 
+					is_in_faction = no
+				}
+			 }
+				white_peace = BUL 
+			}
+
+			GER = { remove_from_faction = BUL }
+
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
+				}
+				SOV = {
+					set_autonomy = {
+						target = BUL
+						autonomous_state = autonomy_integrated_puppet
+						end_wars  = no 
+						end_civil_wars = no
+					}
+				}
+				else = {
+					SOV = {
+					set_autonomy = {
+							target = BUL
+							autonomous_state = autonomy_puppet
+							end_wars  = no 
+							end_civil_wars = no
+						}
+					}
+				}
+			}
+
+			set_politics = {
+				ruling_party = communism
+				last_election = "1940.12.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+
+			set_popularities = {
+				neutrality = 30
+				democratic = 10
+				fascism = 20
+				communism = 40
+			}
+
+			add_timed_idea = { idea = mod_switched_side days = 60 }
+
+			SOV = { add_to_faction = BUL }
+
+		BUL = {
+			
+
+			add_to_war = {
+				targeted_alliance = SOV
+				enemy = GER
+				}
+			}
+
+			set_cosmetic_tag = BUL_communism
+			BUL = { white_peace = FIN }
 	}
 }
 
