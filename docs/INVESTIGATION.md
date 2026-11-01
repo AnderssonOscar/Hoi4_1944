@@ -907,3 +907,42 @@ whose `gameDataPath` points at `out/userdir`). The game then reads and writes
 nothing in Documents: not the playset, the settings or the saves. `-NoMod`
 runs the base game alone. **Never delete `out/gameroot` recursively: the
 junctions point at the real game.**
+
+## 12. D-Day and the dig-in decision, two reports of 30 October 2026
+
+**The reports.** "Allies can't land d-day as long as there's 1 heavy tank at
+a port", and "isn't the dig in decision supposed to reappear?".
+
+**Test** (1 November 2026, HOI4 1.19.4.1, the version of pull request #5):
+start moved to 30 April 1944 in the test copy, played as Switzerland so that
+Germany and the Allies are AI, stopped on 24 June, file
+`tools/investigation/test-files/zz_TEMP_dday_digin.txt`, run with
+`isolated_run.ps1`. No crash.
+
+| Day | What happened |
+|---|---|
+| 1 May | The UK and the USA start `operation_overlord_prep` (28 days) |
+| 30–31 May | The UK and the USA start `operation_overlord` (18 days) |
+| 5 June | Brittany (state 14) is no longer fully German |
+| 6 June | Normandy (state 15) is no longer fully German; the landing is noted |
+| 16 June | Nord-Pas-de-Calais (state 29) is no longer fully German |
+| 24 June | End of the test: all three still not fully German. Flanders (state 6) stayed German |
+
+So with the AI playing Germany, **the Allies do land**, in this one game on
+the historical day. The author's D-Day decisions were not touched.
+
+**"One heavy tank at a port": not tested.** That report is about a player
+playing Germany, and this test has an AI Germany. What is known: the author's
+decisions (`common/decisions/Allies_1944.txt`) check dates, wars and who
+controls states, and nothing in them looks at units or ports. If the report is
+right, it is the game's AI choosing where and whether to land, not a script of
+the mod's. It may also be connected to row F ("sometimes the Allies do not
+launch D-Day"); that is not shown.
+
+**The dig-in decision: not bugged.** `dig_in_and_hold` (`ALL_1944.txt`) has
+`days_remove = 12` and `days_re_enable = 90`. Started for Germany on 17 May,
+it ran until 28 May, and the plain-text save of 1 June has
+`decision_to_re_enable={ decision="dig_in_and_hold" days=88 }`. So it is gone
+for 102 days after it is taken, and comes back. (The test stopped before the
+90 days were over, so the return itself was not watched.) It can also only be
+taken while `alliance_strength_ratio < 0.75`.

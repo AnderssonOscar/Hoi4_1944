@@ -825,5 +825,7 @@ and INVESTIGATION section 11. The short version:
   as long as there's one heavy tank at a port" (nothing in the mod's scripts
   looks at units or ports; Oscar's rule stands, the author's D-Day decisions
   are not to be touched) and "the dig-in decision doesn't come back" (by the
-  script it does: 12 days + `days_re_enable = 90`). A game from 30 April to
-  20 June 1944 with `test-files/zz_TEMP_dday_digin.txt` is prepared.
+  script it does: 12 days + `days_re_enable = 90`). Tested afterwards with
+  an AI Germany: the Allies land (Brittany 5 June, Normandy 6 June), and
+  dig-in goes on its 90-day cooldown (INVESTIGATION section 12). The tank at
+  a port needs a person playing Germany, and is not tested.
