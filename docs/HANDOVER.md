@@ -26,11 +26,11 @@ mod, so every change must be easy for him to check himself.
 
 ## 3. Status (30 September 2026)
 
-- **116 files differ** from the July 2026 Steam version (36 edited, 3 deleted,
+- **118 files differ** from the July 2026 Steam version (38 edited, 3 deleted,
   77 new). The author published pull request #3's content on Steam on
-  29 Sep 2026. Every change is in `docs/CHANGELOG.md` (sections 1–31) and summarised in
+  29 Sep 2026. Every change is in `docs/CHANGELOG.md` (sections 1–32) and summarised in
   `docs/READ-ME-FIRST.md`.
-- **`python tools/verify_update.py`:** 82 checks, all pass.
+- **`python tools/verify_update.py`:** 86 checks, all pass.
 - **The game's error.log** with the mod: 115 lines, unchanged by every
   addition since the 1.19.3 update (`docs/game-logs/`).
 - **Packages:** the tags `final-2026-09-27` to `final-2026-09-30-v18`. Each
@@ -47,9 +47,8 @@ mod, so every change must be easy for him to check himself.
   - three heavily edited files not merged with 1.19.3 (GER decisions, the
     germany focus tree, artillery techs).
 - **Open reports:** the Volkssturm focus crash needs a crash report from the
-  game. The crashes when Finland, Romania or Bulgaria changes sides have a
-  cause from a player's crash report and a fix (CHANGELOG section 31, not
-  yet confirmed in the game). The UK crash is fixed (CHANGELOG section 15).
+  game. The crash when Finland, Romania or Bulgaria changes sides is fixed
+  (CHANGELOG section 31). The UK crash is fixed (CHANGELOG section 15).
   D-Day decision blockers are corrected (section 27); the full AI landing remains unverified.
 
 ## 4. Where everything is
@@ -140,8 +139,8 @@ mod, so every change must be easy for him to check himself.
 | # | Report | Status |
 |---|---|---|
 | A | "Crashes at a certain date" | **Not explained.** The first suspect (`mod/common/scripted_effects/japan_scripted_events_mod.txt` lines 221 and 328, corrected in `e20698c`) was tested in the game on 10 October 2026: the old lines do not crash |
-| B | Crash when Bulgaria switches sides | Likely the same as C: fixed with it in `97922cd` (CHANGELOG section 31), not yet confirmed in the game |
-| C | Crash when Romania (or Finland, or Bulgaria) changes sides, at "Calculating Peace Conference" | **Cause found in a player's crash report** (25 October 2026): the switch ran inside the decision's `remove_effect`, in the middle of the game's update of that country's decisions. Fixed in `97922cd` (CHANGELOG section 31), not yet confirmed in the game |
+| B | Crash when Bulgaria switches sides | The same as C: fixed with it in `97922cd` (CHANGELOG section 31) |
+| C | Crash when Romania (or Finland, or Bulgaria) changes sides, at "Calculating Peace Conference" | **Found in a player's crash report and reproduced in the game**: the switch ran inside the decision's `remove_effect`, in the middle of the game's update of that country's decisions. Fixed in `97922cd`, confirmed in the game (CHANGELOG section 31) |
 | D | Crash on completing the Volkssturm focus | No cause found by reading. The focus's unit creation was redesigned (`e6c0034`, bug-check fix `d9d7888`, CHANGELOG section 6); the crash was never reproduced |
 | E | "Playing UK crashes" | **Fixed** in `e578b10`: Allied countries with no land capitulated during the game setup, and the UK's "government in exile" popup crashed (CHANGELOG section 15) |
 | F | Sometimes no Allied D-Day | Not explained. Codex's change to the Overlord decisions was reverted at Oscar's request (CHANGELOG 27–28) |
@@ -243,7 +242,7 @@ python tools/check_province_modifiers.py   # provinces outside their state, unkn
 python tools/check_structure.py            # brace balance, template slot clashes
 python tools/check_references.py           # events/ideas/characters/tags used in play
 python tools/check_berlin_map.py           # Festung Berlin's map facts (needs Pillow and numpy)
-python tools/verify_update.py              # re-checks every claim (82 checks)
+python tools/verify_update.py              # re-checks every claim (86 checks)
 python tools/crash_site.py "<crash folder>" # which part of the game a crash report points to
 ```
 

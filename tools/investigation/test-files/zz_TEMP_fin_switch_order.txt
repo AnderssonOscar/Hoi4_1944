@@ -1,0 +1,34 @@
+on_actions = {
+	on_daily_FIN = {
+		effect = {
+			log = "FO day [GetDateText] FIN [FIN.GetName], ruling [FIN.GetRulingIdeology], surrender progress [?FIN.surrender_progress]"
+			if = { limit = { has_decision = FIN_surrender_soviet } log = "FO day [GetDateText]   running: FIN_surrender_soviet" }
+			if = { limit = { has_decision = old_weapon_caches } log = "FO day [GetDateText]   running: old_weapon_caches" }
+			if = { limit = { has_decision = scavenger_training_trait_decision } log = "FO day [GetDateText]   running: scavenger_training_trait_decision" }
+			if = { limit = { has_decision = ration_army_fuel } log = "FO day [GetDateText]   running: ration_army_fuel" }
+			if = { limit = { has_decision = siphon_gas } log = "FO day [GetDateText]   running: siphon_gas" }
+			if = { limit = { has_war_with = SOV } log = "FO day [GetDateText]   FIN is at war with SOV" }
+			if = { limit = { has_war_with = GER } log = "FO day [GetDateText]   FIN is at war with GER" }
+			if = { limit = { is_in_faction_with = GER } log = "FO day [GetDateText]   FIN is in Germany's faction" }
+			if = {
+				limit = { NOT = { has_global_flag = FO_helpers } }
+				set_global_flag = FO_helpers
+				log = "FO [GetDateText] the author's decisions that end when a country has no war are started (the AI takes them too in a normal game)"
+				activate_decision = scavenger_training_trait_decision
+				activate_decision = old_weapon_caches
+				activate_decision = ration_army_fuel
+			}
+			if = {
+				limit = { date > 1944.8.8 NOT = { has_global_flag = FO_switch } }
+				set_global_flag = FO_switch
+				log = "FO [GetDateText] FIN_surrender_soviet is activated, after the others, so that it is last in Finland's list as in a real game"
+				activate_decision = FIN_surrender_soviet
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "FO day [GetDateText] alive"
+		}
+	}
+}

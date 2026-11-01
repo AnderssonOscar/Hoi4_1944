@@ -21,7 +21,7 @@ yourself"). **None of the update has been play-tested yet.**
 |---|---|
 | [READ-ME-FIRST](docs/READ-ME-FIRST.md) | The update in short: every change in one table, and how to check and test it |
 | [CHANGELOG](docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 82 automated checks, the game's error logs, checksums |
+| [VERIFICATION](docs/VERIFICATION.md) | How it was checked: 86 automated checks, the game's error logs, checksums |
 | [INVESTIGATION](docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
 | [HANDOVER](docs/HANDOVER.md) | How to maintain and extend the project |
 | [game-logs](docs/game-logs/README.md) | The game's error.log after each step |
@@ -41,19 +41,20 @@ yourself"). **None of the update has been play-tested yet.**
   wrong names (Nordland in Berlin, the Leibstandarte at Cherkassy called
   "Hitlerjugend"). Two SS focuses now complete at game start, after the
   order of battle is loaded ([CHANGELOG](docs/CHANGELOG.md) section 29).
-- **Package tag:** `final-2026-09-30-v18`.
+- **Package tag:** `final-2026-11-01-v19`.
 
 ## The update in short
 
-- **HOI4 1.19.3.** With the mod loaded, the game's error.log went from 282
-  lines to 115 (the base game alone gives 1).
+- **HOI4 1.19.4.1** (updated from 1.19.3 on 1 November 2026, CHANGELOG
+  section 32). With the mod loaded, the game's error.log went from 282 lines
+  to 115 on 1.19.3; it is 124 on 1.19.4.1 (the base game alone gives 3).
 - **Fixes:**
   - starting as the United Kingdom crashed the game at once (also with the
     Steam version);
   - the crash at "Calculating Peace Conference" when Finland, Romania or
-    Bulgaria changes sides (found in a player's crash report; the switch
-    now runs from an event one hour later; not yet confirmed in the game,
-    not yet on Steam);
+    Bulgaria changes sides (found in a player's crash report and reproduced
+    in the game; the switch now runs from an event one hour later, CHANGELOG
+    section 31; in pull request #5);
   - Ichi-Go province effects that ran in the wrong states (a correction;
     tested on 10 October 2026, the old lines did not crash the game);
   - three state files defined twice;
@@ -82,7 +83,7 @@ yourself"). **None of the update has been play-tested yet.**
   - flavour events for the first German atomic bomb, Leningrad taken and
     the invasion beaten back, with Oscar's pictures;
   - the Crimea: evacuate the 17th Army by sea, or hold Sevastopol.
-- **Scope:** 116 files differ from the July 2026 Steam version (36 edited,
+- **Scope:** 118 files differ from the July 2026 Steam version (38 edited,
   3 deleted, 77 new).
 - **On Steam:** the author published pull request #3's content on 29 Sep
   2026. The author's own content was kept byte-for-byte everywhere, and
@@ -108,7 +109,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 
 ## How it was checked
 
-- **82 automated checks** (`python tools/verify_update.py`): integrity, a
+- **86 automated checks** (`python tools/verify_update.py`): integrity, a
   fresh clone is byte-exact, exactly the intended files changed, the author's
   content unchanged, every fix and feature in place. Every check written for
   new content was shown to fail on deliberately planted errors.
@@ -125,7 +126,7 @@ reasons and sources are in the [CHANGELOG](docs/CHANGELOG.md).
 git log --oneline -- mod/        # every change to the mod
 git show <commit>                # one change with its full reason
 git diff 253cea1 -- mod/         # everything that differs from the Steam version
-python tools/verify_update.py    # re-runs all 82 checks
+python tools/verify_update.py    # re-runs all 86 checks
 cd mod && sha256sum -c ../docs/checksums/mod-files.sha256
 ```
 

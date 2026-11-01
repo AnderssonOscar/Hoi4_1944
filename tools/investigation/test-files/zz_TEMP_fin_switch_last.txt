@@ -1,0 +1,42 @@
+on_actions = {
+	on_daily_FIN = {
+		effect = {
+			log = "FL day [GetDateText] FIN [FIN.GetName], ruling [FIN.GetRulingIdeology], surrender progress [?FIN.surrender_progress], PP [?FIN.political_power]"
+			if = { limit = { has_decision = FIN_surrender_soviet } log = "FL day [GetDateText]   running: FIN_surrender_soviet" }
+			if = { limit = { has_decision = old_weapon_caches } log = "FL day [GetDateText]   running: old_weapon_caches" }
+			if = { limit = { has_decision = scavenger_training_trait_decision } log = "FL day [GetDateText]   running: scavenger_training_trait_decision" }
+			if = { limit = { has_decision = ration_army_fuel } log = "FL day [GetDateText]   running: ration_army_fuel" }
+			if = { limit = { has_decision = siphon_gas } log = "FL day [GetDateText]   running: siphon_gas" }
+			if = { limit = { has_decision = restructure_supply_system } log = "FL day [GetDateText]   running: restructure_supply_system" }
+			if = { limit = { has_decision = FIN_request_german_support } log = "FL day [GetDateText]   running: FIN_request_german_support" }
+			if = { limit = { has_war_with = GER } log = "FL day [GetDateText]   FIN is at war with GER" }
+			if = {
+				limit = { NOT = { has_global_flag = FL_activated } }
+				set_global_flag = FL_activated
+				log = "FL [GetDateText] Finland's political power is drained so that the AI starts nothing more; its decisions are started"
+				add_political_power = -9000
+				activate_decision = FIN_request_german_support
+				activate_decision = scavenger_training_trait_decision
+				activate_decision = old_weapon_caches
+				activate_decision = siphon_gas
+				activate_decision = ration_army_fuel
+				activate_targeted_decision = { target = 146 decision = FIN_prepare_motti_tactics_in_state }
+				activate_targeted_decision = { target = 216 decision = FIN_set_up_weapon_caches_in_state }
+				activate_targeted_decision = { target = 147 decision = FIN_search_for_weapon_caches_in_state }
+				activate_decision = restructure_supply_system
+				log = "FL [GetDateText] all activated except the switch"
+			}
+			if = {
+				limit = { date > 1944.8.8 NOT = { has_global_flag = FL_switch } }
+				set_global_flag = FL_switch
+				log = "FL [GetDateText] FIN_surrender_soviet is activated, after everything else, so that it is last in Finland's list"
+				activate_decision = FIN_surrender_soviet
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "FL day [GetDateText] alive"
+		}
+	}
+}

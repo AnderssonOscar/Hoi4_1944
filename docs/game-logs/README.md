@@ -26,6 +26,9 @@ history runs at startup). Compare them with any diff tool.
 | 28-ss-division-names-before.txt, 28-ss-division-names-after.txt | not error logs: every division on the SS name list in a German game's save, read with `tools/list_ss_divisions.py`, before (e09019a) and after the fix (CHANGELOG section 29) | 22 divisions each |
 | 29-pull-request-4-v18-clone_error.log | a fresh clone of pull request #4's branch with the SS names fix (the author's layout, commit ae5135e) with Git's default settings; identical to 28 | 115 |
 | 30-after-ss-anger-off_error.log | after the SS / Wehrmacht anger system was switched off (6a1dad4, CHANGELOG section 30); identical to 28 | 115 |
+| 34-base-game-1.19.4.1_error.log | the base game alone on 1.19.4.1, setup lines | 3 |
+| 33-on-1.19.4.1_error.log | the final version on 1.19.4.1, setup lines (CHANGELOG section 32) | 124 |
+| 32-crash-reproduced-2026-11-01.txt | not a load test: the crash reproduced in the game, before and after the fix (CHANGELOG section 31) | – |
 | 31-player-crash-2026-10-11.txt | not a load test: a player's crash report (8 August 1944, "Calculating Peace Conference") and what the crash tools read from it; the evidence for CHANGELOG section 31 | – |
 | 26-after-overlord-revert_error.log | after Codex's Overlord change was reverted (5ac05e9); identical to 25 | 115 |
 | 25-after-dday-and-play-test-fixes_error.log | Codex startup check of the completed content, Overlord gates and Allied landing detection (46c665a); identical to 22 after removing wall-clock timestamps | 115 |

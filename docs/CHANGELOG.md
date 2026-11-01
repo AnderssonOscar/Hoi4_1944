@@ -7,8 +7,8 @@ baseline commit `253cea1`. See every change at once with
 ## The changes, in the order they were made
 
 Sections 1 to 29 are in the Steam version (pull requests #2, #3 and #4,
-merged by the author). Sections 30 and 31 are not: they exist only in this
-package until Oscar sends them on.
+merged by the author). Sections 30 to 32 are in pull request #5 (mapping:
+`docs/PR5-COMMIT-MAPPING.tsv`).
 
 ### 1. Ichi-Go province modifiers applied in the wrong state (commit `e20698c`)
 
@@ -2833,14 +2833,15 @@ the players met is not known.
 "around November 5–6 or September"; "5 November 1944 again and again";
 Japan "after the peace conference around 11 August"; "at the end of 1944
 when a peace conference appears"; "when Bulgaria or Romania changes
-sides". One player sent the crash folder HOI4 writes (11 October).
+sides"; "when a peace deal happens end of 1944". One player sent the crash
+folder HOI4 writes (11 October).
 
 **What the crash folder shows.** Everything below, with the tool output
 and how to read it, is in `game-logs/31-player-crash-2026-10-11.txt`.
 
-- Game date 8 August 1944, 05:00; HOI4 1.19.3, the same build as here.
-  That player also ran five other mods, one of which changes peace
-  conferences; another player reports the same crash with no other mods.
+- Game date 8 August 1944, 05:00; HOI4 1.19.3. That player also ran five
+  other mods, one of which changes peace conferences; another player
+  reports the same crash with no other mods.
 - The crash is in the game's hourly update of a country's running (timed)
   decisions. When a decision's time runs out, the game runs the decision's
   `remove_effect`, then writes the decision's next timer into its slot in
@@ -2851,26 +2852,55 @@ and how to read it, is in `game-logs/31-player-crash-2026-10-11.txt`.
   old, empty slot (an access violation at address 0x10).
 - The country was **Finland** (its name object sits by the crashing frames
   on the stack). The captured memory holds the name `FIN_surrender_soviet`
-  and its variable `FIN_surrender_limit`. That decision can be taken from
-  25 July 1944 and lasts 14 days, so it runs out on 8 August.
+  and its variable `FIN_surrender_limit`, and left over on the stack is
+  `fin_white_death_target_country`, the variable the last lines of that
+  decision's `remove_effect` clear. The decision can be taken from 25 July
+  1944 and lasts 14 days, so it runs out on 8 August.
 - The two error.log lines about Kárpátalja and Eastern Slovakia (a player
   thought they break the peace conference) come from a base-game script
   that writes them whenever Hungary or Slovakia gets a new war relation.
   They are a side effect of the switch, not its cause.
-- Which of Finland's other decisions disappeared cannot be read from the
-  dump (its memory was not captured).
 
-**Why the tests in INVESTIGATION section 10 did not crash.** They ran the
-author's switch effects from an on_action, outside the decision update;
-and in the games where the real decision ran out by itself, the country
-had no other running decision that the switch removed.
+**The cause.** The author's three side-switch decisions (`FIN_mod.txt`,
+`ROM_mod.txt`, `BUL_mod.txt`) do the whole switch inside `remove_effect`,
+starting with `white_peace`, which ends all the country's wars at once.
+His decisions `old_weapon_caches`, `scavenger_training_trait_decision` and
+`siphon_gas` (`ALL_1944.txt`) have `remove_trigger = { OR = { has_war = no
+... } }`, and the AI takes them. So in the middle of the game's loop over
+the country's running decisions, the switch ends other entries of the same
+list. If the switch decision is the last entry at that moment, the game
+writes into an empty slot and crashes. In a real game it usually is last:
+it is taken late, after the others.
 
-**Cause.** The author's three side-switch decisions (`FIN_mod.txt`,
-`ROM_mod.txt`, `BUL_mod.txt`) do the whole switch inside `remove_effect`:
-white peace (which runs a peace conference at once, hence the popup),
-leaving Germany's faction, state transfers, becoming a Soviet subject,
-joining the other side's war. Any of that can end other running decisions
-of the country while the game is still going through that country's list.
+The base game does not do this: of its 2,587 timed decisions and missions,
+none has `white_peace` in a `remove_effect` (`tools/check_decision_effects.py
+--base`; it has 6 in `timeout_effect`, where this write does not happen).
+
+**Why the earlier tests did not crash (INVESTIGATION sections 2C and 10).**
+They ran the switch effects from an on_action, outside the decision loop;
+and where the real decision ran out by itself, it had been started first,
+so the AI's decisions came after it in the list and it was not the last.
+
+**Reproduced and fixed in the game (1 November 2026, HOI4 1.19.4.1, all
+DLCs).** The loop is unchanged in 1.19.4.1 (the same instructions, at
+hoi4.exe+0x77F74A instead of +0x7375DA). Each test starts a game on 2 August
+1944, played as Switzerland, drains the country's political power so that
+the AI starts nothing later (test only), starts the author's decisions
+above, and on 8 August starts the real switch decision, so that it is last.
+Test files `zz_TEMP_fin_switch_last.txt`, `zz_TEMP_rom_switch_last.txt` and
+`zz_TEMP_bul_switch_last.txt` in `tools/investigation/test-files/`; output
+in `game-logs/32-crash-reproduced-2026-11-01.txt`.
+
+| The decision that runs out | Version before the fix (`3aaafcd`) | With the fix |
+|---|---|---|
+| Finland | **Crash** on 22 August at 05:00: same function, same write to address 0x10 as the player's crash | Switch at 06:00, no crash; ran on to 26 August, Finland at war with Germany |
+| Romania | **Crash** on 19 August at 18:00, the same | Switch at 19:00, no crash; ran on to 23 August, Romania communist and a Soviet subject (`zz_TEMP_rom_switch_hold.txt`: the same, with the Soviets kept in the five states, because a first run ended with the decision cancelling itself on 20 August below 2% surrender progress, the author's own rule) |
+| Bulgaria | **Crash** on 14 August at 03:00, the same | Switch at 04:00, no crash; ran on to 17 August, Bulgaria communist, a Soviet subject, at war with Germany |
+
+Bulgaria starts 1944 on a plain war economy and the three decisions above
+need total mobilisation, so its test sets that (test only). A first test
+without it was not valid: nothing was running that the switch ends, and
+it did not crash.
 
 **Change.** Each of the three `remove_effect`s now holds only
 `country_event = { id = ... hours = 1 }` and two comment lines. The new
@@ -2882,10 +2912,6 @@ base game uses for the same purpose (for example `BBA_switzerland.99`).
 
 - **Gameplay effect:** the switch happens one hour after the decision runs
   out instead of at that moment. Nothing else changes.
-- **Romania and Bulgaria:** the crash folder is Finland's. Romania's and
-  Bulgaria's decisions do the same inside their `remove_effect`, and
-  players report the same crash when those countries switch, so they get
-  the same change.
 
 **Checked:**
 - **Check BB** (new): each decision's `remove_effect` only fires its event
@@ -2896,12 +2922,55 @@ base game uses for the same purpose (for example `BBA_switzerland.99`).
   inside the moved Romania effect; Bulgaria's event fired at once instead
   of after an hour; another line of the Finland decision changed; a line
   dropped from the moved Finland effect): each made it fail.
-- **Checks:** 82, all pass.
-- **Not yet checked in the game.** The reproduction (a game from 2 August
-  1944 in which Finland's real decision runs out, before and after the
-  change) and the load test were stopped on 25 October because the PC was
-  needed. Until they have run, this is the fix for what the crash report
-  shows, not a fix proven in the game.
+- **The game:** the table above.
+
+**Not covered:** whether every "crash at a peace conference" report is this
+crash. They describe the same moment and the dates fit, but only one crash
+folder exists.
+
+### 32. Update for HOI4 1.19.4.1 (commit `39c5e86`)
+
+The game updated itself on 30 October 2026 (1.19.4 of 27 October and the
+hotfix 1.19.4.1, Steam build 26282552). 1,297 script files changed, among
+them 65 that the mod has its own copies of. Method as for 1.19.3
+(INVESTIGATION section 8).
+
+- **Four files that are "base game + the author's edits" rebuilt** on
+  1.19.4.1: `national_focus/netherlands.txt` (his RKN line and marker),
+  `countries/cosmetic.txt` (his 17 tags), `history/countries/AST` and
+  `SIA` (his 1943.12.30 blocks and stockpiles, and the documented
+  `AST_domestic_industry` fix). Nothing else in them differs from the base
+  game. The old Siam error line is gone: Paradox fixed it.
+- **Two things the new base game uses and the mod's older copies lacked**,
+  copied unchanged: the idea `JAP_ketsugo_field_expedients`
+  (`ideas/japan.txt`; the base game's `events/SEA_Japan.txt` gives it) and
+  the decision `establish_jaykaynagar_aliminium_smelters`
+  (`resource_prospecting.txt`; the base game's India focus tree refers to
+  it).
+- **`descriptor.mod`:** `supported_version="1.19.4.1"`.
+- **The other 61 changed base files are not merged** into the mod's copies.
+  The load test shows nothing broken by that; those countries simply do
+  not get 1.19.4's changes, as with earlier updates.
+
+**Checked:**
+- **Check CC** (new): the idea and the decision are identical to the base
+  game's, and apart from them and a comment the two files are unchanged.
+  The checks that compare with the installed base game (netherlands,
+  cosmetic, AST, SIA) pass against 1.19.4.1.
+- **Load test** (`game-logs/33-on-1.19.4.1_error.log`, setup lines only):
+  124 lines, against 115 on 1.19.3. Gone: 4, among them the Siam
+  line. New, none of them a script error of the mod's: the same Chile lines
+  the base game alone gives (`game-logs/34-base-game-1.19.4.1_error.log`,
+  3 lines); five "placed in 9958 at start, but that is enemy territory"
+  (the mod's Chinese order of battle, `CHI_1944.txt`, places divisions at
+  Zhengzhou, which the base game's state file gives to Japan; not changed);
+  four "does not have
+  any equipment variant" (Italy, Czechoslovakia, Brazil); "state 163:
+  occupation is not initialzied"; one more `add_resource` from a history
+  file (New Zealand). Harmless setup messages.
+- **Checks:** 86, all pass. (Section 31's version of this document said 82:
+  that was a miscount; `verify_update.py` runs one check per file for the
+  removed-line test, so section 31 alone took it from 81 to 85.)
 
 ## How to test in game
 
@@ -2938,7 +3007,7 @@ On another PC, register the `mod/` folder the same way (a `.mod` file with its
 
 ## For the author (publishing)
 
-116 files differ from the July 2026 Steam version: 36 edited, 3 deleted, 77 new (full list:
+118 files differ from the July 2026 Steam version: 38 edited, 3 deleted, 77 new (full list:
 `git diff --name-status 253cea1 -- mod/`, or docs/READ-ME-FIRST.md). Each
 change is also a patch in the package's `patches/` folder (one per commit,
 with its reason), or can be viewed with `git show <commit>`.

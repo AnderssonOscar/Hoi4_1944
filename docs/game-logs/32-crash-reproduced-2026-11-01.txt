@@ -1,0 +1,146 @@
+The crash when a country changes sides, reproduced in the game on 1 November 2026 (HOI4 1.19.4.1, all DLCs, played as Switzerland,
+tools/investigation/isolated_run.ps1, start moved to 2 August 1944 in the test copy). See docs/CHANGELOG.md section 31.
+
+== Finland, version before the fix (3aaafcd). Test file zz_TEMP_fin_switch_last.txt
+-- test lines:
+[14:12:53][1944.08.02.21]: FL  21:00, 2 August, 1944 Finland's political power is drained so that the AI starts nothing more; its decisions are started
+[14:12:53][1944.08.02.21]: FL  21:00, 2 August, 1944 all activated except the switch
+[14:17:47][1944.08.08.21]: FL  21:00, 8 August, 1944 FIN_surrender_soviet is activated, after everything else, so that it is last in Finland's list
+[14:18:37][1944.08.09.21]: FL day  21:00, 9 August, 1944   running: FIN_surrender_soviet
+[14:19:26][1944.08.10.21]: FL day  21:00, 10 August, 1944   running: FIN_surrender_soviet
+[14:20:15][1944.08.11.21]: FL day  21:00, 11 August, 1944   running: FIN_surrender_soviet
+[14:21:04][1944.08.12.21]: FL day  21:00, 12 August, 1944   running: FIN_surrender_soviet
+[14:21:53][1944.08.13.21]: FL day  21:00, 13 August, 1944   running: FIN_surrender_soviet
+-- the last lines of game.log:
+[14:28:44][1944.08.22.05]: Independent State of Croatia is declaring war on Finland
+[14:28:44][1944.08.22.05]: Hellenic State is declaring war on Finland
+-- crash report:
+Application: HOI4 
+Version: Operation Postern v1.19.4.1.99a5 
+Date/Time: 2026-11-01 14:28:44
+
+Unhandled Exception C0000005 (EXCEPTION_ACCESS_VIOLATION) at address 0x00007FF66D2CF74A
+
+
+Unhandled Exception C0000005 (EXCEPTION_ACCESS_VIOLATION) at address 0x00007FF66D2CF74A
+
+frame 1: offset 0x77F74A in function 0x77F62C-0x77F7B9
+
+frame 2: offset 0x777F30 in function 0x777DC0-0x777F9D
+    'decision.hourly'
+
+
+exception code C0000005 at 0x7ff66d2cf74a (hoi4.exe+0x77F74A), thread 29936
+  access violation: WRITE address 0x10
+  rcx  0000000000000000 
+  r14  0000022E7B7C1D10 -> mem 00000000000000004f3b00000000000040ae6ba02d020000
+
+== Finland, with the fix (97922cd). The same test file
+-- test lines:
+[14:30:07][1944.08.02.21]: FL  21:00, 2 August, 1944 Finland's political power is drained so that the AI starts nothing more; its decisions are started
+[14:30:07][1944.08.02.21]: FL  21:00, 2 August, 1944 all activated except the switch
+[14:35:01][1944.08.08.21]: FL  21:00, 8 August, 1944 FIN_surrender_soviet is activated, after everything else, so that it is last in Finland's list
+[14:46:00][1944.08.22.06]: PL  6:00, 22 August, 1944 on_peaceconference_started: winner SOV Soviet Union loser FIN Finland
+-- the last lines of game.log:
+[14:49:55][1944.08.26.24]: PL day  24:00, 26 August, 1944 subject of GER: RKN Reichskommissariat Niederlande ruling fascist
+[14:49:55][1944.08.26.24]: PL day  24:00, 26 August, 1944 subject of GER: RKG Reichskommissariat Norwegen ruling fascist
+-- crash report:
+(no crash folder: the game did not crash)
+
+== Romania, version before the fix. Test file zz_TEMP_rom_switch_last.txt
+-- test lines:
+[14:59:58][1944.08.03.08]: RL  8:00, 3 August, 1944 Romania's political power is drained so that the AI starts nothing more; its decisions are started
+[14:59:58][1944.08.03.08]: RL  8:00, 3 August, 1944 all activated except the switch
+[15:04:04][1944.08.08.08]: RL  8:00, 8 August, 1944 ROM_surrender_soviet is activated, after everything else, so that it is last in Romania's list; surrender progress 0.0
+-- the last lines of game.log:
+[15:13:26][1944.08.19.18]: Reichskommissariat Norwegen is declaring war on Socialist Republic of Romania
+[15:13:26][1944.08.19.18]: German Hungary is declaring war on Socialist Republic of Romania
+-- crash report:
+Application: HOI4 
+Version: Operation Postern v1.19.4.1.99a5 
+Date/Time: 2026-11-01 15:13:27
+
+Unhandled Exception C0000005 (EXCEPTION_ACCESS_VIOLATION) at address 0x00007FF66D2CF74A
+
+
+Unhandled Exception C0000005 (EXCEPTION_ACCESS_VIOLATION) at address 0x00007FF66D2CF74A
+
+frame 1: offset 0x77F74A in function 0x77F62C-0x77F7B9
+
+frame 2: offset 0x777F30 in function 0x777DC0-0x777F9D
+    'decision.hourly'
+
+
+exception code C0000005 at 0x7ff66d2cf74a (hoi4.exe+0x77F74A), thread 36496
+  access violation: WRITE address 0x10
+  rcx  0000000000000000 
+  r14  00000260512F8ED0 -> mem 0000000000000000020000000b0000000c0000005f020000
+
+== Romania, the final version. Test file zz_TEMP_rom_switch_hold.txt (the Soviets kept in the five states, because a first run ended with the decision cancelling itself below 2% surrender progress)
+-- test lines:
+[16:20:40][1944.08.03.08]: RL  8:00, 3 August, 1944 Romania's political power is drained so that the AI starts nothing more; its decisions are started
+[16:20:40][1944.08.03.08]: RL  8:00, 3 August, 1944 all activated except the switch
+[16:24:45][1944.08.08.08]: RL  8:00, 8 August, 1944 ROM_surrender_soviet is activated, after everything else, so that it is last in Romania's list; surrender progress 0.0
+[16:34:08][1944.08.19.19]: PL  19:00, 19 August, 1944 on_peaceconference_started: winner SOV Soviet Union loser ROM Legionary Romania
+-- the last lines of game.log:
+[16:37:03][1944.08.23.08]: RL day  8:00, 23 August, 1944   running: restructure_supply_system
+[16:37:03][1944.08.23.08]: RL day  8:00, 23 August, 1944   ROM is a subject of SOV
+-- crash report:
+(no crash folder: the game did not crash)
+
+== Bulgaria, version before the fix. Test file zz_TEMP_bul_switch_last.txt (total mobilisation set, see CHANGELOG section 31)
+-- test lines:
+[15:55:36][1944.08.02.23]: BL  23:00, 2 August, 1944 Bulgaria's political power is drained so that the AI starts nothing more; its decisions are started
+[15:55:36][1944.08.02.23]: BL  23:00, 2 August, 1944 all activated except the switch
+[16:00:30][1944.08.08.23]: BL  23:00, 8 August, 1944 BUL_surrender_soviet is activated, after everything else, so that it is last in Bulgaria's list
+-- the last lines of game.log:
+[16:04:45][1944.08.14.03]: PL  3:00, 14 August, 1944 on_peaceconference_started: winner BUL Socialist Republic of Bulgaria loser FIN Finland
+[16:04:45][1944.08.14.03]: PL  3:00, 14 August, 1944 on_peaceconference_ended: winner BUL Socialist Republic of Bulgaria loser FIN Finland (loser exis
+-- crash report:
+Application: HOI4 
+Version: Operation Postern v1.19.4.1.99a5 
+Date/Time: 2026-11-01 16:04:46
+
+Unhandled Exception C0000005 (EXCEPTION_ACCESS_VIOLATION) at address 0x00007FF66D2CF74A
+
+
+Unhandled Exception C0000005 (EXCEPTION_ACCESS_VIOLATION) at address 0x00007FF66D2CF74A
+
+frame 1: offset 0x77F74A in function 0x77F62C-0x77F7B9
+
+frame 2: offset 0x777F30 in function 0x777DC0-0x777F9D
+    'decision.hourly'
+
+
+exception code C0000005 at 0x7ff66d2cf74a (hoi4.exe+0x77F74A), thread 34892
+  access violation: WRITE address 0x10
+  rcx  0000000000000000 
+  r14  000002166C584DD8 -> mem 0000000000000000b8537c4515020000f50e6bf915a00390
+
+== Bulgaria, the final version. The same test file
+-- test lines:
+[16:06:00][1944.08.02.23]: BL  23:00, 2 August, 1944 Bulgaria's political power is drained so that the AI starts nothing more; its decisions are started
+[16:06:00][1944.08.02.23]: BL  23:00, 2 August, 1944 all activated except the switch
+[16:10:55][1944.08.08.23]: BL  23:00, 8 August, 1944 BUL_surrender_soviet is activated, after everything else, so that it is last in Bulgaria's list
+[16:15:12][1944.08.14.04]: PL  4:00, 14 August, 1944 on_peaceconference_started: winner SOV Soviet Union loser BUL Legionnaires Bulgaria
+-- the last lines of game.log:
+[16:18:21][1944.08.17.24]: PL day  24:00, 17 August, 1944 subject of GER: RKN Reichskommissariat Niederlande ruling fascist
+[16:18:21][1944.08.17.24]: PL day  24:00, 17 August, 1944 subject of GER: RKG Reichskommissariat Norwegen ruling fascist
+-- crash report:
+(no crash folder: the game did not crash)
+
+== Finland, Romania and Bulgaria in one game, the final version. Finland and Bulgaria switched; Romania's decision cancelled itself on 20 August (surrender progress below 2%, the author's own rule)
+-- test lines:
+[15:28:53][1944.08.02.21]: FL  21:00, 2 August, 1944 Finland's political power is drained so that the AI starts nothing more; its decisions are started
+[15:28:53][1944.08.02.21]: FL  21:00, 2 August, 1944 all activated except the switch
+[15:28:58][1944.08.02.23]: BL  23:00, 2 August, 1944 Bulgaria's political power is drained so that the AI starts nothing more; its decisions are started
+[15:28:58][1944.08.02.23]: BL  23:00, 2 August, 1944 all activated except the switch
+[15:29:16][1944.08.03.08]: RL  8:00, 3 August, 1944 Romania's political power is drained so that the AI starts nothing more; its decisions are started
+[15:29:16][1944.08.03.08]: RL  8:00, 3 August, 1944 all activated except the switch
+[15:33:22][1944.08.08.08]: RL  8:00, 8 August, 1944 ROM_surrender_soviet is activated, after everything else, so that it is last in Romania's list; surrender progress 0.0
+[15:33:48][1944.08.08.21]: FL  21:00, 8 August, 1944 FIN_surrender_soviet is activated, after everything else, so that it is last in Finland's list
+-- the last lines of game.log:
+[15:50:33][1944.08.28.08]: RL day  8:00, 28 August, 1944   running: scavenger_training_trait_decision
+[15:50:33][1944.08.28.08]: RL day  8:00, 28 August, 1944   running: restructure_supply_system
+-- crash report:
+(no crash folder: the game did not crash)

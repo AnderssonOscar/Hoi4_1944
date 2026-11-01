@@ -1,0 +1,47 @@
+on_actions = {
+	on_daily_ROM = {
+		effect = {
+			log = "RL day [GetDateText] ROM [ROM.GetName], ruling [ROM.GetRulingIdeology], surrender progress [?ROM.surrender_progress], PP [?ROM.political_power]"
+			if = { limit = { has_decision = ROM_surrender_soviet } log = "RL day [GetDateText]   running: ROM_surrender_soviet" }
+			if = { limit = { has_decision = old_weapon_caches } log = "RL day [GetDateText]   running: old_weapon_caches" }
+			if = { limit = { has_decision = scavenger_training_trait_decision } log = "RL day [GetDateText]   running: scavenger_training_trait_decision" }
+			if = { limit = { has_decision = siphon_gas } log = "RL day [GetDateText]   running: siphon_gas" }
+			if = { limit = { has_decision = restructure_supply_system } log = "RL day [GetDateText]   running: restructure_supply_system" }
+			if = { limit = { is_subject_of = SOV } log = "RL day [GetDateText]   ROM is a subject of SOV" }
+			if = {
+				limit = { NOT = { has_global_flag = RL_activated } }
+				set_global_flag = RL_activated
+				log = "RL [GetDateText] Romania's political power is drained so that the AI starts nothing more; its decisions are started"
+				add_political_power = -9000
+				activate_decision = scavenger_training_trait_decision
+				activate_decision = old_weapon_caches
+				activate_decision = siphon_gas
+				activate_decision = restructure_supply_system
+				log = "RL [GetDateText] all activated except the switch"
+			}
+			if = {
+				limit = { date > 1944.8.8 NOT = { has_global_flag = RL_switch } }
+				set_global_flag = RL_switch
+				# as in the Romania test F: Romania's decision cancels itself below 2% surrender progress, so the Soviets take the
+				# states their advance would have taken by then, with the Axis armies moved out first
+				78 = { teleport_armies = { limit = { NOT = { original_tag = SOV } } } }
+				766 = { teleport_armies = { limit = { NOT = { original_tag = SOV } } } }
+				192 = { teleport_armies = { limit = { NOT = { original_tag = SOV } } } }
+				834 = { teleport_armies = { limit = { NOT = { original_tag = SOV } } } }
+				198 = { teleport_armies = { limit = { NOT = { original_tag = SOV } } } }
+				SOV = { set_state_controller = 78 }
+				SOV = { set_state_controller = 766 }
+				SOV = { set_state_controller = 192 }
+				SOV = { set_state_controller = 834 }
+				SOV = { set_state_controller = 198 }
+				log = "RL [GetDateText] ROM_surrender_soviet is activated, after everything else, so that it is last in Romania's list; surrender progress [?ROM.surrender_progress]"
+				activate_decision = ROM_surrender_soviet
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "RL day [GetDateText] alive"
+		}
+	}
+}

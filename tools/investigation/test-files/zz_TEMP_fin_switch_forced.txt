@@ -1,0 +1,33 @@
+on_actions = {
+	on_daily_FIN = {
+		effect = {
+			log = "FS day [GetDateText] FIN [FIN.GetName], ruling [FIN.GetRulingIdeology], surrender progress [?FIN.surrender_progress]"
+			if = { limit = { has_decision = FIN_surrender_soviet } log = "FS day [GetDateText]   running: FIN_surrender_soviet" }
+			if = { limit = { has_decision = FIN_appeal_to_the_finnish_spirit } log = "FS day [GetDateText]   running: FIN_appeal_to_the_finnish_spirit" }
+			if = { limit = { has_decision = FIN_prioritize_light_industry } log = "FS day [GetDateText]   running: FIN_prioritize_light_industry" }
+			if = { limit = { has_decision = FIN_prepare_motti_tactics_in_state } log = "FS day [GetDateText]   running: FIN_prepare_motti_tactics_in_state" }
+			if = { limit = { has_decision = FIN_set_up_weapon_caches_in_state } log = "FS day [GetDateText]   running: FIN_set_up_weapon_caches_in_state" }
+			if = { limit = { has_decision = FIN_search_for_weapon_caches_in_state } log = "FS day [GetDateText]   running: FIN_search_for_weapon_caches_in_state" }
+			if = { limit = { has_war_with = SOV } log = "FS day [GetDateText]   FIN is at war with SOV" }
+			if = { limit = { has_war_with = GER } log = "FS day [GetDateText]   FIN is at war with GER" }
+			if = { limit = { is_in_faction_with = GER } log = "FS day [GetDateText]   FIN is in Germany's faction" }
+			if = {
+				limit = { NOT = { has_global_flag = FS_activated } }
+				set_global_flag = FS_activated
+				log = "FS [GetDateText] other timed decisions of Finland are started first (three on states the switch hands to the Soviets), then FIN_surrender_soviet, so that it is the last in the list"
+				activate_decision = FIN_appeal_to_the_finnish_spirit
+				activate_decision = FIN_prioritize_light_industry
+				activate_targeted_decision = { target = 146 decision = FIN_prepare_motti_tactics_in_state }
+				activate_targeted_decision = { target = 216 decision = FIN_set_up_weapon_caches_in_state }
+				activate_targeted_decision = { target = 147 decision = FIN_search_for_weapon_caches_in_state }
+				activate_decision = FIN_surrender_soviet
+				log = "FS [GetDateText] all activated"
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "FS day [GetDateText] alive"
+		}
+	}
+}

@@ -1,0 +1,27 @@
+on_actions = {
+	on_daily_ENG = {
+		effect = {
+			log = "DD day [GetDateText] alive"
+			if = { limit = { has_decision = operation_overlord_prep } log = "DD day [GetDateText]   ENG running: operation_overlord_prep" }
+			if = { limit = { USA = { has_decision = operation_overlord_prep } } log = "DD day [GetDateText]   USA running: operation_overlord_prep" }
+			if = { limit = { has_decision = operation_overlord } log = "DD day [GetDateText]   ENG running: operation_overlord" }
+			if = { limit = { USA = { has_decision = operation_overlord } } log = "DD day [GetDateText]   USA running: operation_overlord" }
+			if = { limit = { GER = { has_country_flag = GER_dday_landed } } log = "DD day [GetDateText]   LANDED: a western Allied enemy holds part of the invasion coast" }
+			if = { limit = { NOT = { 15 = { is_fully_controlled_by = GER } } } log = "DD day [GetDateText]   state 15 (Normandy) is not fully German" }
+			if = { limit = { NOT = { 14 = { is_fully_controlled_by = GER } } } log = "DD day [GetDateText]   state 14 (Brittany) is not fully German" }
+			if = { limit = { NOT = { 29 = { is_fully_controlled_by = GER } } } log = "DD day [GetDateText]   state 29 (Nord-Pas-de-Calais) is not fully German" }
+			if = { limit = { NOT = { 6 = { is_fully_controlled_by = GER } } } log = "DD day [GetDateText]   state 6 (Flanders) is not fully German" }
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			if = {
+				limit = { date > 1944.5.17 NOT = { has_global_flag = DD_digin } }
+				set_global_flag = DD_digin
+				log = "DD [GetDateText] the author's decision dig_in_and_hold is started for Germany (12 days, then 90 days until it can be taken again)"
+				activate_decision = dig_in_and_hold
+			}
+			if = { limit = { has_decision = dig_in_and_hold } log = "DD day [GetDateText]   GER running: dig_in_and_hold" }
+		}
+	}
+}

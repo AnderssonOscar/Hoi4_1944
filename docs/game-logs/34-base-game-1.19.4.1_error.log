@@ -1,0 +1,3 @@
+[14:54:47][1936.01.01.12]: 'history/countries/GER - Germany.txt:1547: create_equipment_variant': 'Hs 123' - Invalid icon 'GFX_GER_cv_fighter1_medium'.
+[14:54:52][1936.01.01.12]: mio:CHL_famae_organization was not found in country scope CHL
+[14:54:52][1936.01.01.12]: history/units/CHL_1936.txt:84: add_equipment_production: industrial_manufacturer is set but no MIO has been found

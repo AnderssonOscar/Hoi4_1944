@@ -1,0 +1,4 @@
+package_commit	pr_commit	subject
+6a1dad45295eb962ad0d66cdfa9f02ca5bbcac61	1318ced3723f5b2b902a92bce361c2bcd00c3459	Fix: switch off the SS / Wehrmacht "anger" system, as the current base game does
+97922cd4f0e14cec42ff684e94e0b232a8da64ae	fbb4a48d59079548287321a00410481144e798e3	Fix: run the Finland, Romania and Bulgaria side switches from an event, not inside the decision update
+39c5e8677ae2544e66e1ad0dcef1b3c5fb539627	b034129ac887e8dd5d4db00b214e0e80ea1e34af	Update for HOI4 1.19.4.1: four rebuilt files, two missing pieces, descriptor

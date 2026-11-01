@@ -41,9 +41,9 @@ source of truth, and the old `.git` was not used for anything.
 
 | # | Reported bug | Status | Confidence |
 |---|---|---|---|
-| A | "Crashes at a certain date" | **Not explained.** The first suspect, the Ichi-Go scripts (Japan vs China), was corrected in commit `e20698c`, but a test in the game on 10 October 2026 showed the old lines do not crash | It is a script mistake; it is not this crash |
-| B | Crash when Bulgaria switches sides | The same cause as C (section 11); fixed with it in commit `97922cd` | Likely; not yet confirmed in the game |
-| C | Crash when Romania (or Finland, or Bulgaria) changes sides, at "Calculating Peace Conference" (many reports in October) | **Cause found in a player's crash report** (section 11): the switch ran inside the decision's `remove_effect`, in the middle of the game's own update of the country's decisions. Fixed in commit `97922cd` (CHANGELOG section 31). Nine setups without the crash: sections 2C and 10 | High for Finland (the crash report is Finland's); likely for Romania and Bulgaria; not yet confirmed in the game |
+| A | "Crashes at a certain date" | **Not explained.** The first suspect, the Ichi-Go scripts (Japan vs China), was corrected in commit `e20698c`, but a test in the game on 10 October 2026 showed the old lines do not crash. Possibly the crash of row C, which also comes around the same dates in a game (not shown) | It is a script mistake; it is not this crash |
+| B | Crash when Bulgaria switches sides | The same cause as C (section 11); reproduced in the game on 1 November 2026 and fixed with it in commit `97922cd` | Certain, once Bulgaria is on total mobilisation; on its 1944 war economy the decisions that disappear are not available to it |
+| C | Crash when Romania (or Finland, or Bulgaria) changes sides, at "Calculating Peace Conference" (many reports in October) | **Cause found in a player's crash report** (section 11): the switch ran inside the decision's `remove_effect`, in the middle of the game's own update of the country's decisions. Reproduced in the game on 1 November 2026 and fixed in commit `97922cd` (CHANGELOG section 31). Nine setups without the crash: sections 2C and 10 | Certain: reproduced for Finland and Romania |
 | D | Crash on completing the Volkssturm focus | Code read, one weak lead (ruled mostly out); focus effect redesigned 2026-09-27 (CHANGELOG §6) | Not yet identified |
 | E | "Playing UK crashes the game" | **Found and fixed** (commit `e578b10`, CHANGELOG §15): Allied countries with no land capitulate during the game setup, and the "government in exile" popup for the UK crashes the game | Certain: reproduced with the Workshop version and gone after the fix |
 | F | Sometimes the Allies do not launch D-Day | Not explained. Codex's changes to the Overlord gates were reverted at Oscar's request; Britain's and the USA's surrender progress measured 0 on 1 January 1944 (CHANGELOG 27–28) |
@@ -507,7 +507,10 @@ All read-only; they never modify `mod/`.
 - `pdx.py`: a small parser for Paradox script files.
 - `check_province_modifiers.py`: finding A.
 - `check_structure.py`: the checks in section 3.
-- `crash_site.py`: shows which part of the game a crash report points to
+- `crash_site.py`: shows which part of the game a crash report points to (reads the installed exe, so it fits only crash reports of the installed game version)
+- `read_minidump.py`, `disasm_function.py`: the exception, registers and stack of a crash dump; the disassembly of a function of the exe (section 11)
+- `check_decision_effects.py`: lists the timed decisions whose end effects do something heavy (section 11)
+- `investigation/isolated_run.ps1`: a test game outside Documents (section 11); `investigation/build_pr_branch.py`: replays package commits in the author's layout
   (finding E). Needs `pip install pefile capstone`.
 - `start_as_country.ps1`: starts the 1944 game directly as one country
   and reports whether it crashed (finding E).
@@ -864,11 +867,43 @@ Read with `tools/crash_site.py`, `tools/disasm_function.py` and
 
 That explains why section 10 found nothing: it ran the switch effects from
 on_actions, outside the decision loop, and where the real decisions ran
-out by themselves, there was no other running decision for the switch to
-remove. The change (CHANGELOG section 31) runs the author's three switch
+out by themselves they had been started first, so they were not last in the
+list. The change (CHANGELOG section 31) runs the author's three switch
 effects, unchanged, from hidden events one hour later.
 
-**Still to do in the game:** the reproduction stopped on 25 October
-(`tools/investigation/test-files/zz_TEMP_fin_switch_real.txt`: a game from
-2 August 1944 in which Finland's real decision runs out), first with the
-version before the change, then with it; and the load test.
+**Reproduced on 1 November 2026.** It took four attempts, because the
+crash needs the switch decision to be the last entry in the country's list
+at the moment it runs out, and the AI keeps starting decisions:
+
+| Test file | What it did | Result on the version before the fix |
+|---|---|---|
+| `zz_TEMP_fin_switch_forced.txt` | other Finnish decisions started first, the switch last, all on 2 August | no crash: the AI started more decisions afterwards, and these (`FIN_appeal_to_the_finnish_spirit`, `FIN_prioritize_light_industry`) did not end |
+| `zz_TEMP_fin_switch_order.txt` | the author's decisions first, the switch on 8 August | no crash, but useful: at the switch `old_weapon_caches`, `scavenger_training_trait_decision` and `siphon_gas` all ended, `ration_army_fuel` (no such trigger) stayed. The AI had started `siphon_gas` after the switch, so the switch was not last |
+| `zz_TEMP_fin_switch_last.txt`, switch on 2 August | + Finland's political power drained so the AI starts nothing | no crash: the AI still started the free `restructure_supply_system` |
+| the same, switch on 8 August | + `restructure_supply_system` started first | **Crash on 22 August at 05:00**, same function and same write as the player's crash |
+| `zz_TEMP_rom_switch_last.txt` | the same for Romania, with no state-targeted decisions | **Crash on 19 August at 18:00**, the same. So the entries that disappear are the author's decisions with `remove_trigger = { has_war = no }`, not state-targeted ones |
+| `zz_TEMP_bul_switch_last.txt`, first version | the same for Bulgaria | no crash, not valid: Bulgaria is on a plain war economy in 1944, the author's decisions need total mobilisation and ended at once, so nothing was there for the switch to end |
+| the same, with total mobilisation set | | **Crash on 14 August at 03:00**, the same |
+
+The list itself was read from a plain-text save: under each country,
+`decision_status = { decision_to_remove = { decision="..." days=... } }`.
+What is running on 1 September 1944 (AI, game from 22 August): Finland
+`ration_army_fuel`, `scavenger_training_trait_decision`, `old_weapon_caches`,
+`FIN_request_german_support`; Romania `old_weapon_caches`,
+`scavenger_training_trait_decision`, `siphon_gas`,
+`restructure_supply_system`. Results with the fix: CHANGELOG section 31.
+
+### The test method changed on 1 November 2026
+
+**Windows Controlled Folder Access is on** on this PC (seen first on
+25 October: the file copy of a test hung on it). It blocks PowerShell,
+robocopy, HOI4 and other programs from writing into `Documents`, so
+`tools/investigation/politics_run.ps1` and the other scripts that use the
+Documents folder no longer work. It is a Windows security setting and was
+left as it is. Instead, `tools/investigation/isolated_run.ps1` runs the game
+from a game root of its own (`tools/investigation/out/gameroot`: a copy of
+the exe, junctions to the real game's folders, and a `launcher-settings.json`
+whose `gameDataPath` points at `out/userdir`). The game then reads and writes
+nothing in Documents: not the playset, the settings or the saves. `-NoMod`
+runs the base game alone. **Never delete `out/gameroot` recursively: the
+junctions point at the real game.**

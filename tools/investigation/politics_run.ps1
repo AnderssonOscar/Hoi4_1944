@@ -24,7 +24,8 @@ if ($hadAutosave) { Copy-Item "$sg\autosave.hoi4" "$bk\autosave.hoi4" -Force }
 $desc = [IO.File]::ReadAllText("$L\descriptor.mod")
 $proc = $null
 try {
-  robocopy $Source $L /MIR /XD .git /NFL /NDL /NJH /NJS /NP | Out-Null
+  robocopy $Source $L /MIR /XD .git /R:2 /W:2 /NFL /NDL /NJH /NJS /NP | Out-Null
+  if ($LASTEXITCODE -ge 8) { throw "robocopy failed with exit code ${LASTEXITCODE}, the test copy is not what was asked for" }
   [IO.File]::WriteAllText("$L\descriptor.mod", $desc, (New-Object Text.UTF8Encoding $false))
   foreach ($tf in $TestFiles) { Copy-Item $tf "$L\common\on_actions\$(Split-Path $tf -Leaf)" -Force }
   if ($Bookmark) {
@@ -65,7 +66,7 @@ try {
   Copy-Item "$bk\settings.txt" "$doc\settings.txt" -Force
   if ($hadAutosave) { Copy-Item "$bk\autosave.hoi4" "$sg\autosave.hoi4" -Force }
   foreach ($f in Get-ChildItem $sg -File) { if ($before -notcontains $f.Name) { "removing test save: $($f.Name)"; Remove-Item -LiteralPath $f.FullName } }
-  robocopy $Pkg $L /MIR /NFL /NDL /NJH /NJS /NP | Out-Null
+  robocopy $Pkg $L /MIR /R:2 /W:2 /NFL /NDL /NJH /NJS /NP | Out-Null
   [IO.File]::WriteAllText("$L\descriptor.mod", $desc, (New-Object Text.UTF8Encoding $false))
   "restored: playset " + (Get-Content "$doc\dlc_load.json" -Raw)
   "restored: settings " + ((Select-String -Path "$doc\settings.txt" -Pattern 'save_as_binary=\w+|autosave="\w+"').Matches.Value -join ", ")

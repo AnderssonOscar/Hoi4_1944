@@ -806,3 +806,24 @@ stopped because Oscar needed the PC (he was starting another game); run
 them with `tools/investigation/politics_run.ps1`, first on the version
 before `97922cd` (`-Source` a checkout of `3aaafcd`), then on HEAD.
 Nothing pushed; Oscar decides.
+
+**1 November: the peace-conference crash reproduced and fixed; update for
+1.19.4.1; pull request #5.** Everything is in CHANGELOG sections 31 and 32
+and INVESTIGATION section 11. The short version:
+
+- The game updated itself to **1.19.4.1** on 30 October. Crash offsets
+  changed: `tools/crash_site.py` and `tools/disasm_function.py` read the
+  installed exe, so they only fit crash reports of the installed version.
+- **Windows Controlled Folder Access is on.** Run tests with
+  `tools/investigation/isolated_run.ps1` only; see INVESTIGATION section 11.
+- To reproduce a crash in a timed decision's `remove_effect`, the decision
+  must be the **last entry** in the country's list when it runs out. Read
+  the list from a plain-text save (`decision_status`).
+- `tools/check_decision_effects.py` lists every timed decision whose end
+  effects do something heavy; `--base` for the base game alone.
+- **Two reports not fixed** (30 October, from Steam): "the Allies can't land
+  as long as there's one heavy tank at a port" (nothing in the mod's scripts
+  looks at units or ports; Oscar's rule stands, the author's D-Day decisions
+  are not to be touched) and "the dig-in decision doesn't come back" (by the
+  script it does: 12 days + `days_re_enable = 90`). A game from 30 April to
+  20 June 1944 with `test-files/zz_TEMP_dday_digin.txt` is prepared.

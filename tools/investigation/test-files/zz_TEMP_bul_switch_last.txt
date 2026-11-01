@@ -1,0 +1,39 @@
+on_actions = {
+	on_daily_BUL = {
+		effect = {
+			log = "BL day [GetDateText] BUL [BUL.GetName], ruling [BUL.GetRulingIdeology], surrender progress [?BUL.surrender_progress], PP [?BUL.political_power]"
+			if = { limit = { has_decision = BUL_surrender_soviet } log = "BL day [GetDateText]   running: BUL_surrender_soviet" }
+			if = { limit = { has_decision = old_weapon_caches } log = "BL day [GetDateText]   running: old_weapon_caches" }
+			if = { limit = { has_decision = scavenger_training_trait_decision } log = "BL day [GetDateText]   running: scavenger_training_trait_decision" }
+			if = { limit = { has_decision = siphon_gas } log = "BL day [GetDateText]   running: siphon_gas" }
+			if = { limit = { has_decision = restructure_supply_system } log = "BL day [GetDateText]   running: restructure_supply_system" }
+			if = { limit = { is_subject_of = SOV } log = "BL day [GetDateText]   BUL is a subject of SOV" }
+			if = { limit = { has_war_with = SOV } log = "BL day [GetDateText]   BUL is at war with SOV" }
+			if = { limit = { has_war_with = GER } log = "BL day [GetDateText]   BUL is at war with GER" }
+			if = {
+				limit = { NOT = { has_global_flag = BL_activated } }
+				set_global_flag = BL_activated
+				log = "BL [GetDateText] Bulgaria's political power is drained so that the AI starts nothing more; its decisions are started"
+				add_political_power = -9000
+				# Bulgaria starts 1944 on a plain war economy; the author's decisions below need total mobilisation and end at once without it
+				add_ideas = tot_economic_mobilisation
+				activate_decision = scavenger_training_trait_decision
+				activate_decision = old_weapon_caches
+				activate_decision = siphon_gas
+				activate_decision = restructure_supply_system
+				log = "BL [GetDateText] all activated except the switch"
+			}
+			if = {
+				limit = { date > 1944.8.8 NOT = { has_global_flag = BL_switch } }
+				set_global_flag = BL_switch
+				log = "BL [GetDateText] BUL_surrender_soviet is activated, after everything else, so that it is last in Bulgaria's list"
+				activate_decision = BUL_surrender_soviet
+			}
+		}
+	}
+	on_daily_GER = {
+		effect = {
+			log = "BL day [GetDateText] alive"
+		}
+	}
+}

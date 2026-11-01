@@ -1,16 +1,16 @@
-# Verification of the fixes and the 1.19.3 update (2026-09-27)
+# Verification of the fixes and the update for the current game (HOI4 1.19.4.1, 2026-11-01)
 
-Everything below can be re-run: `python tools/verify_update.py` (82 checks,
+Everything below can be re-run: `python tools/verify_update.py` (86 checks,
 prints PASS/FAIL) and `python tools/check_references.py`.
 
-## Result: all 82 checks pass
+## Result: all 86 checks pass
 
 | Area | What was checked | Result |
 |---|---|---|
 | Integrity | mod/ fully committed; all 988 mod files byte-identical to the commits | PASS |
 | Integrity | a fresh clone reproduces all 988 mod files byte-for-byte: no line-ending conversion on checkout (calibrated: it fails with the old `* text=auto`) | PASS |
 | Integrity | Steam Workshop copy never touched: either the July baseline (914/914 files) or, since 29 Sep 2026, one of the author's own published updates (29 Sep = this package at 470916b, 30 Sep = this package at bb94b9e, each plus his README, ignoring line endings; calibrated: it fails against the wrong version) | PASS |
-| Scope | exactly the 116 intended files changed (36 edited, 3 deleted, 77 new), nothing else | PASS |
+| Scope | exactly the 118 intended files changed (38 edited, 3 deleted, 77 new), nothing else | PASS |
 | Author's work | every line removed from his files is one of the documented fixes (checked line by line in 29 files) | PASS |
 | Author's work | rebuilt files: his parts byte-identical (RKN edit, 17 cosmetic tags, AST 1944 block + 4 stockpiles, SIA 1944 block); all other content identical to 1.19.3 | PASS |
 | Fixes | A (Ichi-Go), G (duplicate states), and every update item is present in the files | PASS |
@@ -31,7 +31,8 @@ prints PASS/FAIL) and `python tools/check_references.py`.
 | Leningrad taken | D: fires once, from 1944, when we hold the city (3151); the game's news event news.103 also fires; Oscar's illustration, described as such in its .gfx; 3 texts. Calibrated with 3 planted errors (1 for the first version). Runtime: not on day one; fired the day a test gave us the city | PASS |
 | The Crimea | C: the popup on day one; evacuate (the popup starts the decision: 50 PP, 30 days, to Constanta, Odessa, Mykolaiv or the capital, each condition naming its destination; Romanian allies too) or hold (Fortress Sevastopol, the author's Festung values); AI 25/75, never after holding; 14 texts. Calibrated with 7 planted errors (one missed by the first version; the check was strengthened). Runtime: all German and Romanian divisions moved from the Crimea to Constanta, also through the decision and with AI Germany; the popup's option charges 50 PP and works with 20 | PASS |
 | The invasion beaten back | Y (52 scenario/calibration checks): a landing is noted when, from 1 June 1944, an enemy holds part of Normandy, Brittany, Nord-Pas-de-Calais or Flanders (the author's D-Day states, all German at the start); when we hold all four again the event follows a day later; once; no effect; Oscar's picture; 3 texts. Runtime (date lowered for the test): landing noted, beaten back noted the next day | PASS |
-| Side switches from events | BB: the three side-switch decisions (Finland, Romania, Bulgaria) only fire a hidden event one hour later, and each event holds the author's old `remove_effect` line for line; nothing else in those files changed. Calibrated with four planted errors. Not yet tested in the game (CHANGELOG section 31) | PASS |
+| Update for 1.19.4.1 | CC: the idea and the decision copied from the base game are identical to it; netherlands, cosmetic, AST and SIA are the installed base game plus only the author's edits (CHANGELOG section 32) | PASS |
+| Side switches from events | BB: the three side-switch decisions (Finland, Romania, Bulgaria) only fire a hidden event one hour later, and each event holds the author's old `remove_effect` line for line; nothing else in those files changed. Calibrated with four planted errors. In the game: the crash reproduced on the version before the fix and gone with it (CHANGELOG section 31, `game-logs/32-crash-reproduced-2026-11-01.txt`) | PASS |
 | SS anger switched off | AA: in the SS recruitment events no line changes `wehrmacht_anger` or `SS_anger` or calls `SS_resolve_effects_ss` (77 comment lines, as in the base game's current file); the file otherwise byte-identical. Calibrated with three planted errors. In the game: both counters stay 0 through January 1944 while the AI still takes the decisions (before: 20 and −10) (CHANGELOG section 30) | PASS |
 | The author's D-Day decisions | OL: `common/decisions/Allies_1944.txt` byte-identical to the July 2026 version (Codex's change reverted at Oscar's request). Calibrated: an edited date line makes it fail | PASS |
 | UK start | E: Poland, Yugoslavia, the Philippines and Belgium not in the history faction list; Burma and the Philippines not colonies and Yugoslavia not an exile in history; `on_startup` has the six exiles and the Singapore transfer. Calibrated with 4 planted errors (each made it fail). In the game: the UK starts and runs into 3 Jan 1944; the Workshop version still crashes | PASS |
@@ -235,9 +236,9 @@ rifles). error.log identical to log 18
 
 - **Actual play.** Loading the game and its 1944 setup was tested, and
   since 10 October 2026 a number of short scripted games (INVESTIGATION.md
-  sections 2A, 2C and 10). None of the reported crashes (a certain date,
-  Bulgaria, Romania, Volkssturm, Germany losing, 1946) was reproduced, so
-  none of them can be called fixed. The Ichi-Go change is a correction,
+  sections 2A, 2C, 10 and 11). The crash when Finland, Romania or Bulgaria
+  changes sides was reproduced and fixed (section 11). The others (Volkssturm,
+  Germany losing, 1946) were not reproduced, so they cannot be called fixed. The Ichi-Go change is a correction,
   not a crash fix: its old lines did not crash when run.
 - **Playing without some DLCs.** An attempt to switch DLCs off failed, so no
   claim is made. Test through the Paradox launcher.
