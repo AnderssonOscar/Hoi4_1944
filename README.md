@@ -4,6 +4,18 @@ A Hearts of Iron IV mod by **gastav3**: the Second World War from 1 January
 1944. On the Steam Workshop:
 [1944 - Downfall](https://steamcommunity.com/sharedfiles/filedetails/?id=3070639276).
 
+## The November 2026 update
+
+For HOI4 1.19.4.1, with the fix for the crash at "Calculating Peace
+Conference" when Finland, Romania or Bulgaria changes sides. Pull request #5,
+one commit per change, each with its full reason in the commit message:
+
+| Commit here | Change | [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/CHANGELOG.md) section | Update package |
+|---|---|---|---|
+| [`1318ced`](https://github.com/gastav3/Hoi4_1944/commit/1318ced3723f5b2b902a92bce361c2bcd00c3459) | The SS / Wehrmacht "anger" system switched off, as in the current base game | 30 | [`6a1dad4`](https://github.com/AnderssonOscar/Hoi4_1944/commit/6a1dad4) |
+| [`fbb4a48`](https://github.com/gastav3/Hoi4_1944/commit/fbb4a48d59079548287321a00410481144e798e3) | The side switches of Finland, Romania and Bulgaria run from an event one hour later, not inside the decision update where they crashed the game | 31 | [`97922cd`](https://github.com/AnderssonOscar/Hoi4_1944/commit/97922cd) |
+| [`b034129`](https://github.com/gastav3/Hoi4_1944/commit/b034129ac887e8dd5d4db00b214e0e80ea1e34af) | Update for HOI4 1.19.4.1 | 32 | [`39c5e86`](https://github.com/AnderssonOscar/Hoi4_1944/commit/39c5e86) |
+
 ## The September 2026 update
 
 This updates the mod for HOI4 1.19.3, fixes bugs, and adds 1944–45 content.
@@ -80,25 +92,25 @@ this repository's line-ending setting (`* text=auto`) is unchanged.
 ## Documentation
 
 The update package holds the same changes plus the full documentation and
-the check scripts, at tag `final-2026-09-30-v18` of
-[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-30-v18). There the mod sits
+the check scripts, at tag `final-2026-11-01-v19` of
+[AnderssonOscar/Hoi4_1944](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-11-01-v19). There the mod sits
 in a `mod/` folder, and the commit IDs are the ones in the right-hand column
 above; the documents refer to those.
 
 | Document | What it covers |
 |---|---|
-| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-30-v18/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
-| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-30-v18/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
-| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-30-v18/docs/VERIFICATION.md) | How it was checked: 80 automated checks, the game's error logs, checksums |
-| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-30-v18/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
-| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-30-v18/docs/HANDOVER.md) | How to maintain and extend the project |
-| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-30-v18/docs/game-logs) | The game's error.log after each step |
-| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-09-30-v18/tools) | The check scripts (Python 3) |
+| [READ-ME-FIRST](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/READ-ME-FIRST.md) | The update in short: every change in one table |
+| [CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/CHANGELOG.md) | Every change: what, why, sources, how it was tested, in-game test steps |
+| [VERIFICATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/VERIFICATION.md) | How it was checked: 86 automated checks, the game's error logs, checksums |
+| [INVESTIGATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/INVESTIGATION.md) | The investigation of the reported crashes, including false alarms |
+| [HANDOVER](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/HANDOVER.md) | How to maintain and extend the project |
+| [game-logs](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-11-01-v19/docs/game-logs) | The game's error.log after each step |
+| [tools](https://github.com/AnderssonOscar/Hoi4_1944/tree/final-2026-11-01-v19/tools) | The check scripts (Python 3) |
 
 ## How it was checked
 
 - **In the update package:**
-  - 80 automated checks;
+  - 86 automated checks;
   - the game's error.log after every change (115 lines, unchanged by every
     addition since the 1.19.3 update);
   - in-game runs of the new effects, during the game's setup and, since the
@@ -128,7 +140,7 @@ above; the documents refer to those.
 - **Not play-tested yet.** Each feature's CHANGELOG section lists console
   commands to try it.
 - **The UK crash is fixed:** starting as the United Kingdom crashed the game
-  at once, also with the Steam version ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-30-v18/docs/CHANGELOG.md) section 15).
+  at once, also with the Steam version ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/CHANGELOG.md) section 15).
 - **Crash reports not yet explained:** Bulgaria switching sides, Romania's
   12-day decision and the Volkssturm focus (redesigned anyway). "D-Day seems
   broken" needs a description.
@@ -143,14 +155,14 @@ above; the documents refer to those.
   The two focuses now complete at game start, after the order of battle.
   All seven SS divisions of your order of battle now get their own names;
   the 11 divisions are still created, with the numbers that are free, and
-  the focuses and their rewards are unchanged ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-30-v18/docs/CHANGELOG.md)
+  the focuses and their rewards are unchanged ([CHANGELOG](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/CHANGELOG.md)
   section 29).
 
 ## Credits
 
 *1944 - Downfall* is by gastav3. The September 2026 update was prepared by
 Oscar Andersson with AI assistants: Claude, and Codex for part of 29
-September ([CODEX-CONTINUATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-09-30-v18/docs/CODEX-CONTINUATION.md)).
+September ([CODEX-CONTINUATION](https://github.com/AnderssonOscar/Hoi4_1944/blob/final-2026-11-01-v19/docs/CODEX-CONTINUATION.md)).
 Everything is documented so it can be checked without trusting the AI.
 
 The Remagen event picture is made from the photograph "U.S. First Army at
