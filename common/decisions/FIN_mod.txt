@@ -85,75 +85,9 @@ war_measures = {
 
 
 		remove_effect = {
-			every_country = {
-				limit = { has_war_with = FIN is_faction_leader = yes }
-
-				add_opinion_modifier = {
-					target = FIN
-					modifier = faction_traitor
-				}
-
-				white_peace = FIN 
-			}
-		
-			remove_state_claim = 722
-
-			SOV = { transfer_state = 146 }
-			SOV = { transfer_state = 216 }
-			SOV = { transfer_state = 147 }
-			SOV = { transfer_state = 722 }
-
-			GER = { remove_from_faction = FIN }
-			FIN = {give_military_access = ENG}
-			#ENG = { add_to_faction = FIN }
-
-			#FIN = {delete_unit_template_and_units = { division_template = "Panssardivisoona" }}
-			#FIN = {delete_unit_template_and_units = { division_template = "Erillinen Prikaati" }}
-
-			if = {
-				limit = {
-					FIN = { has_template = "Panssariosasto" }
-				}
-				FIN = { delete_units = { division_template = "Panssariosasto" disband = yes } }
-			}
-
-			if = {
-				limit = {
-					FIN = { has_template = "Erillinen Prikaati" }
-				}
-				FIN = { delete_units = { division_template = "Erillinen Prikaati" disband = yes } }
-			}
-
-
-		FIN = {
-
-			drop_cosmetic_tag = yes
-
-			add_to_war = {
-				targeted_alliance = ENG
-				enemy = GER
-			}
-			add_timed_idea = { idea = dont_surrender_mod days = 90 }
-			add_timed_idea = { idea = FIN_armistice_effect days = 30 }
-		}
-
-		FIN = {
-			diplomatic_relation = {
-				country = SOV
-				relation = non_aggression_pact
-				active = yes
-			}
-		}
-
-		FIN = {give_military_access = SOV}
-
-			every_country = { #stop spamming white death
-				limit = {
-					has_variable = FIN_white_death_target_country
-				}
-					clear_variable = FIN_white_death_target_country
-				}
-
+			# 1944 - Downfall: moved unchanged to the hidden event finland.switch.side.2 (events/mod_events.txt), which runs one hour
+			# later. Run here, inside the game's own update of timed decisions, an effect like this can crash the game (CHANGELOG section 31).
+			country_event = { id = finland.switch.side.2 hours = 1 }
 		}
 	}
 
