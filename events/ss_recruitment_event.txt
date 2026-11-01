@@ -21,8 +21,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
 			limit = {
@@ -106,8 +106,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -167,9 +167,9 @@ country_event = {
 		}
 		add_manpower = 500
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 
 }
@@ -189,8 +189,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
 			limit = {
@@ -274,8 +274,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -335,9 +335,9 @@ country_event = {
 		}
 		add_manpower = 500
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 }
 
@@ -356,8 +356,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -420,8 +420,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -493,9 +493,9 @@ country_event = {
 		}
 		add_manpower = 1000
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 }
 
@@ -514,8 +514,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -591,8 +591,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -664,9 +664,9 @@ country_event = {
 		}
 		add_manpower = 1000
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 
 }
@@ -686,8 +686,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
 			limit = {
@@ -722,8 +722,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		SS_set_templates = yes
 		if = {
@@ -795,9 +795,9 @@ country_event = {
 		}
 		add_manpower = 2000
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 
 }
@@ -817,8 +817,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
 			limit = {
@@ -853,8 +853,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		SS_set_templates = yes
 		if = {
@@ -914,9 +914,9 @@ country_event = {
 		}
 		add_manpower = 1000
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 }
 
@@ -935,8 +935,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
 			limit = {
@@ -975,8 +975,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		SS_set_templates = yes
 		if = {
@@ -1081,9 +1081,9 @@ country_event = {
 		}
 		add_manpower = 1000
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 }
 
@@ -1102,8 +1102,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		add_manpower = 1000
 	}
@@ -1121,8 +1121,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
 			limit = {
@@ -1154,9 +1154,9 @@ country_event = {
 		}
 		add_manpower = 500
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 }
 # wehrmacht resolution events - generals protest
@@ -1737,8 +1737,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -1801,8 +1801,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -1874,9 +1874,9 @@ country_event = {
 		}
 		add_manpower = 1000
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 }
 #SS recruitment, scotland
@@ -1894,8 +1894,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -1930,8 +1930,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -1991,9 +1991,9 @@ country_event = {
 		}
 		add_manpower = 1000
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 }
 #ss recruitment sweden
@@ -2011,8 +2011,8 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		add_to_variable = { var = wehrmacht_anger value = 5}
-		subtract_from_variable = { var = SS_anger value = 5}
+		#add_to_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		#SS_resolve_effects_wehrmacht = yes
 		
 			SS_set_templates = yes
@@ -2077,8 +2077,8 @@ country_event = {
 				check_variable = { var = wehrmacht_anger value = 30 compare = greater_than_or_equals }
 			}
 		}
-		add_to_variable = { var = wehrmacht_anger value = 10}
-		subtract_from_variable = { var = SS_anger value = 10}
+		#add_to_variable = { var = wehrmacht_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 		SS_set_templates = yes
 		#SS_resolve_effects_wehrmacht = yes
 		if = {
@@ -2138,8 +2138,8 @@ country_event = {
 		}
 		add_manpower = 500
 		army_experience = 10
-		add_to_variable = { var = SS_anger value = 10}
-		SS_resolve_effects_ss = yes
-		subtract_from_variable = { var = wehrmacht_anger value = 5}
+		#add_to_variable = { var = SS_anger value = 10} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#SS_resolve_effects_ss = yes # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
+		#subtract_from_variable = { var = wehrmacht_anger value = 5} # switched off as in the base game's current file (docs/CHANGELOG.md section 30)
 	}
 }
