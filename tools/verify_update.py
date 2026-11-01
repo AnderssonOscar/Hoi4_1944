@@ -1,7 +1,7 @@
-"""Re-verify every claim about the fixes and the 1.19.3 update. Prints PASS/FAIL.
+"""Re-verify every claim about the fixes and the update for the current game (1.19.4.1). Prints PASS/FAIL.
 
 Run from the project folder:  python tools/verify_update.py
-Needs: git, the HOI4 1.19.3 install, and the Steam Workshop copy of the mod.
+Needs: git, the HOI4 1.19.4.1 install, and the Steam Workshop copy of the mod.
 Also writes docs/checksums/mod-files.sha256 (SHA-256 of every mod file).
 """
 import hashlib
@@ -170,6 +170,7 @@ expected |= {("A", f"mod/{f}") for f in ("gfx/events/report_event_GER_remagen_br
              "events/GER_remagen_events.txt", "localisation/english/GER_remagen_l_english.yml")}  # the bridge at Remagen (section 20)
 expected |= {("A", "mod/common/on_actions/GER_ss_names_on_actions.txt")}  # SS names at the 1944 start (section 29)
 expected |= {("M", f"mod/common/decisions/{c}_mod.txt") for c in ("FIN", "ROM", "BUL")}  # side switches from events (section 31)
+expected |= {("M", f"mod/{f}") for f in ("common/ideas/japan.txt", "common/decisions/resource_prospecting.txt")}  # update for 1.19.4.1 (section 32)
 changed ={tuple(l.decode().split("\t", 1)) for l in git("diff", "--name-status", BASE, "HEAD", "--", "mod").splitlines()}
 check(f"changed files = the {len(expected)} intended ones", changed == expected,
       f"unexpected: {sorted(changed - expected)}; missing: {sorted(expected - changed)}")
@@ -279,14 +280,14 @@ g_hunks = [(int(a), int(b or 1)) for a, b in re.findall(r"^@@ -(\d+)(?:,(\d+))? 
 check(f"common/national_focus/germany.txt: all {len(g_hunks)} changed spot(s) are inside the Volkssturm focus (base lines {g_lo}-{g_hi})",
       bool(g_hunks) and all(g_lo <= a and a + max(b, 1) - 1 <= g_hi for a, b in g_hunks), str(g_hunks))
 
-# rebuilt files: author's parts identical, everything else identical to 1.19.3
+# rebuilt files: author's parts identical, everything else identical to the current base game (1.19.4.1)
 rel = "common/national_focus/netherlands.txt"
 new_l = current("mod/" + rel).decode("utf-8").splitlines()
 van_l = vanilla(rel).decode("utf-8").splitlines()
 import difflib  # noqa: E402
 d = [l for l in difflib.unified_diff(van_l, new_l, lineterm="", n=0) if l[:1] in "+-" and l[:3] not in ("---", "+++")]
 author = ["+\t\t\tOR = {", "+\t\t\t\ttag = HOL", "+\t\t\t\ttag = RKN #1944", "+\t\t\t}", "-\t\t\ttag = HOL"]
-check("netherlands.txt = 1.19.3 + only the author's RKN edit and #1944 marker",
+check("netherlands.txt = 1.19.4.1 + only the author's RKN edit and #1944 marker",
       sorted(x for x in d if "search_filters" not in x) == sorted(author) and len(d) == 7)
 base_nl = at_base("mod/" + rel).decode("utf-8-sig", errors="replace")
 check("  ...and that RKN edit is exactly what the Workshop version had", "tag = RKN #1944" in base_nl)
@@ -299,7 +300,7 @@ newd = {}
 for n in new_r:
     if n.key:
         newd.setdefault(n.key, []).append(canon(n))
-check("cosmetic.txt: all 1.19.3 entries present and identical",
+check("cosmetic.txt: all 1.19.4.1 entries present and identical",
       all(canon(n) in newd.get(n.key, []) for n in van_r if n.key))
 check(f"cosmetic.txt: all {len(own)} author entries present and identical", all(canon(n) in newd.get(n.key, []) for n in own))
 
@@ -317,7 +318,7 @@ for fname, stock in (("AST - Australia.txt", 4), ("SIA - Siam.txt", 0)):
     van = [canon(n) for n in van_r]
     diffs = [(a, b) for a, b in zip(rest, van) if a != b]
     fixed = [(a, b) for a, b in diffs if a.replace("AST_domestic_industry", "AST_domestic_industries") == b]
-    check(f"{fname}: everything else identical to 1.19.3" + (" (except the documented AST_domestic_industry fix)" if stock else ""),
+    check(f"{fname}: everything else identical to 1.19.4.1" + (" (except the documented AST_domestic_industry fix)" if stock else ""),
           len(rest) == len(van) and len(diffs) == len(fixed) and len(fixed) == (1 if stock else 0))
 
 print("\n== 4. Every fix is in place ==")
@@ -327,7 +328,7 @@ check("A  Ichi-Go: both wrong-state provinces commented out",
 import check_province_modifiers as cpm  # noqa: E402
 p2s, sf = cpm.province_to_state(with_files=True)
 check("G  states 870/871/873 each defined exactly once", all(len(sf[s]) == 1 for s in ("870", "871", "873")))
-check("U  descriptor says 1.19.3.0", b'supported_version="1.19.3.0"' in current("mod/descriptor.mod"))
+check("U  descriptor says 1.19.4.1", b'supported_version="1.19.4.1"' in current("mod/descriptor.mod"))
 nl = pdx.parse_file("mod/common/national_focus/netherlands.txt")[0]
 def focus_ids(root):
     return {c.value for n, _ in pdx.walk(root) if n.key in ("focus", "shared_focus") and n.is_block() for c in n.value if c.key == "id"}
@@ -335,7 +336,7 @@ ids = focus_ids(nl)
 van_ids = focus_ids(pdx.parse(vanilla("common/national_focus/netherlands.txt").decode("utf-8-sig"))[0])
 base_ids = focus_ids(parse_bytes(at_base("mod/common/national_focus/netherlands.txt")))
 restored = van_ids - base_ids
-check(f"U  every focus of the 1.19.3 Netherlands tree is in the mod's tree ({len(van_ids)}), incl. the {len(restored)} that were missing",
+check(f"U  every focus of the 1.19.4.1 Netherlands tree is in the mod's tree ({len(van_ids)}), incl. the {len(restored)} that were missing",
       van_ids <= ids and len(restored) == 15, ", ".join(sorted(restored)[:3]) + " ...")
 old_sf, subs = [], 0
 for dp, _, fs in os.walk("mod/history/countries"):
@@ -613,6 +614,28 @@ check("AA SS anger switched off: in the recruitment events (ss_recruitment_event
 # inside its own update of that country's timed decisions (a player's crash dump shows Finland's switch crashing there). The
 # remove_effect now only fires a hidden event one hour later, and that event's immediate block is the old remove_effect, line for
 # line. Nothing else in the decision files changed; mod_events.txt is its previous version plus the three new events.
+# Section 32: base-game things the 1.19.4.1 update added that the mod's older copies lacked: copied unchanged, nothing else in the two files changed.
+def named_block(lines, name):
+    """The lines of the block that starts with `name = {`."""
+    s = next(i for i, l in enumerate(lines) if re.match(r"\s*" + name + r" = \{", l))
+    return lines[s:block_end(lines, s) + 1]
+
+
+cc_ok = []
+for rel, name, prev in (("common/ideas/japan.txt", "JAP_ketsugo_field_expedients", "3aaafcd"),
+                        ("common/decisions/resource_prospecting.txt", "establish_jaykaynagar_aliminium_smelters", "3aaafcd")):
+    cur_l, van_l_, prev_l = text_lines(current("mod/" + rel)), text_lines(vanilla(rel)), text_lines(git("show", f"{prev}:mod/{rel}"))
+    blk = named_block(cur_l, name)
+    s = cur_l.index(blk[0])
+    k = s - 1  # the block, its one comment line above it, and in the decision file the blank separator lines after it
+    e = s + len(blk)
+    while cur_l[e:] != prev_l[k:] and e < s + len(blk) + 3:
+        e += 1
+    cc_ok.append(blk == named_block(van_l_, name) and cur_l[k].strip().startswith("# 1944 - Downfall: copied unchanged from the base game 1.19.4.1")
+                 and cur_l[:k] + cur_l[e:] == prev_l)
+check("CC update for 1.19.4.1: the idea JAP_ketsugo_field_expedients and the decision establish_jaykaynagar_aliminium_smelters, which the "
+      "base game's events and focuses now use, are identical to the base game's; apart from them and a comment, ideas/japan.txt and "
+      "resource_prospecting.txt are unchanged", all(cc_ok), str(cc_ok))
 sw_ev = text_lines(current("mod/events/mod_events.txt"))
 sw_prev = text_lines(git("show", "3aaafcd:mod/events/mod_events.txt"))
 sw_res, sw_cut = [], list(sw_ev)
